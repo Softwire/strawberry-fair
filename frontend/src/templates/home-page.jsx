@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
 
@@ -19,13 +18,11 @@ export const HomePageContent = ({title, content, image, contentComponent}) => {
 )}
 
 const HomePage = ({data: {markdownRemark}}) => (
-    <Layout>
-        <HomePageContent
-            title={markdownRemark.frontmatter.title}
-            content={markdownRemark.html}
-            image={markdownRemark.frontmatter.image}
-        />
-    </Layout>
+    <HomePageContent
+        title={markdownRemark.frontmatter.title}
+        content={markdownRemark.html}
+        image={markdownRemark.frontmatter.image}
+    />
 )
 
 export default HomePage

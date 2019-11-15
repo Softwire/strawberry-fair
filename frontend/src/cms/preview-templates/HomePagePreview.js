@@ -1,6 +1,6 @@
 import React from 'react'
 import { HomePageContent } from '../../templates/home-page'
-import Content from '../../components/Content'
+import { Content } from '../../components/Content'
 
 export default ({ entry, widgetFor, getAsset }) => (
     <HomePageContent
