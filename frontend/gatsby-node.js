@@ -4,7 +4,6 @@ const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
-
   const result = await graphql(`
     {
       allMarkdownRemark(limit: 1000) {
@@ -22,7 +21,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       }
     }
   `)
-  
+
   if (result.errors) {
     result.errors.forEach(e => console.error(e.toString()))
     return Promise.reject(result.errors)

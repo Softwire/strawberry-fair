@@ -1,8 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Strawberry Fair',
-    description:
-      'Website of the Cambridge Strawberry Fair',
+    description: 'Website of the Cambridge Strawberry Fair',
   },
   plugins: [
     'gatsby-plugin-sass',
@@ -63,6 +62,6 @@ module.exports = {
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
-    }
-  ]
+    },
+  ],
 }
