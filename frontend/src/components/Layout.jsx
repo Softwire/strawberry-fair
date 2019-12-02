@@ -2,10 +2,10 @@ import React from 'react'
 import { Header } from './Header'
 import { Footer } from './Footer'
 
-export const Layout = (props) => (
+export const Layout = ({children}) => (
     <div>
         <Header />
-            {props.children}
+            {children}
         <Footer />
     </div>
 )

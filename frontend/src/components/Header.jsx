@@ -1,12 +1,8 @@
 import React from 'react'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
-const logo = { alt: "Strawberry Fair Logo", image: "img/1-line-logo.png" }
 
-export const Header = (props) => {
-
-
-    return (
+export const Header = (props) => (
     <header>
         <nav>
             <a href="/">
@@ -15,4 +11,6 @@ export const Header = (props) => {
             <span>About Us | Areas &amp; Events | News | Traders | Support the Fair | Contact</span>
         </nav>
     </header>
-)}
+)
+
+const logo = { alt: "Strawberry Fair Logo", image: "img/1-line-logo.png" }
