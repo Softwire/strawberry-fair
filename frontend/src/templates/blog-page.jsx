@@ -1,29 +1,47 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
 
 
 // This is used by the websitesite and for CMS previews
-export const BlogPageContent = ({title, content, image, contentComponent}) => {
+export const BlogPageContent = ({title, content, image, contentComponent, blogPosts}) => {
     const BodyComponent = contentComponent || HTMLContent
-
     return (
     <section>
         <h1>{title}</h1>
         <BodyComponent content={content} />
-        <Link to="/blog-post-1/">Blog Post 1</Link>
+        <BlogPostsPreview blogPosts={blogPosts}/>
     </section>
 )}
 
-const BlogPage = ({data: {markdownRemark}}) => (
-    <BlogPageContent
+const BlogPostsPreview = ({blogPosts}) => {
+  const blogPostLinks = blogPosts.map(blogPost => 
+    <BlogPostPreview blogPost={blogPost}/>
+  )
+  return (
+    <div>
+      {blogPostLinks}
+    </div>
+  )
+}
+
+const BlogPostPreview = ({blogPost}) =>
+  <div>
+    <Link to={blogPost.node.fields.slug}>
+      {blogPost.node.frontmatter.title}
+    </Link>
+  </div>
+
+
+const BlogPage = ({data: {markdownRemark, allMarkdownRemark}}) => {
+    return <BlogPageContent
         title={markdownRemark.frontmatter.title}
         content={markdownRemark.html}
         image={markdownRemark.frontmatter.image}
+        blogPosts={allMarkdownRemark.edges}
     />
-)
+}
 
 export default BlogPage
 
@@ -42,7 +60,7 @@ query blogPageTemplate($id: String!) {
       }
       html
     }
-    allMarkdownRemark(limit: 1000) {
+    allMarkdownRemark(filter: {fields: {slug: {regex: "$//blog-posts//"}}}) {
       edges {
         node {
           id
@@ -51,7 +69,9 @@ query blogPageTemplate($id: String!) {
           }
           frontmatter {
             templateKey
+            title
           }
+          html
         }
       }
     }
