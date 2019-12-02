@@ -1,5 +1,5 @@
 ---
-templateKey: home-page
+templateKey: blog-post
 title: Hello World
 image: /img/test-pic.png
 ---
