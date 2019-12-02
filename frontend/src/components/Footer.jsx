@@ -1,11 +1,13 @@
 import React from 'react'
+import PreviewCompatibleImage from './PreviewCompatibleImage'
+
 
 export const Footer = (props) => (
     <footer>
         <nav>
             <span id="social-media">
-                <a href="https://www.facebook.com/strawberryfair" className="facebook">Facebook</a>
-                <a href="https://twitter.com/strawberry_fair" className="twitter">Twitter</a>
+                <Social href="https://www.facebook.com/strawberryfair" image="img/facebook-logo.png" alt="Facebook" />
+                <Social href="https://twitter.com/strawberry_fair" image="img/twitter-logo.png" alt="Twitter" />
             </span>
             <p>
                 <a>Cookie policy</a>
@@ -21,4 +23,10 @@ export const Footer = (props) => (
             </p>
         </nav>
     </footer>
+)
+
+const Social = ({href, image, alt}) => (
+    <a href={href}>
+        <PreviewCompatibleImage imageInfo={{image: image, alt: alt}} />
+    </a>
 )
