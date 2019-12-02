@@ -10,7 +10,7 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "frontend/src/pages/home/index.md"
+      - file: "frontend/src/pages/index.md"
         label: "Home Page"
         name: "home"
         fields:

@@ -3,14 +3,8 @@
 node_modules
 .cache/
 
-# Auto-generated components of /public
-public/admin/cms.js.map
-public/admin/index.html
-public/page-data
-public/static
-public/index.html
-
 # Build data
+public
 static/admin/*.bundle.*
 .DS_Store
 yarn-error.log
