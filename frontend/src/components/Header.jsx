@@ -2,6 +2,8 @@ import React from 'react'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 
+// SF-15
+// Replace placeholder text with navigation menu
 export const Header = (props) => (
     <header>
         <nav>
