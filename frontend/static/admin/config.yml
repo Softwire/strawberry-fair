@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: Softwire/strawberry-fair
-  branch: master
+  branch: SF-4_backup
 
 media_folder: static/img
 public_folder: /img
@@ -41,8 +41,12 @@ collections:
     label: "About"
     folder: "frontend/src/pages/about-pages/"
     create: true
+    permissions:
+      pages:
+        write: [admin]
+        delete: [admin]
     fields:
-      - {label: "Template Key", name: templateKey, widget: hidden, default: blog-post}
+      - {label: "Template Key", name: templateKey, widget: hidden, default: about-page}
       - {label: Title, name: title, widget: string}
       - {label: Body, name: body, widget: markdown}
       - {label: Image, name: image, widget: image}
