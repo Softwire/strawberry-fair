@@ -37,3 +37,12 @@ collections:
       - {label: Image, name: image, widget: image}
       - {label: Body, name: body, widget: markdown}
       - {label: Date, name: date, widget: datetime, format: YYYY-MM-DD, dateFormat: YYYY-MM-DD, timeFormat: false}
+  - name: "about-page"
+    label: "About"
+    folder: "frontend/src/pages/about-pages/"
+    create: true
+    fields:
+      - {label: "Template Key", name: templateKey, widget: hidden, default: blog-post}
+      - {label: Title, name: title, widget: string}
+      - {label: Body, name: body, widget: markdown}
+      - {label: Image, name: image, widget: image}
