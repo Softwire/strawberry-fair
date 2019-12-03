@@ -11,14 +11,15 @@ export const NewsOverviewContent = ({title, subtitle, content, contentComponent,
     const BodyComponent = contentComponent || HTMLContent
     
     return (
-    <section className="section">
-      <div className="container">
-        <h1 className="title has-text-primary">{title}</h1>
-        <h2 className="subtitle">{subtitle}</h2>
-        <BodyComponent content={content}/>      
-        <NewsArticleSnapshots newsArticles={newsArticles}/>
-      </div>
-    </section>
+      <section className="section">
+        <div className="container">
+          <h1 className="title has-text-primary is-size-1">{title}</h1>
+          <h2 className="subtitle">{subtitle}</h2>
+          <BodyComponent content={content}/>      
+          <NewsArticleSnapshots newsArticles={newsArticles}/>
+        </div>
+      </section>
+    
 )}
 
 const NewsOverview = ({data: {markdownRemark, allMarkdownRemark}}) => {
