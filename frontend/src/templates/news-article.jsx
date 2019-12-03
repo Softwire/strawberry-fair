@@ -9,10 +9,12 @@ export const NewsArticleContent = ({title, content, image, contentComponent}) =>
     const BodyComponent = contentComponent || HTMLContent
 
     return (
-    <section>
-        <h1>{title}</h1>
-        <BodyComponent content={content} />
-        <PreviewCompatibleImage imageInfo={image} />
+    <section className="section">
+      <h1 className="title has-text-primary">{title}</h1>
+      <div className="image is-128x128 is-pulled-right">
+        <PreviewCompatibleImage imageInfo={image}/>
+      </div>
+      <BodyComponent content={content} />
     </section>
 )}
 

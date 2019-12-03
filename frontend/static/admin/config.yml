@@ -24,6 +24,7 @@ collections:
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: news-overview}
           - {label: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string}
           - {label: Image, name: image, widget: image}
           - {label: Body, name: body, widget: markdown}
   - name: "news"

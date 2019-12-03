@@ -1,8 +1,9 @@
 ---
 templateKey: 'news-overview'
-title: Blog page
+title: Our News
+subtitle: It's your festival
 image: /img/strawberry.jpg
 ---
-## This is the Blog Page!
+## Here are the latest news:
 
 Here we can find a list of all the available Blog Posts.
