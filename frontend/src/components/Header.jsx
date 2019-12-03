@@ -1,48 +1,44 @@
-import React from 'react'
+import React, {useState} from 'react'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 
 export const Header = () => (
-    <header >
+    <header>
         <nav className="navbar is-fixed-top">
             <div className="navbar-brand">
-                <a className="navbar-burger burger" data-target="navigationBar">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </a>
                 <a className="navbar-item" href="/">
                     <PreviewCompatibleImage imageInfo={logo} />
                 </a>
+                <NavBurger target="navigationBar" />
             </div>
             <NavMenu>
                 {[
-                    <NavCategory title="About Us">
+                    <NavDropdown title="About Us">
                         {[
-                            <NavLink href="/" title="Frequently Asked Questions" />,
-                            <NavLink href="/" title="About the Fair" />,
-                            <NavLink href="/" title="Organisation" />,
-                            <NavLink href="/" title="History" />,
-                            <NavLink href="/" title="Environment" />,
-                            <NavLink href="/" title="Bucket Collection Partners" />,
-                            <NavLink href="/" title="Get Involved" />
+                            <NavLink href="/" title="Frequently Asked Questions"/>,
+                            <NavLink href="/" title="About the Fair"/>,
+                            <NavLink href="/" title="Organisation"/>,
+                            <NavLink href="/" title="History"/>,
+                            <NavLink href="/" title="Environment"/>,
+                            <NavLink href="/" title="Bucket Collection Partners"/>,
+                            <NavLink href="/" title="Get Involved"/>
                         ]}
-                    </NavCategory>,
-                    <NavCategory href="/" title="Areas &amp; Events">
+                    </NavDropdown>,
+                    <NavDropdown href="/" title="Areas &amp; Events">
                         
-                    </NavCategory>,
-                    <NavCategory href="/" title="News">
+                    </NavDropdown>,
+                    <NavDropdown href="/" title="News">
 
-                    </NavCategory>,
-                    <NavCategory href="/" title="Traders">
+                    </NavDropdown>,
+                    <NavDropdown href="/" title="Traders">
 
-                    </NavCategory>,
-                    <NavCategory href="/" title="Support the Fair">
+                    </NavDropdown>,
+                    <NavDropdown href="/" title="Support the Fair">
 
-                    </NavCategory>,
-                    <NavCategory href="/" title="Contact">
+                    </NavDropdown>,
+                    <NavDropdown href="/" title="Contact">
 
-                    </NavCategory>
+                    </NavDropdown>
                 ]}
             </NavMenu>
         </nav>
@@ -50,13 +46,8 @@ export const Header = () => (
 )
 
 
-/* Elements */
-
 const logo = { alt: "Strawberry Fair Logo", image: "img/1-line-logo.png" }
 
-
-
-/* Classes */
 
 const NavMenu = ({children}) => (
     <ul id="navigationBar" className="navbar-menu">
@@ -66,21 +57,45 @@ const NavMenu = ({children}) => (
     </ul>
 )
 
-const NavDropdown = ({title, children}) => (
-    <li className="navbar-item has-dropdown">
-        <button className="navbar-link">
-            {title}
-        </button>
-        <ul className="navbar-dropdown">
-            {children}
-        </ul>
-    </li>
-)
+
+const NavBurger = ({target}) => {
+    const [active, setState] = useState(false)
+    const getName = () => `navbar-burger burger ${active ? "is-active" : ""}`
+
+    return (
+        <a className={getName()} data-target={target} onClick={() => setState(!active)}>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    )
+}
+
+
+const NavDropdown = ({title, children}) => {
+    const [active, setState] = useState(false)
+    const getName = () => `navbar-item has-dropdown ${active ? "is-active" : ""}`
+    
+    return (
+        <li className={getName()}>
+            <button className="navbar-link" onClick={() => setState(!active)}>
+                {title}
+            </button>
+            <ul className="navbar-dropdown">
+                {children}
+            </ul>
+        </li>
+    )
+}
+
 
 const NavLink = ({href, title}) => (
     <li className="navbar-item">
-        <a href={href}>{title}</a>
+        <a href={href}>
+            {title}
+        </a>
     </li>
 )
 
-const NavCategory = NavDropdown || NavLink
+
+const mapping = (child) => (<li className="navbar-item" key={child.title}>{child}</li>)
