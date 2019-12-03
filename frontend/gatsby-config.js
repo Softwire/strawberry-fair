@@ -4,6 +4,7 @@ module.exports = {
     description: 'Website of the Cambridge Strawberry Fair',
   },
   plugins: [
+    'gatsby-plugin-netlify-identity-widget',
     'gatsby-plugin-sass',
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
