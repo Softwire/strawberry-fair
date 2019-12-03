@@ -2,8 +2,8 @@ import React from 'react'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 
-export const Footer = (props) => (
-    <footer>
+export const Footer = () => (
+    <footer class="footer">
         <nav>
             <span id="social-media">
                 <Social href="https://www.facebook.com/strawberryfair" image="img/facebook-logo.png" alt="Facebook" />
