@@ -2,31 +2,85 @@ import React from 'react'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 
-// SF-15
-// Replace placeholder text with navigation menu
 export const Header = () => (
     <header >
-        <nav class="navbar">
-            <a class="navbar-brand" href="/">
-                <PreviewCompatibleImage imageInfo={logo} />
-            </a>
-            <ul class="navbar-menu">
-                <NavbarLink href="/" title="About Us" />
-                <NavbarLink href="/" title="Areas" />
-                <NavbarLink href="/" title="Events" />
-                <NavbarLink href="/" title="News" />
-                <NavbarLink href="/" title="Traders" />
-                <NavbarLink href="/" title="Support the Fair" />
-                <NavbarLink href="/" title="Contact" />
-            </ul>
+        <nav className="navbar is-fixed-top">
+            <div className="navbar-brand">
+                <a className="navbar-burger burger" data-target="navigationBar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <a className="navbar-item" href="/">
+                    <PreviewCompatibleImage imageInfo={logo} />
+                </a>
+            </div>
+            <NavMenu>
+                {[
+                    <NavCategory title="About Us">
+                        {[
+                            <NavLink href="/" title="Frequently Asked Questions" />,
+                            <NavLink href="/" title="About the Fair" />,
+                            <NavLink href="/" title="Organisation" />,
+                            <NavLink href="/" title="History" />,
+                            <NavLink href="/" title="Environment" />,
+                            <NavLink href="/" title="Bucket Collection Partners" />,
+                            <NavLink href="/" title="Get Involved" />
+                        ]}
+                    </NavCategory>,
+                    <NavCategory href="/" title="Areas &amp; Events">
+                        
+                    </NavCategory>,
+                    <NavCategory href="/" title="News">
+
+                    </NavCategory>,
+                    <NavCategory href="/" title="Traders">
+
+                    </NavCategory>,
+                    <NavCategory href="/" title="Support the Fair">
+
+                    </NavCategory>,
+                    <NavCategory href="/" title="Contact">
+
+                    </NavCategory>
+                ]}
+            </NavMenu>
         </nav>
     </header>
 )
 
+
+/* Elements */
+
 const logo = { alt: "Strawberry Fair Logo", image: "img/1-line-logo.png" }
 
-const NavbarLink = ({href, title}) => (
-    <li>
+
+
+/* Classes */
+
+const NavMenu = ({children}) => (
+    <ul id="navigationBar" className="navbar-menu">
+        <div className="navbar-start">
+            {children}
+        </div>
+    </ul>
+)
+
+const NavDropdown = ({title, children}) => (
+    <li className="navbar-item has-dropdown">
+        <button className="navbar-link">
+            {title}
+        </button>
+        <ul className="navbar-dropdown">
+            {children}
+        </ul>
+    </li>
+)
+
+const NavLink = ({href, title}) => (
+    <li className="navbar-item">
         <a href={href}>{title}</a>
     </li>
 )
+
+const NavCategory = NavDropdown || NavLink

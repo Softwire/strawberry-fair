@@ -3,14 +3,14 @@ import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 
 export const Footer = () => (
-    <footer class="footer">
+    <footer className="footer">
         <nav>
             <span id="social-media">
                 <Social href="https://www.facebook.com/strawberryfair" image="img/facebook-logo.png" alt="Facebook" />
                 <Social href="https://twitter.com/strawberry_fair" image="img/twitter-logo.png" alt="Twitter" />
             </span>
             <p>
-                <a>Cookie policy</a>
+                <a href="/">Cookie policy</a>
             </p>
             <p>
                 © Strawberry Fair 2017 
