@@ -19,8 +19,8 @@ collections:
           - {label: Image, name: image, widget: image}
           - {label: Body, name: body, widget: markdown}
       - file: "frontend/src/pages/news/index.md"
-        label: "Home Page"
-        name: "home"
+        label: "News Home"
+        name: "news-home"
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: news-overview}
           - {label: Title, name: title, widget: string}
@@ -37,4 +37,3 @@ collections:
       - {label: Image, name: image, widget: image}
       - {label: Body, name: body, widget: markdown}
       - {label: Date, name: date, widget: datetime, format: YYYY-MM-DD, dateFormat: YYYY-MM-DD, timeFormat: false}
-      
