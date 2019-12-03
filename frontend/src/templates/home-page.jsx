@@ -4,6 +4,8 @@ import { graphql } from 'gatsby'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
 
+import '../styling/styles.sass'
+
 
 // This is used by the websitesite and for CMS previews
 export const HomePageContent = ({title, content, image, contentComponent}) => {

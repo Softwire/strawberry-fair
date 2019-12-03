@@ -1,16 +1,38 @@
+/* All variables MUST be defined before import statement(s) to avoid Bulma overwriting */
+  
+// Colours from design mock-up
+$red: #ae1414
+$black: #1d1d1d
+
+$primary: $red
+$secondary: $black
+
+
+// Bulma provides default styling (can be imported in separate modules as required)
 @import "bulma"
 
-/* Define standard variables and values for website */
-$bgcolor: lightblue;
-$textcolor: darkblue;
-$fontsize: 18px;
-
-/* Use the variables */
+  
+// Customise default styling here
 div
-  background-color: $bgcolor
-  color: $textcolor
-  font-size: $fontsize
+  font-size: $size-6
+  color: $secondary
 
-// no dot for html elements
-// .class
-// assign classes to react components
+
+// Element styling
+h1
+  font-size: $size-1
+  color: $primary
+
+h2
+  font-size: $size-4
+  color: $secondary
+
+p
+  font-size: $size-6
+  color: $secondary
+
+
+// Class styling
+.classname
+  font-size: $size-6
+  color: $secondary
