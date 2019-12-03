@@ -1,5 +1,5 @@
 ---
-templateKey: 'blog-page'
+templateKey: 'news-overview'
 title: Blog page
 image: /img/strawberry.jpg
 ---

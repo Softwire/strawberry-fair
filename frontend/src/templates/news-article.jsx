@@ -4,9 +4,8 @@ import { graphql } from 'gatsby'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
 
-
-// This is used by the websitesite and for CMS previews
-export const BlogPostContent = ({title, content, image, contentComponent}) => {
+// This is used by the website and for CMS previews
+export const NewsArticleContent = ({title, content, image, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     return (
@@ -17,18 +16,18 @@ export const BlogPostContent = ({title, content, image, contentComponent}) => {
     </section>
 )}
 
-const BlogPost = ({data: {markdownRemark}}) => (
-    <BlogPostContent
+const NewsArticle = ({data: {markdownRemark}}) => (
+    <NewsArticleContent
         title={markdownRemark.frontmatter.title}
         content={markdownRemark.html}
         image={markdownRemark.frontmatter.image}
     />
 )
 
-export default BlogPost
+export default NewsArticle
 
 export const query = graphql`
-query blogPostTemplate($id: String!) {
+query newsArticleTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title

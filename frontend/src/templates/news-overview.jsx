@@ -1,52 +1,38 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
+import NewsArticleSnapshots from '../components/NewsArticleSnapshots'
 
 
-// This is used by the websitesite and for CMS previews
-export const BlogPageContent = ({title, content, image, contentComponent, blogPosts}) => {
+
+// This is used by the website and for CMS previews
+export const NewsOverviewContent = ({title, content, image, contentComponent, newsArticles}) => {
     const BodyComponent = contentComponent || HTMLContent
+    
     return (
     <section>
         <h1>{title}</h1>
         <BodyComponent content={content} />
-        <BlogPostsPreview blogPosts={blogPosts}/>
+        <NewsArticleSnapshots newsArticles={newsArticles}/>
+        <PreviewCompatibleImage imageInfo={image} />
     </section>
 )}
 
-const BlogPostsPreview = ({blogPosts}) => {
-  const blogPostLinks = blogPosts.map(blogPost => 
-    <BlogPostPreview blogPost={blogPost}/>
-  )
-  return (
-    <div>
-      {blogPostLinks}
-    </div>
-  )
-}
-
-const BlogPostPreview = ({blogPost}) =>
-  <div>
-    <Link to={blogPost.node.fields.slug}>
-      {blogPost.node.frontmatter.title}
-    </Link>
-  </div>
-
-
-const BlogPage = ({data: {markdownRemark, allMarkdownRemark}}) => {
-    return <BlogPageContent
+const NewsOverview = ({data: {markdownRemark, allMarkdownRemark}}) => {
+    return <NewsOverviewContent
         title={markdownRemark.frontmatter.title}
         content={markdownRemark.html}
         image={markdownRemark.frontmatter.image}
-        blogPosts={allMarkdownRemark.edges}
+        newsArticles={allMarkdownRemark.edges}
     />
 }
 
-export default BlogPage
+export default NewsOverview
 
 export const query = graphql`
-query blogPageTemplate($id: String!) {
+query newsOverviewTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
@@ -60,7 +46,7 @@ query blogPageTemplate($id: String!) {
       }
       html
     }
-    allMarkdownRemark(filter: {fields: {slug: {regex: "$//blog-posts//"}}}) {
+    allMarkdownRemark(filter: {fields: {slug: {regex: "$//news//"}}}) {
       edges {
         node {
           id

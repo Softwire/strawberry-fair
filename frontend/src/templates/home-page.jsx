@@ -5,7 +5,7 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
 
 
-// This is used by the websitesite and for CMS previews
+// This is used by the website and for CMS previews
 export const HomePageContent = ({title, content, image, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
 
