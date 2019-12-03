@@ -18,3 +18,22 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
           - {label: Body, name: body, widget: markdown}
+      - file: "frontend/src/pages/news/index.md"
+        label: "News Home"
+        name: "news-home"
+        fields:
+          - {label: "Template Key", name: templateKey, widget: hidden, default: news-overview}
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Body, name: body, widget: markdown}
+  - name: "news"
+    label: "News Articles"
+    folder: "frontend/src/pages/news/"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: templateKey, widget: hidden, default: news-article}
+      - {label: Title, name: title, widget: string}
+      - {label: Image, name: image, widget: image}
+      - {label: Body, name: body, widget: markdown}
+      - {label: Date, name: date, widget: datetime, format: YYYY-MM-DD, dateFormat: YYYY-MM-DD, timeFormat: false}
