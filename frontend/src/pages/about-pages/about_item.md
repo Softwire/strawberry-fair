@@ -1,6 +1,7 @@
 ---
 templateKey: 'about-page'
 title: About Item
+subtitle: this is a subtitle
 image: /img/strawberry.jpg
 ---
 ## This is an item in the about list!
