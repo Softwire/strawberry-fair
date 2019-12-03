@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
 

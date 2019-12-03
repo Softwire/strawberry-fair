@@ -41,10 +41,6 @@ collections:
     label: "About"
     folder: "frontend/src/pages/about-pages/"
     create: true
-    permissions:
-      pages:
-        write: [admin]
-        delete: [admin]
     fields:
       - {label: "Template Key", name: templateKey, widget: hidden, default: about-page}
       - {label: Title, name: title, widget: string}

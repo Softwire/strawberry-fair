@@ -1,8 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
+import './about-page.css'
+import { Button } from "react-bulma-components/full"
 
 
 // This is used by the websitesite and for CMS previews
@@ -11,7 +12,7 @@ export const AboutPageContent = ({title, content, image, contentComponent}) => {
 
     return (
     <section>
-        <h1>{title}</h1>
+        < Button>{title}</Button>
         <BodyComponent content={content} />
         <PreviewCompatibleImage imageInfo={image} />
     </section>
@@ -44,3 +45,5 @@ query aboutPageTemplate($id: String!) {
     }
   }
 `
+
+
