@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: Softwire/strawberry-fair
-  branch: SF-4_backup
+  branch: SF-4
 
 media_folder: static/img
 public_folder: /img
@@ -46,3 +46,4 @@ collections:
       - {label: Title, name: title, widget: string}
       - {label: Body, name: body, widget: markdown}
       - {label: Image, name: image, widget: image}
+      - {label: Subtitle, name: subtitle, widget: string}

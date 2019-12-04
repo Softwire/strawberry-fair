@@ -2,7 +2,7 @@
 templateKey: 'about-page'
 title: About Item
 subtitle: this is a subtitle
-titleimage: /img/strawberry_fair.jpg
+image: /img/strawberry_fair.jpg
 ---
 
 # This is H1

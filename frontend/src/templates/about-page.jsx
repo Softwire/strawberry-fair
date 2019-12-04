@@ -6,7 +6,7 @@ import '../styling/styles.sass'
 
 
 // This is used by the websitesite and for CMS previews
-export const AboutPageContent = ({title, subtitle, titleimage, content, contentComponent}) => {
+export const AboutPageContent = ({title, subtitle, image, content, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     return (
@@ -16,7 +16,7 @@ export const AboutPageContent = ({title, subtitle, titleimage, content, contentC
           <h1 className="title is-1">{title}</h1>
           <h2 className="subtitle">{subtitle}</h2>
           <figure>
-            <PreviewCompatibleImage imageInfo={titleimage} />
+            <PreviewCompatibleImage imageInfo={image} />
           </figure>
         </div>
       </section>
@@ -60,7 +60,7 @@ const AboutPage = ({data: {markdownRemark}}) => (
     <AboutPageContent
         title={markdownRemark.frontmatter.title}
         subtitle={markdownRemark.frontmatter.subtitle}
-        titleimage={markdownRemark.frontmatter.titleimage}
+        image={markdownRemark.frontmatter.image}
         content={markdownRemark.html}
     />
 )
@@ -73,7 +73,7 @@ query aboutPageTemplate($id: String!) {
       frontmatter {
         title
         subtitle
-        titleimage {
+        image {
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid
