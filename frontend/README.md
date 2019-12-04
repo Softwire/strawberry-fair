@@ -21,5 +21,26 @@ Gatsby will build and run the site in develop mode. When complete, the site will
 
 ## CMS
 
-NetlifyCMS is accessible at `<host>/admin`. User authentication is via Github. The CMS is only usable by users with write access to this repository.
+If you are running locally and you need to access the CMS, go into `static/admin/config.yml` and change
+
+```
+backend:
+  name: git-gateway
+  accept_roles:
+    - admin
+    - content
+```
+
+to
+
+```
+backend:
+  name: github
+  repo: Softwire/strawberry-fair
+  branch: [ YOUR BRANCH HERE ]
+```
+
+ensuring you include the name of the branch you're working on.
+
+**_Make sure you change it back before merging anything back into master._**
 
