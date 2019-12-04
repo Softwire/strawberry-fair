@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
 import NewsArticleSideInfo from '../components/NewsArticleSideInfo'
+import { Layout } from '../components/Layout'
 
 // This is used by the website and for CMS previews
 export const NewsArticleContent = ({title, author, content, image, date, tags, contentComponent}) => {
@@ -29,6 +30,7 @@ export const NewsArticleContent = ({title, author, content, image, date, tags, c
 )}
 
 const NewsArticle = ({data: {markdownRemark}}) => (
+  <Layout>
     <NewsArticleContent
         title={markdownRemark.frontmatter.title}
         author={markdownRemark.frontmatter.author}
@@ -37,6 +39,7 @@ const NewsArticle = ({data: {markdownRemark}}) => (
         date={markdownRemark.frontmatter.date}
         tags={markdownRemark.frontmatter.tags}
     />
+  </Layout>
 )
 
 export default NewsArticle

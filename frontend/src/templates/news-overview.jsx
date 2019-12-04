@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 
 import { HTMLContent } from '../components/Content'
 import NewsArticleSnapshots from '../components/NewsArticleSnapshots'
-
+import { Layout } from '../components/Layout'
 
 
 // This is used by the website and for CMS previews
@@ -22,14 +22,16 @@ export const NewsOverviewContent = ({title, subtitle, content, contentComponent,
     
 )}
 
-const NewsOverview = ({data: {markdownRemark, allMarkdownRemark}}) => {
-    return <NewsOverviewContent
+const NewsOverview = ({data: {markdownRemark, allMarkdownRemark}}) => (
+  <Layout>
+    <NewsOverviewContent
         title={markdownRemark.frontmatter.title}
         subtitle={markdownRemark.frontmatter.subtitle}
         content={markdownRemark.html}
         newsArticles={allMarkdownRemark.edges}
     />
-}
+  </Layout>
+)
 
 export default NewsOverview
 
