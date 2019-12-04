@@ -2,6 +2,10 @@
 templateKey: home-page
 title: Strawberry Fair
 image: /img/love-a-fair.jpg
+scrapbookImages:
+  - /img/love-a-fair.jpg
+  - /img/love-a-fair.jpg
+  - /img/love-a-fair.jpg
 ---
 ## Welcome to Cambridge Stewberry Fair!
 
