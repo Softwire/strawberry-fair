@@ -1,0 +1,6 @@
+---
+templateKey: form
+title: Registration Form
+googleForm: 'https://forms.gle/otRQE1sxEAcyj1FN8'
+---
+This is the registration form. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros justo, aliquam sed tempus et, condimentum vel libero. Cras nunc quam, tempus ut nisi in, cursus porta quam. Nullam dignissim arcu vel felis sollicitudin ornare. Duis eget mi quis diam auctor luctus. Fusce semper, risus semper dapibus feugiat, justo diam venenatis est, in dignissim odio nisl at tellus. Ut dignissim consequat libero, ac sodales dui vehicula sit amet. Etiam dictum sed ex sit amet malesuada. Maecenas auctor aliquam auctor. Aenean venenatis vitae velit sit amet iaculis. Nulla et egestas felis. Duis ut laoreet massa. Sed posuere mi at lacinia pulvinar. Nunc egestas libero vel urna commodo, a egestas augue placerat. Duis a arcu sit amet dui malesuada dapibus ut sed odio. Etiam urna nisi, rutrum sit amet molestie eu, pharetra at ante. Ut libero risus, rutrum non ornare eget, tempor sed felis.
