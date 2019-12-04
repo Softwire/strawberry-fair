@@ -37,3 +37,15 @@ collections:
       - {label: Image, name: image, widget: image}
       - {label: Body, name: body, widget: markdown}
       - {label: Date, name: date, widget: datetime, format: YYYY-MM-DD, dateFormat: YYYY-MM-DD, timeFormat: false}
+  - name: "events"
+    label: "Events"
+    folder: "frontend/src/pages/events/"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Will need to figure out the syntax to change this, because what if
+    fields:                                     # you have two events on the same day?
+      - {label: "Template Key", name: templateKey, widget: hidden, default: event-info}
+      - {label: Title, name: title, widget: string}
+      - {label: Image, name: image, widget: image}
+      - {label: Date, name: dateTime, widget: datetime}
+      - {label: Meeting, name: isMeeting, widget: boolean}
+      - {label: Body, name: body, widget: markdown}
