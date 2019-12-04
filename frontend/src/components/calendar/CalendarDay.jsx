@@ -4,8 +4,11 @@ import React from 'react'
 
 // Represents a day in the calendar. Will either be empty or contain a preview of an event.
 // Later will have to add support for multiple events.
-const CalendarDay = ({dayNumber, dateToday}) => {
-    const isTodayHighlight = dayNumber == new Date(dateToday).getDay()  // For now, by way of example, today is the 5th of every month
+const CalendarDay = ({dayNumber, focusDate}) => {
+    const isTodayHighlight =
+            (dayNumber == new Date().getDay()) &&
+            (new Date(focusDate).getMonth() == new Date().getMonth()) &&
+            (new Date(focusDate).getFullYear() == new Date().getFullYear())  // only highlight if this month is the current month, and the days match up
     const baseBoxClass = "box"
     const classAfterHighlight = baseBoxClass + (isTodayHighlight ? " has-background-primary has-text-white" : "")
     

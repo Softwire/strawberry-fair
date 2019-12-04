@@ -6,8 +6,13 @@ class Calendar extends React.Component {
     constructor(props) {
         super(props)
         this.props = props
-        this.state = {view: 'month', dateToday: props.dateToday}  // View is 'month' or 'year'
+        this.state = {view: 'month', focusDate: props.focusDate}  // View is 'month' or 'year'
         // TODO: Could always make this update state.dateToday every second to make sure it always displays the correct one
+
+        // Bind functions
+        this.monthForward = this.monthForward.bind(this)
+        this.monthBack = this.monthBack.bind(this)
+        this.monthChange = this.monthChange.bind(this)
     }
 
     toMonthView() {
@@ -18,12 +23,34 @@ class Calendar extends React.Component {
         this.setState({view: 'year'})
     }
 
+    monthForward() {
+        this.monthChange(1)
+    }
+
+    monthChange(n) {
+        // Get current month
+        let newDate = new Date(this.state.focusDate)
+        const month = newDate.getMonth()
+        newDate.setMonth(month + n)
+
+        // Set focus to new date
+        this.setState({focusDate: newDate.toISOString()})
+    }
+
+    monthBack() {
+        this.monthChange(-1)
+    }
+
     render() {
-        const days = [...Array(31).keys()].map(n => n + 1)
-        // Changing it to use Bulma
+        // Calculate the number of days in the given month (focusDate.getMonth())
+        const focusDate = new Date(this.state.focusDate)
+        const monthDate = new Date(focusDate.getFullYear(), focusDate.getMonth() + 1, 0)
+        const daysInFocusMonth = monthDate.getDate()
+
+        const days = [...Array(daysInFocusMonth).keys()].map(n => n + 1)
         // TODO: Figure out how to get this to work with screenreaders
         // What would the corect semantic component for this be?
-        // TODO: Get font-awesome icons actually working
+        // TODO: See https://codepen.io/wikiki/pen/KvqKzK for a way of making the "< December 2019 >" bit span across the whole calendar
         return (
             <div className="panel">
                 <p className="panel-heading">{this.props.title}</p>
@@ -34,17 +61,17 @@ class Calendar extends React.Component {
                 <div className="panel-block">
                     <div className="columns is-vcentered is-centered">
                         <div className="column is-narrow">
-                            <button className="button is-white">
+                            <button onClick={this.monthBack} className="button is-white">
                                 <span className="icon is-left has-text-dark">
                                     <FaChevronLeft />
                                 </span>
                             </button>
                         </div>
                         <div className="column">
-                            <p>{new Date(this.state.dateToday).toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</p>
+                            <p>{new Date(this.state.focusDate).toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</p>
                         </div>
                         <div className="column is-narrow">
-                            <button className="button is-white">
+                            <button onClick={this.monthForward} className="button is-white">
                                 <span className="icon is-right has-text-dark">
                                     <FaChevronRight />
                                 </span>
@@ -54,7 +81,7 @@ class Calendar extends React.Component {
                 </div>
                 <div className="panel-block">
                     <div className="columns is-multiline is-mobile">
-                        {days.map(dayNumber => <CalendarDay key={dayNumber} dayNumber={dayNumber} dateToday={this.state.dateToday} />)}
+                        {days.map(dayNumber => <CalendarDay key={dayNumber} dayNumber={dayNumber} focusDate={this.state.focusDate} />)}
                     </div>
                 </div>
             </div>
