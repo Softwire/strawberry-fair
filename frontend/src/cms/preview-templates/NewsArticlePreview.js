@@ -5,6 +5,7 @@ import { Content } from '../../components/Content'
 export default ({ entry, widgetFor, getAsset }) => (
   <NewsArticleContent
     title={entry.getIn(['data', 'title'])}
+    author={entry.getIn(['data', 'author'])}
     content={widgetFor('body')}
     image={getAsset(entry.getIn(['data', 'image']))}
     date={entry.getIn(['data', 'date'])}
