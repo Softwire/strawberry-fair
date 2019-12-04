@@ -51,7 +51,7 @@ export const Header = () => {
 }
 
 
-const logo = { alt: "Strawberry Fair Logo", image: "img/1-line-logo.png" }
+const logo = { alt: "Strawberry Fair Logo", image: "/img/1-line-logo.png" }
 
 
 const getName = (baseName, active) => `${baseName} ${active ? "is-active" : ""}`
