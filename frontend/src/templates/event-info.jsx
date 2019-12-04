@@ -41,7 +41,6 @@ query eventInfoTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
         frontmatter {
             title
-            dateTime
             image {
                 childImageSharp {
                     fluid {
@@ -49,6 +48,7 @@ query eventInfoTemplate($id: String!) {
                     }
                 }
             }
+            dateTime
             isMeeting
         }
         html

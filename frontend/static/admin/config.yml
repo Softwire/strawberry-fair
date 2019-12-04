@@ -46,6 +46,6 @@ collections:
       - {label: "Template Key", name: templateKey, widget: hidden, default: event-info}
       - {label: Title, name: title, widget: string}
       - {label: Image, name: image, widget: image}
-      - {label: Date, name: date, widget: datetime}
+      - {label: Date, name: dateTime, widget: datetime}
       - {label: Meeting, name: isMeeting, widget: boolean}
       - {label: Body, name: body, widget: markdown}
