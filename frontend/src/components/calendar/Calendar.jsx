@@ -1,4 +1,5 @@
 import React from 'react'
+import CalendarDay from './CalendarDay'
 
 class Calendar extends React.Component {
     constructor(props) {
@@ -36,6 +37,7 @@ class Calendar extends React.Component {
         }
         */
 
+        const days = [...Array(31).keys()].map(n => n + 1)
         // Changing it to use Bulma
         // TODO: Figure out how to get this to work with screenreaders
         // What would the corect semantic component for this be?
@@ -47,7 +49,9 @@ class Calendar extends React.Component {
                     <a href="/calendar">Year</a>
                 </p>
                 <div className="panel-block">
-                    <p>Actual calendar goes here.</p>
+                    <div className="columns is-multiline is-mobile">
+                        {days.map(dayNumber => <CalendarDay dayNumber={dayNumber} />)}
+                    </div>
                 </div>
             </div>
         )
