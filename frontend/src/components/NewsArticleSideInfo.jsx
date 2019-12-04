@@ -2,7 +2,7 @@ import React from 'react'
 
 const NewsArticleSideInfo = ({author, tags, date}) => {
   const formattedDate = new Date(date).toLocaleDateString('en-UK', {year: 'numeric', month: 'long', day: 'numeric'});
-  const formattedTags = tags.join(', ')
+  const formattedTags = tags && tags.join(', ')
 
   return (
     <div className="tile is-ancestor has-text-centered">
