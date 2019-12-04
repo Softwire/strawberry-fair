@@ -54,11 +54,11 @@ export const Header = () => {
 const logo = { alt: "Strawberry Fair Logo", image: "img/1-line-logo.png" }
 
 
-const getName = (baseName, active) => `${baseName} ${active ? "is-active" : ""}`
+const getClassName = (baseName, active) => `${baseName} ${active ? "is-active" : ""}`
 
 
 const NavMenu = ({children, active}) => (
-    <ul id="navigationBar" className={getName("navbar-menu", active)}>
+    <ul id="navigationBar" className={getClassName("navbar-menu", active)}>
         <div className="navbar-start">
             {children}
         </div>
@@ -67,7 +67,7 @@ const NavMenu = ({children, active}) => (
 
 
 const NavBurger = ({target, active, setState}) => (
-    <a className={getName("navbar-burger burger", active)} data-target={target} onClick={() => setState(!active)}>
+    <a className={getClassName("navbar-burger burger", active)} data-target={target} onClick={() => setState(!active)}>
         <span></span>
         <span></span>
         <span></span>
@@ -79,7 +79,7 @@ const NavDropdown = ({title, children}) => {
     const [active, setState] = useState(false)
 
     return (
-        <li className={getName("navbar-item has-dropdown", active)}>
+        <li className={getClassName("navbar-item has-dropdown", active)}>
             <button className="navbar-link" onClick={() => setState(!active)}>
                 {title}
             </button>
