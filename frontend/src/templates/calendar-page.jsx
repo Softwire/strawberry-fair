@@ -1,19 +1,21 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
+import { Layout } from '../components/Layout'
 import Calendar from '../components/calendar/Calendar'
 
-export const CalendarPageContent = ({title, events}) => (
+export const CalendarPageContent = ({title}) => (
     <section>
-        <h1>{title}</h1>
-        <Calendar />
+        <Calendar title={title}/>
     </section>
 )
 
 const CalendarPage = ({data: {markdownRemark}}) => (
-    <CalendarPageContent
-        title={markdownRemark.frontmatter.title}
-    />
+    <Layout>
+        <CalendarPageContent
+            title={markdownRemark.frontmatter.title}
+        />
+    </Layout>
 )
 
 export default CalendarPage
