@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import CalendarDay from './CalendarDay'
 
 class Calendar extends React.Component {
@@ -41,6 +42,7 @@ class Calendar extends React.Component {
         // Changing it to use Bulma
         // TODO: Figure out how to get this to work with screenreaders
         // What would the corect semantic component for this be?
+        // TODO: Get font-awesome icons actually working
         return (
             <div className="panel">
                 <p className="panel-heading">{this.props.title}</p>
@@ -49,11 +51,25 @@ class Calendar extends React.Component {
                     <a href="/calendar">Year</a>
                 </p>
                 <div className="panel-block">
-                    <button className="button">
-                        <span className="icon is-pulled-left has-text-light">
-                            <i className="fa fa-chevron-left"></i>
-                        </span>
-                    </button>
+                    <div className="columns is-vcentered is-centered">
+                        <div className="column is-narrow">
+                            <button className="button is-white">
+                                <span className="icon is-left has-text-dark">
+                                    <FaChevronLeft />
+                                </span>
+                            </button>
+                        </div>
+                        <div className="column">
+                            <p>December 2019</p>
+                        </div>
+                        <div className="column is-narrow">
+                            <button className="button is-white">
+                                <span className="icon is-right has-text-dark">
+                                    <FaChevronRight />
+                                </span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <div className="panel-block">
                     <div className="columns is-multiline is-mobile">
