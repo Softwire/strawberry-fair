@@ -4,8 +4,8 @@ import React from 'react'
 
 // Represents a day in the calendar. Will either be empty or contain a preview of an event.
 // Later will have to add support for multiple events.
-const CalendarDay = ({dayNumber}) => {
-    const isTodayHighlight = dayNumber == 5  // For now, by way of example, today is the 5th of every month
+const CalendarDay = ({dayNumber, dateToday}) => {
+    const isTodayHighlight = dayNumber == new Date(dateToday).getDay()  // For now, by way of example, today is the 5th of every month
     const baseBoxClass = "box"
     const classAfterHighlight = baseBoxClass + (isTodayHighlight ? " has-background-primary has-text-white" : "")
     

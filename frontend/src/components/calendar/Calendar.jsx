@@ -6,7 +6,8 @@ class Calendar extends React.Component {
     constructor(props) {
         super(props)
         this.props = props
-        this.state = {view: 'month'}  // View is 'month' or 'year'
+        this.state = {view: 'month', dateToday: props.dateToday}  // View is 'month' or 'year'
+        // TODO: Could always make this update state.dateToday every second to make sure it always displays the correct one
     }
 
     toMonthView() {
@@ -18,26 +19,6 @@ class Calendar extends React.Component {
     }
 
     render() {
-        /*
-        const days = [1, 2, 3, 4];
-
-        if (this.state.view == 'month') {
-            return (
-                <div>
-                    <button onClick={this.toMonthView}>Month view</button>
-                    <button onClick={this.toYearView}>Year view</button>
-                    <div>
-                        {days.map(n => <CalendarDay dayNumber={n} />)}
-                    </div>
-                </div>
-            );
-        } else if (this.state.view == 'year') {
-            return (
-                <p>Year view</p>
-            );
-        }
-        */
-
         const days = [...Array(31).keys()].map(n => n + 1)
         // Changing it to use Bulma
         // TODO: Figure out how to get this to work with screenreaders
@@ -60,7 +41,7 @@ class Calendar extends React.Component {
                             </button>
                         </div>
                         <div className="column">
-                            <p>December 2019</p>
+                            <p>{new Date(this.state.dateToday).toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</p>
                         </div>
                         <div className="column is-narrow">
                             <button className="button is-white">
@@ -73,7 +54,7 @@ class Calendar extends React.Component {
                 </div>
                 <div className="panel-block">
                     <div className="columns is-multiline is-mobile">
-                        {days.map(dayNumber => <CalendarDay dayNumber={dayNumber} />)}
+                        {days.map(dayNumber => <CalendarDay key={dayNumber} dayNumber={dayNumber} dateToday={this.state.dateToday} />)}
                     </div>
                 </div>
             </div>

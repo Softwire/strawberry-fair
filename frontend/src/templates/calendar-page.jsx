@@ -4,10 +4,10 @@ import { graphql } from 'gatsby'
 import { Layout } from '../components/Layout'
 import Calendar from '../components/calendar/Calendar'
 
-export const CalendarPageContent = ({title}) => {
+export const CalendarPageContent = ({title, dateToday}) => {
     return (
     <section>
-        <Calendar title={title}/>
+        <Calendar title={title} dateToday={dateToday} />
     </section>
 )}
 
@@ -16,6 +16,7 @@ const CalendarPage = ({data: {markdownRemark}}) => {
     <Layout>
         <CalendarPageContent
             title={markdownRemark.frontmatter.title}
+            dateToday={new Date()}
         />
     </Layout>
 )}
