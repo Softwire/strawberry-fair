@@ -2,8 +2,6 @@ import React from 'react'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 
-// TURN INTO TILES
-
 export const Footer = () => (
     <footer className="footer">
         <div className="tile is-ancestor">
