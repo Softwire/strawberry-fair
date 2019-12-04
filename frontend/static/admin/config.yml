@@ -1,8 +1,7 @@
 backend:
-  name: git-gateway
-  accept_roles:
-    - admin
-    - content
+  name: github
+  repo: Softwire/strawberry-fair
+  branch: sf-18
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -59,3 +58,12 @@ collections:
       - {label: Date, name: dateTime, widget: datetime}
       - {label: Meeting, name: isMeeting, widget: boolean}
       - {label: Body, name: body, widget: markdown}
+  - name: "forms"
+    label: "Forms"
+    folder: "frontend/src/pages/forms/"
+    create: true
+    fields:                                    
+      - {label: "Template Key", name: templateKey, widget: hidden, default: form}
+      - {label: Title, name: title, widget: string}
+      - {label: Form, name: googleForm, widget: string}
+
