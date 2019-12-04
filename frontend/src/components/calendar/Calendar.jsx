@@ -1,6 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import CalendarDay from './CalendarDay'
 
 class Calendar extends React.Component {
     constructor(props) {
@@ -10,12 +8,10 @@ class Calendar extends React.Component {
     }
 
     toMonthView() {
-        console.log('To month view')
         this.setState({view: 'month'})
     }
 
     toYearView() {
-        console.log('To year view')
         this.setState({view: 'year'})
     }
 
@@ -47,8 +43,8 @@ class Calendar extends React.Component {
             <div className="panel">
                 <p className="panel-heading">{this.props.title}</p>
                 <p className="panel-tabs">
-                    <a className="is-active">Month</a>
-                    <a>Year</a>
+                    <a href="/calendar" className="is-active">Month</a>
+                    <a href="/calendar">Year</a>
                 </p>
                 <div className="panel-block">
                     <p>Actual calendar goes here.</p>
