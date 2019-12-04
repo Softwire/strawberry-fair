@@ -1,7 +1,8 @@
 backend:
-  name: github
-  repo: Softwire/strawberry-fair
-  branch: sf-11
+  name: git-gateway
+  accept_roles:
+    - admin
+    - content
 
 media_folder: static/img
 public_folder: /img
