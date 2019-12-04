@@ -82,13 +82,17 @@ const NavDropdown = ({title, children}) => {
     return (
             <li className={getClassName("navbar-item has-dropdown", active)}>
                 <OutsideClickHandler onOutsideClick={() => setState(false)}>
-                    <button className="navbar-link" onClick={() => setState(!active)}>
-                        {title}
-                    </button>
+                    <div className="dropdown">
+                        <div className="dropdown-trigger">
+                            <button className="button" onClick={() => setState(!active)}>
+                                {title}
+                            </button>
+                        </div>
+                        <ul className="navbar-dropdown dropdown-menu">
+                            {children}
+                        </ul>
+                    </div>
                 </OutsideClickHandler>
-                <ul className="navbar-dropdown">
-                    {children}
-                </ul>
             </li>
     )
 }
@@ -96,7 +100,7 @@ const NavDropdown = ({title, children}) => {
 
 const NavLink = ({href, title}) => (
     <li className="navbar-item">
-        <a href={href}>
+        <a href={href} className="dropdown-item">
             {title}
         </a>
     </li>
