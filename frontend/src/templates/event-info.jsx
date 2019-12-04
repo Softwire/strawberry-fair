@@ -8,12 +8,9 @@ import { HTMLContent } from '../components/Content'
 // used by website and CMS previews
 export const EventInfoContent = ({title, dateTime, image, content, isMeeting, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
-    console.log({title, dateTime, image, content, isMeeting, contentComponent})
 
     const date = new Date(dateTime)
-    console.log(`isMeeting = ${isMeeting}`)
     const isMeetingBool = Boolean(isMeeting)
-    console.log(`isMetingBool = ${isMeetingBool}, type = ${typeof isMeetingBool}`)
 
     return (
     <section>
