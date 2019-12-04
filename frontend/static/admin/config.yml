@@ -1,7 +1,13 @@
 backend:
   name: github
   repo: Softwire/strawberry-fair
-  branch: master
+  branch: SF-21
+  commit_messages:
+    create: Netlify CMS - Create {{collection}} “{{slug}}”
+    update: Netlify CMS - Update {{collection}} “{{slug}}”
+    delete: Netlify CMS - Delete {{collection}} “{{slug}}”
+    uploadMedia: Netlify CMS - Upload “{{path}}”
+    deleteMedia: Netlify CMS - Delete “{{path}}”
 
 media_folder: static/img
 public_folder: /img
