@@ -49,6 +49,13 @@ class Calendar extends React.Component {
                     <a href="/calendar">Year</a>
                 </p>
                 <div className="panel-block">
+                    <button className="button">
+                        <span className="icon is-pulled-left has-text-light">
+                            <i className="fa fa-chevron-left"></i>
+                        </span>
+                    </button>
+                </div>
+                <div className="panel-block">
                     <div className="columns is-multiline is-mobile">
                         {days.map(dayNumber => <CalendarDay dayNumber={dayNumber} />)}
                     </div>
