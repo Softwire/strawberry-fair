@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: Softwire/strawberry-fair
-  branch: SF-19
+  branch: master
 
 media_folder: static/img
 public_folder: /img
