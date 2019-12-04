@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
+import OutsideClickHandler from 'react-outside-click-handler'
 
 
 export const Header = () => {
@@ -79,14 +80,16 @@ const NavDropdown = ({title, children}) => {
     const [active, setState] = useState(false)
 
     return (
-        <li className={getClassName("navbar-item has-dropdown", active)}>
-            <button className="navbar-link" onClick={() => setState(!active)}>
-                {title}
-            </button>
-            <ul className="navbar-dropdown">
-                {children}
-            </ul>
-        </li>
+            <li className={getClassName("navbar-item has-dropdown", active)}>
+                <OutsideClickHandler onOutsideClick={() => setState(false)}>
+                    <button className="navbar-link" onClick={() => setState(!active)}>
+                        {title}
+                    </button>
+                </OutsideClickHandler>
+                <ul className="navbar-dropdown">
+                    {children}
+                </ul>
+            </li>
     )
 }
 
