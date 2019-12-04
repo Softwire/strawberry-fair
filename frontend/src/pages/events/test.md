@@ -2,7 +2,7 @@
 templateKey: event-info
 title: 'Parade'
 image: /img/love-a-fair.jpg
-dateTime: 2019-11-30 11:30:00
+dateTime: 2019-11-30, 11:30
 isMeeting: false
 ---
 ## Join the Parade!

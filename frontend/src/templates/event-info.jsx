@@ -6,7 +6,7 @@ import { HTMLContent } from '../components/Content'
 
 
 // used by website and CMS previews
-export const EventInfoContent = ({title, dateTime, image, body, contentComponent}) => {
+export const EventInfoContent = ({title, dateTime, image, content, isMeeting, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     const date = new Date(dateTime)
@@ -14,8 +14,9 @@ export const EventInfoContent = ({title, dateTime, image, body, contentComponent
     return (
     <section>
         <h1>{title}</h1>
+        <h2>{isMeeting ? "Meeting" : "Not a meeting"}</h2>
         <p>{date.toLocaleString('en-GB', {timeStyle: 'short'})}</p>
-        <BodyComponent content={body} />
+        <BodyComponent content={content} />
         <PreviewCompatibleImage imageInfo={image} />
     </section>
 )}
