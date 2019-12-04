@@ -4,17 +4,20 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
 import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
+import ImageScrapbookRow from '../components/ImageScrapbookRow'
 
-
-export const HomePage = ({title, content, image, contentComponent}) => {
+// This is used by the website and for CMS previews
+export const HomePage = ({title, content, image, scrapbookImages, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
     return (
         <Layout>
-            <section>
-                <h1>{title}</h1>
-                <BodyComponent content={content} />
-                <PreviewCompatibleImage imageInfo={image} />
-            </section>
+          <section>
+            <h1 className="title">{title}</h1>
+            <PreviewCompatibleImage imageInfo={image} />
+            <BodyComponent content={content} />
+            <ImageScrapbookRow scrapbookImages={scrapbookImages}/>
+            <ImageScrapbookRow scrapbookImages={scrapbookImages}/>
+          </section>
         </Layout>
   )
 }
@@ -27,6 +30,13 @@ query homePageTemplate($id: String!) {
       frontmatter {
         title
         image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        scrapbookImages {
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid

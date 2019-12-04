@@ -1,8 +1,17 @@
 ---
 templateKey: home-page
-title: Strawberry Fair
+title: By the people of Cambridge. For the people of Cambridge.
 image: /img/love-a-fair.jpg
 scrapbookImages:
+  - /img/test-banner.jpg
+  - /img/love-a-fair.jpg
+  - /img/test-banner.jpg
+  - /img/test-pic.png
+  - /img/strawberry.jpg
+  - /img/love-a-fair.jpg
+  - /img/love-a-fair.jpg
+  - /img/love-a-fair.jpg
+  - /img/love-a-fair.jpg
   - /img/love-a-fair.jpg
   - /img/love-a-fair.jpg
   - /img/love-a-fair.jpg
