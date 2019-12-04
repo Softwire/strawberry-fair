@@ -54,39 +54,33 @@ export const Header = () => {
 const logo = { alt: "Strawberry Fair Logo", image: "img/1-line-logo.png" }
 
 
-const NavMenu = ({children, active}) => {
-    const getName = () => `navbar-menu ${active ? "is-active" : ""}`
-    
-    return (
-        <ul id="navigationBar" className={getName()}>
-            <div className="navbar-start">
-                {children}
-            </div>
-        </ul>
-    )
-}
+const getName = (baseName, active) => `${baseName} ${active ? "is-active" : ""}`
 
 
-const NavBurger = ({target, active, setState}) => {
-    const getName = () => `navbar-burger burger ${active ? "is-active" : ""}`
+const NavMenu = ({children, active}) => (
+    <ul id="navigationBar" className={getName("navbar-menu", active)}>
+        <div className="navbar-start">
+            {children}
+        </div>
+    </ul>
+)
 
-    return (
-        <a className={getName()} data-target={target} onClick={() => setState(!active)}>
-            <span></span>
-            <span></span>
-            <span></span>
-        </a>
-    )
-}
+
+const NavBurger = ({target, active, setState}) => (
+    <a className={getName("navbar-burger burger", active)} data-target={target} onClick={() => setState(!active)}>
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+)
 
 
 const NavDropdown = ({title, children}) => {
-    const [dropActive, setDropState] = useState(false)
-    const getName = () => `navbar-item has-dropdown ${dropActive ? "is-active" : ""}`
-    
+    const [active, setState] = useState(false)
+
     return (
-        <li className={getName()}>
-            <button className="navbar-link" onClick={() => setDropState(!dropActive)}>
+        <li className={getName("navbar-item has-dropdown", active)}>
+            <button className="navbar-link" onClick={() => setState(!active)}>
                 {title}
             </button>
             <ul className="navbar-dropdown">
