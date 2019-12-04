@@ -5,8 +5,6 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
 import { Layout } from '../components/Layout'
 
-import '../styling/styles.sass'
-
 
 // This is used by the website and for CMS previews
 export const HomePageContent = ({title, content, image, contentComponent}) => {
