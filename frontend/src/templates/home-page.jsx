@@ -3,8 +3,7 @@ import { graphql } from 'gatsby'
 
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
-
-import '../styling/styles.sass'
+import { Layout } from '../components/Layout'
 
 
 // This is used by the website and for CMS previews
@@ -20,11 +19,13 @@ export const HomePageContent = ({title, content, image, contentComponent}) => {
 )}
 
 const HomePage = ({data: {markdownRemark}}) => (
+  <Layout>
     <HomePageContent
         title={markdownRemark.frontmatter.title}
         content={markdownRemark.html}
         image={markdownRemark.frontmatter.image}
     />
+  </Layout>
 )
 
 export default HomePage
