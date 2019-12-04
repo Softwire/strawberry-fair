@@ -65,5 +65,6 @@ collections:
     fields:                                    
       - {label: "Template Key", name: templateKey, widget: hidden, default: form}
       - {label: Title, name: title, widget: string}
+      - {label: Body, name: body, widget: markdown}
       - {label: Form, name: googleForm, widget: string}
 
