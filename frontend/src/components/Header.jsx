@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
+import OutsideClickHandler from 'react-outside-click-handler'
 
 
 export const Header = () => {
@@ -54,11 +55,11 @@ export const Header = () => {
 const logo = { alt: "Strawberry Fair Logo", image: "/img/1-line-logo.png" }
 
 
-const getName = (baseName, active) => `${baseName} ${active ? "is-active" : ""}`
+const getClassName = (baseName, toggleName, active) => `${baseName} ${active ? toggleName : ""}`
 
 
 const NavMenu = ({children, active}) => (
-    <ul id="navigationBar" className={getName("navbar-menu", active)}>
+    <ul id="navigationBar" className={getClassName("navbar-menu", "is-active", active)}>
         <div className="navbar-start">
             {children}
         </div>
@@ -67,7 +68,7 @@ const NavMenu = ({children, active}) => (
 
 
 const NavBurger = ({target, active, setState}) => (
-    <a className={getName("navbar-burger burger", active)} data-target={target} onClick={() => setState(!active)}>
+    <a className={getClassName("navbar-burger burger","is-active", active)} data-target={target} onClick={() => setState(!active)}>
         <span></span>
         <span></span>
         <span></span>
@@ -79,13 +80,19 @@ const NavDropdown = ({title, children}) => {
     const [active, setState] = useState(false)
 
     return (
-        <li className={getName("navbar-item has-dropdown", active)}>
-            <button className="navbar-link" onClick={() => setState(!active)}>
-                {title}
-            </button>
-            <ul className="navbar-dropdown">
-                {children}
-            </ul>
+        <li className={getClassName("navbar-item has-dropdown", "is-active", active)}>
+            <div className="dropdown">
+                <div className="dropdown-trigger">
+                    <OutsideClickHandler onOutsideClick={() => setState(false)}>
+                        <button className="button" onClick={() => setState(!active)}>
+                            {title}
+                        </button>
+                    </OutsideClickHandler>
+                </div>
+                <ul className={getClassName("navbar-dropdown", "is-hidden-touch", !active)}>
+                    {children}
+                </ul>
+            </div>
         </li>
     )
 }
@@ -93,7 +100,7 @@ const NavDropdown = ({title, children}) => {
 
 const NavLink = ({href, title}) => (
     <li className="navbar-item">
-        <a href={href}>
+        <a href={href} className="dropdown-item">
             {title}
         </a>
     </li>
