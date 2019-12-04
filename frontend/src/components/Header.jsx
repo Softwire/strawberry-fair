@@ -96,6 +96,3 @@ const NavLink = ({href, title}) => (
         </a>
     </li>
 )
-
-
-const mapping = (child) => (<li className="navbar-item" key={child.title}>{child}</li>)
