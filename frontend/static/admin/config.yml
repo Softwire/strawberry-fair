@@ -38,3 +38,4 @@ collections:
       - {label: Image, name: image, widget: image}
       - {label: Body, name: body, widget: markdown}
       - {label: Date, name: date, widget: datetime, format: YYYY-MM-DD, dateFormat: YYYY-MM-DD, timeFormat: false}
+      - {label: Tags, name: tags, widget: string, default: "news"}
