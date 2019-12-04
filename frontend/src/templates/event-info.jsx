@@ -10,11 +10,14 @@ export const EventInfoContent = ({title, dateTime, image, content, isMeeting, co
     const BodyComponent = contentComponent || HTMLContent
 
     const date = new Date(dateTime)
+    console.log(`isMeeting = ${isMeeting}`)
+    const isMeetingBool = Boolean(isMeeting)
+    console.log(`isMetingBool = ${isMeetingBool}, type = ${typeof isMeetingBool}`)
 
     return (
     <section>
         <h1>{title}</h1>
-        <h2>{isMeeting ? "Meeting" : "Not a meeting"}</h2>
+        <h2>{isMeetingBool ? "Meeting" : "Not a meeting"}</h2>
         <p>{date.toLocaleString('en-GB', {timeStyle: 'short'})}</p>
         <BodyComponent content={content} />
         <PreviewCompatibleImage imageInfo={image} />
