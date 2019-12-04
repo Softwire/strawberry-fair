@@ -15,6 +15,7 @@ scrapbookImages:
   - /img/love-a-fair.jpg
   - /img/love-a-fair.jpg
   - /img/love-a-fair.jpg
+body2: asdasdasd
 ---
 ## Welcome to Cambridge Stewberry Fair!
 
