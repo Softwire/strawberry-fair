@@ -2,6 +2,7 @@ import React from 'react'
 
 const NewsArticleSideInfo = ({author, tags, date}) => {
   const formattedDate = new Date(date).toLocaleDateString('en-UK', {year: 'numeric', month: 'long', day: 'numeric'});
+  const formattedTags = tags.join(', ')
 
   return (
     <div className="tile is-ancestor has-text-centered">
@@ -11,7 +12,7 @@ const NewsArticleSideInfo = ({author, tags, date}) => {
           <h6 className="is-capitalized">volunteer</h6>
         </div>
         <div className="tile is-child box">
-          <div className="has-text-primary is-capitalized">{tags}</div>
+          <div className="has-text-primary is-capitalized">{formattedTags}</div>
           <div>{formattedDate}</div>
           <p></p>
         </div>

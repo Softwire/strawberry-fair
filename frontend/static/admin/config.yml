@@ -38,7 +38,7 @@ collections:
       - {label: Image, name: image, widget: image}
       - {label: Body, name: body, widget: markdown}
       - {label: Date, name: date, widget: datetime, format: YYYY-MM-DD, dateFormat: YYYY-MM-DD, timeFormat: false}
-      - {label: Tags, name: tags, widget: string, default: "news"}
+      - {label: Tags, name: tags, widget: list, default: ["news"]}
   - name: "events"
     label: "Events"
     folder: "frontend/src/pages/events/"

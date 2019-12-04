@@ -14,7 +14,7 @@ export const NewsArticleContent = ({title, author, content, image, date, tags, c
       <section className="section">
         <h1 className="title has-text-primary is-size-1">{title}</h1>
         <figure className="image">
-          <PreviewCompatibleImage imageInfo={image}/>
+          {image && <PreviewCompatibleImage imageInfo={image}/>} 
         </figure>
         <br/>
         <div className="columns">

@@ -19,7 +19,6 @@ export const NewsOverviewContent = ({title, subtitle, content, contentComponent,
           <NewsArticleSnapshots newsArticles={newsArticles}/>
         </div>
       </section>
-    
 )}
 
 const NewsOverview = ({data: {markdownRemark, allMarkdownRemark}}) => (
