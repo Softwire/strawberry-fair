@@ -22,27 +22,27 @@ export const AboutPageContent = ({title, subtitle, image, content, contentCompon
       </section>
       <section className="section">
         <div className="container">
-          <div className="columns is-8">
+          <div className="columns reverse-columns">
             <div className="column is-one-quarter">
               <div className="tile is-ancestor">
                 <div className="tile is-parent is-vertical">
-                  <div className="tile is-child has-background-primary has-text-white box">
+                  <div className="tile is-child has-background-primary box">
                     <figure className="image is-64x64">
-                      <img  src="/img/strawberry-icon.png" alt={''}  />
+                      <img  src="/img/strawberry-icon.png" alt={'A strawberry'}  />
                     </figure>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    <p className="has-text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
                   </div>
-                  <div className="tile is-child has-background-primary has-text-white box">
+                  <div className="tile is-child has-background-primary box">
                     <figure className="image is-64x64">
-                      <img  src="/img/strawberry-icon.png" alt={''}  />
+                      <img  src="/img/strawberry-icon.png" alt={'A strawberry'}  />
                     </figure>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+                    <p className="has-text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
                   </div>
-                  <div className="tile is-child has-background-primary has-text-white box">
+                  <div className="tile is-child has-background-primary box">
                     <figure className="image is-64x64">
-                      <img  src="/img/strawberry-icon.png" alt={''}  />
+                      <img  src="/img/strawberry-icon.png" alt={'A strawberryS'}  />
                     </figure>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    <p className="has-text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
                   </div>
                 </div>
               </div>
@@ -55,6 +55,7 @@ export const AboutPageContent = ({title, subtitle, image, content, contentCompon
       </section>
     </body>
 )}
+
 
 const AboutPage = ({data: {markdownRemark}}) => (
     <AboutPageContent

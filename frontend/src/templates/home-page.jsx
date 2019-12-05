@@ -25,7 +25,7 @@ const HomePage = ({data: {markdownRemark}}) => (
 
 export default HomePage
 
-export const query2 = graphql`
+export const query = graphql`
 query homePageTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
