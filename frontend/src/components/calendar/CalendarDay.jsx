@@ -1,8 +1,6 @@
 import React from 'react'
 import BackgroundImage from 'gatsby-background-image'
 
-import PreviewCompatibleImage from '../PreviewCompatibleImage'
-
 // Represents a day in the calendar. Will either be empty or contain a preview of an event.
 // Later will have to add support for multiple events.
 const CalendarDay = ({dateTime, events}) => {
