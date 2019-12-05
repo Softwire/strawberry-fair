@@ -10,10 +10,10 @@ export const CalendarPageContent = ({title, focusDate, events}) => {
     <section>
       <div className="tabs is-centered">
         <ul>
-          <li className="is-active"><a href="#">
+          <li className="is-active"><a href="/calendar">
             <span className="icon is-small"><FaCalendar /></span>Calendar
           </a></li>
-          <li><a href="#">
+          <li><a href="/calendar">
             <span className="icon is-small"><FaListUl /></span>Upcoming events
           </a></li>
         </ul>
