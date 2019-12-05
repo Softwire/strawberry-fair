@@ -1,5 +1,7 @@
 import React from 'react'
 
+import BackgroundImage from 'gatsby-background-image'
+
 // TODO: Filter meetings/non-meetings
 const Upcoming = ({events}) => {
     const maxItems = 10
@@ -22,7 +24,24 @@ const Upcoming = ({events}) => {
 
 const EventPanelBlock = ({event}) => {
     return (
-        <p className="panel-block">{event.frontmatter.title}</p>
+        <div className="panel-block">
+            <div className="media">
+                <div className="media-left">
+                    <BackgroundImage
+                            fluid={event.frontmatter.image.childImageSharp.fluid}
+                        >
+                        <p class="image is-64x64" />
+                    </BackgroundImage>
+                </div>
+                <div className="media-content">
+                    <p>
+                        <strong>{event.frontmatter.title}</strong> - {new Date(event.frontmatter.dateTime).toLocaleDateString('en-GB')}
+                        <br />
+                        {event.html}
+                    </p>
+                </div>
+            </div>
+        </div>
     )
 }
 

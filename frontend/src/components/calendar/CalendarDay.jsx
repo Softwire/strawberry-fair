@@ -32,7 +32,7 @@ const CalendarDay = ({dateTime, events}) => {
                         Tag='div'
                         className='box has-text-white'
                         fluid={event.frontmatter.image.childImageSharp.fluid}
-                        imgStyle={backgroundImageStyle}
+                        style={backgroundImageStyle}
                     >
                     <p>{date.getDate()}</p>
                     <p>{event ? event.frontmatter.title : ""}</p>
