@@ -14,24 +14,6 @@ class Calendar extends React.Component {
         this.monthForward = this.monthForward.bind(this)
         this.monthBack = this.monthBack.bind(this)
         this.monthChange = this.monthChange.bind(this)
-        this.eventOnDay = this.eventOnDay.bind(this)
-    }
-
-    eventOnDay(dayNumber) {
-        // Returns the event on the given day. Returns null if there isn't one.
-        // TODO: Multiple events on one day
-
-        // Check if any events match the given day
-        for (let i = 0; i < this.props.events.length; i++) {
-            const event = this.props.events[i].node
-            if (new Date(event.frontmatter.dateTime).getDate() === dayNumber) {
-                console.log('Equal')
-                return event
-            }
-        }
-
-        // If we get to this point, no event matches
-        return null
     }
 
     toMonthView() {
@@ -102,9 +84,8 @@ class Calendar extends React.Component {
                     <div className="columns is-multiline is-mobile">
                         {days.map(dayNumber => <CalendarDay
                             key={dayNumber}
-                            dayNumber={dayNumber}
-                            focusDate={this.state.focusDate}
-                            event={this.eventOnDay(dayNumber)}
+                            dateTime={new Date(focusDate.getFullYear(), focusDate.getMonth(), dayNumber)}
+                            events={this.props.events}
                         />)}
                     </div>
                 </div>
