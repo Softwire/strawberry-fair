@@ -9,7 +9,7 @@ backend:
     uploadMedia: Netlify CMS - Upload “{{path}}”
     deleteMedia: Netlify CMS - Delete “{{path}}”
 
-media_folder: static/img
+media_folder: ../img
 public_folder: /img
 
 collections:
