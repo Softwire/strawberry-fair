@@ -1,12 +1,11 @@
 import CMS from 'netlify-cms-app'
 
-import EventInfoPreview from './preview-templates/EventInfoPreview'
-
 import '../styling/styles.sass'
 import { HomePage } from '../templates/home-page'
 import { NewsOverview } from '../templates/news-overview'
 import { preview } from '../util/templating'
 import { NewsArticle } from '../templates/news-article'
+import { EventInfo } from '../templates/event-info'
 
 const placeholderArticle = {
     node: {
@@ -25,6 +24,6 @@ const placeholderArticle = {
 const placeholderArticles = new Array(3).fill(placeholderArticle)
 
 CMS.registerPreviewTemplate('home', preview(HomePage))
-CMS.registerPreviewTemplate('events', EventInfoPreview)
+CMS.registerPreviewTemplate('events', preview(EventInfo))
 CMS.registerPreviewTemplate('news', preview(NewsArticle))
 CMS.registerPreviewTemplate('news-home', preview(NewsOverview, {newsArticles: placeholderArticles}))
