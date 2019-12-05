@@ -18,15 +18,41 @@ export const HomePageContent = ({title, content, image, contentComponent}) => {
     </section>
 )}
 
-const HomePage = ({data: {markdownRemark}}) => (
-  <Layout hero={markdownRemark.frontmatter.hero}>
-    <HomePageContent
-        title={markdownRemark.frontmatter.title}
-        content={markdownRemark.html}
-        image={markdownRemark.frontmatter.image}
-    />
-  </Layout>
-)
+const HomePage = ({data: {markdownRemark}}) => {
+
+  const hero = ({
+    image1: {
+      alt: markdownRemark.frontmatter.hero.image1.alt,
+      src: markdownRemark.frontmatter.hero.image1.src
+    },
+    image2: {
+      alt: markdownRemark.frontmatter.hero.image2.alt,
+      src: markdownRemark.frontmatter.hero.image2.src
+    },
+    image3: {
+      alt: markdownRemark.frontmatter.hero.image3.alt,
+      src: markdownRemark.frontmatter.hero.image3.src
+    },
+    image4: {
+      alt: markdownRemark.frontmatter.hero.image4.alt,
+      src: markdownRemark.frontmatter.hero.image4.src
+    },
+    image5: {
+      alt: markdownRemark.frontmatter.hero.image5.alt,
+      src: markdownRemark.frontmatter.hero.image5.src
+    }
+  })
+  
+  return (
+    <Layout hero={hero}>
+      <HomePageContent
+          title={markdownRemark.frontmatter.title}
+          content={markdownRemark.html}
+          image={markdownRemark.frontmatter.image}
+      />
+    </Layout>
+  )
+}
 
 export default HomePage
 
@@ -35,10 +61,55 @@ query homePageTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
+        hero {
+          image1 {
+            alt
+            src {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          image2 {
+            alt
+            src {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          image3 {
+            alt
+            src {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          image4 {
+            alt
+            src {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          image5 {
+            alt
+            src {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
           }
         }
@@ -47,3 +118,4 @@ query homePageTemplate($id: String!) {
     }
   }
 `
+

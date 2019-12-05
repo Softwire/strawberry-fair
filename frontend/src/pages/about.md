@@ -1,7 +1,22 @@
 ---
 templateKey: 'home-page'
 title: Strawberry Fair
-image: /img/strawberry.jpg
+hero:
+  image1:
+    alt: Test1
+    src: /img/love-a-fair.jpg
+  image2:
+    alt: Test2
+    src: /img/love-a-fair.jpg
+  image3:
+    alt: Test3
+    src: /img/love-a-fair.jpg
+  image4:
+    alt: Test4
+    src: /img/love-a-fair.jpg
+  image5:
+    alt: Test5
+    src: /img/love-a-fair.jpg
 ---
 ## Welcome to Cambridge Strawberry Fair!
 
