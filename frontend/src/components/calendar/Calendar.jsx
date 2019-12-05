@@ -8,11 +8,30 @@ class Calendar extends React.Component {
         this.props = props
         this.state = {view: 'month', focusDate: props.focusDate}  // View is 'month' or 'year'
         // TODO: Could always make this update state.dateToday every second to make sure it always displays the correct one
+        // Although, actually, wouldn't that be an update within CalendarDay rather than here?
 
         // Bind functions
         this.monthForward = this.monthForward.bind(this)
         this.monthBack = this.monthBack.bind(this)
         this.monthChange = this.monthChange.bind(this)
+        this.eventOnDay = this.eventOnDay.bind(this)
+    }
+
+    eventOnDay(dayNumber) {
+        // Returns the event on the given day. Returns null if there isn't one.
+        // TODO: Multiple events on one day
+
+        // Check if any events match the given day
+        for (let i = 0; i < this.props.events.length; i++) {
+            const event = this.props.events[i].node
+            if (new Date(event.frontmatter.dateTime).getDate() === dayNumber) {
+                console.log('Equal')
+                return event
+            }
+        }
+
+        // If we get to this point, no event matches
+        return null
     }
 
     toMonthView() {
@@ -81,7 +100,12 @@ class Calendar extends React.Component {
                 </div>
                 <div className="panel-block">
                     <div className="columns is-multiline is-mobile">
-                        {days.map(dayNumber => <CalendarDay key={dayNumber} dayNumber={dayNumber} focusDate={this.state.focusDate} />)}
+                        {days.map(dayNumber => <CalendarDay
+                            key={dayNumber}
+                            dayNumber={dayNumber}
+                            focusDate={this.state.focusDate}
+                            event={this.eventOnDay(dayNumber)}
+                        />)}
                     </div>
                 </div>
             </div>

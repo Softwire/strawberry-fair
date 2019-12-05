@@ -1,10 +1,10 @@
 import React from 'react'
-//import { Link } from 'gatsby'
-//import PreviewCompatibleImage from '../PreviewCompatibleImage'
+import PreviewCompatibleImage from '../PreviewCompatibleImage'
 
 // Represents a day in the calendar. Will either be empty or contain a preview of an event.
 // Later will have to add support for multiple events.
-const CalendarDay = ({dayNumber, focusDate}) => {
+const CalendarDay = ({dayNumber, focusDate, event}) => {
+    // TODO: Change the method of indicating it's "today", so as still to be visible when there's an event today
     const isTodayHighlight =
             (dayNumber === new Date().getDay()) &&
             (new Date(focusDate).getMonth() === new Date().getMonth()) &&
@@ -16,6 +16,7 @@ const CalendarDay = ({dayNumber, focusDate}) => {
     <div className="column is-half-mobile is-one-quarter-tablet is-2-desktop">
         <div className={classAfterHighlight} style={{height: "100px"}}>
             <p>{dayNumber}</p>
+            <p>{event ? event.frontmatter.title : ""}</p>
         </div>
     </div>
 )}
