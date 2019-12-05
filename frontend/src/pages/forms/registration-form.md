@@ -1,7 +1,7 @@
 ---
 templateKey: form
 title: Registration Form
-googleForm: 'https://forms.gle/otRQE1sxEAcyj1FN8'
+googleForm: https://docs.google.com/forms/d/e/1FAIpQLSdnbGnGcafdKpNXKZ83mcDnF8lMJ-awaM0-j-135d1RFEC_jQ/viewform?usp=sf_link
 ---
 This is the registration form. 
 

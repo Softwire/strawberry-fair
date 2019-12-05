@@ -8,17 +8,20 @@ import { Layout } from '../components/Layout'
 // This is used by the website and for CMS previews
 export const FormPageContent = ({title, googleForm, content, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
-
+    let formUrl = googleForm.split(" ");
+    if (formUrl.length == 1) formUrl = formUrl[0] //if the form is given as an Url simply pass it to the iframe
+    else formUrl = formUrl[1].substring(5,formUrl[1].length-1) //if the form is given as an HTML element, it extracts the URL from it
+    
     return (
-    <section class="section">
+    <section className="section">
         <div className = "content">
-            <div class="columns is-centered">
+            <div className="columns is-centered">
                 <div className="column is-half">
                     <p className="title has-text-centered has-text-primary">{title}</p>
                     <p align = "justify">
                         <BodyComponent content={content} />
                     </p>
-                    <iframe src={googleForm} width="640" height="1490" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    <p align = "center"><iframe src={formUrl} width="100%" height="1490">Loading…</iframe></p>
                 </div>
             </div>
         </div>
