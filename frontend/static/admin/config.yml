@@ -24,7 +24,6 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
           - {label: Body, name: body, widget: markdown}
-          - {label: Banner Images, name: bannerImages, widget: image, media_library: {config: {multiple: true}}} #LINE FOR TESTING ONLY - MUST DELETE
       - file: "frontend/src/pages/news/index.md"
         label: "News Home"
         name: "news-home"
