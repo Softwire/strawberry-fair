@@ -8,8 +8,7 @@ import { site } from '../util/templating'
 
 
 // This is used by the website and for CMS previews
-export const NewsOverview = (props) => {
-    const {title, subtitle, content, contentComponent, newsArticles} = props
+export const NewsOverview = ({title, subtitle, content, contentComponent, newsArticles}) => {
     const BodyComponent = contentComponent || HTMLContent
     
     return (
