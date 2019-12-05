@@ -19,7 +19,7 @@ export const HomePageContent = ({title, content, image, contentComponent}) => {
 )}
 
 const HomePage = ({data: {markdownRemark}}) => (
-  <Layout>
+  <Layout hero={markdownRemark.frontmatter.hero}>
     <HomePageContent
         title={markdownRemark.frontmatter.title}
         content={markdownRemark.html}

@@ -7,22 +7,48 @@ import '../styling/styles.sass'
 
 /* All page templates should be wrapped in the Layout component to provide common styling */
 
-export const Layout = ({children, heroImageSrc, heroImageAlt}) => (
+export const Layout = ({children, hero}) => (
     <div className="container">
         <Header />
-        <Hero src={heroImageSrc} alt={heroImageAlt}/>
+        <Hero data={hero} />
         <main>{children}</main>
         <Footer />
     </div>
 )
 
 
-export const Hero = ({src, alt}) => (
-    <section class="hero">
-        <div class="hero-body">
-            <figure class="image">
-                <PreviewCompatibleImage imageInfo={{image: {src}, alt: {alt}}} />
-            </figure>
-        </div>
-    </section>
-)
+export class Hero extends React.Component {
+    constructor(props) {
+        super(props)
+        this.imageSet = Object.values(props.hero).map(({src, alt}) => <PreviewCompatibleImage imageInfo={{image: {src}, alt: {alt}}} />) // what about null images though?
+        this.numImages = imageSet.length
+        this.state = 0
+    }
+
+    componentDidMount() {
+        this.timerID = setInterval(
+            () => this.change(),
+            1000
+        )
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timerID)
+    }
+
+    change() {
+        this.setState((this.state + 1) % this.numImages)
+    }
+
+    render() {
+        return (
+            <section class="hero">
+                <div class="hero-body">
+                    <figure class="image">
+                        {this.imageSet[this.state]}
+                    </figure>
+                </div>
+            </section>
+        )
+    }
+}
