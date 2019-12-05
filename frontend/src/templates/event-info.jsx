@@ -6,11 +6,10 @@ import { HTMLContent } from '../components/Content'
 
 
 // used by website and CMS previews
-export const EventInfoContent = ({title, dateTime, image, content, isMeeting, contentComponent}) => {
+export const EventInfoContent = ({title, dateTime, image, content, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     const date = new Date(dateTime)
-    const isMeetingBool = Boolean(isMeeting)
 
     return (
     <section>
@@ -26,8 +25,7 @@ const EventInfo = ({data: {markdownRemark}}) => (
         title={markdownRemark.frontmatter.title}
         dateTime={markdownRemark.frontmatter.dateTime}
         image={markdownRemark.frontmatter.image}
-        body={markdownRemark.html}
-        isMeeting={markdownRemark.frontmatter.isMeeting}
+        content={markdownRemark.html}
     />
 )
 
@@ -46,7 +44,6 @@ query eventInfoTemplate($id: String!) {
                 }
             }
             dateTime
-            isMeeting
         }
         html
     }
