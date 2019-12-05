@@ -1,12 +1,12 @@
 import CMS from 'netlify-cms-app'
 
 import EventInfoPreview from './preview-templates/EventInfoPreview'
-import NewsArticlePreview from './preview-templates/NewsArticlePreview'
 
 import '../styling/styles.sass'
 import { HomePage } from '../templates/home-page'
 import { NewsOverview } from '../templates/news-overview'
 import { preview } from '../util/templating'
+import { NewsArticle } from '../templates/news-article'
 
 const placeholderArticle = {
     node: {
