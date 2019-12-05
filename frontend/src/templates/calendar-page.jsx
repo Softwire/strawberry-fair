@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import { Layout } from '../components/Layout'
-import Calendar from '../components/calendar/Calendar'
+import { Calendar } from '../components/calendar/Calendar'
 import Upcoming from '../components/calendar/Upcoming'
 import { FaCalendar, FaListUl } from 'react-icons/fa'
 
