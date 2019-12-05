@@ -44,3 +44,18 @@ ensuring you include the name of the branch you're working on.
 
 **_Make sure you change it back before merging anything back into master._**
 
+### 1. Adding Google Forms via CMS:
+    To add a Google Form via CMS follow these steps:
+      1. Open the form on Google Forms
+      2. Click send on the top right corner
+      3. Select the "Send via <>" option.
+      4. Click "copy" on the bottom left corner.
+      5. On a new tab, go to `localhost:8000/admin`
+      6. Create a new Form page
+      7. Paste into the "Form" box
+      8. Fill in the remaining boxes.
+      9. Click "Publish" on the top righ corner.
+
+      Alternatively, in step 4 you can choose to copy the URL only, instead of the whole HTML element.
+
+

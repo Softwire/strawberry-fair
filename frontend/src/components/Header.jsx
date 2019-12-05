@@ -28,10 +28,6 @@ export const Header = () => {
                                 <NavLink href="/" title="Get Involved"/>
                             ]}
                         </NavDropdown>,
-                        <NavDropdown title="Forms">
-                            <NavLink href="/forms/registration-form" title="Registration Form"/> {/*this doesn't work on edge*/}
-                            <NavLink href="/forms/form" title="Form"/>
-                        </NavDropdown>,
                         <NavDropdown href="/" title="Areas &amp; Events">
                             
                         </NavDropdown>,
