@@ -42,31 +42,31 @@ const HomePage = ({data: {markdownRemark}}) => (
 =======
 const HomePage = ({data: {markdownRemark}}) => {
 
-  const hero = ({
+  const revolvingHero = ({
     image1: {
-      alt: markdownRemark.frontmatter.hero.image1.alt,
-      src: markdownRemark.frontmatter.hero.image1.src
+      alt: markdownRemark.frontmatter.revolvingHero.image1.alt,
+      src: markdownRemark.frontmatter.revolvingHero.image1.src
     },
     image2: {
-      alt: markdownRemark.frontmatter.hero.image2.alt,
-      src: markdownRemark.frontmatter.hero.image2.src
+      alt: markdownRemark.frontmatter.revolvingHero.image2.alt,
+      src: markdownRemark.frontmatter.revolvingHero.image2.src
     },
     image3: {
-      alt: markdownRemark.frontmatter.hero.image3.alt,
-      src: markdownRemark.frontmatter.hero.image3.src
+      alt: markdownRemark.frontmatter.revolvingHero.image3.alt,
+      src: markdownRemark.frontmatter.revolvingHero.image3.src
     },
     image4: {
-      alt: markdownRemark.frontmatter.hero.image4.alt,
-      src: markdownRemark.frontmatter.hero.image4.src
+      alt: markdownRemark.frontmatter.revolvingHero.image4.alt,
+      src: markdownRemark.frontmatter.revolvingHero.image4.src
     },
     image5: {
-      alt: markdownRemark.frontmatter.hero.image5.alt,
-      src: markdownRemark.frontmatter.hero.image5.src
+      alt: markdownRemark.frontmatter.revolvingHero.image5.alt,
+      src: markdownRemark.frontmatter.revolvingHero.image5.src
     }
   })
   
   return (
-    <Layout hero={hero}>
+    <Layout revolvingHero={revolvingHero}>
       <HomePageContent
           title={markdownRemark.frontmatter.title}
           content={markdownRemark.html}
@@ -84,7 +84,7 @@ query homePageTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        hero {
+        revolvingHero {
           image1 {
             alt
             src {
