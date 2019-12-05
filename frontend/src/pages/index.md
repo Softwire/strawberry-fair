@@ -7,18 +7,18 @@ hero:
     src: /img/love-a-fair.jpg
   image2:
     alt: Test2
-    src: /img/love-a-fair.jpg
+    src: /img/revised-east-stage-panorama.jpg
   image3:
     alt: Test3
-    src: /img/love-a-fair.jpg
+    src: /img/gareths-gate-slide.jpg
   image4:
     alt: Test4
-    src: /img/love-a-fair.jpg
+    src: /img/slide-crowd.jpg
   image5:
     alt: Test5
-    src: /img/love-a-fair.jpg
+    src: /img/slide-gate-2017.jpg
 ---
-## Welcome to Cambridge Stewberry Fair!
+## Welcome to Cambridge Strawberry Fair!
 
 asdfasdfLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
