@@ -10,14 +10,19 @@ import '../styling/styles.sass'
 export const Layout = ({children, heroImageSrc, heroImageAlt}) => (
     <div className="container">
         <Header />
-        <section class="hero">
-            <div class="hero-body">
-                <figure class="image">
-                    <PreviewCompatibleImage imageInfo={{image: {heroImageSrc}, alt: {heroImageAlt}}} />
-                </figure>
-            </div>
-        </section>
+        <Hero src={heroImageSrc} alt={heroImageAlt}/>
         <main>{children}</main>
         <Footer />
     </div>
+)
+
+
+export const Hero = ({src, alt}) => (
+    <section class="hero">
+        <div class="hero-body">
+            <figure class="image">
+                <PreviewCompatibleImage imageInfo={{image: {src}, alt: {alt}}} />
+            </figure>
+        </div>
+    </section>
 )
