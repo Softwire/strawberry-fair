@@ -1,4 +1,6 @@
 import React from 'react'
+import BackgroundImage from 'gatsby-background-image'
+
 import PreviewCompatibleImage from '../PreviewCompatibleImage'
 
 // Represents a day in the calendar. Will either be empty or contain a preview of an event.
@@ -11,19 +13,43 @@ const CalendarDay = ({dateTime, events}) => {
             (date.getMonth() === new Date().getMonth()) &&
             (date.getFullYear() === new Date().getFullYear())  // only highlight if this month is the current month, and the days match up
     const baseBoxClass = "box"
-    const classAfterHighlight = baseBoxClass + (isTodayHighlight ? " has-background-primary has-text-white" : "")
+    let classAfterHighlight = baseBoxClass + (isTodayHighlight ? " has-background-primary has-text-white" : "")
 
     // Event on this day
     const event = eventOnDay(date, events)
-    
-    return (
-    <div className="column is-half-mobile is-one-quarter-tablet is-2-desktop">
-        <div className={classAfterHighlight} style={{height: "100px"}}>
-            <p>{date.getDate()}</p>
-            <p>{event ? event.frontmatter.title : ""}</p>
-        </div>
-    </div>
-)}
+    if (event) {
+        // I WISH there was a way of doing this in the stylesheet. Maybe there is.
+        // TODO: Fix this awful workaround
+        const backgroundImageStyle = {
+            height: '100px',
+            borderRadius: '6px',  // Bulma's "$radius-large"
+            filter: 'contrast(0.7) brightness(0.7)'
+        }
+
+        return (
+            <div className='column is-half-mobile is-one-quarter-tablet is-2-desktop'>
+                <BackgroundImage
+                        Tag='div'
+                        className='box has-text-white'
+                        fluid={event.frontmatter.image.childImageSharp.fluid}
+                        imgStyle={backgroundImageStyle}
+                    >
+                    <p>{date.getDate()}</p>
+                    <p>{event ? event.frontmatter.title : ""}</p>
+                </BackgroundImage>
+            </div>
+        )
+    } else {
+        return (
+            <div className='column is-half-mobile is-one-quarter-tablet is-2-desktop'>
+                <div className={classAfterHighlight} style={{height: '100px'}}>
+                    <p>{date.getDate()}</p>
+                    <p>{event ? event.frontmatter.title : ""}</p>
+                </div>
+            </div>
+        )
+    }
+}
 
 export default CalendarDay
 
