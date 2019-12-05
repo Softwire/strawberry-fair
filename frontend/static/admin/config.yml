@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: Softwire/strawberry-fair
-  branch: sf-28
+  branch: master
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
