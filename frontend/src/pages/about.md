@@ -1,7 +1,7 @@
 ---
 templateKey: 'home-page'
 title: Strawberry Fair
-hero:
+revolvingHero:
   image1:
     alt: Test1
     src: /img/love-a-fair.jpg

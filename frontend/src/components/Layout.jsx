@@ -7,58 +7,17 @@ import '../styling/styles.sass'
 
 /* All page templates should be wrapped in the Layout component to provide common styling */
 
-export const Layout = ({children, hero}) => {
-    const banner = hero ? <Hero data={Object.values(hero)} /> : null
-    
-    return (
-        <div className="container">
-            <Header />
-            {banner}
-            <main>{children}</main>
-            <Footer />
-        </div>
-    )
-}
+export const Layout = ({children, revolvingHero, fixedHero}) => (
+    <div className="container">
+        <Header />
+        {revolvingHero ? <RevolvingHero data={Object.values(revolvingHero)} /> : null}
+        {fixedHero ? <FixedHero info={fixedHero} /> : null}
+        <main>{children}</main>
+        <Footer />
+    </div>
+)
 
-/*
-export class Hero extends React.Component {
-    constructor(props) {
-        super(props)
-        this.imageSet = Object.values(props.data).map(({src, alt}) => <PreviewCompatibleImage imageInfo={{image: {src}, alt: {alt}}} />)
-        this.numImages = this.imageSet.length
-        this.state = {imageNo: 0}
-    }
-
-    componentDidMount() {
-        this.timerID = setInterval(
-            () => this.change(),
-            1000
-        )
-    }
-
-    componentWillUnmount() {
-        clearInterval(this.timerID)
-    }
-
-    change() {
-        this.setState({imageNo: (this.state.imageNo + 1) % this.numImages})
-    }
-
-    render() {
-        return (
-            <section className="hero">
-                <div className="hero-body">
-                    <figure className="image">
-                        {this.imageSet[this.state]}
-                    </figure>
-                </div>
-            </section>
-        )
-    }
-}
-*/
-
-export const Hero = ({data}) => {
+export const RevolvingHero = ({data}) => {
 
     const [imageNum, setImageNum] = useState(0)
     const [imageInfo, setImageInfo] = useState(data[0])
@@ -67,7 +26,7 @@ export const Hero = ({data}) => {
         setTimeout(() => {
             setImageNum((imageNum + 1) % 5)
             setImageInfo(data[imageNum])
-        }, 1000)
+        }, 10000)
     })
 
     console.log(imageInfo)
@@ -79,8 +38,8 @@ export const Hero = ({data}) => {
 
 
 export const FixedHero = ({info: {src, alt}}) => (
-    <section className="hero">
-        <div className="hero-body">
+    <section className="revolvingHero">
+        <div className="revolvingHero-body">
             <figure className="image">
                 <PreviewCompatibleImage imageInfo={{image: src, alt: alt}} />
             </figure>

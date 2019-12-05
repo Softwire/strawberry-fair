@@ -34,7 +34,7 @@ collections:
           - {label: "Template Key", name: templateKey, widget: hidden, default: home-page}
           - {label: Title, name: title, widget: string}
           - label: Banner
-            name: hero
+            name: revolvingHero
             widget: object
             fields:
               - label: Image 1
