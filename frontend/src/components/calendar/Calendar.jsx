@@ -55,28 +55,34 @@ class Calendar extends React.Component {
         return (
             <div className="panel">
                 <p className="panel-heading">{this.props.title}</p>
-                <p className="panel-tabs">
-                    <a href="/calendar" className="is-active">Month</a>
-                    <a href="/calendar">Year</a>
-                </p>
                 <div className="panel-block">
-                    <div className="columns is-vcentered is-centered">
-                        <div className="column is-narrow">
-                            <button onClick={this.monthBack} className="button is-white">
-                                <span className="icon is-left has-text-dark">
-                                    <FaChevronLeft />
-                                </span>
-                            </button>
+                    <div className="container">
+                        <div className="tabs is-centered is-fullwidth">
+                            <ul>
+                                <li><a href="/calendar" className="is-active">Month</a></li>
+                                <li><a href="/calendar">Year</a></li>
+                            </ul>
                         </div>
-                        <div className="column">
-                            <p>{new Date(this.state.focusDate).toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</p>
-                        </div>
-                        <div className="column is-narrow">
-                            <button onClick={this.monthForward} className="button is-white">
-                                <span className="icon is-right has-text-dark">
-                                    <FaChevronRight />
-                                </span>
-                            </button>
+                    </div>
+                    <div className="container">
+                        <div className="columns is-vcentered is-centered">
+                            <div className="column is-narrow">
+                                <button onClick={this.monthBack} className="button is-white">
+                                    <span className="icon is-left has-text-dark">
+                                        <FaChevronLeft />
+                                    </span>
+                                </button>
+                            </div>
+                            <div className="column">
+                                <p>{new Date(this.state.focusDate).toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</p>
+                            </div>
+                            <div className="column is-narrow">
+                                <button onClick={this.monthForward} className="button is-white">
+                                    <span className="icon is-right has-text-dark">
+                                        <FaChevronRight />
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
