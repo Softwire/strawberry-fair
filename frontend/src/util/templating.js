@@ -1,7 +1,7 @@
 import { Content } from '../components/Content'
 
 // Handles data format supplied by the CMS for preview purposes
-export const preview = component => ({ entry, widgetFor, getAsset }) => {
+export const preview = (component, placeholderProps = {}) => ({ entry, widgetFor, getAsset }) => {
     const data_props = entry.getIn(['data']).toObject()
     const preview_props = {}
 
@@ -11,13 +11,13 @@ export const preview = component => ({ entry, widgetFor, getAsset }) => {
     preview_props.content = widgetFor('body')
     preview_props.contentComponent = Content
     
-    return component(preview_props)
+    return component(Object.assign(placeholderProps, preview_props))
 }
 
 
 // Handles data format created by graphql
-export const site = component => ({data: {markdownRemark}}) => {
-    const new_props = markdownRemark.frontmatter
-    new_props.content = markdownRemark.html
-    return component(new_props)
+export const site = (component, additionalPropsExtractor = data => {}) => ({data}) => {
+    const new_props = data.markdownRemark.frontmatter
+    new_props.content = data.markdownRemark.html
+    return component(Object.assign(new_props, additionalPropsExtractor(data)))
 }
