@@ -23,8 +23,6 @@ public_folder: /img
 ##              - {label: Image, name: src, widget: image}
 
 
-
-
 collections:
   - name: "pages"
     label: "Pages"

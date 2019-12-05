@@ -10,6 +10,7 @@ import { site } from '../util/templating'
 export const HomePage = ({title, content, image, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
     return (
+<<<<<<< HEAD
         <Layout>
             <section>
                 <h1>{title}</h1>
@@ -19,6 +20,24 @@ export const HomePage = ({title, content, image, contentComponent}) => {
         </Layout>
   )
 }
+=======
+    <section>
+        <h1>{title}</h1>
+        <BodyComponent content={content} />
+        <PreviewCompatibleImage imageInfo={image} />
+    </section>
+)}
+
+const HomePage = ({data: {markdownRemark}}) => (
+  <Layout hero={markdownRemark.frontmatter.hero}>
+    <HomePageContent
+        title={markdownRemark.frontmatter.title}
+        content={markdownRemark.html}
+        image={markdownRemark.frontmatter.image}
+    />
+  </Layout>
+)
+>>>>>>> sf-17: written Hero component
 
 export default site(HomePage)
 
