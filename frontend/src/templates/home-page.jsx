@@ -4,7 +4,7 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
 import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
-import ContentBlocks from '../components/ContentBlocks'
+import ContentBlocks from '../components/home-page/ContentBlocks'
 
 // This is used by the website and for CMS previews
 export const HomePage = ({title, contentBlocks, contentBlocksHtml, image, contentComponent}) => {
@@ -19,6 +19,12 @@ export const HomePage = ({title, contentBlocks, contentBlocksHtml, image, conten
             contentBlocks={contentBlocks}
             contentBlocksHtml={contentBlocksHtml}
             BodyComponent={BodyComponent}/>
+          {
+            // TODO: Add committee meeting calendars
+            // TODO: Add East Anglian Festival Network banner
+            // TODO: Add News overview
+            // TODO: Add Twitter integration
+          }
         </section>
       </Layout>
   )
@@ -44,6 +50,7 @@ query homePageTemplate($id: String!) {
         }
         contentBlocks {
           contentTitle
+          contentSubtitle
           scrapbookImages {
             childImageSharp {
               fluid {
