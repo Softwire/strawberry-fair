@@ -15,19 +15,19 @@ const VerticalTileColumn = props => {
 
   export default VerticalTileColumn
 
-  export const StrawberryCard = props => (
+  export const StrawberryTile = props => (
       <div className="tile is-child has-background-primary box"> {props.children} </div>
       )
 
 
 
-  export const StrawberryTile  = ({image, text}) =>(
-        <StrawberryCard>
-            <figure className="image is-64x64">
-                <img  src={image} alt='A strawberry'/>
-            </figure>
-            <p className="has-text-white">{text}</p>
-        </StrawberryCard>
-    )
+  export const StrawberryCard  = ({image, text}) => (
+      <div>
+          <figure className="image is-64x64">
+              <img  src={image} alt='A strawberry'/>
+          </figure>
+          <p className="has-text-white">{text}</p>
+      </div>
+      )
   
   

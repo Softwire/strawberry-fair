@@ -5,6 +5,7 @@ import { HTMLContent } from '../components/Content'
 import '../styling/styles.sass'
 import VerticalTileColumn from '../components/VerticalTileColumn'
 import { StrawberryTile } from '../components/VerticalTileColumn'
+import { StrawberryCard } from '../components/VerticalTileColumn'
 
 
 
@@ -27,9 +28,9 @@ export const AboutPageContent = ({title, subtitle, image, content, contentCompon
         <div className="container">
           <div className="columns reverse-columns">
             <VerticalTileColumn>
-              <StrawberryTile image = "/img/strawberry-icon.png" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"/>
-              <StrawberryTile image = "/img/strawberry-icon.png" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"/>
-              <StrawberryTile image = "/img/strawberry-icon.png" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"/>
+              <StrawberryTile> <StrawberryCard image = "/img/strawberry-icon.png" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"/></StrawberryTile>
+              <StrawberryTile> <StrawberryCard image = "/img/strawberry-icon.png" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"/></StrawberryTile>
+              <StrawberryTile> <StrawberryCard image = "/img/strawberry-icon.png" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"/></StrawberryTile>
             </VerticalTileColumn>
             <div className="column">
               <BodyComponent content={content} />
