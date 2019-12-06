@@ -1,9 +1,63 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect } from 'react'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 import OutsideClickHandler from 'react-outside-click-handler'
 
 
-export const Header = () => {
+export const Header = ({revolvingHero, fixedHero}) => {
+    if (revolvingHero) {
+        return (
+            <RevolvingHero data={Object.values(revolvingHero)}>
+                <NavBar />
+            </RevolvingHero>
+        )
+    }
+    else if (fixedHero) {
+        return (
+            <FixedHero info={fixedHero}>
+                <NavBar />
+            </FixedHero>
+        )
+    }
+    else {
+        return <NavBar />
+    }
+}
+
+
+const getClassName = (baseName, toggleName, active) => `${baseName} ${active ? toggleName : ""}`
+
+
+const RevolvingHero = ({data, children}) => {
+
+    const [imageNum, setImageNum] = useState(0)
+    const [imageInfo, setImageInfo] = useState(data[0])
+
+    useEffect(() => {
+        setTimeout(() => {
+            setImageNum((imageNum + 1) % 5)
+            setImageInfo(data[imageNum])
+        }, 10000)
+    })
+
+    return (
+        <FixedHero info={imageInfo}>{children}</FixedHero>
+    )
+}
+
+
+const FixedHero = ({info: {src, alt}, children}) => (
+    <section className="hero">
+        <div className="hero-body">
+            {children}
+            <figure className="image">
+                <PreviewCompatibleImage imageInfo={{image: src, alt: alt}} />
+            </figure>
+        </div>
+    </section>
+)
+
+
+const NavBar = () => {
     
     const [menuActive, setMenuState] = useState(false)
 
@@ -50,12 +104,6 @@ export const Header = () => {
         </header>
     )
 }
-
-
-const logo = { alt: "Strawberry Fair Logo", image: "/img/1-line-logo.png" }
-
-
-const getClassName = (baseName, toggleName, active) => `${baseName} ${active ? toggleName : ""}`
 
 
 const NavMenu = ({children, active}) => (
@@ -105,3 +153,6 @@ const NavLink = ({href, title}) => (
         </a>
     </li>
 )
+
+
+const logo = { alt: "Strawberry Fair Logo", image: "/img/1-line-logo.png" }
