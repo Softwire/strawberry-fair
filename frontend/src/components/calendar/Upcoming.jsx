@@ -34,7 +34,7 @@ const EventPanelBlock = ({event}) => {
                 </div>
                 <div className="media-content">
                     <p>
-                        <strong>{event.frontmatter.title}</strong> - {new Date(event.frontmatter.dateTime).toLocaleDateString('en-GB')}
+                        <strong><a href={event.fields.slug}>{event.frontmatter.title}</a></strong> - {new Date(event.frontmatter.dateTime).toLocaleDateString('en-GB')}
                     </p>
                     <HTMLContent content={event.html} />
                 </div>

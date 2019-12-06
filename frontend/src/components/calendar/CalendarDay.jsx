@@ -21,19 +21,19 @@ const CalendarDay = ({dateTime, events}) => {
         const backgroundImageStyle = {
             height: '100px',
             borderRadius: '6px',  // Bulma's "$radius-large"
-            filter: 'contrast(0.7) brightness(0.7)'
+            //filter: 'contrast(0.7) brightness(0.7)'
         }
 
         return (
             <div className='column is-half-mobile is-one-quarter-tablet is-2-desktop'>
                 <BackgroundImage
                         Tag='div'
-                        className='box has-text-white'
+                        className='box has-text-white has-text-weight-bold'
                         fluid={event.frontmatter.image.childImageSharp.fluid}
                         style={backgroundImageStyle}
                     >
                     <p>{date.getDate()}</p>
-                    <p>{event ? event.frontmatter.title : ""}</p>
+                    <a className='has-text-white' href={event.fields.slug}>{event.frontmatter.title}</a>
                 </BackgroundImage>
             </div>
         )
@@ -42,7 +42,6 @@ const CalendarDay = ({dateTime, events}) => {
             <div className='column is-half-mobile is-one-quarter-tablet is-2-desktop'>
                 <div className={classAfterHighlight} style={{height: '100px'}}>
                     <p>{date.getDate()}</p>
-                    <p>{event ? event.frontmatter.title : ""}</p>
                 </div>
             </div>
         )

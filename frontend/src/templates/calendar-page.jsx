@@ -113,6 +113,9 @@ query calendarPageTemplate($id: String!) {
           isMeeting
         }
         html
+        fields {
+          slug
+        }
       }
     }
   }
