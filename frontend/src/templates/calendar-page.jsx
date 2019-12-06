@@ -104,6 +104,9 @@ query calendarPageTemplate($id: String!) {
               fluid {
                 ...GatsbyImageSharpFluid
               }
+              resize(width: 64, height: 64) {
+                src
+              }
             }
           }
           dateTime
