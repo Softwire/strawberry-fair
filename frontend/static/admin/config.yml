@@ -34,6 +34,12 @@ collections:
           - {label: Subtitle, name: subtitle, widget: string}
           - {label: Image, name: image, widget: image}
           - {label: Body, name: body, widget: markdown}
+      - file: "frontend/src/pages/calendar.md"
+        label: "Calendar Page"
+        name: "calendar-page"
+        fields:
+          - {label: "Template Key", name: templateKey, widget: hidden, default: calendar-page}
+          - {label: Title, name: title, widget: string}
   - name: "news"
     label: "News Articles"
     folder: "frontend/src/pages/news/"

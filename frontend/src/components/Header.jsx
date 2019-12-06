@@ -29,7 +29,9 @@ export const Header = () => {
                             ]}
                         </NavDropdown>,
                         <NavDropdown href="/" title="Areas &amp; Events">
-                            
+                            {[
+                                <NavLink href="/calendar" title="Calendar" />
+                            ]}
                         </NavDropdown>,
                         <NavDropdown href="/" title="News">
 
