@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import IframeResizer from 'iframe-resizer-react'
 
 import { HTMLContent } from '../components/Content'
 import { Layout } from '../components/Layout'
@@ -17,11 +18,14 @@ export const FormPageContent = ({title, googleForm, content, contentComponent}) 
         <div className = "content">
             <div className="columns is-centered">
                 <div className="column is-three-quarters">
-                    <p className="title has-text-centered has-text-primary">{title}</p>
-                    <p align = "justify">
-                        <BodyComponent content={content} />
-                    </p>
-                    <p align = "center"><iframe src={formUrl} width="100%" height="1490">Loading…</iframe></p>
+                    <h1 className="title has-text-centered has-text-primary">{title}</h1>
+                    <BodyComponent content={content} />
+                    <IframeResizer 
+                    log 
+                    src={formUrl} 
+                    style={{ width: '1px', minWidth: '100%', customHeight: '1400px'}}
+                    
+                    >Loading…</IframeResizer>
                 </div>
             </div>
         </div>
