@@ -3,17 +3,17 @@ import React from 'react'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 const ImageScrapbookRow = ({scrapbookImages}) => {
-  return (
+  return (scrapbookImages && 
     <div className="columns is-mobile">
-      <RowWithTwoImages topImage={scrapbookImages.pop()} bottomImage={scrapbookImages.pop()}/>
+      <RowWithTwoImages topImage={scrapbookImages[0]} bottomImage={scrapbookImages[1]}/>
       <div className="column is-one-third scrapbook-image">
-        <PreviewCompatibleImage imageInfo={scrapbookImages.pop()} />
+        <PreviewCompatibleImage imageInfo={scrapbookImages[2]} />
       </div>
       <div className="column is-one-fifth scrapbook-image">
-        <PreviewCompatibleImage imageInfo={scrapbookImages.pop()} />
+        <PreviewCompatibleImage imageInfo={scrapbookImages[3]} />
       </div>
       <div className="column scrapbook-image">
-        <PreviewCompatibleImage imageInfo={scrapbookImages.pop()} />
+        <PreviewCompatibleImage imageInfo={scrapbookImages[4]} />
       </div>
     </div>
   )
@@ -21,14 +21,12 @@ const ImageScrapbookRow = ({scrapbookImages}) => {
 
 const RowWithTwoImages = ({topImage, bottomImage}) => (
   <div className="column is-one-fifth scrapbook-image">
-    <div className="tile is-ancestor">
-      <div className="tile is-vertical is-parent">
-        <div className="tile is-child">
+    <div className="columns is-multiline">
+      <div className="column is-full scrapbook-image">
           <PreviewCompatibleImage imageInfo={topImage} />
         </div>
-        <div className="tile is-child">
-          <PreviewCompatibleImage imageInfo={bottomImage} />
-        </div>
+      <div className="column">
+        <PreviewCompatibleImage imageInfo={bottomImage} />
       </div>
     </div>
   </div>

@@ -23,8 +23,14 @@ collections:
           - {label: "Template Key", name: templateKey, widget: hidden, default: home-page}
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
-          - {label: ScrapbookImages, name: scrapbookImages, widget: list, field: {label: ScrapbookImage, name: scrapbookImage, widget: image}}
-          - {label: Body, name: body, widget: markdown}
+          - label: Content-Blocks
+            name: contentBlocks
+            widget: list
+            fields: 
+              - {label: Content-Title, name: contentTitle, widget: string}
+              - {label: Scrapbook-Images, name: scrapbookImages, widget: list, field: {label: ScrapbookImage, name: scrapbookImage, widget: image}}
+              - {label: Content-Body, name: _markdown_contentBody, widget: markdown}
+              - {label: Side-Snippet, name: sideSnippet, widget: string}
       - file: "frontend/src/pages/news/index.md"
         label: "News Home"
         name: "news-home"

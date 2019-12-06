@@ -4,25 +4,31 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
 import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
-import ImageScrapbookRow from '../components/ImageScrapbookRow'
+import ContentBlocks from '../components/ContentBlocks'
 
 // This is used by the website and for CMS previews
-export const HomePage = ({title, content, image, scrapbookImages, contentComponent}) => {
+export const HomePage = ({title, contentBlocks, contentBlocksHtml, image, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
+
     return (
-        <Layout>
-          <section>
-            <h1 className="title">{title}</h1>
-            <PreviewCompatibleImage imageInfo={image} />
-            <BodyComponent content={content} />
-            <ImageScrapbookRow scrapbookImages={scrapbookImages}/>
-            <ImageScrapbookRow scrapbookImages={scrapbookImages}/>
-          </section>
-        </Layout>
+      <Layout>
+        <section>
+          <h1 className="title">{title}</h1>
+          <PreviewCompatibleImage imageInfo={image} />
+          <ContentBlocks 
+            contentBlocks={contentBlocks}
+            contentBlocksHtml={contentBlocksHtml}
+            BodyComponent={BodyComponent}/>
+        </section>
+      </Layout>
   )
 }
 
-export default site(HomePage)
+const additionalPropsExtractor = graphqlData => ({
+  contentBlocksHtml: graphqlData.markdownRemark.fields.contentBlocksHtml
+})
+
+export default site(HomePage, additionalPropsExtractor)
 
 export const query = graphql`
 query homePageTemplate($id: String!) {
@@ -36,13 +42,20 @@ query homePageTemplate($id: String!) {
             }
           }
         }
-        scrapbookImages {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
+        contentBlocks {
+          contentTitle
+          scrapbookImages {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
+          sideSnippet
         }
+      }
+      fields {
+        contentBlocksHtml
       }
       html
     }
