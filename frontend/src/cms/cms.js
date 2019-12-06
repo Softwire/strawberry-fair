@@ -1,13 +1,29 @@
 import CMS from 'netlify-cms-app'
 
-import HomePagePreview from './preview-templates/HomePagePreview'
-import EventInfoPreview from './preview-templates/EventInfoPreview'
-import NewsArticlePreview from './preview-templates/NewsArticlePreview'
-import NewsOverviewPreview from './preview-templates/NewsOverviewPreview'
-
 import '../styling/styles.sass'
+import { HomePage } from '../templates/home-page'
+import { NewsOverview } from '../templates/news-overview'
+import { preview } from '../util/templating'
+import { NewsArticle } from '../templates/news-article'
+import { EventInfo } from '../templates/event-info'
 
-CMS.registerPreviewTemplate('home', HomePagePreview)
-CMS.registerPreviewTemplate('events', EventInfoPreview)
-CMS.registerPreviewTemplate('news', NewsArticlePreview)
-CMS.registerPreviewTemplate('news-home', NewsOverviewPreview)
+const placeholderArticle = {
+    node: {
+      fields: {
+        slug: '/'
+      },
+      frontmatter: {
+        image: {
+          image: '/img/strawberry.jpg'
+        },
+        title: 'Placeholder'
+      }
+    }
+}
+
+const placeholderArticles = new Array(3).fill(placeholderArticle)
+
+CMS.registerPreviewTemplate('home', preview(HomePage))
+CMS.registerPreviewTemplate('events', preview(EventInfo))
+CMS.registerPreviewTemplate('news', preview(NewsArticle))
+CMS.registerPreviewTemplate('news-home', preview(NewsOverview, {newsArticles: placeholderArticles}))

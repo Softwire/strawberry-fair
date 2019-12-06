@@ -4,35 +4,27 @@ import { graphql } from 'gatsby'
 import { HTMLContent } from '../components/Content'
 import NewsArticleSnapshots from '../components/NewsArticleSnapshots'
 import { Layout } from '../components/Layout'
+import { site } from '../util/templating'
 
 
 // This is used by the website and for CMS previews
-export const NewsOverviewContent = ({title, subtitle, content, contentComponent, newsArticles}) => {
+export const NewsOverview = ({title, subtitle, content, contentComponent, newsArticles}) => {
     const BodyComponent = contentComponent || HTMLContent
     
     return (
-      <section className="section">
-        <div className="container">
-          <h1 className="title has-text-primary is-size-1">{title}</h1>
-          <h2 className="subtitle">{subtitle}</h2>
-          <BodyComponent content={content}/>      
-          <NewsArticleSnapshots newsArticles={newsArticles}/>
-        </div>
-      </section>
+      <Layout>
+        <section className="section">
+          <div className="container">
+            <h1 className="title has-text-primary is-size-1">{title}</h1>
+            <h2 className="subtitle">{subtitle}</h2>
+            <BodyComponent content={content}/>      
+            <NewsArticleSnapshots newsArticles={newsArticles}/>
+          </div>
+        </section>
+      </Layout>
 )}
 
-const NewsOverview = ({data: {markdownRemark, allMarkdownRemark}}) => (
-  <Layout>
-    <NewsOverviewContent
-        title={markdownRemark.frontmatter.title}
-        subtitle={markdownRemark.frontmatter.subtitle}
-        content={markdownRemark.html}
-        newsArticles={allMarkdownRemark.edges}
-    />
-  </Layout>
-)
-
-export default NewsOverview
+export default site(NewsOverview, data => {return {newsArticles: data.allMarkdownRemark.edges}})
 
 export const query = graphql`
 query newsOverviewTemplate($id: String!) {
