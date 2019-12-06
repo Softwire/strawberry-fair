@@ -8,9 +8,9 @@ import { Layout } from '../components/Layout'
 // This is used by the website and for CMS previews
 export const FormPageContent = ({title, googleForm, content, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
-    let formUrl = googleForm.split(" ");
+    let formUrl = googleForm.split("\"");
     if (formUrl.length == 1) formUrl = formUrl[0] //if the form is given as an Url simply pass it to the iframe
-    else formUrl = formUrl[1].substring(5,formUrl[1].length-1) //if the form is given as an HTML element, it extracts the URL from it
+    else formUrl = formUrl[1] //if the form is given as an HTML element, it extracts the URL from it
     
     return (
     <section className="section">
