@@ -29,8 +29,6 @@ export const RevolvingHero = ({data}) => {
         }, 10000)
     })
 
-    console.log(imageInfo)
-
     return (
         <FixedHero info={imageInfo} />
     )
