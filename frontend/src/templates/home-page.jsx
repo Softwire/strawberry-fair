@@ -10,25 +10,15 @@ import { site } from '../util/templating'
 export const HomePage = ({title, content, image, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
     return (
-<<<<<<< HEAD
-        <Layout>
             <section>
                 <h1>{title}</h1>
                 <BodyComponent content={content} />
                 <PreviewCompatibleImage imageInfo={image} />
             </section>
         </Layout>
-  )
-}
-=======
-    <section>
-        <h1>{title}</h1>
-        <BodyComponent content={content} />
-        <PreviewCompatibleImage imageInfo={image} />
-    </section>
 )}
 
-<<<<<<< HEAD
+
 const HomePage = ({data: {markdownRemark}}) => (
   <Layout hero={markdownRemark.frontmatter.hero}>
     <HomePageContent
@@ -38,8 +28,7 @@ const HomePage = ({data: {markdownRemark}}) => (
     />
   </Layout>
 )
->>>>>>> sf-17: written Hero component
-=======
+
 const HomePage = ({data: {markdownRemark}}) => {
 
   const revolvingHero = ({
@@ -75,7 +64,6 @@ const HomePage = ({data: {markdownRemark}}) => {
     </Layout>
   )
 }
->>>>>>> sf-17: banner now functional
 
 export default site(HomePage)
 
