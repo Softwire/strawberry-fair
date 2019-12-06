@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 
 // Represents a day in the calendar. Will either be empty or contain a preview of an event.
@@ -33,7 +34,7 @@ const CalendarDay = ({dateTime, events}) => {
                         style={backgroundImageStyle}
                     >
                     <p>{date.getDate()}</p>
-                    <a className='has-text-white' href={event.fields.slug}>{event.frontmatter.title}</a>
+                    <Link className='has-text-white' to={event.fields.slug}>{event.frontmatter.title}</Link>
                 </BackgroundImage>
             </div>
         )

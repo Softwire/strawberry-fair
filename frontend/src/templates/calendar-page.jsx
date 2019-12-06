@@ -1,65 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 
 import { Layout } from '../components/Layout'
 import { Calendar } from '../components/calendar/Calendar'
-import Upcoming from '../components/calendar/Upcoming'
+import { Upcoming } from '../components/calendar/Upcoming'
 import { FaCalendar, FaListUl } from 'react-icons/fa'
 
-class CalendarPageContent extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      view: 'calendar',
-      title: props.title,
-      focusDate: props.focusDate,
-      events: props.events
-    }
-    this.toUpcoming = this.toUpcoming.bind(this)
-    this.toCalendar = this.toCalendar.bind(this)
+export const CalendarPageContent = ({events}) => {
+  // Are we looking at the Calendar, or the Upcoming Events page?
+  // TODO: Really I think I would prefer these to be two separate pages
+  // When you click on a link in 'Upcoming', then click back, you get taken to the Calendar page
+  const [ view, setView ] = useState('calendar')
+
+  // Function to switch to 'Upcoming' view
+  const toUpcoming = () => {
+    setView('upcoming')
   }
 
-  toUpcoming() {
-    this.setState({view: 'upcoming'})
+  // Function to switch to 'Calendar' view
+  const toCalendar = () => {
+    setView('calendar')
   }
 
-  toCalendar() {
-    this.setState({view: 'calendar'})
-  }
+  // Render
+  let inner;
 
-  render() {
-    const title = this.state.title
-    const focusDate = this.state.focusDate
-    const events = this.state.events
-
-    let inner;
-
-    if (this.state.view === 'calendar') {
-      inner = (
-        <Calendar title={title} focusDate={focusDate} events={events} />
-      )
-    } else if (this.state.view === 'upcoming') {
-      inner = (
-        <Upcoming events={events} />
-      )
-    }
-
-    return (
-      <section>
-        <div className="tabs is-centered is-boxed">
-          <ul>
-            <li className={this.state.view === 'calendar' ? 'is-active' : ''}><a onClick={this.toCalendar}>
-              <span className="icon is-small"><FaCalendar /></span>Calendar
-            </a></li>
-            <li className={this.state.view === 'upcoming' ? 'is-active' : ''}><a onClick={this.toUpcoming}>
-              <span className="icon is-small"><FaListUl /></span>Upcoming events
-            </a></li>
-          </ul>
-        </div>
-        {inner}
-      </section>
+  if (view === 'calendar') {
+    inner = (
+      <Calendar events={events} />
+    )
+  } else if (view === 'upcoming') {
+    inner = (
+      <Upcoming events={events} />
     )
   }
+
+  return (
+    <section>
+      <div className="tabs is-centered is-boxed">
+        <ul>
+          <li className={view === 'calendar' ? 'is-active' : ''}><a onClick={toCalendar}>
+            <span className="icon is-small"><FaCalendar /></span>Calendar
+          </a></li>
+          <li className={view === 'upcoming' ? 'is-active' : ''}><a onClick={toUpcoming}>
+            <span className="icon is-small"><FaListUl /></span>Upcoming events
+          </a></li>
+        </ul>
+      </div>
+      {inner}
+    </section>
+  )
 }
 
 const CalendarPage = ({data: {markdownRemark, allMarkdownRemark}}) => {

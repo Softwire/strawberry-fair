@@ -1,10 +1,10 @@
 import React from 'react'
-import Img from 'gatsby-image'
+import { Link } from 'gatsby'
 
 import { HTMLContent } from '../Content'
 
 // TODO: Filter meetings/non-meetings
-const Upcoming = ({events}) => {
+export const Upcoming = ({events}) => {
     const maxItems = 10
 
     // Construct array of list elements
@@ -34,7 +34,7 @@ const EventPanelBlock = ({event}) => {
                 </div>
                 <div className="media-content">
                     <p>
-                        <strong><a href={event.fields.slug}>{event.frontmatter.title}</a></strong> - {new Date(event.frontmatter.dateTime).toLocaleDateString('en-GB')}
+                        <strong><Link to={event.fields.slug}>{event.frontmatter.title}</Link></strong> - {new Date(event.frontmatter.dateTime).toLocaleDateString('en-GB')}
                     </p>
                     <HTMLContent content={event.html} />
                 </div>
@@ -42,5 +42,3 @@ const EventPanelBlock = ({event}) => {
         </div>
     )
 }
-
-export default Upcoming
