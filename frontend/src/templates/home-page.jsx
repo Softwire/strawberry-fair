@@ -6,19 +6,13 @@ import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 import ContentBlocks from '../components/home-page/ContentBlocks'
 
-<<<<<<< HEAD
 // This is used by the website and for CMS previews
-export const HomePage = ({title, contentBlocks, contentBlocksHtml, image, contentComponent}) => {
-=======
-
-export const HomePage = ({title, content, image, contentComponent, revolvingHero}) => {
->>>>>>> sf-17
+export const HomePage = ({title, contentBlocks, contentBlocksHtml, image, contentComponent, revolvingHero}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     return (
-<<<<<<< HEAD
       <Layout>
-        <section>
+        <section revolvingHero={revolvingHero}>
           <h1 className="title">{title}</h1>
           <PreviewCompatibleImage imageInfo={image} />
           <ContentBlocks 
@@ -41,20 +35,6 @@ const additionalPropsExtractor = graphqlData => ({
 })
 
 export default site(HomePage, additionalPropsExtractor)
-=======
-        <Layout revolvingHero={revolvingHero}>
-            <section>
-                <h1>{title}</h1>
-                <BodyComponent content={content} />
-                <PreviewCompatibleImage imageInfo={image} />
-            </section>
-        </Layout>
-    )
-}
-
-
-export default site(HomePage)
->>>>>>> sf-17
 
 
 export const query = graphql`

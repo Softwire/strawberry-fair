@@ -1,14 +1,8 @@
 backend:
-<<<<<<< HEAD
   name: git-gateway
   accept_roles:
     - admin
     - content
-=======
-  name: github
-  repo: Softwire/strawberry-fair
-  branch: sf-17
->>>>>>> sf-17
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -40,7 +34,6 @@ collections:
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: home-page}
           - {label: Title, name: title, widget: string}
-<<<<<<< HEAD
           - {label: Body, name: body, widget: hidden, default: "placeholder"}
           - {label: Image, name: image, widget: image}
           - label: Content-Blocks
@@ -52,7 +45,6 @@ collections:
               - {label: Scrapbook-Images, name: scrapbookImages, widget: list, field: {label: ScrapbookImage, name: scrapbookImage, widget: image}}
               - {label: Content-Body, name: _markdown_contentBody, widget: markdown}
               - {label: Side-Snippet, name: sideSnippet, widget: string}
-=======
           - label: Banner
             name: revolvingHero
             widget: object
@@ -88,7 +80,6 @@ collections:
                   - {label: Description, name: alt, widget: string}
                   - {label: Image, name: src, widget: image}
           - {label: Body, name: body, widget: markdown}
->>>>>>> sf-17
       - file: "frontend/src/pages/news/index.md"
         label: "News Home"
         name: "news-home"
