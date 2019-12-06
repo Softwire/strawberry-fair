@@ -7,9 +7,18 @@ $black: #1d1d1d
 $primary: $red
 $secondary: $black
 
+$title-color: $primary
+$subtitle-color: $secondary
 
 /* Bulma provides default styling (can be imported in separate modules as required) */
 @import "bulma"
 
 
 /* Class styling */
+@media(max-width: $tablet)
+    .columns 
+        &.reverse-columns 
+            flex-direction: column-reverse
+            display: flex
+    
+  
