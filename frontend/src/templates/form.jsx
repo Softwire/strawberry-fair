@@ -21,9 +21,8 @@ export const FormPageContent = ({title, googleForm, content, contentComponent}) 
                     <h1 className="title has-text-centered has-text-primary">{title}</h1>
                     <BodyComponent content={content} />
                     <IframeResizer 
-                    log 
-                    src={formUrl} 
-                    style={{ width: '1px', minWidth: '100%', customHeight: '1400px'}}
+                    src = {formUrl}
+                    width="640" height="1427" frameborder="0" marginheight="0" marginwidth="0"
                     
                     >Loading…</IframeResizer>
                 </div>
