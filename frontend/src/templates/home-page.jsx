@@ -11,8 +11,8 @@ export const HomePage = ({title, contentBlocks, contentBlocksHtml, image, conten
     const BodyComponent = contentComponent || HTMLContent
 
     return (
-      <Layout>
-        <section revolvingHero={revolvingHero}>
+      <Layout revolvingHero={revolvingHero}>
+        <section>
           <h1 className="title">{title}</h1>
           <PreviewCompatibleImage imageInfo={image} />
           <ContentBlocks 
