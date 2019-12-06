@@ -10,13 +10,15 @@ import { site } from '../util/templating'
 export const HomePage = ({title, content, image, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
     return (
+        <Layout>
             <section>
                 <h1>{title}</h1>
                 <BodyComponent content={content} />
                 <PreviewCompatibleImage imageInfo={image} />
             </section>
         </Layout>
-)}
+    )
+}
 
 
 const HomePage = ({data: {markdownRemark}}) => (
