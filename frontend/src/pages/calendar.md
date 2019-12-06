@@ -1,4 +1,4 @@
 ---
 templateKey: 'calendar-page'
-title: Calendar
+title: 'Calendar'
 ---
