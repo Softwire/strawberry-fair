@@ -101,9 +101,6 @@ collections:
       - {label: Image, name: image, widget: image}
       - {label: Date, name: dateTime, widget: datetime}
       - {label: Meeting, name: isMeeting, widget: boolean}
-<<<<<<< HEAD
-      - {label: Body, name: body, widget: markdown}
-=======
       - {label: Body, name: body, widget: markdown}
   - name: "about"
     label: "About"
@@ -115,4 +112,3 @@ collections:
       - {label: Subtitle, name: subtitle, widget: string}
       - {label: Image, name: image, widget: image}
       - {label: Body, name: body, widget: markdown}
->>>>>>> master
