@@ -61,11 +61,11 @@ collections:
       - {label: Body, name: body, widget: markdown}
   - name: "about"
     label: "About"
-    folder: "frontend/src/pages/about-pages/"
+    folder: "frontend/src/pages/about/"
     create: true
     fields:
       - {label: "Template Key", name: templateKey, widget: hidden, default: about-page}
       - {label: Title, name: title, widget: string}
-      - {label: Body, name: body, widget: markdown}
-      - {label: Image, name: image, widget: image}
       - {label: Subtitle, name: subtitle, widget: string}
+      - {label: Image, name: image, widget: image}
+      - {label: Body, name: body, widget: markdown}
