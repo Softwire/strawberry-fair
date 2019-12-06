@@ -25,7 +25,7 @@ const placeholderArticle = {
 const placeholderArticles = new Array(3).fill(placeholderArticle)
 
 CMS.registerPreviewTemplate('home', preview(HomePage))
-CMS.registerPreviewTemplate('about-page', preview(AboutPage))
+CMS.registerPreviewTemplate('about', preview(AboutPage))
 CMS.registerPreviewTemplate('events', preview(EventInfo))
 CMS.registerPreviewTemplate('news', preview(NewsArticle))
 CMS.registerPreviewTemplate('news-home', preview(NewsOverview, {newsArticles: placeholderArticles}))
