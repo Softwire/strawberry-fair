@@ -12,7 +12,7 @@ export const FormPageContent = ({title, googleForm, content, contentComponent}) 
     let formUrl = googleForm.split("\"");
     if (formUrl.length == 1) formUrl = formUrl[0] //if the form is given as an Url simply pass it to the iframe
     else formUrl = formUrl[1] //if the form is given as an HTML element, it extracts the URL from it
-    
+
     return (
     <section className="section">
         <div className = "content">
@@ -20,11 +20,11 @@ export const FormPageContent = ({title, googleForm, content, contentComponent}) 
                 <div className="column is-three-quarters">
                     <h1 className="title has-text-centered has-text-primary">{title}</h1>
                     <BodyComponent content={content} />
-                    <IframeResizer 
+                    <iframe
                     src = {formUrl}
-                    width="640" height="1427" frameborder="0" marginheight="0" marginwidth="0"
+                    width="100%" height="1427"
                     
-                    >Loading…</IframeResizer>
+                    >Loading…</iframe>
                 </div>
             </div>
         </div>
