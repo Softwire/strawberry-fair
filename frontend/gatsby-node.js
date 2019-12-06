@@ -65,11 +65,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 // Currently this only works for the Content Blocks in the homepage!
 const addHtmlConvertedMarkdownField = (node, createNodeField) => {
   if(node.frontmatter && node.frontmatter.contentBlocks) {
-    const convertedHtmls = node.frontmatter.contentBlocks.map(block => block._markdown_contentBody)
-    .map(markdown => remark()
-      .use(remarkHtml)
-      .processSync(markdown)
-      .toString()
+    const convertedHtmls = node.frontmatter.contentBlocks.map(block => remark()
+        .use(remarkHtml)
+        .processSync(block._markdown_contentBody)
+        .toString()
       )
 
     createNodeField({

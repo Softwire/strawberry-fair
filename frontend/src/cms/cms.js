@@ -24,7 +24,7 @@ const placeholderArticle = {
 
 const placeholderArticles = new Array(3).fill(placeholderArticle)
 
-const homePageAdditionalPropsExtractor = ({ widgetsFor }) => {
+const homePageAdditionalPropsExtractor = (dataProps, { widgetsFor }) => {
   const contentBlocksMarkdown = widgetsFor('contentBlocks')
     .map(blk => blk.getIn(['widgets', '_markdown_contentBody']))
     .toObject()

@@ -2,12 +2,12 @@ import { Content } from '../components/Content'
 
 // This function prepares a page template for use as a CMS preview component.
 // It maps props from the CMS preview format to that expected by a "normal" React component.
-export const preview = (component, placeholderProps = {}, additionalPropsExtractor = dataProps => {}) => ({ entry, widgetFor, widgetsFor, getAsset }) => {
+export const preview = (component, placeholderProps = {}, additionalPropsExtractor = (dataProps, helperFunctions) => {}) => ({ entry, widgetFor, widgetsFor, getAsset }) => {
     const dataProps = entry.getIn(['data']).toJS()
     const previewProps = {}
     previewProps.content = widgetFor('body')
     previewProps.contentComponent = Content
-    Object.assign(previewProps, additionalPropsExtractor({ widgetsFor }))
+    Object.assign(previewProps, additionalPropsExtractor(dataProps, { widgetsFor }))
 
     // For image data, call getAsset to get the correct image object.
     deepReplaceImageUrlsWithAssets(dataProps, getAsset)
