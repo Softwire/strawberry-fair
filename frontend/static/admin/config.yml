@@ -1,8 +1,14 @@
 backend:
+<<<<<<< HEAD
   name: git-gateway
   accept_roles:
     - admin
     - content
+=======
+  name: github
+  repo: Softwire/strawberry-fair
+  branch: sf-17
+>>>>>>> sf-17
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -12,6 +18,17 @@ backend:
 
 media_folder: /frontend/static/img
 public_folder: /img
+
+
+## ACCESSIBLE IMAGE TEMPLATE ##
+## 
+##          - label: Image
+##            name: ximage
+##            widget: object
+##            fields:
+##              - {label: Description, name: alt, widget: string}
+##              - {label: Image, name: src, widget: image}
+
 
 collections:
   - name: "pages"
@@ -23,6 +40,7 @@ collections:
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: home-page}
           - {label: Title, name: title, widget: string}
+<<<<<<< HEAD
           - {label: Body, name: body, widget: hidden, default: "placeholder"}
           - {label: Image, name: image, widget: image}
           - label: Content-Blocks
@@ -34,6 +52,43 @@ collections:
               - {label: Scrapbook-Images, name: scrapbookImages, widget: list, field: {label: ScrapbookImage, name: scrapbookImage, widget: image}}
               - {label: Content-Body, name: _markdown_contentBody, widget: markdown}
               - {label: Side-Snippet, name: sideSnippet, widget: string}
+=======
+          - label: Banner
+            name: revolvingHero
+            widget: object
+            fields:
+              - label: Image 1
+                name: image1
+                widget: object
+                fields:
+                  - {label: Description, name: alt, widget: string}
+                  - {label: Image, name: src, widget: image}
+              - label: Image 2
+                name: image2
+                widget: object
+                fields:
+                  - {label: Description, name: alt, widget: string}
+                  - {label: Image, name: src, widget: image}
+              - label: Image 3
+                name: image3
+                widget: object
+                fields:
+                  - {label: Description, name: alt, widget: string}
+                  - {label: Image, name: src, widget: image}
+              - label: Image 4
+                name: image4
+                widget: object
+                fields:
+                  - {label: Description, name: alt, widget: string}
+                  - {label: Image, name: src, widget: image}
+              - label: Image 5
+                name: image5
+                widget: object
+                fields:
+                  - {label: Description, name: alt, widget: string}
+                  - {label: Image, name: src, widget: image}
+          - {label: Body, name: body, widget: markdown}
+>>>>>>> sf-17
       - file: "frontend/src/pages/news/index.md"
         label: "News Home"
         name: "news-home"

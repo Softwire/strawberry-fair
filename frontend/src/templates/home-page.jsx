@@ -6,11 +6,17 @@ import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 import ContentBlocks from '../components/home-page/ContentBlocks'
 
+<<<<<<< HEAD
 // This is used by the website and for CMS previews
 export const HomePage = ({title, contentBlocks, contentBlocksHtml, image, contentComponent}) => {
+=======
+
+export const HomePage = ({title, content, image, contentComponent, revolvingHero}) => {
+>>>>>>> sf-17
     const BodyComponent = contentComponent || HTMLContent
 
     return (
+<<<<<<< HEAD
       <Layout>
         <section>
           <h1 className="title">{title}</h1>
@@ -35,16 +41,76 @@ const additionalPropsExtractor = graphqlData => ({
 })
 
 export default site(HomePage, additionalPropsExtractor)
+=======
+        <Layout revolvingHero={revolvingHero}>
+            <section>
+                <h1>{title}</h1>
+                <BodyComponent content={content} />
+                <PreviewCompatibleImage imageInfo={image} />
+            </section>
+        </Layout>
+    )
+}
+
+
+export default site(HomePage)
+>>>>>>> sf-17
+
 
 export const query = graphql`
 query homePageTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
+        revolvingHero {
+          image1 {
+            alt
+            src {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          image2 {
+            alt
+            src {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          image3 {
+            alt
+            src {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          image4 {
+            alt
+            src {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          image5 {
+            alt
+            src {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
           }
         }
@@ -68,3 +134,4 @@ query homePageTemplate($id: String!) {
     }
   }
 `
+

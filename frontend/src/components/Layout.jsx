@@ -6,9 +6,9 @@ import '../styling/styles.sass'
 
 /* All page templates should be wrapped in the Layout component to provide common styling */
 
-export const Layout = ({children}) => (
+export const Layout = ({children, revolvingHero, fixedHero}) => (
     <div className="container">
-        <Header />
+        <Header revolvingHero={revolvingHero} fixedHero={fixedHero} />
         <main>{children}</main>
         <Footer />
     </div>
