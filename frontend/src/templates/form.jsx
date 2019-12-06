@@ -1,10 +1,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import IframeResizer from 'iframe-resizer-react'
 
 import { HTMLContent } from '../components/Content'
 import { Layout } from '../components/Layout'
 
+const IFRAMEHEIGHT = 1427 //default value for the height of the form
 
 // This is used by the website and for CMS previews
 export const FormPageContent = ({title, googleForm, content, contentComponent}) => {
@@ -12,6 +12,10 @@ export const FormPageContent = ({title, googleForm, content, contentComponent}) 
     let formUrl = googleForm.split("\"");
     if (formUrl.length == 1) formUrl = formUrl[0] //if the form is given as an Url simply pass it to the iframe
     else formUrl = formUrl[1] //if the form is given as an HTML element, it extracts the URL from it
+    let heightExtraction = googleForm.match(new RegExp('height=\s\"([0-9]+)?\"\s'))
+    let iframeHeight 
+    if (heightExtraction != null && heightExtraction.length == 2) iframeHeight = heightExtraction[1]
+    else iframeHeight = IFRAMEHEIGHT //sets it to the default value
 
     return (
     <section className="section">
@@ -22,8 +26,7 @@ export const FormPageContent = ({title, googleForm, content, contentComponent}) 
                     <BodyComponent content={content} />
                     <iframe
                     src = {formUrl}
-                    width="100%" height="1427"
-                    
+                    width="100%" height={iframeHeight}
                     >Loading…</iframe>
                 </div>
             </div>
