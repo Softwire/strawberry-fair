@@ -1,5 +1,6 @@
 import React from 'react'
 import ImageScrapbookRow from './ImageScrapbookRow'
+import StrawberryCard from '../StrawberryCard'
 
 const ContentBlocks = ({contentBlocks, contentBlocksHtml, BodyComponent}) => (
   <React.Fragment>
@@ -34,20 +35,8 @@ const ContentBlock = ({contentTitle, contentSubtitle, scrapbookImages, content, 
         <BodyComponent content={content}/>
       </div>
       <div className="column">
-        <StrawberryBox text={sideSnippet}/>
+        <StrawberryCard text={sideSnippet}/>
       </div>
     </div>
   </section>
-)
-
-// Todo: allow icons
-const StrawberryBox = ({text, icon}) => (
-  <div className="box has-background-primary has-text-white">
-    <p className="icon">
-      {icon}
-    </p>
-    <p className="">
-      {text}
-    </p>
-  </div>
 )
