@@ -1,6 +1,5 @@
 ---
 templateKey: home-page
-<<<<<<< HEAD
 title: By the people of Cambridge. For the people of Cambridge.
 image: /img/love-a-fair.jpg
 contentBlocks:
@@ -55,10 +54,6 @@ contentBlocks:
       email us here
       or
       on our Facebook page
----
-placeholder
-=======
-title: Strawberry Fair
 revolvingHero:
   image1:
     alt: Test1
@@ -84,4 +79,3 @@ nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
 eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
 sunt in culpa qui officia deserunt mollit anim id est laborum.
->>>>>>> sf-17
