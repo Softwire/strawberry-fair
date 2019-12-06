@@ -1,8 +1,8 @@
 backend:
   name: git-gateway
-  accept_roles:
-    - admin
-    - content
+  accept_roles:
+    - admin
+    - content
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -23,8 +23,17 @@ collections:
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: home-page}
           - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: hidden, default: "placeholder"}
           - {label: Image, name: image, widget: image}
-          - {label: Body, name: body, widget: markdown}
+          - label: Content-Blocks
+            name: contentBlocks
+            widget: list
+            fields:
+              - {label: Content-Title, name: contentTitle, widget: string}
+              - {label: Content-Subtitle, name: contentSubtitle, widget: string}
+              - {label: Scrapbook-Images, name: scrapbookImages, widget: list, field: {label: ScrapbookImage, name: scrapbookImage, widget: image}}
+              - {label: Content-Body, name: _markdown_contentBody, widget: markdown}
+              - {label: Side-Snippet, name: sideSnippet, widget: string}
       - file: "frontend/src/pages/news/index.md"
         label: "News Home"
         name: "news-home"
@@ -34,6 +43,12 @@ collections:
           - {label: Subtitle, name: subtitle, widget: string}
           - {label: Image, name: image, widget: image}
           - {label: Body, name: body, widget: markdown}
+      - file: "frontend/src/pages/calendar.md"
+        label: "Calendar Page"
+        name: "calendar-page"
+        fields:
+          - {label: "Template Key", name: templateKey, widget: hidden, default: calendar-page}
+          - {label: Title, name: title, widget: string}
   - name: "news"
     label: "News Articles"
     folder: "frontend/src/pages/news/"

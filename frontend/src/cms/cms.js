@@ -24,8 +24,18 @@ const placeholderArticle = {
 
 const placeholderArticles = new Array(3).fill(placeholderArticle)
 
-CMS.registerPreviewTemplate('home', preview(HomePage))
-//CMS.registerPreviewTemplate('about-page', preview(AboutPage))
+const homePageAdditionalPropsExtractor = (dataProps, { widgetsFor }) => {
+  const contentBlocksMarkdown = widgetsFor('contentBlocks')
+    .map(blk => blk.getIn(['widgets', '_markdown_contentBody']))
+    .toObject()
+
+  return { 
+    contentBlocksHtml: contentBlocksMarkdown,
+  }
+}
+
+CMS.registerPreviewTemplate('home', preview(HomePage, {}, homePageAdditionalPropsExtractor))
+CMS.registerPreviewTemplate('about', preview(AboutPage))
 CMS.registerPreviewTemplate('events', preview(EventInfo))
 CMS.registerPreviewTemplate('news', preview(NewsArticle))
 CMS.registerPreviewTemplate('news-home', preview(NewsOverview, {newsArticles: placeholderArticles}))

@@ -4,22 +4,37 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
 import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
+import ContentBlocks from '../components/home-page/ContentBlocks'
 
-
-export const HomePage = ({title, content, image, contentComponent}) => {
+// This is used by the website and for CMS previews
+export const HomePage = ({title, contentBlocks, contentBlocksHtml, image, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
+
     return (
-        <Layout>
-            <section>
-                <h1>{title}</h1>
-                <BodyComponent content={content} />
-                <PreviewCompatibleImage imageInfo={image} />
-            </section>
-        </Layout>
+      <Layout>
+        <section>
+          <h1 className="title">{title}</h1>
+          <PreviewCompatibleImage imageInfo={image} />
+          <ContentBlocks 
+            contentBlocks={contentBlocks}
+            contentBlocksHtml={contentBlocksHtml}
+            BodyComponent={BodyComponent}/>
+          {
+            // TODO: Add committee meeting calendars
+            // TODO: Add East Anglian Festival Network banner
+            // TODO: Add News overview
+            // TODO: Add Twitter integration
+          }
+        </section>
+      </Layout>
   )
 }
 
-export default site(HomePage)
+const additionalPropsExtractor = graphqlData => ({
+  contentBlocksHtml: graphqlData.markdownRemark.fields.contentBlocksHtml
+})
+
+export default site(HomePage, additionalPropsExtractor)
 
 export const query = graphql`
 query homePageTemplate($id: String!) {
@@ -33,6 +48,21 @@ query homePageTemplate($id: String!) {
             }
           }
         }
+        contentBlocks {
+          contentTitle
+          contentSubtitle
+          scrapbookImages {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          sideSnippet
+        }
+      }
+      fields {
+        contentBlocksHtml
       }
       html
     }
