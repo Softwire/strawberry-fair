@@ -1,8 +1,7 @@
 backend:
-  name: git-gateway
-  accept_roles:
-    - admin
-    - content
+  name: github
+  repo: Softwire/strawberry-fair
+  branch: sf-37
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -96,6 +95,15 @@ collections:
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: calendar-page}
           - {label: Title, name: title, widget: string}
+      - file: "frontend/src/pages/privacy.md"
+        label: "Privacy Page"
+        create: true
+        fields:
+          - {label: "Template Key", name: templateKey, widget: hidden, default: about-page}
+          - {label: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Body, name: body, widget: markdown}
   - name: "news"
     label: "News Articles"
     folder: "frontend/src/pages/news/"

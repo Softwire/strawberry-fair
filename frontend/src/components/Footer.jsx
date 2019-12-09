@@ -36,7 +36,7 @@ export const Footer = () => (
         <div className="tile is-ancestor">
             <div className="tile is-parent">
                 <div className="tile is-child box content">
-                    © Strawberry Fair 2017 | <Link to="/about/cookie&privacy"> Cookie & Privacy policies</Link>
+                    © Strawberry Fair 2017 | <Link to="/privacy"> Cookie & Privacy policies</Link>
                 </div>
             </div>
         </div>
