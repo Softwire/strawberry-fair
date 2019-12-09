@@ -7,10 +7,12 @@ import BackgroundImage from 'gatsby-background-image'
 const CalendarDay = ({dateTime, events}) => {
     // TODO: Change the method of indicating it's "today", so as still to be visible when there's an event today
     const date = new Date(dateTime)  // The actual Date this CalendarDay is representing
-    const isTodayHighlight =
-            (date.getDate() === new Date().getDay()) &&
-            (date.getMonth() === new Date().getMonth()) &&
-            (date.getFullYear() === new Date().getFullYear())  // only highlight if this month is the current month, and the days match up
+    const today = new Date()         // Today's date
+
+    const daysMatch = date.getDate() === today.getDate()             // Do the days match?
+    const monthsMatch = date.getMonth() === today.getMonth()         // Do the months match?
+    const yearsMatch = date.getFullYear() === today.getFullYear()    // Do the years match?
+    const isTodayHighlight = daysMatch && monthsMatch && yearsMatch  // Then it's today
     const baseBoxClass = "box"
     let classAfterHighlight = baseBoxClass + (isTodayHighlight ? " has-background-primary has-text-white" : "")
 
