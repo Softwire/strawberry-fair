@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import { HTMLContent } from '../components/Content'
@@ -34,6 +35,13 @@ export const FormPageContent = ({title, googleForm, content, contentComponent}) 
     </section>
 )}
 
+FormPageContent.propTypes = {
+  title: PropTypes.string.isRequired,
+  googleForm: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  contentComponent: PropTypes.elementType  // Not required
+}
+
 const FormPage = ({data: {markdownRemark}}) => (
   <Layout>
     <FormPageContent
@@ -44,6 +52,18 @@ const FormPage = ({data: {markdownRemark}}) => (
     />
   </Layout>
 )
+
+FormPage.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        googleForm: PropTypes.string.isRequired
+      }),
+      html: PropTypes.string.isRequired
+    })
+  })
+}
 
 export default FormPage
 
