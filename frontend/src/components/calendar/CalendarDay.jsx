@@ -9,28 +9,19 @@ const CalendarDay = ({dateTime, events}) => {
     const date = new Date(dateTime)  // The actual Date this CalendarDay is representing
     const today = new Date()         // Today's date
     const isTodayHighlight = areSameDay(date, today)
-    const baseBoxClass = "box"
+    const baseBoxClass = "box calendar-day"
     let classAfterHighlight = baseBoxClass + (isTodayHighlight ? " has-background-primary has-text-white" : "")
 
     // Event on this day
     const event = eventOnDay(date, events)
     const dateDisplayFormatOptions = {weekday: 'short', day: 'numeric'}
     if (event) {
-        // I WISH there was a way of doing this in the stylesheet. Maybe there is.
-        // TODO: Fix this awful workaround
-        const backgroundImageStyle = {
-            height: '100px',
-            borderRadius: '6px',  // Bulma's "$radius-large"
-            //filter: 'contrast(0.7) brightness(0.7)'
-        }
-
         return (
             <div className='column is-half-mobile is-one-quarter-tablet is-2-desktop'>
                 <BackgroundImage
                         Tag='div'
-                        className='box has-text-white has-text-weight-bold'
+                        className={baseBoxClass + ' has-text-white has-text-weight-bold'}
                         fluid={event.frontmatter.image.childImageSharp.fluid}
-                        style={backgroundImageStyle}
                     >
                     <p>{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</p>
                     <Link className='has-text-white' to={event.fields.slug}>{event.frontmatter.title}</Link>
@@ -40,7 +31,7 @@ const CalendarDay = ({dateTime, events}) => {
     } else {
         return (
             <div className='column is-half-mobile is-one-quarter-tablet is-2-desktop'>
-                <div className={classAfterHighlight} style={{height: '100px'}}>
+                <div className={classAfterHighlight}>
                     <span>{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</span>
                 </div>
             </div>
