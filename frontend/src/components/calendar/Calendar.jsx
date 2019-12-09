@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+
+import eventPropTypeValidator from '../../templates/calendar-page'
 import CalendarDay from './CalendarDay'
 
 export const Calendar = ({events}) => {
@@ -51,6 +54,14 @@ export const Calendar = ({events}) => {
                 </div>
             </div>
         </div>
+    )
+}
+
+Calendar.propTypes = {
+    events: PropTypes.arrayOf(
+        PropTypes.shape({
+            node: eventPropTypeValidator
+        })
     )
 }
 
