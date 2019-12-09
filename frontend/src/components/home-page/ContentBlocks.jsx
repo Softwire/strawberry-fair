@@ -1,4 +1,5 @@
 import React from 'react'
+
 import ImageScrapbookRow from './ImageScrapbookRow'
 import StrawberryCard from '../StrawberryCard'
 
@@ -6,8 +7,8 @@ const ContentBlocks = ({contentBlocks, contentBlocksHtml, BodyComponent}) => (
   <React.Fragment>
     {contentBlocks && contentBlocks.map((block, index) => (
         <ContentBlock 
-          contentTitle={block.contentTitle}
-          contentSubtitle={block.contentSubtitle}
+          contentTitle={block.title}
+          contentSubtitle={block.subtitle}
           scrapbookImages={block.scrapbookImages || []}
           content={contentBlocksHtml[index]}
           sideSnippet={block.sideSnippet}

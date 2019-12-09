@@ -29,11 +29,29 @@ collections:
             name: contentBlocks
             widget: list
             fields:
-              - {label: Content-Title, name: contentTitle, widget: string}
-              - {label: Content-Subtitle, name: contentSubtitle, widget: string}
+              - {label: Content-Title, name: title, widget: string}
+              - {label: Content-Subtitle, name: subtitle, widget: string}
               - {label: Scrapbook-Images, name: scrapbookImages, widget: list, field: {label: ScrapbookImage, name: scrapbookImage, widget: image}}
               - {label: Content-Body, name: _markdown_contentBody, widget: markdown}
               - {label: Side-Snippet, name: sideSnippet, widget: string}
+          - label: Calendar-Block
+            name: calendarBlock
+            widget: object
+            fields: 
+              - {label: Calendar-Title, name: title, widget: string}
+              - {label: Calendar-Subtitle, name: subtitle, widget: string}
+          - label: News-Block
+            name: newsBlock
+            widget: object
+            fields: 
+              - {label: News-Title, name: title, widget: string}
+              - {label: News-Subtitle, name: subtitle, widget: string}
+          - label: Twitter-Block
+            name: twitterBlock
+            widget: object
+            fields: 
+              - {label: Twitter-Title, name: title, widget: string}
+              - {label: Twitter-Subtitle, name: subtitle, widget: string}
       - file: "frontend/src/pages/news/index.md"
         label: "News Home"
         name: "news-home"

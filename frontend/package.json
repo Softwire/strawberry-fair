@@ -27,6 +27,7 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-icons": "^3.8.0",
+    "react-twitter-embed": "^3.0.3",
     "remark": "^11.0.2",
     "remark-html": "^10.0.0",
     "uuid": "^3.2.1"
