@@ -13,24 +13,9 @@ import TwitterBlock from '../components/home-page/TwitterBlock'
 import { site } from '../util/templating'
 
 // This is used by the website and for CMS previews
-export const HomePage = ({title, contentBlocks, contentBlocksHtml, calendarBlock, newsBlock, twitterBlock,  image, contentComponent}) => {
+export const HomePage = ({title, contentBlocks, contentBlocksHtml, calendarBlock, newsBlock, twitterBlock, newsArticles,  image, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
-    const placeholderArticle = {
-      node: {
-        fields: {
-          slug: '/'
-        },
-        frontmatter: {
-          image: {
-            image: '/img/strawberry.jpg'
-          },
-          title: 'Placeholder'
-        }
-      }
-  }
-  
-  const placeholderArticles = new Array(3).fill(placeholderArticle)
-  
+
     return (
       <Layout>
         <section>
@@ -41,7 +26,7 @@ export const HomePage = ({title, contentBlocks, contentBlocksHtml, calendarBlock
             contentBlocksHtml={contentBlocksHtml}
             BodyComponent={BodyComponent}/>
           <CalendarBlock calendarBlock={calendarBlock}/>
-          <NewsBlock newsBlock={newsBlock} newsArticles={placeholderArticles}/>
+          <NewsBlock newsBlock={newsBlock} newsArticles={newsArticles}/>
           <TwitterBlock twitterBlock={twitterBlock}/>
           {
             // TODO: Finish committee meeting calendars
@@ -54,7 +39,8 @@ export const HomePage = ({title, contentBlocks, contentBlocksHtml, calendarBlock
 }
 
 const additionalPropsExtractor = graphqlData => ({
-  contentBlocksHtml: graphqlData.markdownRemark.fields.contentBlocksHtml
+  contentBlocksHtml: graphqlData.markdownRemark.fields.contentBlocksHtml,
+  newsArticles: graphqlData.allMarkdownRemark.edges
 })
 
 export default site(HomePage, additionalPropsExtractor)
@@ -100,6 +86,27 @@ query homePageTemplate($id: String!) {
         contentBlocksHtml
       }
       html
+    }
+    allMarkdownRemark(filter: {fields: {slug: {regex: "$//news//", ne: "/news/"}}}, sort: {fields: frontmatter___date, order: DESC}) {
+      edges {
+        node {
+          frontmatter {
+            title
+            subtitle
+            image {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          fields {
+            slug
+          }
+          html
+        }
+      }
     }
   }
 `

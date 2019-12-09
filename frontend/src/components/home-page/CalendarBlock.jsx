@@ -10,6 +10,7 @@ const CalendarBlock = ({calendarBlock}) => (
 
 export default CalendarBlock
 
+// TODO: Replace placeholder information with actual events
 const UpcomingEventsDisplay = ({upcomingEvents}) => (
   <div className="columns is-multiline">
     {new Array(8).fill('hello')
