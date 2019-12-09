@@ -37,3 +37,11 @@ $subtitle-color: $secondary;
     margin-top: auto;
 }
 
+//these lines solve the bug where the dopdrown menus of the navbar don't show on edge
+.navbar-dropdown{
+    display: block;
+}
+
+.navbar-dropdown.is-hidden-touch{
+    display: none;
+}
