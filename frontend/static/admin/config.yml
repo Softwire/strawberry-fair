@@ -1,8 +1,7 @@
 backend:
-  name: git-gateway
-  accept_roles:
-    - admin
-    - content
+  name: github
+  repo: Softwire/strawberry-fair
+  branch: sf-23
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -12,6 +11,7 @@ backend:
 
 media_folder: /frontend/static/img
 public_folder: /img
+publish_mode: editorial_workflow
 
 
 ## ACCESSIBLE IMAGE TEMPLATE ##
