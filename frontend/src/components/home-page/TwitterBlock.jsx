@@ -11,7 +11,7 @@ const TwitterBlock = ({twitterBlock}) => (
           <TwitterTimelineEmbed
             sourceType="profile"
             screenName="strawberry_fair"
-            options={{height: 800}}
+            options={{height: 450}}
           />
         </div>
       </div>
