@@ -3,6 +3,9 @@ import PreviewCompatibleImage from './PreviewCompatibleImage'
 import OutsideClickHandler from 'react-outside-click-handler'
 
 
+const imageRotationIntervalMillis = 10000
+
+
 export const Header = ({revolvingHero, fixedHero}) => {
     if (revolvingHero) {
         return (
@@ -34,9 +37,9 @@ const RevolvingHero = ({data, children}) => {
 
     useEffect(() => {
         setTimeout(() => {
-            setImageNum((imageNum + 1) % 5)
+            setImageNum((imageNum + 1) % data.length)
             setImageInfo(data[imageNum])
-        }, 10000)
+        }, imageRotationIntervalMillis)
     })
 
     return (
