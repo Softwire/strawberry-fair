@@ -1,0 +1,266 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<header>
+  <nav
+    className="navbar is-fixed-top"
+  >
+    <div
+      className="navbar-brand"
+    >
+      <a
+        className="navbar-item"
+        href="/"
+      >
+        <img
+          alt="Strawberry Fair Logo"
+          src="/img/1-line-logo.png"
+          style={
+            Object {
+              "borderRadius": "5px",
+            }
+          }
+        />
+      </a>
+      <a
+        className="navbar-burger burger "
+        data-target="navigationBar"
+        onClick={[Function]}
+      >
+        <span />
+        <span />
+        <span />
+      </a>
+    </div>
+    <ul
+      className="navbar-menu "
+      id="navigationBar"
+    >
+      <div
+        className="navbar-start"
+      >
+        <li
+          className="navbar-item has-dropdown "
+        >
+          <div
+            className="dropdown"
+          >
+            <div
+              className="dropdown-trigger"
+            >
+              <div>
+                <button
+                  className="button"
+                  onClick={[Function]}
+                >
+                  About Us
+                </button>
+              </div>
+            </div>
+            <ul
+              className="navbar-dropdown is-hidden-touch"
+            >
+              <li
+                className="navbar-item"
+              >
+                <a
+                  className="dropdown-item"
+                  href="/"
+                >
+                  Frequently Asked Questions
+                </a>
+              </li>
+              <li
+                className="navbar-item"
+              >
+                <a
+                  className="dropdown-item"
+                  href="/"
+                >
+                  About the Fair
+                </a>
+              </li>
+              <li
+                className="navbar-item"
+              >
+                <a
+                  className="dropdown-item"
+                  href="/"
+                >
+                  Organisation
+                </a>
+              </li>
+              <li
+                className="navbar-item"
+              >
+                <a
+                  className="dropdown-item"
+                  href="/"
+                >
+                  History
+                </a>
+              </li>
+              <li
+                className="navbar-item"
+              >
+                <a
+                  className="dropdown-item"
+                  href="/"
+                >
+                  Environment
+                </a>
+              </li>
+              <li
+                className="navbar-item"
+              >
+                <a
+                  className="dropdown-item"
+                  href="/"
+                >
+                  Bucket Collection Partners
+                </a>
+              </li>
+              <li
+                className="navbar-item"
+              >
+                <a
+                  className="dropdown-item"
+                  href="/"
+                >
+                  Get Involved
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li
+          className="navbar-item has-dropdown "
+        >
+          <div
+            className="dropdown"
+          >
+            <div
+              className="dropdown-trigger"
+            >
+              <div>
+                <button
+                  className="button"
+                  onClick={[Function]}
+                >
+                  Areas & Events
+                </button>
+              </div>
+            </div>
+            <ul
+              className="navbar-dropdown is-hidden-touch"
+            >
+              <li
+                className="navbar-item"
+              >
+                <a
+                  className="dropdown-item"
+                  href="/calendar"
+                >
+                  Calendar
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li
+          className="navbar-item has-dropdown "
+        >
+          <div
+            className="dropdown"
+          >
+            <div
+              className="dropdown-trigger"
+            >
+              <div>
+                <button
+                  className="button"
+                  onClick={[Function]}
+                >
+                  News
+                </button>
+              </div>
+            </div>
+            <ul
+              className="navbar-dropdown is-hidden-touch"
+            />
+          </div>
+        </li>
+        <li
+          className="navbar-item has-dropdown "
+        >
+          <div
+            className="dropdown"
+          >
+            <div
+              className="dropdown-trigger"
+            >
+              <div>
+                <button
+                  className="button"
+                  onClick={[Function]}
+                >
+                  Traders
+                </button>
+              </div>
+            </div>
+            <ul
+              className="navbar-dropdown is-hidden-touch"
+            />
+          </div>
+        </li>
+        <li
+          className="navbar-item has-dropdown "
+        >
+          <div
+            className="dropdown"
+          >
+            <div
+              className="dropdown-trigger"
+            >
+              <div>
+                <button
+                  className="button"
+                  onClick={[Function]}
+                >
+                  Support the Fair
+                </button>
+              </div>
+            </div>
+            <ul
+              className="navbar-dropdown is-hidden-touch"
+            />
+          </div>
+        </li>
+        <li
+          className="navbar-item has-dropdown "
+        >
+          <div
+            className="dropdown"
+          >
+            <div
+              className="dropdown-trigger"
+            >
+              <div>
+                <button
+                  className="button"
+                  onClick={[Function]}
+                >
+                  Contact
+                </button>
+              </div>
+            </div>
+            <ul
+              className="navbar-dropdown is-hidden-touch"
+            />
+          </div>
+        </li>
+      </div>
+    </ul>
+  </nav>
+</header>
+`;
