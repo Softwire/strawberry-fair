@@ -19,7 +19,7 @@ Checkout the source code and run the following from this directory:
 
 Gatsby will build and run the site in develop mode. When complete, the site will be accessing at `localhost:8000`.
 
-## CMS
+## CMS Local Running
 
 If you are running locally and you need to access the CMS, go into `static/admin/config.yml` and change
 
@@ -44,3 +44,19 @@ ensuring you include the name of the branch you're working on.
 
 **_Make sure you change it back before merging anything back into master._**
 
+
+## CMS Editorial Workflow
+
+When editing the website via CMS, new changes can be marked as "draft", "in review" or "ready" for deployment using the "Set status" button.
+
+These changes can then be reviewed by all CMS users via the "Workflow" tab.
+
+Changes will only go live when they are "published".
+
+Behind the scenes, Netlify editorial actions automatically perform git actions as follows:
+
+| Netlify        | Git                                                    |
+| ---------------|--------------------------------------------------------|
+| Save draft     | Commits to a new branch and opens a pull request       |
+| Edit draft     | Pushes another commit to the draft branch/pull request |
+| Publish draft  | Merges pull request and deletes branch                 |

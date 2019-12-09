@@ -15,7 +15,7 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
     )
   }
 
-  if (!!childImageSharp) {
+  if (childImageSharp) {
     return <Img style={imageStyle} fluid={childImageSharp.fluid} alt={alt} />
   }
 
