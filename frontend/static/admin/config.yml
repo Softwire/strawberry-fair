@@ -131,3 +131,14 @@ collections:
       - {label: Subtitle, name: subtitle, widget: string}
       - {label: Image, name: image, widget: image}
       - {label: Body, name: body, widget: markdown}
+      
+  - name: "forms"
+    label: "Forms"
+    folder: "frontend/src/pages/forms/"
+    create: true
+    fields:                                    
+      - {label: "Template Key", name: templateKey, widget: hidden, default: form}
+      - {label: Title, name: title, widget: string}
+      - {label: Body, name: body, widget: markdown}
+      - {label: Form, name: googleForm, widget: string}
+
