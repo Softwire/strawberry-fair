@@ -1,5 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
+
 import BackgroundImage from 'gatsby-background-image'
 
 // Represents a day in the calendar. Will either be empty or contain a preview of an event.
@@ -37,6 +39,26 @@ const CalendarDay = ({dateTime, events}) => {
             </div>
         )
     }
+}
+
+CalendarDay.propTypes = {
+    dateTime: PropTypes.instanceOf(Date),
+    events: PropTypes.arrayOf(
+        PropTypes.shape({
+            node: PropTypes.shape({
+                frontmatter: PropTypes.shape({
+                    title: PropTypes.string,
+                    image: PropTypes.any,  // TODO: come back to this
+                    dateTime: PropTypes.string,
+                    isMeeting: PropTypes.bool
+                }),
+                html: PropTypes.string,
+                fields: PropTypes.shape({
+                    slug: PropTypes.string
+                })
+            })
+        })
+    )
 }
 
 export default CalendarDay
