@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
@@ -39,6 +40,14 @@ export const AboutPage = ({title, subtitle, image, content, contentComponent}) =
         </section>
       </Layout>
 )}
+
+AboutPage.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
+  content: PropTypes.string.isRequired,
+  contentComponent: PropTypes.elementType  // Not required
+}
 
 export default site(AboutPage)
 
