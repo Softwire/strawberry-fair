@@ -10,6 +10,8 @@ $secondary: $black;
 $title-color: $primary;
 $subtitle-color: $secondary;
 
+$section-padding: 4.5rem 1.5rem;
+
 /* Bulma provides default styling (can be imported in separate modules as required) */
 @import "bulma";
 
@@ -36,4 +38,3 @@ $subtitle-color: $secondary;
 .scrapbook-image{
     margin-top: auto;
 }
-

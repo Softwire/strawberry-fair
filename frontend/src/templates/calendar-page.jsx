@@ -8,7 +8,7 @@ import { FaCalendar, FaListUl } from 'react-icons/fa'
 
 export const CalendarPage = ({events}) => {
   // Utility for including or not including the header and footer
-  const layout = false
+  const layout = true
   
   const inLayout = (
     <section>
