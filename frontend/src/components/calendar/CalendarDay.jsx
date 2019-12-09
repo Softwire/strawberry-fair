@@ -8,11 +8,7 @@ const CalendarDay = ({dateTime, events}) => {
     // TODO: Change the method of indicating it's "today", so as still to be visible when there's an event today
     const date = new Date(dateTime)  // The actual Date this CalendarDay is representing
     const today = new Date()         // Today's date
-
-    const daysMatch = date.getDate() === today.getDate()             // Do the days match?
-    const monthsMatch = date.getMonth() === today.getMonth()         // Do the months match?
-    const yearsMatch = date.getFullYear() === today.getFullYear()    // Do the years match?
-    const isTodayHighlight = daysMatch && monthsMatch && yearsMatch  // Then it's today
+    const isTodayHighlight = areSameDay(date, today)
     const baseBoxClass = "box"
     let classAfterHighlight = baseBoxClass + (isTodayHighlight ? " has-background-primary has-text-white" : "")
 
@@ -58,17 +54,16 @@ function eventOnDay(date, events) {
     // Returns the event on the given day. Returns null if there isn't one.
     // TODO: Multiple events on one day
 
-    // Check if any events match the given day
-    for (let i = 0; i < events.length; i++) {
-        const event = events[i].node
-        const eventDate = new Date(event.frontmatter.dateTime)
-        if ((eventDate.getDate() === date.getDate()) &&
-            (eventDate.getMonth() === date.getMonth()) &&
-            (eventDate.getFullYear() === date.getFullYear())) {
-            return event
-        }
-    }
+    // Array of events on this day
+    const eventsOnDay = events.filter(event => areSameDay(new Date(event.node.frontmatter.dateTime), date))
 
-    // If we get to this point, no event matches
-    return null
+    // Return the first element, or null if it's an empty array
+    return eventsOnDay.length > 0 ? eventsOnDay[0].node : null
+}
+
+function areSameDay(date1, date2) {
+    const daysMatch = date1.getDate() === date2.getDate()           // Do the days (of the month) match?
+    const monthsMatch = date1.getMonth() === date2.getMonth()       // Do the months match?
+    const yearsMatch = date1.getFullYear() === date2.getFullYear()  // Do the years match?
+    return daysMatch && monthsMatch && yearsMatch                   // Then they reder to the same day
 }
