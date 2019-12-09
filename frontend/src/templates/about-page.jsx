@@ -1,20 +1,24 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import { HTMLContent } from '../components/Content'
 import VerticalTileColumn from '../components/VerticalTileColumn'
 import { StrawberryTile } from '../components/VerticalTileColumn'
 import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 
 // This is used by the websitesite and for CMS previews
-export const AboutPage = ({title, subtitle, image, content}) => {
+export const AboutPage = ({title, subtitle, image, content, contentComponent}) => {
+    const BodyComponent = contentComponent || HTMLContent
+
     return (
       <Layout>
         <section className="section">
           <div className="container">
             <h1 className="title is-1">{title}</h1>
             <h2 className="subtitle">{subtitle}</h2>
-            <figure class="image">
-              <img src={image} />
+            <figure>
+              <PreviewCompatibleImage imageInfo={image} />
             </figure>
           </div>
         </section>
