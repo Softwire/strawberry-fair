@@ -16,6 +16,14 @@ export const CalendarPage = ({events}) => (
   </Layout>
 )
 
+CalendarPage.propTypes = {
+  events: PropTypes.arrayOf(
+      PropTypes.shape({
+          node: eventPropTypeValidator
+      })
+  )
+}
+
 export default site(CalendarPage, data => {return {events: data.allMarkdownRemark.edges}})
 
 export const eventPropTypeValidator = PropTypes.shape({
