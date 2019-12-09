@@ -13,7 +13,8 @@ export const FormPageContent = ({title, googleForm, content, contentComponent}) 
     let formUrl = googleForm.split("\"");
     if (formUrl.length == 1) formUrl = formUrl[0] //if the form is given as an Url simply pass it to the iframe
     else formUrl = formUrl[1] //if the form is given as an HTML element, it extracts the URL from it
-    let heightExtraction = googleForm.match(new RegExp('height=\s\"([0-9]+)?\"\s'))
+    const heightExtractionRegex = /\sheight="([0-9]+)?"\s/
+    let heightExtraction = googleForm.match(heightExtractionRegex)
     let iframeHeight 
     if (heightExtraction != null && heightExtraction.length == 2) iframeHeight = heightExtraction[1]
     else iframeHeight = IFRAMEHEIGHT //sets it to the default value
