@@ -5,6 +5,7 @@ import { HTMLContent } from '../components/Content'
 import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 import ContentBlocks from '../components/home-page/ContentBlocks'
+import AccessibleImage from '../query-fragments/AccessibleImage'
 
 // This is used by the website and for CMS previews
 export const HomePage = ({title, contentBlocks, contentBlocksHtml, image, contentComponent, revolvingHero}) => {
@@ -44,54 +45,19 @@ query homePageTemplate($id: String!) {
         title
         revolvingHero {
           image1 {
-            alt
-            src {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            ...AccessibleImage
           }
           image2 {
-            alt
-            src {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            ...AccessibleImage
           }
           image3 {
-            alt
-            src {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            ...AccessibleImage
           }
           image4 {
-            alt
-            src {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            ...AccessibleImage
           }
           image5 {
-            alt
-            src {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            ...AccessibleImage
           }
         }
         contentBlocks {
@@ -114,4 +80,3 @@ query homePageTemplate($id: String!) {
     }
   }
 `
-
