@@ -18,6 +18,7 @@ const CalendarDay = ({dateTime, events}) => {
 
     // Event on this day
     const event = eventOnDay(date, events)
+    const dateDisplayFormatOptions = {weekday: 'short', day: 'numeric'}
     if (event) {
         // I WISH there was a way of doing this in the stylesheet. Maybe there is.
         // TODO: Fix this awful workaround
@@ -35,7 +36,7 @@ const CalendarDay = ({dateTime, events}) => {
                         fluid={event.frontmatter.image.childImageSharp.fluid}
                         style={backgroundImageStyle}
                     >
-                    <p>{date.getDate()}</p>
+                    <p>{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</p>
                     <Link className='has-text-white' to={event.fields.slug}>{event.frontmatter.title}</Link>
                 </BackgroundImage>
             </div>
@@ -44,7 +45,7 @@ const CalendarDay = ({dateTime, events}) => {
         return (
             <div className='column is-half-mobile is-one-quarter-tablet is-2-desktop'>
                 <div className={classAfterHighlight} style={{height: '100px'}}>
-                    <p>{date.getDate()}</p>
+                    <span>{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</span>
                 </div>
             </div>
         )
