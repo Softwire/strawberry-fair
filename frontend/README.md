@@ -56,7 +56,7 @@ Changes will only go live when they are "published".
 Behind the scenes, Netlify editorial actions automatically perform git actions as follows:
 
 | Netlify        | Git                                                    |
-| ---------------|--------------------------------------------------------|
+|----------------|--------------------------------------------------------|
 | Save draft     | Commits to a new branch and opens a pull request       |
 | Edit draft     | Pushes another commit to the draft branch/pull request |
 | Publish draft  | Merges pull request and deletes branch                 |
@@ -65,4 +65,4 @@ Behind the scenes, Netlify editorial actions automatically perform git actions a
 
 To run all tests, use `npm test`.
 
-To run a specific test, use `npm test [filename]` (the file's directory location does not need to be specified).
+To run a specific test, use `npm test [filename]` (the filepath does not need to be specified).
