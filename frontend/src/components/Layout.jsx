@@ -7,11 +7,9 @@ import '../styling/styles.scss'
 /* All page templates should be wrapped in the Layout component to provide common styling */
 
 export const Layout = ({children, revolvingHero, fixedHero}) => (
-    <div className="container">
-        <section class="section">
+    <div id = "root-layout" className="container">
             <Header revolvingHero={revolvingHero} fixedHero={fixedHero} />
             <main>{children}</main>
-        </section>
         <Footer />
     </div>
 )

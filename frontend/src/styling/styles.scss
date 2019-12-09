@@ -10,8 +10,6 @@ $secondary: $black;
 $title-color: $primary;
 $subtitle-color: $secondary;
 
-$section-padding: 4.5rem 1.5rem;
-
 /* Bulma provides default styling (can be imported in separate modules as required) */
 @import "bulma";
 
@@ -24,8 +22,6 @@ $section-padding: 4.5rem 1.5rem;
         }
     }
 }
-
-
     
 .event-background-image{
     img{
@@ -35,6 +31,10 @@ $section-padding: 4.5rem 1.5rem;
     }
 }
     
-.scrapbook-image{
+.scrapbook-image {
     margin-top: auto;
+}
+
+#root-layout {
+    padding-top: 60px;
 }
