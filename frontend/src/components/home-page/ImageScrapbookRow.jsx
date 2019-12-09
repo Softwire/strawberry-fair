@@ -2,16 +2,51 @@ import React from 'react'
 
 import PreviewCompatibleImage from '../PreviewCompatibleImage'
 
-const ImageScrapbookRow = ({scrapbookImages: images}) => (
-  <div className="columns is-mobile">
-    <ColumnWithTwoImages size="is-one-fifth" topImage={images[0]} bottomImage={images[1]}/>
-    <ColumnWithOneImage size="is-one-third" image={images[2]}/>
-    <ColumnWithOneImage size="is-one-fifth" image={images[3]}/>
-    <ColumnWithOneImage image={images[4]}/>
-  </div>
-)
+const numCols = 4;
+const numDoubleRowCols = 1;
+
+const ImageScrapbookRow = ({scrapbookImages: images}) => {
+  const selectedImages = selectImages(images)
+
+  let imageCols = [
+    <ColumnWithTwoImages size="is-one-fifth" topImage={selectedImages[0]} bottomImage={selectedImages[1]} key={0}/>,
+    <ColumnWithOneImage size="is-one-quarter" image={selectedImages[2]} key={1}/>,
+    <ColumnWithOneImage size="is-one-quarter" image={selectedImages[3]} key={2}/>,
+    <ColumnWithOneImage image={selectedImages[4]} key={3}/>,
+  ]
+
+  const colWithTwoRows = getRandomInt(numCols)
+  swap(imageCols, colWithTwoRows, 0)
+
+  return (
+    <div className="columns is-mobile">
+      {imageCols}
+    </div>
+  )
+}
 
 export default ImageScrapbookRow
+
+const selectImages = (images) => {
+  const copiedImages = Array.from(images)
+  const selectedImages = []
+
+  for(let i = 0; i< numCols + numDoubleRowCols; i++) {
+      const nextIndex = getRandomInt(copiedImages.length)
+      selectedImages.push(copiedImages[nextIndex])
+      copiedImages.splice(nextIndex, 1)
+  }
+
+  return selectedImages
+}
+
+const swap = (array, i, j ) => {
+  const temp = array[i]
+  array[i] = array[j]
+  array[j] = temp
+}
+
+const getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max))
 
 /**
  * @param {String} size - Bulma size for columns, leave blank to fill remaining space 
