@@ -38,7 +38,7 @@ export const Calendar = ({events}) => {
     // TODO: See https://codepen.io/wikiki/pen/KvqKzK for a way of making the "< December 2019 >" bit span across the whole calendar
     return (
         <div className="panel">
-            <p className="panel-heading">Calendar</p>
+            <h1 className="panel-heading">Calendar</h1>
             <div className="panel-block">
                 <div className="columns is-multiline">
                     <div className="column is-full">

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { HTMLContent } from '../Content'
+import { HTMLContentPreview } from '../Content'
 
 // TODO: Filter meetings/non-meetings
 export const Upcoming = ({events}) => {
@@ -17,7 +17,7 @@ export const Upcoming = ({events}) => {
 
     return (
         <div className="panel">
-            <p className="panel-heading">Upcoming</p>
+            <h1 className="panel-heading">Upcoming</h1>
             {eventPanels}
         </div>
     )
@@ -33,10 +33,10 @@ const EventPanelBlock = ({event}) => {
                     </p>
                 </div>
                 <div className="media-content">
-                    <p>
+                    <h2 className="title is-4">
                         <strong><Link to={event.fields.slug}>{event.frontmatter.title}</Link></strong> - {new Date(event.frontmatter.dateTime).toLocaleDateString('en-GB')}
-                    </p>
-                    <HTMLContent content={event.html} />
+                    </h2>
+                    <HTMLContentPreview content={event.html} />
                 </div>
             </div>
         </div>
