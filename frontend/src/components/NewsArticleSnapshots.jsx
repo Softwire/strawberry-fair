@@ -37,7 +37,8 @@ const NewsArticleSnapshots = ({newsArticles}) => {
     <NewsArticleSnapshot 
       newsArticles={newsArticles}
       key={newsArticles.node.fields.slug}
-      />)
+    />
+  )
 
   return (
     <MainTileWithTwoStackedSideTiles 
