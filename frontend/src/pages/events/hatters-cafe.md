@@ -3,7 +3,9 @@ templateKey: event-info
 title: "Hatters Cafe"
 image: /img/hatters10.jpg
 dateTime: 2019-12-10T17:00:00.000Z
-isMeeting: false
+tags:
+  - Meeting - Finance
+  - Band competition
 ---
 ## Hatters Cafe is a chilled out area for hanging out in and a meeting point for family and friends.
 
