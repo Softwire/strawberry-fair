@@ -19,5 +19,5 @@ export const Layout = ({children, revolvingHero, fixedHero}) => (
 Layout.propTypes = {
     children: PropTypes.node,
     revolvingHero: Header.propTypes.revolvingHero,
-    fixedHero: Header.propTypes.revolvingHero
+    fixedHero: Header.propTypes.fixedHero
 }
