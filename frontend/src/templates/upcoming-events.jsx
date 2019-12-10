@@ -40,7 +40,6 @@ query upcomingEventsTemplate($id: String!) {
             }
           }
           dateTime
-          isMeeting
         }
         html
         fields {

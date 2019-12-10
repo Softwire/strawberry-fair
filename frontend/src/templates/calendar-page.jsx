@@ -40,7 +40,6 @@ query calendarPageTemplate($id: String!) {
             }
           }
           dateTime
-          isMeeting
         }
         html
         fields {
