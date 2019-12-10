@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import ImageScrapbookRow from './ImageScrapbookRow'
 import StrawberryCard from '../StrawberryCard'
@@ -17,8 +18,22 @@ const ContentBlocks = ({contentBlocks, contentBlocksHtml, BodyComponent}) => (
         />
       )
     )}
-    </React.Fragment>
-  )
+  </React.Fragment>
+)
+
+ContentBlocks.propTypes = {
+  contentBlocks: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      subtitle: PropTypes.string.isRequired,
+      scrapbookImages: PropTypes.any.isRequired,  // TODO
+      sideSnippet: PropTypes.string.isRequired,
+      BodyComponent: PropTypes.elementType  // Not required
+    })
+  ),
+  contentBlocksHtml: PropTypes.arrayOf(PropTypes.string),
+  BodyComponent: PropTypes.elementType
+}
 
 export default ContentBlocks
 
@@ -41,3 +56,12 @@ const ContentBlock = ({contentTitle, contentSubtitle, scrapbookImages, content, 
     </div>
   </section>
 )
+
+ContentBlock.propTypes = {
+  contentTitle: PropTypes.string.isRequired,
+  contentSubtitle: PropTypes.string.isRequired,
+  scrapbookImages: PropTypes.any.isRequired,  // TODO
+  content: PropTypes.string.isRequired,
+  sideSnippet: PropTypes.string.isRequired,
+  BodyComponent: PropTypes.elementType  // Not required
+}
