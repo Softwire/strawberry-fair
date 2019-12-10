@@ -23,14 +23,8 @@ $subtitle-color: $secondary;
     }
 }
 
-
-    
-.event-background-image{
-    img{
-        height: 100px;
-        border-radius: $radius-large;
-        filter: contrast(0.7) brightness(0.7);
-    }
+.calendar-day {
+    height: 100px;
 }
     
 .scrapbook-image{

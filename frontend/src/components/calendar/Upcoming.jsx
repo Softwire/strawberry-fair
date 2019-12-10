@@ -17,7 +17,7 @@ export const Upcoming = ({events}) => {
 
     return (
         <div className="panel">
-            <p className="panel-heading">Upcoming</p>
+            <h2 className="panel-heading">Upcoming</h2>
             {eventPanels}
         </div>
     )
