@@ -71,22 +71,17 @@ const NavBar = () => {
                     <NavBurger target="navigationBar" active={menuActive} setState={setMenuState} />
                 </div>
                 <NavMenu active={menuActive}>
-                    {[
                         <NavDropdown title="About Us">
-                            {[
-                                <NavLink href="/" title="Frequently Asked Questions"/>,
-                                <NavLink href="/" title="About the Fair"/>,
-                                <NavLink href="/" title="Organisation"/>,
-                                <NavLink href="/" title="History"/>,
-                                <NavLink href="/" title="Environment"/>,
-                                <NavLink href="/" title="Bucket Collection Partners"/>,
-                                <NavLink href="/" title="Get Involved"/>
-                            ]}
+                            <NavLink href="/" title="Frequently Asked Questions"/>,
+                            <NavLink href="/" title="About the Fair"/>,
+                            <NavLink href="/" title="Organisation"/>,
+                            <NavLink href="/" title="History"/>,
+                            <NavLink href="/" title="Environment"/>,
+                            <NavLink href="/" title="Bucket Collection Partners"/>,
+                            <NavLink href="/" title="Get Involved"/>
                         </NavDropdown>,
                         <NavDropdown href="/" title="Areas &amp; Events">
-                            {[
-                                <NavLink href="/calendar" title="Calendar" />
-                            ]}
+                            <NavLink href="/calendar" title="Calendar" />
                         </NavDropdown>,
                         <NavDropdown href="/" title="News">
 
@@ -100,7 +95,6 @@ const NavBar = () => {
                         <NavDropdown href="/" title="Contact">
 
                         </NavDropdown>
-                    ]}
                 </NavMenu>
             </nav>
         </header>
