@@ -77,7 +77,7 @@ const MonthScrubber = ({monthForward, monthBack, focusDate}) => (
                     </button>
                 </div>
                 <div className="column">
-                    <p>{new Date(focusDate).toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</p>
+                    <p>{focusDate.toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</p>
                 </div>
                 <div className="column is-narrow">
                     <button onClick={monthForward} className="button is-white">
@@ -90,3 +90,9 @@ const MonthScrubber = ({monthForward, monthBack, focusDate}) => (
         </div>
     </div>
 )
+
+MonthScrubber.propTypes = {
+    monthForward: PropTypes.func.isRequired,
+    monthBack: PropTypes.func.isRequired,
+    focusDate: PropTypes.instanceOf(Date)
+}
