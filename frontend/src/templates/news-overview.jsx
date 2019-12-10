@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import { HTMLContent } from '../components/Content'
@@ -23,6 +24,14 @@ export const NewsOverview = ({title, subtitle, content, contentComponent, newsAr
         </section>
       </Layout>
 )}
+
+NewsOverview.propTypes = {
+  title: PropTypes.node,  // Only needs to be a node, not specifically a string, as it is rendered within a tag so needs only be renderable
+  subtitle: PropTypes.node,
+  content: PropTypes.node,
+  contentComponent: PropTypes.elementType,
+  newsArticles: NewsArticleSnapshots.propTypes.newsArticles
+}
 
 export default site(NewsOverview, data => ({newsArticles: data.allMarkdownRemark.edges}))
 
