@@ -6,9 +6,15 @@ import { HTMLContent } from '../components/Content'
 import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 
+// List of tags shown near top of event
+const EventTagList = ({tags}) => (
+    <div className="tags">
+        {tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
+    </div>
+)
 
 // used by website and CMS previews
-export const EventInfo = ({title, dateTime, image, content, contentComponent}) => {
+export const EventInfo = ({title, image, dateTime, tags, content, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     const date = new Date(dateTime)
@@ -17,7 +23,8 @@ export const EventInfo = ({title, dateTime, image, content, contentComponent}) =
         <Layout>
             <section>
                 <h1>{title}</h1>
-                <p>{date.toLocaleString('en-GB', {timeStyle: 'short'})}</p>
+                <h2>{date.toLocaleString('en-GB', {timeStyle: 'short'})}</h2>
+                <EventTagList tags={tags} />
                 <BodyComponent content={content} />
                 <PreviewCompatibleImage imageInfo={image} />
             </section>
