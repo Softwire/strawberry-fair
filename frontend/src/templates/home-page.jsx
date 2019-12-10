@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
 import { Layout } from '../components/Layout'
 
@@ -13,14 +12,13 @@ import TwitterBlock from '../components/home-page/TwitterBlock'
 import { site } from '../util/templating'
 
 // This is used by the website and for CMS previews
-export const HomePage = ({title, revolvingHero, contentBlocks, contentBlocksHtml, calendarBlock, newsBlock, twitterBlock, newsArticles,  image, contentComponent}) => {
+export const HomePage = ({title, revolvingHero, contentBlocks, contentBlocksHtml, calendarBlock, newsBlock, twitterBlock, newsArticles, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     return (
       <Layout revolvingHero={revolvingHero}>
         <section>
           <h1 className="title">{title}</h1>
-          <PreviewCompatibleImage imageInfo={image} />
           <ContentBlocks 
             contentBlocks={contentBlocks}
             contentBlocksHtml={contentBlocksHtml}

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BaseBlock = ({block, altBackground, children}) => (
+const BaseBlock = ({block, altBackground = "", children}) => (
   <section className={`section ${altBackground && "has-background-grey-lighter"}`}>
     <h1 className="title is-1">{block.title}</h1>
     <div className="columns">

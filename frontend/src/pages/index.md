@@ -1,7 +1,6 @@
 ---
 templateKey: home-page
 title: By the people of Cambridge. For the people of Cambridge.
-image: /img/love-a-fair.jpg
 revolvingHero:
   image1:
     alt: Test1
