@@ -33,17 +33,34 @@ const getClassName = (baseName, toggleName, active) => `${baseName} ${active ? t
 const RevolvingHero = ({data, children}) => {
 
     const [imageNum, setImageNum] = useState(0)
-    const [imageInfo, setImageInfo] = useState(data[0])
+    const [imageArray, setImageArray] = useState(data.map((info, i) => <RevolvingHeroImage info={info} visible={i==0} />))
 
     useEffect(() => {
         setTimeout(() => {
             setImageNum((imageNum + 1) % data.length)
-            setImageInfo(data[imageNum])
+            setImageArray(data.map((info, i) => <RevolvingHeroImage info={info} visible={i==imageNum} />))
         }, imageRotationIntervalMillis)
     })
 
     return (
-        <FixedHero info={imageInfo}>{children}</FixedHero>
+        <section className="hero">
+            <div className="hero-body">
+                {children}
+                {imageArray}
+            </div>
+        </section>
+    )
+}
+
+const RevolvingHeroImage = ({info: {src, alt}, visible}) => {
+    
+    const style = {
+        opacity: (visible ? 1 : 0)
+    }
+    
+    return (
+        <PreviewCompatibleImage imageInfo={{image: src, alt: alt}}
+                                style={style} />
     )
 }
 
@@ -58,6 +75,9 @@ const FixedHero = ({info: {src, alt}, children}) => (
         </div>
     </section>
 )
+
+
+
 
 
 const NavBar = () => {
