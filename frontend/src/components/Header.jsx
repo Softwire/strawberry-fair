@@ -1,7 +1,54 @@
 import React, {useState, useEffect } from 'react'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
+import PropTypes from 'prop-types'
+
+import PreviewCompatibleImage, { childImageSharpValidator } from './PreviewCompatibleImage'
 import OutsideClickHandler from 'react-outside-click-handler'
 
+const getClassName = (baseName, toggleName, active) => `${baseName} ${active ? toggleName : ""}`
+
+const FixedHero = ({info: {src, alt}, children}) => (
+    <section className="hero">
+        <div className="hero-body">
+            {children}
+            <figure className="image">
+                <PreviewCompatibleImage imageInfo={{image: src, alt: alt}} />
+            </figure>
+        </div>
+    </section>
+)
+
+FixedHero.propTypes = {
+    info: PropTypes.shape({
+        src: PropTypes.oneOfType([
+            PropTypes.string,
+            childImageSharpValidator
+        ]),
+        alt: PropTypes.string
+    }),
+    children: PropTypes.node
+}
+
+const RevolvingHero = ({data, children}) => {
+
+    const [imageNum, setImageNum] = useState(0)
+    const [imageInfo, setImageInfo] = useState(data[0])
+
+    useEffect(() => {
+        setTimeout(() => {
+            setImageNum((imageNum + 1) % 5)
+            setImageInfo(data[imageNum])
+        }, 10000)
+    })
+
+    return (
+        <FixedHero info={imageInfo}>{children}</FixedHero>
+    )
+}
+
+RevolvingHero.propTypes = {
+    data: PropTypes.arrayOf(PropTypes.shape(FixedHero.propTypes)),  // Can reuse this code, so do
+    children: PropTypes.node
+}
 
 export const Header = ({revolvingHero, fixedHero}) => {
     if (revolvingHero) {
@@ -23,39 +70,10 @@ export const Header = ({revolvingHero, fixedHero}) => {
     }
 }
 
-
-const getClassName = (baseName, toggleName, active) => `${baseName} ${active ? toggleName : ""}`
-
-
-const RevolvingHero = ({data, children}) => {
-
-    const [imageNum, setImageNum] = useState(0)
-    const [imageInfo, setImageInfo] = useState(data[0])
-
-    useEffect(() => {
-        setTimeout(() => {
-            setImageNum((imageNum + 1) % 5)
-            setImageInfo(data[imageNum])
-        }, 10000)
-    })
-
-    return (
-        <FixedHero info={imageInfo}>{children}</FixedHero>
-    )
+Header.propTypes = {
+    revolvingHero: PropTypes.objectOf(FixedHero.propTypes.info),
+    fixedHero: FixedHero.propTypes.info     // Can reuse these two for validation
 }
-
-
-const FixedHero = ({info: {src, alt}, children}) => (
-    <section className="hero">
-        <div className="hero-body">
-            {children}
-            <figure className="image">
-                <PreviewCompatibleImage imageInfo={{image: src, alt: alt}} />
-            </figure>
-        </div>
-    </section>
-)
-
 
 const NavBar = () => {
     
@@ -110,6 +128,10 @@ const NavMenu = ({children, active}) => (
     </ul>
 )
 
+NavMenu.propTypes = {
+    children: PropTypes.node,
+    active: PropTypes.bool
+}
 
 const NavBurger = ({target, active, setState}) => (
     <a className={getClassName("navbar-burger burger","is-active", active)} data-target={target} onClick={() => setState(!active)}>
@@ -119,6 +141,11 @@ const NavBurger = ({target, active, setState}) => (
     </a>
 )
 
+NavBurger.propTypes = {
+    target: PropTypes.string,
+    active: PropTypes.bool,
+    setState: PropTypes.func
+}
 
 const NavDropdown = ({title, children}) => {
     const [active, setState] = useState(false)
@@ -141,6 +168,10 @@ const NavDropdown = ({title, children}) => {
     )
 }
 
+NavDropdown.propTypes = {
+    title: PropTypes.string,
+    children: PropTypes.node
+}
 
 const NavLink = ({href, title}) => (
     <li className="navbar-item">
@@ -150,5 +181,9 @@ const NavLink = ({href, title}) => (
     </li>
 )
 
+NavLink.propTypes = {
+    href: PropTypes.string,
+    title: PropTypes.string
+}
 
 const logo = { alt: "Strawberry Fair Logo", image: "/img/1-line-logo.png" }
