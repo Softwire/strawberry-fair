@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { HTMLContentPreview } from '../Content'
+import { HTMLContentSmall } from '../Content'
 
 // TODO: Filter meetings/non-meetings
 export const Upcoming = ({events}) => {
@@ -36,7 +36,7 @@ const EventPanelBlock = ({event}) => {
                     <h2 className="title is-4">
                         <strong><Link to={event.fields.slug}>{event.frontmatter.title}</Link></strong> - {new Date(event.frontmatter.dateTime).toLocaleDateString('en-GB')}
                     </h2>
-                    <HTMLContentPreview content={event.html} />
+                    <HTMLContentSmall content={event.html} />
                 </div>
             </div>
         </div>
