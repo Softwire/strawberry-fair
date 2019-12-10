@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 
@@ -49,3 +51,9 @@ const Social = ({href, image, alt}) => (
         </a>
     </div>
 )
+
+Social.propTypes = {
+    href: PropTypes.string,
+    image: PropTypes.string,
+    alt: PropTypes.string
+}
