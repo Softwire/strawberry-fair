@@ -19,3 +19,11 @@ export const CalendarViewToggle = ({view}) => (
         </ul>
     </div>
 )
+
+CalendarViewToggle.propTypes = {
+    view: (props, propName, componentName) => {
+        if (props[propName] !== 'calendar' && props[propName] !== 'upcoming') {
+            return new Error(`Invalid prop '${propName}' passed to ${componentName}: must be 'upcoming' or 'calendar'.`)
+        }
+    }
+}
