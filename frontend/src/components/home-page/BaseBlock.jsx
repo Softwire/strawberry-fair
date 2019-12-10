@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const BaseBlock = ({block, altBackground = "", children}) => (
   <section className={`section ${altBackground && "has-background-grey-lighter"}`}>
@@ -11,5 +12,14 @@ const BaseBlock = ({block, altBackground = "", children}) => (
     {children}
   </section>
 )
+
+BaseBlock.propTypes = {
+  block: PropTypes.shape({
+    title: PropTypes.node.isRequired,
+    subtitle: PropTypes.node.isRequired
+  }),
+  altBackground: PropTypes.bool,
+  children: PropTypes.node
+}
 
 export default BaseBlock
