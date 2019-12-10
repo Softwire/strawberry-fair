@@ -4,6 +4,7 @@ import OutsideClickHandler from 'react-outside-click-handler'
 
 
 const imageRotationIntervalMillis = 10000
+const imageFadeTimeMills = 2000
 
 
 export const Header = ({revolvingHero, fixedHero}) => {
@@ -46,7 +47,9 @@ const RevolvingHero = ({data, children}) => {
         <section className="hero">
             <div className="hero-body">
                 {children}
-                {imageArray}
+                <figure className="image">
+                    {imageArray}
+                </figure>
             </div>
         </section>
     )
@@ -55,7 +58,10 @@ const RevolvingHero = ({data, children}) => {
 const RevolvingHeroImage = ({info: {src, alt}, visible}) => {
     
     const style = {
-        opacity: (visible ? 1 : 0)
+        opacity: (visible ? 1 : 0),
+        transition: `opacity ${imageFadeTimeMills/1000}s`,
+        position: "absolute",
+        width: "100%"
     }
     
     return (
