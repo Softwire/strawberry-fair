@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import { site } from '../util/templating'
 import { Layout } from '../components/Layout'
@@ -39,6 +39,7 @@ query upcomingEventsTemplate($id: String!) {
               }
             }
           }
+          tags
           dateTime
         }
         html

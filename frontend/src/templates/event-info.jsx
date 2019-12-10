@@ -38,6 +38,7 @@ query eventInfoTemplate($id: String!) {
                     }
                 }
             }
+            tags
             dateTime
         }
         html
