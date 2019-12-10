@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import PreviewCompatibleImage from '../PreviewCompatibleImage'
 
@@ -23,6 +24,10 @@ const ImageScrapbookRow = ({scrapbookImages: images}) => {
       {imageCols}
     </div>
   )
+}
+
+ImageScrapbookRow.propTypes = {
+  scrapbookImages: PropTypes.array  // TODO: Be more specific
 }
 
 export default ImageScrapbookRow
@@ -64,6 +69,12 @@ const ColumnWithTwoImages = ({topImage, bottomImage, size}) => (
   </div>
 )
 
+ColumnWithTwoImages.propTypes = {
+  topImage: PreviewCompatibleImage.propTypes.imageInfo,
+  bottomImage: PreviewCompatibleImage.propTypes.imageInfo,
+  size: PropTypes.string
+}
+
 /**
  * @param {String} size - Bulma size for columns, leave blank to fill remaining space 
  */
@@ -73,3 +84,7 @@ const ColumnWithOneImage = ({image, size = ""}) => (
   </figure>
 )
 
+ColumnWithOneImage.propTypes = {
+  image: PreviewCompatibleImage.propTypes.imageInfo,
+  size: PropTypes.string
+}
