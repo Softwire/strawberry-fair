@@ -6,7 +6,7 @@ import { site } from '../util/templating'
 import { Layout } from '../components/Layout'
 import { Upcoming } from '../components/calendar/Upcoming'
 import { CalendarViewToggle } from '../components/calendar/CalendarViewToggle'
-import { eventPropTypeValidator } from './calendar-page'
+import { eventPropTypeValidator } from '../components/calendar/Event'
 import { FaCalendar, FaListUl } from 'react-icons/fa'
 
 export const UpcomingEvents = ({events}) => (

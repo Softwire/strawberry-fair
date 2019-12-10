@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import { site } from '../util/templating'
 import { Layout } from '../components/Layout'
 import { Calendar } from '../components/calendar/Calendar'
 import { CalendarViewToggle } from '../components/calendar/CalendarViewToggle'
+import { eventPropTypeValidator } from '../components/calendar/Event'
 
 export const CalendarPage = ({events}) => (
   <Layout>
@@ -25,19 +26,6 @@ CalendarPage.propTypes = {
 }
 
 export default site(CalendarPage, data => {return {events: data.allMarkdownRemark.edges}})
-
-export const eventPropTypeValidator = PropTypes.shape({
-  frontmatter: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    image: PropTypes.object.isRequired,
-    dateTime: PropTypes.string.isRequired,
-    isMeeting: PropTypes.bool.isRequired
-  }),
-  html: PropTypes.string.isRequired,
-  fields: PropTypes.shape({
-    slug: PropTypes.string.isRequired
-  })
-})
 
 export const query = graphql`
 query calendarPageTemplate($id: String!) {

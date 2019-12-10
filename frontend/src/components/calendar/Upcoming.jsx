@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-import { eventPropTypeValidator } from '../../templates/calendar-page'
+import { eventPropTypeValidator } from './Event'
 import { HTMLContent } from '../Content'
 
 // TODO: Filter meetings/non-meetings

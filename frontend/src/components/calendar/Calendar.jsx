@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
-import eventPropTypeValidator from '../../templates/calendar-page'
+import { eventPropTypeValidator } from './Event'
 import CalendarDay from './CalendarDay'
 
 export const Calendar = ({events}) => {
