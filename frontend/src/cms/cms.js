@@ -1,6 +1,6 @@
 import CMS from 'netlify-cms-app'
 
-import '../styling/styles.sass'
+import '../styling/styles.scss'
 import { HomePage } from '../templates/home-page'
 import { NewsOverview } from '../templates/news-overview'
 import { preview } from '../util/templating'

@@ -1,8 +1,63 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect } from 'react'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
+import OutsideClickHandler from 'react-outside-click-handler'
 
 
-export const Header = () => {
+export const Header = ({revolvingHero, fixedHero}) => {
+    if (revolvingHero) {
+        return (
+            <RevolvingHero data={Object.values(revolvingHero)}>
+                <NavBar />
+            </RevolvingHero>
+        )
+    }
+    else if (fixedHero) {
+        return (
+            <FixedHero info={fixedHero}>
+                <NavBar />
+            </FixedHero>
+        )
+    }
+    else {
+        return <NavBar />
+    }
+}
+
+
+const getClassName = (baseName, toggleName, active) => `${baseName} ${active ? toggleName : ""}`
+
+
+const RevolvingHero = ({data, children}) => {
+
+    const [imageNum, setImageNum] = useState(0)
+    const [imageInfo, setImageInfo] = useState(data[0])
+
+    useEffect(() => {
+        setTimeout(() => {
+            setImageNum((imageNum + 1) % 5)
+            setImageInfo(data[imageNum])
+        }, 10000)
+    })
+
+    return (
+        <FixedHero info={imageInfo}>{children}</FixedHero>
+    )
+}
+
+
+const FixedHero = ({info: {src, alt}, children}) => (
+    <section className="hero">
+        <div className="hero-body">
+            {children}
+            <figure className="image">
+                <PreviewCompatibleImage imageInfo={{image: src, alt: alt}} />
+            </figure>
+        </div>
+    </section>
+)
+
+
+const NavBar = () => {
     
     const [menuActive, setMenuState] = useState(false)
 
@@ -53,14 +108,8 @@ export const Header = () => {
 }
 
 
-const logo = { alt: "Strawberry Fair Logo", image: "/img/1-line-logo.png" }
-
-
-const getName = (baseName, active) => `${baseName} ${active ? "is-active" : ""}`
-
-
 const NavMenu = ({children, active}) => (
-    <ul id="navigationBar" className={getName("navbar-menu", active)}>
+    <ul id="navigationBar" className={getClassName("navbar-menu", "is-active", active)}>
         <div className="navbar-start">
             {children}
         </div>
@@ -69,7 +118,7 @@ const NavMenu = ({children, active}) => (
 
 
 const NavBurger = ({target, active, setState}) => (
-    <a className={getName("navbar-burger burger", active)} data-target={target} onClick={() => setState(!active)}>
+    <a className={getClassName("navbar-burger burger","is-active", active)} data-target={target} onClick={() => setState(!active)}>
         <span></span>
         <span></span>
         <span></span>
@@ -81,13 +130,19 @@ const NavDropdown = ({title, children}) => {
     const [active, setState] = useState(false)
 
     return (
-        <li className={getName("navbar-item has-dropdown", active)}>
-            <button className="navbar-link" onClick={() => setState(!active)}>
-                {title}
-            </button>
-            <ul className="navbar-dropdown">
-                {children}
-            </ul>
+        <li className={getClassName("navbar-item has-dropdown", "is-active", active)}>
+            <div className="dropdown">
+                <div className="dropdown-trigger">
+                    <OutsideClickHandler onOutsideClick={() => setState(false)}>
+                        <button className="button" onClick={() => setState(!active)}>
+                            {title}
+                        </button>
+                    </OutsideClickHandler>
+                </div>
+                <ul className={getClassName("navbar-dropdown", "is-hidden-touch", !active)}>
+                    {children}
+                </ul>
+            </div>
         </li>
     )
 }
@@ -95,8 +150,11 @@ const NavDropdown = ({title, children}) => {
 
 const NavLink = ({href, title}) => (
     <li className="navbar-item">
-        <a href={href}>
+        <a href={href} className="dropdown-item">
             {title}
         </a>
     </li>
 )
+
+
+const logo = { alt: "Strawberry Fair Logo", image: "/img/1-line-logo.png" }

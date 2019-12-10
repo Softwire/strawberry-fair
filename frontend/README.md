@@ -19,7 +19,7 @@ Checkout the source code and run the following from this directory:
 
 Gatsby will build and run the site in develop mode. When complete, the site will be accessing at `localhost:8000`.
 
-## CMS
+## CMS Local Running
 
 If you are running locally and you need to access the CMS, go into `static/admin/config.yml` and change
 
@@ -43,4 +43,36 @@ backend:
 ensuring you include the name of the branch you're working on.
 
 **_Make sure you change it back before merging anything back into master._**
+
+
+## CMS Editorial Workflow
+
+When editing the website via CMS, new changes can be marked as "draft", "in review" or "ready" for deployment using the "Set status" button.
+
+These changes can then be reviewed by all CMS users via the "Workflow" tab.
+
+Changes will only go live when they are "published".
+
+Behind the scenes, Netlify editorial actions automatically perform git actions as follows:
+
+| Netlify        | Git                                                    |
+| ---------------|--------------------------------------------------------|
+| Save draft     | Commits to a new branch and opens a pull request       |
+| Edit draft     | Pushes another commit to the draft branch/pull request |
+| Publish draft  | Merges pull request and deletes branch                 |
+
+### 1. Adding Google Forms via CMS:
+    To add a Google Form via CMS follow these steps:
+      1. Open the form on Google Forms
+      2. Click send on the top right corner
+      3. Select the "Send via <>" option.
+      4. Click "copy" on the bottom left corner.
+      5. On a new tab, go to `localhost:8000/admin`
+      6. Create a new Form page
+      7. Paste into the "Form" box
+      8. Fill in the remaining boxes.
+      9. Click "Publish" on the top righ corner.
+
+      Alternatively, in step 4 you can choose to copy the URL only, instead of the whole HTML element.
+
 

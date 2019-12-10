@@ -13,11 +13,11 @@ import TwitterBlock from '../components/home-page/TwitterBlock'
 import { site } from '../util/templating'
 
 // This is used by the website and for CMS previews
-export const HomePage = ({title, contentBlocks, contentBlocksHtml, calendarBlock, newsBlock, twitterBlock, newsArticles,  image, contentComponent}) => {
+export const HomePage = ({title, revolvingHero, contentBlocks, contentBlocksHtml, calendarBlock, newsBlock, twitterBlock, newsArticles,  image, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     return (
-      <Layout>
+      <Layout revolvingHero={revolvingHero}>
         <section>
           <h1 className="title">{title}</h1>
           <PreviewCompatibleImage imageInfo={image} />
@@ -45,15 +45,61 @@ const additionalPropsExtractor = graphqlData => ({
 
 export default site(HomePage, additionalPropsExtractor)
 
+
 export const query = graphql`
 query homePageTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
+        revolvingHero {
+          image1 {
+            alt
+            src {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          image2 {
+            alt
+            src {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          image3 {
+            alt
+            src {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          image4 {
+            alt
+            src {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          image5 {
+            alt
+            src {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
           }
         }
@@ -110,3 +156,4 @@ query homePageTemplate($id: String!) {
     }
   }
 `
+

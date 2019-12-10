@@ -1,8 +1,8 @@
 backend:
   name: git-gateway
-  accept_roles:
-    - admin
-    - content
+  accept_roles:
+    - admin
+    - content
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -12,6 +12,18 @@ backend:
 
 media_folder: /frontend/static/img
 public_folder: /img
+publish_mode: editorial_workflow
+
+
+## ACCESSIBLE IMAGE TEMPLATE ##
+## 
+##          - label: Image
+##            name: ximage
+##            widget: object
+##            fields:
+##              - {label: Description, name: alt, widget: string}
+##              - {label: Image, name: src, widget: image}
+
 
 collections:
   - name: "pages"
@@ -25,6 +37,41 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: Body, name: body, widget: hidden, default: "placeholder"}
           - {label: Image, name: image, widget: image}
+          - label: Banner
+            name: revolvingHero
+            widget: object
+            fields:
+              - label: Image 1
+                name: image1
+                widget: object
+                fields:
+                  - {label: Description, name: alt, widget: string}
+                  - {label: Image, name: src, widget: image}
+              - label: Image 2
+                name: image2
+                widget: object
+                fields:
+                  - {label: Description, name: alt, widget: string}
+                  - {label: Image, name: src, widget: image}
+              - label: Image 3
+                name: image3
+                widget: object
+                fields:
+                  - {label: Description, name: alt, widget: string}
+                  - {label: Image, name: src, widget: image}
+              - label: Image 4
+                name: image4
+                widget: object
+                fields:
+                  - {label: Description, name: alt, widget: string}
+                  - {label: Image, name: src, widget: image}
+              - label: Image 5
+                name: image5
+                widget: object
+                fields:
+                  - {label: Description, name: alt, widget: string}
+                  - {label: Image, name: src, widget: image}
+          - {label: Body, name: body, widget: markdown}
           - label: Content-Blocks
             name: contentBlocks
             widget: list
@@ -102,3 +149,14 @@ collections:
       - {label: Subtitle, name: subtitle, widget: string}
       - {label: Image, name: image, widget: image}
       - {label: Body, name: body, widget: markdown}
+      
+  - name: "forms"
+    label: "Forms"
+    folder: "frontend/src/pages/forms/"
+    create: true
+    fields:                                    
+      - {label: "Template Key", name: templateKey, widget: hidden, default: form}
+      - {label: Title, name: title, widget: string}
+      - {label: Body, name: body, widget: markdown}
+      - {label: Form, name: googleForm, widget: string}
+
