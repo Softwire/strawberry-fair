@@ -47,7 +47,7 @@ const RevolvingHero = ({data, children}) => {
         <section className="hero">
             <div className="hero-body">
                 {children}
-                <figure className="image">
+                <figure className="hero-container">
                     {imageArray}
                 </figure>
             </div>
@@ -61,7 +61,9 @@ const RevolvingHeroImage = ({info: {src, alt}, visible}) => {
         opacity: (visible ? 1 : 0),
         transition: `opacity ${imageFadeTimeMills/1000}s`,
         position: "absolute",
-        width: "100%"
+        width: "80vw",
+        height:"30vw",
+        objectFit: "cover"
     }
     
     return (
