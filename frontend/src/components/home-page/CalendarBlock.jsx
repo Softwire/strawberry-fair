@@ -9,14 +9,6 @@ const CalendarBlock = ({calendarBlock}) => (
   </BaseBlock>
 )
 
-CalendarBlock.propTypes = {
-  calendarBlock: PropTypes.shape({
-    upcomingEvents: UpcomingEventsDisplay.propTypes.upcomingEvents  // It'll be the same as below
-  })
-}
-
-export default CalendarBlock
-
 // TODO: Replace placeholder information with actual events
 const UpcomingEventsDisplay = (/*{upcomingEvents}*/) => (
   <div className="columns is-multiline">
@@ -34,5 +26,16 @@ const UpcomingEventsDisplay = (/*{upcomingEvents}*/) => (
 )
 
 UpcomingEventsDisplay.propTypes = {
-  upcomingEvents: PropTypes.array  // Make this more specific once implemented above
+  upcomingEvents: PropTypes.oneOfType([
+    PropTypes.array,  // Make this more specific once implemented above
+    PropTypes.string  // So placeholder works
+  ])
 }
+
+CalendarBlock.propTypes = {
+  calendarBlock: PropTypes.shape({
+    upcomingEvents: UpcomingEventsDisplay.propTypes.upcomingEvents  // It'll be the same as above
+  })
+}
+
+export default CalendarBlock
