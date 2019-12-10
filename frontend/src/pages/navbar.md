@@ -1,6 +1,9 @@
 ---
 templateKey: calendar-page
-events:
-  event: Flying Pig Stage
+about:
+  - collection: forms
+    pageTitle: Registration Form
+  - collection: about
+    pageTitle: About Item
 ---
 
