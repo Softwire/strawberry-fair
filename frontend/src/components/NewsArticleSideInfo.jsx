@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const NewsArticleSideInfo = ({author, tags, date}) => {
   const formattedDate = new Date(date).toLocaleDateString('en-UK', {year: 'numeric', month: 'long', day: 'numeric'});
@@ -18,7 +19,13 @@ const NewsArticleSideInfo = ({author, tags, date}) => {
         </div>
       </div>
     </div>
-    )
+  )
+}
+
+NewsArticleSideInfo.propTypes = {
+  author: PropTypes.string,
+  tags: PropTypes.arrayOf(PropTypes.string),
+  date: PropTypes.string
 }
 
 export default NewsArticleSideInfo
