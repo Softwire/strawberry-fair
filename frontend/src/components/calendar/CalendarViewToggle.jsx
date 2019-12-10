@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 import { FaCalendar, FaListUl } from 'react-icons/fa'
@@ -21,9 +22,5 @@ export const CalendarViewToggle = ({view}) => (
 )
 
 CalendarViewToggle.propTypes = {
-    view: (props, propName, componentName) => {
-        if (props[propName] !== 'calendar' && props[propName] !== 'upcoming') {
-            return new Error(`Invalid prop '${propName}' passed to ${componentName}: must be 'upcoming' or 'calendar'.`)
-        }
-    }
+    view: PropTypes.oneOf(['calendar', 'upcoming'])
 }
