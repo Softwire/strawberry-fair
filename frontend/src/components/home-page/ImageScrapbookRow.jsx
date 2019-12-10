@@ -6,32 +6,6 @@ import PreviewCompatibleImage from '../PreviewCompatibleImage'
 const numCols = 4;
 const numDoubleRowCols = 1;
 
-const ImageScrapbookRow = ({scrapbookImages: images}) => {
-  const selectedImages = selectImages(images)
-
-  let imageCols = [
-    <ColumnWithTwoImages size="is-one-fifth" topImage={selectedImages[0]} bottomImage={selectedImages[1]} key={0}/>,
-    <ColumnWithOneImage size="is-one-quarter" image={selectedImages[2]} key={1}/>,
-    <ColumnWithOneImage size="is-one-quarter" image={selectedImages[3]} key={2}/>,
-    <ColumnWithOneImage image={selectedImages[4]} key={3}/>,
-  ]
-
-  const colWithTwoRows = getRandomInt(numCols)
-  swap(imageCols, colWithTwoRows, 0)
-
-  return (
-    <div className="columns is-mobile">
-      {imageCols}
-    </div>
-  )
-}
-
-ImageScrapbookRow.propTypes = {
-  scrapbookImages: PropTypes.array  // TODO: Be more specific
-}
-
-export default ImageScrapbookRow
-
 const selectImages = (images) => {
   const copiedImages = Array.from(images)
   const selectedImages = []
@@ -88,3 +62,29 @@ ColumnWithOneImage.propTypes = {
   image: PreviewCompatibleImage.propTypes.imageInfo,
   size: PropTypes.string
 }
+
+const ImageScrapbookRow = ({scrapbookImages: images}) => {
+  const selectedImages = selectImages(images)
+
+  let imageCols = [
+    <ColumnWithTwoImages size="is-one-fifth" topImage={selectedImages[0]} bottomImage={selectedImages[1]} key={0}/>,
+    <ColumnWithOneImage size="is-one-quarter" image={selectedImages[2]} key={1}/>,
+    <ColumnWithOneImage size="is-one-quarter" image={selectedImages[3]} key={2}/>,
+    <ColumnWithOneImage image={selectedImages[4]} key={3}/>,
+  ]
+
+  const colWithTwoRows = getRandomInt(numCols)
+  swap(imageCols, colWithTwoRows, 0)
+
+  return (
+    <div className="columns is-mobile">
+      {imageCols}
+    </div>
+  )
+}
+
+ImageScrapbookRow.propTypes = {
+  scrapbookImages: PropTypes.arrayOf(ColumnWithOneImage.propTypes.image)
+}
+
+export default ImageScrapbookRow

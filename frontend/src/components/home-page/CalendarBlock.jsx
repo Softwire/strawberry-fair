@@ -9,7 +9,7 @@ const CalendarBlock = ({calendarBlock}) => (
   </BaseBlock>
 )
 
-// TODO: Replace placeholder information with actual events
+// TODO: Replace placeholder information with actual events (remember to update the propTypes after doing this)
 const UpcomingEventsDisplay = (/*{upcomingEvents}*/) => (
   <div className="columns is-multiline">
     {new Array(8).fill('hello')

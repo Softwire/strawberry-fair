@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
-import { eventPropTypeValidator } from './Event'
 import CalendarDay from './CalendarDay'
 
 export const Calendar = ({events}) => {
@@ -58,11 +57,7 @@ export const Calendar = ({events}) => {
 }
 
 Calendar.propTypes = {
-    events: PropTypes.arrayOf(
-        PropTypes.shape({
-            node: eventPropTypeValidator
-        })
-    )
+    events: CalendarDay.propTypes.events
 }
 
 const MonthScrubber = ({monthForward, monthBack, focusDate}) => (

@@ -15,8 +15,8 @@ const BaseBlock = ({block, altBackground = "", children}) => (
 
 BaseBlock.propTypes = {
   block: PropTypes.shape({
-    title: PropTypes.node.isRequired,
-    subtitle: PropTypes.node.isRequired
+    title: PropTypes.node,
+    subtitle: PropTypes.node
   }),
   altBackground: PropTypes.bool,
   children: PropTypes.node
