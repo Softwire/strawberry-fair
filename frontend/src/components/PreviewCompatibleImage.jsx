@@ -2,15 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 
-// This matches the fields returned from the GatsbyImagSharpFluid fragment
-// May have to make these not required if they throw errors later
-export const gatsbyImageSharpFluidValidator = PropTypes.shape({
-  base64: PropTypes.string.isRequired,
-  aspectRatio: PropTypes.number.isRequired,
-  src: PropTypes.string.isRequired,
-  srcSet: PropTypes.string.isRequired,
-  sizes: PropTypes.string.isRequired
-})
+import { gatsbyImageSharpFluidValidator } from './validators'
 
 export const childImageSharpValidator = PropTypes.shape({
   fluid: gatsbyImageSharpFluidValidator
