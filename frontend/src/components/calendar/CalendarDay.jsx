@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 
-import { eventPropTypeValidator } from './Event'
+import { eventPropTypeValidator } from '../validators'
 
 // Represents a day in the calendar. Will either be empty or contain a preview of an event.
 // Later will have to add support for multiple events.
