@@ -113,23 +113,6 @@ collections:
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: calendar-page}
           - {label: Title, name: title, widget: string}
-      - file: "frontend/src/pages/navbar.md"
-        label: "Navigation Bar"
-        name: "navbar"
-        fields:
-          - {label: Template Key, name: templateKey, widget: hidden, default: nav-bar-preview}
-          - label: About Us
-            name: about
-            widget: list
-            hint: Items can only be added or deleted, but not edited
-            field: 
-              label: Selection
-              name: selection
-              widget: multi-collection-relation
-              options: [Events, About, Forms]
-              searchFields: [title]
-              valueField: title
-              displayFields: [title]
   - name: "news"
     label: "News Articles"
     folder: "frontend/src/pages/news/"
@@ -175,4 +158,23 @@ collections:
       - {label: Title, name: title, widget: string}
       - {label: Body, name: body, widget: markdown}
       - {label: Form, name: googleForm, widget: string}
+
+  - label: Nav Bar
+    name: navbar
+    folder: frontend/src/pages/navbar/
+    fields:
+      - {label: Template Key, name: templateKey, widget: hidden, default: nav-bar-preview}
+      - {label: Title, name: title, widget: string}
+      - label: Page Titles
+        name: pageTitles
+        widget: list
+        hint: Items can only be added or deleted, but not edited
+        field: 
+          label: Nav Bar Tab
+          name: navBarTab
+          widget: multi-collection-relation
+          options: [Events, About, Forms]
+          searchFields: [title]
+          valueField: title
+          displayFields: [title]
 
