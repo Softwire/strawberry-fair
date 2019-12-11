@@ -1,5 +1,6 @@
 ---
 templateKey: news-overview
+hasBanner: true
 fixedHero:
   alt: Strawberry Fair Banner
   src: /img/gareths-gate-slide.jpg
