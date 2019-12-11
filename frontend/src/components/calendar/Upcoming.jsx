@@ -70,6 +70,16 @@ UpcomingFilterBlock.propTypes = {
     removeFilter: PropTypes.func.isRequired
 }
 
+const NoEventsFoundBlock = () => (
+    <div className="panel-block">
+        <div className="media">
+            <div className="media-content">
+                <p><strong>No events match the selected filters.</strong></p>
+            </div>
+        </div>
+    </div>
+)
+
 export const Upcoming = ({events}) => {
     const [filters, setFilters] = useState([])  // Filter events by tags
 
@@ -90,7 +100,7 @@ export const Upcoming = ({events}) => {
         const event = events[i].node
 
         // Does this event have a tag that's included in the filter?
-        if (filters.length == 0 || event.frontmatter.tags.some(tag => filters.includes(tag))) {  // i.e. if there are no filters OR this event has a tag we're filtering for
+        if (filters.length == 0 || filters.every(tag => event.frontmatter.tags.includes(tag))) {  // i.e. if there are no filters OR all of the filtered tags are present in the event
             eventPanels.push(<EventPanelBlock key={i} event={event} />)
         }
     }
@@ -99,7 +109,7 @@ export const Upcoming = ({events}) => {
         <div className="panel">
             <h2 className="panel-heading">Upcoming</h2>
             <UpcomingFilterBlock allFilters={eventTagList} activeFilters={filters} addFilter={addFilter} removeFilter={removeFilter} />
-            {eventPanels}
+            {eventPanels.length > 0 ? eventPanels : <NoEventsFoundBlock />}
         </div>
     )
 }
