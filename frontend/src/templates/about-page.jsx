@@ -46,7 +46,7 @@ AboutPage.propTypes = {
   subtitle: PropTypes.string.isRequired,
   image: PropTypes.object.isRequired,
   content: PropTypes.string.isRequired,
-  contentComponent: PropTypes.elementType  // Not required
+  contentComponent: PropTypes.elementType
 }
 
 export default site(AboutPage)

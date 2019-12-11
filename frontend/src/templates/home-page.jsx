@@ -39,7 +39,7 @@ export const HomePage = ({title, revolvingHero, contentBlocks, contentBlocksHtml
 
 HomePage.propTypes = {
   title: PropTypes.string,
-  revolvingHero: Layout.propTypes.revolvingHero,  // Reuse validators:
+  revolvingHero: Layout.propTypes.revolvingHero,
   contentBlocks: ContentBlocks.propTypes.contentBlocks,
   contentBlocksHtml: ContentBlocks.propTypes.contentBlocksHtml,
   calendarBlock: CalendarBlock.propTypes.calendarBlock,
