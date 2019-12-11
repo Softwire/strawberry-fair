@@ -4,20 +4,7 @@ import { Link } from 'gatsby'
 
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 import MainTileWithTwoStackedSideTiles from './MainTileWithTwoStackedSideTiles'
-
-// Validates type of lists of news articles
-// Is this the right file for this to go in?
-export const newsArticleValidator = PropTypes.shape({
-  node: PropTypes.shape({
-    frontmatter: PropTypes.shape({
-      title: PropTypes.string,
-      image: PreviewCompatibleImage.propTypes.imageInfo
-    }),
-    fields: PropTypes.shape({
-      slug: PropTypes.string
-    })
-  })
-})
+import { newsArticleValidator } from './validators'
 
 const NewsArticleSnapshot = ({newsArticles}) => (
   <article>
