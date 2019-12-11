@@ -6,7 +6,7 @@ import { site } from '../util/templating'
 import { Layout } from '../components/Layout'
 import { Calendar } from '../components/calendar/Calendar'
 import { CalendarViewToggle } from '../components/calendar/CalendarViewToggle'
-import { eventPropTypeValidator } from '../components/calendar/Event'
+import { eventPropTypeValidator } from '../components/validators'
 
 export const CalendarPage = ({events}) => (
   <Layout>

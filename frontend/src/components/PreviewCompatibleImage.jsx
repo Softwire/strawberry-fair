@@ -1,21 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 
-import { gatsbyImageSharpFluidValidator } from './validators'
-
-export const childImageSharpValidator = PropTypes.shape({
-  fluid: gatsbyImageSharpFluidValidator
-})
-
-export const previewCompatibleImageValidator = PropTypes.shape({
-  alt: PropTypes.string,
-  image: PropTypes.oneOfType([
-    PropTypes.string,
-    childImageSharpValidator
-  ]),
-  value: PropTypes.string
-})
+import { previewCompatibleImageValidator } from './validators'
 
 const PreviewCompatibleImage = ({ imageInfo }) => {
   if (!imageInfo) {
