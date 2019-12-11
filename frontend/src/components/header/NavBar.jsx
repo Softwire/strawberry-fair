@@ -5,6 +5,14 @@ import OutsideClickHandler from 'react-outside-click-handler'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
 const separator = '/'
+const navBarTabs = ['About Us', 'Areas & Events', 'News', 'Traders', 'Support the Fair', 'Contact']
+const titleToLinkMap = {
+  News: {
+    link: '/news/',
+    title: 'News',
+    noDropdown: true,
+  },
+}
 
 const NavBar = () => {
   const [menuActive, setMenuState] = useState(false)
@@ -41,13 +49,12 @@ const NavBar = () => {
     )
     let pageTitleToSlugMap = {} 
     data.allPages.edges.forEach(edge => pageTitleToSlugMap[edge.node.frontmatter.title] = edge.node.fields.slug)
-    navBarLinks = data.navBarInfo.edges
-    navBarLinks.forEach(edge => addSlugs(pageTitleToSlugMap, edge))
+    data.navBarInfo.edges.forEach(edge => addSlugs(pageTitleToSlugMap, edge))
+    navBarLinks = generateLinks(navBarTabs, titleToLinkMap, data.navBarInfo.edges)
   } catch (err) {
     console.error(err)
   }
   
-
   return (
     <header>
       <nav className="navbar is-fixed-top">
@@ -69,20 +76,36 @@ const addSlugs = (map, graphqlEdge) => {
 
 const getTitle = (pageTitle) => pageTitle.split(separator)[1]
 
+const generateLinks = (navBarTabs, titleToLinkMap, graphqlEdges) => {
+  return navBarTabs.map(tabName => {
+      const associatedEdge = graphqlEdges.find(edge => edge.node.frontmatter.title === tabName)
+      return associatedEdge || titleToLinkMap[tabName] || undefined
+    }).filter(link => link !== undefined)
+}
+
 const generateNavMenu = (navBar, menuActive) => (
   <NavMenu active={menuActive}>
     {navBar.map(generateNavDropdown)}
   </NavMenu>
 )
 
-const generateNavDropdown = (tab, tabIndex) => (
-  <NavDropdown title={tab.node.frontmatter.title} key={tabIndex}>
-    {tab.node.frontmatter.pageTitles.map(generateNavItems)}
-  </NavDropdown>
-)
+const generateNavDropdown = (tab, tabIndex) => {
+  if(tab.noDropdown) {
+    return (
+      <NavTab link={tab.link} title={tab.title} key={tabIndex} />
+    )
+  } else {
+    return (
+      <NavDropdown title={tab.node.frontmatter.title} key={tabIndex}>
+        {tab.node.frontmatter.pageTitles.map(generateNavItems)}
+      </NavDropdown>
+    )
+  }
+}
+  
 
 const generateNavItems = ({ pageTitle, slug }, itemIndex) => (
-  <NavLink to={slug} title={getTitle(pageTitle)} key={itemIndex}/>
+  <NavLink link={slug} title={getTitle(pageTitle)} key={itemIndex}/>
 )
 
 export default NavBar
@@ -126,9 +149,21 @@ const NavDropdown = ({title, children}) => {
   )
 }
 
-const NavLink = ({to, title}) => (
+const NavTab = ({title, link}) => {
+  return (
+    <li className="navbar-item has-dropdown">
+      <Link to={link}>
+        <button className="button" >
+          {title}
+        </button>
+      </Link>
+    </li>
+  )
+}
+
+const NavLink = ({title, link}) => (
   <li className="navbar-item">
-    <Link to={to} className="dropdown-item">
+    <Link to={link} className="dropdown-item">
       {title}
     </Link>
   </li>
