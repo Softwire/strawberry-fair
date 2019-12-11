@@ -1,44 +1,24 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 
+import { HTMLContent } from '../components/Content'
 import { site } from '../util/templating'
 import { Layout } from '../components/Layout'
 import { Upcoming } from '../components/calendar/Upcoming'
-import { FaCalendar, FaListUl } from 'react-icons/fa'
+import { CalendarViewToggle } from '../components/calendar/CalendarViewToggle'
 
-export const UpcomingEvents = ({events}) => {
-    // Utility for including or not including the header and footer
-    const layout = false
+export const UpcomingEvents = ({content, contentComponent, events}) => {
+  const BodyComponent = contentComponent || HTMLContent
 
-    const inLayout = (
-        <section>
-            <div className="tabs is-centered is-boxed">
-                <ul>
-                    <li>
-                        <Link to="/calendar">
-                            <span className="icon is-small"><FaCalendar /></span>Calendar
-                        </Link>
-                    </li>
-                    <li className="is-active">
-                        <Link to="/events">
-                            <span className="icon is-small"><FaListUl /></span>Upcoming events
-                        </Link>
-                    </li>
-                </ul>
-            </div>
-            <Upcoming events={events} />
-        </section>
-    )
-
-    if (layout) {
-        return (
-            <Layout>
-                {inLayout}
-            </Layout>
-        )
-    } else {
-        return inLayout
-    }
+  return (
+    <Layout>
+      <section>
+        <CalendarViewToggle view='upcoming' />
+        <BodyComponent content={content} />
+        <Upcoming events={events} />
+      </section>
+    </Layout>
+  )
 }
 
 export default site(UpcomingEvents, data => {return {events: data.allMarkdownRemark.edges}})
