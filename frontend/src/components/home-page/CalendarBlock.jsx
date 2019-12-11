@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import BaseBlock from './BaseBlock'
 
@@ -8,10 +9,8 @@ const CalendarBlock = ({calendarBlock}) => (
   </BaseBlock>
 )
 
-export default CalendarBlock
-
-// TODO: Replace placeholder information with actual events
-const UpcomingEventsDisplay = ({upcomingEvents}) => (
+// TODO: Replace placeholder information with actual events (remember to update the propTypes after doing this)
+const UpcomingEventsDisplay = (/*{upcomingEvents}*/) => (
   <div className="columns is-multiline">
     {new Array(8).fill('hello')
       .map((x, index) => (
@@ -25,3 +24,18 @@ const UpcomingEventsDisplay = ({upcomingEvents}) => (
     }
   </div>
 )
+
+UpcomingEventsDisplay.propTypes = {
+  upcomingEvents: PropTypes.oneOfType([
+    PropTypes.array,  // Make this more specific once implemented above
+    PropTypes.string  // So placeholder works
+  ])
+}
+
+CalendarBlock.propTypes = {
+  calendarBlock: PropTypes.shape({
+    upcomingEvents: UpcomingEventsDisplay.propTypes.upcomingEvents  // It'll be the same as above
+  })
+}
+
+export default CalendarBlock

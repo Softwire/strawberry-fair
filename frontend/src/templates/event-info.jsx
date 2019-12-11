@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
@@ -23,6 +24,14 @@ export const EventInfo = ({title, dateTime, image, content, contentComponent}) =
             </section>
         </Layout>
 )}
+
+EventInfo.propTypes = {
+    title: PropTypes.string.isRequired,
+    dateTime: PropTypes.string.isRequired,
+    image: PropTypes.object.isRequired,
+    content: PropTypes.string.isRequired,
+    contentComponent: PropTypes.elementType
+}
 
 export default site(EventInfo)
 

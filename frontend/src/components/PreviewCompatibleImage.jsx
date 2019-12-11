@@ -1,5 +1,21 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
+
+import { gatsbyImageSharpFluidValidator } from './validators'
+
+export const childImageSharpValidator = PropTypes.shape({
+  fluid: gatsbyImageSharpFluidValidator
+})
+
+export const previewCompatibleImageValidator = PropTypes.shape({
+  alt: PropTypes.string,
+  image: PropTypes.oneOfType([
+    PropTypes.string,
+    childImageSharpValidator
+  ]),
+  value: PropTypes.string
+})
 
 const PreviewCompatibleImage = ({ imageInfo }) => {
   if (!imageInfo) {
@@ -26,6 +42,10 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
     return <img style={imageStyle} src={imageInfo.value} alt={alt} />
 
   return null
+}
+
+PreviewCompatibleImage.propTypes = {
+  imageInfo: previewCompatibleImageValidator
 }
 
 export default PreviewCompatibleImage

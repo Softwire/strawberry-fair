@@ -1,10 +1,12 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
 
 import { site } from '../util/templating'
 import { Layout } from '../components/Layout'
 import { Upcoming } from '../components/calendar/Upcoming'
 import { CalendarViewToggle } from '../components/calendar/CalendarViewToggle'
+import { eventPropTypeValidator } from '../components/calendar/Event'
 
 export const UpcomingEvents = ({events}) => (
   <Layout>
@@ -14,6 +16,14 @@ export const UpcomingEvents = ({events}) => (
     </section>
   </Layout>
 )
+
+UpcomingEvents.propTypes = {
+  events: PropTypes.arrayOf(
+      PropTypes.shape({
+          node: eventPropTypeValidator
+      })
+  )
+}
 
 export default site(UpcomingEvents, data => {return {events: data.allMarkdownRemark.edges}})
 

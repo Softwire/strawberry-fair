@@ -57,6 +57,34 @@ ensuring you include the name of the branch you're working on.
 
 This will push any changes you make to `origin/[your branch]`, so you may want to run `git pull` after making any edits here to ensure your local copy stays up to date.
 
+## PropTypes
+
+React component property type checking has been implemented, and ESLint is set up to get cross at you if you don't implement it for any new components you write.
+
+For guidance on how to do this, check the pre-existing code, and [this website](https://www.npmjs.com/package/prop-types) for the allowable types. In short, you create an Object (`YourComponent.propTypes = {...}`) with a key for each property, whose value is a function that validates the type.
+
+If you're not sure what type to make something because you're passing it off to a component you're not familiar with, simply pass the relevant propType _of that component_ to the new propType.
+
+For example, if your component looks like:
+
+```jsx
+export const ParentComponent = ({title, passMeDown}) => (
+  <React.Fragment>
+    <h1>{title}</h1>
+    <ChildComponent passMeDown={passMeDown}>
+  </React.Fragment>
+)
+```
+
+then, as long as `ChildComponent` has propTypes set up, you can re-use the validator:
+
+```jsx
+ParentComponent.propTypes = {
+  title: PropTypes.node,  // Generic term for a renderable object - string, number, or JSX fragment
+  passMeDown: ChildComponent.propTypes.passMeDown  // Reusing the child's validator function
+}
+```
+
 ## GraphQL
 
 Gatsby uses [GraphQL](https://www.gatsbyjs.org/docs/graphql-api/) to query the markdown files in `frontend/src/pages` and populate the website.

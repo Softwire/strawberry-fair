@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const defaultIcon = '/img/strawberry-icon.png'
 const defaultImageAltText = 'icon'
@@ -11,5 +12,11 @@ const StrawberryCard = ({image, imageAltText, text}) => (
       <p className="has-text-white">{text}</p>
   </div>
 )
+
+StrawberryCard.propTypes = {
+  image: PropTypes.string,
+  imageAltText: PropTypes.string,
+  text: PropTypes.string
+}
 
 export default StrawberryCard

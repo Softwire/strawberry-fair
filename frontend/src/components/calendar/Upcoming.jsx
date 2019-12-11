@@ -1,7 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 import { HTMLContentSmall } from '../Content'
+import { eventPropTypeValidator } from '../validators'
 
 // TODO: Filter meetings/non-meetings
 export const Upcoming = ({events}) => {
@@ -23,6 +25,14 @@ export const Upcoming = ({events}) => {
     )
 }
 
+Upcoming.propTypes = {
+    events: PropTypes.arrayOf(
+        PropTypes.shape({
+            node: eventPropTypeValidator
+        })
+    )
+}
+
 const EventPanelBlock = ({event}) => {
     return (
         <div className="panel-block">
@@ -41,4 +51,8 @@ const EventPanelBlock = ({event}) => {
             </div>
         </div>
     )
+}
+
+EventPanelBlock.propTypes = {
+    event: eventPropTypeValidator
 }

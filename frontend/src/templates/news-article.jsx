@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
@@ -30,6 +31,16 @@ export const NewsArticle = ({title, author, content, image, date, tags, contentC
         </section>
       </Layout>
 )}
+
+NewsArticle.propTypes = {
+  title: PropTypes.node,
+  author: NewsArticleSideInfo.propTypes.author,  // Reuse validators
+  content: PropTypes.node,
+  image: PreviewCompatibleImage.propTypes.imageInfo,
+  date: NewsArticleSideInfo.propTypes.date,
+  tags: NewsArticleSideInfo.propTypes.tags,
+  contentComponent: PropTypes.elementType
+}
 
 export default site(NewsArticle)
 
