@@ -1,19 +1,25 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 
+import { HTMLContent } from '../components/Content'
 import { site } from '../util/templating'
 import { Layout } from '../components/Layout'
 import { Upcoming } from '../components/calendar/Upcoming'
 import { CalendarViewToggle } from '../components/calendar/CalendarViewToggle'
 
-export const UpcomingEvents = ({events}) => (
-  <Layout>
-    <section>
-      <CalendarViewToggle view='upcoming' />
-      <Upcoming events={events} />
-    </section>
-  </Layout>
-)
+export const UpcomingEvents = ({content, contentComponent, events}) => {
+  const BodyComponent = contentComponent || HTMLContent
+
+  return (
+    <Layout>
+      <section>
+        <BodyComponent content={content} />
+        <CalendarViewToggle view='upcoming' />
+        <Upcoming events={events} />
+      </section>
+    </Layout>
+  )
+}
 
 export default site(UpcomingEvents, data => {return {events: data.allMarkdownRemark.edges}})
 
