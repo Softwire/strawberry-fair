@@ -13,8 +13,8 @@ export const UpcomingEvents = ({content, contentComponent, events}) => {
   return (
     <Layout>
       <section>
-        <BodyComponent content={content} />
         <CalendarViewToggle view='upcoming' />
+        <BodyComponent content={content} />
         <Upcoming events={events} />
       </section>
     </Layout>

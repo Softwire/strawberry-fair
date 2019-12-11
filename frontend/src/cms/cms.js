@@ -29,13 +29,14 @@ const placeholderEvent = {
   node: {
     frontmatter: {
       title: 'Event',
-      image: {
-        image: '/img/strawberry.jpg'
-      },
+      image: '/img/strawberry-64x64.png',
       dateTime: new Date(),
       eventTypes: []
     },
-    html: '<h2>This is a sample event.</h2>\n<p>This is a sample event.</p>'
+    html: '<h2>This is a sample event.</h2>\n<p>This is a sample event.</p>',
+    fields: {
+      slug: 'test'
+    }
   }
 }
 

@@ -2,6 +2,6 @@
 templateKey: 'upcoming-events'
 title: 'Upcoming Events'
 ---
-## Test body
+## Upcoming Events
 
-Test body
+Have a look at what's coming up soon!

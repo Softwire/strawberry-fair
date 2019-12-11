@@ -29,7 +29,7 @@ const EventPanelBlock = ({event}) => {
             <div className="media">
                 <div className="media-left">
                     <p className="image is-64x64">
-                        <img src={event.frontmatter.image.childImageSharp.resize.src} />
+                        <img src={event.frontmatter.image.childImageSharp ? event.frontmatter.image.childImageSharp.resize.src : event.frontmatter.image} />
                     </p>
                 </div>
                 <div className="media-content">
