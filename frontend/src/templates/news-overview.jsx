@@ -24,7 +24,7 @@ export const NewsOverview = ({title, subtitle, content, contentComponent, newsAr
       </Layout>
 )}
 
-export default site(NewsOverview, data => {return {newsArticles: data.allMarkdownRemark.edges}})
+export default site(NewsOverview, data => ({newsArticles: data.allMarkdownRemark.edges}))
 
 export const query = graphql`
 query newsOverviewTemplate($id: String!) {

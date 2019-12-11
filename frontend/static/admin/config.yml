@@ -1,8 +1,7 @@
 backend:
-  name: git-gateway
-  accept_roles:
-    - admin
-    - content
+  name: github
+  repo: Softwire/strawberry-fair
+  branch: sf-46
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -36,16 +35,6 @@ collections:
           - {label: "Template Key", name: templateKey, widget: hidden, default: home-page}
           - {label: Title, name: title, widget: string}
           - {label: Body, name: body, widget: hidden, default: "placeholder"}
-          - {label: Image, name: image, widget: image}
-          - label: Content-Blocks
-            name: contentBlocks
-            widget: list
-            fields:
-              - {label: Content-Title, name: contentTitle, widget: string}
-              - {label: Content-Subtitle, name: contentSubtitle, widget: string}
-              - {label: Scrapbook-Images, name: scrapbookImages, widget: list, field: {label: ScrapbookImage, name: scrapbookImage, widget: image}}
-              - {label: Content-Body, name: _markdown_contentBody, widget: markdown}
-              - {label: Side-Snippet, name: sideSnippet, widget: string}
           - label: Banner
             name: revolvingHero
             widget: object
@@ -81,6 +70,33 @@ collections:
                   - {label: Description, name: alt, widget: string}
                   - {label: Image, name: src, widget: image}
           - {label: Body, name: body, widget: markdown}
+          - label: Content-Blocks
+            name: contentBlocks
+            widget: list
+            fields:
+              - {label: Content-Title, name: title, widget: string}
+              - {label: Content-Subtitle, name: subtitle, widget: string}
+              - {label: Scrapbook-Images, name: scrapbookImages, widget: list, field: {label: ScrapbookImage, name: scrapbookImage, widget: image}}
+              - {label: Content-Body, name: _markdown_contentBody, widget: markdown}
+              - {label: Side-Snippet, name: sideSnippet, widget: string}
+          - label: Calendar-Block
+            name: calendarBlock
+            widget: object
+            fields: 
+              - {label: Calendar-Title, name: title, widget: string}
+              - {label: Calendar-Subtitle, name: subtitle, widget: string}
+          - label: News-Block
+            name: newsBlock
+            widget: object
+            fields: 
+              - {label: News-Title, name: title, widget: string}
+              - {label: News-Subtitle, name: subtitle, widget: string}
+          - label: Twitter-Block
+            name: twitterBlock
+            widget: object
+            fields: 
+              - {label: Twitter-Title, name: title, widget: string}
+              - {label: Twitter-Subtitle, name: subtitle, widget: string}
       - file: "frontend/src/pages/news/index.md"
         label: "News Home"
         name: "news-home"
@@ -96,6 +112,14 @@ collections:
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: calendar-page}
           - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: markdown}
+      - file: "frontend/src/pages/events/index.md"
+        label: "Upcoming Events"
+        name: "upcoming-events"
+        fields:
+          - {label: "Template Key", name: templateKey, widget: hidden, default: upcoming-events}
+          - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: markdown}
   - name: "news"
     label: "News Articles"
     folder: "frontend/src/pages/news/"

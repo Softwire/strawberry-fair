@@ -17,11 +17,22 @@ Checkout the source code and run the following from this directory:
 1. `npm ci`
 2. `npm start`
 
-Gatsby will build and run the site in develop mode. When complete, the site will be accessing at `localhost:8000`.
+Gatsby will build and run the site in develop mode. When complete, the site will be available at `localhost:8000`.
 
 ## CMS Local Running
 
-If you are running locally and you need to access the CMS, go into `static/admin/config.yml` and change
+You access the CMS by visiting `localhost:8000/admin`. If the CMS settings in the branch you are working on are set to use git-gateway,
+you will need to log in using Netlify Identity. The details for this login are pinned in the Slack channel.
+
+### Read-only local CMS
+
+If you are running locally and you want to look at the CMS _and not change anything_, you will be prompted to enter the site's URL.
+This is https://strawberry-fair.netlify.com/. If you only want to look at the CMS, this will be fine, but if you edit anything
+it will push directly to the production branch.
+
+### Edit-enabled local CMS
+
+If you are running locally and you need to access the CMS for editing purposes, go into `static/admin/config.yml` and change
 
 ```
 backend:
@@ -44,6 +55,15 @@ ensuring you include the name of the branch you're working on.
 
 **_Make sure you change it back before merging anything back into master._**
 
+This will push any changes you make to `origin/[your branch]`, so you may want to run `git pull` after making any edits here to ensure your local copy stays up to date.
+
+## GraphQL
+
+Gatsby uses [GraphQL](https://www.gatsbyjs.org/docs/graphql-api/) to query the markdown files in `frontend/src/pages` and populate the website.
+(There are some pretty good primers [here](https://www.gatsbyjs.org/docs/graphql-concepts/) and [here](https://www.gatsbyjs.org/docs/why-gatsby-uses-graphql/).)
+
+It would be a little frustrating to write the graphql queries by trial and error—especially since you need to rebuild the whole site after changing them—but luckily Gatsby
+makes available an interactive graphql query tester at `localhost:8000/__graphql` while the site is running.
 
 ## CMS Editorial Workflow
 
