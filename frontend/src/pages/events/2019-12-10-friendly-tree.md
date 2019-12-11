@@ -3,7 +3,7 @@ templateKey: event-info
 title: Friendly Tree
 image: /img/cartoon-tree.jpg
 dateTime: 2019-12-27T15:40:45.883Z
-tags:
+eventTypes:
   - Benefit gig
   - Band competition
 ---

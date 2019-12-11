@@ -39,7 +39,7 @@ query calendarPageTemplate($id: String!) {
               }
             }
           }
-          tags
+          eventTypes
           dateTime
         }
         html

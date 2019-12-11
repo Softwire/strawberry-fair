@@ -3,7 +3,7 @@ templateKey: event-info
 title: Parade
 image: /img/love-a-fair.jpg
 dateTime: 2019-12-23T09:30:00.000Z
-tags:
+eventTypes:
   - Benefit gig
 ---
 ## Join the Parade!

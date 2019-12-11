@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 import { HTMLContentSmall } from '../Content'
-import { eventTagList } from './Event'
+import { EventFilterBlock, filterEvents } from './EventFilter'
+import { eventTypeList } from './Event'
 
 const EventPanelBlock = ({event}) => {
     return (
@@ -25,51 +25,6 @@ const EventPanelBlock = ({event}) => {
     )
 }
 
-const EnabledFilterTag = ({name, remove}) => (
-    <a className="tag is-primary is-light" onClick={remove}>{name}</a>  // Due to this weird syntax, addFilter below must be a function that takes a string and returns a function that adds that filter. How very Haskell of me!
-)
-
-EnabledFilterTag.propTypes = {
-    name: PropTypes.string,
-    remove: PropTypes.func
-}
-
-const DisabledFilterTag = ({name, add}) => (
-    <a className="tag" onClick={add}>{name}</a>
-)
-
-DisabledFilterTag.propTypes = {
-    name: PropTypes.string,
-    add: PropTypes.func
-}
-
-const UpcomingFilterBlock = ({allFilters, activeFilters, addFilter, removeFilter}) => {
-    // Construct array of tag objects
-    let tags = []
-    for (const filter of allFilters) {
-        if (activeFilters.includes(filter)) {
-            tags.push(<EnabledFilterTag key={filter} name={filter} remove={removeFilter(filter)} />)
-        } else {
-            tags.push(<DisabledFilterTag key={filter} name={filter} add={addFilter(filter)} />)
-        }
-    }
-
-    return (
-        <div className="panel-block">
-            <div className="tags">
-                {tags}
-            </div>
-        </div>
-    )
-}
-
-UpcomingFilterBlock.propTypes = {
-    allFilters: PropTypes.arrayOf(PropTypes.string),
-    activeFilters: PropTypes.arrayOf(PropTypes.string),
-    addFilter: PropTypes.func.isRequired,
-    removeFilter: PropTypes.func.isRequired
-}
-
 const NoEventsFoundBlock = () => (
     <div className="panel-block">
         <div className="media">
@@ -81,7 +36,7 @@ const NoEventsFoundBlock = () => (
 )
 
 export const Upcoming = ({events}) => {
-    const [filters, setFilters] = useState([])  // Filter events by tags
+    const [filters, setFilters] = useState([])  // Filter events by type
 
     const addFilter = (filterName) => (
         () => {setFilters(filters.concat(filterName))}  // Gotta love functional programming
@@ -94,21 +49,12 @@ export const Upcoming = ({events}) => {
     const maxItems = 10
 
     // Construct array of list elements
-    let eventPanels = []
-
-    for (let i = 0; i < maxItems && i < events.length; i++) {
-        const event = events[i].node
-
-        // Does this event have a tag that's included in the filter?
-        if (filters.length == 0 || filters.every(tag => event.frontmatter.tags.includes(tag))) {  // i.e. if there are no filters OR all of the filtered tags are present in the event
-            eventPanels.push(<EventPanelBlock key={i} event={event} />)
-        }
-    }
+    let eventPanels = filterEvents(events, filters).slice(0, maxItems).map(event => <EventPanelBlock key={event.node.frontmatter.title} event={event.node} />)
 
     return (
         <div className="panel">
             <h2 className="panel-heading">Upcoming</h2>
-            <UpcomingFilterBlock allFilters={eventTagList} activeFilters={filters} addFilter={addFilter} removeFilter={removeFilter} />
+            <EventFilterBlock allFilters={eventTypeList} activeFilters={filters} addFilter={addFilter} removeFilter={removeFilter} />
             {eventPanels.length > 0 ? eventPanels : <NoEventsFoundBlock />}
         </div>
     )
