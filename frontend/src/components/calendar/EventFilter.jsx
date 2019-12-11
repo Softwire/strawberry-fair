@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const EnabledFilterTag = ({name, remove}) => (
-    <a className="tag is-primary is-light" onClick={remove}>{name}</a>  // Due to this weird syntax, addFilter below must be a function that takes a string and returns a function that adds that filter. How very Haskell of me!
+    <a className="tag is-primary is-light" onClick={remove}>{name}</a>
 )
 
 EnabledFilterTag.propTypes = {
@@ -32,9 +32,10 @@ export const EventFilterBlock = ({allFilters, activeFilters, addFilter, removeFi
 
     return (
         <div className="panel-block">
-            <div className="tags">
+            <span className="tags">
+                <span className="tag is-white">Filters: </span>
                 {tags}
-            </div>
+            </span>
         </div>
     )
 }
