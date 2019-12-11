@@ -16,7 +16,7 @@ export class MultiCollectionRelationControl extends React.Component {
     if (!collection) {
       return (
         <div>
-          <h2>Choose the tab where your page lies</h2>
+          <h2>What type of page would you like to add?</h2>
           <SelectionControl 
             {...this.props}
             value={collection}
@@ -31,9 +31,7 @@ export class MultiCollectionRelationControl extends React.Component {
 
       return (
         <div>
-          <h2>Choose a page from tab 
-            <strong>{` "${collection}"`}</strong>
-          </h2>
+          <h2>Choose a {`<${collection}>`} page</h2>
           <RelationControl
             {...relationProps}
             value={pageTitle}
@@ -64,6 +62,10 @@ export class MultiCollectionRelationControl extends React.Component {
 
   handleRelationChange(value) {
     this.props.onChange(this.getCollection(this.props.value) + separator + value)
+  }
+
+  isValid() { 
+    return this.props.value.includes(separator)
   }
 }
 

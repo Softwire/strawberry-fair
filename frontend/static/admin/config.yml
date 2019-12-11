@@ -159,22 +159,20 @@ collections:
       - {label: Body, name: body, widget: markdown}
       - {label: Form, name: googleForm, widget: string}
 
-  - label: Nav Bar
+  - label: Nav Bar Item
     name: navbar
     folder: frontend/src/pages/navbar/
     fields:
-      - {label: Template Key, name: templateKey, widget: hidden, default: nav-bar-preview}
       - {label: Title, name: title, widget: string}
       - label: Page Titles
         name: pageTitles
         widget: list
         hint: Items can only be added or deleted, but not edited
-        field: 
-          label: Nav Bar Tab
-          name: navBarTab
+        fields: 
+          - label: Page Title
+            name: pageTitle
           widget: multi-collection-relation
           options: [Events, About, Forms]
           searchFields: [title]
           valueField: title
           displayFields: [title]
-

@@ -1,11 +1,10 @@
 ---
-templateKey: calendar-page
 title: About Us
 pageTitles:
-  - About/About item
-  - Events/Flying Pig Stage
-  - About/Full width content page
-  - Events/Hatters Cafe
-  - Events/Hatters Cafe
+  - pageTitle: About/About item
+  - pageTitle: Events/Flying Pig Stage
+  - pageTitle: About/Full width content page
+  - pageTitle: Events/Hatters Cafe
+  - pageTitle: Events/Hatters Cafe
 ---
 

@@ -7,31 +7,40 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 const NavBar = () => {
   const [menuActive, setMenuState] = useState(false)
     
-  const data = useStaticQuery(graphql`
-    query navBarQuery {
-      navBar: allMarkdownRemark(filter: {fields: {slug: {regex: "$//navbar//", ne: "/navbar/"}}}) {
-        edges {
-          node {
-            frontmatter {
-              title 
-              pageTitles
+  let navBarLinks = []
+  try {
+    const data = useStaticQuery(graphql`
+      query navBarQuery {
+        allMarkdownRemark(filter: {fields: {slug: {regex: "$//navbar//", ne: "/navbar/"}}}) {
+          edges {
+            node {
+              frontmatter {
+                title 
+                pageTitles {
+                  pageTitle
+                }
+              }
             }
           }
         }
-      }
-    }`
-  )
+      }`
+    )
+    navBarLinks = data.allMarkdownRemark.edges
+  } catch (err) {
+    console.error(err)
+  }
+  
 
   return (
     <header>
       <nav className="navbar is-fixed-top">
         <div className="navbar-brand">
-          <a className="navbar-item" to="/">
+          <Link className="navbar-item" to="/">
             <PreviewCompatibleImage imageInfo={{ alt: "Strawberry Fair Logo", image: "/img/1-line-logo.png" }} />
-          </a>
+          </Link>
           <NavBurger target="navigationBar" active={menuActive} setState={setMenuState} />
         </div>
-        {generateNavMenu(data.navBar.edges, menuActive)}
+        {generateNavMenu(navBarLinks, menuActive)}
       </nav>
     </header>
   )
@@ -49,7 +58,7 @@ const generateNavDropdown = (tab, tabIndex) => (
   </NavDropdown>
 )
 
-const generateNavItems = (item, itemIndex) => <NavLink to={sanitizeSlug(item)} title={item.split('/')[1]} key={itemIndex}/>
+const generateNavItems = ({ pageTitle }, itemIndex) => <NavLink to={sanitizeSlug(pageTitle)} title={pageTitle.split('/')[1]} key={itemIndex}/>
 
 export default NavBar
 
