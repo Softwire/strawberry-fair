@@ -1,8 +1,7 @@
 backend:
-  name: git-gateway
-  accept_roles:
-    - admin
-    - content
+  name: github
+  repo: Softwire/strawberry-fair
+  branch: sf-17-revisions
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -46,7 +45,7 @@ collections:
               - {label: Scrapbook-Images, name: scrapbookImages, widget: list, field: {label: ScrapbookImage, name: scrapbookImage, widget: image}}
               - {label: Content-Body, name: _markdown_contentBody, widget: markdown}
               - {label: Side-Snippet, name: sideSnippet, widget: string}
-          - label: Banner
+          - label: Banner Images
             name: revolvingHero
             widget: object
             fields:
@@ -90,6 +89,7 @@ collections:
           - {label: Subtitle, name: subtitle, widget: string}
           - {label: Image, name: image, widget: image}
           - {label: Body, name: body, widget: markdown}
+          - {label: Hero, name: hero, widget: hero}
       - file: "frontend/src/pages/calendar.md"
         label: "Calendar Page"
         name: "calendar-page"
