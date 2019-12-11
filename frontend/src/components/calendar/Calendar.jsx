@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
 import CalendarDay from './CalendarDay'
-import { eventTypeList } from './Event'
+import { eventTypeList } from './EventType'
 import { EventFilterBlock, filterEvents } from './EventFilter'
 
 export const Calendar = ({events}) => {

@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import { HTMLContentSmall } from '../Content'
 import { EventFilterBlock, filterEvents } from './EventFilter'
-import { eventTypeList } from './Event'
+import { eventTypeList } from './EventType'
 
 const EventPanelBlock = ({event}) => {
     return (
