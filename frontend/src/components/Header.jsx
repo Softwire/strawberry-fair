@@ -22,7 +22,7 @@ FixedHero.propTypes = {
         src: PropTypes.oneOfType([
             PropTypes.string,
             childImageSharpValidator
-        ]),
+        ]).isRequired,
         alt: PropTypes.string
     }),
     children: PropTypes.node
