@@ -1,5 +1,9 @@
 ---
-templateKey: 'news-overview'
+templateKey: news-overview
+hasBanner: true
+fixedHero:
+  alt: Strawberry Fair Banner
+  src: /img/gareths-gate-slide.jpg
 title: Our News
 subtitle: It's your festival
 image: /img/strawberry.jpg
