@@ -4,6 +4,8 @@ import PreviewCompatibleImage from '../PreviewCompatibleImage'
 import OutsideClickHandler from 'react-outside-click-handler'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
+const separator = '/'
+
 const NavBar = () => {
   const [menuActive, setMenuState] = useState(false)
     
@@ -11,7 +13,7 @@ const NavBar = () => {
   try {
     const data = useStaticQuery(graphql`
       query navBarQuery {
-        allMarkdownRemark(filter: {fields: {slug: {regex: "$//navbar//", ne: "/navbar/"}}}) {
+        navBarInfo: allMarkdownRemark(filter: {fields: {slug: {regex: "$//navbar//", ne: "/navbar/"}}}) {
           edges {
             node {
               frontmatter {
@@ -23,9 +25,24 @@ const NavBar = () => {
             }
           }
         }
+        allPages: allMarkdownRemark {
+          edges {
+            node {
+              frontmatter {
+                title
+              }
+              fields {
+                slug
+              }
+            }
+          }
+        }
       }`
     )
-    navBarLinks = data.allMarkdownRemark.edges
+    let pageTitleToSlugMap = {} 
+    data.allPages.edges.forEach(edge => pageTitleToSlugMap[edge.node.frontmatter.title] = edge.node.fields.slug)
+    navBarLinks = data.navBarInfo.edges
+    navBarLinks.forEach(edge => addSlugs(pageTitleToSlugMap, edge))
   } catch (err) {
     console.error(err)
   }
@@ -46,6 +63,12 @@ const NavBar = () => {
   )
 }
 
+const addSlugs = (map, graphqlEdge) => {
+  graphqlEdge.node.frontmatter.pageTitles.forEach(o => o.slug = map[getTitle(o.pageTitle)])
+}
+
+const getTitle = (pageTitle) => pageTitle.split(separator)[1]
+
 const generateNavMenu = (navBar, menuActive) => (
   <NavMenu active={menuActive}>
     {navBar.map(generateNavDropdown)}
@@ -58,7 +81,9 @@ const generateNavDropdown = (tab, tabIndex) => (
   </NavDropdown>
 )
 
-const generateNavItems = ({ pageTitle }, itemIndex) => <NavLink to={sanitizeSlug(pageTitle)} title={pageTitle.split('/')[1]} key={itemIndex}/>
+const generateNavItems = ({ pageTitle, slug }, itemIndex) => (
+  <NavLink to={slug} title={getTitle(pageTitle)} key={itemIndex}/>
+)
 
 export default NavBar
 
@@ -108,6 +133,3 @@ const NavLink = ({to, title}) => (
     </Link>
   </li>
 )
-
-// TODO: Improve slug sanitiser. Possible way is to take 
-const sanitizeSlug = slug => slug.toLocaleLowerCase().replace(/\s+/g, '-')
