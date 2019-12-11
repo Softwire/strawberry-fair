@@ -112,6 +112,7 @@ collections:
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: calendar-page}
           - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: markdown}
       - file: "frontend/src/pages/events/index.md"
         label: "Upcoming Events"
         name: "upcoming-events"
