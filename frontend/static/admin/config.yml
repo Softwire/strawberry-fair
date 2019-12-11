@@ -139,10 +139,10 @@ collections:
         name: tags
         widget: select
         options:
-        - 'Benefit gig'
-        - 'Meeting - Programming'
-        - 'Meeting - Finance'
-        - 'Band competition'
+        - 'Benefit gig'             # IF YOU UPDATE THIS LIST
+        - 'Meeting - Programming'   # MAKE SURE YOU UPDATE IT IN
+        - 'Meeting - Finance'       # src/components/calendar/Events.jsx
+        - 'Band competition'        # AS WELL
         multiple: true
       - {label: Body, name: body, widget: markdown}
   - name: "about"
