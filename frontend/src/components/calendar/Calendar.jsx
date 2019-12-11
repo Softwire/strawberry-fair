@@ -3,7 +3,7 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
 import CalendarDay from './CalendarDay'
 import { eventTypeList } from './Event'
-import { EventFilterBlock } from './EventFilter'
+import { EventFilterBlock, filterEvents } from './EventFilter'
 
 export const Calendar = ({events}) => {
     // Set state
@@ -58,7 +58,7 @@ export const Calendar = ({events}) => {
                     {days.map(dayNumber => <CalendarDay
                         key={dayNumber}
                         dateTime={new Date(focusDate.getFullYear(), focusDate.getMonth(), dayNumber)}
-                        events={events}
+                        events={filterEvents(events, filters)}
                     />)}
                 </div>
             </div>
