@@ -1,11 +1,7 @@
 backend:
   name: github
   repo: Softwire/strawberry-fair
-<<<<<<< HEAD
   branch: sf-17-revisions
-=======
-  branch: sf-46
->>>>>>> bc924b03b86a7787190756a41d102222cca472e4
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -39,7 +35,6 @@ collections:
           - {label: "Template Key", name: templateKey, widget: hidden, default: home-page}
           - {label: Title, name: title, widget: string}
           - {label: Body, name: body, widget: hidden, default: "placeholder"}
-<<<<<<< HEAD
           - {label: Image, name: image, widget: image}
           - label: Content-Blocks
             name: contentBlocks
@@ -51,9 +46,6 @@ collections:
               - {label: Content-Body, name: _markdown_contentBody, widget: markdown}
               - {label: Side-Snippet, name: sideSnippet, widget: string}
           - label: Banner Images
-=======
-          - label: Banner
->>>>>>> bc924b03b86a7787190756a41d102222cca472e4
             name: revolvingHero
             widget: object
             fields:
@@ -123,8 +115,9 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: Subtitle, name: subtitle, widget: string}
           - {label: Image, name: image, widget: image}
+          - {label: AccImage, name: accimage, widget: accessible-image}
           - {label: Body, name: body, widget: markdown}
-          - {label: Hero, name: hero, widget: hero}
+          - {label: Revolver, name: revolver, widget: revolving-hero}
       - file: "frontend/src/pages/calendar.md"
         label: "Calendar Page"
         name: "calendar-page"

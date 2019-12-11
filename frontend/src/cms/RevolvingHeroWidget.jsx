@@ -9,10 +9,10 @@ export class RevolvingHeroControl extends React.Component {
     render() {
         const field = new Map({
             label: "Image",
-            name: "image",
+            name: "imageList",
             field: new Map({
                 label: "Image",
-                name: "image",
+                name: "imageWrapper",
                 widget: "accessible-image"
             })
         })

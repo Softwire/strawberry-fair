@@ -7,15 +7,12 @@ import { preview } from '../util/templating'
 import { NewsArticle } from '../templates/news-article'
 import { EventInfo } from '../templates/event-info'
 import { AboutPage } from '../templates/about-page'
-<<<<<<< HEAD
 import { AccessibleImageControl, AccessibleImagePreview } from './AccessibleImageWidget'
 import { FixedHeroControl, FixedHeroPreview } from './FixedHeroWidget'
 import { RevolvingHeroControl, RevolvingHeroPreview } from './RevolvingHeroWidget'
 import { HeroControl, HeroPreview } from './HeroWidget'
-=======
 import { UpcomingEvents } from '../templates/upcoming-events'
 import { CalendarPage } from '../templates/calendar-page'
->>>>>>> bc924b03b86a7787190756a41d102222cca472e4
 
 const placeholderArticle = {
     node: {
@@ -82,13 +79,10 @@ CMS.registerPreviewTemplate('about', preview(AboutPage))
 CMS.registerPreviewTemplate('events', preview(EventInfo))
 CMS.registerPreviewTemplate('news', preview(NewsArticle))
 CMS.registerPreviewTemplate('news-home', preview(NewsOverview, {newsArticles: placeholderArticles}))
-<<<<<<< HEAD
 
 CMS.registerWidget("accessible-image", AccessibleImageControl, AccessibleImagePreview)
 CMS.registerWidget("revolving-hero", RevolvingHeroControl, RevolvingHeroPreview)
 CMS.registerWidget("fixed-hero", FixedHeroControl, FixedHeroPreview)
 CMS.registerWidget("hero", HeroControl, HeroPreview)
-=======
 CMS.registerPreviewTemplate('upcoming-events', preview(UpcomingEvents, {events: placeholderEvents}))
 CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {events: calendarPlaceholderEvents}))
->>>>>>> bc924b03b86a7787190756a41d102222cca472e4
