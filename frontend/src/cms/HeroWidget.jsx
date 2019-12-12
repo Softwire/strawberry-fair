@@ -24,8 +24,14 @@ export class HeroControl extends React.Component {
             default: "None"
         })
 
-        const mode = (this.props.value) ? this.props.value._root.entries[0][1] : null
-        console.log(mode)
+        // Query mode if defined
+        let mode = null
+        if (this.props.value &&
+            this.props.value._root &&
+            this.props.value._root.entries &&
+            Array.isArray(this.props.value._root.entries)) {
+                mode = this.props.value._root.entries.find((el) => Array.isArray(el) && el[0] === "mode")[1] || null
+            }
 
         if (mode == "Fixed Image") {
             return new Map({
@@ -58,5 +64,3 @@ export class HeroControl extends React.Component {
         }
     }
 }
-
-export const HeroPreview = ({value}) => <div>{value}</div>

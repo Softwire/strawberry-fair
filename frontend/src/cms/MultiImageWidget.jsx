@@ -27,5 +27,3 @@ export class MultiImageControl extends React.Component {
         return <ListControl {...this.props} field={field} />
     }
 }
-
-export const MultiImagePreview = ({value}) => <div>{value}</div>

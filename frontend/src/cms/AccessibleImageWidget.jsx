@@ -25,5 +25,3 @@ export class AccessibleImageControl extends React.Component {
         return <ObjectControl {...this.props} field={fields} />
     }
 }
-
-export const AccessibleImagePreview = ({value}) => <div>{value}</div>

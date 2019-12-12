@@ -7,5 +7,3 @@ export class FixedHeroControl extends React.Component {
         return <AccessibleImageControl {...this.props} />
     }
 }
-
-export const FixedHeroPreview = ({value}) => <div>{value}</div>

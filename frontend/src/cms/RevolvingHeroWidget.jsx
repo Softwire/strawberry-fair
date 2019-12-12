@@ -4,8 +4,6 @@ import { MultiImageControl } from './MultiImageWidget'
 
 export class RevolvingHeroControl extends React.Component {
     render() {
-        return <MultiImageControl {...this.props} field={field} />
+        return <MultiImageControl {...this.props} />
     }
 }
-
-export const RevolvingHeroPreview = ({value}) => <div>{value}</div>
