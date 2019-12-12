@@ -24,6 +24,8 @@ const BodyComponent = contentComponent || HTMLContent
 }
 
 CalendarPage.propTypes = {
+  content: PropTypes.node,
+  contentComponent: PropTypes.elementType,
   events: PropTypes.arrayOf(
       PropTypes.shape({
           node: eventPropTypeValidator
@@ -41,25 +43,7 @@ query calendarPageTemplate($id: String!) {
   allMarkdownRemark(filter: {fields: {slug: {regex: "$//events//", ne: "/events/"}}}, sort: {fields: frontmatter___dateTime, order: ASC}) {
     edges {
       node {
-        frontmatter {
-          title
-          image {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-              resize(width: 64, height: 64) {
-                src
-              }
-            }
-          }
-          eventTypes
-          dateTime
-        }
-        html
-        fields {
-          slug
-        }
+        ...EventFragment
       }
     }
   }

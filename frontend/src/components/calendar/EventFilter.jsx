@@ -50,5 +50,5 @@ EventFilterBlock.propTypes = {
 // Function to filter a list of events based on a list of types.
 // We return only events for whom all types in the filter are present.
 export const filterEvents = (events, eventFilters) => {
-    return events.filter(event => eventFilters.every(eventType => event.node.frontmatter.eventTypes.includes(eventType)))
+    return events.filter(event => eventFilters.every(eventType => event.frontmatter.eventTypes.includes(eventType)))
 }
