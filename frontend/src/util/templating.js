@@ -1,4 +1,5 @@
 import { Content } from '../components/Content'
+import { previewContextWrapper } from './context'
 
 /**
  * This function prepares a page template for use as a CMS preview component.
@@ -30,7 +31,8 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
         deepReplaceImageUrlsWithAssets(dataProps, getAsset)
         Object.assign(previewProps, dataProps)
 
-        return component(Object.assign(placeholderProps, previewProps))
+        const isPreview = true
+        return previewContextWrapper(isPreview, component(Object.assign(placeholderProps, previewProps)))
     }
 }
 
