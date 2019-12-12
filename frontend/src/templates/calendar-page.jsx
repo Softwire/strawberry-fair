@@ -6,11 +6,8 @@ import { site } from '../util/templating'
 import { Layout } from '../components/Layout'
 import { Calendar } from '../components/calendar/Calendar'
 import { CalendarViewToggle } from '../components/calendar/CalendarViewToggle'
-<<<<<<< HEAD
 import { eventPropTypeValidator } from '../components/validators'
-=======
 import { HTMLContent } from '../components/Content'
->>>>>>> sf-17-revisions
 
 export const CalendarPage = ({content, contentComponent, events}) => {
 const BodyComponent = contentComponent || HTMLContent
