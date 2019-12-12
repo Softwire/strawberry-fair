@@ -25,3 +25,26 @@ fragment EventFragment on MarkdownRemark {
   }
 }
 `
+
+export const newsFragment = graphql`
+fragment NewsFragment on MarkdownRemark {
+  frontmatter {
+    title
+    subtitle
+    author
+    image {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    date
+    tags
+  }
+  html
+  fields {
+    slug
+  }
+}
+`
