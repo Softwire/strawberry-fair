@@ -1,12 +1,13 @@
 ---
-templateKey: news-overview
-title: Our News
-subtitle: It's your festival
-<<<<<<< HEAD
-=======
+title: A
+subtitle: B
 accimage:
-  alt: Hello
-  src: /img/cartoon-tree.jpg
->>>>>>> fdd1ece5e7a42cd99c08c67e260dd605895befd6
+  alt: C
+  src: /img/1-line-logo.png
+multi:
+  - alt: Test1
+    src: /img/cartoon-tree.jpg
+  - alt: Test2
+    src: /img/flying-pig.jpg
 ---
 
