@@ -1,6 +1,6 @@
 import React from 'react'
 import CMS from 'netlify-cms-app'
-import { Map } from 'immutable'
+import { Map, List } from 'immutable'
 
 
 const ListControl = CMS.getWidget("list").control
@@ -10,11 +10,18 @@ export class MultiImageControl extends React.Component {
         const field = new Map({
             label: "Multiple Images",
             name: "image-list",
-            field: new Map({
-                label: "Image",
-                name: "image-wrapper",
-                widget: "accessible-image"
-            })
+            fields: new List([
+                new Map({
+                    label: "Description",
+                    name: "alt",
+                    widget: "string"
+                }),
+                new Map({
+                    label: "Image",
+                    name: "src",
+                    widget: "image"
+                })
+            ])
         })
 
         return <ListControl {...this.props} field={field} />
