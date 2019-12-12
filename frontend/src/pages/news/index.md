@@ -13,6 +13,11 @@ hero:
   fixed-hero:
     alt: Test1
     src: /img/cartoon-tree.jpg
-  mode: Random Image
+  mode: Revolving Images
+  revolving-hero:
+    - alt: Hello1
+      src: /img/cartoon-tree.jpg
+    - alt: hello2
+      src: /img/1-line-logo.png
 ---
 
