@@ -1,0 +1,53 @@
+[
+    {
+        "node": {
+            "frontmatter": {
+                "title": "Placeholder 1",
+                "pageTitles": [
+                    {
+                        "pageTitle": "Placeholder 1/Placeholder 1.1",
+                        "slug": "placeholder-1/1.1"
+                    },
+                    {
+                        "pageTitle": "Placeholder 1/Placeholder 1.2",
+                        "slug": "placeholder-1/1.2"
+                    },
+                    {
+                        "pageTitle": "Placeholder 1/Placeholder 1.3",
+                        "slug": "placeholder-1/1.3"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "node": {
+            "frontmatter": {
+                "title": "Placeholder 2",
+                "pageTitles": [
+                    {
+                        "pageTitle": "Placeholder 2/Placeholder 2.1",
+                        "slug": "placeholder-2/2.1"
+                    },
+                    {
+                        "pageTitle": "Placeholder 2/Placeholder 2.2",
+                        "slug": "placeholder-2/2.2"
+                    },
+                    {
+                        "pageTitle": "Placeholder 2/Placeholder 2.3",
+                        "slug": "placeholder-2/2.3"
+                    },
+                    {
+                        "pageTitle": "Placeholder 2/Placeholder 2.4",
+                        "slug": "placeholder-2/2.4"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "noDropdown": true,
+        "title": "Placeholder 3",
+        "link": "/placeholder-3"
+    }
+]
