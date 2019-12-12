@@ -7,7 +7,10 @@ accimage:
   alt: Testing
   src: /img/cartoon-tree.jpg
 hero:
-  mode: None
+  fixed-hero:
+    alt: Testing2
+    src: /img/flying-pig.jpg
+  mode: Revolving Images
 ---
 ## Here are the latest news:
 
