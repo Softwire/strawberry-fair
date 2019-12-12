@@ -116,6 +116,7 @@ collections:
           - {label: Subtitle, name: subtitle, widget: string}
           - {label: ACCImage, name: accimage, widget: accessible-image}
           - {label: MultiImage, name: multi, widget: multi-image}
+          - {label: hero, name: hero, widget: hero}
       - file: "frontend/src/pages/calendar.md"
         label: "Calendar Page"
         name: "calendar-page"
