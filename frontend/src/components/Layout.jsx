@@ -8,13 +8,22 @@ import '../styling/styles.scss'
 
 /* All page templates should be wrapped in the Layout component to provide common styling */
 
-export const Layout = ({children, revolvingHero, fixedHero}) => (
+export const Layout = ({children, revolvingHero, fixedHero}) => { 
+    return(
     <div id = "root-layout" className="container">
-            <Header revolvingHero={revolvingHero} fixedHero={fixedHero} />
+            <Header revolvingHero={revolvingHero} fixedHero={fixedHero}>
+                <div class="field is-grouped is-pulled-right">
+                    <div className="buttons">
+                        <button className="button is-secondary">Get Involved</button>
+                        <button className="button is-primary">Apply to Trade</button>
+                    </div>
+                </div>
+            </Header>
             <main>{children}</main>
         <Footer />
     </div>
-)
+    )
+}
 
 Layout.propTypes = {
     children: PropTypes.node,
