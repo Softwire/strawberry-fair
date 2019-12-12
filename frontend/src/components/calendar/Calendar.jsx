@@ -1,15 +1,29 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import CalendarDay from './CalendarDay'
 import { eventTypeList } from './EventType'
 import { EventFilterBlock, filterEvents } from './EventFilter'
 
-export const Calendar = ({events}) => {
+export const Calendar = () => {
     // Set state
     const [ focusDate, setFocusDate ] = useState(new Date())
-    const [filters, setFilters] = useState([])  // Filter events by type
+    const [ filters, setFilters ] = useState([])  // Filter events by type
+
+    // Get list of events
+    const eventList = useStaticQuery(graphql`
+    query eventList {
+        allMarkdownRemark(filter: {fields: {slug: {regex: "$//events//", ne: "/events/"}}}, sort: {fields: frontmatter___dateTime, order: ASC}) {
+            nodes {
+                ...EventFragment
+            }
+        }
+    }
+    `)
+
+    const events = eventList.allMarkdownRemark.nodes
 
     // Functions to add and remove active filters
     const addFilter = (filterName) => (
