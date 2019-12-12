@@ -114,8 +114,7 @@ collections:
           - {label: "Template Key", name: templateKey, widget: hidden, default: news-overview}
           - {label: Title, name: title, widget: string}
           - {label: Subtitle, name: subtitle, widget: string}
-          - {label: AccessibleImage, name: accimage, widget: accessible-image}
-          - {label: MultiImage, name: multiimage, widget: multi-image}
+          - {label: ACCImage, name: accimage, widget: accessible-image}
       - file: "frontend/src/pages/calendar.md"
         label: "Calendar Page"
         name: "calendar-page"
