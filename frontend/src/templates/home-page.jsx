@@ -63,56 +63,7 @@ query homePageTemplate($id: String!) {
       frontmatter {
         title
         revolvingHero {
-          image1 {
-            alt
-            src {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          image2 {
-            alt
-            src {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          image3 {
-            alt
-            src {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          image4 {
-            alt
-            src {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          image5 {
-            alt
-            src {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
+          ...RevolvingHeroImageFluidFragment
         }
         contentBlocks {
           title
