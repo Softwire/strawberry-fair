@@ -13,6 +13,6 @@ hero:
   fixed-hero:
     alt: Test1
     src: /img/cartoon-tree.jpg
-  mode: Fixed Image
+  mode: Random Image
 ---
 
