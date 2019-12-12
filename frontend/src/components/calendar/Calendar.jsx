@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
-import CalendarDay from './CalendarDay'
+import CalendarDay, { areSameDay } from './CalendarDay'
 import { eventTypeList } from './EventType'
 import { EventFilterBlock, filterEvents } from './EventFilter'
 import { getEventList } from './getEventList'
@@ -60,11 +60,17 @@ export const Calendar = () => {
             <EventFilterBlock allFilters={eventTypeList} activeFilters={filters} addFilter={addFilter} removeFilter={removeFilter} />
             <div className="panel-block">
                 <div className="columns is-multiline is-mobile">
-                    {days.map(dayNumber => <CalendarDay
-                        key={dayNumber}
-                        dateTime={new Date(focusDate.getFullYear(), focusDate.getMonth(), dayNumber)}
-                        events={filterEvents(events, filters)}
-                    />)}
+                    {days.map(dayNumber => {
+                        const date = new Date(focusDate.getFullYear(), focusDate.getMonth(), dayNumber)
+
+                        return (
+                            <CalendarDay
+                                key={dayNumber}
+                                dateTime={date}
+                                events={eventsOnDate(date, filterEvents(events, filters))}
+                            />
+                        )
+                    })}
                 </div>
             </div>
         </div>
@@ -107,4 +113,9 @@ MonthScrubber.propTypes = {
     monthForward: PropTypes.func.isRequired,
     monthBack: PropTypes.func.isRequired,
     focusDate: PropTypes.instanceOf(Date)
+}
+
+function eventsOnDate(date, events) {
+    // Array of events on this day, empty if none
+    return events.filter(event => areSameDay(new Date(event.node.frontmatter.dateTime), date)).map(event => event.node)
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
@@ -15,19 +15,29 @@ const CalendarDay = ({dateTime, events}) => {
     const baseBoxClass = "box calendar-day"
     let classAfterHighlight = baseBoxClass + (isTodayHighlight ? " has-background-primary has-text-white" : "")
 
-    // Event on this day
-    const event = eventOnDay(date, events)
-    const dateDisplayFormatOptions = {weekday: 'short', day: 'numeric'}
-    if (event) {
+    // Are we showing the modal?
+    const [ showModal, setShowModal ] = useState(false)
+
+    const modalOn = () => {
+        setShowModal(true)
+    }
+
+    const modalOff = () => {
+        setShowModal(false)
+    }
+
+    if (events.length > 0) {
         return (
             <div className='column is-half-mobile is-one-quarter-tablet is-2-desktop'>
+                <CalendarDayModal dateTime={dateTime} events={events} close={modalOff} active={showModal}/>
                 <BackgroundImage
                         Tag='div'
                         className={baseBoxClass + ' has-text-white has-text-weight-bold'}
-                        fluid={event.frontmatter.image.childImageSharp.fluid}
+                        fluid={events[0].frontmatter.image.childImageSharp.fluid}
                     >
-                    <p>{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</p>
-                    <Link className='has-text-white' to={event.fields.slug}>{event.frontmatter.title}</Link>
+                    <a className="has-text-white" onClick={modalOn}>{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</a>
+                    <p><Link className='has-text-white' to={events[0].fields.slug}>{events[0].frontmatter.title}</Link></p>
+                    {events.length > 1 ? <p>...</p> : null}
                 </BackgroundImage>
             </div>
         )
@@ -42,6 +52,38 @@ const CalendarDay = ({dateTime, events}) => {
     }
 }
 
+const CalendarDayModal = ({dateTime, events, close, active}) => {
+    const date = new Date(dateTime)
+
+    return (
+        <div className={"modal" + (active ? " is-active" : "")}>
+            <div className="modal-background" onClick={close}></div>
+            <div className="modal-content">
+                <BackgroundImage
+                        Tag="div"
+                        className="box has-text-white has-text-weight-bold"
+                        fluid={events[0].frontmatter.image.childImageSharp.fluid}
+                    >
+                    <h2 className="title is-2">{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</h2>
+                    {events.map(event => <p key={event.fields.slug}><Link className='has-text-white' to={event.fields.slug}>{event.frontmatter.title}</Link></p>)}
+                </BackgroundImage>
+            </div>
+            <button className="modal-close is-large" ariaLabel="close" onClick={close}></button>
+        </div>
+    )
+}
+
+const dateDisplayFormatOptions = {weekday: 'short', day: 'numeric'}
+
+export default CalendarDay
+
+export function areSameDay(date1, date2) {
+    const daysMatch = date1.getDate() === date2.getDate()           // Do the days (of the month) match?
+    const monthsMatch = date1.getMonth() === date2.getMonth()       // Do the months match?
+    const yearsMatch = date1.getFullYear() === date2.getFullYear()  // Do the years match?
+    return daysMatch && monthsMatch && yearsMatch                   // Then they render to the same day
+}
+
 CalendarDay.propTypes = {
     dateTime: PropTypes.instanceOf(Date),
     events: PropTypes.arrayOf(
@@ -51,22 +93,9 @@ CalendarDay.propTypes = {
     )
 }
 
-export default CalendarDay
-
-function eventOnDay(date, events) {
-    // Returns the event on the given day. Returns null if there isn't one.
-    // TODO: Multiple events on one day
-
-    // Array of events on this day
-    const eventsOnDay = events.filter(event => areSameDay(new Date(event.frontmatter.dateTime), date))
-
-    // Return the first element, or null if it's an empty array
-    return eventsOnDay.length > 0 ? eventsOnDay[0] : null
-}
-
-function areSameDay(date1, date2) {
-    const daysMatch = date1.getDate() === date2.getDate()           // Do the days (of the month) match?
-    const monthsMatch = date1.getMonth() === date2.getMonth()       // Do the months match?
-    const yearsMatch = date1.getFullYear() === date2.getFullYear()  // Do the years match?
-    return daysMatch && monthsMatch && yearsMatch                   // Then they render to the same day
+CalendarDayModal.propTypes = {
+    dateTime: CalendarDay.propTypes.dateTime,
+    events: CalendarDay.propTypes.events,
+    close: PropTypes.func,
+    active: PropTypes.bool
 }
