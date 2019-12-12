@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-
-import PreviewCompatibleImage from '../PreviewCompatibleImage'
+import PropTypes from 'prop-types'
 import OutsideClickHandler from 'react-outside-click-handler'
 import { graphql, Link, useStaticQuery } from 'gatsby'
-import { PreviewContext } from '../../util/templating'
 
-import navBarLinksDefault from '../../data/navBarDefault'
+import PreviewCompatibleImage from '../PreviewCompatibleImage'
+import { PreviewContext } from '../../util/context.jsx'
+
+import navBarPreviewLinks from '../../data/navBarPreviewLinks'
 
 const separator = '/'
 const navBarTabs = ['About Us', 'Areas & Events', 'News', 'Traders', 'Support the Fair', 'Contact']
@@ -27,9 +28,8 @@ export default NavBar
 
 const NavBarDisplay = ({isPreview}) => {
   const [menuActive, setMenuState] = useState(false)
+  const navBarLinks = isPreview ? navBarPreviewLinks : getNavBarLinksFromGraphqlData()
 
-  const navBarLinks = isPreview ? navBarLinksDefault : getNavBarLinksFromGraphqlData()
-  
   return (
       <header>
         <nav className="navbar is-fixed-top">
@@ -153,21 +153,65 @@ const NavDropdown = ({title, navItems}) => {
           </OutsideClickHandler>
         </div>
         <ul className={getClassName("navbar-dropdown", "is-hidden-touch", !active)}>
-          {navItems.map(generateNavItems)}
+          {navItems.map((navItem, index) => <NavItem title={getTitle(navItem.pageTitle)} link={navItem.slug} key={index} />)}
         </ul>
       </div>
     </li>
   )
 }
 
-const generateNavItems = ({ pageTitle, slug }, itemIndex) => (
-  <NavItem link={slug} title={getTitle(pageTitle)} key={itemIndex}/>
-)
-
-const NavItem = ({title, link}) => (
+const NavItem = ({ title, link }) => (
   <li className="navbar-item">
     <Link to={link} className="dropdown-item">
       {title}
     </Link>
   </li>
 )
+
+NavItem.propTypes = {
+  title: PropTypes.string,
+  link: PropTypes.string
+}
+
+NavDropdown.propTypes = {
+  title: PropTypes.string,
+  navItems: PropTypes.arrayOf(PropTypes.shape({
+    pageTitle: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired
+  }).isRequired).isRequired
+}
+
+NavTab.propTypes = {
+  title: PropTypes.string,
+  link: PropTypes.string
+}
+
+NavMenu.propTypes = {
+  active: PropTypes.bool,
+  navBarLinks: PropTypes.arrayOf(PropTypes.oneOfType([
+    PropTypes.shape({
+      node: PropTypes.shape({
+        frontmatter: PropTypes.shape({
+          pageTitles: NavDropdown.propTypes.navItems,
+          title: PropTypes.string.isRequired
+        }).isRequired
+      }).isRequired
+    }).isRequired,
+    PropTypes.shape({
+      link: PropTypes.string.isRequired,
+      noDropdown: PropTypes.bool.isRequired,
+      title: PropTypes.string.isRequired
+    }).isRequired
+   ]).isRequired
+  )
+}
+
+NavBurger.propTypes = {
+  target: PropTypes.string,
+  active: PropTypes.bool,
+  setState: PropTypes.func
+}
+
+NavBarDisplay.propTypes = {
+  isPreview: PropTypes.bool
+}

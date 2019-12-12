@@ -25,9 +25,22 @@ export const Header = ({revolvingHero, fixedHero}) => {
     }
 }
 
-Header.propTypes = {
-    revolvingHero: PropTypes.objectOf(FixedHero.propTypes.info),
-    fixedHero: FixedHero.propTypes.info     // Can reuse these two for validation
+
+const RevolvingHero = ({data, children}) => {
+
+    const [imageNum, setImageNum] = useState(0)
+    const [imageInfo, setImageInfo] = useState(data[0])
+
+    useEffect(() => {
+        setTimeout(() => {
+            setImageNum((imageNum + 1) % 5)
+            setImageInfo(data[imageNum])
+        }, 10000)
+    })
+
+    return (
+        <FixedHero info={imageInfo}>{children}</FixedHero>
+    )
 }
 
 const FixedHero = ({info: {src, alt}, children}) => (
@@ -52,24 +65,12 @@ FixedHero.propTypes = {
     children: PropTypes.node
 }
 
-const RevolvingHero = ({data, children}) => {
-
-    const [imageNum, setImageNum] = useState(0)
-    const [imageInfo, setImageInfo] = useState(data[0])
-
-    useEffect(() => {
-        setTimeout(() => {
-            setImageNum((imageNum + 1) % 5)
-            setImageInfo(data[imageNum])
-        }, 10000)
-    })
-
-    return (
-        <FixedHero info={imageInfo}>{children}</FixedHero>
-    )
-}
-
 RevolvingHero.propTypes = {
     data: PropTypes.arrayOf(PropTypes.shape(FixedHero.propTypes)),  // Can reuse this code, so do
     children: PropTypes.node
+}
+
+Header.propTypes = {
+    revolvingHero: PropTypes.objectOf(FixedHero.propTypes.info),
+    fixedHero: FixedHero.propTypes.info     // Can reuse these two for validation
 }

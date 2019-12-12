@@ -1,8 +1,5 @@
-import React from 'react'
-
 import { Content } from '../components/Content'
-
-export const PreviewContext = React.createContext(false)
+import { previewContextWrapper } from './context'
 
 /**
  * This function prepares a page template for use as a CMS preview component.
@@ -21,7 +18,7 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
      * @param {Function} widgetsFor - Utility function provided by the CMS
      * @param {Function} getAsset - Utility function provided by the CMS
      */
-    return function preview ({ entry, widgetFor, widgetsFor, getAsset, }) {
+    return ({ entry, widgetFor, widgetsFor, getAsset }) => {
         const dataProps = entry.getIn(['data']).toJS()
         const previewProps = {}
 
@@ -34,11 +31,8 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
         deepReplaceImageUrlsWithAssets(dataProps, getAsset)
         Object.assign(previewProps, dataProps)
 
-        return (
-            <PreviewContext.Provider value={true}>
-                {component(Object.assign(placeholderProps, previewProps))}
-            </PreviewContext.Provider>
-        )  
+        const isPreview = true
+        return previewContextWrapper(isPreview, component(Object.assign(placeholderProps, previewProps)))
     }
 }
 
