@@ -2,20 +2,38 @@ import { graphql } from 'gatsby'
 
 // GraphQL reusable fragments
 
+export const imageFluidFragment = graphql`
+fragment ImageFluidFragment on MarkdownRemarkFrontmatter {
+  image {
+    childImageSharp {
+      fluid {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+}
+`
+
+export const imageFluid64x64Fragment = graphql`
+fragment ImageFluid64x64Fragment on MarkdownRemarkFrontmatter {
+  image {
+    childImageSharp {
+      fluid {
+        ...GatsbyImageSharpFluid
+      }
+      resize(width: 64, height: 64) {
+        src
+      }
+    }
+  }
+}
+`
+
 export const eventFragment = graphql`
 fragment EventFragment on MarkdownRemark {
   frontmatter {
     title
-    image {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-        resize(width: 64, height: 64) {
-          src
-        }
-      }
-    }
+    ...ImageFluid64x64Fragment
     eventTypes
     dateTime
   }
@@ -32,13 +50,7 @@ fragment NewsFragment on MarkdownRemark {
     title
     subtitle
     author
-    image {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
+    ...ImageFluidFragment
     date
     tags
   }
