@@ -25,6 +25,7 @@ export class HeroControl extends React.Component {
         })
 
         const mode = (this.props.value) ? this.props.value._root.entries[0][1] : null
+        console.log(mode)
 
         if (mode == "Fixed Image") {
             return new Map({

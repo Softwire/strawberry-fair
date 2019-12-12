@@ -8,6 +8,7 @@ import { NewsArticle } from '../templates/news-article'
 import { EventInfo } from '../templates/event-info'
 import { AboutPage } from '../templates/about-page'
 import { AccessibleImageControl, AccessibleImagePreview } from './AccessibleImageWidget'
+import { MultiImageControl, MultiImagePreview } from './MultiImageWidget'
 import { FixedHeroControl, FixedHeroPreview } from './FixedHeroWidget'
 import { RevolvingHeroControl, RevolvingHeroPreview } from './RevolvingHeroWidget'
 import { HeroControl, HeroPreview } from './HeroWidget'
@@ -81,6 +82,7 @@ CMS.registerPreviewTemplate('news', preview(NewsArticle))
 CMS.registerPreviewTemplate('news-home', preview(NewsOverview, {newsArticles: placeholderArticles}))
 
 CMS.registerWidget("accessible-image", AccessibleImageControl, AccessibleImagePreview)
+CMS.registerWidget("multi-image", MultiImageControl, MultiImagePreview)
 CMS.registerWidget("revolving-hero", RevolvingHeroControl, RevolvingHeroPreview)
 CMS.registerWidget("fixed-hero", FixedHeroControl, FixedHeroPreview)
 CMS.registerWidget("hero", HeroControl, HeroPreview)

@@ -2,15 +2,6 @@
 templateKey: news-overview
 title: Our News
 subtitle: It's your festival
-image: /img/strawberry.jpg
-accimage:
-  alt: Testing
-  src: /img/cartoon-tree.jpg
-hero:
-  fixed-hero:
-    alt: Testing2
-    src: /img/flying-pig.jpg
-  mode: Revolving Images
 ---
 ## Here are the latest news:
 
