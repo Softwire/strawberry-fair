@@ -7,11 +7,9 @@ import { preview } from '../util/templating'
 import { NewsArticle } from '../templates/news-article'
 import { EventInfo } from '../templates/event-info'
 import { AboutPage } from '../templates/about-page'
-import { AccessibleImageControl, AccessibleImagePreview } from './AccessibleImageWidget'
-import { MultiImageControl, MultiImagePreview } from './MultiImageWidget'
-import { FixedHeroControl, FixedHeroPreview } from './FixedHeroWidget'
-import { RevolvingHeroControl, RevolvingHeroPreview } from './RevolvingHeroWidget'
-import { HeroControl, HeroPreview } from './HeroWidget'
+import { AccessibleImageControl } from './AccessibleImageWidget'
+import { MultiImageControl } from './MultiImageWidget'
+import { HeroControl } from './HeroWidget'
 import { UpcomingEvents } from '../templates/upcoming-events'
 import { CalendarPage } from '../templates/calendar-page'
 
@@ -80,11 +78,9 @@ CMS.registerPreviewTemplate('about', preview(AboutPage))
 CMS.registerPreviewTemplate('events', preview(EventInfo))
 CMS.registerPreviewTemplate('news', preview(NewsArticle))
 CMS.registerPreviewTemplate('news-home', preview(NewsOverview, {newsArticles: placeholderArticles}))
+CMS.registerPreviewTemplate('upcoming-events', preview(UpcomingEvents, {events: placeholderEvents}))
+CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {events: calendarPlaceholderEvents}))
 
 CMS.registerWidget("accessible-image", AccessibleImageControl)
 CMS.registerWidget("multi-image", MultiImageControl)
-CMS.registerWidget("revolving-hero", RevolvingHeroControl)
-CMS.registerWidget("fixed-hero", FixedHeroControl)
 CMS.registerWidget("hero", HeroControl)
-CMS.registerPreviewTemplate('upcoming-events', preview(UpcomingEvents, {events: placeholderEvents}))
-CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {events: calendarPlaceholderEvents}))

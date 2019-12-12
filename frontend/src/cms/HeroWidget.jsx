@@ -33,26 +33,26 @@ export class HeroControl extends React.Component {
                 mode = this.props.value._root.entries.find((el) => Array.isArray(el) && el[0] === "mode")[1] || null
             }
 
-        if (mode == "Fixed Image") {
+        if (mode === "Fixed Image") {
             return new Map({
                 fields: [
                     selectFields,
                     new Map({
                         label: "Fixed Banner",
                         name: "fixed-hero",
-                        widget: "fixed-hero"
+                        widget: "accessible-image"
                     })
                 ]
             })
         }
-        else if (mode == "Revolving Images") {
+        else if (mode === "Revolving Images") {
             return new Map({
                 fields: [
                     selectFields,
                     new Map({
                         label: "Revolving Banner",
                         name: "revolving-hero",
-                        widget: "revolving-hero"
+                        widget: "multi-image"
                     })
                 ]
             })
