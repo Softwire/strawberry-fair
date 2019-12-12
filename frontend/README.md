@@ -63,6 +63,6 @@ Behind the scenes, Netlify editorial actions automatically perform git actions a
 
 ## Testing
 
-To run all tests, use `npm test`.
-
-To run a specific test, use `npm test [filename]` (the filepath does not need to be specified).
+To run unit tests, use: `npm run test:unit`.
+To run end-to-end tests, use: `npm run test:e2e`.
+To run all tests, use `npm run test`.

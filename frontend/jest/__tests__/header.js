@@ -1,7 +1,7 @@
 import React from "react"
 
 
-import { Header } from "../src/components/Header"
+import { Header } from "../../src/components/Header"
 import { render, fireEvent } from "@testing-library/react"
 
 test("Dropdown menus closed on loading", async () => {
