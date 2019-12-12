@@ -45,19 +45,7 @@ export default site(EventInfo)
 export const query = graphql`
 query eventInfoTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
-        frontmatter {
-            title
-            image {
-                childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            eventTypes
-            dateTime
-        }
-        html
+        ...EventFragment
     }
 }
 `
