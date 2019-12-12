@@ -24,6 +24,8 @@ const BodyComponent = contentComponent || HTMLContent
 }
 
 CalendarPage.propTypes = {
+  content: PropTypes.node,
+  contentComponent: PropTypes.elementType,
   events: PropTypes.arrayOf(
       PropTypes.shape({
           node: eventPropTypeValidator
