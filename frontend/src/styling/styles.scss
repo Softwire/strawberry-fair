@@ -31,6 +31,7 @@ $subtitle-color: $secondary;
     margin-top: auto;
 }
 
+<<<<<<< HEAD
 #root-layout {
     padding-top: 60px;
 }
@@ -41,4 +42,11 @@ $subtitle-color: $secondary;
 
 .navbar-dropdown.is-hidden-touch{
     display: none;
+=======
+.hero-container {
+    position: relative;
+    width: 80vw;
+    height: 30vw;
+    margin: auto;
+>>>>>>> sf-17-revisions
 }

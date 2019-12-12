@@ -5,6 +5,10 @@ import PreviewCompatibleImage from './PreviewCompatibleImage'
 import { childImageSharpValidator } from './validators'
 import OutsideClickHandler from 'react-outside-click-handler'
 
+
+const imageRotationIntervalMillis = 10000
+const imageFadeTimeMills = 2000
+
 const getClassName = (baseName, toggleName, active) => `${baseName} ${active ? toggleName : ""}`
 
 const FixedHero = ({info: {src, alt}, children}) => (
@@ -32,17 +36,41 @@ FixedHero.propTypes = {
 const RevolvingHero = ({data, children}) => {
 
     const [imageNum, setImageNum] = useState(0)
-    const [imageInfo, setImageInfo] = useState(data[0])
+    const [imageArray, setImageArray] = useState(data.map((info, i) => <RevolvingHeroImage info={info} visible={i==0} />))
 
     useEffect(() => {
         setTimeout(() => {
-            setImageNum((imageNum + 1) % 5)
-            setImageInfo(data[imageNum])
-        }, 10000)
+            setImageNum((imageNum + 1) % data.length)
+            setImageArray(data.map((info, i) => <RevolvingHeroImage info={info} visible={i==imageNum} />))
+        }, imageRotationIntervalMillis)
     })
 
     return (
-        <FixedHero info={imageInfo}>{children}</FixedHero>
+        <section className="hero">
+            <div className="hero-body">
+                {children}
+                <figure className="hero-container">
+                    {imageArray}
+                </figure>
+            </div>
+        </section>
+    )
+}
+
+const RevolvingHeroImage = ({info: {src, alt}, visible}) => {
+    
+    const style = {
+        opacity: (visible ? 1 : 0),
+        transition: `opacity ${imageFadeTimeMills/1000}s`,
+        position: "absolute",
+        width: "80vw",
+        height:"30vw",
+        objectFit: "cover"
+    }
+    
+    return (
+        <PreviewCompatibleImage imageInfo={{image: src, alt: alt}}
+                                style={style} />
     )
 }
 
@@ -75,6 +103,9 @@ Header.propTypes = {
     revolvingHero: PropTypes.objectOf(FixedHero.propTypes.info),
     fixedHero: FixedHero.propTypes.info     // Can reuse these two for validation
 }
+
+
+
 
 const NavBar = () => {
     

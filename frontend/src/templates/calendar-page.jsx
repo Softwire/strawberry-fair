@@ -6,16 +6,25 @@ import { site } from '../util/templating'
 import { Layout } from '../components/Layout'
 import { Calendar } from '../components/calendar/Calendar'
 import { CalendarViewToggle } from '../components/calendar/CalendarViewToggle'
+<<<<<<< HEAD
 import { eventPropTypeValidator } from '../components/validators'
+=======
+import { HTMLContent } from '../components/Content'
+>>>>>>> sf-17-revisions
 
-export const CalendarPage = ({events}) => (
-  <Layout>
-    <section>
-      <CalendarViewToggle view='calendar' />
-      <Calendar events={events} />
-    </section>
-  </Layout>
-)
+export const CalendarPage = ({content, contentComponent, events}) => {
+const BodyComponent = contentComponent || HTMLContent
+
+  return (
+    <Layout>
+      <section>
+        <CalendarViewToggle view='calendar' />
+        <BodyComponent content={content} />
+        <Calendar events={events} />
+      </section>
+    </Layout>
+  )
+}
 
 CalendarPage.propTypes = {
   events: PropTypes.arrayOf(
