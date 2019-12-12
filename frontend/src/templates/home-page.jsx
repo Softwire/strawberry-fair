@@ -13,11 +13,11 @@ import TwitterBlock from '../components/home-page/TwitterBlock'
 import { site } from '../util/templating'
 
 // This is used by the website and for CMS previews
-export const HomePage = ({title, revolvingHero, contentBlocks, contentBlocksHtml, calendarBlock, newsBlock, newsArticles, twitterBlock, contentComponent}) => {
+export const HomePage = ({title, contentBlocks, contentBlocksHtml, calendarBlock, newsBlock, newsArticles, twitterBlock, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     return (
-      <Layout revolvingHero={revolvingHero}>
+      <Layout >
         <section>
           <h1 className="title">{title}</h1>
           <ContentBlocks 
@@ -39,7 +39,7 @@ export const HomePage = ({title, revolvingHero, contentBlocks, contentBlocksHtml
 
 HomePage.propTypes = {
   title: PropTypes.string,
-  revolvingHero: Layout.propTypes.revolvingHero,
+
   contentBlocks: ContentBlocks.propTypes.contentBlocks,
   contentBlocksHtml: ContentBlocks.propTypes.contentBlocksHtml,
   calendarBlock: CalendarBlock.propTypes.calendarBlock,
@@ -62,9 +62,13 @@ query homePageTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
+<<<<<<< HEAD
         revolvingHero {
           ...RevolvingHeroImageFluidFragment
         }
+=======
+
+>>>>>>> sf-64: task setup
         contentBlocks {
           title
           subtitle
