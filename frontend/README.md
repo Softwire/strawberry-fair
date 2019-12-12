@@ -109,7 +109,6 @@ Behind the scenes, Netlify editorial actions automatically perform git actions a
 | Edit draft     | Pushes another commit to the draft branch/pull request |
 | Publish draft  | Merges pull request and deletes branch                 |
 
-<<<<<<< HEAD
 ### 1. Adding Google Forms via CMS:
     To add a Google Form via CMS follow these steps:
       1. Open the form on Google Forms
@@ -124,11 +123,8 @@ Behind the scenes, Netlify editorial actions automatically perform git actions a
 
       Alternatively, in step 4 you can choose to copy the URL only, instead of the whole HTML element.
 
-
-=======
 ## Testing
 
 To run unit tests, use: `npm run test:unit`.
 To run end-to-end tests, use: `npm run test:e2e`.
 To run all tests, use `npm run test`.
->>>>>>> sf-24
