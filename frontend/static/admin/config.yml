@@ -113,6 +113,7 @@ collections:
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: news-overview}
           - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: markdown}
           - {label: Subtitle, name: subtitle, widget: string}
           - {label: ACCImage, name: accimage, widget: accessible-image}
           - {label: MultiImage, name: multi, widget: multi-image}
