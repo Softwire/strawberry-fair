@@ -1,6 +1,8 @@
 import React from 'react'
 import Img from 'gatsby-image'
 
+import { previewCompatibleImageValidator } from './validators'
+
 const PreviewCompatibleImage = ({ imageInfo }) => {
   if (!imageInfo) {
     return null
@@ -26,6 +28,10 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
     return <img style={imageStyle} src={imageInfo.value} alt={alt} />
 
   return null
+}
+
+PreviewCompatibleImage.propTypes = {
+  imageInfo: previewCompatibleImageValidator
 }
 
 export default PreviewCompatibleImage

@@ -27,7 +27,18 @@ $subtitle-color: $secondary;
     height: 100px;
 }
     
-.scrapbook-image{
+.scrapbook-image {
     margin-top: auto;
 }
 
+#root-layout {
+    padding-top: 60px;
+}
+//these lines solve the bug where the dopdrown menus of the navbar don't show on edge
+.navbar-dropdown{
+    display: block;
+}
+
+.navbar-dropdown.is-hidden-touch{
+    display: none;
+}

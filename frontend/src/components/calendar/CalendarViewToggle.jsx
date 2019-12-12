@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 import { FaCalendar, FaListUl } from 'react-icons/fa'
@@ -19,3 +20,7 @@ export const CalendarViewToggle = ({view}) => (
         </ul>
     </div>
 )
+
+CalendarViewToggle.propTypes = {
+    view: PropTypes.oneOf(['calendar', 'upcoming'])
+}

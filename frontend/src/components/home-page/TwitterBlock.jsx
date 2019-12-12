@@ -19,4 +19,8 @@ const TwitterBlock = ({twitterBlock}) => (
   </BaseBlock>
 )
 
+TwitterBlock.propTypes = {
+  twitterBlock: BaseBlock.propTypes.block
+}
+
 export default TwitterBlock

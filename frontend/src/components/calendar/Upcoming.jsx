@@ -1,27 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-import { HTMLContent } from '../Content'
-
-// TODO: Filter meetings/non-meetings
-export const Upcoming = ({events}) => {
-    const maxItems = 10
-
-    // Construct array of list elements
-    let eventPanels = []
-
-    for (let i = 0; i < maxItems && i < events.length; i++) {
-        const event = events[i].node
-        eventPanels.push(<EventPanelBlock key={i} event={event} />)
-    }
-
-    return (
-        <div className="panel">
-            <h2 className="panel-heading">Upcoming</h2>
-            {eventPanels}
-        </div>
-    )
-}
+import { HTMLContentSmall } from '../Content'
+import { eventPropTypeValidator } from '../validators'
+import { EventFilterBlock, filterEvents } from './EventFilter'
+import { eventTypeList } from './EventType'
 
 const EventPanelBlock = ({event}) => {
     return (
@@ -33,12 +17,59 @@ const EventPanelBlock = ({event}) => {
                     </p>
                 </div>
                 <div className="media-content">
-                    <p>
+                    <h2 className="title is-4">
                         <strong><Link to={event.fields.slug}>{event.frontmatter.title}</Link></strong> - {new Date(event.frontmatter.dateTime).toLocaleDateString('en-GB')}
-                    </p>
-                    <HTMLContent content={event.html} />
+                    </h2>
+                    <HTMLContentSmall content={event.html} />
                 </div>
             </div>
         </div>
+    )
+}
+
+EventPanelBlock.propTypes = {
+    event: eventPropTypeValidator
+}
+
+const NoEventsFoundBlock = () => (
+    <div className="panel-block">
+        <div className="media">
+            <div className="media-content">
+                <p><strong>No events match the selected filters.</strong></p>
+            </div>
+        </div>
+    </div>
+)
+
+export const Upcoming = ({events}) => {
+    const [filters, setFilters] = useState([])  // Filter events by type
+
+    const addFilter = (filterName) => (
+        () => {setFilters(filters.concat(filterName))}  // Gotta love functional programming
+    )
+
+    const removeFilter = (filterName) => (
+        () => {setFilters(filters.filter(name => name !== filterName))}  // Set 'filters' to the existing 'filters' array, filtered (confusing) to contain only the elements not matching the given name
+    )
+
+    const maxItems = 10
+
+    // Construct array of list elements
+    let eventPanels = filterEvents(events, filters).slice(0, maxItems).map(event => <EventPanelBlock key={event.node.frontmatter.title} event={event.node} />)
+
+    return (
+        <div className="panel">
+            <h2 className="panel-heading">Upcoming</h2>
+            <EventFilterBlock allFilters={eventTypeList} activeFilters={filters} addFilter={addFilter} removeFilter={removeFilter} />
+            {eventPanels.length > 0 ? eventPanels : <NoEventsFoundBlock />}
+        </div>
+    )
+}
+
+Upcoming.propTypes = {
+    events: PropTypes.arrayOf(
+        PropTypes.shape({
+            node: eventPropTypeValidator
+        })
     )
 }

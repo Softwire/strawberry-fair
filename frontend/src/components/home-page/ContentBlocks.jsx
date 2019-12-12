@@ -1,26 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import ImageScrapbookRow from './ImageScrapbookRow'
 import StrawberryCard from '../StrawberryCard'
-
-const ContentBlocks = ({contentBlocks, contentBlocksHtml, BodyComponent}) => (
-  <React.Fragment>
-    {contentBlocks && contentBlocks.map((block, index) => (
-        <ContentBlock 
-          contentTitle={block.title}
-          contentSubtitle={block.subtitle}
-          scrapbookImages={block.scrapbookImages || []}
-          content={contentBlocksHtml[index]}
-          sideSnippet={block.sideSnippet}
-          BodyComponent={BodyComponent}
-          key={index}
-        />
-      )
-    )}
-    </React.Fragment>
-  )
-
-export default ContentBlocks
 
 const ContentBlock = ({contentTitle, contentSubtitle, scrapbookImages, content, sideSnippet, BodyComponent}) => (
   <section className="section">
@@ -41,3 +23,45 @@ const ContentBlock = ({contentTitle, contentSubtitle, scrapbookImages, content, 
     </div>
   </section>
 )
+
+ContentBlock.propTypes = {
+  contentTitle: PropTypes.node,
+  contentSubtitle: PropTypes.node,
+  scrapbookImages: ImageScrapbookRow.propTypes.scrapbookImages,
+  content: PropTypes.node,
+  sideSnippet: PropTypes.string,
+  BodyComponent: PropTypes.elementType
+}
+
+const ContentBlocks = ({contentBlocks, contentBlocksHtml, BodyComponent}) => (
+  <React.Fragment>
+    {contentBlocks && contentBlocks.map((block, index) => (
+        <ContentBlock 
+          contentTitle={block.title}
+          contentSubtitle={block.subtitle}
+          scrapbookImages={block.scrapbookImages || []}
+          content={contentBlocksHtml[index]}
+          sideSnippet={block.sideSnippet}
+          BodyComponent={BodyComponent}
+          key={index}
+        />
+      )
+    )}
+  </React.Fragment>
+)
+
+ContentBlocks.propTypes = {
+  contentBlocks: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: ContentBlock.propTypes.contentTitle,
+      subtitle: ContentBlock.propTypes.contentSubtitle,
+      scrapbookImages: ContentBlock.propTypes.scrapbookImages,
+      sideSnippet: ContentBlock.propTypes.sideSnippet,
+      BodyComponent: PropTypes.elementType
+    })
+  ),
+  contentBlocksHtml: PropTypes.arrayOf(PropTypes.string),
+  BodyComponent: PropTypes.elementType
+}
+
+export default ContentBlocks

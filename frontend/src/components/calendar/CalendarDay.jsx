@@ -1,6 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
+
+import { eventPropTypeValidator } from '../validators'
 
 // Represents a day in the calendar. Will either be empty or contain a preview of an event.
 // Later will have to add support for multiple events.
@@ -37,6 +40,15 @@ const CalendarDay = ({dateTime, events}) => {
             </div>
         )
     }
+}
+
+CalendarDay.propTypes = {
+    dateTime: PropTypes.instanceOf(Date),
+    events: PropTypes.arrayOf(
+        PropTypes.shape({
+            node: eventPropTypeValidator
+        })
+    )
 }
 
 export default CalendarDay

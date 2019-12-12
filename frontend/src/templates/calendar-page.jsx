@@ -1,10 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import { site } from '../util/templating'
 import { Layout } from '../components/Layout'
 import { Calendar } from '../components/calendar/Calendar'
 import { CalendarViewToggle } from '../components/calendar/CalendarViewToggle'
+import { eventPropTypeValidator } from '../components/validators'
 
 export const CalendarPage = ({events}) => (
   <Layout>
@@ -14,6 +16,14 @@ export const CalendarPage = ({events}) => (
     </section>
   </Layout>
 )
+
+CalendarPage.propTypes = {
+  events: PropTypes.arrayOf(
+      PropTypes.shape({
+          node: eventPropTypeValidator
+      })
+  )
+}
 
 export default site(CalendarPage, data => {return {events: data.allMarkdownRemark.edges}})
 
@@ -39,8 +49,8 @@ query calendarPageTemplate($id: String!) {
               }
             }
           }
+          eventTypes
           dateTime
-          isMeeting
         }
         html
         fields {
