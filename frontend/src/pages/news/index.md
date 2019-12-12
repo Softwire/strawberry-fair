@@ -20,5 +20,6 @@ hero:
       src: /img/cartoon-tree.jpg
     - alt: hello2
       src: /img/1-line-logo.png
+    - {}
 ---
 
