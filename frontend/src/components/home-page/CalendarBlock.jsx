@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import BaseBlock from './BaseBlock'
+import { getEventList } from '../calendar/getEventList'
+import { EventMediaBlock } from '../calendar/Upcoming'
 
 const CalendarBlock = ({calendarBlock}) => (
   <BaseBlock block={calendarBlock} altBackground={true}>
@@ -9,21 +11,24 @@ const CalendarBlock = ({calendarBlock}) => (
   </BaseBlock>
 )
 
-// TODO: Replace placeholder information with actual events (remember to update the propTypes after doing this)
-const UpcomingEventsDisplay = (/*{upcomingEvents}*/) => (
-  <div className="columns is-multiline">
-    {new Array(8).fill('hello')
-      .map((x, index) => (
-        <div className="column is-half" key={index}>
-          <div className="box">
-            {x + String(index)}
+const UpcomingEventsDisplay = () => {
+  const events = getEventList()
+  
+  return (
+    <div className="columns is-multiline">
+      {events
+        .map(event => (
+          <div className="column is-half" key={event.fields.slug}>
+            <div className="box">
+              <EventMediaBlock event={event} />
+            </div>
           </div>
-        </div>
+          )
         )
-      )
-    }
-  </div>
-)
+      }
+    </div>
+  )
+}
 
 UpcomingEventsDisplay.propTypes = {
   upcomingEvents: PropTypes.oneOfType([
