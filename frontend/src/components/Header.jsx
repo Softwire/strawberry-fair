@@ -1,7 +1,8 @@
 import React, {useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
-import PreviewCompatibleImage, { childImageSharpValidator } from './PreviewCompatibleImage'
+import PreviewCompatibleImage from './PreviewCompatibleImage'
+import { childImageSharpValidator } from './validators'
 import OutsideClickHandler from 'react-outside-click-handler'
 
 const getClassName = (baseName, toggleName, active) => `${baseName} ${active ? toggleName : ""}`
