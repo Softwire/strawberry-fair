@@ -8,8 +8,8 @@ const ListControl = CMS.getWidget("list").control
 export class MultiImageControl extends React.Component {
     render() {
         const field = new Map({
-            label: "Multiple Images",
-            name: "image-list",
+            label: "Image",
+            name: "image-list-element",
             fields: new List([
                 new Map({
                     label: "Description",
@@ -17,7 +17,7 @@ export class MultiImageControl extends React.Component {
                     widget: "string"
                 }),
                 new Map({
-                    label: "Image",
+                    label: "Image File",
                     name: "src",
                     widget: "image"
                 })
