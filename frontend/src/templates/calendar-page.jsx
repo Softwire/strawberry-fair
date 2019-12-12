@@ -36,9 +36,7 @@ export default site(CalendarPage, data => {return {events: data.allMarkdownRemar
 export const query = graphql`
 query calendarPageTemplate($id: String!) {
   markdownRemark(id: { eq: $id }) {
-    frontmatter {
-      title
-    }
+    html
   }
   allMarkdownRemark(filter: {fields: {slug: {regex: "$//events//", ne: "/events/"}}}, sort: {fields: frontmatter___dateTime, order: ASC}) {
     edges {

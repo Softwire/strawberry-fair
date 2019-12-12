@@ -36,9 +36,7 @@ export default site(UpcomingEvents, data => {return {events: data.allMarkdownRem
 export const query = graphql`
 query upcomingEventsTemplate($id: String!) {
   markdownRemark(id: { eq: $id }) {
-    frontmatter {
-      title
-    }
+    html
   }
   allMarkdownRemark(filter: {fields: {slug: {regex: "$//events//", ne: "/events/"}}}, sort: {fields: frontmatter___dateTime, order: ASC}) {
     edges {

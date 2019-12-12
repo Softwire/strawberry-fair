@@ -114,7 +114,6 @@ collections:
         name: "calendar-page"
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: calendar-page}
-          - {label: Title, name: title, widget: string}
           - {label: Body, name: body, widget: markdown}
       - file: "frontend/src/pages/privacy.md"
         label: "Privacy Page"
@@ -131,7 +130,6 @@ collections:
         name: "upcoming-events"
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: upcoming-events}
-          - {label: Title, name: title, widget: string}
           - {label: Body, name: body, widget: markdown}
   - name: "news"
     label: "News Articles"
