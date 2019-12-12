@@ -10,7 +10,14 @@ import '../styling/styles.scss'
 
 export const Layout = ({children, heroData}) => (
     <div id = "root-layout" className="container">
-        <Header heroData={heroData} />
+        <Header heroData={heroData}>
+            <div class="field is-grouped is-pulled-right">
+                <div className="buttons">
+                    <button className="button is-secondary">Get Involved</button>
+                    <button className="button is-primary">Apply to Trade</button>
+                </div>
+            </div>
+        </Header>
         <main>{children}</main>
         <Footer />
     </div>

@@ -8,7 +8,7 @@ import PreviewCompatibleImage from './PreviewCompatibleImage'
 const imageRotationIntervalMillis = 10000
 const imageFadeTimeMills = 2000
 
-export const Header = ({heroData}) => {
+export const Header = ({heroData, children}) => {
     if (heroData && heroData.isActive) {
         if (heroData.heroImages && heroData.heroImages.length > 0) {
             if (heroData.heroImages.length === 1) {
@@ -16,6 +16,7 @@ export const Header = ({heroData}) => {
                     <React.Fragment>
                         <NavBar />
                         <FixedHero info={heroData.heroImages[0]} />
+                        {children}
                     </React.Fragment>
                 )
             }
@@ -24,17 +25,20 @@ export const Header = ({heroData}) => {
                     <React.Fragment>
                         <NavBar />
                         <RevolvingHero data={heroData.heroImages} />
+                        {children}
                     </React.Fragment>
                 )
             }
         }
         else {
             // At present, this returns no hero, but should ultimately return a default hero (SF-14)
-            return <NavBar />
+            return (
+                <React.Fragment>
+                    <NavBar />
+                    {children}
+                </React.Fragment>
+            )
         }
-    }
-    else {
-        return <NavBar />
     }
 }
 
