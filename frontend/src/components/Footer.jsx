@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import PreviewCompatibleImage from './PreviewCompatibleImage'
+import { Link } from "gatsby"
 
 
 export const Footer = () => (
@@ -37,7 +38,7 @@ export const Footer = () => (
         <div className="tile is-ancestor">
             <div className="tile is-parent">
                 <div className="tile is-child box content">
-                    © Strawberry Fair 2017 | <a href="/"> Cookie policy</a>
+                    © Strawberry Fair 2017 | <Link to="/privacy"> Cookie & Privacy policies</Link>
                 </div>
             </div>
         </div>
