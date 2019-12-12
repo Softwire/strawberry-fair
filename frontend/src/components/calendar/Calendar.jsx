@@ -3,10 +3,22 @@ import PropTypes from 'prop-types'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
 import CalendarDay from './CalendarDay'
+import { eventTypeList } from './EventType'
+import { EventFilterBlock, filterEvents } from './EventFilter'
 
 export const Calendar = ({events}) => {
     // Set state
     const [ focusDate, setFocusDate ] = useState(new Date())
+    const [filters, setFilters] = useState([])  // Filter events by type
+
+    // Functions to add and remove active filters
+    const addFilter = (filterName) => (
+        () => {setFilters(filters.concat(filterName))}  // Gotta love functional programming
+    )
+
+    const removeFilter = (filterName) => (
+        () => {setFilters(filters.filter(name => name !== filterName))}  // Set 'filters' to the existing 'filters' array, filtered (confusing) to contain only the elements not matching the given name
+    )
 
     // Calculate the number of days in the given month
     const monthDate = new Date(focusDate.getFullYear(), focusDate.getMonth() + 1, 0)
@@ -40,15 +52,14 @@ export const Calendar = ({events}) => {
     return (
         <div className="panel">
             <h2 className="panel-heading">Calendar</h2>
-            <div className="panel-block">
-                <MonthScrubber monthForward={monthForward} monthBack={monthBack} focusDate={focusDate} />
-            </div>
+            <MonthScrubber monthForward={monthForward} monthBack={monthBack} focusDate={focusDate} />
+            <EventFilterBlock allFilters={eventTypeList} activeFilters={filters} addFilter={addFilter} removeFilter={removeFilter} />
             <div className="panel-block">
                 <div className="columns is-multiline is-mobile">
                     {days.map(dayNumber => <CalendarDay
                         key={dayNumber}
                         dateTime={new Date(focusDate.getFullYear(), focusDate.getMonth(), dayNumber)}
-                        events={events}
+                        events={filterEvents(events, filters)}
                     />)}
                 </div>
             </div>
@@ -61,25 +72,27 @@ Calendar.propTypes = {
 }
 
 const MonthScrubber = ({monthForward, monthBack, focusDate}) => (
-    <div className="columns is-multiline">
-        <div className="column is-full">
-            <div className="columns is-vcentered is-centered">
-                <div className="column is-narrow">
-                    <button onClick={monthBack} className="button is-white">
-                        <span className="icon is-left has-text-dark">
-                            <FaChevronLeft />
-                        </span>
-                    </button>
-                </div>
-                <div className="column">
-                    <p>{focusDate.toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</p>
-                </div>
-                <div className="column is-narrow">
-                    <button onClick={monthForward} className="button is-white">
-                        <span className="icon is-right has-text-dark">
-                            <FaChevronRight />
-                        </span>
-                    </button>
+    <div className="panel-block">
+        <div className="columns is-multiline">
+            <div className="column is-full">
+                <div className="columns is-vcentered is-centered">
+                    <div className="column is-narrow">
+                        <button onClick={monthBack} className="button is-white">
+                            <span className="icon is-left has-text-dark">
+                                <FaChevronLeft />
+                            </span>
+                        </button>
+                    </div>
+                    <div className="column">
+                        <p>{new Date(focusDate).toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</p>
+                    </div>
+                    <div className="column is-narrow">
+                        <button onClick={monthForward} className="button is-white">
+                            <span className="icon is-right has-text-dark">
+                                <FaChevronRight />
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

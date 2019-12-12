@@ -49,8 +49,8 @@ query upcomingEventsTemplate($id: String!) {
               }
             }
           }
+          eventTypes
           dateTime
-          isMeeting
         }
         html
         fields {

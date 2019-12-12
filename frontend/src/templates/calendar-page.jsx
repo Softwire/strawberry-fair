@@ -49,8 +49,8 @@ query calendarPageTemplate($id: String!) {
               }
             }
           }
+          eventTypes
           dateTime
-          isMeeting
         }
         html
         fields {
