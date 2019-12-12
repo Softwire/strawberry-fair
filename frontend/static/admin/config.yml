@@ -174,4 +174,20 @@ collections:
       - {label: Title, name: title, widget: string}
       - {label: Body, name: body, widget: markdown}
       - {label: Form, name: googleForm, widget: string}
+  - name: "Header and Footer"
+    label: "headerAndFooter"
+    folder: "frontend/src/pages/header-and-footer/"
+    files:
+      -file: "frontend/src/pages/header-and-footer/buttons/get-involved.md"
+       label: "get-involved"
+       name: "Get Involved"
+       fields:
+         - {label: Title, name: title, widget: string}
+         - {label: Link, name: link, widget: string}
+      -file: "frontend/src/pages/header-and-footer/buttons/apply-to-trade.md"
+       label: "get-involved"
+       name: "Get Involved"
+       fields:
+         - {label: Title, name: title, widget: string}
+         - {label: Link, name: link, widget: string}
 
