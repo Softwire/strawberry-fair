@@ -29,6 +29,7 @@ definitions:
   - &strawberryTiles {label: Strawberry Tiles, name: strawberryTiles, widget: strawberryTiles, required: false}
   - &tags {label: Tags, name: tags, widget: list, default: ["news"]}
   - &menuTitle {label: Menu Title, name: title, widget: string}
+  - &internalLink {label: Link, name: link, widget: string}
   - contentBlock: &contentBlock
       label: Content Blocks
       name: contentBlocks
@@ -196,6 +197,22 @@ collections:
       - *hero
       - *body
       - *form
+  - name: "Header and Footer"
+    label: "headerAndFooter"
+    folder: "frontend/src/pages/header-and-footer/"
+    files:
+      -file: "frontend/src/pages/header-and-footer/buttons/get-involved.md"
+       label: "get-involved"
+       name: "Get Involved"
+       fields:
+         - *title
+         - *internalLink
+      -file: "frontend/src/pages/header-and-footer/buttons/apply-to-trade.md"
+       label: "get-involved"
+       name: "Get Involved"
+       fields:
+         - *title
+         - *internalLink
   - label: Nav Bar Item
     name: navbar
     folder: frontend/src/pages/navbar/
