@@ -2,6 +2,10 @@
 templateKey: home-page
 title: By the people of Cambridge. For the people of Cambridge.
 hero:
+<<<<<<< HEAD
+=======
+
+>>>>>>> sf-64: task setup
   mode: Revolving Images
   revolving-hero:
     - alt: Test1
@@ -14,9 +18,12 @@ hero:
       src: /img/slide-gate-2017.jpg
     - alt: Test5
       src: /img/gareths-gate-slide.jpg
+<<<<<<< HEAD
   fixed-hero:
       alt: Test1
       src: /img/gareths-gate-slide.jpg
+=======
+>>>>>>> sf-64: task setup
 contentBlocks:
   - title: Welcome to StrawberryFair!
     subtitle: >-

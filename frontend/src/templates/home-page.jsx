@@ -63,6 +63,10 @@ query homePageTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
+<<<<<<< HEAD
+=======
+
+>>>>>>> sf-64: task setup
         contentBlocks {
           title
           subtitle
