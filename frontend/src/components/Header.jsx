@@ -51,23 +51,35 @@ RevolvingHero.propTypes = {
     children: PropTypes.node
 }
 
-export const Header = ({revolvingHero, fixedHero}) => {
+export const Header = ({revolvingHero, fixedHero, children}) => {
     if (revolvingHero) {
         return (
-            <RevolvingHero data={Object.values(revolvingHero)}>
-                <NavBar />
-            </RevolvingHero>
+            <div>
+                <RevolvingHero data={Object.values(revolvingHero)}>
+                    <NavBar />
+                </RevolvingHero>
+                {children}
+            </div>
+            
         )
     }
     else if (fixedHero) {
         return (
-            <FixedHero info={fixedHero}>
-                <NavBar />
-            </FixedHero>
+            <div>
+                <FixedHero info={fixedHero}>
+                    <NavBar />
+                </FixedHero>
+                {children}
+            </div>
         )
     }
     else {
-        return <NavBar />
+        return (
+            <div>
+                <NavBar />
+                {children}
+            </div>
+        )
     }
 }
 

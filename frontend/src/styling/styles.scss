@@ -10,6 +10,11 @@ $secondary: $black;
 $title-color: $primary;
 $subtitle-color: $secondary;
 
+// is-secondary doesn't produce any effect without this
+$custom-colors: ( 
+    "secondary": $secondary
+);
+
 /* Bulma provides default styling (can be imported in separate modules as required) */
 @import "bulma";
 
