@@ -7,11 +7,13 @@ import { preview } from '../util/templating'
 import { NewsArticle } from '../templates/news-article'
 import { EventInfo } from '../templates/event-info'
 import { AboutPage } from '../templates/about-page'
+import { UpcomingEvents } from '../templates/upcoming-events'
+import { CalendarPage } from '../templates/calendar-page'
+
 import { AccessibleImageControl } from './AccessibleImageWidget'
 import { MultiImageControl } from './MultiImageWidget'
 import { HeroControl } from './HeroWidget'
-import { UpcomingEvents } from '../templates/upcoming-events'
-import { CalendarPage } from '../templates/calendar-page'
+import { MultiCollectionRelationControl, MultiCollectionRelationPreview } from './MultiCollectionRelationWidget'
 
 const placeholderArticle = {
     node: {
@@ -67,3 +69,4 @@ CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {events: []})
 CMS.registerWidget("accessible-image", AccessibleImageControl)
 CMS.registerWidget("multi-image", MultiImageControl)
 CMS.registerWidget("hero", HeroControl)
+CMS.registerWidget('multi-collection-relation', MultiCollectionRelationControl, MultiCollectionRelationPreview)
