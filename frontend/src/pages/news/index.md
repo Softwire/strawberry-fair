@@ -10,7 +10,7 @@ hero:
   fixed-hero:
     alt: Testing2
     src: /img/flying-pig.jpg
-  mode: Random Image
+  mode: Revolving Images
 ---
 ## Here are the latest news:
 
