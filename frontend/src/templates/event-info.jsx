@@ -14,6 +14,10 @@ const EventTypeList = ({eventTypes}) => (
     </div>
 )
 
+EventTypeList.propTypes = {
+    eventTypes: PropTypes.arrayOf(PropTypes.string)
+}
+
 // used by website and CMS previews
 export const EventInfo = ({title, image, dateTime, eventTypes, content, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
@@ -35,6 +39,7 @@ export const EventInfo = ({title, image, dateTime, eventTypes, content, contentC
 EventInfo.propTypes = {
     title: PropTypes.string.isRequired,
     dateTime: PropTypes.string.isRequired,
+    eventTypes: EventTypeList.propTypes.eventTypes,
     image: PropTypes.object.isRequired,
     content: PropTypes.string.isRequired,
     contentComponent: PropTypes.elementType
