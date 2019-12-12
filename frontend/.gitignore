@@ -9,5 +9,10 @@ static/admin/*.bundle.*
 .DS_Store
 yarn-error.log
 
+<<<<<<< HEAD
 # IDE settings
 .vscode
+=======
+# Unit test snapshots
+__tests__/__snapshots__
+>>>>>>> sf-24
