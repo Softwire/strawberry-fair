@@ -2,9 +2,6 @@
 templateKey: news-overview
 title: Our News
 subtitle: It's your festival
-image: /img/strawberry.jpg
-hero:
-  mode: Revolving Images
 ---
 ## Here are the latest news:
 

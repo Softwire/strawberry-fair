@@ -8,11 +8,11 @@ const ListControl = CMS.getWidget("list").control
 export class RevolvingHeroControl extends React.Component {
     render() {
         const field = new Map({
-            label: "Image",
-            name: "imageList",
+            label: "Banner Images",
+            name: "image-list",
             field: new Map({
                 label: "Image",
-                name: "imageWrapper",
+                name: "image-wrapper",
                 widget: "accessible-image"
             })
         })

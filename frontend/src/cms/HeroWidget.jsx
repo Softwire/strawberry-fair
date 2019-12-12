@@ -31,7 +31,7 @@ export class HeroControl extends React.Component {
                 fields: [
                     selectFields,
                     new Map({
-                        label: "Image",
+                        label: "Fixed Banner",
                         name: "fixed-hero",
                         widget: "fixed-hero"
                     })
@@ -43,7 +43,7 @@ export class HeroControl extends React.Component {
                 fields: [
                     selectFields,
                     new Map({
-                        label: "Image",
+                        label: "Revolving Banner",
                         name: "revolving-hero",
                         widget: "revolving-hero"
                     })

@@ -15,7 +15,7 @@ export class AccessibleImageControl extends React.Component {
                     widget: "string"
                 }),
                 new Map({
-                    label: "Image",
+                    label: "Image File",
                     name: "src",
                     widget: "image"
                 }),

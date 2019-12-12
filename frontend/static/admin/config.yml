@@ -117,7 +117,7 @@ collections:
           - {label: Image, name: image, widget: image}
           - {label: AccImage, name: accimage, widget: accessible-image}
           - {label: Body, name: body, widget: markdown}
-          - {label: Revolver, name: revolver, widget: revolving-hero}
+          - {label: Hero, name: hero, widget: hero}
       - file: "frontend/src/pages/calendar.md"
         label: "Calendar Page"
         name: "calendar-page"
