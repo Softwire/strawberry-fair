@@ -5,23 +5,23 @@ const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
-  const result = await graphql(`
-    {
-      allMarkdownRemark(limit: 1000) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              templateKey
-            }
-          }
-        }
-      }
-    }
-  `)
+   const result = await graphql(`
+      {
+        allMarkdownRemark(filter: {frontmatter: {templateKey: {ne: null}}}) {
+          edges {
+            node {
+              id
+              fields {
+                slug
+              }
+              frontmatter {
+                templateKey
+              }
+            }
+          }
+        }
+      }
+    `)
 
   if (result.errors) {
     result.errors.forEach(e => console.error(e.toString()))
