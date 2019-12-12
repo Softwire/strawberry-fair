@@ -1,6 +1,6 @@
 ---
 templateKey: 'about-page'
-title: Cookies & Privacy Policies
+title: Cookie & Privacy Policies
 subtitle: 
 image:
 ---
