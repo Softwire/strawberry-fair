@@ -47,3 +47,10 @@ $custom-colors: (
 .navbar-dropdown.is-hidden-touch{
     display: none;
 }
+
+.hero-container {
+    position: relative;
+    width: 80vw;
+    height: 30vw;
+    margin: auto;
+}

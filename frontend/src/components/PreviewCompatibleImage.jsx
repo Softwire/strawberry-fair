@@ -1,14 +1,13 @@
 import React from 'react'
 import Img from 'gatsby-image'
-
 import { previewCompatibleImageValidator } from './validators'
 
-const PreviewCompatibleImage = ({ imageInfo }) => {
+const PreviewCompatibleImage = ({ imageInfo, style }) => {
   if (!imageInfo) {
     return null
   }
 
-  const imageStyle = { borderRadius: '5px' }
+  const imageStyle = (style ? style : { borderRadius: '5px' })
   const { alt = '', childImageSharp, image } = imageInfo
 
   if (!!image && !!image.childImageSharp) {

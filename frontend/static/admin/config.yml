@@ -14,16 +14,6 @@ public_folder: /img
 publish_mode: editorial_workflow
 
 
-## ACCESSIBLE IMAGE TEMPLATE ##
-## 
-##          - label: Image
-##            name: ximage
-##            widget: object
-##            fields:
-##              - {label: Description, name: alt, widget: string}
-##              - {label: Image, name: src, widget: image}
-
-
 collections:
   - name: "pages"
     label: "Pages"
@@ -35,7 +25,17 @@ collections:
           - {label: "Template Key", name: templateKey, widget: hidden, default: home-page}
           - {label: Title, name: title, widget: string}
           - {label: Body, name: body, widget: hidden, default: "placeholder"}
-          - label: Banner
+          - {label: Image, name: image, widget: image}
+          - label: Content-Blocks
+            name: contentBlocks
+            widget: list
+            fields:
+              - {label: Content-Title, name: contentTitle, widget: string}
+              - {label: Content-Subtitle, name: contentSubtitle, widget: string}
+              - {label: Scrapbook-Images, name: scrapbookImages, widget: list, field: {label: ScrapbookImage, name: scrapbookImage, widget: image}}
+              - {label: Content-Body, name: _markdown_contentBody, widget: markdown}
+              - {label: Side-Snippet, name: sideSnippet, widget: string}
+          - label: Banner Images
             name: revolvingHero
             widget: object
             fields:
@@ -103,15 +103,17 @@ collections:
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: news-overview}
           - {label: Title, name: title, widget: string}
-          - {label: Subtitle, name: subtitle, widget: string}
-          - {label: Image, name: image, widget: image}
           - {label: Body, name: body, widget: markdown}
+          - {label: Subtitle, name: subtitle, widget: string}
+          - {label: ACCImage, name: accimage, widget: accessible-image}
+          - {label: MultiImage, name: multi, widget: multi-image}
+          - {label: hero, name: hero, widget: hero}
       - file: "frontend/src/pages/calendar.md"
         label: "Calendar Page"
         name: "calendar-page"
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: calendar-page}
-          - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: markdown}
       - file: "frontend/src/pages/privacy.md"
         label: "Privacy Page"
         name: "privacy-page"
@@ -121,6 +123,12 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: Subtitle, name: subtitle, widget: string}
           - {label: Image, name: image, widget: image}
+          - {label: Body, name: body, widget: markdown}
+      - file: "frontend/src/pages/events/index.md"
+        label: "Upcoming Events"
+        name: "upcoming-events"
+        fields:
+          - {label: "Template Key", name: templateKey, widget: hidden, default: upcoming-events}
           - {label: Body, name: body, widget: markdown}
   - name: "news"
     label: "News Articles"
@@ -190,3 +198,20 @@ collections:
           - {label: Text, name: text, widget: string}
           - {label: Link, name: link, widget: relation, collection: pages, searchFields: [title], valueField: title}
 
+  - label: Nav Bar Item
+    name: navbar
+    folder: frontend/src/pages/navbar/
+    fields:
+      - {label: Title, name: title, widget: string}
+      - label: Page Titles
+        name: pageTitles
+        widget: list
+        hint: Items can only be added or deleted, but not edited
+        fields: 
+          - label: Page Title
+            name: pageTitle
+            widget: multi-collection-relation
+            options: [Events, About, Forms]
+            searchFields: [title]
+            valueField: title
+            displayFields: [title]

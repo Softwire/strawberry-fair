@@ -1,9 +1,24 @@
 ---
-templateKey: 'news-overview'
-title: Our News
-subtitle: It's your festival
-image: /img/strawberry.jpg
+templateKey: news-overview
+title: A
+subtitle: B
+accimage:
+  alt: C
+  src: /img/1-line-logo.png
+multi:
+  - alt: Test1
+    src: /img/cartoon-tree.jpg
+  - alt: Test2
+    src: /img/flying-pig.jpg
+hero:
+  fixed-hero:
+    alt: Test1
+    src: /img/cartoon-tree.jpg
+  mode: Revolving Images
+  revolving-hero:
+    - alt: Hello1
+      src: /img/cartoon-tree.jpg
+    - alt: hello2
+      src: /img/1-line-logo.png
 ---
-## Here are the latest news:
 
-Here we can find a list of all the available Blog Posts.
