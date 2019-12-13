@@ -1,4 +1,4 @@
 ---
 title: Get Involved
-link: '/about/about_item'
+link: '/about/about-item'
 ---
