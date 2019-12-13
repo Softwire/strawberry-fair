@@ -19,7 +19,7 @@ export const EventMediaBlock = ({event}) => (
             <h2 className="title is-4">
                 <strong><Link to={event.fields.slug}>{event.frontmatter.title}</Link></strong> - {new Date(event.frontmatter.dateTime).toLocaleDateString('en-GB')}
             </h2>
-            <HTMLContentSmall content={event.html} />
+            <HTMLContentSmall content={event.excerpt} />
         </div>
     </div>
 )

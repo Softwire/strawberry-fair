@@ -93,6 +93,7 @@ fragment EventFragment on MarkdownRemark {
     dateTime
   }
   html
+  excerpt(format: HTML, pruneLength: 150)
   fields {
     slug
   }
