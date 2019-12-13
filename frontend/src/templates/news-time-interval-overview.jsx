@@ -8,21 +8,20 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 // This is used by the website and for CMS previews
 export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
+    firstDay = new Date(firstDay)
+    lastDay = new Date(lastDay)
     const selectedNewsArticles = getNewsArticlesInTimeInterval(newsArticles, firstDay, lastDay)
-    const firstDayDate = new Date(firstDay)
     var heading = ''
     if(areInSameYear(selectedNewsArticles)){
-      if(areInSameMonth(selectedNewsArticles)) heading = monthName(firstDayDate.getMonth()) + " " + firstDayDate.getFullYear()
-      else heading = firstDayDate.getFullYear()
+      if(areInSameMonth(selectedNewsArticles)) heading = monthName(firstDay.getMonth()) + " " + firstDay.getFullYear()
+      else heading = firstDay.getFullYear()
     }
     return (
       <Layout>
-        <section className="section">
-          <div className="container">
             <h1 className="title has-text-primary is-size-1">News</h1>
             <div className="columns">
-              <div className = "column is-three-quarters">
-                <div className = "panel">
+              <div className="column is-three-quarters">
+                <div className="panel">
                   <h2 className="panel-heading">{heading}</h2>
                   {selectedNewsArticles.map(article => (
                      <Link to={article.node.fields.slug} className="panel-block">
@@ -33,23 +32,19 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
                            </p>
                          </figure>
                          <div className="media-content">
-                            <div className="has-text-primary">{article.node.frontmatter.title}</div>
-                            <div className= "has-text-secondary">{article.node.frontmatter.date}</div>
-                            <p align="justify">
-                              <HTMLContent content = {article.node.html.substring(0,360)+" ..."}/>
-                            </p>
+                            <h1 className="has-text-primary">{article.node.frontmatter.title}</h1>
+                            <time className="has-text-secondary" dateTime={article.node.frontmatter.date}>{article.node.frontmatter.date}</time>
+                            <HTMLContent content = {article.node.html.substring(0,360)+" ..."}/>
                          </div>
                         </article>
                       </Link>))
                   }
                 </div>
               </div>
-              <div className = "column">
+              <div className="column">
                 <NewsMenu newsArticles={newsArticles}/>
               </div>          
             </div>
-          </div>
-        </section>
       </Layout>
 )}
 
@@ -82,16 +77,7 @@ query newsMonthOverviewTemplate{
   }
 `
 function getNewsArticlesInTimeInterval(newsArticles, firstDay, lastDay) {
-  const firstDayDate = new Date(firstDay)
-  const lastDayDate = new Date(lastDay)
-  
-  const newsArticlesInTimeInterval = []
-  newsArticles.forEach(newsArticle => {
-    if(isInTimeInterval(firstDayDate, lastDayDate, new Date(newsArticle.node.frontmatter.date))) {
-      newsArticlesInTimeInterval.push(newsArticle)
-    }
-  })
-  return newsArticlesInTimeInterval
+  return newsArticles.filter(article => isInTimeInterval(firstDay, lastDay, new Date(article.node.frontmatter.date)))
 }
 
 function isInTimeInterval(firstDayDate, lastDayDate, articleDate) {
@@ -99,27 +85,21 @@ function isInTimeInterval(firstDayDate, lastDayDate, articleDate) {
 }
 
 function areInSameYear(articles){
-  if(articles){
-    const date = new Date(articles[0].node.frontmatter.date)
-    const year = date.getFullYear()
-    for(const article of articles){
-      const articleDate = new Date(article.node.frontmatter.date)
-      if(articleDate.getFullYear()!=year) return false
-    }
-    return true
+  const date = new Date(articles[0].node.frontmatter.date)
+  const year = date.getFullYear()
+  for(const article of articles){
+    const articleDate = new Date(article.node.frontmatter.date)
+    if(articleDate.getFullYear()!=year) return false
   }
-  console.error("No articles in the time interval specified.")
+  return true
 }
 
 function areInSameMonth(articles) {
-  if(articles){
-    const date = new Date(articles[0].node.frontmatter.date)
-    const month = date.getMonth()
-    for(const article of articles){
-      const articleDate = new Date(article.node.frontmatter.date)
-      if(articleDate.getMonth()!=month) return false
-    }
-    return true
+  const date = new Date(articles[0].node.frontmatter.date)
+  const month = date.getMonth()
+  for(const article of articles){
+    const articleDate = new Date(article.node.frontmatter.date)
+    if(articleDate.getMonth()!=month) return false
   }
-  console.error("No articles in the time interval specified.")
+  return true
 }

@@ -24,7 +24,7 @@ const NewsArticleSnapshot = ({newsArticles}) => (
     <Link to={newsArticles.node.fields.slug}>
       <PreviewCompatibleImage imageInfo={newsArticles.node.frontmatter.image}/>
       <h2 className="has-text-primary">{newsArticles.node.frontmatter.title}</h2>
-      <h3 className= "has-text-primary">{newsArticles.node.frontmatter.date}</h3>
+      <h3 className="has-text-primary">{newsArticles.node.frontmatter.date}</h3>
     </Link>
   </article>
 )

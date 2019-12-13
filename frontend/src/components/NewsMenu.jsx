@@ -4,12 +4,12 @@ import { Link } from 'gatsby'
 export const NewsMenu = ({newsArticles}) => {
     let menuEntries = getMenuEntries(newsArticles)
     return (
-        <aside className="menu">
+        <nav className="menu">
             <h1 className = "subtitle">
             Archive
             </h1>
             {menuEntries.map(yearEntry => <MonthItemsForYear key={yearEntry[0]} year={yearEntry[0]} months ={yearEntry[1]}/> )}
-        </aside>
+        </nav>
 
     )
 }
@@ -17,15 +17,15 @@ export const NewsMenu = ({newsArticles}) => {
 export default NewsMenu
 
 const MonthItemsForYear = ({year, months}) => (
-        <div>
-            <Link to ={"/"+year} className="menu-label">{year}</Link>
+        <React.Fragment>
+            <Link to ={"/news/"+year} className="menu-label">{year}</Link>
             <ul className="menu-list">
                 {months.map(month => { 
                 const monthNumber = month + 1
-                const link = "/"+year+"/"+monthNumber
+                const link = "/news/"+year+"/"+monthNumber
                 return (<li key={month}><Link to={link}>{monthName(month)}</Link></li>)})}
             </ul>
-        </div>
+        </React.Fragment>
         )
 
 

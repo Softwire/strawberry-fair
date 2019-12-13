@@ -1,4 +1,5 @@
-const path = require('path')
+//import statements do not work if you're importing from outside src/ (this file is called by gatsby-node.js, which is outside src/)
+const path = require('path')  
 
 exports.NewsInTimeIntervalGenerator = async ({ actions: { createPage }, graphql }) => {
   const result = await graphql(`
@@ -20,13 +21,14 @@ exports.NewsInTimeIntervalGenerator = async ({ actions: { createPage }, graphql 
     return Promise.reject(result.errors)
   }
 
+
   const menuEntries = getMenuEntries(result.data.allMarkdownRemark.edges)
 
-  menuEntries.forEach(year => {
-    const firstDay = year[0]+"-01-01"
-    const lastDay = (year[0]+1)+"-01-01"
+  menuEntries.forEach((months, year) => {
+    const firstDay = new Date(year, 0, 1)
+    const lastDay = new Date(year+1, 0, 1)
     createPage({
-      path: String(year[0]),
+      path: "news/"+year,
      
       component: path.resolve(
         `src/templates/news-time-interval-overview.jsx`
@@ -37,12 +39,11 @@ exports.NewsInTimeIntervalGenerator = async ({ actions: { createPage }, graphql 
       },
     })
 
-    year[1].forEach(month => {
-      month+=1
-      const firstDay= year[0]+"-"+month+"-01"
+    months.forEach(month => {
+      const firstDay= new Date(year, month, 1)
       const lastDay = getFirstDayOfNextMonth(firstDay)
       createPage({
-        path: year[0]+"/"+month,
+        path: "news/"+year+"/"+(month+1),
        
         component: path.resolve(
           `src/templates/news-time-interval-overview.jsx`
@@ -58,30 +59,25 @@ exports.NewsInTimeIntervalGenerator = async ({ actions: { createPage }, graphql 
 
 function getMenuEntries(newsArticles) {
   const newsArticlesDates = newsArticles.map(newsArticle =>
-      new Date(newsArticle.node.frontmatter.date))
-  let menuEntries = []
-  let date
-  for (date of newsArticlesDates) {
-      let year = date.getFullYear()
-      let month = date.getMonth()
-      if (!menuEntries.map(entryPair => entryPair[0]).includes(year)) menuEntries.push([year,[month]])
-      else {
-          let yearIndex = menuEntries.map(entryPair => entryPair[0]).indexOf(year)
-          if(!menuEntries[yearIndex][1].includes(month)) menuEntries[yearIndex][1].push(month)
-      }
+    new Date(newsArticle.node.frontmatter.date))
+
+  const menuEntries = new Map()
+  for (let date of newsArticlesDates) {
+    if (!menuEntries.has(date.getFullYear())) {
+      menuEntries.set(date.getFullYear(), new Set())
+    }
+    menuEntries.get(date.getFullYear()).add(date.getMonth())
   }
   return menuEntries
 }
 
-function getFirstDayOfNextMonth(firstDayOfTheMonth) {
-  const firstDay = new Date(firstDayOfTheMonth)
-  var firstDayNextMonth;
-  if(firstDay.getMonth()==11){
+function getFirstDayOfNextMonth(firstDay) {
+  let firstDayNextMonth;
+  if(firstDay.getMonth()===11){
      firstDayNextMonth = new Date(firstDay.getFullYear()+1, 0, 1)
   }
   else {
      firstDayNextMonth = new Date(firstDay.getFullYear(), firstDay.getMonth()+1, 1)
   }
-  firstDayNextMonth = firstDayNextMonth.getFullYear()+"-"+(firstDayNextMonth.getMonth()+1)+"-"+firstDayNextMonth.getDate()
   return firstDayNextMonth
 }
