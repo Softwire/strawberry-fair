@@ -202,14 +202,14 @@ collections:
     folder: "frontend/src/pages/header-and-footer/"
     files:
       -file: "frontend/src/pages/header-and-footer/buttons/get-involved.md"
-       label: "get-involved"
-       name: "Get Involved"
+       label: "Get Involved"
+       name: "get-involved"
        fields:
          - *title
          - *internalLink
       -file: "frontend/src/pages/header-and-footer/buttons/apply-to-trade.md"
-       label: "apply-to-trade"
-       name: "Apply to Trade"
+       label: "Apply to Trade"
+       name: "apply-to-trade"
        fields:
          - *title
          - *internalLink
