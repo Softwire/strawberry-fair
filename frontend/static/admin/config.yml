@@ -208,8 +208,8 @@ collections:
          - *title
          - *internalLink
       -file: "frontend/src/pages/header-and-footer/buttons/apply-to-trade.md"
-       label: "get-involved"
-       name: "Get Involved"
+       label: "apply-to-trade"
+       name: "Apply to Trade"
        fields:
          - *title
          - *internalLink
