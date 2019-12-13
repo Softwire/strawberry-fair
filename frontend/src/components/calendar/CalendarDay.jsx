@@ -26,6 +26,38 @@ const CalendarDay = ({dateTime, events}) => {
         setShowModal(false)
     }
 
+    let internals = null
+
+    if (events.length > 0) {
+        internals = (
+            <React.Fragment>
+                <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
+                <div className="box button has-text-left calendar-day has-text-white has-text-weight-bold" onClick={modalOn} style={events.length > 0 ? {
+                        backgroundImage: `url(${events[0].frontmatter.image.childImageSharp.editedFluid.src})`,
+                        backgroundSize: "cover"} : null}>
+                    <p>{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</p>
+                    {events.map(event => <p key={event.fields.slug}><Link className="has-text-white has-text-weight-medium" to={event.fields.slug}>{event.frontmatter.title}</Link></p>)}
+                </div>
+            </React.Fragment>
+        )
+    } else {
+        internals = (
+            <React.Fragment>
+                <NoEventsModal date={date} close={modalOff} active={showModal} />
+                <div className="box button has-text-left calendar-day" onClick={modalOn}>
+                    <p>{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</p>
+                </div>
+            </React.Fragment>
+        )
+    }
+
+    return (
+        <div className="column is-half-mobile is-one-quarter-tablet is-2-desktop">
+            {internals}
+        </div>
+    )
+
+    /*
     if (events.length > 0) {
         return (
             <div className='column is-half-mobile is-one-quarter-tablet is-2-desktop'>
@@ -50,30 +82,46 @@ const CalendarDay = ({dateTime, events}) => {
             </div>
         )
     }
+    */
 }
 
-const CalendarDayModal = ({dateTime, events, close, active}) => {
-    const date = new Date(dateTime)
-
-    return (
-        <div className={"modal" + (active ? " is-active" : "")}>
-            <div className="modal-background" onClick={close}></div>
-            <div className="modal-content">
-                <BackgroundImage
-                        Tag="div"
-                        className="box has-text-white has-text-weight-bold"
-                        fluid={events[0].frontmatter.image.childImageSharp.fluid}
-                    >
-                    <h2 className="title is-2">{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</h2>
-                    {events.map(event => <p key={event.fields.slug}><Link className='has-text-white' to={event.fields.slug}>{event.frontmatter.title}</Link></p>)}
-                </BackgroundImage>
+const CalendarDayModal = ({date, events, close, active}) => {
+    if (events.length > 0) {
+        return (
+            <div className={"modal" + (active ? " is-active" : "")}>
+                <div className="modal-background" onClick={close}></div>
+                <div className="modal-content">
+                    <BackgroundImage
+                            Tag="div"
+                            className="box has-text-white has-text-weight-bold"
+                            fluid={events[0].frontmatter.image.childImageSharp.fluid}
+                        >
+                        <h2 className="title is-2">{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</h2>
+                        {events.map(event => <p key={event.fields.slug}><Link className='has-text-white' to={event.fields.slug}>{event.frontmatter.title}</Link></p>)}
+                    </BackgroundImage>
+                </div>
+                <button className="modal-close is-large" aria-label="close" onClick={close}></button>
             </div>
-            <button className="modal-close is-large" ariaLabel="close" onClick={close}></button>
-        </div>
-    )
+        )
+    } else {
+        return null
+    }
 }
+
+const NoEventsModal = ({date, close, active}) => (
+    <div className={"modal" + (active ? " is-active" : "")}>
+        <div className="modal-background" onClick={close}></div>
+        <div className="modal-content">
+            <div className="notification">
+                <p>No events on {date.toLocaleDateString('en-GB', longDateFormatOptions)}.</p>
+            </div>
+        </div>
+        <button className="modal-close is-large" aria-label="close" onClick={close}></button>
+    </div>
+)
 
 const dateDisplayFormatOptions = {weekday: 'short', day: 'numeric'}
+const longDateFormatOptions = {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'}
 
 export default CalendarDay
 
@@ -87,15 +135,19 @@ export function areSameDay(date1, date2) {
 CalendarDay.propTypes = {
     dateTime: PropTypes.instanceOf(Date),
     events: PropTypes.arrayOf(
-        PropTypes.shape({
-            node: eventPropTypeValidator
-        })
+        eventPropTypeValidator
     )
 }
 
 CalendarDayModal.propTypes = {
-    dateTime: CalendarDay.propTypes.dateTime,
+    date: PropTypes.instanceOf(Date),
     events: CalendarDay.propTypes.events,
+    close: PropTypes.func,
+    active: PropTypes.bool
+}
+
+NoEventsModal.propTypes = {
+    date: PropTypes.instanceOf(Date),
     close: PropTypes.func,
     active: PropTypes.bool
 }

@@ -117,5 +117,5 @@ MonthScrubber.propTypes = {
 
 function eventsOnDate(date, events) {
     // Array of events on this day, empty if none
-    return events.filter(event => areSameDay(new Date(event.node.frontmatter.dateTime), date)).map(event => event.node)
+    return events.filter(event => areSameDay(new Date(event.frontmatter.dateTime), date))
 }

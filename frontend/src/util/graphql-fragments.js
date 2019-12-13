@@ -21,6 +21,9 @@ fragment ImageFluid64x64Fragment on MarkdownRemarkFrontmatter {
       fluid {
         ...GatsbyImageSharpFluid
       }
+      editedFluid: fluid(duotone: {highlight: "ae1414", shadow: "1d1d1d", opacity: 70}) {
+        src
+      }
       resize(width: 64, height: 64) {
         src
       }
