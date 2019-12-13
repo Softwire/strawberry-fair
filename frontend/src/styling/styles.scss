@@ -10,6 +10,10 @@ $secondary: $black;
 $title-color: $primary;
 $subtitle-color: $secondary;
 
+$radius-small: 0px;
+$radius: 0px;
+$radius-large: 0px;
+
 /* Bulma provides default styling (can be imported in separate modules as required) */
 @import "bulma";
 
