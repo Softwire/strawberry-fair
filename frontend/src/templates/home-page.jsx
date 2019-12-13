@@ -64,9 +64,12 @@ query homePageTemplate($id: String!) {
       frontmatter {
         title
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> sf-64: task setup
+=======
+>>>>>>> sf-64: netlify merge
         contentBlocks {
           title
           subtitle
