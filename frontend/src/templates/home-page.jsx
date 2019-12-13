@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import { HeroFragment } from '../util/graphql-fragments'
 
 import { HTMLContent } from '../components/Content'
 import { Layout } from '../components/Layout'
@@ -51,7 +52,7 @@ HomePage.propTypes = {
 
 const additionalPropsExtractor = graphqlData => ({
   contentBlocksHtml: graphqlData.markdownRemark.fields.contentBlocksHtml,
-  newsArticles: graphqlData.allMarkdownRemark.edges
+  newsArticles: graphqlData.newsData.edges
 })
 
 export default site(HomePage, additionalPropsExtractor)
@@ -62,13 +63,6 @@ query homePageTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-<<<<<<< HEAD
-        revolvingHero {
-          ...RevolvingHeroImageFluidFragment
-        }
-=======
-
->>>>>>> sf-64: task setup
         contentBlocks {
           title
           subtitle
@@ -99,7 +93,7 @@ query homePageTemplate($id: String!) {
       }
       html
     }
-    allMarkdownRemark(filter: {fields: {slug: {regex: "$//news//", ne: "/news/"}}}, sort: {fields: frontmatter___date, order: DESC}) {
+    newsData: allMarkdownRemark(filter: {fields: {slug: {regex: "$//news//", ne: "/news/"}}}, sort: {fields: frontmatter___date, order: DESC}) {
       edges {
         node {
           frontmatter {
@@ -119,6 +113,9 @@ query homePageTemplate($id: String!) {
           html
         }
       }
+    }
+    heroData: allMarkdownRemark(filter: {id: {eq: $id}}) {
+      ...HeroFragment
     }
   }
 `
