@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
 
 import BaseBlock from './BaseBlock'
 import { getEventList } from '../calendar/getEventList'
@@ -7,7 +7,7 @@ import { EventMediaBlock } from '../calendar/Upcoming'
 
 const CalendarBlock = ({calendarBlock}) => (
   <BaseBlock block={calendarBlock} altBackground={true}>
-    <UpcomingEventsDisplay upcomingEvents={calendarBlock.upcomingEvents || "Hello"}/>
+    <UpcomingEventsDisplay />
   </BaseBlock>
 )
 
@@ -24,23 +24,21 @@ const UpcomingEventsDisplay = () => {
             </div>
           </div>
           )
-        )
+        ).slice(0, 4)  // Only take the first 4 events
       }
+      <MoreEventsLinkBox />
     </div>
   )
 }
 
-UpcomingEventsDisplay.propTypes = {
-  upcomingEvents: PropTypes.oneOfType([
-    PropTypes.array,  // Make this more specific once implemented above
-    PropTypes.string  // So placeholder works
-  ])
-}
+const MoreEventsLinkBox = () => (
+  <div className="column is-half">
+    <Link className="box button" to="/events">See more events...</Link>
+  </div>
+)
 
 CalendarBlock.propTypes = {
-  calendarBlock: PropTypes.shape({
-    upcomingEvents: UpcomingEventsDisplay.propTypes.upcomingEvents  // It'll be the same as above
-  })
+  calendarBlock: BaseBlock.propTypes.block
 }
 
 export default CalendarBlock
