@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 
 import { eventPropTypeValidator } from '../validators'
+import { EventMediaBlock } from './Upcoming'
 
 // Represents a day in the calendar. Will either be empty or contain a preview of an event.
 // Later will have to add support for multiple events.
@@ -85,6 +86,7 @@ const CalendarDay = ({dateTime, events}) => {
     */
 }
 
+/*
 const CalendarDayModal = ({date, events, close, active}) => {
     if (events.length > 0) {
         return (
@@ -99,6 +101,28 @@ const CalendarDayModal = ({date, events, close, active}) => {
                         <h2 className="title is-2">{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</h2>
                         {events.map(event => <p key={event.fields.slug}><Link className='has-text-white' to={event.fields.slug}>{event.frontmatter.title}</Link></p>)}
                     </BackgroundImage>
+                </div>
+                <button className="modal-close is-large" aria-label="close" onClick={close}></button>
+            </div>
+        )
+    } else {
+        return null
+    }
+}
+*/
+
+const CalendarDayModal = ({date, events, close, active}) => {
+    if (events.length > 0) {
+        return (
+            <div className={"modal" + (active ? " is-active" : "")}>
+                <div className="modal-background" onClick={close}></div>
+                <div className="modal-content">
+                    <div className="message">
+                        <h1 className="message-header is-primary">{date.toLocaleDateString('en-GB', longDateFormatOptions)}</h1>
+                        <div className="message-body">
+                            {events.map(event => <EventMediaBlock key={event.fields.slug} event={event} />)}
+                        </div>
+                    </div>
                 </div>
                 <button className="modal-close is-large" aria-label="close" onClick={close}></button>
             </div>
