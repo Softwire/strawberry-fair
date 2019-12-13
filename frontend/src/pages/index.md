@@ -2,7 +2,6 @@
 templateKey: home-page
 title: By the people of Cambridge. For the people of Cambridge.
 hero:
-
   mode: Revolving Images
   revolving-hero:
     - alt: Test1
@@ -14,6 +13,9 @@ hero:
     - alt: Test4
       src: /img/slide-gate-2017.jpg
     - alt: Test5
+      src: /img/gareths-gate-slide.jpg
+  fixed-hero:
+      alt: Test1
       src: /img/gareths-gate-slide.jpg
 contentBlocks:
   - title: Welcome to StrawberryFair!
