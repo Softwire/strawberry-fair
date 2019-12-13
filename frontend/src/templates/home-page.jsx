@@ -63,10 +63,6 @@ query homePageTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-<<<<<<< HEAD
-=======
-
->>>>>>> 0190da1d4b0bdd565a923365902ccabb98dc334d
         contentBlocks {
           title
           subtitle
