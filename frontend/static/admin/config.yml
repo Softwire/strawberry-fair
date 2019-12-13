@@ -184,20 +184,19 @@ collections:
       - {label: Form, name: googleForm, widget: string}
   - name: "header-and-footer"
     label: "Header and Footer"
-    folder: "frontend/src/pages/header-and-footer/"
     files:
       - file: "frontend/src/pages/header-and-footer/buttons/get-involved.md"
-        label: "get-involved"
-        name: "Get Involved"
+        label: "Get Involved"
+        name: "get-involved"
         fields:
          - {label: Title, name: title, widget: string}
          - {label: Link, name: link, widget: string}
       - file: "frontend/src/pages/header-and-footer/buttons/apply-to-trade.md"
-        label: "get-involved"
-        name: "Get Involved"
+        label: "Apply to Trade"
+        name: "apply-to-trade"
         fields:
-         - {label: Title, name: title, widget: string}
-         - {label: Link, name: link, widget: string}
+          - {label: Text, name: text, widget: string}
+          - {label: Link, name: link, widget: relation, collection: pages, searchFields: [title], valueField: title}
 
   - label: Nav Bar Item
     name: navbar
