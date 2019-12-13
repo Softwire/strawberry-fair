@@ -8,28 +8,28 @@ import { EventFilterBlock, filterEvents } from './EventFilter'
 import { eventTypeList } from './EventType'
 import { getEventList } from './getEventList'
 
+export const EventMediaBlock = ({event}) => (
+    <div className="media">
+        <div className="media-left">
+            <p className="image is-64x64">
+                <img src={event.frontmatter.image.childImageSharp ? event.frontmatter.image.childImageSharp.resize.src : event.frontmatter.image} />
+            </p>
+        </div>
+        <div className="media-content">
+            <h2 className="title is-4">
+                <strong><Link to={event.fields.slug}>{event.frontmatter.title}</Link></strong> - {new Date(event.frontmatter.dateTime).toLocaleDateString('en-GB')}
+            </h2>
+            <HTMLContentSmall content={event.excerpt} />
+        </div>
+    </div>
+)
+
 const EventPanelBlock = ({event}) => {
     return (
         <div className="panel-block">
-            <div className="media">
-                <div className="media-left">
-                    <p className="image is-64x64">
-                        <img src={event.frontmatter.image.childImageSharp ? event.frontmatter.image.childImageSharp.resize.src : event.frontmatter.image} />
-                    </p>
-                </div>
-                <div className="media-content">
-                    <h2 className="title is-4">
-                        <strong><Link to={event.fields.slug}>{event.frontmatter.title}</Link></strong> - {new Date(event.frontmatter.dateTime).toLocaleDateString('en-GB')}
-                    </h2>
-                    <HTMLContentSmall content={event.html} />
-                </div>
-            </div>
+            <EventMediaBlock event={event} />
         </div>
     )
-}
-
-EventPanelBlock.propTypes = {
-    event: eventPropTypeValidator
 }
 
 const NoEventsFoundBlock = () => (
@@ -68,6 +68,14 @@ export const Upcoming = () => {
             {eventPanels.length > 0 ? eventPanels : <NoEventsFoundBlock />}
         </div>
     )
+}
+
+EventMediaBlock.propTypes = {
+    event: eventPropTypeValidator
+}
+
+EventPanelBlock.propTypes = {
+    event: EventMediaBlock.propTypes.event
 }
 
 Upcoming.propTypes = {
