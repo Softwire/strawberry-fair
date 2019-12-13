@@ -3,6 +3,8 @@ const remark = require('remark')
 const remarkHtml = require('remark-html')
 const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+//imports a js script that generates pages for monthly and yearly news
+const newsGenerator = require('./src/scripts/news-generator')
 
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
   const result = await graphql(`
@@ -44,6 +46,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       },
     })
   })
+  await newsGenerator.NewsInTimeIntervalGenerator({ actions: { createPage }, graphql })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

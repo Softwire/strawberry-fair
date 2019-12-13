@@ -64,9 +64,15 @@ export const site = (component, additionalPropsExtractor = graphqlData => {}) =>
      * @param {Object} data - Data retrieved from GraphQL query specified in the component
      * @returns {React.Component} Component to be rendered by Gatsby
      */
-    return ({data}) => {
-        const new_props = data.markdownRemark.frontmatter || {}
-        new_props.content = data.markdownRemark.html
-        return component(Object.assign(new_props, additionalPropsExtractor(data)))
+    return ({data, pageContext}) => {
+        if(data.markdownRemark) {
+            const new_props = data.markdownRemark.frontmatter
+            new_props.content = data.markdownRemark.html
+            new_props.pageContext = pageContext
+            return component(Object.assign(new_props, additionalPropsExtractor(data)))
+        }
+        else {
+            return component(Object.assign(pageContext, additionalPropsExtractor(data)))
+        }
     }
 }

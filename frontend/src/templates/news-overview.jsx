@@ -6,6 +6,7 @@ import { HTMLContent } from '../components/Content'
 import NewsArticleSnapshots from '../components/NewsArticleSnapshots'
 import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
+import NewsMenu from '../components/NewsMenu.jsx'
 
 
 // This is used by the website and for CMS previews
@@ -18,8 +19,15 @@ export const NewsOverview = ({title, subtitle, content, contentComponent, newsAr
           <div className="container">
             <h1 className="title has-text-primary is-size-1">{title}</h1>
             <h2 className="subtitle">{subtitle}</h2>
-            <BodyComponent content={content}/>      
-            <NewsArticleSnapshots newsArticles={newsArticles}/>
+            <BodyComponent content={content}/>
+            <div className="columns">
+              <div className = "column is-three-quarters">
+                <NewsArticleSnapshots newsArticles={newsArticles}/>
+              </div>
+              <div className = "column">
+                <NewsMenu newsArticles={newsArticles}/>
+              </div>          
+            </div>
           </div>
         </section>
       </Layout>
