@@ -24,12 +24,12 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
                 <div className="panel">
                   <h2 className="panel-heading">{heading}</h2>
                   {selectedNewsArticles.map(article => (
-                     <Link to={article.node.fields.slug} className="panel-block">
+                     <Link to={article.node.fields.slug} key={article.node.fields.slug} className="panel-block">
                        <article className="media">
                          <figure className="media-left">
-                           <p class="image is-64x64">
+                           <div className="image is-64x64">
                              <PreviewCompatibleImage imageInfo={article.node.frontmatter.image}/>
-                           </p>
+                           </div>
                          </figure>
                          <div className="media-content">
                             <h1 className="has-text-primary">{article.node.frontmatter.title}</h1>
