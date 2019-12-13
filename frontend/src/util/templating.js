@@ -66,7 +66,7 @@ export const site = (component, additionalPropsExtractor = graphqlData => {}) =>
      */
     return ({data, pageContext}) => {
         if(data.markdownRemark) {
-            const new_props = data.markdownRemark.frontmatter
+            const new_props = data.markdownRemark.frontmatter || {}
             new_props.content = data.markdownRemark.html
             new_props.pageContext = pageContext
             return component(Object.assign(new_props, additionalPropsExtractor(data)))
