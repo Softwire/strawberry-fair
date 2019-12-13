@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
 
 import BaseBlock from './BaseBlock'
 import { getEventList } from '../calendar/getEventList'
 import { EventMediaBlock } from '../calendar/Upcoming'
+import { EventFilterTags, filterEvents } from '../calendar/EventFilter'
+import { eventTypeList } from '../calendar/EventType'
 
 const CalendarBlock = ({calendarBlock}) => (
   <BaseBlock block={calendarBlock} altBackground={true}>
@@ -12,22 +14,35 @@ const CalendarBlock = ({calendarBlock}) => (
 )
 
 const UpcomingEventsDisplay = () => {
+  const [filters, setFilters] = useState([])  // Filter events by type
+
   const events = getEventList()
+
+  const addFilter = (filterName) => (
+    () => {setFilters(filters.concat(filterName))}
+  )
+
+  const removeFilter = (filterName) => (
+    () => {setFilters(filters.filter(name => name !== filterName))}
+  )
   
   return (
-    <div className="columns is-multiline">
-      {events
-        .map(event => (
-          <div className="column is-half" key={event.fields.slug}>
-            <div className="box">
-              <EventMediaBlock event={event} />
+    <React.Fragment>
+      <EventFilterTags allFilters={eventTypeList} activeFilters={filters} addFilter={addFilter} removeFilter={removeFilter}/>
+      <div className="columns is-multiline">
+        {filterEvents(events, filters)
+          .map(event => (
+            <div className="column is-half" key={event.fields.slug}>
+              <div className="box">
+                <EventMediaBlock event={event} />
+              </div>
             </div>
-          </div>
-          )
-        ).slice(0, 4)  // Only take the first 4 events
-      }
-      <MoreEventsLinkBox />
-    </div>
+            )
+          ).slice(0, 4)  // Only take the first 4 events
+        }
+        <MoreEventsLinkBox />
+      </div>
+    </React.Fragment>
   )
 }
 
