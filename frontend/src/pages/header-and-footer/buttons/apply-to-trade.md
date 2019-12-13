@@ -1,4 +1,4 @@
 ---
-title: Apply To Trade
+text: Apply To Trade
 link: '/news'
 ---
