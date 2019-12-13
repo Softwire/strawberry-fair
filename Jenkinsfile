@@ -28,24 +28,28 @@ node (label: 'linux') {
             echo 'Tests successful. Deploying to production...'
             sh 'git push origin HEAD:SF-29-prod'
         }
-
-
+    } catch (e) {
+        currentBuild.result = 'FAILED'
     } finally {
         stage('Notify') {
             def currentResult = currentBuild.result ?: 'SUCCESS'
             if (currentResult == 'SUCCESS') {
+                color = 'GREEN'
+                colorCode = '#00FF00'
                 echo 'Successfully executed!'
-                notifySlack('Merge to production successful! :)')
+                notifySlack(colorCode, 'Merge to production successful! :)')
             } else {
+                def colorName = 'RED'
+                def colorCode = '#FF0000'
                 echo 'Unsuccessful'
-                notifySlack('Merge to production failed! :(')
+                notifySlack(colorCode, 'Merge to production failed! :(')
             }
         }
     }
 }
 
-def notifySlack(message) {
+def notifySlack(color, message) {
     withCredentials([string(credentialsId: 'slack-token', variable: 'SLACKTOKEN')]) {
-        slackSend teamDomain: "softwire", channel: "#team-strawberryfair-jenkins", token: "$SLACKTOKEN", message: "*${message}* - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+        slackSend color: color, teamDomain: "softwire", channel: "#team-strawberryfair-jenkins", token: "$SLACKTOKEN", message: "*${message}* - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
     }
 }
