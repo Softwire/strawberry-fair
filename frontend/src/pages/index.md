@@ -3,9 +3,15 @@ templateKey: home-page
 title: By the people of Cambridge. For the people of Cambridge.
 hero:
   heroImages:
-    - alt: Test1
-      src: /img/1-line-logo.png
-  isActive: false
+    - alt: Strawberry Fair Banner
+      src: /img/gareths-gate-slide.jpg
+    - alt: Main Stage
+      src: /img/revised-east-stage-panorama.jpg
+    - alt: Crowds and tents
+      src: /img/slide-crowd.jpg
+    - alt: Strawberry Fair entrance
+      src: /img/slide-gate-2017.jpg
+  isActive: true
 image: /img/cartoon-tree.jpg
 contentBlocks:
   - _markdown_contentBody: >-
