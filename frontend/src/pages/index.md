@@ -1,12 +1,29 @@
 ---
 templateKey: home-page
 title: By the people of Cambridge. For the people of Cambridge.
+<<<<<<< HEAD
+=======
+hero:
+  fixed-hero:
+    alt: Test1
+    src: /img/gareths-gate-slide.jpg
+  is-active: false
+  mode: Revolving Images
+  revolving-hero:
+    - alt: Test1
+      src: /img/gareths-gate-slide.jpg
+    - alt: Test2
+      src: /img/revised-east-stage-panorama.jpg
+    - alt: Test3
+      src: /img/slide-crowd.jpg
+    - alt: Test4
+      src: /img/slide-gate-2017.jpg
+    - alt: Test5
+      src: /img/gareths-gate-slide.jpg
+image: /img/1-line-logo.png
+>>>>>>> c1e394a331c5d7990abc1ac294908ada411564d4
 contentBlocks:
-  - title: Welcome to StrawberryFair!
-    subtitle: >-
-      Welcome to Cambridge's most popular event. We're free, we're
-      volunteer-led, and we've been going for over 40 years.
-    _markdown_contentBody: >-
+  - _markdown_contentBody: >-
       **asdasdasd**
 
 
@@ -42,11 +59,11 @@ contentBlocks:
     sideSnippet: >-
       Next year's festival is happening on June 6th 2020. We'll be announcing
       the theme later in the year
-  - title: Join the Green Team!
     subtitle: >-
-      If you can't wait to get involved, why not come along to the next
-      Strawberry Fair Green Team Meeting on Saturday 14th September?
-    _markdown_contentBody: >-
+      Welcome to Cambridge's most popular event. We're free, we're
+      volunteer-led, and we've been going for over 40 years.
+    title: Welcome to StrawberryFair!
+  - _markdown_contentBody: >-
       adsfadsfasdf
 
 
@@ -82,19 +99,19 @@ contentBlocks:
       - /img/love-a-fair.jpg
       - /img/test-pic.png
       - /img/love-a-fair.jpg
-    sideSnippet: For more details, contact
-      email us here
-      or
-      on our Facebook page
+    sideSnippet: 'For more details, contact email us here or on our Facebook page'
+    subtitle: >-
+      If you can't wait to get involved, why not come along to the next
+      Strawberry Fair Green Team Meeting on Saturday 14th September?
+    title: Join the Green Team!
 calendarBlock:
-  title: Strawberry Fair committee meetings
   subtitle: The next committee meetings are listed below and will be held at...
+  title: Strawberry Fair committee meetings
 newsBlock:
+  subtitle: Stay in the loop
   title: Our news
-  subtitle: Stay in the loop
 twitterBlock:
-  title: Join the conversation
   subtitle: Stay in the loop
-    
+  title: Join the conversation
 ---
 placeholder
