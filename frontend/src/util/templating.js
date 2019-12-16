@@ -69,6 +69,16 @@ export const site = (component, additionalPropsExtractor = graphqlData => {}) =>
             const new_props = data.markdownRemark.frontmatter || {}
             new_props.content = data.markdownRemark.html
             new_props.pageContext = pageContext
+            
+            new_props.heroData = null
+            if (data.heroData &&
+                data.heroData.nodes &&
+                data.heroData.nodes[0] &&
+                data.heroData.nodes[0].frontmatter &&
+                data.heroData.nodes[0].frontmatter.hero) {
+                    new_props.heroData = data.heroData.nodes[0].frontmatter.hero
+                }
+
             return component(Object.assign(new_props, additionalPropsExtractor(data)))
         }
         else {

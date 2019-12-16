@@ -14,11 +14,11 @@ import TwitterBlock from '../components/home-page/TwitterBlock'
 import { site } from '../util/templating'
 
 // This is used by the website and for CMS previews
-export const HomePage = ({title, contentBlocks, contentBlocksHtml, calendarBlock, newsBlock, newsArticles, twitterBlock, contentComponent}) => {
+export const HomePage = ({title, contentBlocks, contentBlocksHtml, calendarBlock, newsBlock, newsArticles, twitterBlock, contentComponent, heroData}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     return (
-      <Layout >
+      <Layout heroData={heroData}>
         <section>
           <h1 className="title">{title}</h1>
           <ContentBlocks 
@@ -40,14 +40,14 @@ export const HomePage = ({title, contentBlocks, contentBlocksHtml, calendarBlock
 
 HomePage.propTypes = {
   title: PropTypes.string,
-
   contentBlocks: ContentBlocks.propTypes.contentBlocks,
   contentBlocksHtml: ContentBlocks.propTypes.contentBlocksHtml,
   calendarBlock: CalendarBlock.propTypes.calendarBlock,
   newsBlock: NewsBlock.propTypes.newsBlock,
   newsArticles: NewsBlock.propTypes.newsArticles,
   twitterBlock: TwitterBlock.propTypes.twitterBlock,
-  contentComponent: PropTypes.elementType
+  contentComponent: PropTypes.elementType,
+  heroData: Layout.propTypes.heroData
 }
 
 const additionalPropsExtractor = graphqlData => ({
