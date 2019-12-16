@@ -2,6 +2,11 @@
 templateKey: home-page
 title: By the people of Cambridge. For the people of Cambridge.
 hero:
+  hero-images:
+    - alt: Test1
+      src: /img/cartoon-tree.jpg
+    - alt: Test2
+      src: /img/flying-pig.jpg
   is-active: true
 image: /img/cartoon-tree.jpg
 contentBlocks:
