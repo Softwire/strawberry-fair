@@ -19,7 +19,13 @@ DisabledFilterTag.propTypes = {
     add: PropTypes.func
 }
 
-export const EventFilterBlock = ({allFilters, activeFilters, addFilter, removeFilter}) => {
+export const EventFilterBlock = ({allFilters, activeFilters, addFilter, removeFilter}) => (
+    <div className="panel-block">
+        <EventFilterTags allFilters={allFilters} activeFilters={activeFilters} addFilter={addFilter} removeFilter={removeFilter} />
+    </div>
+)
+
+export const EventFilterTags = ({allFilters, activeFilters, addFilter, removeFilter}) => {
     // Construct array of tag objects
     let tags = []
     for (const filter of allFilters) {
@@ -31,21 +37,21 @@ export const EventFilterBlock = ({allFilters, activeFilters, addFilter, removeFi
     }
 
     return (
-        <div className="panel-block">
-            <span className="tags">
-                <span className="tag is-white">Filters: </span>
-                {tags}
-            </span>
-        </div>
+        <span className="tags">
+            <span className="tag is-white">Filters: </span>
+            {tags}
+        </span>
     )
 }
 
-EventFilterBlock.propTypes = {
+EventFilterTags.propTypes = {
     allFilters: PropTypes.arrayOf(PropTypes.string),
     activeFilters: PropTypes.arrayOf(PropTypes.string),
     addFilter: PropTypes.func.isRequired,
     removeFilter: PropTypes.func.isRequired
 }
+
+EventFilterBlock.propTypes = EventFilterTags.propTypes
 
 // Function to filter a list of events based on a list of types.
 // We return only events for whom all types in the filter are present.
