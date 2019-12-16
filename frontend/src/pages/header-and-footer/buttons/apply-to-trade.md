@@ -1,4 +1,5 @@
 ---
 text: Apply To Trade
-link: '/news'
+link: /events
 ---
+
