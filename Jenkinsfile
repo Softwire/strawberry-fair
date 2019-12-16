@@ -1,18 +1,32 @@
 node (label: 'linux') {
-    try {
-        checkout scm
+    checkout scm
 
-        stage('Merge into prod') {
-            sh 'git checkout production'
-            sh 'git merge --no-ff origin/master'
-        }
+    withEnv([
+        """COMMIT_AUTHOR=${sh(
+            returnStdout: true,
+            script: 'git show -s --pretty=%an'
+        ).trim()}""",
+        """COMMIT_HASH_SHORT=${sh(
+            returnStdout: true,
+            script: 'git rev-parse --short HEAD'
+        ).trim()}""",
+        """COMMIT_SUBJECT=${sh(
+            returnStdout: true,
+            script: 'git show -s --format=%B'
+        ).trim()}""",
+        "HOME=${WORKSPACE}"
+    ]) {
+        try {
+            stage('Merge into prod') {
+                sh 'git checkout production'
+                sh 'git merge --no-ff -X theirs origin/master'
+            }
 
-        docker.image('node:12.13').inside {
-            withEnv(['HOME="."' ]) {
+            docker.image('node:12.13').inside {
                 dir('frontend'){
                     stage('Build') {
                         sh 'node --version'
-                        sh 'npm install'
+                        sh 'npm ci'
                         
                     }
                     stage('Test') {
@@ -22,34 +36,53 @@ node (label: 'linux') {
                     }
                 } 
             }
-        }
-        
-        stage('Deploy') {
-            echo 'Tests successful. Deploying to production...'
-            sh 'git push origin HEAD:production'
-        }
-    } catch (e) {
-        currentBuild.result = 'FAILED'
-    } finally {
-        stage('Notify') {
-            def currentResult = currentBuild.result ?: 'SUCCESS'
-            if (currentResult == 'SUCCESS') {
-                color = 'GREEN'
-                colorCode = '#00FF00'
-                echo 'Successfully executed!'
-                notifySlack(colorCode, 'Merge to production successful! :)')
-            } else {
-                def colorName = 'RED'
-                def colorCode = '#FF0000'
-                echo 'Unsuccessful'
-                notifySlack(colorCode, 'Merge to production failed! :(')
+            
+            stage('Deploy') {
+                echo 'Tests successful. Deploying to production...'
+                sh 'git push origin HEAD:production'
+            }
+        } catch (e) {
+            currentBuild.result = 'FAILED'
+        } finally {
+            stage('Notify') {
+                currentBuild.result = currentBuild.result ?: 'SUCCESS'
+                
+                // Notify via slack
+                if (currentBuild.result == 'SUCCESS') {
+                    color = 'GREEN'
+                    colorCode = '#00FF00'
+                    echo 'Successfully executed!'
+                    notifySlack(colorCode, 'Success! :)', COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)
+                } else {
+                    def colorName = 'RED'
+                    def colorCode = '#FF0000'
+                    echo 'Unsuccessful'
+                    notifySlack(colorCode, '@channel Failure! :(', COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)
+                }
+
+                // Notify via emails
+                currentBuild.result = currentBuild.result ?: 'SUCCESS'
+                emailext body: """${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}.
+                        \n${getCommitInfoMessage(COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)}
+                        \nMore info at: ${env.BUILD_URL}""",
+                    subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}",
+                    to: "Team-StrawberryFair@softwire.com"
             }
         }
+    } 
+}
+
+def notifySlack(color, message, commitAuthor, commitHashShort, commitSubject) {
+    withCredentials([string(credentialsId: 'slack-token', variable: 'SLACKTOKEN')]) {
+        slackSend color: color, 
+            teamDomain: "softwire", 
+            channel: "#team-strawberryfair-build", 
+            token: "$SLACKTOKEN", 
+            message: """*${message}* - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>).
+                \n${getCommitInfoMessage(commitAuthor, commitHashShort, commitSubject)} """
     }
 }
 
-def notifySlack(color, message) {
-    withCredentials([string(credentialsId: 'slack-token', variable: 'SLACKTOKEN')]) {
-        slackSend color: color, teamDomain: "softwire", channel: "#team-strawberryfair-jenkins", token: "$SLACKTOKEN", message: "*${message}* - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
-    }
+def getCommitInfoMessage(commitAuthor, commitHashShort, commitSubject) {
+    return "Build triggered by ${commitAuthor}'s commit ${commitHashShort}: ${commitSubject}"
 }
