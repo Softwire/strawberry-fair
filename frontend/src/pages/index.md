@@ -5,7 +5,7 @@ hero:
   fixed-hero:
     alt: Test1
     src: /img/gareths-gate-slide.jpg
-  is-active: false
+  is-active: true
   mode: Revolving Images
   revolving-hero:
     - alt: Test1
