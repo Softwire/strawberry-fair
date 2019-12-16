@@ -5,8 +5,6 @@ hero:
   heroImages:
     - alt: Test1
       src: /img/1-line-logo.png
-    - alt: Test2
-      src: /img/cartoon-tree.jpg
   isActive: true
 image: /img/cartoon-tree.jpg
 contentBlocks:
