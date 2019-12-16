@@ -26,6 +26,11 @@ $subtitle-color: $secondary;
 .calendar-day {
     height: 170px;
 }
+
+.calendar-day-multiple {
+    @extend .calendar-day;
+    padding: 0;
+}
     
 .scrapbook-image {
     margin-top: auto;

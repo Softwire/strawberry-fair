@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import BackgroundImage from 'gatsby-background-image'
+import { Link, Img } from 'gatsby'
 
+import { PreviewCompatibleImage } from '../PreviewCompatibleImage'
 import { eventPropTypeValidator } from '../validators'
 import { EventMediaBlock } from './Upcoming'
 
@@ -13,11 +13,12 @@ const CalendarDay = ({dateTime, events}) => {
     const date = new Date(dateTime)  // The actual Date this CalendarDay is representing
     const today = new Date()         // Today's date
     const isTodayHighlight = areSameDay(date, today)
-    const baseBoxClass = "box calendar-day"
-    let classAfterHighlight = baseBoxClass + (isTodayHighlight ? " has-background-primary has-text-white" : "")
 
     // Are we showing the modal?
     const [ showModal, setShowModal ] = useState(false)
+
+    // Image setting for revolving images
+    const [ currentImage, setCurrentImage ] = useState(0)
 
     const modalOn = () => {
         setShowModal(true)
@@ -29,7 +30,7 @@ const CalendarDay = ({dateTime, events}) => {
 
     let internals = null
 
-    if (events.length > 0) {
+    if (events.length == 1) {
         internals = (
             <React.Fragment>
                 <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
@@ -41,11 +42,24 @@ const CalendarDay = ({dateTime, events}) => {
                 </div>
             </React.Fragment>
         )
+    } else if (events.length > 1) {
+        const nImages = events.length
+
+        internals = (
+            <React.Fragment>
+                <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
+                <div className="box button has-text-left calendar-day-multiple has-text-white has-text-weight-bold" onClick={modalOn}>
+                    <Img fluid={events[0].frontmatter.image.childImageSharp.fluid} style={{position: "absolute", objectFit: "contain"}}/>
+                    <p>{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</p>
+                    {events.map(event => <p key={event.fields.slug}><Link className="has-text-white has-text-weight-medium" to={event.fields.slug}>{event.frontmatter.title}</Link></p>)}
+                </div>
+            </React.Fragment>
+        )
     } else {
         internals = (
             <React.Fragment>
                 <NoEventsModal date={date} close={modalOff} active={showModal} />
-                <div className="box button has-text-left calendar-day" onClick={modalOn}>
+                <div className={"box button has-text-left calendar-day" + (isTodayHighlight ? " is-primary" : "")} onClick={modalOn}>
                     <p>{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</p>
                 </div>
             </React.Fragment>
@@ -57,59 +71,7 @@ const CalendarDay = ({dateTime, events}) => {
             {internals}
         </div>
     )
-
-    /*
-    if (events.length > 0) {
-        return (
-            <div className='column is-half-mobile is-one-quarter-tablet is-2-desktop'>
-                <CalendarDayModal dateTime={dateTime} events={events} close={modalOff} active={showModal}/>
-                <BackgroundImage
-                        Tag='div'
-                        className={baseBoxClass + ' has-text-white has-text-weight-bold'}
-                        fluid={events[0].frontmatter.image.childImageSharp.fluid}
-                    >
-                    <a className="has-text-white" onClick={modalOn}>{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</a>
-                    <p><Link className='has-text-white' to={events[0].fields.slug}>{events[0].frontmatter.title}</Link></p>
-                    {events.length > 1 ? <p>...</p> : null}
-                </BackgroundImage>
-            </div>
-        )
-    } else {
-        return (
-            <div className='column is-half-mobile is-one-quarter-tablet is-2-desktop'>
-                <div className={classAfterHighlight}>
-                    <span>{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</span>
-                </div>
-            </div>
-        )
-    }
-    */
 }
-
-/*
-const CalendarDayModal = ({date, events, close, active}) => {
-    if (events.length > 0) {
-        return (
-            <div className={"modal" + (active ? " is-active" : "")}>
-                <div className="modal-background" onClick={close}></div>
-                <div className="modal-content">
-                    <BackgroundImage
-                            Tag="div"
-                            className="box has-text-white has-text-weight-bold"
-                            fluid={events[0].frontmatter.image.childImageSharp.fluid}
-                        >
-                        <h2 className="title is-2">{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</h2>
-                        {events.map(event => <p key={event.fields.slug}><Link className='has-text-white' to={event.fields.slug}>{event.frontmatter.title}</Link></p>)}
-                    </BackgroundImage>
-                </div>
-                <button className="modal-close is-large" aria-label="close" onClick={close}></button>
-            </div>
-        )
-    } else {
-        return null
-    }
-}
-*/
 
 const CalendarDayModal = ({date, events, close, active}) => {
     if (events.length > 0) {
