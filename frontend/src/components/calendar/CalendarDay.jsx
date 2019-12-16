@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { Link, Img } from 'gatsby'
+import { Link } from 'gatsby'
 
 import { eventPropTypeValidator } from '../validators'
 import { EventMediaBlock } from './Upcoming'
@@ -43,7 +43,7 @@ const CalendarDay = ({dateTime, events}) => {
     } else if (events.length > 1) {
         const nImages = events.length
         const imageRotateTimeMS = 4000
-        const imageFadeTimeS = 0.5
+        //const imageFadeTimeS = 0.5
 
         useEffect(() => {
             setTimeout(() => {

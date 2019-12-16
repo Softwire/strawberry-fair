@@ -77,10 +77,6 @@ export const Calendar = () => {
     )
 }
 
-Calendar.propTypes = {
-    events: CalendarDay.propTypes.events
-}
-
 const MonthScrubber = ({monthForward, monthBack, focusDate}) => (
     <div className="panel-block">
         <div className="columns is-multiline">
