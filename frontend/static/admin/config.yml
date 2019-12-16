@@ -72,8 +72,6 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: Body, name: body, widget: markdown}
           - {label: Subtitle, name: subtitle, widget: string}
-          - {label: ACCImage, name: accimage, widget: accessible-image}
-          - {label: MultiImage, name: multi, widget: multi-image}
       - file: "frontend/src/pages/calendar.md"
         label: "Calendar Page"
         name: "calendar-page"

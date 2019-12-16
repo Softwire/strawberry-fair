@@ -34,8 +34,8 @@ fragment HeroFragment on MarkdownRemarkConnection {
   nodes {
     frontmatter {
       hero {
-        is_active
-        hero_images {
+        isActive
+        heroImages {
           alt
           src {
             childImageSharp {

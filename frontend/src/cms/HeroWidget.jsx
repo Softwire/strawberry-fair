@@ -18,7 +18,7 @@ export class HeroControl extends React.Component {
     getFields() {
         const toggleFields = new Map({
             label: "Active",
-            name: "is-active",
+            name: "isActive",
             widget: "boolean",
             default: false
         })
@@ -28,7 +28,12 @@ export class HeroControl extends React.Component {
             this.props.value._root &&
             this.props.value._root.entries &&
             Array.isArray(this.props.value._root.entries)) {
-                active = this.props.value._root.entries.find((el) => Array.isArray(el) && el[0] === "is-active")[1] || null
+                for (const el of this.props.value._root.entries) {
+                    if (el[0] == "isActive") {
+                        active = el[1]
+                        break
+                    }
+                }
             }
 
         if (active) {
@@ -37,8 +42,8 @@ export class HeroControl extends React.Component {
                     toggleFields,
                     new Map({
                         label: "Banner Images",
-                        name: "hero-images",
-                        widget: "multi-image"
+                        name: "heroImages",
+                        widget: "multiImage"
                     })
                 ]
             })

@@ -66,7 +66,7 @@ CMS.registerPreviewTemplate('news-home', preview(NewsOverview, {newsArticles: pl
 CMS.registerPreviewTemplate('upcoming-events', preview(UpcomingEvents, {events: placeholderEvents}))
 CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {events: []}))
 
-CMS.registerWidget("accessible-image", AccessibleImageControl)
-CMS.registerWidget("multi-image", MultiImageControl)
+CMS.registerWidget("accessibleImage", AccessibleImageControl)
+CMS.registerWidget("multiImage", MultiImageControl)
 CMS.registerWidget("hero", HeroControl)
 CMS.registerWidget('multi-collection-relation', MultiCollectionRelationControl, MultiCollectionRelationPreview)
