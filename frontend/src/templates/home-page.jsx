@@ -63,13 +63,6 @@ query homePageTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> sf-64: task setup
-=======
->>>>>>> sf-64: netlify merge
         contentBlocks {
           title
           subtitle

@@ -16,42 +16,33 @@ export class HeroControl extends React.Component {
     }
 
     getFields() {
-        const selectFields = new Map({
-            label: "Mode",
-            name: "mode",
-            options: ["None", "Random Image", "Fixed Image", "Revolving Images"],
-            widget: "select",
-            default: "None"
+        const toggleFields = new Map({
+            label: "Active",
+            name: "is-active",
+            widget: "boolean",
+            default: false
         })
 
-        // Query mode if defined
-        let mode = null
+        let active = false
         if (this.props.value &&
             this.props.value._root &&
             this.props.value._root.entries &&
             Array.isArray(this.props.value._root.entries)) {
-                mode = this.props.value._root.entries.find((el) => Array.isArray(el) && el[0] === "mode")[1] || null
+                try {
+                    active = this.props.value._root.entries.find((el) => Array.isArray(el) && el[0] === "is-active")[1] || null
+                }
+                catch {
+                    console.log(this.props.value)
+                }
             }
 
-        if (mode === "Fixed Image") {
+        if (active) {
             return new Map({
                 fields: [
-                    selectFields,
+                    toggleFields,
                     new Map({
-                        label: "Fixed Banner",
-                        name: "fixed-hero",
-                        widget: "accessible-image"
-                    })
-                ]
-            })
-        }
-        else if (mode === "Revolving Images") {
-            return new Map({
-                fields: [
-                    selectFields,
-                    new Map({
-                        label: "Revolving Banner",
-                        name: "revolving-hero",
+                        label: "Banner Images",
+                        name: "hero-images",
                         widget: "multi-image"
                     })
                 ]
@@ -59,7 +50,7 @@ export class HeroControl extends React.Component {
         }
         else {
             return new Map({
-                field: selectFields
+                field: toggleFields
             })
         }
     }

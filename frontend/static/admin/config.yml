@@ -24,6 +24,7 @@ collections:
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: home-page}
           - {label: Title, name: title, widget: string}
+          - {label: hero, name: hero, widget: hero}
           - {label: Body, name: body, widget: hidden, default: "placeholder"}
           - {label: Image, name: image, widget: image}
           - label: Content-Blocks
@@ -74,7 +75,6 @@ collections:
           - {label: Subtitle, name: subtitle, widget: string}
           - {label: ACCImage, name: accimage, widget: accessible-image}
           - {label: MultiImage, name: multi, widget: multi-image}
-          - {label: hero, name: hero, widget: hero}
       - file: "frontend/src/pages/calendar.md"
         label: "Calendar Page"
         name: "calendar-page"
