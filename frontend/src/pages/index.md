@@ -5,7 +5,7 @@ hero:
   heroImages:
     - alt: Test1
       src: /img/1-line-logo.png
-  isActive: true
+  isActive: false
 image: /img/cartoon-tree.jpg
 contentBlocks:
   - _markdown_contentBody: >-
