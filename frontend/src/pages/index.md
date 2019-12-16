@@ -1,6 +1,9 @@
 ---
 templateKey: home-page
 title: By the people of Cambridge. For the people of Cambridge.
+hero:
+  is-active: true
+image: /img/cartoon-tree.jpg
 contentBlocks:
   - _markdown_contentBody: >-
       **asdasdasd**
