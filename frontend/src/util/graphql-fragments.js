@@ -34,18 +34,8 @@ fragment HeroFragment on MarkdownRemarkConnection {
   nodes {
     frontmatter {
       hero {
-        mode
-        fixed_hero {
-          alt
-          src {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-        revolving_hero {
+        is_active
+        hero_images {
           alt
           src {
             childImageSharp {

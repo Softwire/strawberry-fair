@@ -23,17 +23,12 @@ export class HeroControl extends React.Component {
             default: false
         })
 
-        let active = false
+        let active = null
         if (this.props.value &&
             this.props.value._root &&
             this.props.value._root.entries &&
             Array.isArray(this.props.value._root.entries)) {
-                try {
-                    active = this.props.value._root.entries.find((el) => Array.isArray(el) && el[0] === "is-active")[1] || null
-                }
-                catch {
-                    console.log(this.props.value)
-                }
+                active = this.props.value._root.entries.find((el) => Array.isArray(el) && el[0] === "is-active")[1] || null
             }
 
         if (active) {
