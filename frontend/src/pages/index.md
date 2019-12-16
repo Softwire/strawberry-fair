@@ -7,7 +7,13 @@ hero:
       src: /img/cartoon-tree.jpg
     - alt: Test2
       src: /img/flying-pig.jpg
+  heroImages:
+    - alt: Test1
+      src: /img/1-line-logo.png
+    - alt: Test2
+      src: /img/cartoon-tree.jpg
   is-active: true
+  isActive: true
 image: /img/cartoon-tree.jpg
 contentBlocks:
   - _markdown_contentBody: >-
