@@ -1,13 +1,11 @@
 ---
 templateKey: home-page
 title: By the people of Cambridge. For the people of Cambridge.
-<<<<<<< HEAD
-=======
 hero:
   fixed-hero:
     alt: Test1
     src: /img/gareths-gate-slide.jpg
-  is-active: false
+  is-active: true
   mode: Revolving Images
   revolving-hero:
     - alt: Test1
@@ -21,7 +19,6 @@ hero:
     - alt: Test5
       src: /img/gareths-gate-slide.jpg
 image: /img/1-line-logo.png
->>>>>>> c1e394a331c5d7990abc1ac294908ada411564d4
 contentBlocks:
   - _markdown_contentBody: >-
       **asdasdasd**
