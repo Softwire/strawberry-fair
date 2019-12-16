@@ -78,8 +78,8 @@ def notifySlack(color, message, commitAuthor, commitHashShort, commitSubject) {
             teamDomain: "softwire", 
             channel: "#team-strawberryfair-build", 
             token: "$SLACKTOKEN", 
-            message: """*${message}* - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>).
-                \n${getCommitInfoMessage(commitAuthor, commitHashShort, commitSubject)} """
+            message: """*${message}* - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>). \n 
+                ${getCommitInfoMessage(commitAuthor, commitHashShort, commitSubject)} """
     }
 }
 
