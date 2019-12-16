@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Link, Img } from 'gatsby'
 
-import { PreviewCompatibleImage } from '../PreviewCompatibleImage'
 import { eventPropTypeValidator } from '../validators'
 import { EventMediaBlock } from './Upcoming'
 
@@ -34,9 +33,8 @@ const CalendarDay = ({dateTime, events}) => {
         internals = (
             <React.Fragment>
                 <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
-                <div className="box button has-text-left calendar-day has-text-white has-text-weight-bold" onClick={modalOn} style={events.length > 0 ? {
-                        backgroundImage: `url(${events[0].frontmatter.image.childImageSharp.editedFluid.src})`,
-                        backgroundSize: "cover"} : null}>
+                <div className="box button has-text-left calendar-day has-text-white has-text-weight-bold" onClick={modalOn} style={{
+                        backgroundImage: `url(${events[0].frontmatter.image.childImageSharp.editedFluid.src})`}}>
                     <p>{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</p>
                     {events.map(event => <p key={event.fields.slug}><Link className="has-text-white has-text-weight-medium" to={event.fields.slug}>{event.frontmatter.title}</Link></p>)}
                 </div>
@@ -44,12 +42,21 @@ const CalendarDay = ({dateTime, events}) => {
         )
     } else if (events.length > 1) {
         const nImages = events.length
+        const imageRotateTimeMS = 4000
+        const imageFadeTimeS = 0.5
+
+        useEffect(() => {
+            setTimeout(() => {
+                // Update current shown image counter
+                setCurrentImage((currentImage + 1) % nImages)
+            }, imageRotateTimeMS)
+        })
 
         internals = (
             <React.Fragment>
                 <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
-                <div className="box button has-text-left calendar-day-multiple has-text-white has-text-weight-bold" onClick={modalOn}>
-                    <Img fluid={events[0].frontmatter.image.childImageSharp.fluid} style={{position: "absolute", objectFit: "contain"}}/>
+                <div className="box button has-text-left calendar-day has-text-white has-text-weight-bold" onClick={modalOn} style={{
+                        backgroundImage: `url(${events[currentImage].frontmatter.image.childImageSharp.editedFluid.src})`}}>
                     <p>{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</p>
                     {events.map(event => <p key={event.fields.slug}><Link className="has-text-white has-text-weight-medium" to={event.fields.slug}>{event.frontmatter.title}</Link></p>)}
                 </div>
