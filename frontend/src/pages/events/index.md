@@ -1,5 +1,6 @@
 ---
-templateKey: 'upcoming-events'
+templateKey: upcoming-events
+title: Upcoming Events
 ---
 ## Upcoming Events
 
