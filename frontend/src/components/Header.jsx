@@ -9,7 +9,6 @@ const imageRotationIntervalMillis = 10000
 const imageFadeTimeMills = 2000
 
 export const Header = ({heroData}) => {
-    console.log(heroData)
     if (heroData && heroData.isActive) {
         if (heroData.heroImages && heroData.heroImages.length > 0) {
             if (heroData.heroImages.length === 1) {
