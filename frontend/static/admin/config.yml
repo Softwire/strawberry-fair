@@ -29,7 +29,7 @@ definitions:
   - &strawberryTiles {label: Strawberry Tiles, name: strawberryTiles, widget: strawberryTiles, required: false}
   - &tags {label: Tags, name: tags, widget: list, default: ["news"]}
   - &menuTitle {label: Menu Title, name: title, widget: string}
-  - &internalLink {label: Link, name: link, widget: string}
+  - &internalLink {label: Link, name: link, widget: link}
   - contentBlock: &contentBlock
       label: Content Blocks
       name: contentBlocks
