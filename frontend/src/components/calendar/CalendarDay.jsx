@@ -53,14 +53,15 @@ const CalendarDay = ({dateTime, events}) => {
         })
 
         internals = (
-            <div style={{display: "contents", width: "100%"}}>
+            <div style={{position: "relative"}}>
                 <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
                 {events.map((event, index) =>
                     <div key={event.fields.slug} className="box button has-text-left calendar-day has-text-white has-text-weight-bold" onClick={modalOn} style={{
                             backgroundImage: `url(${event.frontmatter.image.childImageSharp.editedFluid.src})`,
                             opacity: index == currentImage ? 1 : 0,
                             transition: `opacity ${imageFadeTimeS}s`,
-                            position: "absolute"}}>
+                            position: "absolute",
+                            width: "100%"}}>
                         <p>{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</p>
                         {events.map(event => <p key={event.fields.slug}><Link className="has-text-white has-text-weight-medium" to={event.fields.slug}>{event.frontmatter.title}</Link></p>)}
                     </div>
