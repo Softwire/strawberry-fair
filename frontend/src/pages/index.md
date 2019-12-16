@@ -1,24 +1,6 @@
 ---
 templateKey: home-page
 title: By the people of Cambridge. For the people of Cambridge.
-hero:
-  fixed-hero:
-    alt: Test1
-    src: /img/gareths-gate-slide.jpg
-  is-active: true
-  mode: Revolving Images
-  revolving-hero:
-    - alt: Test1
-      src: /img/gareths-gate-slide.jpg
-    - alt: Test2
-      src: /img/revised-east-stage-panorama.jpg
-    - alt: Test3
-      src: /img/slide-crowd.jpg
-    - alt: Test4
-      src: /img/slide-gate-2017.jpg
-    - alt: Test5
-      src: /img/gareths-gate-slide.jpg
-image: /img/1-line-logo.png
 contentBlocks:
   - _markdown_contentBody: >-
       **asdasdasd**

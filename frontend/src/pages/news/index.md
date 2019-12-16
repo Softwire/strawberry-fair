@@ -10,19 +10,5 @@ multi:
     src: /img/cartoon-tree.jpg
   - alt: Test2
     src: /img/flying-pig.jpg
-<<<<<<< HEAD
-=======
-hero:
-  fixed-hero:
-    alt: Test1
-    src: /img/cartoon-tree.jpg
-  mode: Revolving Images
-  revolving-hero:
-    - alt: Hello1
-      src: /img/cartoon-tree.jpg
-    - alt: hello2
-      src: /img/1-line-logo.png
-    - {}
->>>>>>> c1e394a331c5d7990abc1ac294908ada411564d4
 ---
 
