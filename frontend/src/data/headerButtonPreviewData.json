@@ -1,18 +1,15 @@
-[
-    {
-        "getInvolved": {
-            "frontmatter": {
-                "link": "/about/about-item",
-                "text": "Get Involved"
-            }
+{
+    "getInvolved": {
+        "frontmatter": {
+            "link": "/about/about-item",
+            "text": "Get Involved"
         }
     },
-    {
-        "applyToTrade": {
-            "frontmatter": {
-                "link": "/news",
-                "text": "Apply To Trade"
-            }
+
+    "applyToTrade": {
+        "frontmatter": {
+            "link": "/news",
+            "text": "Apply To Trade"
         }
     }
-]
+}
