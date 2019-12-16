@@ -196,13 +196,15 @@ collections:
         name: "apply-to-trade"
         fields:
           - {label: Text, name: text, widget: string}
+          # - label: Link
+          #   name: link
+          #   widget: select
+          #   options: [{label: Events, value: /events}, {label: About, value: /about}, {label: News Articles, value: /news}, {label: Forms, value: }, {label: Pages, value: }]
           - label: Link
             name: link
-            widget: multi-collection-relation
-            options: [Events, About, Forms]
-            searchFields: [title]
-            valueField: title
-            displayFields: [title]
+            widget: link
+            
+
   - label: Nav Bar Item
     name: navbar
     folder: frontend/src/pages/navbar/
