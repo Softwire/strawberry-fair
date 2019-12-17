@@ -15,8 +15,8 @@ export class FormControl extends React.Component {
                     widget: "boolean"
                 }),
                 new Map({
-                    label: "Google Form Link",
-                    name: "url",
+                    label: "Google Form iFrame",
+                    name: "link",
                     widget: "string"
                 }),
             ]

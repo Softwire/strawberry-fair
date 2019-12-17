@@ -4,78 +4,71 @@ import { graphql } from 'gatsby'
 
 import { HTMLContent } from '../components/Content'
 import { Layout } from '../components/Layout'
+import { formValidator } from '../components/validators'
+import { isUrl } from 'is-url'
 
 const IFRAMEHEIGHT = 1427 //default value for the height of the form
 
 // This is used by the website and for CMS previews
-export const FormPageContent = ({title, googleForm, content, contentComponent}) => {
+export const FormPage = ({title, form, content, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
-    let formUrl = googleForm.split("\"");
-    if (formUrl.length == 1) formUrl = formUrl[0] //if the form is given as an Url simply pass it to the iframe
-    else formUrl = formUrl[1] //if the form is given as an HTML element, it extracts the URL from it
-    const heightExtractionRegex = /\sheight="([0-9]+)?"\s/
-    let heightExtraction = googleForm.match(heightExtractionRegex)
-    let iframeHeight 
-    if (heightExtraction != null && heightExtraction.length == 2) iframeHeight = heightExtraction[1]
-    else iframeHeight = IFRAMEHEIGHT //sets it to the default value
 
     return (
-    <section className="section">
-        <div className = "content">
-            <div className="columns is-centered">
-                <div className="column is-three-quarters">
-                    <h1 className="title has-text-centered has-text-primary">{title}</h1>
-                    <BodyComponent content={content} />
-                    <iframe
-                    src = {formUrl}
-                    width="100%" height={iframeHeight}
-                    >Loading…</iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-)}
+      <Layout>
+        <h1 className="title has-text-centered has-text-primary">{title}</h1>
+        <BodyComponent content={content} />
+        <FormFrame form={form} />
+      </Layout>
+    )
+}
 
 FormPageContent.propTypes = {
   title: PropTypes.string.isRequired,
-  googleForm: PropTypes.string.isRequired,
+  form: formValidator,
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.elementType  // Not required
 }
 
-const FormPage = ({data: {markdownRemark}}) => (
-  <Layout>
-    <FormPageContent
-        title={markdownRemark.frontmatter.title}
-        googleForm={markdownRemark.frontmatter.googleForm}
-        content={markdownRemark.html}
-       
-    />
-  </Layout>
-)
+const FormFrame = ({form: {isPublic, link}}) => {
+  if (isPublic && link) {
+    
+    // Link as url
+    if (isUrl(link) && link.includes("docs.google.com/forms/")) {
+      return (
+        <iframe src={link} width="100%" height={IFRAMEHEIGHT} />
+      )
+    }
+    
+    // Link as iFrame
+    const urlSearch = link.match(/src="(\S*)"/)
 
-FormPage.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        googleForm: PropTypes.string.isRequired
-      }),
-      html: PropTypes.string.isRequired
-    })
-  })
+    if (urlSearch && urlSearch[1]) {
+      const url = urlSearch[1]
+
+      if (isUrl(url) && url.includes("docs.google.com/forms/")) {
+        const heightSearch = link.match(/\sheight="([0-9]+)?"\s/)
+        const height = (heightSearch && heightSearch[1]) ? heightSearch[1] : IFRAMEHEIGHT
+
+        return (
+          <iframe src={formUrl} width="100%" height={height}>Loading…</iframe>
+        )
+      }
+    }
+  }
+  return null
 }
 
-export default FormPage
+FormFrame.propTypes = { form: formValidator }
+
+export default site(FormPage)
 
 export const query = graphql`
 query formPageTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        googleForm
+        ...FormFragment
       }
-      html
     }
   }
 `

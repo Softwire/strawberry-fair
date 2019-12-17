@@ -46,3 +46,8 @@ export const newsArticleValidator = PropTypes.shape({
     })
   })
 })
+
+export const formValidator = PropTypes.shape({
+  isPublic: PropTypes.bool,
+  link: PropTypes.string
+})

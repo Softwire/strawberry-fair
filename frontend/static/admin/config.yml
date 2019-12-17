@@ -1,8 +1,7 @@
 backend:
-  name: git-gateway
-  accept_roles:
-    - admin
-    - content
+  name: github
+  repo: Softwire/strawberry-fair
+  branch: sf-49
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -182,8 +181,7 @@ collections:
       - {label: "Template Key", name: templateKey, widget: hidden, default: form}
       - {label: Title, name: title, widget: string}
       - {label: Body, name: body, widget: markdown}
-      - {label: Form, name: googleForm, widget: string}
-
+      - {label: Form, name: form, widget: form}
   - label: Nav Bar Item
     name: navbar
     folder: frontend/src/pages/navbar/
