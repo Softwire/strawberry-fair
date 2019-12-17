@@ -30,6 +30,7 @@ definitions:
   - &tags {label: Tags, name: tags, widget: list, default: ["news"]}
   - &menuTitle {label: Menu Title, name: title, widget: string}
   - &internalLink {label: Link, name: link, widget: link}
+  - &text {label: Text, name: text, widget: string}
   - contentBlock: &contentBlock
       label: Content Blocks
       name: contentBlocks
@@ -205,13 +206,13 @@ collections:
        label: "Get Involved"
        name: "get-involved"
        fields:
-         - *title
+         - *text
          - *internalLink
       -file: "frontend/src/pages/header-and-footer/buttons/apply-to-trade.md"
        label: "Apply to Trade"
        name: "apply-to-trade"
        fields:
-         - *title
+         - *text
          - *internalLink
   - label: Nav Bar Item
     name: navbar
