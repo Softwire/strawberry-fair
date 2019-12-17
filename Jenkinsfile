@@ -22,7 +22,7 @@ node (label: 'linux') {
                 sh 'git merge --no-ff -X theirs origin/master'
             }
 
-            docker.image('node:12.13').inside {
+            docker.image('cypress/base:12.13.0').inside {
                 dir('frontend'){
                     stage('Build') {
                         sh 'node --version'
@@ -78,8 +78,7 @@ def notifySlack(color, message, commitAuthor, commitHashShort, commitSubject) {
             teamDomain: "softwire", 
             channel: "#team-strawberryfair-build", 
             token: "$SLACKTOKEN", 
-            message: """*${message}* - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>). \n 
-                ${getCommitInfoMessage(commitAuthor, commitHashShort, commitSubject)} """
+            message: """*${message}* - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>). \n${getCommitInfoMessage(commitAuthor, commitHashShort, commitSubject)} """
     }
 }
 
