@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 
 import { eventPropTypeValidator } from '../validators'
 import { EventMediaBlock } from './Upcoming'
+import { areSameDay } from '../../util/dates'
 
 // Represents a day in the calendar. Will either be empty or contain a preview of an event.
 // Later will have to add support for multiple events.
@@ -130,13 +131,6 @@ const dateDisplayFormatOptions = {weekday: 'short', day: 'numeric'}
 const longDateFormatOptions = {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'}
 
 export default CalendarDay
-
-export function areSameDay(date1, date2) {
-    const daysMatch = date1.getDate() === date2.getDate()           // Do the days (of the month) match?
-    const monthsMatch = date1.getMonth() === date2.getMonth()       // Do the months match?
-    const yearsMatch = date1.getFullYear() === date2.getFullYear()  // Do the years match?
-    return daysMatch && monthsMatch && yearsMatch                   // Then they render to the same day
-}
 
 CalendarDay.propTypes = {
     dateTime: PropTypes.instanceOf(Date),
