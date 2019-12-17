@@ -2,26 +2,34 @@ import React, {useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 import PreviewCompatibleImage from './PreviewCompatibleImage'
-import { childImageSharpValidator } from './validators'
+import { multiImageValidator, accessibleImageValidator } from './validators'
 import NavBar from './header/NavBar'
 
 const imageRotationIntervalMillis = 10000
 const imageFadeTimeMills = 2000
 
-export const Header = ({revolvingHero, fixedHero}) => {
-    if (revolvingHero) {
-        return (
-            <RevolvingHero data={Object.values(revolvingHero)}>
-                <NavBar />
-            </RevolvingHero>
-        )
-    }
-    else if (fixedHero) {
-        return (
-            <FixedHero info={fixedHero}>
-                <NavBar />
-            </FixedHero>
-        )
+export const Header = ({heroData}) => {
+    if (heroData && heroData.isActive) {
+        if (heroData.heroImages && heroData.heroImages.length > 0) {
+            if (heroData.heroImages.length === 1) {
+                return (
+                    <FixedHero info={heroData.heroImages[0]}>
+                        <NavBar />
+                    </FixedHero>
+                )
+            }
+            else {
+                return (
+                    <RevolvingHero data={heroData.heroImages}>
+                        <NavBar />
+                    </RevolvingHero>
+                )
+            }
+        }
+        else {
+            // At present, this returns no hero, but should ultimately return a default hero (SF-14)
+            return <NavBar />
+        }
     }
     else {
         return <NavBar />
@@ -81,13 +89,7 @@ const FixedHero = ({info: {src, alt}, children}) => (
 )
 
 FixedHero.propTypes = {
-    info: PropTypes.shape({
-        src: PropTypes.oneOfType([
-            PropTypes.string,
-            childImageSharpValidator
-        ]).isRequired,
-        alt: PropTypes.string
-    }),
+    info: accessibleImageValidator,
     children: PropTypes.node
 }
 
@@ -102,6 +104,8 @@ RevolvingHeroImage.propTypes = {
 }
 
 Header.propTypes = {
-    revolvingHero: PropTypes.objectOf(FixedHero.propTypes.info),
-    fixedHero: FixedHero.propTypes.info     // Can reuse these two for validation
+    heroData: PropTypes.shape({
+        isActive: PropTypes.bool,
+        heroImages: multiImageValidator
+    })
 }

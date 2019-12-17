@@ -8,16 +8,15 @@ import '../styling/styles.scss'
 
 /* All page templates should be wrapped in the Layout component to provide common styling */
 
-export const Layout = ({children, revolvingHero, fixedHero}) => (
+export const Layout = ({children, heroData}) => (
     <div id = "root-layout" className="container">
-            <Header revolvingHero={revolvingHero} fixedHero={fixedHero} />
-            <main>{children}</main>
+        <Header heroData={heroData} />
+        <main>{children}</main>
         <Footer />
     </div>
 )
 
 Layout.propTypes = {
     children: PropTypes.node,
-    revolvingHero: Header.propTypes.revolvingHero,
-    fixedHero: Header.propTypes.fixedHero
+    heroData: Header.propTypes.heroData
 }

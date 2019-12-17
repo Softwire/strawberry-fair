@@ -46,3 +46,13 @@ export const newsArticleValidator = PropTypes.shape({
     })
   })
 })
+
+export const accessibleImageValidator = PropTypes.shape({
+  alt: PropTypes.string,
+  src: PropTypes.oneOfType([
+    PropTypes.string,
+    childImageSharpValidator
+  ])
+})
+
+export const multiImageValidator = PropTypes.arrayOf(accessibleImageValidator)

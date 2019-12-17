@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import { HeroFragment } from '../util/graphql-fragments'
 
 import { HTMLContent } from '../components/Content'
 import { Layout } from '../components/Layout'
@@ -13,11 +14,11 @@ import TwitterBlock from '../components/home-page/TwitterBlock'
 import { site } from '../util/templating'
 
 // This is used by the website and for CMS previews
-export const HomePage = ({title, revolvingHero, contentBlocks, contentBlocksHtml, calendarBlock, newsBlock, newsArticles, twitterBlock, contentComponent}) => {
+export const HomePage = ({title, contentBlocks, contentBlocksHtml, calendarBlock, newsBlock, newsArticles, twitterBlock, contentComponent, heroData}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     return (
-      <Layout revolvingHero={revolvingHero}>
+      <Layout heroData={heroData}>
         <section>
           <h1 className="title">{title}</h1>
           <ContentBlocks 
@@ -39,19 +40,19 @@ export const HomePage = ({title, revolvingHero, contentBlocks, contentBlocksHtml
 
 HomePage.propTypes = {
   title: PropTypes.string,
-  revolvingHero: Layout.propTypes.revolvingHero,
   contentBlocks: ContentBlocks.propTypes.contentBlocks,
   contentBlocksHtml: ContentBlocks.propTypes.contentBlocksHtml,
   calendarBlock: CalendarBlock.propTypes.calendarBlock,
   newsBlock: NewsBlock.propTypes.newsBlock,
   newsArticles: NewsBlock.propTypes.newsArticles,
   twitterBlock: TwitterBlock.propTypes.twitterBlock,
-  contentComponent: PropTypes.elementType
+  contentComponent: PropTypes.elementType,
+  heroData: Layout.propTypes.heroData
 }
 
 const additionalPropsExtractor = graphqlData => ({
   contentBlocksHtml: graphqlData.markdownRemark.fields.contentBlocksHtml,
-  newsArticles: graphqlData.allMarkdownRemark.edges
+  newsArticles: graphqlData.newsData.edges
 })
 
 export default site(HomePage, additionalPropsExtractor)
@@ -62,9 +63,6 @@ query homePageTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        revolvingHero {
-          ...RevolvingHeroImageFluidFragment
-        }
         contentBlocks {
           title
           subtitle
@@ -95,7 +93,7 @@ query homePageTemplate($id: String!) {
       }
       html
     }
-    allMarkdownRemark(filter: {fields: {slug: {regex: "$//news//", ne: "/news/"}}}, sort: {fields: frontmatter___date, order: DESC}) {
+    newsData: allMarkdownRemark(filter: {fields: {slug: {regex: "$//news//", ne: "/news/"}}}, sort: {fields: frontmatter___date, order: DESC}) {
       edges {
         node {
           frontmatter {
@@ -115,6 +113,9 @@ query homePageTemplate($id: String!) {
           html
         }
       }
+    }
+    heroData: allMarkdownRemark(filter: {id: {eq: $id}}) {
+      ...HeroFragment
     }
   }
 `
