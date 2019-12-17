@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import { childImageSharpValidator } from './validators'
 import NavBar from './header/NavBar'
+import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 const imageRotationIntervalMillis = 10000
 const imageFadeTimeMills = 2000
@@ -49,22 +50,32 @@ const RevolvingHero = ({data}) => {
 }
 
 const RevolvingHeroImage = ({info: {src, alt}, visible}) => {
-    
     const style = {
         opacity: (visible ? 1 : 0),
-        transition: `opacity ${imageFadeTimeMills/1000}s`
+        transition: `opacity ${imageFadeTimeMills/1000}s`,
+        position: "absolute",
+        objectFit: "cover",
+        width: "100%",
+        height: "100%"
     }
     
-    return (
-        <img alt={alt} className="hero-background" src={src.childImageSharp ? src.childImageSharp.fluid.src : src} style={style} />
-    )
+    return <PreviewCompatibleImage imageInfo={{alt: alt, image: src}} style={style} />
 }
 
-const FixedHero = ({info: {src, alt}}) => (
-    <section className="hero has-background">
-        <img alt={alt} className="hero-background" src={src.childImageSharp ? src.childImageSharp.fluid.src : src} />
-    </section>
-)
+const FixedHero = ({info: {src, alt}}) => {
+    const style = {
+        position: "absolute",
+        objectFit: "cover",
+        width: "100%",
+        height: "100%"
+    }
+
+    return (
+        <section className="hero has-background">
+            <PreviewCompatibleImage imageInfo={{alt: alt, image: src}} style={style} />
+        </section>
+    )
+}
 
 FixedHero.propTypes = {
     info: PropTypes.shape({

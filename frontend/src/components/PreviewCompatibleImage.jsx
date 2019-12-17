@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import { previewCompatibleImageValidator } from './validators'
 
@@ -30,7 +31,8 @@ const PreviewCompatibleImage = ({ imageInfo, style }) => {
 }
 
 PreviewCompatibleImage.propTypes = {
-  imageInfo: previewCompatibleImageValidator
+  imageInfo: previewCompatibleImageValidator,
+  style: PropTypes.object
 }
 
 export default PreviewCompatibleImage
