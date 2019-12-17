@@ -200,7 +200,8 @@ collections:
           - label: Page Title
             name: pageTitle
             widget: multi-collection-relation
-            options: [Events, About, Forms]
+            options: [Pages, Events, About, Forms]
+            pagesOptions: [Calendar Page, Upcoming Events]
             searchFields: [title]
             valueField: title
             displayFields: [title]

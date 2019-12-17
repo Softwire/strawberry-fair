@@ -16,6 +16,11 @@ const titleToLinkMap = {
     title: 'News',
     noDropdown: true,
   },
+  Contact: {
+    link: '/contact',
+    title: 'Contact Us',
+    noDropdown: true,
+  }
 }
 
 const NavBar = () => (
