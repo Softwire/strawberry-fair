@@ -1,7 +1,6 @@
 import React, {useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
-import PreviewCompatibleImage from './PreviewCompatibleImage'
 import { childImageSharpValidator } from './validators'
 import NavBar from './header/NavBar'
 
