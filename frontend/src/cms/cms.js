@@ -9,6 +9,7 @@ import { EventInfo } from '../templates/event-info'
 import { AboutPage } from '../templates/about-page'
 import { UpcomingEvents } from '../templates/upcoming-events'
 import { CalendarPage } from '../templates/calendar-page'
+import { FormPage } from '../templates/form'
 
 import { AccessibleImageControl } from './AccessibleImageWidget'
 import { MultiImageControl } from './MultiImageWidget'
@@ -66,6 +67,7 @@ CMS.registerPreviewTemplate('news', preview(NewsArticle))
 CMS.registerPreviewTemplate('news-home', preview(NewsOverview, {newsArticles: placeholderArticles}))
 CMS.registerPreviewTemplate('upcoming-events', preview(UpcomingEvents, {events: placeholderEvents}))
 CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {events: []}))
+CMS.registerPreviewTemplate('forms', preview(FormPage))
 
 CMS.registerWidget("accessible-image", AccessibleImageControl)
 CMS.registerWidget("multi-image", MultiImageControl)
