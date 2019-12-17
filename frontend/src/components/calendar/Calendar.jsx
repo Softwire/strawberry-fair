@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
 import CalendarDay from './CalendarDay'
+import { areSameDay } from '../../util/dates'
 import { eventTypeList } from './EventType'
 import { EventFilterBlock, filterEvents } from './EventFilter'
 import { getEventList } from './getEventList'
@@ -60,19 +61,21 @@ export const Calendar = () => {
             <EventFilterBlock allFilters={eventTypeList} activeFilters={filters} addFilter={addFilter} removeFilter={removeFilter} />
             <div className="panel-block">
                 <div className="columns is-multiline is-mobile">
-                    {days.map(dayNumber => <CalendarDay
-                        key={dayNumber}
-                        dateTime={new Date(focusDate.getFullYear(), focusDate.getMonth(), dayNumber)}
-                        events={filterEvents(events, filters)}
-                    />)}
+                    {days.map(dayNumber => {
+                        const date = new Date(focusDate.getFullYear(), focusDate.getMonth(), dayNumber)
+
+                        return (
+                            <CalendarDay
+                                key={dayNumber}
+                                dateTime={date}
+                                events={eventsOnDate(date, filterEvents(events, filters))}
+                            />
+                        )
+                    })}
                 </div>
             </div>
         </div>
     )
-}
-
-Calendar.propTypes = {
-    events: CalendarDay.propTypes.events
 }
 
 const MonthScrubber = ({monthForward, monthBack, focusDate}) => (
@@ -107,4 +110,9 @@ MonthScrubber.propTypes = {
     monthForward: PropTypes.func.isRequired,
     monthBack: PropTypes.func.isRequired,
     focusDate: PropTypes.instanceOf(Date)
+}
+
+function eventsOnDate(date, events) {
+    // Array of events on this day, empty if none
+    return events.filter(event => areSameDay(new Date(event.frontmatter.dateTime), date))
 }

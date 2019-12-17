@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 export const eventPropTypeValidator = PropTypes.shape({
   frontmatter: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    image: PropTypes.object.isRequired,
+    image: PropTypes.object,
     dateTime: PropTypes.string.isRequired,
-    isMeeting: PropTypes.bool.isRequired
+    eventTypes: PropTypes.arrayOf(PropTypes.string).isRequired
   }),
   html: PropTypes.string.isRequired,
   fields: PropTypes.shape({
