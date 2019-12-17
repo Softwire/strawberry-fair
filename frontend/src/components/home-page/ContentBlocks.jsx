@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import ImageScrapbookRow from './ImageScrapbookRow'
-import StrawberryCard from '../StrawberryCard'
+import { StrawberryCard } from '../StrawberryCard'
 
 const ContentBlock = ({contentTitle, contentSubtitle, scrapbookImages, content, sideSnippet, BodyComponent}) => (
   <section className="section">
