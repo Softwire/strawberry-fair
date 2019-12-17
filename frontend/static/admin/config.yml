@@ -190,19 +190,13 @@ collections:
         name: "get-involved"
         fields:
          - {label: Text, name: text, widget: string}
-         - {label: Link, name: link, widget: string}
+         - {label: Link, name: link, widget: link}
       - file: "frontend/src/pages/header-and-footer/buttons/apply-to-trade.md"
         label: "Apply to Trade"
         name: "apply-to-trade"
         fields:
           - {label: Text, name: text, widget: string}
-          # - label: Link
-          #   name: link
-          #   widget: select
-          #   options: [{label: Events, value: /events}, {label: About, value: /about}, {label: News Articles, value: /news}, {label: Forms, value: }, {label: Pages, value: }]
-          - label: Link
-            name: link
-            widget: link
+          - {label: Link, name: link, widget: link}
             
 
   - label: Nav Bar Item
