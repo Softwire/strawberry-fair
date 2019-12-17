@@ -5,7 +5,8 @@ import { graphql } from 'gatsby'
 import { HTMLContent } from '../components/Content'
 import { Layout } from '../components/Layout'
 import { formValidator } from '../components/validators'
-import { isUrl } from 'is-url'
+import isUrl from 'is-url'
+import { site } from '../util/templating'
 
 const IFRAMEHEIGHT = 1427 //default value for the height of the form
 
@@ -22,7 +23,7 @@ export const FormPage = ({title, form, content, contentComponent}) => {
     )
 }
 
-FormPageContent.propTypes = {
+FormPage.propTypes = {
   title: PropTypes.string.isRequired,
   form: formValidator,
   content: PropTypes.string.isRequired,
@@ -50,7 +51,7 @@ const FormFrame = ({form: {isPublic, link}}) => {
         const height = (heightSearch && heightSearch[1]) ? heightSearch[1] : IFRAMEHEIGHT
 
         return (
-          <iframe src={formUrl} width="100%" height={height}>Loading…</iframe>
+          <iframe src={url} width="100%" height={height}>Loading…</iframe>
         )
       }
     }
@@ -69,6 +70,7 @@ query formPageTemplate($id: String!) {
         title
         ...FormFragment
       }
+      html
     }
   }
 `

@@ -2,17 +2,8 @@
 templateKey: form
 title: Registration Form
 form:
-<<<<<<< HEAD
-    - isPublic: true
-    - link: <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdnbGnGcafdKpNXKZ83mcDnF8lMJ-awaM0-j-135d1RFEC_jQ/viewform?embedded=true" width="640" height="1427" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-=======
   isPublic: true
-  link: >-
-    <iframe
-    src="https://docs.google.com/forms/d/e/1FAIpQLSdnbGnGcafdKpNXKZ83mcDnF8lMJ-awaM0-j-135d1RFEC_jQ/viewform?embedded=true"
-    width="640" height="1427" frameborder="0" marginheight="0"
-    marginwidth="0">Loading…</iframe>
->>>>>>> 8a0214897df7842d3f9278bcf85c7c7749c0abb8
+  link: <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdnbGnGcafdKpNXKZ83mcDnF8lMJ-awaM0-j-135d1RFEC_jQ/viewform?embedded=true" width="640" height="1427" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 ---
 This is the registration form. 
 
