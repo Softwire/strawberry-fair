@@ -1,6 +1,13 @@
 ---
-templateKey: 'about-page'
+templateKey: about-page
 title: About Item
+hero:
+  heroImages:
+    - alt: Hello
+      src: /img/1-line-logo.png
+    - alt: hello2
+      src: /img/gareths-gate-slide.jpg
+  isActive: true
 subtitle: this is a subtitle
 image: /img/strawberry_fair.jpg
 ---
