@@ -116,3 +116,12 @@ fragment NewsFragment on MarkdownRemark {
   }
 }
 `
+
+export const formFragment = graphql`
+fragment FormFragment on MarkdownRemarkFrontmatter {
+  form {
+    isPublic
+    link
+  }
+}
+`
