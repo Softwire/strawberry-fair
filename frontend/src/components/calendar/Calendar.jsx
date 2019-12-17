@@ -7,14 +7,21 @@ import { areSameDay } from '../../util/dates'
 import { eventTypeList } from './EventType'
 import { EventFilterBlock, filterEvents } from './EventFilter'
 import { getEventList } from './getEventList'
+import { PreviewContext } from '../../util/context'
 
-export const Calendar = () => {
+export const Calendar = () => (
+    <PreviewContext.Consumer>
+        {value => <CalendarWithContext isPreview={value} />}
+    </PreviewContext.Consumer>
+)
+
+const CalendarWithContext = ({isPreview}) => {
     // Set state
     const [ focusDate, setFocusDate ] = useState(new Date())
     const [ filters, setFilters ] = useState([])  // Filter events by type
 
     // Get list of events
-    const events = getEventList()
+    const events = isPreview ? [] : getEventList()
 
     // Functions to add and remove active filters
     const addFilter = (filterName) => (
@@ -110,6 +117,10 @@ MonthScrubber.propTypes = {
     monthForward: PropTypes.func.isRequired,
     monthBack: PropTypes.func.isRequired,
     focusDate: PropTypes.instanceOf(Date)
+}
+
+CalendarWithContext.propTypes = {
+    isPreview: PropTypes.bool.isRequired
 }
 
 function eventsOnDate(date, events) {

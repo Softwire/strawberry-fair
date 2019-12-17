@@ -7,6 +7,7 @@ import { eventPropTypeValidator } from '../validators'
 import { EventFilterBlock, filterEvents } from './EventFilter'
 import { eventTypeList } from './EventType'
 import { getEventList } from './getEventList'
+import { PreviewContext } from '../../util/context'
 
 export const EventMediaBlock = ({event}) => (
     <div className="media">
@@ -42,11 +43,17 @@ const NoEventsFoundBlock = () => (
     </div>
 )
 
-export const Upcoming = () => {
+export const Upcoming = () => (
+    <PreviewContext.Consumer>
+        {value => <UpcomingWithContext isPreview={value} />}
+    </PreviewContext.Consumer>
+)
+
+const UpcomingWithContext = ({isPreview}) => {
     const [filters, setFilters] = useState([])  // Filter events by type
 
     // Get list of events
-    const events = getEventList()
+    const events = isPreview ? [] : getEventList()
 
     const addFilter = (filterName) => (
         () => {setFilters(filters.concat(filterName))}  // Gotta love functional programming
@@ -78,6 +85,6 @@ EventPanelBlock.propTypes = {
     event: EventMediaBlock.propTypes.event
 }
 
-Upcoming.propTypes = {
-    events: PropTypes.arrayOf(eventPropTypeValidator)
+UpcomingWithContext.propTypes = {
+    isPreview: PropTypes.bool.isRequired
 }
