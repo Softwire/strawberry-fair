@@ -12,8 +12,6 @@ import { site } from '../util/templating'
 export const AboutPage = ({title, subtitle, image, content, contentComponent, strawberryTiles}) => {
     const BodyComponent = contentComponent || HTMLContent
 
-    console.log(strawberryTiles)
-
     return (
       <Layout>
         <section className="section">
