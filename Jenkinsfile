@@ -31,8 +31,8 @@ node (label: 'linux') {
                     }
                     stage('Test') {
                         sh 'npm run lint'
-                        sh 'npm run test'
                         sh 'npm run build'
+                        sh 'npm run test' // Needs to go after `npm run build`
                     }
                 } 
             }
