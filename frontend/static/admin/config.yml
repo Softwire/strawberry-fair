@@ -134,6 +134,7 @@ collections:
   - name: "news"
     label: "News Articles"
     folder: "frontend/src/pages/news/"
+    filter: {field: templateKey, value: news-article}
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -147,6 +148,7 @@ collections:
   - name: "events"
     label: "Events"
     folder: "frontend/src/pages/events/"
+    filter: {field: templateKey, value: event-info}
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Will need to figure out the syntax to change this, because what if
     fields:                                     # you have two events on the same day?
@@ -167,6 +169,7 @@ collections:
   - name: "about"
     label: "About"
     folder: "frontend/src/pages/about/"
+    filter: {field: templateKey, value: about-page}
     create: true
     fields:
       - {label: "Template Key", name: templateKey, widget: hidden, default: about-page}
@@ -177,6 +180,7 @@ collections:
   - name: "forms"
     label: "Forms"
     folder: "frontend/src/pages/forms/"
+    filter: {field: templateKey, value: form}
     create: true
     fields:                                    
       - {label: "Template Key", name: templateKey, widget: hidden, default: form}
