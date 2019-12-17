@@ -16,6 +16,7 @@ import { MultiImageControl } from './MultiImageWidget'
 import { HeroControl } from './HeroWidget'
 import { MultiCollectionRelationControl, MultiCollectionRelationPreview } from './MultiCollectionRelationWidget'
 import { FormControl } from './FormWidget'
+import { StrawberryTilesControl } from './StrawberryTilesWidget'
 
 const placeholderArticle = {
     node: {
@@ -74,3 +75,4 @@ CMS.registerWidget("multi-image", MultiImageControl)
 CMS.registerWidget("hero", HeroControl)
 CMS.registerWidget('multi-collection-relation', MultiCollectionRelationControl, MultiCollectionRelationPreview)
 CMS.registerWidget("form", FormControl)
+CMS.registerWidget("strawberryTiles", StrawberryTilesControl)

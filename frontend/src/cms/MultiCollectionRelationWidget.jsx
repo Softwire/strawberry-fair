@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import CMS from 'netlify-cms-app'
 
 // Following https://www.netlify.com/blog/2017/06/20/extending-netlify-cms-part-one-custom-widgets/
@@ -20,22 +21,37 @@ export class MultiCollectionRelationControl extends React.Component {
           <SelectionControl 
             {...this.props}
             value={collection}
-            onChange={val => this.handleSelectionChange(val)}
+            onChange={val => this.handleTabSelection(val)}
           />
         </div>
       )
-    } else if (!pageTitle) {
-      let relationProps = Object.assign({}, this.props)
-      relationProps.field = relationProps.field.set('collection', collection.toLowerCase())
-      relationProps.value = pageTitle
+    } else if (!pageTitle && collection !== 'Pages') {
+      let pageSelectionProps = Object.assign({}, this.props)
+      pageSelectionProps.field = pageSelectionProps.field.set('collection', collection.toLowerCase())
+      pageSelectionProps.value = pageTitle
 
       return (
         <div>
           <h2>Choose a {`<${collection}>`} page</h2>
           <RelationControl
-            {...relationProps}
+            {...pageSelectionProps}
             value={pageTitle}
-            onChange={val => this.handleRelationChange(val)}
+            onChange={val => this.handlePageSelection(val)}
+          />
+        </div>
+      )
+    } else if (!pageTitle && collection === 'Pages') {
+      let pageSelectionProps = Object.assign({}, this.props)
+      pageSelectionProps.field = pageSelectionProps.field.set('options', pageSelectionProps.field.get('pagesOptions'))
+      pageSelectionProps.value = pageTitle
+
+      return (
+        <div>
+          <h2>Choose a {`<${collection}>`} page</h2>
+          <SelectionControl
+            {...pageSelectionProps}
+            value={pageTitle}
+            onChange={val => this.handlePageSelection(val)}
           />
         </div>
       )
@@ -56,11 +72,11 @@ export class MultiCollectionRelationControl extends React.Component {
     return value && value.includes(separator) ? value.split(separator)[1] : ''
   }
 
-  handleSelectionChange(value) {
+  handleTabSelection(value) {
     this.props.onChange(value)
   }
 
-  handleRelationChange(value) {
+  handlePageSelection(value) {
     this.props.onChange(this.getCollection(this.props.value) + separator + value)
   }
 
@@ -72,3 +88,12 @@ export class MultiCollectionRelationControl extends React.Component {
 export const MultiCollectionRelationPreview = props => (
   <div dangerouslySetInnerHTML={{ __html: JSON.stringify(props.value)}} />
 )
+
+MultiCollectionRelationControl.propTypes = {
+  onChange: PropTypes.func,
+  value: PropTypes.string,
+}
+
+MultiCollectionRelationPreview.propTypes = {
+  value: PropTypes.string
+}
