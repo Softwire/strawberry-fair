@@ -19,6 +19,21 @@ const CalendarDay = ({dateTime, events}) => {
     // Image setting for revolving images
     const [ currentImage, setCurrentImage ] = useState(0)
 
+    // Revolving image hook
+    const eventsWithPics = events.filter(event => event.frontmatter.image)
+    const nImages = eventsWithPics.length
+    const imageRotateTimeMS = 4000
+    const imageFadeTimeS = 0.5
+
+    useEffect(() => {
+        if (eventsWithPics.length > 1) {
+            setTimeout(() => {
+                // Update current shown image counter
+                setCurrentImage((currentImage + 1) % nImages)
+            }, imageRotateTimeMS)
+        }
+    })
+
     const modalOn = () => {
         setShowModal(true)
     }
@@ -43,18 +58,6 @@ const CalendarDay = ({dateTime, events}) => {
             </React.Fragment>
         )
     } else if (events.length > 1) {
-        const eventsWithPics = events.filter(event => event.frontmatter.image)
-        const nImages = eventsWithPics.length
-        const imageRotateTimeMS = 4000
-        const imageFadeTimeS = 0.5
-
-        useEffect(() => {
-            setTimeout(() => {
-                // Update current shown image counter
-                setCurrentImage((currentImage + 1) % nImages)
-            }, imageRotateTimeMS)
-        })
-
         internals = (
             <div style={{position: "relative"}}>
                 <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
