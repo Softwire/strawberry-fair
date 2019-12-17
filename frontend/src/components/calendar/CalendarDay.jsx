@@ -27,10 +27,15 @@ const CalendarDay = ({dateTime, events}) => {
 
     useEffect(() => {
         if (nImages > 1) {
-            setTimeout(() => {
+            const timeoutVar = setTimeout(() => {
                 // Update current shown image counter
                 setCurrentImage((currentImage + 1) % nImages)
             }, imageRotateTimeMS)
+
+            // Clean up if this component unmounts
+            return () => {
+                clearTimeout(timeoutVar)
+            }
         }
     })
 
