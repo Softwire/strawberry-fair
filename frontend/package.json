@@ -46,10 +46,9 @@
     "build": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "lint": "npx eslint 'src'",
+    "lint": "eslint src",
     "test:unit": "jest",
-    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
-    "test": "npm run test:unit && npm run test:e2e",
+    "test": "npm run test:unit",
     "cy:open": "cypress run"
   },
   "devDependencies": {
@@ -59,7 +58,6 @@
     "axe-core": "^3.4.0",
     "babel-jest": "^24.9.0",
     "babel-preset-gatsby": "^0.2.23",
-    "cypress": "^3.7.0",
     "cypress-axe": "^0.5.3",
     "eslint": "^6.7.2",
     "eslint-plugin-react": "^7.17.0",
