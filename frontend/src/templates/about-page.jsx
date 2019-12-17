@@ -4,14 +4,15 @@ import { graphql } from 'gatsby'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
 import '../styling/styles.scss'
-import VerticalTileColumn from '../components/VerticalTileColumn'
-import { StrawberryTile } from '../components/VerticalTileColumn'
+import { StrawberryTiles } from '../components/StrawberryCard'
 import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 
 // This is used by the websitesite and for CMS previews
-export const AboutPage = ({title, subtitle, image, content, contentComponent}) => {
+export const AboutPage = ({title, subtitle, image, content, contentComponent, strawberryTiles}) => {
     const BodyComponent = contentComponent || HTMLContent
+
+    console.log(strawberryTiles)
 
     return (
       <Layout>
@@ -27,11 +28,7 @@ export const AboutPage = ({title, subtitle, image, content, contentComponent}) =
         <section className="section">
           <div className="container">
             <div className="columns reverse-columns">
-              <VerticalTileColumn>
-                <StrawberryTile image="/img/strawberry-icon.png" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"/>
-                <StrawberryTile image="/img/strawberry-icon.png" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"/>
-                <StrawberryTile image="/img/strawberry-icon.png" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"/>
-              </VerticalTileColumn>
+              <StrawberryTiles tileTextArray={strawberryTiles}/>
               <div className="column">
                 <BodyComponent content={content} />
               </div>
@@ -46,7 +43,8 @@ AboutPage.propTypes = {
   subtitle: PropTypes.string.isRequired,
   image: PropTypes.object.isRequired,
   content: PropTypes.string.isRequired,
-  contentComponent: PropTypes.elementType
+  contentComponent: PropTypes.elementType,
+  strawberryTiles: PropTypes.arrayOf(PropTypes.string)
 }
 
 export default site(AboutPage)
@@ -64,6 +62,7 @@ query aboutPageTemplate($id: String!) {
             }
           }
         }
+        strawberryTiles
       }
       html
     }
