@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 import BaseBlock from './BaseBlock'
@@ -6,6 +7,7 @@ import { getEventList } from '../calendar/getEventList'
 import { EventMediaBlock } from '../calendar/Upcoming'
 import { EventFilterTags, filterEvents } from '../calendar/EventFilter'
 import { eventTypeList } from '../calendar/EventType'
+import { PreviewContext } from '../../util/context'
 
 const CalendarBlock = ({calendarBlock}) => (
   <BaseBlock block={calendarBlock} altBackground={true}>
@@ -13,10 +15,16 @@ const CalendarBlock = ({calendarBlock}) => (
   </BaseBlock>
 )
 
-const UpcomingEventsDisplay = () => {
+const UpcomingEventsDisplay = () => (
+  <PreviewContext.Consumer>
+    {value => <UpcomingEventsDisplayWithContext isPreview={value} />}
+  </PreviewContext.Consumer>
+)
+
+const UpcomingEventsDisplayWithContext = ({isPreview}) => {
   const [filters, setFilters] = useState([])  // Filter events by type
 
-  const events = getEventList()
+  const events = isPreview ? [] : getEventList()
 
   const addFilter = (filterName) => (
     () => {setFilters(filters.concat(filterName))}
@@ -54,6 +62,10 @@ const MoreEventsLinkBox = () => (
 
 CalendarBlock.propTypes = {
   calendarBlock: BaseBlock.propTypes.block
+}
+
+UpcomingEventsDisplayWithContext.propTypes = {
+  isPreview: PropTypes.bool.isRequired
 }
 
 export default CalendarBlock
