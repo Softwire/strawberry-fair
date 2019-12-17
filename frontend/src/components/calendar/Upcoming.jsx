@@ -6,29 +6,30 @@ import { HTMLContentSmall } from '../Content'
 import { eventPropTypeValidator } from '../validators'
 import { EventFilterBlock, filterEvents } from './EventFilter'
 import { eventTypeList } from './EventType'
+import { getEventList } from './getEventList'
+
+export const EventMediaBlock = ({event}) => (
+    <div className="media">
+        <div className="media-left">
+            <p className="image is-64x64">
+                <img src={event.frontmatter.image.childImageSharp ? event.frontmatter.image.childImageSharp.resize.src : event.frontmatter.image} />
+            </p>
+        </div>
+        <div className="media-content">
+            <h2 className="title is-4">
+                <strong><Link to={event.fields.slug}>{event.frontmatter.title}</Link></strong> - {new Date(event.frontmatter.dateTime).toLocaleDateString('en-GB')}
+            </h2>
+            <HTMLContentSmall content={event.excerpt} />
+        </div>
+    </div>
+)
 
 const EventPanelBlock = ({event}) => {
     return (
         <div className="panel-block">
-            <div className="media">
-                <div className="media-left">
-                    <p className="image is-64x64">
-                        <img src={event.frontmatter.image.childImageSharp ? event.frontmatter.image.childImageSharp.resize.src : event.frontmatter.image} />
-                    </p>
-                </div>
-                <div className="media-content">
-                    <h2 className="title is-4">
-                        <strong><Link to={event.fields.slug}>{event.frontmatter.title}</Link></strong> - {new Date(event.frontmatter.dateTime).toLocaleDateString('en-GB')}
-                    </h2>
-                    <HTMLContentSmall content={event.html} />
-                </div>
-            </div>
+            <EventMediaBlock event={event} />
         </div>
     )
-}
-
-EventPanelBlock.propTypes = {
-    event: eventPropTypeValidator
 }
 
 const NoEventsFoundBlock = () => (
@@ -41,8 +42,11 @@ const NoEventsFoundBlock = () => (
     </div>
 )
 
-export const Upcoming = ({events}) => {
+export const Upcoming = () => {
     const [filters, setFilters] = useState([])  // Filter events by type
+
+    // Get list of events
+    const events = getEventList()
 
     const addFilter = (filterName) => (
         () => {setFilters(filters.concat(filterName))}  // Gotta love functional programming
@@ -55,7 +59,7 @@ export const Upcoming = ({events}) => {
     const maxItems = 10
 
     // Construct array of list elements
-    let eventPanels = filterEvents(events, filters).slice(0, maxItems).map(event => <EventPanelBlock key={event.node.frontmatter.title} event={event.node} />)
+    let eventPanels = filterEvents(events, filters).slice(0, maxItems).map(event => <EventPanelBlock key={event.frontmatter.title} event={event} />)
 
     return (
         <div className="panel">
@@ -66,10 +70,14 @@ export const Upcoming = ({events}) => {
     )
 }
 
+EventMediaBlock.propTypes = {
+    event: eventPropTypeValidator
+}
+
+EventPanelBlock.propTypes = {
+    event: EventMediaBlock.propTypes.event
+}
+
 Upcoming.propTypes = {
-    events: PropTypes.arrayOf(
-        PropTypes.shape({
-            node: eventPropTypeValidator
-        })
-    )
+    events: PropTypes.arrayOf(eventPropTypeValidator)
 }

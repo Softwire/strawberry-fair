@@ -11,3 +11,6 @@ yarn-error.log
 
 # IDE settings
 .vscode
+
+# Unit test snapshots
+__tests__/__snapshots__

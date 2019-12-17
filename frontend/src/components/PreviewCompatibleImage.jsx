@@ -7,7 +7,7 @@ const PreviewCompatibleImage = ({ imageInfo, style }) => {
     return null
   }
 
-  const imageStyle = (style ? style : { borderRadius: '5px' })
+  const imageStyle = (style ? style : {})
   const { alt = '', childImageSharp, image } = imageInfo
 
   if (!!image && !!image.childImageSharp) {

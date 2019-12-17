@@ -5,11 +5,15 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import CalendarDay from './CalendarDay'
 import { eventTypeList } from './EventType'
 import { EventFilterBlock, filterEvents } from './EventFilter'
+import { getEventList } from './getEventList'
 
-export const Calendar = ({events}) => {
+export const Calendar = () => {
     // Set state
     const [ focusDate, setFocusDate ] = useState(new Date())
-    const [filters, setFilters] = useState([])  // Filter events by type
+    const [ filters, setFilters ] = useState([])  // Filter events by type
+
+    // Get list of events
+    const events = getEventList()
 
     // Functions to add and remove active filters
     const addFilter = (filterName) => (

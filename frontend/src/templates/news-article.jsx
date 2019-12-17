@@ -47,20 +47,7 @@ export default site(NewsArticle)
 export const query = graphql`
 query newsArticleTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      frontmatter {
-        title
-        author
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        date
-        tags
-      }
-      html
+      ...NewsFragment
     }
   }
 `

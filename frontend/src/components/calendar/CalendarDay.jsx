@@ -58,10 +58,10 @@ function eventOnDay(date, events) {
     // TODO: Multiple events on one day
 
     // Array of events on this day
-    const eventsOnDay = events.filter(event => areSameDay(new Date(event.node.frontmatter.dateTime), date))
+    const eventsOnDay = events.filter(event => areSameDay(new Date(event.frontmatter.dateTime), date))
 
     // Return the first element, or null if it's an empty array
-    return eventsOnDay.length > 0 ? eventsOnDay[0].node : null
+    return eventsOnDay.length > 0 ? eventsOnDay[0] : null
 }
 
 function areSameDay(date1, date2) {
