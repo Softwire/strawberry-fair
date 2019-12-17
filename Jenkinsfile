@@ -22,7 +22,7 @@ node (label: 'linux') {
                 sh 'git merge --no-ff -X theirs origin/master'
             }
 
-            docker.image('cypress/base:12.13.0').inside {
+            docker.image('node:12.13').inside {
                 dir('frontend'){
                     stage('Build') {
                         sh 'node --version'
@@ -31,8 +31,8 @@ node (label: 'linux') {
                     }
                     stage('Test') {
                         sh 'npm run lint'
+                        sh 'npm run test'
                         sh 'npm run build'
-                        sh 'npm run test' // Needs to go after `npm run build`
                     }
                 } 
             }
