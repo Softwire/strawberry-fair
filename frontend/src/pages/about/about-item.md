@@ -5,7 +5,12 @@ subtitle: this is a subtitle
 image: /img/strawberry_fair.jpg
 strawberryTiles:
   - >-
-    HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+    Arma virumque canō, Trōiae quī prīmus ab ōrīs Ītaliam, fātō profugus,
+    Lāvīniaque vēnit lītora, multum ille et terrīs iactātus et altō vī superum
+    saevae memorem Iūnōnis ob īram;
+  - >-
+    multa quoque et bellō passūs, dum conderet urbem, inferretque deōs Latiō,
+    genus unde Latīnum, Albānīque patrēs, atque altae moenia Rōmae.
 ---
 
 # This is H1
