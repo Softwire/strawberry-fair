@@ -6,7 +6,6 @@ import footerPreviewContent from '../data/footerPreviewContent'
 import { PreviewContext } from '../util/context.jsx'
 import remark from 'remark'
 import remarkHtml from 'remark-html'
-import unified from 'unified'
 
 export const Footer = () => (
     <PreviewContext.Consumer>
@@ -17,10 +16,10 @@ export const Footer = () => (
 
 const FooterDisplay = ({isPreview}) => {
     const footerContent = isPreview ? footerPreviewContent : getFooterContent()
-    const markdownAddress = footerContent.markdownRemark.frontmatter.address
-    const markdownPlaceHolderText = footerContent.markdownRemark.frontmatter.placeHolderText
-    const address = remark().use(remarkHtml).processSync(markdownAddress).toString()
-    const placeHolderText = remark().use(remarkHtml).processSync(markdownPlaceHolderText).toString()
+    //these lines convert markdown text to html
+    const address = remark().use(remarkHtml).processSync(footerContent.markdownRemark.frontmatter.address).toString()
+    const placeHolderText = remark().use(remarkHtml).processSync(footerContent.markdownRemark.frontmatter.placeHolderText).toString()
+    
     return(
     <footer className="footer">
         <div className="tile is-ancestor">
