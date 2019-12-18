@@ -8,6 +8,7 @@ import { eventTypeList } from './EventType'
 import { EventFilterBlock, filterEvents } from './EventFilter'
 import { getEventList } from './getEventList'
 import { PreviewContext } from '../../util/context'
+import { useFilters } from '../../util/filters'
 
 export const Calendar = () => (
     <PreviewContext.Consumer>
@@ -18,23 +19,10 @@ export const Calendar = () => (
 const CalendarWithContext = ({isPreview}) => {
     // Set state
     const [ focusDate, setFocusDate ] = useState(new Date())
-    const [ filters, setFilters ] = useState([])  // Filter events by type
+    const filterProps = useFilters(eventTypeList)
 
     // Get list of events
     const events = isPreview ? [] : getEventList()
-
-    // Functions to add and remove active filters
-    const addFilter = (filterName) => (
-        () => {setFilters(filters.concat(filterName))}  // Gotta love functional programming
-    )
-
-    const removeFilter = (filterName) => (
-        () => {setFilters(filters.filter(name => name !== filterName))}  // Set 'filters' to the existing 'filters' array, filtered (confusing) to contain only the elements not matching the given name
-    )
-
-    const clearFilters = () => {
-        setFilters([])
-    }
 
     // Calculate the number of days in the given month
     const monthDate = new Date(focusDate.getFullYear(), focusDate.getMonth() + 1, 0)
@@ -69,7 +57,7 @@ const CalendarWithContext = ({isPreview}) => {
         <div className="panel">
             <h2 className="panel-heading">Calendar</h2>
             <MonthScrubber monthForward={monthForward} monthBack={monthBack} focusDate={focusDate} />
-            <EventFilterBlock allFilters={eventTypeList} activeFilters={filters} addFilter={addFilter} removeFilter={removeFilter} clearFilters={clearFilters} />
+            <EventFilterBlock filterProps={filterProps} />
             <div className="panel-block">
                 <div className="columns is-multiline is-mobile">
                     {days.map(dayNumber => {
@@ -79,7 +67,7 @@ const CalendarWithContext = ({isPreview}) => {
                             <CalendarDay
                                 key={dayNumber}
                                 dateTime={date}
-                                events={eventsOnDate(date, filterEvents(events, filters))}
+                                events={eventsOnDate(date, filterEvents(events, filterProps.activeFilters))}
                             />
                         )
                     })}

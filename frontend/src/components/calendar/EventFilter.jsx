@@ -19,13 +19,13 @@ DisabledFilterTag.propTypes = {
     add: PropTypes.func
 }
 
-export const EventFilterBlock = ({allFilters, activeFilters, addFilter, removeFilter, clearFilters}) => (
+export const EventFilterBlock = ({filterProps}) => (
     <div className="panel-block">
-        <EventFilterTags allFilters={allFilters} activeFilters={activeFilters} addFilter={addFilter} removeFilter={removeFilter} clearFilters={clearFilters} />
+        <EventFilterTags filterProps={filterProps} />
     </div>
 )
 
-export const EventFilterTags = ({allFilters, activeFilters, addFilter, removeFilter, clearFilters}) => {
+export const EventFilterTags = ({filterProps: {allFilters, activeFilters, addFilter, removeFilter, clearFilters}}) => {
     // Construct array of tag objects
     let tags = []
     for (const filter of allFilters) {
@@ -46,11 +46,13 @@ export const EventFilterTags = ({allFilters, activeFilters, addFilter, removeFil
 }
 
 EventFilterTags.propTypes = {
-    allFilters: PropTypes.arrayOf(PropTypes.string),
-    activeFilters: PropTypes.arrayOf(PropTypes.string),
-    addFilter: PropTypes.func.isRequired,
-    removeFilter: PropTypes.func.isRequired,
-    clearFilters: PropTypes.func.isRequired
+    filterProps: PropTypes.shape({
+        allFilters: PropTypes.arrayOf(PropTypes.string),
+        activeFilters: PropTypes.arrayOf(PropTypes.string),
+        addFilter: PropTypes.func.isRequired,
+        removeFilter: PropTypes.func.isRequired,
+        clearFilters: PropTypes.func.isRequired
+    })
 }
 
 EventFilterBlock.propTypes = EventFilterTags.propTypes
