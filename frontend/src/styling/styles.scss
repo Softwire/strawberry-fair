@@ -36,10 +36,6 @@ $radius-large: 0px;
     margin-top: auto;
 }
 
-#root-layout {
-    padding-top: 60px;
-}
-
 // Allows navbar dropdowns to work in Edge
 @include desktop {
     .navbar-item {
