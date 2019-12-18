@@ -10,8 +10,8 @@ import '../styling/styles.scss'
 
 export const Layout = ({children, revolvingHero, fixedHero}) => (
     <div id = "root-layout" className="container">
-            <Header revolvingHero={revolvingHero} fixedHero={fixedHero} />
-            <main>{children}</main>
+        <Header revolvingHero={revolvingHero} fixedHero={fixedHero} />
+        <main>{children}</main>
         <Footer />
     </div>
 )

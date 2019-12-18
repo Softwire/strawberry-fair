@@ -1,11 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import PreviewCompatibleImage from './PreviewCompatibleImage'
-import { Link } from "gatsby"
-
+import { useStaticQuery, graphql, Link } from 'gatsby'
+import footerPreviewContent from '../data/footerPreviewContent'
+import { PreviewContext } from '../util/context.jsx'
 
 export const Footer = () => (
+    <PreviewContext.Consumer>
+      {value => <FooterDisplay isPreview={value} />}
+    </PreviewContext.Consumer>
+  )
+  
+
+const FooterDisplay = ({isPreview}) => {
+    const footerContent = isPreview ? footerPreviewContent : getFooterContent()
+    return(
     <footer className="footer">
         <div className="tile is-ancestor">
             <div className="tile is-parent">
@@ -13,6 +22,7 @@ export const Footer = () => (
                     <h3 className="title">
                         Placeholder
                     </h3>
+                    {footerContent.markdownRemark.frontmatter.placeHolderText}
                 </div>
             </div>
             <div className="tile is-parent">
@@ -21,8 +31,8 @@ export const Footer = () => (
                         Follow
                     </h3>
                     <div className="tile is-parent">
-                        <Social href="https://www.facebook.com/strawberryfair" image="img/facebook-logo.png" alt="Facebook" />
-                        <Social href="https://twitter.com/strawberry_fair" image="img/twitter-logo.png" alt="Twitter" />
+                        <Social href={footerContent.markdownRemark.frontmatter.facebookAccount} image="img/facebook-logo.png" alt="Facebook" />
+                        <Social href={footerContent.markdownRemark.frontmatter.twitterAccount} image="img/twitter-logo.png" alt="Twitter" />
                     </div>
                 </div>
             </div>
@@ -31,19 +41,20 @@ export const Footer = () => (
                     <h3 className="title">
                         Contact
                     </h3>
-                    PO Box 1261 <br /> Cambridge <br /> CB1 0YJ <br /><br /><a href="mailto:enquiries@strawberry-fair.org.uk">enquiries@strawberry-fair.org.uk</a>
+                    {footerContent.markdownRemark.frontmatter.address}<a href={"mailto:" + footerContent.markdownRemark.frontmatter.email}>{footerContent.markdownRemark.frontmatter.email}</a>
                 </div>
             </div>
         </div>
         <div className="tile is-ancestor">
             <div className="tile is-parent">
                 <div className="tile is-child box content">
-                    © Strawberry Fair 2017 | <Link to="/privacy"> Cookie & Privacy policies</Link>
+                {footerContent.markdownRemark.frontmatter.copyright} | <Link to="/privacy"> Cookie & Privacy policies</Link>
                 </div>
             </div>
         </div>
     </footer>
-)
+    )
+}
 
 const Social = ({href, image, alt}) => (
     <div className="tile is-child">
@@ -58,3 +69,20 @@ Social.propTypes = {
     image: PropTypes.string,
     alt: PropTypes.string
 }
+
+function getFooterContent() {
+    return useStaticQuery(graphql`
+      query footerContent {
+              markdownRemark(fileAbsolutePath: { regex: ".*/src/pages/footer.md/"}) {
+                frontmatter {
+                  email
+                  address
+                  facebookAccount
+                  twitterAccount
+                  placeHolderText
+                  copyright
+                }
+              }
+            }`
+          )
+  }
