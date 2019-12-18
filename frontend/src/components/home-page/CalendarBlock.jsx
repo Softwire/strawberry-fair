@@ -8,6 +8,7 @@ import { EventMediaBlock } from '../calendar/Upcoming'
 import { EventFilterTags, filterEvents } from '../calendar/EventFilter'
 import { eventTypeList } from '../calendar/EventType'
 import { PreviewContext } from '../../util/context'
+import { isOnOrAfterDay } from '../../util/dates'
 
 const CalendarBlock = ({calendarBlock}) => (
   <BaseBlock block={calendarBlock} altBackground={true}>
@@ -24,7 +25,7 @@ const UpcomingEventsDisplay = () => (
 const UpcomingEventsDisplayWithContext = ({isPreview}) => {
   const [filters, setFilters] = useState([])  // Filter events by type
 
-  const events = isPreview ? [] : getEventList()
+  const events = isPreview ? [] : getEventList().filter(event => isOnOrAfterDay(new Date(), new Date(event.frontmatter.dateTime)))
 
   const addFilter = (filterName) => (
     () => {setFilters(filters.concat(filterName))}
