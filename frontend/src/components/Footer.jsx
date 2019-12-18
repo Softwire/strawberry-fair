@@ -49,7 +49,7 @@ const FooterDisplay = ({isPreview}) => {
                     <h3 className="title">
                         Contact
                     </h3>
-                    {footerContent.markdownRemark.frontmatter.address}<a href={"mailto:" + footerContent.markdownRemark.frontmatter.email}>{footerContent.markdownRemark.frontmatter.email}</a>
+                    {footerContent.markdownRemark.frontmatter.address}<br/><a href={"mailto:" + footerContent.markdownRemark.frontmatter.email}>{footerContent.markdownRemark.frontmatter.email}</a>
                 </div>
             </div>
         </div>
