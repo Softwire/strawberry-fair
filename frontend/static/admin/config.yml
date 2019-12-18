@@ -26,7 +26,6 @@ collections:
           - {label: "Template Key", name: templateKey, widget: hidden, default: home-page}
           - {label: Title, name: title, widget: string}
           - {label: Banner, name: heroData, widget: hero}
-          - {label: Body, name: body, widget: hidden, default: "placeholder"}
           - {label: Image, name: image, widget: image}
           - label: Content-Blocks
             name: contentBlocks
