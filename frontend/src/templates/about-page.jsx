@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
-import '../styling/styles.scss'
 import { StrawberryTiles } from '../components/StrawberryCard'
 import { Layout } from '../components/Layout'
 import { site } from '../util/templating'

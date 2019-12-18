@@ -13,7 +13,7 @@ export const FormPage = ({title, form, content, contentComponent, heroData}) => 
 
     return (
       <Layout heroData={heroData}>
-        <h1 className="title has-text-centered has-text-primary">{title}</h1>
+        <h1 className="title has-text-centered">{title}</h1>
         <BodyComponent content={content} />
         <FormFrame form={form} />
       </Layout>
