@@ -9,11 +9,11 @@ import { Upcoming } from '../components/calendar/Upcoming'
 import { CalendarViewToggle } from '../components/calendar/CalendarViewToggle'
 import { eventPropTypeValidator } from '../components/validators'
 
-export const UpcomingEvents = ({content, contentComponent, events}) => {
+export const UpcomingEvents = ({content, contentComponent, events, heroData}) => {
   const BodyComponent = contentComponent || HTMLContent
 
   return (
-    <Layout>
+    <Layout heroData={heroData}>
       <section>
         <CalendarViewToggle view='upcoming' />
         <BodyComponent content={content} />
@@ -44,6 +44,9 @@ query upcomingEventsTemplate($id: String!) {
         ...EventFragment
       }
     }
+  }
+  heroData: allMarkdownRemark(filter: {id: {eq: $id}}) {
+    ...HeroFragment
   }
 }
 `

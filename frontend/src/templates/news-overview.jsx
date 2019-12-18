@@ -10,11 +10,11 @@ import NewsMenu from '../components/NewsMenu.jsx'
 
 
 // This is used by the website and for CMS previews
-export const NewsOverview = ({title, subtitle, content, contentComponent, newsArticles}) => {
+export const NewsOverview = ({title, subtitle, content, contentComponent, newsArticles, heroData}) => {
     const BodyComponent = contentComponent || HTMLContent
     
     return (
-      <Layout>
+      <Layout heroData={heroData}>
         <section className="section">
           <div className="container">
             <h1 className="title has-text-primary is-size-1">{title}</h1>
@@ -65,6 +65,9 @@ query newsOverviewTemplate($id: String!) {
           ...NewsFragment
         }
       }
+    }
+    heroData: allMarkdownRemark(filter: {id: {eq: $id}}) {
+      ...HeroFragment
     }
   }
 `

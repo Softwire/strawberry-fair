@@ -1,8 +1,7 @@
 backend:
-  name: git-gateway
-  accept_roles:
-    - admin
-    - content
+  name: github
+  repo: Softwire/strawberry-fair
+  branch: sf-64-squash
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -71,6 +70,7 @@ collections:
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: news-overview}
           - {label: Title, name: title, widget: string}
+          - {label: Banner, name: hero, widget: hero}
           - {label: Body, name: body, widget: markdown}
           - {label: Subtitle, name: subtitle, widget: string}
       - file: "frontend/src/pages/calendar.md"
@@ -78,6 +78,7 @@ collections:
         name: "calendar-page"
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: calendar-page}
+          - {label: Banner, name: hero, widget: hero}
           - {label: Body, name: body, widget: markdown}
       - file: "frontend/src/pages/privacy.md"
         label: "Privacy Page"
@@ -86,6 +87,7 @@ collections:
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: about-page}
           - {label: Title, name: title, widget: string}
+          - {label: Banner, name: hero, widget: hero}
           - {label: Subtitle, name: subtitle, widget: string}
           - {label: Image, name: image, widget: image}
           - {label: Body, name: body, widget: markdown}
@@ -94,6 +96,7 @@ collections:
         name: "upcoming-events"
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: upcoming-events}
+          - {label: Banner, name: hero, widget: hero}
           - {label: Body, name: body, widget: markdown}
   - name: "news"
     label: "News Articles"
@@ -104,6 +107,7 @@ collections:
     fields:
       - {label: "Template Key", name: templateKey, widget: hidden, default: news-article}
       - {label: Title, name: title, widget: string}
+      - {label: Banner, name: hero, widget: hero}
       - {label: Author, name: author, widget: string}
       - {label: Image, name: image, widget: image}
       - {label: Body, name: body, widget: markdown}
@@ -118,6 +122,7 @@ collections:
     fields:                                     # you have two events on the same day?
       - {label: "Template Key", name: templateKey, widget: hidden, default: event-info}
       - {label: Title, name: title, widget: string}
+      - {label: Banner, name: hero, widget: hero}
       - {label: Image, name: image, widget: image}
       - {label: Date, name: dateTime, widget: datetime}
       - label: 'Event type(s)'
@@ -138,6 +143,7 @@ collections:
     fields:
       - {label: "Template Key", name: templateKey, widget: hidden, default: about-page}
       - {label: Title, name: title, widget: string}
+      - {label: Banner, name: hero, widget: hero}
       - {label: Subtitle, name: subtitle, widget: string}
       - {label: Image, name: image, widget: image}
       - {label: Body, name: body, widget: markdown}
@@ -149,6 +155,7 @@ collections:
     fields:                                    
       - {label: "Template Key", name: templateKey, widget: hidden, default: form}
       - {label: Title, name: title, widget: string}
+      - {label: Banner, name: hero, widget: hero}
       - {label: Body, name: body, widget: markdown}
       - {label: Form, name: googleForm, widget: string}
 

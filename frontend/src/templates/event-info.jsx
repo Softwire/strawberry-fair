@@ -19,13 +19,13 @@ EventTypeList.propTypes = {
 }
 
 // used by website and CMS previews
-export const EventInfo = ({title, image, dateTime, eventTypes, content, contentComponent}) => {
+export const EventInfo = ({title, image, dateTime, eventTypes, content, contentComponent, heroData}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     const date = new Date(dateTime)
 
     return (
-        <Layout>
+        <Layout heroData={heroData}>
             <section>
                 <h1>{title}</h1>
                 <h2>{date.toLocaleString('en-GB', {timeStyle: 'short'})}</h2>
@@ -51,6 +51,9 @@ export const query = graphql`
 query eventInfoTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
         ...EventFragment
+    }
+    heroData: allMarkdownRemark(filter: {id: {eq: $id}}) {
+        ...HeroFragment
     }
 }
 `

@@ -10,11 +10,11 @@ import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 
 // This is used by the websitesite and for CMS previews
-export const AboutPage = ({title, subtitle, image, content, contentComponent}) => {
+export const AboutPage = ({title, subtitle, image, content, contentComponent, heroData}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     return (
-      <Layout>
+      <Layout heroData={heroData}>
         <section className="section">
           <div className="container">
             <h1 className="title is-1">{title}</h1>
@@ -66,6 +66,9 @@ query aboutPageTemplate($id: String!) {
         }
       }
       html
+    }
+    heroData: allMarkdownRemark(filter: {id: {eq: $id}}) {
+      ...HeroFragment
     }
   }
 `
