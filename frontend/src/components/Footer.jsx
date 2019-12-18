@@ -4,6 +4,9 @@ import { FaFacebook, FaTwitter } from 'react-icons/fa'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import footerPreviewContent from '../data/footerPreviewContent'
 import { PreviewContext } from '../util/context.jsx'
+import remark from 'remark'
+import remarkHtml from 'remark-html'
+import unified from 'unified'
 
 export const Footer = () => (
     <PreviewContext.Consumer>
@@ -14,6 +17,10 @@ export const Footer = () => (
 
 const FooterDisplay = ({isPreview}) => {
     const footerContent = isPreview ? footerPreviewContent : getFooterContent()
+    const markdownAddress = footerContent.markdownRemark.frontmatter.address
+    const markdownPlaceHolderText = footerContent.markdownRemark.frontmatter.placeHolderText
+    const address = remark().use(remarkHtml).processSync(markdownAddress).toString()
+    const placeHolderText = remark().use(remarkHtml).processSync(markdownPlaceHolderText).toString()
     return(
     <footer className="footer">
         <div className="tile is-ancestor">
@@ -22,7 +29,7 @@ const FooterDisplay = ({isPreview}) => {
                     <h3 className="title">
                         Placeholder
                     </h3>
-                    {footerContent.markdownRemark.frontmatter.placeHolderText}
+                    <div dangerouslySetInnerHTML={{ __html: placeHolderText}}/>
                 </div>
             </div>
             <div className="tile is-parent">
@@ -49,7 +56,7 @@ const FooterDisplay = ({isPreview}) => {
                     <h3 className="title">
                         Contact
                     </h3>
-                    {footerContent.markdownRemark.frontmatter.html}<br/><a href={"mailto:" + footerContent.markdownRemark.frontmatter.email}>{footerContent.markdownRemark.frontmatter.email}</a>
+                    <div dangerouslySetInnerHTML={{ __html: address}}/><a href={"mailto:" + footerContent.markdownRemark.frontmatter.email}>{footerContent.markdownRemark.frontmatter.email}</a>
                 </div>
             </div>
         </div>
@@ -74,8 +81,8 @@ function getFooterContent() {
                   twitterAccount
                   placeHolderText
                   copyright
+                  address
                 }
-                html
               }
             }`
           )
