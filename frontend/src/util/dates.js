@@ -5,3 +5,11 @@ export function areSameDay(date1, date2) {
     const yearsMatch = date1.getFullYear() === date2.getFullYear()  // Do the years match?
     return daysMatch && monthsMatch && yearsMatch                   // Then they render to the same day
 }
+
+// Does this date occur on or after the given day?
+export function isOnOrAfterDay(baseDate, testDate) {
+    const afterDay = testDate.getDate() >= baseDate.getDate()
+    const afterMonth = testDate.getMonth() >= baseDate.getMonth()
+    const afterYear = testDate.getFullYear() >= baseDate.getFullYear()
+    return afterDay && afterMonth && afterYear
+}
