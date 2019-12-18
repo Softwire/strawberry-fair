@@ -145,7 +145,7 @@ const NavDropdown = ({title, navItems}) => {
       <a className="navbar-link">
         {title}
       </a>
-      <div className="navbar-dropdown">
+      <div className="navbar-dropdown is-hidden-touch">
         {navItems.map((navItem, index) => <NavItem title={getTitle(navItem.pageTitle)} link={navItem.slug} key={index} />)}
       </div>
     </div>
