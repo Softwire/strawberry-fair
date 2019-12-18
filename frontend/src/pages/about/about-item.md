@@ -1,10 +1,10 @@
 ---
 templateKey: about-page
 title: About Item
-hero:
+heroData:
   heroImages:
-    - src: /img/1-line-logo.png
-    - src: /img/cartoon-tree.jpg
+    - alt: Hello
+      src: /img/gareths-gate-slide.jpg
   isActive: true
 subtitle: this is a subtitle
 image: /img/strawberry_fair.jpg
