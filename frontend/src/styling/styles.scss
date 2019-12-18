@@ -51,9 +51,10 @@ $radius-large: 0px;
     }
 }
 
-.hero-container {
-    position: relative;
-    width: 80vw;
-    height: 30vw;
-    margin: auto;
+.hero {
+    &.has-background {
+        position: relative;
+        overflow: hidden;
+        height: 30vh;
+    }
 }

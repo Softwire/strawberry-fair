@@ -1,9 +1,9 @@
 import React, {useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
-import PreviewCompatibleImage from './PreviewCompatibleImage'
 import { childImageSharpValidator } from './validators'
 import NavBar from './header/NavBar'
+import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 const imageRotationIntervalMillis = 10000
 const imageFadeTimeMills = 2000
@@ -11,16 +11,18 @@ const imageFadeTimeMills = 2000
 export const Header = ({revolvingHero, fixedHero}) => {
     if (revolvingHero) {
         return (
-            <RevolvingHero data={Object.values(revolvingHero)}>
+            <React.Fragment>
                 <NavBar />
-            </RevolvingHero>
+                <RevolvingHero data={Object.values(revolvingHero)} />
+            </React.Fragment>
         )
     }
     else if (fixedHero) {
         return (
-            <FixedHero info={fixedHero}>
+            <React.Fragment>
                 <NavBar />
-            </FixedHero>
+                <FixedHero info={fixedHero} />
+            </React.Fragment>
         )
     }
     else {
@@ -28,7 +30,7 @@ export const Header = ({revolvingHero, fixedHero}) => {
     }
 }
 
-const RevolvingHero = ({data, children}) => {
+const RevolvingHero = ({data}) => {
 
     const [imageNum, setImageNum] = useState(0)
     const [imageArray, setImageArray] = useState(data.map((info, i) => <RevolvingHeroImage info={info} visible={i==0} key={i}/>))
@@ -41,44 +43,39 @@ const RevolvingHero = ({data, children}) => {
     })
 
     return (
-        <section className="hero">
-            <div className="hero-body">
-                {children}
-                <figure className="hero-container">
-                    {imageArray}
-                </figure>
-            </div>
+        <section className="hero has-background">
+            {imageArray}
         </section>
     )
 }
 
 const RevolvingHeroImage = ({info: {src, alt}, visible}) => {
-    
     const style = {
         opacity: (visible ? 1 : 0),
         transition: `opacity ${imageFadeTimeMills/1000}s`,
         position: "absolute",
-        width: "80vw",
-        height:"30vw",
-        objectFit: "cover"
+        objectFit: "cover",
+        width: "100%",
+        height: "100%"
     }
     
-    return (
-        <PreviewCompatibleImage imageInfo={{image: src, alt: alt}}
-                                style={style} />
-    )
+    return <PreviewCompatibleImage imageInfo={{alt: alt, image: src}} style={style} />
 }
 
-const FixedHero = ({info: {src, alt}, children}) => (
-    <section className="hero">
-        <div className="hero-body">
-            {children}
-            <figure className="image">
-                <PreviewCompatibleImage imageInfo={{image: src, alt: alt}} />
-            </figure>
-        </div>
-    </section>
-)
+const FixedHero = ({info: {src, alt}}) => {
+    const style = {
+        position: "absolute",
+        objectFit: "cover",
+        width: "100%",
+        height: "100%"
+    }
+
+    return (
+        <section className="hero has-background">
+            <PreviewCompatibleImage imageInfo={{alt: alt, image: src}} style={style} />
+        </section>
+    )
+}
 
 FixedHero.propTypes = {
     info: PropTypes.shape({
