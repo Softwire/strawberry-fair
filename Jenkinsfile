@@ -18,7 +18,7 @@ node (label: 'linux') {
     ]) {
         try {
             stage('Merge into prod') {
-                sh 'git checkout production'
+                sh 'git checkout -f production'
                 sh 'git merge --no-ff -X theirs origin/master'
             }
 
@@ -67,6 +67,9 @@ node (label: 'linux') {
                         \nMore info at: ${env.BUILD_URL}""",
                     subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}",
                     to: "Team-StrawberryFair@softwire.com"
+            }
+            stage('Clean') {
+                deleteDir()
             }
         }
     } 
