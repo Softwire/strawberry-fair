@@ -2,6 +2,8 @@
 templateKey: about-page
 title: About Item
 hero:
+  heroImages:
+    - src: /img/1-line-logo.png
   isActive: true
 subtitle: this is a subtitle
 image: /img/strawberry_fair.jpg
