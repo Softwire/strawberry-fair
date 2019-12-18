@@ -19,7 +19,7 @@ node (label: 'linux') {
         try {
             stage('Merge into prod') {
                 sh 'git checkout -f production'
-                sh 'git merge --no-ff -X theirs origin/master'
+                sh 'git merge --no-ff -X theirs origin/jenkins-test'
             }
 
             docker.image('node:12.13').inside {
@@ -39,7 +39,7 @@ node (label: 'linux') {
             
             stage('Deploy') {
                 echo 'Tests successful. Deploying to production...'
-                sh 'git push production'
+                //sh 'git push production'
             }
         } catch (e) {
             currentBuild.result = 'FAILED'
@@ -52,21 +52,21 @@ node (label: 'linux') {
                     color = 'GREEN'
                     colorCode = '#00FF00'
                     echo 'Successfully executed!'
-                    notifySlack(colorCode, 'Success! :)', COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)
+                    //notifySlack(colorCode, 'Success! :)', COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)
                 } else {
                     def colorName = 'RED'
                     def colorCode = '#FF0000'
                     echo 'Unsuccessful'
-                    notifySlack(colorCode, '@channel Failure! :(', COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)
+                    //notifySlack(colorCode, '@channel Failure! :(', COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)
                 }
 
                 // Notify via emails
                 currentBuild.result = currentBuild.result ?: 'SUCCESS'
-                emailext body: """${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}.
-                        \n${getCommitInfoMessage(COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)}
-                        \nMore info at: ${env.BUILD_URL}""",
-                    subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}",
-                    to: "Team-StrawberryFair@softwire.com"
+                //emailext body: """${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}.
+                //        \n${getCommitInfoMessage(COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)}
+                //        \nMore info at: ${env.BUILD_URL}""",
+                //    subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}",
+                //    to: "Team-StrawberryFair@softwire.com"
             }
             stage('Clean') {
                 deleteDir()
