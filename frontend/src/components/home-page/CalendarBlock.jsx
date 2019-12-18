@@ -33,10 +33,14 @@ const UpcomingEventsDisplayWithContext = ({isPreview}) => {
   const removeFilter = (filterName) => (
     () => {setFilters(filters.filter(name => name !== filterName))}
   )
+
+  const clearFilters = () => {
+    setFilters([])
+  }
   
   return (
     <React.Fragment>
-      <EventFilterTags allFilters={eventTypeList} activeFilters={filters} addFilter={addFilter} removeFilter={removeFilter}/>
+      <EventFilterTags allFilters={eventTypeList} activeFilters={filters} addFilter={addFilter} removeFilter={removeFilter} clearFilters={clearFilters} />
       <div className="columns is-multiline">
         {filterEvents(events, filters)
           .map(event => (

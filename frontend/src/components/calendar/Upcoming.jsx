@@ -63,6 +63,10 @@ const UpcomingWithContext = ({isPreview}) => {
         () => {setFilters(filters.filter(name => name !== filterName))}  // Set 'filters' to the existing 'filters' array, filtered (confusing) to contain only the elements not matching the given name
     )
 
+    const clearFilters = () => {
+        setFilters([])
+    }
+
     const maxItems = 10
 
     // Construct array of list elements
@@ -71,7 +75,7 @@ const UpcomingWithContext = ({isPreview}) => {
     return (
         <div className="panel">
             <h2 className="panel-heading">Upcoming</h2>
-            <EventFilterBlock allFilters={eventTypeList} activeFilters={filters} addFilter={addFilter} removeFilter={removeFilter} />
+            <EventFilterBlock allFilters={eventTypeList} activeFilters={filters} addFilter={addFilter} removeFilter={removeFilter} clearFilters={clearFilters} />
             {eventPanels.length > 0 ? eventPanels : <NoEventsFoundBlock />}
         </div>
     )

@@ -32,6 +32,10 @@ const CalendarWithContext = ({isPreview}) => {
         () => {setFilters(filters.filter(name => name !== filterName))}  // Set 'filters' to the existing 'filters' array, filtered (confusing) to contain only the elements not matching the given name
     )
 
+    const clearFilters = () => {
+        setFilters([])
+    }
+
     // Calculate the number of days in the given month
     const monthDate = new Date(focusDate.getFullYear(), focusDate.getMonth() + 1, 0)
     const daysInFocusMonth = monthDate.getDate()
@@ -65,7 +69,7 @@ const CalendarWithContext = ({isPreview}) => {
         <div className="panel">
             <h2 className="panel-heading">Calendar</h2>
             <MonthScrubber monthForward={monthForward} monthBack={monthBack} focusDate={focusDate} />
-            <EventFilterBlock allFilters={eventTypeList} activeFilters={filters} addFilter={addFilter} removeFilter={removeFilter} />
+            <EventFilterBlock allFilters={eventTypeList} activeFilters={filters} addFilter={addFilter} removeFilter={removeFilter} clearFilters={clearFilters} />
             <div className="panel-block">
                 <div className="columns is-multiline is-mobile">
                     {days.map(dayNumber => {
