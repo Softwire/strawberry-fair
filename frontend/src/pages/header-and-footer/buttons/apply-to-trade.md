@@ -1,5 +1,5 @@
 ---
 text: Apply To Trade
-link: events
+link: /forms/registration-form
 ---
 
