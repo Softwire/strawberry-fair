@@ -1,4 +1,5 @@
 ---
 text: Get Involved
-link: '/about/about-item'
+link: /events
 ---
+
