@@ -32,54 +32,21 @@ fragment ImageFluid64x64Fragment on MarkdownRemarkFrontmatter {
 }
 `
 
-export const revolvingHeroImageFluidFragment = graphql`
-fragment RevolvingHeroImageFluidFragment on MarkdownRemarkFrontmatterRevolvingHero {
-  image1 {
-    alt
-    src {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-  image2 {
-    alt
-    src {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-  image3 {
-    alt
-    src {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-  image4 {
-    alt
-    src {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-  image5 {
-    alt
-    src {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
+export const HeroFragment = graphql`
+fragment HeroFragment on MarkdownRemarkConnection {
+  nodes {
+    frontmatter {
+      heroData {
+        isActive
+        heroImages {
+          alt
+          src {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }

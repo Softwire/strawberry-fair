@@ -9,11 +9,11 @@ import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 
 // This is used by the websitesite and for CMS previews
-export const AboutPage = ({title, subtitle, image, content, contentComponent, strawberryTiles}) => {
+export const AboutPage = ({title, subtitle, image, content, contentComponent, strawberryTiles, heroData}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     return (
-      <Layout>
+      <Layout heroData={heroData}>
         <section className="section">
           <div className="container">
             <h1 className="title is-1">{title}</h1>
@@ -42,7 +42,8 @@ AboutPage.propTypes = {
   image: PropTypes.object.isRequired,
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.elementType,
-  strawberryTiles: PropTypes.arrayOf(PropTypes.string)
+  strawberryTiles: PropTypes.arrayOf(PropTypes.string),
+  heroData: Layout.propTypes.heroData
 }
 
 export default site(AboutPage)
@@ -63,6 +64,9 @@ query aboutPageTemplate($id: String!) {
         strawberryTiles
       }
       html
+    }
+    heroData: allMarkdownRemark(filter: {id: {eq: $id}}) {
+      ...HeroFragment
     }
   }
 `

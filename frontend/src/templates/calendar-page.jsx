@@ -9,11 +9,11 @@ import { CalendarViewToggle } from '../components/calendar/CalendarViewToggle'
 import { eventPropTypeValidator } from '../components/validators'
 import { HTMLContent } from '../components/Content'
 
-export const CalendarPage = ({content, contentComponent, events}) => {
+export const CalendarPage = ({content, contentComponent, events, heroData}) => {
 const BodyComponent = contentComponent || HTMLContent
 
   return (
-    <Layout>
+    <Layout heroData={heroData}>
       <section>
         <CalendarViewToggle view='calendar' />
         <BodyComponent content={content} />
@@ -30,7 +30,8 @@ CalendarPage.propTypes = {
       PropTypes.shape({
           node: eventPropTypeValidator
       })
-  )
+  ),
+  heroData: Layout.propTypes.heroData
 }
 
 export default site(CalendarPage, data => {return {events: data.allMarkdownRemark.edges}})
@@ -46,6 +47,9 @@ query calendarPageTemplate($id: String!) {
         ...EventFragment
       }
     }
+  }
+  heroData: allMarkdownRemark(filter: {id: {eq: $id}}) {
+    ...HeroFragment
   }
 }
 `
