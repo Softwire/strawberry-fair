@@ -190,13 +190,19 @@ collections:
         name: "get-involved"
         fields:
          - {label: Text, name: text, widget: string}
-         - {label: Link, name: link, widget: link}
+         - label: Link
+           name: link
+           widget: link
+           hint: Choose the path to the page you want this link to point to. Select "<-- Previous Menu" to undo your last selection. Make sure you select a complete path by either making "index" your last selection or by checking that the link is displayed on this widget.
       - file: "frontend/src/pages/header-and-footer/buttons/apply-to-trade.md"
         label: "Apply to Trade"
         name: "apply-to-trade"
         fields:
           - {label: Text, name: text, widget: string}
-          - {label: Link, name: link, widget: link}
+          - label: Link
+            name: link
+            widget: link
+            hint: Choose the path to the page you want this link to point to. Select "<-- Previous Menu" to undo your last selection.  Make sure you select a complete path by either ending your selection with "index" or checking that the link is displayed on this widget.
             
 
   - label: Nav Bar Item
