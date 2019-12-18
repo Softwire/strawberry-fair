@@ -23,6 +23,10 @@ const PreviewCompatibleImage = ({ imageInfo, style }) => {
   if (!!image && typeof image === 'string')
     return <img style={imageStyle} src={image} alt={alt} />
 
+  // Deals with CMS previews for images nested within widgets
+  if (!!image && typeof image === 'object' && image.path)
+    return <img style={imageStyle} src={image.path} alt={alt} />
+
   if (!!imageInfo.value && typeof imageInfo.value === 'string')
     return <img style={imageStyle} src={imageInfo.value} alt={alt} />
 

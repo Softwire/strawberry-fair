@@ -77,7 +77,11 @@ const RevolvingHeroImage = ({info: {src, alt}, visible}) => {
     )
 }
 
-const FixedHero = ({info: {src, alt}, children}) => (
+const FixedHero = ({info: {src, alt}, children}) => {
+    
+    console.log(alt, src)
+    
+    return (
     <section className="hero">
         <div className="hero-body">
             {children}
@@ -86,7 +90,7 @@ const FixedHero = ({info: {src, alt}, children}) => (
             </figure>
         </div>
     </section>
-)
+)}
 
 FixedHero.propTypes = {
     info: accessibleImageValidator,

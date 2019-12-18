@@ -33,7 +33,7 @@ export const HeroFragment = graphql`
 fragment HeroFragment on MarkdownRemarkConnection {
   nodes {
     frontmatter {
-      hero {
+      heroData {
         isActive
         heroImages {
           alt

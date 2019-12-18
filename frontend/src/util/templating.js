@@ -89,8 +89,8 @@ export const site = (component, additionalPropsExtractor = () => {}) => {
                 data.heroData.nodes &&
                 data.heroData.nodes[0] &&
                 data.heroData.nodes[0].frontmatter &&
-                data.heroData.nodes[0].frontmatter.hero) {
-                    new_props.heroData = data.heroData.nodes[0].frontmatter.hero
+                data.heroData.nodes[0].frontmatter.heroData) {
+                    new_props.heroData = data.heroData.nodes[0].frontmatter.heroData
                 }
 
             return component(Object.assign(new_props, additionalPropsExtractor(data)))

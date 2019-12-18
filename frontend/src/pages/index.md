@@ -1,7 +1,7 @@
 ---
 templateKey: home-page
 title: By the people of Cambridge. For the people of Cambridge.
-hero:
+heroData:
   heroImages:
     - alt: Strawberry Fair Banner
       src: /img/gareths-gate-slide.jpg
