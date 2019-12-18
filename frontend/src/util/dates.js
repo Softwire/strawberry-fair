@@ -8,8 +8,5 @@ export function areSameDay(date1, date2) {
 
 // Does this date occur on or after the given day?
 export function isOnOrAfterDay(baseDate, testDate) {
-    const afterDay = testDate.getDate() >= baseDate.getDate()
-    const afterMonth = testDate.getMonth() >= baseDate.getMonth()
-    const afterYear = testDate.getFullYear() >= baseDate.getFullYear()
-    return afterDay && afterMonth && afterYear
+    return testDate.getTime() > baseDate.getTime()
 }
