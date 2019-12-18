@@ -23,10 +23,10 @@ collections:
         name: footer
         fields:
           - {label: Email, name: email, widget: string}
-          - {label: Address, name: body, widget: text}
+          - {label: Address, name: body, widget: markdown}
           - {label: Facebook Account, name: facebookAccount, widget: string}
           - {label: Twitter Account, name: twitterAccount, widget: string}
-          - {label: Place Holder, name: placeHolderText, widget: string}
+          - {label: Place Holder, name: placeHolderText, widget: markdown}
           - {label: Copyright, name: copyright, widget: string}
       - file: "frontend/src/pages/index.md"
         label: "Home Page"
