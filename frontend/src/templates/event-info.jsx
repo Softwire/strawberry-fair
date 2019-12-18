@@ -24,11 +24,20 @@ export const EventInfo = ({title, image, dateTime, eventTypes, content, contentC
 
     const date = new Date(dateTime)
 
+    const displayStyle = {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit"
+    }
+
     return (
         <Layout heroData={heroData}>
             <section>
-                <h1>{title}</h1>
-                <h2>{date.toLocaleString('en-GB', {timeStyle: 'short'})}</h2>
+                <h1 className="title">{title}</h1>
+                <h2 className="subtitle">{date.toLocaleString("en-GB", displayStyle)}</h2>
                 <EventTypeList eventTypes={eventTypes} />
                 <BodyComponent content={content} />
                 <PreviewCompatibleImage imageInfo={image} />
