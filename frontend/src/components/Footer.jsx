@@ -49,7 +49,7 @@ const FooterDisplay = ({isPreview}) => {
                     <h3 className="title">
                         Contact
                     </h3>
-                    {footerContent.markdownRemark.frontmatter.address}<br/><a href={"mailto:" + footerContent.markdownRemark.frontmatter.email}>{footerContent.markdownRemark.frontmatter.email}</a>
+                    {footerContent.markdownRemark.frontmatter.html}<br/><a href={"mailto:" + footerContent.markdownRemark.frontmatter.email}>{footerContent.markdownRemark.frontmatter.email}</a>
                 </div>
             </div>
         </div>
@@ -70,12 +70,12 @@ function getFooterContent() {
               markdownRemark(fileAbsolutePath: { regex: ".*/src/pages/footer.md/"}) {
                 frontmatter {
                   email
-                  address
                   facebookAccount
                   twitterAccount
                   placeHolderText
                   copyright
                 }
+                html
               }
             }`
           )

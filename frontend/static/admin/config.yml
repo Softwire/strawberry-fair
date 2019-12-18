@@ -99,7 +99,7 @@ collections:
         name: footer
         fields:
           - {label: Email, name: email, widget: string}
-          - {label: Adress, name: adress, widget: string}
+          - {label: Address, name: html, widget: text}
           - {label: Facebook Account, name: facebookAccount, widget: string}
           - {label: Twitter Account, name: twitterAccount, widget: string}
           - {label: Place Holder, name: placeHolderText, widget: string}
