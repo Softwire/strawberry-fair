@@ -9,11 +9,11 @@ import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 
 // This is used by the website and for CMS previews
-export const NewsArticle = ({title, author, content, image, date, tags, contentComponent}) => {
+export const NewsArticle = ({title, author, content, image, date, tags, contentComponent, heroData}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     return (
-      <Layout>
+      <Layout heroData={heroData}>
         <section className="section">
           <h1 className="title has-text-primary is-size-1">{title}</h1>
           <figure className="image">
@@ -39,7 +39,8 @@ NewsArticle.propTypes = {
   image: PreviewCompatibleImage.propTypes.imageInfo,
   date: NewsArticleSideInfo.propTypes.date,
   tags: NewsArticleSideInfo.propTypes.tags,
-  contentComponent: PropTypes.elementType
+  contentComponent: PropTypes.elementType,
+  heroData: Layout.propTypes.heroData
 }
 
 export default site(NewsArticle)
@@ -48,6 +49,9 @@ export const query = graphql`
 query newsArticleTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
       ...NewsFragment
+    }
+    heroData: allMarkdownRemark(filter: {id: {eq: $id}}) {
+      ...HeroFragment
     }
   }
 `

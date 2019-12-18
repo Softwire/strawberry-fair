@@ -51,3 +51,12 @@ export const formValidator = PropTypes.shape({
   isPublic: PropTypes.bool,
   link: PropTypes.string
 })
+export const accessibleImageValidator = PropTypes.shape({
+  alt: PropTypes.string,
+  src: PropTypes.oneOfType([
+    PropTypes.string,
+    childImageSharpValidator
+  ])
+})
+
+export const multiImageValidator = PropTypes.arrayOf(accessibleImageValidator)

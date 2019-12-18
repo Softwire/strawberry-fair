@@ -8,11 +8,11 @@ import { FormFrame } from '../components/FormFrame'
 import { site } from '../util/templating'
 
 // This is used by the website and for CMS previews
-export const FormPage = ({title, form, content, contentComponent}) => {
+export const FormPage = ({title, form, content, contentComponent, heroData}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     return (
-      <Layout>
+      <Layout heroData={heroData}>
         <h1 className="title has-text-centered has-text-primary">{title}</h1>
         <BodyComponent content={content} />
         <FormFrame form={form} />
@@ -24,7 +24,8 @@ FormPage.propTypes = {
   title: PropTypes.string.isRequired,
   form: FormFrame.propTypes.form,
   content: PropTypes.string.isRequired,
-  contentComponent: PropTypes.elementType  // Not required
+  contentComponent: PropTypes.elementType,  // Not required
+  heroData: Layout.propTypes.heroData
 }
 
 export default site(FormPage)
@@ -37,6 +38,9 @@ query formPageTemplate($id: String!) {
         ...FormFragment
       }
       html
+    }
+    heroData: allMarkdownRemark(filter: {id: {eq: $id}}) {
+      ...HeroFragment
     }
   }
 `

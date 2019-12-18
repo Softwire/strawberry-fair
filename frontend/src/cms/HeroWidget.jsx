@@ -16,50 +16,41 @@ export class HeroControl extends React.Component {
     }
 
     getFields() {
-        const selectFields = new Map({
-            label: "Mode",
-            name: "mode",
-            options: ["None", "Random Image", "Fixed Image", "Revolving Images"],
-            widget: "select",
-            default: "None"
+        const toggleFields = new Map({
+            label: "Active",
+            name: "isActive",
+            widget: "boolean",
+            default: false
         })
 
-        // Query mode if defined
-        let mode = null
+        let active = null
         if (this.props.value &&
             this.props.value._root &&
             this.props.value._root.entries &&
             Array.isArray(this.props.value._root.entries)) {
-                mode = this.props.value._root.entries.find((el) => Array.isArray(el) && el[0] === "mode")[1] || null
+                for (const el of this.props.value._root.entries) {
+                    if (el[0] == "isActive") {
+                        active = el[1]
+                        break
+                    }
+                }
             }
 
-        if (mode === "Fixed Image") {
+        if (active) {
             return new Map({
                 fields: [
-                    selectFields,
+                    toggleFields,
                     new Map({
-                        label: "Fixed Banner",
-                        name: "fixed-hero",
-                        widget: "accessible-image"
-                    })
-                ]
-            })
-        }
-        else if (mode === "Revolving Images") {
-            return new Map({
-                fields: [
-                    selectFields,
-                    new Map({
-                        label: "Revolving Banner",
-                        name: "revolving-hero",
-                        widget: "multi-image"
+                        label: "Banner Images",
+                        name: "heroImages",
+                        widget: "multiImage"
                     })
                 ]
             })
         }
         else {
             return new Map({
-                field: selectFields
+                field: toggleFields
             })
         }
     }

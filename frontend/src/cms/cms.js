@@ -71,8 +71,8 @@ CMS.registerPreviewTemplate('upcoming-events', preview(UpcomingEvents, {events: 
 CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {events: []}))
 CMS.registerPreviewTemplate('forms', preview(FormPage))
 
-CMS.registerWidget("accessible-image", AccessibleImageControl)
-CMS.registerWidget("multi-image", MultiImageControl)
+CMS.registerWidget("accessibleImage", AccessibleImageControl)
+CMS.registerWidget("multiImage", MultiImageControl)
 CMS.registerWidget("hero", HeroControl)
 CMS.registerWidget('multi-collection-relation', MultiCollectionRelationControl, MultiCollectionRelationPreview)
 CMS.registerWidget("form", FormControl)
