@@ -58,15 +58,14 @@ node (label: 'linux') {
                     def colorCode = '#FF0000'
                     echo 'Unsuccessful'
                     notifySlack(colorCode, '@channel Failure! :(', COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)
-                }
 
-                // Notify via emails
-                currentBuild.result = currentBuild.result ?: 'SUCCESS'
-                emailext body: """${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}.
-                        \n${getCommitInfoMessage(COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)}
-                        \nMore info at: ${env.BUILD_URL}""",
-                    subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}",
-                    to: "Team-StrawberryFair@softwire.com"
+                    // Notify via emails
+                    emailext body: """${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}.
+                            \n${getCommitInfoMessage(COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)}
+                            \nMore info at: ${env.BUILD_URL}""",
+                        subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}",
+                        to: "Team-StrawberryFair@softwire.com"
+                }
             }
             stage('Clean') {
                 deleteDir()
