@@ -1,7 +1,6 @@
 import React, {useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
-import PreviewCompatibleImage from './PreviewCompatibleImage'
 import { multiImageValidator, accessibleImageValidator } from './validators'
 import NavBar from './header/NavBar'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
@@ -14,16 +13,18 @@ export const Header = ({heroData}) => {
         if (heroData.heroImages && heroData.heroImages.length > 0) {
             if (heroData.heroImages.length === 1) {
                 return (
-                    <FixedHero info={heroData.heroImages[0]}>
+                    <React.Fragment>
                         <NavBar />
-                    </FixedHero>
+                        <FixedHero info={heroData.heroImages[0]} />
+                    </React.Fragment>
                 )
             }
             else {
                 return (
-                    <RevolvingHero data={heroData.heroImages}>
+                    <React.Fragment>
                         <NavBar />
-                    </RevolvingHero>
+                        <RevolvingHero data={heroData.heroImages} />
+                    </React.Fragment>
                 )
             }
         }
