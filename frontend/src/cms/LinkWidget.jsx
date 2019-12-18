@@ -7,10 +7,13 @@ import pagePaths from '../data/pagePaths'
 
 const SelectionControl = CMS.getWidget('select').control
 let dropDownItems = getDropDownItems()
-let menuPath = []
 const backOptionText = "<-- Previous Menu"
 
 export class LinkControl extends React.Component {
+  constructor(props) {
+    super(props)
+    this.menuPath = []
+  }
   render() {
     return (
       <div>
@@ -25,14 +28,14 @@ export class LinkControl extends React.Component {
 
   handleSelectionChange(value) {
       if (value === backOptionText) {
-        menuPath.pop()
+        this.menuPath.pop()
         this.props.onChange("")
       }
       else {
         const valueList = value.split("/")
-        if(valueList[valueList.length-1] !== "index") menuPath.push(valueList[valueList.length-1])
+        if(valueList[valueList.length-1] !== "index") this.menuPath.push(valueList[valueList.length-1])
         //we couldn't assign value directly to this.props.value since it could contain "index". Instead we build this.props.value from the menuPath.
-        menuPath.length === 0 ? this.props.onChange("/") : this.props.onChange("/" + menuPath.join("/"))
+        this.menuPath.length === 0 ? this.props.onChange("/") : this.props.onChange("/" + this.menuPath.join("/"))
         //this line is needed to update menuPath, otherwise making the same selection twice will not call the getFields() function, since react doesn't update the component
         this.getFields()
       }
@@ -44,14 +47,14 @@ export class LinkControl extends React.Component {
 
   getListOfMenuOptions() {
     let dropDownItemsList = new List(Object.keys(this.getDropDownItemsFromMenuPath()))
-    const prefix = menuPath.length === 0 ? "/" : "/" + menuPath.join("/") + "/"
+    const prefix = this.menuPath.length === 0 ? "/" : "/" + this.menuPath.join("/") + "/"
     dropDownItemsList = dropDownItemsList.map(element => prefix + element)
     return dropDownItemsList.concat(new List([backOptionText]))
   }
 
   getDropDownItemsFromMenuPath() {
-    if(menuPath.length === 0) return dropDownItems
-    else return this.getObjectFromList(menuPath, dropDownItems)
+    if(this.menuPath.length === 0) return dropDownItems
+    else return this.getObjectFromList(this.menuPath, dropDownItems)
   }
 
   getObjectFromList(list, inputObject) {
@@ -60,13 +63,13 @@ export class LinkControl extends React.Component {
         const nextObject = inputObject[list[0]]
         const nextObjectKeys = Object.keys(nextObject)
         if(nextObjectKeys.length === 1 && nextObjectKeys[0] === "index" ){
-          menuPath.pop()
+          this.menuPath.pop()
           return inputObject
         } 
         else return inputObject[list[0]]
       }
       else {
-        return this.getObjectFromList(menuPath.slice(0, menuPath.length-1), dropDownItems)
+        return this.getObjectFromList(this.menuPath.slice(0, this.menuPath.length-1), dropDownItems)
       }
     }
     else return this.getObjectFromList(list.slice(1), inputObject[list[0]])
