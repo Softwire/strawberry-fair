@@ -30,8 +30,14 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
         const dataProps = entry.getIn(['data']).toJS()
         const previewProps = {}
 
-        previewProps.content = widgetFor('body')
-        previewProps.contentComponent = Content
+        // Check to see if the component has a 'content' field by probing its propTypes
+        if (component.propTypes.content) {
+            previewProps.content = widgetFor('body')
+        }
+
+        if (component.propTypes.contentComponent) {
+            previewProps.contentComponent = Content
+        }
 
         Object.assign(previewProps, additionalPropsExtractor(dataProps, { widgetsFor }))
 
