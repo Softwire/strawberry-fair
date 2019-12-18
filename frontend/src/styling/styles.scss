@@ -39,13 +39,16 @@ $radius-large: 0px;
 #root-layout {
     padding-top: 60px;
 }
-//these lines solve the bug where the dopdrown menus of the navbar don't show on edge
-.navbar-dropdown{
-    display: block;
-}
 
-.navbar-dropdown.is-hidden-touch{
-    display: none;
+// Allows navbar dropdowns to work in Edge
+@include desktop {
+    .navbar-item {
+        &.is-hoverable:hover {
+            .navbar-dropdown {
+                display: block;
+            }
+        }
+    }
 }
 
 .hero-container {

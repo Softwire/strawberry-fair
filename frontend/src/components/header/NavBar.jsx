@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import OutsideClickHandler from 'react-outside-click-handler'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 
 import PreviewCompatibleImage from '../PreviewCompatibleImage'
@@ -37,7 +36,7 @@ const NavBarDisplay = ({isPreview}) => {
 
   return (
       <header>
-        <nav className="navbar is-fixed-top">
+        <nav className="navbar">
           <div className="navbar-brand">
             <Link className="navbar-item" to="/">
               <PreviewCompatibleImage imageInfo={{ alt: "Strawberry Fair Logo", image: "/img/1-line-logo.png" }} />
@@ -109,11 +108,11 @@ const NavBurger = ({target, active, setState}) => (
 const getClassName = (baseName, toggleName, active) => `${baseName} ${active ? toggleName : ""}`
 
 const NavMenu = ({active, navBarLinks}) => (
-  <ul id="navigationBar" className={getClassName("navbar-menu", "is-active", active)}>
+  <div id="navigationBar" className={getClassName("navbar-menu", "is-active", active)}>
     <div className="navbar-start">
       {navBarLinks.map(generateNavBarTabs)}
     </div>
-  </ul>
+  </div>
 )
 
 const generateNavBarTabs = (tab, tabIndex) => {
@@ -134,43 +133,31 @@ const generateNavBarTabs = (tab, tabIndex) => {
 
 const NavTab = ({title, link}) => {
   return (
-    <li className="navbar-item has-dropdown">
-      <Link to={link}>
-        <button className="button" >
-          {title}
-        </button>
-      </Link>
-    </li>
+    <Link to={link} className="navbar-item">
+      {title}
+    </Link>
   )
 }
 
 const NavDropdown = ({title, navItems}) => {
-  const [active, setState] = useState(false)
-
   return (
-    <li className={getClassName("navbar-item has-dropdown", "is-active", active)}>
-      <div className="dropdown">
-        <div className="dropdown-trigger">
-          <OutsideClickHandler onOutsideClick={() => setState(false)}>
-            <button className="button" onClick={() => setState(!active)}>
-              {title}
-            </button>
-          </OutsideClickHandler>
-        </div>
-        <ul className={getClassName("navbar-dropdown", "is-hidden-touch", !active)}>
-          {navItems.map((navItem, index) => <NavItem title={getTitle(navItem.pageTitle)} link={navItem.slug} key={index} />)}
-        </ul>
+    <div className="navbar-item has-dropdown is-hoverable">
+      <a className="navbar-link">
+        {title}
+      </a>
+      <div className="navbar-dropdown">
+        {navItems.map((navItem, index) => <NavItem title={getTitle(navItem.pageTitle)} link={navItem.slug} key={index} />)}
       </div>
-    </li>
+    </div>
   )
 }
 
 const NavItem = ({ title, link }) => (
-  <li className="navbar-item">
+  <div className="navbar-item">
     <Link to={link} className="dropdown-item">
       {title}
     </Link>
-  </li>
+  </div>
 )
 
 NavItem.propTypes = {
