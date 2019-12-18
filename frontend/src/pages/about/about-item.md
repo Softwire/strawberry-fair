@@ -1,6 +1,8 @@
 ---
-templateKey: 'about-page'
+templateKey: about-page
 title: About Item
+hero:
+  isActive: true
 subtitle: this is a subtitle
 image: /img/strawberry_fair.jpg
 ---
