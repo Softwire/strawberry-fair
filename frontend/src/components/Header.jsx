@@ -36,10 +36,15 @@ const RevolvingHero = ({data}) => {
     const [imageArray, setImageArray] = useState(data.map((info, i) => <RevolvingHeroImage info={info} visible={i==0} key={i}/>))
 
     useEffect(() => {
-        setTimeout(() => {
+        const timeoutVar = setTimeout(() => {
             setImageNum((imageNum + 1) % data.length)
             setImageArray(data.map((info, i) => <RevolvingHeroImage info={info} visible={i==imageNum} key={i}/>))
         }, imageRotationIntervalMillis)
+
+        // Clean up on unmount
+        return () => {
+            clearTimeout(timeoutVar)
+        }
     })
 
     return (
