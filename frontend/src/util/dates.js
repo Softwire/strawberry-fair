@@ -7,6 +7,15 @@ export function areSameDay(date1, date2) {
 }
 
 // Does this date occur on or after the given day?
+// Even if an event took place "earlier today", it will still show up
 export function isOnOrAfterDay(baseDate, testDate) {
-    return testDate.getTime() > baseDate.getTime()
+    const basePureDate = toPureDate(baseDate)
+    const testPureDate = toPureDate(testDate)
+
+    return testPureDate.getTime() >= basePureDate.getTime()
+}
+
+// Removes the time part of a Date
+function toPureDate(dateTime) {
+    return new Date(dateTime.getFullYear(), dateTime.getMonth(), dateTime.getDate())
 }
