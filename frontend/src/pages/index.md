@@ -12,7 +12,6 @@ heroData:
     - alt: Strawberry Fair entrance
       src: /img/slide-gate-2017.jpg
   isActive: true
-image: /img/cartoon-tree.jpg
 contentBlocks:
   - _markdown_contentBody: >-
       **asdasdasd**

@@ -1,7 +1,6 @@
 ---
 templateKey: about-page
 title: Full width content page
-image: /img/strawberry_fair.jpg
 subtitle: It's your festival
 ---
 # H1 Curabitur gravida quam eget leo lacinia egestas. Morbi pharetra ut quam vitae luctus
