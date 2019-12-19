@@ -2,7 +2,8 @@
 templateKey: about-page
 title: About Item
 accimage:
-  alt: hhh
+  alt: ''
+  src: /img/1-line-logo.png
 heroData:
   heroImages:
     - src: /img/gareths-gate-slide.jpg
