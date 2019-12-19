@@ -140,12 +140,15 @@ const NavTab = ({title, link}) => {
 }
 
 const NavDropdown = ({title, navItems}) => {
+  // Is the dropdown showing on mobile?
+  const [ active, setActive ] = useState(false)
+
   return (
-    <div className="navbar-item has-dropdown is-hoverable">
+    <div className="navbar-item has-dropdown is-hoverable" onClick={() => setActive(!active)}>
       <a className="navbar-link">
         {title}
       </a>
-      <div className="navbar-dropdown is-hidden-touch">
+      <div className={`navbar-dropdown ${active ? "" : "is-hidden-touch"}`}>
         {navItems.map((navItem, index) => <NavItem title={getTitle(navItem.pageTitle)} link={navItem.slug} key={index} />)}
       </div>
     </div>
