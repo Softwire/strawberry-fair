@@ -1,12 +1,12 @@
 import React from 'react'
 import CMS from 'netlify-cms-app'
 import { Map, List } from 'immutable'
-import { getPagePathTreeObject, getSubTreeObject } from '../util/data-parser.js'
+import { getPageTreeObject, getSubTree } from '../util/data-parser.js'
 
 // Following https://www.netlify.com/blog/2017/06/20/extending-netlify-cms-part-one-custom-widgets/
 
 const SelectionControl = CMS.getWidget('select').control
-let pagePathTreeObject = getPagePathTreeObject()
+let pageTreeObject = getPageTreeObject()
 const backOption = "<-- Previous Menu"
 
 export class LinkControl extends React.Component {
@@ -54,9 +54,9 @@ export class LinkControl extends React.Component {
   }
 
   getMenuOptionsObject() {
-    if(this.selectedOptionsHistory.length === 0) return pagePathTreeObject
+    if(this.selectedOptionsHistory.length === 0) return pageTreeObject
     else {
-    const [ menuOptionsObject, updatedOptionsHistory] = getSubTreeObject(this.selectedOptionsHistory, pagePathTreeObject, "index")
+    const [ menuOptionsObject, updatedOptionsHistory] = getSubTree(this.selectedOptionsHistory, pageTreeObject, "index")
     this.selectedOptionsHistory = updatedOptionsHistory
     return menuOptionsObject
     }
