@@ -1,0 +1,23 @@
+{
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSfoV9wrbfUBP286FyJgGBONTzyOjr6_a3riLWcMS13oYRK3LQ/formResponse",
+    "method": "POST",
+    "headers": {
+        "content-type": "application/x-www-form-urlencoded"
+    },
+    "mode": "no-cors",
+    "referrerPolicy": "no-referrer-when-downgrade",
+    "fields": {
+        "name": {
+            "label": "Your name",
+            "key": "entry.222775737"
+        },
+        "email": {
+            "label": "Your email",
+            "key": "entry.943351010"
+        },
+        "message": {
+            "label": "Your message",
+            "key": "entry.750036952"
+        }
+    }
+}

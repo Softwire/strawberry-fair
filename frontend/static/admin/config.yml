@@ -84,13 +84,19 @@ collections:
       - file: "frontend/src/pages/privacy.md"
         label: "Privacy Page"
         name: "privacy-page"
-        create: true
         fields:
-          - {label: "Template Key", name: templateKey, widget: hidden, default: about-page}
+          - {label: Template Key, name: templateKey, widget: hidden, default: about-page}
           - {label: Title, name: title, widget: string}
           - {label: Banner, name: heroData, widget: hero}
           - {label: Subtitle, name: subtitle, widget: string}
           - {label: Image, name: image, widget: image}
+          - {label: Body, name: body, widget: markdown}
+      - file: frontend/src/pages/contact.md
+        label: Contact Page
+        name: contact-page
+        fields:
+          - {label: Template Key, name: templateKey, widget: hidden, default: about-page}
+          - {label: Title, name: title, widget: string}
           - {label: Body, name: body, widget: markdown}
       - file: "frontend/src/pages/events/index.md"
         label: "Upcoming Events"
