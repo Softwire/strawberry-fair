@@ -50,13 +50,6 @@ query newsOverviewTemplate($id: String!) {
       frontmatter {
         title
         subtitle
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
       }
       html
     }

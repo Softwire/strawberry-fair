@@ -2,7 +2,6 @@
 templateKey: 'about-page'
 title: Cookie & Privacy Policies
 subtitle: 
-image:
 ---
 
 # This is H1

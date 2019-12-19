@@ -9,7 +9,7 @@ import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 
 // This is used by the websitesite and for CMS previews
-export const AboutPage = ({title, subtitle, image, content, contentComponent, strawberryTiles, heroData}) => {
+export const AboutPage = ({title, subtitle, content, contentComponent, strawberryTiles, heroData}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     return (
@@ -18,9 +18,6 @@ export const AboutPage = ({title, subtitle, image, content, contentComponent, st
           <div className="container">
             <h1 className="title is-1">{title}</h1>
             <h2 className="subtitle">{subtitle}</h2>
-            <figure>
-              <PreviewCompatibleImage imageInfo={image} />
-            </figure>
           </div>
         </section>
         <section className="section">
@@ -54,13 +51,6 @@ query aboutPageTemplate($id: String!) {
       frontmatter {
         title
         subtitle
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
         strawberryTiles
       }
       html

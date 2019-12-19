@@ -2,7 +2,6 @@
 templateKey: about-page
 title: About Item
 subtitle: this is a subtitle
-image: /img/strawberry_fair.jpg
 strawberryTiles:
   - >-
     Arma virumque canō, Trōiae quī prīmus ab ōrīs Ītaliam, fātō profugus,

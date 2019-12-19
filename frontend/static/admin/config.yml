@@ -13,52 +13,56 @@ media_folder: /frontend/static/img
 public_folder: /img
 publish_mode: editorial_workflow
 
-anchors:
+
+definitions:
   - &key {label: Template Key, name: templateKey, widget: hidden}
   - &title {label: Title, name: title, widget: string}
-  - &subtitle {label: Subtitle, name: subtitle, widget: string}
+  - &subtitle {label: Subtitle, name: subtitle, widget: string, required: false}
   - &hero {label: Banner, name: heroData, widget: hero}
   - &body {label: Body, name: body, widget: markdown}
-  - &image {label: Image, name: image, widget: accessibleImage}
+  - &placeholderBody {label: Body, name: body, widget: hidden, default: "placeholder"}
+  - &newsImage {label: Image, name: image, widget: image}
+  - &eventImage {label: Image, name: image, widget: image}
   - &form {label: Form, name: form, widget: form}
   - &author {label: Author, name: author, widget: string}
   - &date {label: Date, name: date, widget: datetime, format: YYYY-MM-DD, dateFormat: YYYY-MM-DD, timeFormat: false}
   - &dateTime {label: Date, name: dateTime, widget: datetime}
-  - &strawberryTiles {label: Strawberry Tiles, name: strawberryTiles, widget: strawberryTiles}
+  - &strawberryTiles {label: Strawberry Tiles, name: strawberryTiles, widget: strawberryTiles, required: false}
   - &tags {label: Tags, name: tags, widget: list, default: ["news"]}
+  - &menuTitle {label: Menu Title, name: title, widget: string}
   - contentBlock: &contentBlock
-      label: Content-Blocks
+      label: Content Blocks
       name: contentBlocks
       widget: list
       fields:
-        - {label: Content-Title, name: contentTitle, widget: string}
-        - {label: Content-Subtitle, name: contentSubtitle, widget: string}
-        - {label: Scrapbook-Images, name: scrapbookImages, widget: list, field: {label: ScrapbookImage, name: scrapbookImage, widget: image}}
-        - {label: Content-Body, name: _markdown_contentBody, widget: markdown}
-        - {label: Side-Snippet, name: sideSnippet, widget: string}
+        - {label: Content Title, name: contentTitle, widget: string}
+        - {label: Content Subtitle, name: contentSubtitle, widget: string}
+        - {label: Scrapbook Images, name: scrapbookImages, widget: list, field: {label: Scrapbook Image, name: scrapbookImage, widget: image}}
+        - {label: Content Body, name: _markdown_contentBody, widget: markdown}
+        - {label: Side Snippet, name: sideSnippet, widget: string}
   - calendarBlock: &calendarBlock
-      label: Calendar-Block
+      label: Calendar Block
       name: calendarBlock
       widget: object
       fields: 
-        - {label: Calendar-Title, name: title, widget: string}
-        - {label: Calendar-Subtitle, name: subtitle, widget: string}
+        - {label: Calendar Title, name: title, widget: string}
+        - {label: Calendar Subtitle, name: subtitle, widget: string}
   - newsBlock: &newsBlock
-      label: News-Block
+      label: News Block
       name: newsBlock
       widget: object
       fields: 
-        - {label: News-Title, name: title, widget: string}
-        - {label: News-Subtitle, name: subtitle, widget: string}
+        - {label: News Title, name: title, widget: string}
+        - {label: News Subtitle, name: subtitle, widget: string}
   - twitterBlock: &twitterBlock
-      label: Twitter-Block
+      label: Twitter Block
       name: twitterBlock
       widget: object
       fields: 
-        - {label: Twitter-Title, name: title, widget: string}
-        - {label: Twitter-Subtitle, name: subtitle, widget: string}
+        - {label: Twitter Title, name: title, widget: string}
+        - {label: Twitter Subtitle, name: subtitle, widget: string}
   - eventTypes: &eventTypes
-      label: 'Event type(s)'
+      label: 'Event Type(s)'
       name: eventTypes
       widget: select
       options:
@@ -92,31 +96,30 @@ collections:
         name: "home"
         fields:
           - {<<: *key, default: home-page}
-          - {<<: *body, widget: hidden, default: "placeholder"}
           - *title
           - *subtitle
           - *hero
-          - *image
           - *contentBlock
           - *calendarBlock
           - *newsBlock
           - *twitterBlock
+          - *placeholderBody
       - file: "frontend/src/pages/news/index.md"
         label: "News Home"
         name: "news-home"
         fields:
           - {<<: *key, default: news-overview}
           - *title
+          - *subtitle
           - *hero
           - *body
-          - *subtitle
       - file: "frontend/src/pages/calendar.md"
         label: "Calendar Page"
         name: "calendar-page"
         fields:
           - {<<: *key, default: calendar-page}
           - *hero
-          - *body
+          - *placeholderBody
       - file: "frontend/src/pages/privacy.md"
         label: "Privacy Page"
         name: "privacy-page"
@@ -133,7 +136,7 @@ collections:
         fields:
           - {<<: *key, default: upcoming-events}
           - *hero
-          - *body
+          - *placeholderBody
   - name: "news"
     label: "News Articles"
     folder: "frontend/src/pages/news/"
@@ -147,7 +150,7 @@ collections:
       - *subtitle
       - *hero
       - *body
-      - *image
+      - *newsImage
       - *date
       - *tags
   - name: "events"
@@ -162,7 +165,7 @@ collections:
       - *subtitle
       - *hero
       - *body
-      - *image
+      - *eventImage
       - *dateTime
       - *eventTypes
   - name: "about"
@@ -173,8 +176,8 @@ collections:
     fields:
       - {<<: *key, default: about-page}
       - *title
-      - *hero
       - *subtitle
+      - *hero
       - *body
       - *strawberryTiles
   - name: "forms"
@@ -185,6 +188,7 @@ collections:
     fields:                                    
       - {<<: *key, default: form}
       - *title
+      - *subtitle
       - *hero
       - *body
       - *form
@@ -192,5 +196,5 @@ collections:
     name: navbar
     folder: frontend/src/pages/navbar/
     fields:
-      - *title
+      - *menuTitle
       - *pageTitles
