@@ -28,7 +28,8 @@ const placeholderArticle = {
         image: {
           image: '/img/strawberry.jpg'
         },
-        title: 'Placeholder'
+        title: 'Placeholder',
+        date: '2017-12-04'
       }
     }
 }
