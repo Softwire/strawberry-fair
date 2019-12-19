@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
@@ -8,6 +8,7 @@ import { EventMediaBlock } from '../calendar/Upcoming'
 import { EventFilterTags, filterEvents } from '../calendar/EventFilter'
 import { eventTypeList } from '../calendar/EventType'
 import { PreviewContext } from '../../util/context'
+import { useFilters } from '../../util/filters'
 
 const CalendarBlock = ({calendarBlock}) => (
   <BaseBlock block={calendarBlock} altBackground={true}>
@@ -22,23 +23,15 @@ const UpcomingEventsDisplay = () => (
 )
 
 const UpcomingEventsDisplayWithContext = ({isPreview}) => {
-  const [filters, setFilters] = useState([])  // Filter events by type
+  const filterProps = useFilters(eventTypeList)
 
   const events = isPreview ? [] : getEventList()
-
-  const addFilter = (filterName) => (
-    () => {setFilters(filters.concat(filterName))}
-  )
-
-  const removeFilter = (filterName) => (
-    () => {setFilters(filters.filter(name => name !== filterName))}
-  )
   
   return (
     <React.Fragment>
-      <EventFilterTags allFilters={eventTypeList} activeFilters={filters} addFilter={addFilter} removeFilter={removeFilter}/>
+      <EventFilterTags filterProps={filterProps} />
       <div className="columns is-multiline">
-        {filterEvents(events, filters)
+        {filterEvents(events, filterProps.activeFilters)
           .map(event => (
             <div className="column is-half" key={event.fields.slug}>
               <div className="box">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
@@ -8,6 +8,7 @@ import { EventFilterBlock, filterEvents } from './EventFilter'
 import { eventTypeList } from './EventType'
 import { getEventList } from './getEventList'
 import { PreviewContext } from '../../util/context'
+import { useFilters } from '../../util/filters'
 
 export const EventMediaBlock = ({event}) => (
     <div className="media">
@@ -50,28 +51,20 @@ export const Upcoming = () => (
 )
 
 const UpcomingWithContext = ({isPreview}) => {
-    const [filters, setFilters] = useState([])  // Filter events by type
+    const filterProps = useFilters(eventTypeList)
 
     // Get list of events
     const events = isPreview ? [] : getEventList()
 
-    const addFilter = (filterName) => (
-        () => {setFilters(filters.concat(filterName))}  // Gotta love functional programming
-    )
-
-    const removeFilter = (filterName) => (
-        () => {setFilters(filters.filter(name => name !== filterName))}  // Set 'filters' to the existing 'filters' array, filtered (confusing) to contain only the elements not matching the given name
-    )
-
     const maxItems = 10
 
     // Construct array of list elements
-    let eventPanels = filterEvents(events, filters).slice(0, maxItems).map(event => <EventPanelBlock key={event.frontmatter.title} event={event} />)
+    let eventPanels = filterEvents(events, filterProps.activeFilters).slice(0, maxItems).map(event => <EventPanelBlock key={event.frontmatter.title} event={event} />)
 
     return (
         <div className="panel">
             <h2 className="panel-heading">Upcoming</h2>
-            <EventFilterBlock allFilters={eventTypeList} activeFilters={filters} addFilter={addFilter} removeFilter={removeFilter} />
+            <EventFilterBlock filterProps={filterProps} />
             {eventPanels.length > 0 ? eventPanels : <NoEventsFoundBlock />}
         </div>
     )
