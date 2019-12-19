@@ -1,6 +1,7 @@
 import React from 'react'
 import CMS from 'netlify-cms-app'
 import { Map } from 'immutable'
+import { queryObjectChild } from './queryNestedWidgets'
 
 
 const ObjectControl = CMS.getWidget("object").control
@@ -22,21 +23,8 @@ export class HeroControl extends React.Component {
             widget: "boolean",
             default: false
         })
-
-        let active = null
-        if (this.props.value &&
-            this.props.value._root &&
-            this.props.value._root.entries &&
-            Array.isArray(this.props.value._root.entries)) {
-                for (const el of this.props.value._root.entries) {
-                    if (el[0] == "isActive") {
-                        active = el[1]
-                        break
-                    }
-                }
-            }
-
-        if (active) {
+        
+        if (queryObjectChild(this.props.value, "isActive")) {
             return new Map({
                 fields: [
                     toggleFields,
