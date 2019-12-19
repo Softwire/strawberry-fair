@@ -113,4 +113,3 @@ twitterBlock:
   subtitle: Stay in the loop
     
 ---
-placeholder

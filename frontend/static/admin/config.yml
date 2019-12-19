@@ -69,7 +69,6 @@ collections:
                 fields:
                   - {label: Description, name: alt, widget: string}
                   - {label: Image, name: src, widget: image}
-          - {label: Body, name: body, widget: markdown}
           - label: Content-Blocks
             name: contentBlocks
             widget: list

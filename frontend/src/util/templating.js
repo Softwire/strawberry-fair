@@ -30,14 +30,14 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
         const dataProps = entry.getIn(['data']).toJS()
         const previewProps = {}
 
-        // Check to see if the component has a 'content' field by probing its propTypes
-        if (component.propTypes.content) {
+        try {
             previewProps.content = widgetFor('body')
+        } catch (error) {
+            // This means our markdown file doesn't have a body
+            previewProps.content = ""
         }
-
-        if (component.propTypes.contentComponent) {
-            previewProps.contentComponent = Content
-        }
+        
+        previewProps.contentComponent = Content
 
         Object.assign(previewProps, additionalPropsExtractor(dataProps, { widgetsFor }))
 
