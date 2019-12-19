@@ -11,31 +11,31 @@ const imageFadeTimeMills = 2000
 export const Header = ({revolvingHero, fixedHero, children}) => {
     if (revolvingHero) {
         return (
-            <div>
+            <React.Fragment>
                 <RevolvingHero data={Object.values(revolvingHero)}>
                     <NavBar />
                 </RevolvingHero>
                 {children}
-            </div>
+            </React.Fragment>
             
         )
     }
     else if (fixedHero) {
         return (
-            <div>
+            <React.Fragment>
                 <FixedHero info={fixedHero}>
                     <NavBar />
                 </FixedHero>
                 {children}
-            </div>
+            </React.Fragment>
         )
     }
     else {
         return (
-            <div>
+            <React.Fragment>
                 <NavBar />
                 {children}
-            </div>
+            </React.Fragment>
         )
     }
 }
