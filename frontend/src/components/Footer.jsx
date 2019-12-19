@@ -1,7 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { IconContext } from 'react-icons'
+import { FaFacebook, FaTwitter } from 'react-icons/fa'
 
-import PreviewCompatibleImage from './PreviewCompatibleImage'
 import { Link } from "gatsby"
 
 
@@ -21,8 +21,16 @@ export const Footer = () => (
                         Follow
                     </h3>
                     <div className="tile is-parent">
-                        <Social href="https://www.facebook.com/strawberryfair" image="img/facebook-logo.png" alt="Facebook" />
-                        <Social href="https://twitter.com/strawberry_fair" image="img/twitter-logo.png" alt="Twitter" />
+                        <a className="icon is-large" href="https://www.facebook.com/strawberryfair">
+                            <IconContext.Provider value={{size: "2em"}}>
+                                <FaFacebook />
+                            </IconContext.Provider>
+                        </a>
+                        <a className="icon is-large" href="https://twitter.com/strawberry_fair">
+                            <IconContext.Provider value={{size: "2em"}}>
+                                <FaTwitter />
+                            </IconContext.Provider>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -44,17 +52,3 @@ export const Footer = () => (
         </div>
     </footer>
 )
-
-const Social = ({href, image, alt}) => (
-    <div className="tile is-child">
-        <a href={href} className="image is-48x48">
-            <PreviewCompatibleImage imageInfo={{image: image, alt: alt}} />
-        </a>
-    </div>
-)
-
-Social.propTypes = {
-    href: PropTypes.string,
-    image: PropTypes.string,
-    alt: PropTypes.string
-}
