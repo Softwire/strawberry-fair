@@ -128,3 +128,10 @@ Behind the scenes, Netlify editorial actions automatically perform git actions a
 To run unit tests, use: `npm run test:unit`.
 To run end-to-end tests, use: `npm run test:e2e`.
 To run all tests, use `npm run test`.
+
+## Other details
+
+### Contact form submission
+At present, our contact form is linked to the google forms page of one of the strawberry fair dev team members.
+
+You can view the [responses](https://docs.google.com/spreadsheets/d/12WFJgdrbU3uuVsoKjwkTZZoXQzxMclwNHiSUEt75COY/edit?usp=sharing) or the [form](https://docs.google.com/forms/d/1YMmo2-upSKsRMEq8Vo5zJ_9S4gRGnFpfXvwUMRTRazo/edit?usp=sharing), but do not change the form itself without prior permission.
