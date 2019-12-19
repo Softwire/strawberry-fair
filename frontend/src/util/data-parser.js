@@ -1,6 +1,6 @@
 import pagePaths from '../data/pagePaths'
 
-export function getDropDownItems() {
+export function getPagePathTreeObject() {
     const dropDownItemsList = []
     pagePaths.pagePaths.forEach(path => {
       path = path.split("/").filter(element => element !== "")
@@ -27,3 +27,20 @@ function insertPathToObject(path, object) {
     else object["index"] = "/"
     return object
 }
+
+export function getSubTreeObject(routeThroughTree, treeObject, endBranchKey, originalRouteThroughTree = routeThroughTree) {
+    const chosenBranchKey = routeThroughTree[0]
+    if(routeThroughTree.length === 1) {
+      if(chosenBranchKey !== endBranchKey) {
+        const subTree = treeObject[chosenBranchKey]
+        const subTreeBranchKeys = Object.keys(subTree)
+        if(subTreeBranchKeys.length === 1 && subTreeBranchKeys[0] === endBranchKey ){
+          originalRouteThroughTree.pop()
+          return [treeObject, originalRouteThroughTree]
+        } 
+        else return [treeObject[chosenBranchKey], originalRouteThroughTree]
+      }
+      else return this.getSubTreeObject(originalRouteThroughTree.slice(0, originalRouteThroughTree.length-1), treeObject, endBranchKey, originalRouteThroughTree)
+    }
+    else return this.getSubTreeObject(routeThroughTree.slice(1), treeObject[chosenBranchKey], endBranchKey, originalRouteThroughTree)
+  }
