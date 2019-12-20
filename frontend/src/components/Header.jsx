@@ -40,6 +40,14 @@ export const Header = ({heroData, children}) => {
             )
         }
     }
+    else {
+        return (
+            <React.Fragment>
+                <NavBar />
+                {children}
+            </React.Fragment>
+        )
+    }
 }
 
 const RevolvingHero = ({data}) => {
