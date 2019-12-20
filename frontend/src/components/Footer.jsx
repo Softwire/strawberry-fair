@@ -21,12 +21,12 @@ export const Footer = () => (
                         Follow
                     </h3>
                     <div className="tile is-parent">
-                        <a className="icon is-large facebook" href="https://www.facebook.com/strawberryfair">
+                        <a className="icon is-large facebook-colour" href="https://www.facebook.com/strawberryfair">
                             <IconContext.Provider value={{size: "2em"}}>
                                 <FaFacebook />
                             </IconContext.Provider>
                         </a>
-                        <a className="icon is-large twitter" href="https://twitter.com/strawberry_fair">
+                        <a className="icon is-large twitter-colour" href="https://twitter.com/strawberry_fair">
                             <IconContext.Provider value={{size: "2em"}}>
                                 <FaTwitter />
                             </IconContext.Provider>
