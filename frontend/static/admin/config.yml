@@ -20,47 +20,47 @@ definitions:
   - &title {label: Title, name: title, widget: string}
   - &subtitle {label: Subtitle, name: subtitle, widget: string, required: false}
   - &hero {label: Banner, name: heroData, widget: hero}
-  - &body {label: Body, name: body, widget: markdown}
-  - &newsImage {label: Image, name: image, widget: image}
-  - &eventImage {label: Image, name: image, widget: image}
+  - &body {label: Main Content, name: body, widget: markdown}
+  - &newsImage {label: Primary Image, name: image, widget: image, hint: This image will also be used as a preview image for the article}
+  - &eventImage {label: Event Image, name: image, widget: image, hint: This image will also be used as a preview image for the event}
   - &form {label: Form, name: form, widget: form}
   - &author {label: Author, name: author, widget: string}
   - &date {label: Date, name: date, widget: datetime, format: YYYY-MM-DD, dateFormat: YYYY-MM-DD, timeFormat: false}
-  - &dateTime {label: Date, name: dateTime, widget: datetime}
+  - &dateTime {label: Start Time, name: dateTime, widget: datetime}
   - &strawberryTiles {label: Strawberry Tiles, name: strawberryTiles, widget: strawberryTiles, required: false}
   - &tags {label: Tags, name: tags, widget: list, default: ["news"]}
-  - &menuTitle {label: Menu Title, name: title, widget: string}
+  - &menuTitle {label: NavBar Tab Title, name: title, widget: string}
   - contentBlock: &contentBlock
       label: Content Blocks
       name: contentBlocks
       widget: list
       fields:
-        - {label: Content Title, name: contentTitle, widget: string}
-        - {label: Content Subtitle, name: contentSubtitle, widget: string}
+        - {label: Content Block Title, name: contentTitle, widget: string}
+        - {label: Content Block Subtitle, name: contentSubtitle, widget: string}
         - {label: Scrapbook Images, name: scrapbookImages, widget: list, field: {label: Scrapbook Image, name: scrapbookImage, widget: image}}
-        - {label: Content Body, name: _markdown_contentBody, widget: markdown}
-        - {label: Side Snippet, name: sideSnippet, widget: string}
+        - {label: Content Block Body, name: _markdown_contentBody, widget: markdown}
+        - {label: Strawberry Tile, name: sideSnippet, widget: string}
   - calendarBlock: &calendarBlock
       label: Calendar Block
       name: calendarBlock
       widget: object
       fields: 
-        - {label: Calendar Title, name: title, widget: string}
-        - {label: Calendar Subtitle, name: subtitle, widget: string}
+        - {label: Calendar Block Title, name: title, widget: string}
+        - {label: Calendar Block Subtitle, name: subtitle, widget: string}
   - newsBlock: &newsBlock
       label: News Block
       name: newsBlock
       widget: object
       fields: 
-        - {label: News Title, name: title, widget: string}
-        - {label: News Subtitle, name: subtitle, widget: string}
+        - {label: News Block Title, name: title, widget: string}
+        - {label: News Block Subtitle, name: subtitle, widget: string}
   - twitterBlock: &twitterBlock
       label: Twitter Block
       name: twitterBlock
       widget: object
       fields: 
-        - {label: Twitter Title, name: title, widget: string}
-        - {label: Twitter Subtitle, name: subtitle, widget: string}
+        - {label: Twitter Block Title, name: title, widget: string}
+        - {label: Twitter Block Subtitle, name: subtitle, widget: string}
   - eventTypes: &eventTypes
       label: 'Event Type(s)'
       name: eventTypes
@@ -150,13 +150,13 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {<<: *key, default: news-article}
-      - *author
       - *title
       - *subtitle
       - *hero
-      - *body
-      - *newsImage
+      - *author
       - *date
+      - *newsImage
+      - *body
       - *tags
   - name: "events"
     label: "Events"
@@ -169,9 +169,9 @@ collections:
       - *title
       - *subtitle
       - *hero
-      - *body
-      - *eventImage
       - *dateTime
+      - *eventImage
+      - *body
       - *eventTypes
   - name: "about"
     label: "About"

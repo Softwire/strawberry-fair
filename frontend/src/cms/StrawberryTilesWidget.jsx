@@ -8,13 +8,14 @@ const ListControl = CMS.getWidget("list").control
 export class StrawberryTilesControl extends React.Component {
     render() {
         const field = new Map({
-            label: "Tile",
+            label: "Tiles",
             name: "tile",
             field: new Map({
                 label: "Text",
                 name: "text",
                 widget: "string",
-                pattern: ["[\s\S]{0,200}", "200 characters max"]
+                pattern: ["[\s\S]{0,200}", "200 characters max"],
+                hint: "200 characters max"
             })
         })
 
