@@ -8,11 +8,18 @@ import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 
 // List of types shown near top of event
-const EventTypeList = ({eventTypes}) => (
-    <div className="tags">
-        {eventTypes.map(eventType => <span key={eventType} className="tag">{eventType}</span>)}
-    </div>
-)
+const EventTypeList = ({eventTypes}) => {
+    if (eventTypes) {
+        return (
+            <div className="tags">
+                {eventTypes.map(eventType => <span key={eventType} className="tag">{eventType}</span>)}
+            </div>
+        )
+    } else {
+        return null
+    }
+}
+
 
 EventTypeList.propTypes = {
     eventTypes: PropTypes.arrayOf(PropTypes.string)

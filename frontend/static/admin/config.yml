@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  branch: production
   accept_roles:
     - admin
     - content
@@ -19,7 +20,7 @@ definitions:
   - &key {label: Template Key, name: templateKey, widget: hidden}
   - &title {label: Title, name: title, widget: string}
   - &subtitle {label: Subtitle, name: subtitle, widget: string, required: false}
-  - &hero {label: Banner, name: heroData, widget: hero}
+  - &hero {label: Banner, name: heroData, widget: hero, required: false}
   - &body {label: Main Content, name: body, widget: markdown}
   - &newsImage {label: Primary Image, name: image, widget: image, hint: This image will also be used as a preview image for the article}
   - &eventImage {label: Event Image, name: image, widget: image, hint: This image will also be used as a preview image for the event}
@@ -29,14 +30,14 @@ definitions:
   - &dateTime {label: Start Time, name: dateTime, widget: datetime}
   - &strawberryTiles {label: Strawberry Tiles, name: strawberryTiles, widget: strawberryTiles, required: false}
   - &tags {label: Tags, name: tags, widget: list, default: ["news"]}
-  - &menuTitle {label: NavBar Tab Title, name: title, widget: string}
+  - &menuTitle {label: NavBar Dropdown Title, name: title, widget: string}
   - contentBlock: &contentBlock
       label: Content Blocks
       name: contentBlocks
       widget: list
       fields:
-        - {label: Content Block Title, name: contentTitle, widget: string}
-        - {label: Content Block Subtitle, name: contentSubtitle, widget: string}
+        - {label: Content Block Title, name: title, widget: string}
+        - {label: Content Block Subtitle, name: subtitle, widget: string}
         - {label: Scrapbook Images, name: scrapbookImages, widget: list, field: {label: Scrapbook Image, name: scrapbookImage, widget: image}}
         - {label: Content Block Body, name: _markdown_contentBody, widget: markdown}
         - {label: Strawberry Tile, name: sideSnippet, widget: string}
@@ -197,9 +198,11 @@ collections:
       - *hero
       - *body
       - *form
-  - label: Nav Bar Item
+  - label: Site Navigation
     name: navbar
     folder: frontend/src/pages/navbar/
+    description: Customise which pages appear in each dropdown menu in the Navigation Bar
+    summary: "Dropdown: {{title}}"
     fields:
       - *menuTitle
       - *pageTitles

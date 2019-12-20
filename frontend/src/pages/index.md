@@ -1,6 +1,7 @@
 ---
 templateKey: home-page
 title: By the people of Cambridge. For the people of Cambridge.
+subtitle: The Strawberry Fair is a lot of fun.
 heroData:
   heroImages:
     - alt: Strawberry Fair Banner
@@ -40,6 +41,8 @@ contentBlocks:
       dolore 
 
       eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+    subtitle: B
+    title: A
     scrapbookImages:
       - /img/love-a-fair.jpg
       - /img/test-pic.png
@@ -49,10 +52,6 @@ contentBlocks:
     sideSnippet: >-
       Next year's festival is happening on June 6th 2020. We'll be announcing
       the theme later in the year
-    subtitle: >-
-      Welcome to Cambridge's most popular event. We're free, we're
-      volunteer-led, and we've been going for over 40 years.
-    title: Welcome to StrawberryFair!
   - _markdown_contentBody: >-
       adsfadsfasdf
 
@@ -83,6 +82,8 @@ contentBlocks:
       dolore 
 
       eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+    contentSubtitle: B
+    contentTitle: A
     scrapbookImages:
       - /img/love-a-fair.jpg
       - /img/test-pic.png
@@ -90,17 +91,14 @@ contentBlocks:
       - /img/test-pic.png
       - /img/love-a-fair.jpg
     sideSnippet: 'For more details, contact email us here or on our Facebook page'
-    subtitle: >-
-      If you can't wait to get involved, why not come along to the next
-      Strawberry Fair Green Team Meeting on Saturday 14th September?
-    title: Join the Green Team!
 calendarBlock:
-  subtitle: The next committee meetings are listed below and will be held at...
   title: Strawberry Fair committee meetings
+  subtitle: The next committee meetings are listed below and will be held at...
 newsBlock:
-  subtitle: Stay in the loop
   title: Our news
-twitterBlock:
   subtitle: Stay in the loop
+twitterBlock:
   title: Join the conversation
+  subtitle: Stay in the loop
 ---
+

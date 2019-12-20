@@ -38,8 +38,9 @@ node (label: 'linux') {
             }
             
             stage('Deploy') {
-                echo 'Tests successful. Deploying to production...'
-                sh 'git push origin HEAD:production'
+                echo 'Tests sucessful. Deploying to production is disabled.'
+                //echo 'Tests successful. Deploying to production...'
+                //sh 'git push origin HEAD:production'
             }
         } catch (e) {
             currentBuild.result = 'FAILED'
@@ -57,7 +58,7 @@ node (label: 'linux') {
                     def colorName = 'RED'
                     def colorCode = '#FF0000'
                     echo 'Unsuccessful'
-                    notifySlack(colorCode, '@channel Failure! :(', COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)
+                    notifySlack(colorCode, '@here Failure! :(', COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)
 
                     // Notify via emails
                     emailext body: """${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}.
