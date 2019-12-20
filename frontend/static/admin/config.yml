@@ -29,7 +29,7 @@ definitions:
   - &dateTime {label: Start Time, name: dateTime, widget: datetime}
   - &strawberryTiles {label: Strawberry Tiles, name: strawberryTiles, widget: strawberryTiles, required: false}
   - &tags {label: Tags, name: tags, widget: list, default: ["news"]}
-  - &menuTitle {label: NavBar Tab Title, name: title, widget: string}
+  - &menuTitle {label: NavBar Dropdown Title, name: title, widget: string}
   - contentBlock: &contentBlock
       label: Content Blocks
       name: contentBlocks
@@ -197,9 +197,11 @@ collections:
       - *hero
       - *body
       - *form
-  - label: Nav Bar Item
+  - label: Site Navigation
     name: navbar
     folder: frontend/src/pages/navbar/
+    description: Customise which pages appear in each dropdown menu in the Navigation Bar
+    summary: "Dropdown: {{title}}"
     fields:
       - *menuTitle
       - *pageTitles
