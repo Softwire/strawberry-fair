@@ -58,7 +58,7 @@ node (label: 'linux') {
                     def colorName = 'RED'
                     def colorCode = '#FF0000'
                     echo 'Unsuccessful'
-                    notifySlack(colorCode, '@channel Failure! :(', COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)
+                    notifySlack(colorCode, '@here Failure! :(', COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)
 
                     // Notify via emails
                     emailext body: """${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}.
