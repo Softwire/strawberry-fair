@@ -20,7 +20,6 @@ definitions:
   - &subtitle {label: Subtitle, name: subtitle, widget: string, required: false}
   - &hero {label: Banner, name: heroData, widget: hero}
   - &body {label: Body, name: body, widget: markdown}
-  - &placeholderBody {label: Body, name: body, widget: hidden, default: "placeholder"}
   - &newsImage {label: Image, name: image, widget: image}
   - &eventImage {label: Image, name: image, widget: image}
   - &form {label: Form, name: form, widget: form}
@@ -103,7 +102,6 @@ collections:
           - *calendarBlock
           - *newsBlock
           - *twitterBlock
-          - *placeholderBody
       - file: "frontend/src/pages/news/index.md"
         label: "News Home"
         name: "news-home"
@@ -119,7 +117,6 @@ collections:
         fields:
           - {<<: *key, default: calendar-page}
           - *hero
-          - *placeholderBody
       - file: "frontend/src/pages/privacy.md"
         label: "Privacy Page"
         name: "privacy-page"
@@ -136,7 +133,6 @@ collections:
         fields:
           - {<<: *key, default: upcoming-events}
           - *hero
-          - *placeholderBody
   - name: "news"
     label: "News Articles"
     folder: "frontend/src/pages/news/"
