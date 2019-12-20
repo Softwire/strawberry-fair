@@ -5,6 +5,8 @@ const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 //imports a js script that generates pages for monthly and yearly news
 const newsGenerator = require('./src/scripts/news-generator')
+//imports a js script that generates a json file with all the page paths on the website.
+const savePagePaths = require('./src/scripts/save-page-paths')
 
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
   const result = await graphql(`
@@ -47,6 +49,8 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     })
   })
   await newsGenerator.NewsInTimeIntervalGenerator({ actions: { createPage }, graphql })
+
+  await savePagePaths.savePagePathsToFile({ actions: graphql })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

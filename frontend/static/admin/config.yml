@@ -31,6 +31,8 @@ definitions:
   - &strawberryTiles {label: Strawberry Tiles, name: strawberryTiles, widget: strawberryTiles, required: false}
   - &tags {label: Tags, name: tags, widget: list, default: ["news"]}
   - &menuTitle {label: NavBar Dropdown Title, name: title, widget: string}
+  - &internalLink {label: Link, name: link, widget: link, hint: Choose the path to the page you want this link to point to. Select "<-- Previous Menu" to undo your last selection.  Make sure you select a complete path by either ending your selection with "index" or checking that the link is displayed on this widget.}
+  - &text {label: Text, name: text, widget: string}
   - contentBlock: &contentBlock
       label: Content Blocks
       name: contentBlocks
@@ -198,6 +200,21 @@ collections:
       - *hero
       - *body
       - *form
+  - name: "header-and-footer"
+    label: "Header And Footer"
+    files:
+      - file: "frontend/src/pages/header-and-footer/buttons/get-involved.md"
+        label: "Get Involved"
+        name: "get-involved"
+        fields:
+          - *text
+          - *internalLink
+      - file: "frontend/src/pages/header-and-footer/buttons/apply-to-trade.md"
+        label: "Apply to Trade"
+        name: "apply-to-trade"
+        fields:
+          - *text
+          - *internalLink
   - label: Site Navigation
     name: navbar
     folder: frontend/src/pages/navbar/

@@ -13,6 +13,10 @@ $subtitle-color: $secondary;
 $radius-small: 0px;
 $radius: 0px;
 $radius-large: 0px;
+// is-secondary doesn't produce any effect without this
+$custom-colors: ( 
+    "secondary": $secondary
+);
 
 $navbar-padding-vertical: 0;
 $navbar-padding-horizontal: 0;

@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import { Header } from './Header'
 import { Footer } from './Footer'
+import HeaderButtons from './headerButtons'
 import '../styling/styles.scss'
 
 
@@ -10,7 +10,9 @@ import '../styling/styles.scss'
 
 export const Layout = ({children, heroData}) => (
     <div id = "root-layout" className="container">
-        <Header heroData={heroData} />
+        <Header heroData={heroData}>
+            <HeaderButtons/>
+        </Header>
         <main>{children}</main>
         <Footer />
     </div>
@@ -20,3 +22,4 @@ Layout.propTypes = {
     children: PropTypes.node,
     heroData: Header.propTypes.heroData
 }
+
