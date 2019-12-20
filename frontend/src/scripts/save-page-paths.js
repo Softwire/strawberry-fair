@@ -23,9 +23,8 @@ exports.savePagePathsToFile = async({ actions: graphql }) => {
     let json = JSON.stringify(obj)
     fs.writeFile('./src/data/pagePaths.json',json,'utf-8', function(error) {
       if(error) {
-        return console.log(error)
+        throw error
       }
-      console.log("pagePaths.json saved successfully.")
     })
   }
   
