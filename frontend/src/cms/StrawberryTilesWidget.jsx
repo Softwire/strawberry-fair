@@ -8,7 +8,7 @@ const ListControl = CMS.getWidget("list").control
 export class StrawberryTilesControl extends React.Component {
     render() {
         const field = new Map({
-            label: "Tile",
+            label: "Tiles",
             name: "tile",
             field: new Map({
                 label: "Text",

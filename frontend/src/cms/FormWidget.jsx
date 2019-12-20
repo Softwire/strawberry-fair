@@ -10,12 +10,12 @@ export class FormControl extends React.Component {
         const fields = new Map({
             fields: [
                 new Map({
-                    label: "Display form on live site?",
+                    label: "Display form",
                     name: "isPublic",
                     widget: "boolean"
                 }),
                 new Map({
-                    label: "Google Form iFrame",
+                    label: "Google Form Embed HTML",
                     name: "link",
                     widget: "string"
                 }),
