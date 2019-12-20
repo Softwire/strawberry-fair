@@ -104,4 +104,3 @@ twitterBlock:
   subtitle: Stay in the loop
   title: Join the conversation
 ---
-placeholder
