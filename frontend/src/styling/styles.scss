@@ -57,11 +57,20 @@ $radius-large: 0px;
 }
 
 // Social media link colours
-a {
+a:link, a:visited {
     &.facebook-colour {
         color: #3b5999;
     }
     &.twitter-colour {
         color: #55acee;
+    }
+}
+
+a:hover, a:active {
+    &.facebook-colour {
+        color: #2e467a;
+    }
+    &.twitter-colour {
+        color: #4890c7;
     }
 }
