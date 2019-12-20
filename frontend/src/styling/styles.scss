@@ -14,6 +14,9 @@ $radius-small: 0px;
 $radius: 0px;
 $radius-large: 0px;
 
+$navbar-padding-vertical: 0;
+$navbar-padding-horizontal: 0;
+
 /* Bulma provides default styling (can be imported in separate modules as required) */
 @import "bulma";
 
@@ -52,5 +55,12 @@ $radius-large: 0px;
         position: relative;
         overflow: hidden;
         height: 30vh;
+    }
+}
+
+// Remove padding in navbar dropdowns
+.navbar-dropdown {
+    .navbar-item {
+        padding: 0;
     }
 }
