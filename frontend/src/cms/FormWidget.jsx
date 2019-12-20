@@ -17,7 +17,8 @@ export class FormControl extends React.Component {
                 new Map({
                     label: "Google Form Embed HTML",
                     name: "link",
-                    widget: "string"
+                    widget: "string",
+                    hint: "Copy and paste Embed HTML from your Google Form"
                 }),
             ]
         })
