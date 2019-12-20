@@ -30,7 +30,13 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
         const dataProps = entry.getIn(['data']).toJS()
         const previewProps = {}
 
-        previewProps.content = widgetFor('body')
+        try {
+            previewProps.content = widgetFor('body')
+        } catch (error) {
+            // This means our markdown file doesn't have a body
+            previewProps.content = ""
+        }
+        
         previewProps.contentComponent = Content
 
         Object.assign(previewProps, additionalPropsExtractor(dataProps, { widgetsFor }))
