@@ -41,8 +41,8 @@ contentBlocks:
       dolore 
 
       eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-    contentSubtitle: B
-    contentTitle: A
+    subtitle: B
+    title: A
     scrapbookImages:
       - /img/love-a-fair.jpg
       - /img/test-pic.png

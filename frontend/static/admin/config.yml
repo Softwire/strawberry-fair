@@ -35,8 +35,8 @@ definitions:
       name: contentBlocks
       widget: list
       fields:
-        - {label: Content Block Title, name: contentTitle, widget: string}
-        - {label: Content Block Subtitle, name: contentSubtitle, widget: string}
+        - {label: Content Block Title, name: title, widget: string}
+        - {label: Content Block Subtitle, name: subtitle, widget: string}
         - {label: Scrapbook Images, name: scrapbookImages, widget: list, field: {label: Scrapbook Image, name: scrapbookImage, widget: image}}
         - {label: Content Block Body, name: _markdown_contentBody, widget: markdown}
         - {label: Strawberry Tile, name: sideSnippet, widget: string}

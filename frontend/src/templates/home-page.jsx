@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import { HeroFragment } from '../util/graphql-fragments'
 
 import { HTMLContent } from '../components/Content'
 import { Layout } from '../components/Layout'
