@@ -47,7 +47,7 @@
     "build": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "lint": "eslint src",
+    "lint": "eslint --ext js,jsx src",
     "test:unit": "jest",
     "test": "npm run test:unit"
   },
