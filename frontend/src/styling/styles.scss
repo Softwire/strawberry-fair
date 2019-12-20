@@ -64,3 +64,24 @@ $navbar-padding-horizontal: 0;
         padding: 0;
     }
 }
+
+// Social media link colours
+// Taken from https://www.materialui.co/socialcolors
+a:link, a:visited {
+    &.facebook-colour {
+        color: #3b5999;
+    }
+    &.twitter-colour {
+        color: #55acee;
+    }
+}
+
+// Same colours as above, darkened slightly
+a:hover, a:active {
+    &.facebook-colour {
+        color: #2e467a;
+    }
+    &.twitter-colour {
+        color: #4890c7;
+    }
+}
