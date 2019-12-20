@@ -40,7 +40,7 @@ const NavBarDisplay = ({isPreview}) => {
 
   // Function to collapse all child dropdowns
   const collapseAll = () => {
-    setDropdownsActive(navBarLinks.fill(false))
+    setDropdownsActive(dropdownsActive.fill(false))
   }
 
   return (
