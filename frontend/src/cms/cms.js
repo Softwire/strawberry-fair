@@ -11,6 +11,7 @@ import { UpcomingEvents } from '../templates/upcoming-events'
 import { CalendarPage } from '../templates/calendar-page'
 import { ContactPage } from '../templates/contact-page'
 import { FormPage } from '../templates/form'
+import { FooterPreview } from '../templates/footer-preview'
 
 import { AccessibleImageControl } from './AccessibleImageWidget'
 import { MultiImageControl } from './MultiImageWidget'
@@ -74,6 +75,7 @@ CMS.registerPreviewTemplate('upcoming-events', preview(UpcomingEvents, {events: 
 CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {events: []}))
 CMS.registerPreviewTemplate('contact-page', preview(ContactPage))
 CMS.registerPreviewTemplate('forms', preview(FormPage))
+CMS.registerPreviewTemplate('footer', preview(FooterPreview))
 
 CMS.registerWidget("accessibleImage", AccessibleImageControl)
 CMS.registerWidget("multiImage", MultiImageControl)

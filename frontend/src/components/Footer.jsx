@@ -6,6 +6,7 @@ import footerPreviewContent from '../data/footerPreviewContent'
 import { PreviewContext } from '../util/context.jsx'
 import remark from 'remark'
 import remarkHtml from 'remark-html'
+import { HTMLContentSmall } from './Content'
 
 export const Footer = () => (
     <PreviewContext.Consumer>
@@ -28,7 +29,7 @@ const FooterDisplay = ({isPreview}) => {
                     <h3 className="title">
                         Placeholder
                     </h3>
-                    <div dangerouslySetInnerHTML={{ __html: placeHolderText}}/>
+                    <HTMLContentSmall content={placeHolderText}/>
                 </div>
             </div>
             <div className="tile is-parent">
@@ -55,7 +56,7 @@ const FooterDisplay = ({isPreview}) => {
                     <h3 className="title">
                         Contact
                     </h3>
-                    <div dangerouslySetInnerHTML={{ __html: address}}/><a href={"mailto:" + footerContent.markdownRemark.frontmatter.email}>{footerContent.markdownRemark.frontmatter.email}</a>
+                    <HTMLContentSmall content={address}/><a href={"mailto:" + footerContent.markdownRemark.frontmatter.email}>{footerContent.markdownRemark.frontmatter.email}</a>
                 </div>
             </div>
         </div>
