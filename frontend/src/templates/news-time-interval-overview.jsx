@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby'
 import { HTMLContent } from '../components/Content'
 import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
-import {NewsMenu, monthName} from '../components/NewsMenu.jsx'
+import NewsMenu, { monthName } from '../components/NewsMenu.jsx'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 // This is used by the website and for CMS previews
