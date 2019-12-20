@@ -1,7 +1,8 @@
 backend:
-  name: github
-  repo: Softwire/strawberry-fair
-  branch: sf-60-rebase
+  name: git-gateway
+  accept_roles:
+    - admin
+    - content
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -198,9 +199,8 @@ collections:
       - *hero
       - *body
       - *form
-  - name: "Header and Footer"
-    label: "headerAndFooter"
-    folder: "frontend/src/pages/header-and-footer/"
+  - name: "header-and-footer"
+    label: "Header And Footer"
     files:
       - file: "frontend/src/pages/header-and-footer/buttons/get-involved.md"
         label: "Get Involved"
