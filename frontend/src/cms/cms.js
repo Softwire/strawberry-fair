@@ -10,6 +10,7 @@ import { AboutPage } from '../templates/about-page'
 import { UpcomingEvents } from '../templates/upcoming-events'
 import { CalendarPage } from '../templates/calendar-page'
 import { FormPage } from '../templates/form'
+import { FooterPreview } from '../templates/footer-preview'
 
 import { AccessibleImageControl } from './AccessibleImageWidget'
 import { MultiImageControl } from './MultiImageWidget'
@@ -69,6 +70,7 @@ CMS.registerPreviewTemplate('news-home', preview(NewsOverview, {newsArticles: pl
 CMS.registerPreviewTemplate('upcoming-events', preview(UpcomingEvents, {events: placeholderEvents}))
 CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {events: []}))
 CMS.registerPreviewTemplate('forms', preview(FormPage))
+CMS.registerPreviewTemplate('footer', preview(FooterPreview))
 
 CMS.registerWidget("accessible-image", AccessibleImageControl)
 CMS.registerWidget("multi-image", MultiImageControl)
