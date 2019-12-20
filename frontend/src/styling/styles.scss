@@ -57,6 +57,7 @@ $radius-large: 0px;
 }
 
 // Social media link colours
+// Taken from https://www.materialui.co/socialcolors
 a:link, a:visited {
     &.facebook-colour {
         color: #3b5999;
@@ -66,6 +67,7 @@ a:link, a:visited {
     }
 }
 
+// Same colours as above, darkened slightly
 a:hover, a:active {
     &.facebook-colour {
         color: #2e467a;
