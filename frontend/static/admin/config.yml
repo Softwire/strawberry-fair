@@ -150,13 +150,13 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {<<: *key, default: news-article}
-      - *author
       - *title
       - *subtitle
       - *hero
-      - *body
-      - *newsImage
+      - *author
       - *date
+      - *newsImage
+      - *body
       - *tags
   - name: "events"
     label: "Events"
@@ -169,9 +169,9 @@ collections:
       - *title
       - *subtitle
       - *hero
-      - *body
-      - *eventImage
       - *dateTime
+      - *eventImage
+      - *body
       - *eventTypes
   - name: "about"
     label: "About"
