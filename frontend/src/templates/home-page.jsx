@@ -15,7 +15,6 @@ import { site } from '../util/templating'
 // This is used by the website and for CMS previews
 export const HomePage = ({title, contentBlocks, contentBlocksHtml, calendarBlock, newsBlock, newsArticles, twitterBlock, contentComponent, heroData}) => {
     const BodyComponent = contentComponent || HTMLContent
-
     return (
       <Layout heroData={heroData}>
         <section>
@@ -49,10 +48,10 @@ HomePage.propTypes = {
   heroData: Layout.propTypes.heroData
 }
 
-const additionalPropsExtractor = graphqlData => ({
-  contentBlocksHtml: graphqlData.markdownRemark.fields.contentBlocksHtml,
-  newsArticles: graphqlData.newsData.edges
-})
+const additionalPropsExtractor = graphqlData => {
+  let contentBlocksHtml = graphqlData.markdownRemark.fields.contentBlocks.map(object => object["_html_contentBody"])
+  return {contentBlocksHtml: contentBlocksHtml, newsArticles: graphqlData.allMarkdownRemark.edges}
+}
 
 export default site(HomePage, additionalPropsExtractor)
 
@@ -88,7 +87,9 @@ query homePageTemplate($id: String!) {
         }
       }
       fields {
-        contentBlocksHtml
+        contentBlocks {
+          _html_contentBody
+        }
       }
       html
     }
