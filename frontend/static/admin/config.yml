@@ -1,9 +1,7 @@
 backend:
-  name: git-gateway
-  branch: production
-  accept_roles:
-    - admin
-    - content
+  name: github
+  repo: Softwire/strawberry-fair
+  branch: SF-76-cloudinary
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -11,7 +9,11 @@ backend:
     uploadMedia: Netlify CMS - Upload “{{path}}”
     deleteMedia: Netlify CMS - Delete “{{path}}”
 
-media_folder: /frontend/static/img
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: dnw7w3cag
+    api_key: 172319718235941
 public_folder: /img
 publish_mode: editorial_workflow
 
