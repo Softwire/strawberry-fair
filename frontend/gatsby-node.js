@@ -1,10 +1,9 @@
 const path = require('path')
-const remark = require('remark')
-const remarkHtml = require('remark-html')
 const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 //imports a js script that generates pages for monthly and yearly news
 const newsGenerator = require('./src/scripts/news-generator')
+const markdownToHtmlConverter = require('./src/scripts/markdownToHtmlConverter')
 
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
   const result = await graphql(`
@@ -54,30 +53,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   fmImagesToRelative(node) // convert image paths for gatsby images
 
   if (node.internal.type === `MarkdownRemark`) {
-    addHtmlConvertedMarkdownField(node, createNodeField)
+    markdownToHtmlConverter.addHtmlConvertedMarkdownFields(node, createNodeField)
 
     const value = createFilePath({ node, getNode })
     createNodeField({
       name: `slug`,
       node,
       value,
-    })
-  }
-}
-
-// Currently this only works for the Content Blocks in the homepage!
-const addHtmlConvertedMarkdownField = (node, createNodeField) => {
-  if(node.frontmatter && node.frontmatter.contentBlocks) {
-    const convertedHtmls = node.frontmatter.contentBlocks.map(block => remark()
-        .use(remarkHtml)
-        .processSync(block._markdown_contentBody)
-        .toString()
-      )
-
-    createNodeField({
-      name: `contentBlocksHtml`,
-      node,
-      value: convertedHtmls,
     })
   }
 }

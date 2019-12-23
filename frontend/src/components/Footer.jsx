@@ -4,8 +4,6 @@ import PreviewCompatibleImage from './PreviewCompatibleImage'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import footerPreviewContent from '../data/footerPreviewContent'
 import { PreviewContext } from '../util/context.jsx'
-import remark from 'remark'
-import remarkHtml from 'remark-html'
 import { HTMLContentSmall } from './Content'
 
 export const Footer = () => (
@@ -17,9 +15,6 @@ export const Footer = () => (
 
 const FooterDisplay = ({isPreview}) => {
     const footerContent = isPreview ? footerPreviewContent : getFooterContent()
-    //these lines convert markdown text to html
-    const address = remark().use(remarkHtml).processSync(footerContent.markdownRemark.frontmatter.address).toString()
-    const placeHolderText = remark().use(remarkHtml).processSync(footerContent.markdownRemark.frontmatter.placeHolderText).toString()
     
     return(
     <footer className="footer">
@@ -29,7 +24,7 @@ const FooterDisplay = ({isPreview}) => {
                     <h3 className="title">
                         Placeholder
                     </h3>
-                    <HTMLContentSmall content={placeHolderText}/>
+                    <HTMLContentSmall content={footerContent.markdownRemark.fields._html_PlaceHolderText}/>
                 </div>
             </div>
             <div className="tile is-parent">
@@ -48,7 +43,7 @@ const FooterDisplay = ({isPreview}) => {
                     <h3 className="title">
                         Contact
                     </h3>
-                    <HTMLContentSmall content={address}/><a href={"mailto:" + footerContent.markdownRemark.frontmatter.email}>{footerContent.markdownRemark.frontmatter.email}</a>
+                    <HTMLContentSmall content={footerContent.markdownRemark.fields._html_Address}/><a href={"mailto:" + footerContent.markdownRemark.frontmatter.email}>{footerContent.markdownRemark.frontmatter.email}</a>
                 </div>
             </div>
         </div>
@@ -85,9 +80,11 @@ function getFooterContent() {
                   email
                   facebookAccount
                   twitterAccount
-                  placeHolderText
                   copyright
-                  address
+                }
+                fields {
+                    _html_PlaceHolderText
+                    _html_Address
                 }
               }
             }`
