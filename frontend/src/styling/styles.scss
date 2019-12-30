@@ -21,6 +21,8 @@ $custom-colors: (
 $navbar-padding-vertical: 0;
 $navbar-padding-horizontal: 0;
 
+$section-padding: 0 1.5rem;
+
 /* Bulma provides default styling (can be imported in separate modules as required) */
 @import "bulma";
 
@@ -88,4 +90,9 @@ a:hover, a:active {
     &.twitter-colour {
         color: #4890c7;
     }
+}
+
+// Padding after title and subtitle
+.titles {
+    padding-bottom: 1.5rem;
 }

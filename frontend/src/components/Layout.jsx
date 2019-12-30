@@ -10,15 +10,15 @@ import '../styling/styles.scss'
 /* All page templates should be wrapped in the Layout component to provide common styling */
 
 export const Layout = ({children, heroData, title, subtitle}) => (
-    <div id = "root-layout" className="container">
-        <Header heroData={heroData}>
-            <HeaderButtons/>
-        </Header>
-        <main>
+    <div id="root-layout" className="section">
+        <div className="container">
+            <Header heroData={heroData}>
+                <HeaderButtons/>
+            </Header>
             <Titles title={title} subtitle={subtitle} />
             {children}
-        </main>
-        <Footer />
+            <Footer />
+        </div>
     </div>
 )
 

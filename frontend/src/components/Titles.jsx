@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 // https://www.w3.org/TR/html52/common-idioms-without-dedicated-elements.html#subheadings-subtitles-alternative-titles-and-taglines
 export const Titles = ({title, subtitle}) => {
   return (
-    <div>
+    <div className="titles">
       <h1 className="title">{title}</h1>
       <p className="subtitle">{subtitle}</p>
     </div>

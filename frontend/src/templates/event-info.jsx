@@ -41,14 +41,10 @@ export const EventInfo = ({title, image, dateTime, eventTypes, content, contentC
     }
 
     return (
-        <Layout heroData={heroData}>
-            <section>
-                <h1 className="title">{title}</h1>
-                <h2 className="subtitle">{date.toLocaleString("en-GB", displayStyle)}</h2>
-                <EventTypeList eventTypes={eventTypes} />
-                <BodyComponent content={content} />
-                <PreviewCompatibleImage imageInfo={image} />
-            </section>
+        <Layout heroData={heroData} title={title} subtitle={date.toLocaleString("en-GB", displayStyle)}>
+            <EventTypeList eventTypes={eventTypes} />
+            <BodyComponent content={content} />
+            <PreviewCompatibleImage imageInfo={image} />
         </Layout>
 )}
 
