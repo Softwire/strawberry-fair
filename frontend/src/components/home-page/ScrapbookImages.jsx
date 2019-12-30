@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Img from 'gatsby-image'
 
-import PreviewCompatibleImage from '../PreviewCompatibleImage'
+import { childImageSharpValidator } from '../validators'
 
 /**
  * Component built using Bulma columns.
@@ -23,17 +24,27 @@ export const ScrapbookImages = ({images}) => {
     return null
 }
 
-ScrapbookImages.propTypes = { images: PropTypes.arrayOf(PreviewCompatibleImage.propTypes.imageInfo) }
+ScrapbookImages.propTypes = { images: PropTypes.arrayOf(childImageSharpValidator) }
+
+const SquareImage = ({image}) => (
+    <div className="column is-full">
+        <Img fluid={{...image.childImageSharp.fluid, aspectRatio: 1}} />
+    </div>
+)
+
+SquareImage.propTypes = { image: childImageSharpValidator }
 
 const InnerColumn = ({innerCol: {width, images}}) => (
     <div className={`column is-${width}`}>
-        {images.map((img, idx) => <PreviewCompatibleImage imageInfo={img} key={idx} />)}
+        <div className = "columns is-multiline">
+            {images.map((img, idx) => <SquareImage image={img} key={idx} />)}
+        </div>
     </div>
 )
 
 InnerColumn.propTypes = { innerCol: PropTypes.shape({
     width: PropTypes.number,
-    images: PropTypes.arrayOf(PreviewCompatibleImage.propTypes.imageInfo)
+    images: PropTypes.arrayOf(SquareImage.propTypes.image)
 })}
 
 const OuterColumn = ({outerCol}) => (
