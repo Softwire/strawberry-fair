@@ -51,7 +51,7 @@ const NavBarDisplay = ({isPreview}) => {
           <nav className="navbar">
             <div className="navbar-brand">
               <Link className="navbar-item" to="/">
-                {isPreview ? <img alt="Strawberry Fair logo" src="/img/1-line-logo.png" width="300" /> : <Img fixed={getNavbarLogo()} alt="Strawberry Fair logo" />}
+                {isPreview ? <img alt="Strawberry Fair logo" src="/img/1-line-logo.png" width="280" /> : <Img fixed={getNavbarLogo()} alt="Strawberry Fair logo" />}
               </Link>
               <NavBurger target="navigationBar" active={menuActive} setState={setMenuState} collapseAll={collapseAll} />
             </div>
