@@ -12,34 +12,42 @@ import PreviewCompatibleImage from '../PreviewCompatibleImage'
  * 
  * @param {Array} images - Expects 6 images
 */
-export const ScrapbookImages = ({images}) => (
-    <div className="columns">
-        {generateColumnData(images).forEach((outerCol) => <OuterColumn outerCol={outerCol} />)}
+export const ScrapbookImages = ({images}) => {
+    if (images && images.length === 6) {
+        return (
+            <div className="columns">
+                {generateColumnData(images).map((outerCol, idx) => <OuterColumn outerCol={outerCol} key={idx} />)}
+            </div>
+        )
+    }
+    return null
+}
+
+ScrapbookImages.propTypes = { images: PropTypes.arrayOf(PreviewCompatibleImage.propTypes.imageInfo) }
+
+const InnerColumn = ({innerCol: {width, images}}) => (
+    <div className={`column is-${width}`}>
+        {images.map((img, idx) => <PreviewCompatibleImage className="image" imageInfo={img} key={idx} />)}
     </div>
 )
 
-ScrapbookImages.propTypes = { images: PropTypes.arrayOf(PreviewCompatibleImage.propTypes.imageInfo) }
+InnerColumn.propTypes = { innerCol: PropTypes.shape({
+    width: PropTypes.number,
+    images: PropTypes.arrayOf(PreviewCompatibleImage.propTypes.imageInfo)
+})}
 
 const OuterColumn = ({outerCol}) => (
     <div className="column">
         <div className="columns is-mobile">
-            {outerCol.forEach((innerCol) => <InnerColumn innerCol={innerCol} />)}
+            {outerCol.map((innerCol, idx) => <InnerColumn innerCol={innerCol} key={idx} />)}
         </div>
     </div>
 )
 
-OuterColumn.propTypes = { outerCol: PropTypes.arrayOf(InnerColumn.propTypes) }
-
-const InnerColumn = ({innerCol: {width, images}}) => (
-    <div className={`column is-${width}`}>
-        {images.map((img) => <PreviewCompatibleImage imageInfo={img} />)}
-    </div>
-)
-
-InnerColumn.propTypes = { width: PropTypes.number, images: PropTypes.arrayOf(PreviewCompatibleImage.propTypes.imageInfo) }
+OuterColumn.propTypes = { outerCol: PropTypes.arrayOf(InnerColumn.propTypes.innerCol) }
 
 const generateColumnData = (images) => {
-    const innerCol = () => ({ width, images })
+    const innerCol = () => ({ width: null, images: null })
     const outerCol = () => ([innerCol(), innerCol()])
     const data = [outerCol(), outerCol()]
 
@@ -55,28 +63,39 @@ const assignWidths = (data) => {
     
     data.forEach((outerCol) => {
         // Select a random value from possible widths
-        const rand = widths[Math.floor(Math.random() * widths.length)]
+        const rand = widths[getRandInt(widths.length)]
 
         // Assign widths
         outerCol[0].width = rand
         outerCol[1].width = 12 - rand
 
         // Prevent duplication of widths
-        widths.splice(widths.indexOf(rand))
-        widths.splice(widths.indexOf(12 - rand))
+        widths.splice(widths.indexOf(rand), 1)
+        widths.splice(widths.indexOf(12 - rand), 1)
     })
 }
 
 const assignImages = (data, allImages) => {
+    shuffle(allImages)
     data.forEach((outerCol) => {
         outerCol.forEach((innerCol) => {
             // Assign a single image
             innerCol.images = [allImages.pop()]
 
             // For narrower columns, randomly decide whether to assign a second image
-            if (Math.random() >= 0.5) {
+            if (innerCol.width < 6 && Math.random() >= 0.5) {
                 innerCol.images.push(allImages.pop())
             }
         })
     })
 }
+
+const shuffle = (arr) => {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = getRandInt(i + 1);
+        [arr[i], arr[j]] = [arr[j], arr[i]]
+    }
+}
+
+// 0 <= randInt < max
+const getRandInt = (max) => Math.floor(Math.random() * max)
