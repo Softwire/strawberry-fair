@@ -82,7 +82,7 @@ export const FooterDisplay = ({isPreview, CMSInput}) => {
 function getFooterContent() {
     const footerContent = useStaticQuery(graphql`
       query footerContent {
-              markdownRemark(fileAbsolutePath: { regex: ".*/src/pages/footer.md/"}) {
+              markdownRemark(fileAbsolutePath: { regex: ".*/src/pages/header-and-footer/footer.md/"}) {
                 frontmatter {
                   email
                   facebookAccount

@@ -208,7 +208,7 @@ collections:
   - name: "header-and-footer"
     label: "Header And Footer"
     files:
-      - file: "frontend/src/pages/footer.md"
+      - file: "frontend/src/pages/header-and-footer/footer.md"
         label: "Footer"
         name: "footer"
         fields:
