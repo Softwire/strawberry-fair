@@ -8,13 +8,13 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 // This is used by the website and for CMS previews
 export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
-    firstDay = new Date(firstDay)
-    lastDay = new Date(lastDay)
-    const selectedNewsArticles = getNewsArticlesInTimeInterval(newsArticles, firstDay, lastDay)
+    const firstDate = new Date(firstDay)
+    const lastDate = new Date(lastDay)
+    const selectedNewsArticles = getNewsArticlesInTimeInterval(newsArticles, firstDate, lastDate)
     var heading = ''
     if(areInSameYear(selectedNewsArticles)){
-      if(areInSameMonth(selectedNewsArticles)) heading = monthName(firstDay.getMonth()) + " " + firstDay.getFullYear()
-      else heading = firstDay.getFullYear()
+      if(firstDate.getMonth() !== lastDate.getMonth()) heading = monthName(firstDate.getMonth()) + " " + firstDate.getFullYear()
+      else heading = firstDate.getFullYear()
     }
     return (
       <Layout>
@@ -75,16 +75,6 @@ function areInSameYear(articles){
   for(const article of articles){
     const articleDate = new Date(article.node.frontmatter.date)
     if(articleDate.getFullYear()!=year) return false
-  }
-  return true
-}
-
-function areInSameMonth(articles) {
-  const date = new Date(articles[0].node.frontmatter.date)
-  const month = date.getMonth()
-  for(const article of articles){
-    const articleDate = new Date(article.node.frontmatter.date)
-    if(articleDate.getMonth()!=month) return false
   }
   return true
 }
