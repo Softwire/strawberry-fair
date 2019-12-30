@@ -37,6 +37,7 @@ If you are running locally and you need to access the CMS for editing purposes, 
 ```
 backend:
   name: git-gateway
+  branch: production
   accept_roles:
     - admin
     - content
