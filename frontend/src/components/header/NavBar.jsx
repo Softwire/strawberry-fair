@@ -4,7 +4,6 @@ import OutsideClickHandler from 'react-outside-click-handler'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
-import PreviewCompatibleImage from '../PreviewCompatibleImage'
 import { PreviewContext } from '../../util/context.jsx'
 import { getNavbarLogo } from './getNavbarLogo'
 
