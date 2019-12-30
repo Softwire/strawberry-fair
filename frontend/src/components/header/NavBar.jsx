@@ -111,7 +111,7 @@ const generateLinks = (navBarTabs, titleToLinkMap, graphqlEdges) => {
 }
 
 const NavBurger = ({target, active, setState, collapseAll}) => (
-  <a className={getClassName("navbar-burger burger","is-active", active)} data-target={target} onClick={() => {
+  <a className={getClassName("navbar-burger burger is-large","is-active", active)} data-target={target} onClick={() => {
     if (active) {
       // If we are closing the navbar, collapse all the dropdowns
       collapseAll()
