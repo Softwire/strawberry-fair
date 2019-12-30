@@ -49,7 +49,8 @@ const NavBarDisplay = ({isPreview}) => {
           <nav className="navbar">
             <div className="navbar-brand">
               <Link className="navbar-item" to="/">
-                <PreviewCompatibleImage imageInfo={{ alt: "Strawberry Fair Logo", image: "/img/1-line-logo.png" }} />
+                {/*<PreviewCompatibleImage imageInfo={{ alt: "Strawberry Fair Logo", image: "/img/1-line-logo.png" }} height="75"/>*/}
+                <img alt="Strawberry Fair logo" src="/img/1-line-logo.png" height="75" />
               </Link>
               <NavBurger target="navigationBar" active={menuActive} setState={setMenuState} collapseAll={collapseAll} />
             </div>
@@ -149,7 +150,7 @@ const NavMenu = ({active, navBarLinks, dropdownsActive, setDropdownsActive}) => 
 
   return (
     <div id="navigationBar" className={getClassName("navbar-menu", "is-active", active)}>
-      <div className="navbar-start">
+      <div className="navbar-end">
         {navBarLinks.map(generateNavBarTabs)}
       </div>
     </div>
