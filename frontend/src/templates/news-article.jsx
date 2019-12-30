@@ -13,22 +13,19 @@ export const NewsArticle = ({title, author, content, image, date, tags, contentC
     const BodyComponent = contentComponent || HTMLContent
 
     return (
-      <Layout heroData={heroData}>
-        <section className="section">
-          <h1 className="title has-text-primary is-size-1">{title}</h1>
-          <figure className="image">
-            {image && <PreviewCompatibleImage imageInfo={image}/>} 
-          </figure>
-          <br/>
-          <div className="columns">
-            <div className="column is-one-quarter">
-              <NewsArticleSideInfo author={author} date={date} tags={tags}/>
-            </div>
-            <div className="column">
-              <BodyComponent content={content} />
-            </div>
+      <Layout heroData={heroData} title={title}>
+        <figure className="image">
+          {image && <PreviewCompatibleImage imageInfo={image}/>} 
+        </figure>
+        <br/>
+        <div className="columns">
+          <div className="column is-one-quarter">
+            <NewsArticleSideInfo author={author} date={date} tags={tags}/>
           </div>
-        </section>
+          <div className="column">
+            <BodyComponent content={content} />
+          </div>
+        </div>
       </Layout>
 )}
 
