@@ -31,6 +31,13 @@ definitions:
   - &menuTitle {label: NavBar Dropdown Title, name: title, widget: string}
   - &internalLink {label: Link, name: link, widget: link, hint: Choose the path to the page you want this link to point to. Select "<-- Previous Menu" to undo your last selection.  Make sure you select a complete path by either ending your selection with "index" or checking that the link is displayed on this widget.}
   - &text {label: Text, name: text, widget: string}
+  - &email {label: Email, name: email, widget: string}
+  - &address {label: Address, name: _markdown_address, widget: markdown}
+  - &facebook {label: Facebook Account, name: facebookAccount, widget: string}
+  - &twitter {label: Twitter Account, name: twitterAccount, widget: string}
+  - &placeHolder {label: Place Holder, name: _markdown_placeHolderText, widget: markdown}
+  - &copyright {label: Copyright, name: copyright, widget: string}
+  - &hiddenBody {label: Body, name: body, widget: hidden, default: "placeholder"}
   - contentBlock: &contentBlock
       label: Content Blocks
       name: contentBlocks
@@ -92,17 +99,6 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "frontend/src/pages/footer.md"
-        label: "Footer"
-        name: "footer"
-        fields:
-          - {label: Email, name: email, widget: string}
-          - {label: Address, name: _markdown_address, widget: markdown}
-          - {label: Facebook Account, name: facebookAccount, widget: string}
-          - {label: Twitter Account, name: twitterAccount, widget: string}
-          - {label: Place Holder, name: _markdown_placeHolderText, widget: markdown}
-          - {label: Copyright, name: copyright, widget: string}
-          - {label: Body, name: body, widget: hidden, default: "placeholder"}
       - file: "frontend/src/pages/index.md"
         label: "Home Page"
         name: "home"
@@ -212,6 +208,17 @@ collections:
   - name: "header-and-footer"
     label: "Header And Footer"
     files:
+      - file: "frontend/src/pages/footer.md"
+        label: "Footer"
+        name: "footer"
+        fields:
+          - *email
+          - *address
+          - *facebook
+          - *twitter
+          - *placeHolder
+          - *copyright
+          - *hiddenBody 
       - file: "frontend/src/pages/header-and-footer/buttons/get-involved.md"
         label: "Get Involved"
         name: "get-involved"
