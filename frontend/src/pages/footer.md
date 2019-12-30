@@ -1,6 +1,6 @@
 ---
 email: enquiries@strawberry-fair.org.uk
-_markdown_Address: |-
+_markdown_address: |-
   PO BOX 1261
 
   Cambridge
@@ -8,7 +8,7 @@ _markdown_Address: |-
   CB1 0YJ
 facebookAccount: 'https://www.facebook.com/StrawberryFair/'
 twitterAccount: 'https://twitter.com/strawberry_fair'
-_markdown_PlaceHolderText: |-
+_markdown_placeHolderText: |-
   This text
 
   _Has **some**_
@@ -18,4 +18,3 @@ _markdown_PlaceHolderText: |-
   and Styling
 copyright: © Strawberry Fair 2017
 ---
-

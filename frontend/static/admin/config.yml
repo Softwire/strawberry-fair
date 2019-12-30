@@ -94,16 +94,17 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: frontend/src/pages/footer.md
-        label: Footer
-        name: footer
+      - file: "frontend/src/pages/footer.md"
+        label: "Footer"
+        name: "footer"
         fields:
           - {label: Email, name: email, widget: string}
-          - {label: Address, name: _markdown_Address, widget: markdown}
+          - {label: Address, name: _markdown_address, widget: markdown}
           - {label: Facebook Account, name: facebookAccount, widget: string}
           - {label: Twitter Account, name: twitterAccount, widget: string}
-          - {label: Place Holder, name: _markdown_PlaceHolderText, widget: markdown}
+          - {label: Place Holder, name: _markdown_placeHolderText, widget: markdown}
           - {label: Copyright, name: copyright, widget: string}
+          - {label: Body, name: body, widget: hidden, default: "placeholder"}
       - file: "frontend/src/pages/index.md"
         label: "Home Page"
         name: "home"

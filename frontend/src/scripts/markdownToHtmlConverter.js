@@ -98,3 +98,5 @@ function cleanArray(array) {
 function getHtml(markdown) {
   return remark().use(remarkHtml).processSync(markdown).toString()
 }
+
+exports.getHtml = getHtml
