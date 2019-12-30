@@ -10,10 +10,10 @@ import PreviewCompatibleImage from '../PreviewCompatibleImage'
  * The two wider inner columns always contain one image only, but the thinner columns are randomly assigned one or two images.
  * All images are rendered square.
  * 
- * @param {Array} images - Expects 6 images
+ * @param {Array} images - Expects at least 6 images
 */
 export const ScrapbookImages = ({images}) => {
-    if (images && images.length === 6) {
+    if (images && images.length >= 6) {
         return (
             <div className="columns">
                 {generateColumnData(images).map((outerCol, idx) => <OuterColumn outerCol={outerCol} key={idx} />)}
@@ -27,7 +27,7 @@ ScrapbookImages.propTypes = { images: PropTypes.arrayOf(PreviewCompatibleImage.p
 
 const InnerColumn = ({innerCol: {width, images}}) => (
     <div className={`column is-${width}`}>
-        {images.map((img, idx) => <PreviewCompatibleImage className="image" imageInfo={img} key={idx} />)}
+        {images.map((img, idx) => <PreviewCompatibleImage imageInfo={img} key={idx} />)}
     </div>
 )
 
@@ -59,7 +59,7 @@ const generateColumnData = (images) => {
 
 const assignWidths = (data) => {
     // Columns within a Bulma column block have integer widths totalling 12
-    const widths = [ 3, 4, 5, 7, 8, 9 ]
+    const widths = [ 4, 5, 7, 8 ]
     
     data.forEach((outerCol) => {
         // Select a random value from possible widths
