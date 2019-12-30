@@ -21,6 +21,8 @@ $custom-colors: (
 $navbar-padding-vertical: 0;
 $navbar-padding-horizontal: 0;
 $navbar-height: 100px;
+$navbar-item-img-max-height: 75px;
+$navbar-breakpoint: 1216px;
 
 /* Bulma provides default styling (can be imported in separate modules as required) */
 @import "bulma";

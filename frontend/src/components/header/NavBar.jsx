@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import OutsideClickHandler from 'react-outside-click-handler'
 import { graphql, Link, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
 import PreviewCompatibleImage from '../PreviewCompatibleImage'
 import { PreviewContext } from '../../util/context.jsx'
+import { getNavbarLogo } from './getNavbarLogo'
 
 import navBarPreviewLinks from '../../data/navBarPreviewLinks'
 
@@ -43,6 +45,8 @@ const NavBarDisplay = ({isPreview}) => {
     setDropdownsActive(dropdownsActive.fill(false))
   }
 
+  const logo = getNavbarLogo()
+
   return (
       <header>
         <OutsideClickHandler onOutsideClick={() => {collapseAll(); setMenuState(false)}} display="contents">
@@ -50,7 +54,7 @@ const NavBarDisplay = ({isPreview}) => {
             <div className="navbar-brand">
               <Link className="navbar-item" to="/">
                 {/*<PreviewCompatibleImage imageInfo={{ alt: "Strawberry Fair Logo", image: "/img/1-line-logo.png" }} height="75"/>*/}
-                <img alt="Strawberry Fair logo" src="/img/1-line-logo.png" height="75" />
+                <Img fixed={logo} />
               </Link>
               <NavBurger target="navigationBar" active={menuActive} setState={setMenuState} collapseAll={collapseAll} />
             </div>
