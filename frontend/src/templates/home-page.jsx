@@ -50,7 +50,7 @@ HomePage.propTypes = {
 
 const additionalPropsExtractor = graphqlData => {
   let contentBlocksHtml = graphqlData.markdownRemark.fields.contentBlocks.map(object => object["_html_contentBody"])
-  return {contentBlocksHtml: contentBlocksHtml, newsArticles: graphqlData.allMarkdownRemark.edges}
+  return {contentBlocksHtml: contentBlocksHtml, newsArticles: graphqlData.newsData.edges}
 }
 
 export default site(HomePage, additionalPropsExtractor)

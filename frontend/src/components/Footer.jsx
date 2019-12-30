@@ -5,6 +5,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 import footerPreviewContent from '../data/footerPreviewContent'
 import { PreviewContext } from '../util/context.jsx'
 import { HTMLContentSmall } from './Content'
+import PropTypes from 'prop-types'
 const markdownToHtmlConverter = require('../scripts/markdownToHtmlConverter')
 
 
