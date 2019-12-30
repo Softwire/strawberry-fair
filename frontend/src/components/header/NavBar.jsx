@@ -45,16 +45,13 @@ const NavBarDisplay = ({isPreview}) => {
     setDropdownsActive(dropdownsActive.fill(false))
   }
 
-  const logo = getNavbarLogo()
-
   return (
       <header>
         <OutsideClickHandler onOutsideClick={() => {collapseAll(); setMenuState(false)}} display="contents">
           <nav className="navbar">
             <div className="navbar-brand">
               <Link className="navbar-item" to="/">
-                {/*<PreviewCompatibleImage imageInfo={{ alt: "Strawberry Fair Logo", image: "/img/1-line-logo.png" }} height="75"/>*/}
-                <Img fixed={logo} />
+                {isPreview ? <img alt="Strawberry Fair logo" src="/img/1-line-logo.png" width="300" /> : <Img fixed={getNavbarLogo()} alt="Strawberry Fair logo" />}
               </Link>
               <NavBurger target="navigationBar" active={menuActive} setState={setMenuState} collapseAll={collapseAll} />
             </div>
