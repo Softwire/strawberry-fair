@@ -35,7 +35,7 @@ const SquareImage = ({image}) => (
 SquareImage.propTypes = { image: childImageSharpValidator }
 
 const InnerColumn = ({innerCol: {width, images}}) => (
-    <div className={`column is-${width}`}>
+    <div className={`column ${width}`}>
         <div className = "columns is-multiline">
             {images.map((img, idx) => <SquareImage image={img} key={idx} />)}
         </div>
@@ -57,55 +57,43 @@ const OuterColumn = ({outerCol}) => (
 
 OuterColumn.propTypes = { outerCol: PropTypes.arrayOf(InnerColumn.propTypes.innerCol) }
 
-const generateColumnData = (images) => {
-    const innerCol = () => ({ width: null, images: null })
-    const outerCol = () => ([innerCol(), innerCol()])
-    const data = [outerCol(), outerCol()]
+const generateColumnData = (imgs) => {
+    const widths = deepShuffle([["is-4", "is-8"], ["is-two-fifths", "is-three-fifths"], ["is-5", "is-7"]])
+    const allImages = shuffle(imgs)
 
-    assignWidths(data)
-    assignImages(data, images)
-    
-    return data
-}
+    // Array of two outer columns
+    return Array(2).fill().map((_, i) => (
+        
+        // Array of two inner columns
+        Array(2).fill().map((_, j) => {
 
-const assignWidths = (data) => {
-    // Columns within a Bulma column block have integer widths totalling 12
-    const widths = [ 4, 5, 7, 8 ]
-    
-    data.forEach((outerCol) => {
-        // Select a random value from possible widths
-        const rand = widths[getRandInt(widths.length)]
+            // Assign width and single image to each inner column
+            const width = widths[i][j]
+            const images = [allImages.pop()]
 
-        // Assign widths
-        outerCol[0].width = rand
-        outerCol[1].width = 12 - rand
-
-        // Prevent duplication of widths
-        widths.splice(widths.indexOf(rand), 1)
-        widths.splice(widths.indexOf(12 - rand), 1)
-    })
-}
-
-const assignImages = (data, allImages) => {
-    shuffle(allImages)
-    data.forEach((outerCol) => {
-        outerCol.forEach((innerCol) => {
-            // Assign a single image
-            innerCol.images = [allImages.pop()]
-
-            // For narrower columns, randomly decide whether to assign a second image
-            if (innerCol.width < 6 && Math.random() >= 0.5) {
-                innerCol.images.push(allImages.pop())
+            // Always assign a second image if width is is-4
+            // Randomly determine whether to assign a second image for other narrow columns
+            if ((width === "is-4") || ((width === "is-two-fifths" || width === "is-5") && (Math.random() >= 0.5))) {
+                images.push(allImages.pop())
             }
+
+            return { width: width, images: images }
         })
-    })
+    ))
 }
 
 const shuffle = (arr) => {
-    for (let i = arr.length - 1; i > 0; i--) {
+    const shuffled = [...arr]
+    for (let i = shuffled.length - 1; i > 0; i--) {
         const j = getRandInt(i + 1);
-        [arr[i], arr[j]] = [arr[j], arr[i]]
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
     }
+    return shuffled
+}
+
+const deepShuffle = (arr) => {
+    const shuffled = arr.map((nestedArr) => shuffle(nestedArr))
+    return shuffle(shuffled)
 }
 
 // 0 <= randInt < max
