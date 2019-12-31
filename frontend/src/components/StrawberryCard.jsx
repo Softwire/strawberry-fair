@@ -22,8 +22,6 @@ export const SectionWithStrawberryCard = ({image, imageAltText, text, children})
 }
 
 export const StrawberryCard = ({image, imageAltText, text}) => {
-  // Card should be square on desktop (>= 770px wide) and rectangular on mobile devices (< 770px wide)
-  
   return (
     <React.Fragment>
       <StrawberryCardDesktop image={image} imageAltText={imageAltText} text={text} />
