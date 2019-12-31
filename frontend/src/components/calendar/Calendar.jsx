@@ -5,24 +5,25 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import CalendarDay from './CalendarDay'
 import { areSameDay } from '../../util/dates'
 import { eventTypeList } from './EventType'
+import { eventPropTypeValidator } from '../validators'
 import { EventFilterBlock, filterEvents } from './EventFilter'
 import { getEventList } from './getEventList'
 import { PreviewContext } from '../../util/context'
 import { useFilters } from '../../util/filters'
 
-export const Calendar = () => (
+export const Calendar = ({events}) => (
     <PreviewContext.Consumer>
-        {value => <CalendarWithContext isPreview={value} />}
+        {value => <CalendarWithContext isPreview={value} previewEventList={events} />}
     </PreviewContext.Consumer>
 )
 
-const CalendarWithContext = ({isPreview}) => {
+const CalendarWithContext = ({isPreview, previewEventList}) => {
     // Set state
     const [ focusDate, setFocusDate ] = useState(new Date())
     const filterProps = useFilters(eventTypeList)
 
     // Get list of events
-    const events = isPreview ? [] : getEventList()
+    const events = isPreview ? previewEventList : getEventList()
 
     // Calculate the number of days in the given month
     const monthDate = new Date(focusDate.getFullYear(), focusDate.getMonth() + 1, 0)
@@ -111,8 +112,17 @@ MonthScrubber.propTypes = {
     focusDate: PropTypes.instanceOf(Date)
 }
 
+Calendar.propTypes = {
+    events: PropTypes.arrayOf(
+        PropTypes.shape({
+            node: eventPropTypeValidator
+        })
+    )
+}
+
 CalendarWithContext.propTypes = {
-    isPreview: PropTypes.bool.isRequired
+    isPreview: PropTypes.bool.isRequired,
+    previewEventList: Calendar.propTypes.events
 }
 
 function eventsOnDate(date, events) {

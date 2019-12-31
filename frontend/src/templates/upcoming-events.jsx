@@ -24,11 +24,7 @@ export const UpcomingEvents = ({content, contentComponent, events, heroData}) =>
 }
 
 UpcomingEvents.propTypes = {
-  events: PropTypes.arrayOf(
-      PropTypes.shape({
-          node: eventPropTypeValidator
-      })
-  ),
+  events: Upcoming.propTypes.events,
   heroData: Layout.propTypes.heroData
 }
 
