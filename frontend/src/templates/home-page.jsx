@@ -17,22 +17,19 @@ export const HomePage = ({title, contentBlocks, contentBlocksHtml, calendarBlock
     const BodyComponent = contentComponent || HTMLContent
 
     return (
-      <Layout heroData={heroData}>
-        <section>
-          <h1 className="title">{title}</h1>
-          <ContentBlocks 
-            contentBlocks={contentBlocks}
-            contentBlocksHtml={contentBlocksHtml}
-            BodyComponent={BodyComponent}/>
-          <CalendarBlock calendarBlock={calendarBlock}/>
-          <NewsBlock newsBlock={newsBlock} newsArticles={newsArticles}/>
-          <TwitterBlock twitterBlock={twitterBlock}/>
-          {
-            // TODO: Finish committee meeting calendars
-            // TODO: Finish News overview
-            // TODO: Finish Twitter integration
-          }
-        </section>
+      <Layout heroData={heroData} title={title}>
+        <ContentBlocks 
+          contentBlocks={contentBlocks}
+          contentBlocksHtml={contentBlocksHtml}
+          BodyComponent={BodyComponent}/>
+        <CalendarBlock calendarBlock={calendarBlock}/>
+        <NewsBlock newsBlock={newsBlock} newsArticles={newsArticles}/>
+        <TwitterBlock twitterBlock={twitterBlock}/>
+        {
+          // TODO: Finish committee meeting calendars
+          // TODO: Finish News overview
+          // TODO: Finish Twitter integration
+        }
       </Layout>
   )
 }

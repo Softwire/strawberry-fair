@@ -17,8 +17,7 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
       else heading = firstDay.getFullYear()
     }
     return (
-      <Layout>
-            <h1 className="title has-text-primary is-size-1">News</h1>
+      <Layout title="News">
             <div className="columns">
               <div className="column is-three-quarters">
                 <div className="panel">

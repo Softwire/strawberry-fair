@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
 import { StrawberryTiles } from '../components/StrawberryCard'
 import { Layout } from '../components/Layout'
@@ -13,23 +12,13 @@ export const AboutPage = ({title, subtitle, content, contentComponent, strawberr
     const BodyComponent = contentComponent || HTMLContent
 
     return (
-      <Layout heroData={heroData}>
-        <section className="section">
-          <div className="container">
-            <h1 className="title is-1">{title}</h1>
-            <h2 className="subtitle">{subtitle}</h2>
+      <Layout heroData={heroData} title={title} subtitle={subtitle}>
+        <div className="columns reverse-columns">
+          <StrawberryTiles tileTextArray={strawberryTiles}/>
+          <div className="column">
+            <BodyComponent content={content} />
           </div>
-        </section>
-        <section className="section">
-          <div className="container">
-            <div className="columns reverse-columns">
-              <StrawberryTiles tileTextArray={strawberryTiles}/>
-              <div className="column">
-                <BodyComponent content={content} />
-              </div>
-            </div>
-          </div>
-        </section>
+        </div>
       </Layout>
 )}
 

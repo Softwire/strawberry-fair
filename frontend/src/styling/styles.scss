@@ -24,6 +24,8 @@ $navbar-height: 70px;
 $navbar-item-img-max-height: 70px;
 $navbar-breakpoint: 1216px;
 
+$section-padding: 0 1.5rem;
+
 /* Bulma provides default styling (can be imported in separate modules as required) */
 @import "bulma";
 
@@ -91,4 +93,9 @@ a:hover, a:active {
     &.twitter-colour {
         color: #4890c7;
     }
+}
+
+// Padding after title and subtitle
+.titles {
+    padding-bottom: 1.5rem;
 }
