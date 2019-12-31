@@ -64,7 +64,7 @@ const homePageAdditionalPropsExtractor = (dataProps, { widgetsFor }) => {
   }
 }
 
-CMS.registerPreviewTemplate('home', preview(HomePage, {newsArticles: placeholderArticles}, homePageAdditionalPropsExtractor))
+CMS.registerPreviewTemplate('home', preview(HomePage, {newsArticles: placeholderArticles, events: placeholderEvents}, homePageAdditionalPropsExtractor))
 CMS.registerPreviewTemplate('about', preview(AboutPage))
 CMS.registerPreviewTemplate('privacy-page', preview(AboutPage))
 CMS.registerPreviewTemplate('events', preview(EventInfo))

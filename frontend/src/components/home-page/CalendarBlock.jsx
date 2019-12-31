@@ -5,28 +5,30 @@ import { Link } from 'gatsby'
 import BaseBlock from './BaseBlock'
 import { getEventList } from '../calendar/getEventList'
 import { EventMediaBlock } from '../calendar/Upcoming'
+import { eventPropTypeValidator } from '../validators'
 import { EventFilterTags, filterEvents } from '../calendar/EventFilter'
 import { eventTypeList } from '../calendar/EventType'
 import { PreviewContext } from '../../util/context'
 import { useFilters } from '../../util/filters'
 import { isOnOrAfterDay } from '../../util/dates'
 
-const CalendarBlock = ({calendarBlock}) => (
+const CalendarBlock = ({calendarBlock, events}) => (
   <BaseBlock block={calendarBlock} altBackground={true}>
-    <UpcomingEventsDisplay />
+    <UpcomingEventsDisplay events={events} />
   </BaseBlock>
 )
 
-const UpcomingEventsDisplay = () => (
+const UpcomingEventsDisplay = ({events}) => (
   <PreviewContext.Consumer>
-    {value => <UpcomingEventsDisplayWithContext isPreview={value} />}
+    {value => <UpcomingEventsDisplayWithContext isPreview={value} previewEventList={events} />}
   </PreviewContext.Consumer>
 )
 
-const UpcomingEventsDisplayWithContext = ({isPreview}) => {
+const UpcomingEventsDisplayWithContext = ({isPreview, previewEventList}) => {
   const filterProps = useFilters(eventTypeList)
 
-  const events = isPreview ? [] : getEventList().filter(event => isOnOrAfterDay(new Date(), new Date(event.frontmatter.dateTime)))
+  let events = isPreview ? previewEventList : getEventList()
+  events = events.filter(event => isOnOrAfterDay(new Date(), new Date(event.frontmatter.dateTime)))
   
   return (
     <React.Fragment>
@@ -55,11 +57,21 @@ const MoreEventsLinkBox = () => (
 )
 
 CalendarBlock.propTypes = {
-  calendarBlock: BaseBlock.propTypes.block
+  calendarBlock: BaseBlock.propTypes.block,
+  events: PropTypes.arrayOf(
+    PropTypes.shape({
+        node: eventPropTypeValidator
+    })
+)
+}
+
+UpcomingEventsDisplay.propTypes = {
+  events: CalendarBlock.propTypes.events
 }
 
 UpcomingEventsDisplayWithContext.propTypes = {
-  isPreview: PropTypes.bool.isRequired
+  isPreview: PropTypes.bool.isRequired,
+  previewEventList: UpcomingEventsDisplay.propTypes.events
 }
 
 export default CalendarBlock

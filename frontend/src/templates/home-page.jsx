@@ -13,7 +13,7 @@ import TwitterBlock from '../components/home-page/TwitterBlock'
 import { site } from '../util/templating'
 
 // This is used by the website and for CMS previews
-export const HomePage = ({title, contentBlocks, contentBlocksHtml, calendarBlock, newsBlock, newsArticles, twitterBlock, contentComponent, heroData}) => {
+export const HomePage = ({title, contentBlocks, contentBlocksHtml, calendarBlock, events, newsBlock, newsArticles, twitterBlock, contentComponent, heroData}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     return (
@@ -22,7 +22,7 @@ export const HomePage = ({title, contentBlocks, contentBlocksHtml, calendarBlock
           contentBlocks={contentBlocks}
           contentBlocksHtml={contentBlocksHtml}
           BodyComponent={BodyComponent}/>
-        <CalendarBlock calendarBlock={calendarBlock}/>
+        <CalendarBlock calendarBlock={calendarBlock} events={events} />
         <NewsBlock newsBlock={newsBlock} newsArticles={newsArticles}/>
         <TwitterBlock twitterBlock={twitterBlock}/>
         {
@@ -39,6 +39,7 @@ HomePage.propTypes = {
   contentBlocks: ContentBlocks.propTypes.contentBlocks,
   contentBlocksHtml: ContentBlocks.propTypes.contentBlocksHtml,
   calendarBlock: CalendarBlock.propTypes.calendarBlock,
+  events: CalendarBlock.propTypes.events,
   newsBlock: NewsBlock.propTypes.newsBlock,
   newsArticles: NewsBlock.propTypes.newsArticles,
   twitterBlock: TwitterBlock.propTypes.twitterBlock,
