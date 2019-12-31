@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import OutsideClickHandler from 'react-outside-click-handler'
 import { graphql, Link, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
-import PreviewCompatibleImage from '../PreviewCompatibleImage'
 import { PreviewContext } from '../../util/context.jsx'
+import { getNavbarLogo } from './getNavbarLogo'
 
 import navBarPreviewLinks from '../../data/navBarPreviewLinks'
 
@@ -49,7 +50,7 @@ const NavBarDisplay = ({isPreview}) => {
           <nav className="navbar">
             <div className="navbar-brand">
               <Link className="navbar-item" to="/">
-                <PreviewCompatibleImage imageInfo={{ alt: "Strawberry Fair Logo", image: "/img/1-line-logo.png" }} />
+                {isPreview ? <img alt="Strawberry Fair logo" src="/img/1-line-logo.png" width="280" /> : <Img fixed={getNavbarLogo()} alt="Strawberry Fair logo" />}
               </Link>
               <NavBurger target="navigationBar" active={menuActive} setState={setMenuState} collapseAll={collapseAll} />
             </div>
@@ -109,7 +110,7 @@ const generateLinks = (navBarTabs, titleToLinkMap, graphqlEdges) => {
 }
 
 const NavBurger = ({target, active, setState, collapseAll}) => (
-  <a className={getClassName("navbar-burger burger","is-active", active)} data-target={target} onClick={() => {
+  <a className={getClassName("navbar-burger burger is-large","is-active", active)} data-target={target} onClick={() => {
     if (active) {
       // If we are closing the navbar, collapse all the dropdowns
       collapseAll()
@@ -149,7 +150,7 @@ const NavMenu = ({active, navBarLinks, dropdownsActive, setDropdownsActive}) => 
 
   return (
     <div id="navigationBar" className={getClassName("navbar-menu", "is-active", active)}>
-      <div className="navbar-start">
+      <div className="navbar-end">
         {navBarLinks.map(generateNavBarTabs)}
       </div>
     </div>
