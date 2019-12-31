@@ -47,6 +47,7 @@ function getMenuEntries(newsArticles) {
 
     newsArticles
         .map(newsArticle => new Date(newsArticle.node.frontmatter.date))
+        .filter(date => isDateInLastNYears(date, 3))
         .forEach(date => {
             const year = date.getFullYear()
             const month = date.getMonth()
@@ -60,6 +61,12 @@ function getMenuEntries(newsArticles) {
         })
     
     return menuEntries
+}
+
+function isDateInLastNYears(date, nYears) {
+    // Is the date 'date' within the last n years of today?
+    const today = new Date()
+    return date.getFullYear() >= today.getFullYear() - nYears + 1
 }
 
 NewsMenu.propTypes = {
