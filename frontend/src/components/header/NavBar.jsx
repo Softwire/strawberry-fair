@@ -47,7 +47,7 @@ const NavBarDisplay = ({isPreview}) => {
   return (
       <header>
         <OutsideClickHandler onOutsideClick={() => {collapseAll(); setMenuState(false)}} display="contents">
-          <nav className="navbar">
+          <nav className="navbar is-fixed-top">
             <div className="navbar-brand">
               <Link className="navbar-item" to="/">
                 {isPreview ? <img alt="Strawberry Fair logo" src="/img/1-line-logo.png" width="280" /> : <Img fixed={getNavbarLogo()} alt="Strawberry Fair logo" />}
