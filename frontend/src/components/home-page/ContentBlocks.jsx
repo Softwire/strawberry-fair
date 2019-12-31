@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import ImageScrapbookRow from './ImageScrapbookRow'
-import { StrawberryCard } from '../StrawberryCard'
+import { SectionWithStrawberryCard } from '../StrawberryCard'
 
 const ContentBlock = ({contentTitle, contentSubtitle, scrapbookImages, content, sideSnippet, BodyComponent}) => (
   <section className="section">
@@ -13,14 +13,9 @@ const ContentBlock = ({contentTitle, contentSubtitle, scrapbookImages, content, 
         <h3 className="subtitle is-5">{contentSubtitle}</h3>
       </div>
     </div>
-    <div className="columns">
-      <div className="column is-three-quarters">
-        <BodyComponent content={content}/>
-      </div>
-      <div className="column">
-        <StrawberryCard text={sideSnippet}/>
-      </div>
-    </div>
+    <SectionWithStrawberryCard text={sideSnippet}>
+      <BodyComponent content={content}/>
+    </SectionWithStrawberryCard>
   </section>
 )
 
