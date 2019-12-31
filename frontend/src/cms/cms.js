@@ -71,7 +71,7 @@ CMS.registerPreviewTemplate('events', preview(EventInfo))
 CMS.registerPreviewTemplate('news', preview(NewsArticle))
 CMS.registerPreviewTemplate('news-home', preview(NewsOverview, {newsArticles: placeholderArticles}))
 CMS.registerPreviewTemplate('upcoming-events', preview(UpcomingEvents, {events: placeholderEvents}))
-CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {events: []}))
+CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {events: placeholderEvents}))
 CMS.registerPreviewTemplate('contact-page', preview(ContactPage))
 CMS.registerPreviewTemplate('forms', preview(FormPage))
 
