@@ -12,10 +12,14 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
     const lastDate = new Date(lastDay)
     const selectedNewsArticles = getNewsArticlesInTimeInterval(newsArticles, firstDate, lastDate)
     var heading = ''
-    if(areInSameYear(selectedNewsArticles)){
-      if(firstDate.getMonth() !== lastDate.getMonth()) heading = monthName(firstDate.getMonth()) + " " + firstDate.getFullYear()
-      else heading = firstDate.getFullYear()
+    if (isYearInterval(firstDate, lastDate)) {
+      heading = firstDate.getFullYear()
+    } else if (isMonthInterval(firstDate, lastDate)) {
+      heading = monthName(firstDate.getMonth()) + " " + firstDate.getFullYear()
+    } else {
+      console.log("Unexpected date interval passed to page constructor.")
     }
+
     return (
       <Layout>
             <h1 className="title has-text-primary is-size-1">News</h1>
@@ -69,12 +73,23 @@ function isInTimeInterval(firstDayDate, lastDayDate, articleDate) {
   return firstDayDate<= articleDate && articleDate < lastDayDate
 }
 
-function areInSameYear(articles){
-  const date = new Date(articles[0].node.frontmatter.date)
-  const year = date.getFullYear()
-  for(const article of articles){
-    const articleDate = new Date(article.node.frontmatter.date)
-    if(articleDate.getFullYear()!=year) return false
-  }
-  return true
+// Checks whether the given interval is from 01 Jan (year) to 01 Jan (year + 1)
+function isYearInterval(firstDate, lastDate) {
+  return (
+    firstDate.getFullYear() + 1 === lastDate.getFullYear() &&
+    firstDate.getMonth() === 0 &&
+    lastDate.getMonth() === 0 &&
+    firstDate.getDate() === 1 &&
+    lastDate.getDate() === 1
+  )
+}
+
+// Checks whether the given interval is from 01 (month) (year) to 01 (month + 1) (year)
+function isMonthInterval(firstDate, lastDate) {
+  return (
+    firstDate.getFullYear() === lastDate.getFullYear() &&
+    firstDate.getMonth() + 1 === lastDate.getMonth() &&
+    firstDate.getDate() === 1 &&
+    lastDate.getDate() === 1
+  )
 }
