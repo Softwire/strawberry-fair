@@ -5,11 +5,10 @@ subtitle: this is a subtitle
 strawberryTiles:
   - >-
     Arma virumque canō, Trōiae quī prīmus ab ōrīs Ītaliam, fātō profugus,
-    Lāvīniaque vēnit lītora, multum ille et terrīs iactātus et altō vī superum
-    saevae memorem Iūnōnis ob īram;
+    Lāvīniaque vēnit lītora,
   - >-
     multa quoque et bellō passūs, dum conderet urbem, inferretque deōs Latiō,
-    genus unde Latīnum, Albānīque patrēs, atque altae moenia Rōmae.
+    genus unde Latīnum.
 ---
 
 # This is H1

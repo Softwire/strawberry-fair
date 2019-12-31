@@ -99,3 +99,11 @@ a:hover, a:active {
 .titles {
     padding-bottom: 1.5rem;
 }
+
+// Make strawberry cards/tiles square on desktop
+$strawberry-card-size: 14rem;
+.strawberry-square {
+    width: $strawberry-card-size;
+    height: 0;
+    padding-bottom: $strawberry-card-size - $box-padding;
+}
