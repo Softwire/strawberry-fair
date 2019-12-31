@@ -15,7 +15,7 @@ export const EventMediaBlock = ({event}) => (
     <div className="media">
         <div className="media-left">
             <p className="image is-64x64">
-                <img src={event.frontmatter.image ? event.frontmatter.image.childImageSharp.resize.src : event.frontmatter.image} />
+                <img src={event.frontmatter.image.childImageSharp ? event.frontmatter.image.childImageSharp.resize.src : event.frontmatter.image} />
             </p>
         </div>
         <div className="media-content">
@@ -45,19 +45,20 @@ const NoEventsFoundBlock = () => (
     </div>
 )
 
-export const Upcoming = () => (
+export const Upcoming = ({events}) => (  // 'events' is only used if it is a preview, otherwise it uses a static query
     <PreviewContext.Consumer>
-        {value => <UpcomingWithContext isPreview={value} />}
+        {value => <UpcomingWithContext isPreview={value} previewEventList={events} />}
     </PreviewContext.Consumer>
 )
 
-const UpcomingWithContext = ({isPreview}) => {
+const UpcomingWithContext = ({isPreview, previewEventList}) => {
     const filterProps = useFilters(eventTypeList)
 
     // Get list of events occurring today or later
-    const events = isPreview ? [] : getEventList().filter(event => isOnOrAfterDay(new Date(), new Date(event.frontmatter.dateTime)))
+    let events = isPreview ? previewEventList : getEventList()
+    events = events.filter(event => isOnOrAfterDay(new Date(), new Date(event.frontmatter.dateTime)))
 
-    const maxItems = 10
+    const maxItems = 5
 
     // Construct array of list elements
     let eventPanels = filterEvents(events, filterProps.activeFilters).slice(0, maxItems).map(event => <EventPanelBlock key={event.frontmatter.title} event={event} />)
@@ -79,6 +80,15 @@ EventPanelBlock.propTypes = {
     event: EventMediaBlock.propTypes.event
 }
 
+Upcoming.propTypes = {
+    events: PropTypes.arrayOf(
+        PropTypes.shape({
+            node: eventPropTypeValidator
+        })
+    )
+}
+
 UpcomingWithContext.propTypes = {
-    isPreview: PropTypes.bool.isRequired
+    isPreview: PropTypes.bool.isRequired,
+    previewEventList: Upcoming.propTypes.events
 }
