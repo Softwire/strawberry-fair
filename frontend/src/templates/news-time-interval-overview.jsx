@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
+import { FaChevronLeft } from 'react-icons/fa'
 import { HTMLContent } from '../components/Content'
 import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
@@ -9,48 +10,63 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 // This is used by the website and for CMS previews
 export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
-    const firstDate = new Date(firstDay)
-    const lastDate = new Date(lastDay)
-    const selectedNewsArticles = getNewsArticlesInTimeInterval(newsArticles, firstDate, lastDate)
-    let heading = ''
-    if (isYearInterval(firstDate, lastDate)) {
-      heading = firstDate.getFullYear()
-    } else if (isMonthInterval(firstDate, lastDate)) {
-      heading = monthName(firstDate.getMonth()) + " " + firstDate.getFullYear()
-    } else {
-      console.log("Unexpected date interval passed to page constructor.")
-    }
+  const firstDate = new Date(firstDay)
+  const lastDate = new Date(lastDay)
+  const selectedNewsArticles = getNewsArticlesInTimeInterval(newsArticles, firstDate, lastDate)
+  let heading = ''
 
-    return (
-      <Layout title="News">
-            <div className="columns">
-              <div className="column is-three-quarters">
-                <div className="panel">
-                  <h2 className="panel-heading">{heading}</h2>
-                  {selectedNewsArticles.map(article => (
-                     <Link to={article.node.fields.slug} key={article.node.fields.slug} className="panel-block">
-                       <article className="media">
-                         <figure className="media-left">
-                           <div className="image is-64x64">
-                             <PreviewCompatibleImage imageInfo={article.node.frontmatter.image}/>
-                           </div>
-                         </figure>
-                         <div className="media-content">
-                            <h1 className="has-text-primary">{article.node.frontmatter.title}</h1>
-                            <time className="has-text-secondary" dateTime={article.node.frontmatter.date}>{article.node.frontmatter.date}</time>
-                            <HTMLContent content = {article.node.html.substring(0,360)+" ..."}/>
-                         </div>
-                        </article>
-                      </Link>))
-                  }
-                </div>
-              </div>
-              <div className="column">
-                <NewsMenu newsArticles={newsArticles}/>
-              </div>          
-            </div>
-      </Layout>
-)}
+  if (isYearInterval(firstDate, lastDate)) {
+    heading = firstDate.getFullYear()
+  } else if (isMonthInterval(firstDate, lastDate)) {
+    heading = monthName(firstDate.getMonth()) + " " + firstDate.getFullYear()
+  } else {
+    console.log("Unexpected date interval passed to page constructor.")
+  }
+
+  return (
+    <Layout title="News archive">
+      <Link to="/news/" className="subtitle">
+        <span className="level is-mobile">
+          <span className="level-left">
+            <span className="level-item">
+              <span className="icon"><FaChevronLeft /></span>
+            </span>
+            <span className="level-item">
+              Back to news overview
+            </span>
+          </span>
+        </span>
+      </Link>
+      <hr />
+      <div className="columns">
+        <div className="column is-three-quarters">
+          <div className="panel">
+            <h2 className="panel-heading">{heading}</h2>
+            {selectedNewsArticles.map(article => (
+              <Link to={article.node.fields.slug} key={article.node.fields.slug} className="panel-block">
+                <article className="media">
+                  <figure className="media-left">
+                    <div className="image is-64x64">
+                      <PreviewCompatibleImage imageInfo={article.node.frontmatter.image}/>
+                    </div>
+                  </figure>
+                  <div className="media-content">
+                    <h1 className="has-text-primary">{article.node.frontmatter.title}</h1>
+                    <time className="has-text-secondary" dateTime={article.node.frontmatter.date}>{article.node.frontmatter.date}</time>
+                    <HTMLContent content = {article.node.html.substring(0,360)+" ..."}/>
+                  </div>
+                </article>
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div className="column">
+          <NewsMenu newsArticles={newsArticles}/>
+        </div>          
+      </div>
+    </Layout>
+  )
+}
 
 export default site(NewsTimeIntervalOverview, data => ({newsArticles: data.allMarkdownRemark.edges}))
 
