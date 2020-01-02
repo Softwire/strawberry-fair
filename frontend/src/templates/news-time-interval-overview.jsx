@@ -87,7 +87,7 @@ function isYearInterval(firstDate, lastDate) {
 
 // Checks whether the given interval is from 01 (month) (year) to 01 (month + 1) (year)
 function isMonthInterval(firstDate, lastDate) {
-  let firstPureMonth = new Date(firstDate.getFullYear(), firstDate.getMonth())
+  const firstPureMonth = new Date(firstDate.getFullYear(), firstDate.getMonth())
   const lastPureMonth = new Date(lastDate.getFullYear(), lastDate.getMonth())
   firstPureMonth.setMonth(firstPureMonth.getMonth() + 1)
 
