@@ -8,7 +8,7 @@ const ObjectControl = CMS.getWidget("object").control
 
 export class HeroControl extends React.Component {
     render() {
-        return <ObjectControl {...this.props} onChange={val => handleChange(val)} field={this.getFields()} />
+        return <ObjectControl {...this.props} onChange={val => this.handleChange(val)} field={this.getFields()} />
     }
 
     handleChange(value) {
