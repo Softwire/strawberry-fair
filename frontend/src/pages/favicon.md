@@ -1,0 +1,3 @@
+---
+favicon: /img/favicon.png
+---
