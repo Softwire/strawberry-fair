@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import { HTMLContent } from '../components/Content'
 import { Layout } from '../components/Layout'
@@ -11,7 +12,7 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
     const firstDate = new Date(firstDay)
     const lastDate = new Date(lastDay)
     const selectedNewsArticles = getNewsArticlesInTimeInterval(newsArticles, firstDate, lastDate)
-    var heading = ''
+    let heading = ''
     if (isYearInterval(firstDate, lastDate)) {
       heading = firstDate.getFullYear()
     } else if (isMonthInterval(firstDate, lastDate)) {
@@ -95,4 +96,10 @@ function isMonthInterval(firstDate, lastDate) {
     firstDate.getDate() === 1 &&
     lastDate.getDate() === 1
   )
+}
+
+NewsTimeIntervalOverview.propTypes = {
+  newsArticles: NewsMenu.propTypes.newsArticles,
+  firstDate: PropTypes.string,
+  lastDate: PropTypes.string
 }
