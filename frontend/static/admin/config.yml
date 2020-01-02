@@ -39,7 +39,6 @@ definitions:
   - &twitter {label: Twitter Account, name: twitterAccount, widget: string}
   - &placeHolder {label: Place Holder, name: _markdown_placeHolderText, widget: markdown}
   - &copyright {label: Copyright, name: copyright, widget: string}
-  - &hiddenBody {label: Body, name: body, widget: hidden, default: "placeholder"}
   - contentBlock: &contentBlock
       label: Content Blocks
       name: contentBlocks
@@ -214,13 +213,12 @@ collections:
         label: "Footer"
         name: "footer"
         fields:
-          - *email
-          - *address
+          - *placeHolder
           - *facebook
           - *twitter
-          - *placeHolder
+          - *address
+          - *email
           - *copyright
-          - *hiddenBody 
       - file: "frontend/src/pages/header-and-footer/buttons/get-involved.md"
         label: "Get Involved"
         name: "get-involved"
