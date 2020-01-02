@@ -1,5 +1,9 @@
+import React from 'react'
+import { Helmet } from 'react-helmet'
+
 import { Content } from '../components/Content'
 import { previewContextWrapper } from './context'
+import { Layout } from '../components/Layout'
 
 
 /**
@@ -85,24 +89,56 @@ export const site = (component, additionalPropsExtractor = () => {}) => {
      * @returns {React.Component} Component to be rendered by Gatsby
      */
     return ({data, pageContext}) => {
+        console.log(data)
+
+        let insideLayout = undefined
+        let modifyHead = true  // Should we wrap the component in a React Helmet to set the page title?
+        let layoutProps = {}
+
         if(data.markdownRemark) {
             const new_props = data.markdownRemark.frontmatter || {}
             new_props.content = data.markdownRemark.html
             new_props.pageContext = pageContext
 
-            new_props.heroData = null
             if (data.heroData &&
                 data.heroData.nodes &&
                 data.heroData.nodes[0] &&
                 data.heroData.nodes[0].frontmatter &&
                 data.heroData.nodes[0].frontmatter.heroData) {
-                    new_props.heroData = data.heroData.nodes[0].frontmatter.heroData
-                }
+                    layoutProps.heroData = data.heroData.nodes[0].frontmatter.heroData
+            }
 
-            return component(Object.assign(new_props, additionalPropsExtractor(data)))
+            layoutProps.title = data.markdownRemark.frontmatter.title
+            layoutProps.subtitle = data.markdownRemark.frontmatter.subtitle
+            
+            Object.assign(new_props, layoutProps)
+
+            insideLayout = component(Object.assign(new_props, additionalPropsExtractor(data)))
         }
         else {
-            return component(Object.assign(pageContext, additionalPropsExtractor(data)))
+            insideLayout = component(Object.assign(pageContext, additionalPropsExtractor(data)))
+            modifyHead = false
+        }
+
+        console.log(layoutProps)
+
+        const insideHelmet = (
+            <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle}>
+                {insideLayout}
+            </Layout>
+        )
+
+        if (modifyHead) {
+            return (
+                <React.Fragment>
+                    <Helmet>
+                        <title>{layoutProps.title ? layoutProps.title : 'Strawberry Fair'}</title>
+                    </Helmet>
+                    {insideHelmet}
+                </React.Fragment>
+            )
+        } else {
+            return insideHelmet
         }
     }
 }
