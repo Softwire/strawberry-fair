@@ -44,6 +44,17 @@ $section-padding: 0 1.5rem;
     background-size: cover;
 }
 
+.scrapbook-column {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @media(max-width: $tablet) {
+        .right-bottom {
+            flex-direction: column;
+        }
+    }
+}
+
 // Allows navbar dropdowns to work in Edge
 @include desktop {
     .navbar-item {
