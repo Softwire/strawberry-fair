@@ -2,7 +2,7 @@ import React from 'react'
 import CMS from 'netlify-cms-app'
 import { Map } from 'immutable'
 import { queryObjectChild } from './queryNestedWidgets'
-
+import PropTypes from 'prop-types'
 
 const ObjectControl = CMS.getWidget("object").control
 
@@ -42,4 +42,9 @@ export class HeroControl extends React.Component {
             })
         }
     }
+}
+
+HeroControl.propTypes = {
+    value: PropTypes.object,
+    field: PropTypes.instanceOf(Map)
 }

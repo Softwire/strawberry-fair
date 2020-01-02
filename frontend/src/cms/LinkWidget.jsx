@@ -2,6 +2,7 @@ import React from 'react'
 import CMS from 'netlify-cms-app'
 import { Map, List } from 'immutable'
 import { getPageTreeObject, getSubTree } from '../util/data-parser.js'
+import PropTypes from 'prop-types'
 
 // Following https://www.netlify.com/blog/2017/06/20/extending-netlify-cms-part-one-custom-widgets/
 
@@ -66,3 +67,11 @@ export class LinkControl extends React.Component {
 export const LinkPreview = props => (
   <div><strong>Link: </strong>{JSON.stringify(props.value)}</div>
 )
+
+LinkControl.propTypes = {
+  onChange: PropTypes.func,
+}
+
+LinkPreview.propTypes = {
+  value: PropTypes.string
+}

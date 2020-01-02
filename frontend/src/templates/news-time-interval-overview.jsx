@@ -5,6 +5,8 @@ import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 import NewsMenu, { monthName } from '../components/NewsMenu.jsx'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import PropTypes from 'prop-types'
+import NewsArticleSnapshots from '../components/NewsArticleSnapshots'
 
 // This is used by the website and for CMS previews
 export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
@@ -86,4 +88,10 @@ function areInSameMonth(articles) {
     if(articleDate.getMonth()!=month) return false
   }
   return true
+}
+
+NewsTimeIntervalOverview.propTypes = {
+  newsArticles: NewsArticleSnapshots.propTypes.newsArticles,
+  firstDay: PropTypes.string.isRequired,
+  lastDay: PropTypes.string.isRequired
 }
