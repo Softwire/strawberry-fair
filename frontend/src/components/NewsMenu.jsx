@@ -67,6 +67,6 @@ NewsMenu.propTypes = {
 }
 
 MonthItemsForYear.propTypes = {
-    year: PropTypes.number,
+    year: PropTypes.string,
     months: PropTypes.arrayOf(PropTypes.number)
 }

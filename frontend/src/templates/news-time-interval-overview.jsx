@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import { HTMLContent } from '../components/Content'
 import { Layout } from '../components/Layout'
@@ -8,14 +9,18 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 // This is used by the website and for CMS previews
 export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
-    firstDay = new Date(firstDay)
-    lastDay = new Date(lastDay)
-    const selectedNewsArticles = getNewsArticlesInTimeInterval(newsArticles, firstDay, lastDay)
-    var heading = ''
-    if(areInSameYear(selectedNewsArticles)){
-      if(areInSameMonth(selectedNewsArticles)) heading = monthName(firstDay.getMonth()) + " " + firstDay.getFullYear()
-      else heading = firstDay.getFullYear()
+    const firstDate = new Date(firstDay)
+    const lastDate = new Date(lastDay)
+    const selectedNewsArticles = getNewsArticlesInTimeInterval(newsArticles, firstDate, lastDate)
+    let heading = ''
+    if (isYearInterval(firstDate, lastDate)) {
+      heading = firstDate.getFullYear()
+    } else if (isMonthInterval(firstDate, lastDate)) {
+      heading = monthName(firstDate.getMonth()) + " " + firstDate.getFullYear()
+    } else {
+      console.log("Unexpected date interval passed to page constructor.")
     }
+
     return (
       <Layout title="News">
             <div className="columns">
@@ -68,22 +73,32 @@ function isInTimeInterval(firstDayDate, lastDayDate, articleDate) {
   return firstDayDate<= articleDate && articleDate < lastDayDate
 }
 
-function areInSameYear(articles){
-  const date = new Date(articles[0].node.frontmatter.date)
-  const year = date.getFullYear()
-  for(const article of articles){
-    const articleDate = new Date(article.node.frontmatter.date)
-    if(articleDate.getFullYear()!=year) return false
-  }
-  return true
+// Checks whether the given interval is from 01 Jan (year) to 01 Jan (year + 1)
+function isYearInterval(firstDate, lastDate) {
+  return (
+    firstDate.getFullYear() + 1 === lastDate.getFullYear() &&
+    firstDate.getMonth() === 0 &&
+    lastDate.getMonth() === 0 &&
+    firstDate.getDate() === 1 &&
+    lastDate.getDate() === 1
+  )
 }
 
-function areInSameMonth(articles) {
-  const date = new Date(articles[0].node.frontmatter.date)
-  const month = date.getMonth()
-  for(const article of articles){
-    const articleDate = new Date(article.node.frontmatter.date)
-    if(articleDate.getMonth()!=month) return false
-  }
-  return true
+// Checks whether the given interval is from 01 (month) (year) to 01 (month + 1) (year)
+function isMonthInterval(firstDate, lastDate) {
+  const firstPureMonth = new Date(firstDate.getFullYear(), firstDate.getMonth())
+  const lastPureMonth = new Date(lastDate.getFullYear(), lastDate.getMonth())
+  firstPureMonth.setMonth(firstPureMonth.getMonth() + 1)
+
+  return (
+    firstPureMonth.getTime() === lastPureMonth.getTime() &&  // Have to do it this way to ensure December works
+    firstDate.getDate() === 1 &&
+    lastDate.getDate() === 1
+  )
+}
+
+NewsTimeIntervalOverview.propTypes = {
+  newsArticles: NewsMenu.propTypes.newsArticles,
+  firstDay: PropTypes.string,
+  lastDay: PropTypes.string
 }
