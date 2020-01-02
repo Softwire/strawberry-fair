@@ -22,7 +22,6 @@ definitions:
   - &body {label: Main Content, name: body, widget: markdown}
   - &newsImage {label: Primary Image, name: image, widget: image, hint: This image will also be used as a preview image for the article}
   - &eventImage {label: Event Image, name: image, widget: image, hint: This image will also be used as a preview image for the event}
-  - &favicon {label: Site Icon, name: favicon, widget: image, hint: This image appears next to the site title in the browser tab}
   - &form {label: Form, name: form, widget: form}
   - &author {label: Author, name: author, widget: string}
   - &date {label: Date, name: date, widget: datetime, format: YYYY-MM-DD, dateFormat: YYYY-MM-DD, timeFormat: false}
@@ -222,12 +221,3 @@ collections:
     fields:
       - *menuTitle
       - *pageTitles
-  - name: favicon
-    label: Site Icon
-    files:
-      - file: frontend/src/pages/favicon.md
-        label: Site Icon
-        name: favicon
-        fields:
-        - *favicon
-    description: Set the site icon, or 'favicon', that appears in the browser tab
