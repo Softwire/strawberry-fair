@@ -1,32 +1,21 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import { HTMLContent } from '../components/Content'
 import { site } from '../util/templating'
-import { Layout } from '../components/Layout'
 import { Upcoming } from '../components/calendar/Upcoming'
 import { CalendarViewToggle } from '../components/calendar/CalendarViewToggle'
 
-export const UpcomingEvents = ({content, contentComponent, events, heroData}) => {
-  const BodyComponent = contentComponent || HTMLContent
-
+export const UpcomingEvents = ({events}) => {
   return (
-    <Layout heroData={heroData}>
-      <section>
-        <CalendarViewToggle view='upcoming' />
-        <BodyComponent content={content} />
-        <Upcoming events={events} />
-      </section>
-    </Layout>
+    <section>
+      <CalendarViewToggle view='upcoming' />
+      <Upcoming events={events} />
+    </section>
   )
 }
 
 UpcomingEvents.propTypes = {
-  content: PropTypes.string.isRequired,
-  contentComponent: PropTypes.elementType,
-  events: Upcoming.propTypes.events,
-  heroData: Layout.propTypes.heroData
+  events: Upcoming.propTypes.events
 }
 
 export default site(UpcomingEvents, data => {return {events: data.allMarkdownRemark.edges}})

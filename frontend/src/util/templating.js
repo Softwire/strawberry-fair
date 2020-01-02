@@ -89,14 +89,13 @@ export const site = (component, additionalPropsExtractor = () => {}) => {
      * @returns {React.Component} Component to be rendered by Gatsby
      */
     return ({data, pageContext}) => {
-        console.log(data)
-
         let insideLayout = undefined
         let modifyHead = true  // Should we wrap the component in a React Helmet to set the page title?
         let layoutProps = {}
 
         if(data.markdownRemark) {
             const new_props = data.markdownRemark.frontmatter || {}
+            layoutProps = new_props
             new_props.content = data.markdownRemark.html
             new_props.pageContext = pageContext
 
@@ -107,20 +106,16 @@ export const site = (component, additionalPropsExtractor = () => {}) => {
                 data.heroData.nodes[0].frontmatter.heroData) {
                     layoutProps.heroData = data.heroData.nodes[0].frontmatter.heroData
             }
-
-            layoutProps.title = data.markdownRemark.frontmatter.title
-            layoutProps.subtitle = data.markdownRemark.frontmatter.subtitle
             
+            Object.assign(layoutProps, additionalPropsExtractor(data))
             Object.assign(new_props, layoutProps)
 
-            insideLayout = component(Object.assign(new_props, additionalPropsExtractor(data)))
+            insideLayout = component(new_props)
         }
         else {
             insideLayout = component(Object.assign(pageContext, additionalPropsExtractor(data)))
             modifyHead = false
         }
-
-        console.log(layoutProps)
 
         const insideHelmet = (
             <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle}>

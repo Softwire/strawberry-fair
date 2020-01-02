@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import { FaChevronLeft } from 'react-icons/fa'
 import { HTMLContent } from '../components/Content'
-import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 import NewsMenu, { monthName } from '../components/NewsMenu.jsx'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
@@ -25,7 +24,7 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
   }
 
   return (
-    <Layout title="News archive">
+    <React.Fragment>
       <Link to="/news/" className="subtitle">
         <span className="level is-mobile">
           <span className="level-left">
@@ -65,11 +64,11 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
           <NewsMenu newsArticles={newsArticles}/>
         </div>          
       </div>
-    </Layout>
+    </React.Fragment>
   )
 }
 
-export default site(NewsTimeIntervalOverview, data => ({newsArticles: data.allMarkdownRemark.edges}))
+export default site(NewsTimeIntervalOverview, data => ({newsArticles: data.allMarkdownRemark.edges, title: 'News'}))
 
 export const query = graphql`
 query newsMonthOverviewTemplate{
