@@ -100,6 +100,6 @@ function isMonthInterval(firstDate, lastDate) {
 
 NewsTimeIntervalOverview.propTypes = {
   newsArticles: NewsMenu.propTypes.newsArticles,
-  firstDate: PropTypes.string,
-  lastDate: PropTypes.string
+  firstDay: PropTypes.string,
+  lastDay: PropTypes.string
 }
