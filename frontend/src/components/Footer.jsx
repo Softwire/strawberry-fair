@@ -9,19 +9,20 @@ import PropTypes from 'prop-types'
 import convertToHtml from '../util/markdown-converter.js'
 
 
-export const Footer = () => (
+export const Footer = (data) => (
     <PreviewContext.Consumer>
-      {value => <FooterDisplay isPreview={value}/>}
+      {value => <FooterDisplay isPreview={value} CMSInput={data}/>}
     </PreviewContext.Consumer>
   )
 
-export const FooterDisplay = ({isPreview}) => {
-
-    let footerContent = isPreview ? footerPreviewContent : getFooterContent()
+export const FooterDisplay = ({isPreview, CMSInput}) => {
+    //if isPreview is true, then the CMS user is either editing a page with the footer or editing the footer itself. 
+    //if CMSInput is not an empty object, then the CMS user is editing the footer.
+    let footerContent = isPreview ? (Object.keys(CMSInput).length > 0 ? CMSInput : footerPreviewContent) : getFooterContent()
 
     footerContent.address = convertToHtml(footerContent.address)
     footerContent.placeHolderText = convertToHtml(footerContent.placeHolderText)
-    
+
     return(
     <footer className="footer">
         <div className="tile is-ancestor">
