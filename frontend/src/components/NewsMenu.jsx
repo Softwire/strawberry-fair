@@ -12,7 +12,7 @@ const NewsMenu = ({newsArticles}) => {
                 Archive
             </h1>
             {Object.entries(menuEntries)
-                .sort(([year1], [year2]) => year1 - year2)
+                .sort(([year1], [year2]) => year2 - year1)
                 .map(([year, months]) => <MonthItemsForYear key={year} year={year} months={months}/> )}
         </nav>
     )
