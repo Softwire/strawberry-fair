@@ -17,7 +17,7 @@ export const EventMediaBlock = ({event}) => {
     const eventUrl = event.fields.slug
 
     return (
-    <div className="media">
+    <div className="media event">
         <div className="media-left">
             <Link to={eventUrl} className="image is-64x64">
                 <img src={event.frontmatter.image ?
@@ -30,7 +30,7 @@ export const EventMediaBlock = ({event}) => {
                 <h2 className="title is-4"><strong>{event.frontmatter.title}</strong></h2>
                 <h3 className="subtitle is-5">{date.toLocaleString("en-GB", displayStyle)}</h3>
             </Link>
-            <HTMLContentSmall className="add-padding-top" content={event.excerpt} />
+            <HTMLContentSmall className="add-margin-top" content={event.excerpt} />
         </div>
     </div>
     )
@@ -73,8 +73,8 @@ const UpcomingWithContext = ({isPreview, previewEventList}) => {
     let eventPanels = filterEvents(events, filterProps.activeFilters).slice(0, maxItems).map(event => <EventPanelBlock key={event.frontmatter.title} event={event} />)
 
     return (
-        <div className="panel">
-            <h2 className="panel-heading">Upcoming</h2>
+        <div className="upcoming panel">
+            <h1 className="panel-heading">Upcoming</h1>
             <EventFilterBlock filterProps={filterProps} />
             {eventPanels.length > 0 ? eventPanels : <NoEventsFoundBlock />}
         </div>

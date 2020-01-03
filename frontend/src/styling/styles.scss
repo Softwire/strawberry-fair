@@ -107,6 +107,10 @@ $strawberry-card-size: 14rem;
     height: 0;
     padding-bottom: $strawberry-card-size - $box-padding;
 }
-.add-padding-top {
+.add-margin-top {
     margin-top: 0.6rem;
+}
+
+.calendar.panel .modal.is-active .media.event:nth-child(even),.upcoming.panel>.panel-block:not(.filter):nth-child(even) {
+    background-color: grey;
 }

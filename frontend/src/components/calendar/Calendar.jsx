@@ -55,8 +55,8 @@ const CalendarWithContext = ({isPreview, previewEventList}) => {
     // What would the corect semantic component for this be?
     // TODO: See https://codepen.io/wikiki/pen/KvqKzK for a way of making the "< December 2019 >" bit span across the whole calendar
     return (
-        <div className="panel">
-            <h2 className="panel-heading">Calendar</h2>
+        <div className="calendar panel">
+            <h1 className="panel-heading">Calendar</h1>
             <MonthScrubber monthForward={monthForward} monthBack={monthBack} focusDate={focusDate} />
             <EventFilterBlock filterProps={filterProps} />
             <div className="panel-block">
