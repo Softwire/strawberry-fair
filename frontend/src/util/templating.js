@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 
 import { Content } from '../components/Content'
@@ -88,52 +89,72 @@ export const site = (component, additionalPropsExtractor = () => {}) => {
      * @param {Object} data - Data retrieved from GraphQL query specified in the component
      * @returns {React.Component} Component to be rendered by Gatsby
      */
-    return ({data, pageContext}) => {
-        let insideLayout = undefined
-        let modifyHead = true  // Should we wrap the component in a React Helmet to set the page title?
-        let layoutProps = {}
+    const siteComponent = ({data, pageContext}) => {
+        const insideLayout = siteInsideLayout(component, additionalPropsExtractor, data, pageContext)
+        const layoutProps = extractLayoutProps(data)
 
-        if(data.markdownRemark) {
-            const new_props = data.markdownRemark.frontmatter || {}
-            layoutProps = new_props
-            new_props.content = data.markdownRemark.html
-            new_props.pageContext = pageContext
-
-            if (data.heroData &&
-                data.heroData.nodes &&
-                data.heroData.nodes[0] &&
-                data.heroData.nodes[0].frontmatter &&
-                data.heroData.nodes[0].frontmatter.heroData) {
-                    layoutProps.heroData = data.heroData.nodes[0].frontmatter.heroData
-            }
-            
-            Object.assign(layoutProps, additionalPropsExtractor(data))
-            Object.assign(new_props, layoutProps)
-
-            insideLayout = component(new_props)
-        }
-        else {
-            insideLayout = component(Object.assign(pageContext, additionalPropsExtractor(data)))
-            modifyHead = false
-        }
-
-        const insideHelmet = (
-            <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle}>
-                {insideLayout}
-            </Layout>
+        return (
+            <React.Fragment>
+                <Helmet>
+                    <title>{layoutProps.title ? layoutProps.title : 'Strawberry Fair'}</title>
+                </Helmet>
+                <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle}>
+                    {insideLayout}
+                </Layout>
+            </React.Fragment>
         )
-
-        if (modifyHead) {
-            return (
-                <React.Fragment>
-                    <Helmet>
-                        <title>{layoutProps.title ? layoutProps.title : 'Strawberry Fair'}</title>
-                    </Helmet>
-                    {insideHelmet}
-                </React.Fragment>
-            )
-        } else {
-            return insideHelmet
-        }
     }
+
+    siteComponent.propTypes = {
+        data: PropTypes.object,
+        pageContext: PropTypes.object
+    }
+
+    return siteComponent
+}
+
+// Generate a view of the site to be wrapped inside <Layout>
+const siteInsideLayout = (component, additionalPropsExtractor, data, pageContext) => {
+    const newProps = {}
+
+    if (data.markdownRemark) {
+        Object.assign(newProps, data.markdownRemark.frontmatter)
+        newProps.content = data.markdownRemark.html
+        newProps.pageContext = pageContext
+    } else {
+        Object.assign(newProps, pageContext)
+    }
+
+    if (data.heroData &&
+        data.heroData.nodes &&
+        data.heroData.nodes[0] &&
+        data.heroData.nodes[0].frontmatter &&
+        data.heroData.nodes[0].frontmatter.heroData) {
+            newProps.heroData = data.heroData.nodes[0].frontmatter.heroData
+    }
+        
+    Object.assign(newProps, additionalPropsExtractor(data))
+
+    return component(newProps)
+}
+
+// Extract hero image data, a title, and a subtitle (if present) from a GraphQL query data object to be passed to <Layout>
+const extractLayoutProps = data => {
+    const layoutProps = {}
+
+    if (data.markdownRemark &&
+        data.markdownRemark.frontmatter) {
+            layoutProps.title = data.markdownRemark.frontmatter.title
+            layoutProps.subtitle = data.markdownRemark.frontmatter.subtitle
+    }
+
+    if (data.heroData &&
+        data.heroData.nodes &&
+        data.heroData.nodes[0] &&
+        data.heroData.nodes[0].frontmatter &&
+        data.heroData.nodes[0].frontmatter.heroData) {
+            layoutProps.heroData = data.heroData.nodes[0].frontmatter.heroData
+    }
+
+    return layoutProps
 }
