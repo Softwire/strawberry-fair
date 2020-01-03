@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 
 import { Content } from '../components/Content'
-import { previewContextWrapper } from './context'
+import { PreviewContextWrapper } from './context'
 import { Layout } from '../components/Layout'
 
 
@@ -31,7 +31,7 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
      * @param {Function} widgetsFor - Utility function provided by the CMS
      * @param {Function} getAsset - Utility function provided by the CMS
      */
-    return ({ entry, widgetFor, widgetsFor, getAsset }) => {
+    const previewComponent = ({ entry, widgetFor, widgetsFor, getAsset }) => {
         const dataProps = entry.getIn(['data']).toJS()
         const previewProps = {}
 
@@ -51,8 +51,21 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
         Object.assign(previewProps, dataProps)
 
         const isPreview = true
-        return previewContextWrapper(isPreview, component(Object.assign(placeholderProps, previewProps)))
+        return (
+            <PreviewContextWrapper value={isPreview}>
+                {component(Object.assign(placeholderProps, previewProps))}
+            </PreviewContextWrapper>
+        )
     }
+
+    previewComponent.propTypes = {
+        entry: PropTypes.object,
+        widgetFor: PropTypes.func,
+        widgetsFor: PropTypes.func,
+        getAsset: PropTypes.func
+    }
+
+    return previewComponent
 }
 
 /**
@@ -116,6 +129,9 @@ export const site = (component, additionalPropsExtractor = () => {}) => {
 // Generate a view of the site to be wrapped inside <Layout>
 const siteInsideLayout = (component, additionalPropsExtractor, data, pageContext) => {
     const newProps = {}
+
+    console.log('In \'siteInsideLayout()\':')
+    console.log(data)
 
     if (data.markdownRemark) {
         Object.assign(newProps, data.markdownRemark.frontmatter)
