@@ -1,3 +1,0 @@
----
-favicon: /img/favicon.png
----
