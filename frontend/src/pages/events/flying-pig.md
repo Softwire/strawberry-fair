@@ -1,7 +1,9 @@
 ---
 templateKey: event-info
 title: Flying Pig Stage
-image: /img/flying-pig.jpg
+image:
+  alt: Placeholder
+  src: /img/flying-pig.jpg
 dateTime: 2020-12-23T12:00:00.000Z
 eventTypes:
   - Meeting - Programming
