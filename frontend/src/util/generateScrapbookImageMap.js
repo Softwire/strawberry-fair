@@ -86,7 +86,7 @@ const regulariseInnerColAspects = (imageMap) => {
         const tall = leftIsTaller ? left : right
         const short = leftIsTaller ? right : left
 
-        const worstRatio = getWorstCaseHeightRatio(tall, short)
+        const worstRatio = getWorstCaseInnerColsHeightRatio(tall, short)
 
         if (worstRatio < minInnerColHeightDiffRatio) {
             const requiredChangeFactor = minInnerColHeightDiffRatio / currRatio
@@ -100,7 +100,7 @@ const regulariseInnerColAspects = (imageMap) => {
 const assignInnerColWidths = (imageMap, isPreview=false) => {
     return imageMap.map((outerColMap) => {
         const validLeftWidths = getValidLeftWidths(outerColMap, isPreview)
-        const leftWidth = getRandEl(validLeftWidths)
+        const leftWidth = getRandElement(validLeftWidths)
 
         const left = { width: `is-${leftWidth}`, images: outerColMap[0] }
         const right = { width: `is-${12 - leftWidth}`, images: outerColMap[1] }
@@ -122,25 +122,22 @@ const getInnerColAspect = (innerColMap) => (innerColMap.length === 1 ? getAspect
 
 const getOuterColAspectSum = (outerColMap) => outerColMap.reduce(((acc, curr) => acc + getInnerColAspect(curr)), 0)
 
-/** Calculates a proportionate adjustment ratio for outer col aspects */
 const getOuterColAdjustmentRatio = (self, other) => (self + other) / (2 * self)
 
-/** Adjusts all aspects within an outer col by a ratio r */
-const adjustOuterColAspects = (outerColMap, r) => {
-    outerColMap.forEach((innerColMap) => adjustInnerColAspects(innerColMap, r))
+const adjustOuterColAspects = (outerColMap, ratio) => {
+    outerColMap.forEach((innerColMap) => adjustInnerColAspects(innerColMap, ratio))
 }
 
-/** Adjusts all aspects within an inner col by a ratio r */
-const adjustInnerColAspects = (innerColMap, r) => {
+const adjustInnerColAspects = (innerColMap, ratio) => {
     innerColMap.forEach((img) => {
-        setAspect(img, getAspect(img) * r)
+        setAspect(img, getAspect(img) * ratio)
     })
 }
 
 const getInnerColHeight = (innerColMap, width) => width / getInnerColAspect(innerColMap)
 
 /** Calculates height ratio between two inner columns, given a width for the left column */
-const calculateHeightRatio = (outerColMap, lWidth) => {
+const calculateInnerColsHeightRatio = (outerColMap, lWidth) => {
     const ratio = getInnerColHeight(outerColMap[0], lWidth) / getInnerColHeight(outerColMap[1], (12 - lWidth))
 
     if (ratio > 1) {
@@ -150,12 +147,13 @@ const calculateHeightRatio = (outerColMap, lWidth) => {
 }
 
 /** Calculates worst case height ratio between two innerCols, which can be checked against the minInnerColHeightDiffRatio constraint */
-const getWorstCaseHeightRatio = (tall, short) =>  (2 * getInnerColAspect(short)) / getInnerColAspect(tall)
+const getWorstCaseInnerColsHeightRatio = (tall, short) =>  (2 * getInnerColAspect(short)) / getInnerColAspect(tall)
 
 const isLeftWidthValid = (outerColMap, lWidth) => {
-    return calculateHeightRatio(outerColMap, lWidth) >= minInnerColHeightDiffRatio
+    return calculateInnerColsHeightRatio(outerColMap, lWidth) >= minInnerColHeightDiffRatio
 }
 
+/** Returns list of all possible Bulma widths based on value of minInnerColWidth constraint */
 const getPossibleWidths = () => {
     const minWidth = minInnerColWidth
     const maxWidth = 12 - minWidth
@@ -178,7 +176,7 @@ const getValidLeftWidths = (outerColMap, isPreview=false) => {
 /** Returns 0 <= randInt < max */
 const getRandInt = (max) => Math.floor(Math.random() * max)
 
-const getRandEl = (arr) => arr[getRandInt(arr.length)]
+const getRandElement = (arr) => arr[getRandInt(arr.length)]
 
 export const shuffle = (arr) => {
     const shuffled = [...arr]
