@@ -10,24 +10,31 @@ import { getEventList } from './getEventList'
 import { PreviewContext } from '../../util/context'
 import { useFilters } from '../../util/filters'
 import { isOnOrAfterDay } from '../../util/dates'
+import { displayStyle } from '../../templates/event-info'
 
-export const EventMediaBlock = ({event}) => (
-    <div className="media">
+export const EventMediaBlock = ({event}) => {
+    const date = new Date(event.frontmatter.dateTime)
+    const eventUrl = event.fields.slug
+
+    return (
+    <div className="media event">
         <div className="media-left">
-            <p className="image is-64x64">
+            <Link to={eventUrl} className="image is-64x64">
                 <img src={event.frontmatter.image ?
                     (event.frontmatter.image.childImageSharp ? event.frontmatter.image.childImageSharp.resize.src : event.frontmatter.image) :
                     null} />
-            </p>
+            </Link>
         </div>
         <div className="media-content">
-            <h2 className="title is-4">
-                <strong><Link to={event.fields.slug}>{event.frontmatter.title}</Link></strong> - {new Date(event.frontmatter.dateTime).toLocaleDateString('en-GB')}
-            </h2>
-            <HTMLContentSmall content={event.excerpt} />
+            <Link to={eventUrl}>
+                <h2 className="title is-4"><strong>{event.frontmatter.title}</strong></h2>
+                <h3 className="subtitle is-5">{date.toLocaleString("en-GB", displayStyle)}</h3>
+            </Link>
+            <HTMLContentSmall className="add-margin-top" content={event.excerpt} />
         </div>
     </div>
-)
+    )
+}
 
 const EventPanelBlock = ({event}) => {
     return (
@@ -66,8 +73,8 @@ const UpcomingWithContext = ({isPreview, previewEventList}) => {
     let eventPanels = filterEvents(events, filterProps.activeFilters).slice(0, maxItems).map(event => <EventPanelBlock key={event.frontmatter.title} event={event} />)
 
     return (
-        <div className="panel">
-            <h2 className="panel-heading">Upcoming</h2>
+        <div className="upcoming panel">
+            <h1 className="panel-heading">Upcoming</h1>
             <EventFilterBlock filterProps={filterProps} />
             {eventPanels.length > 0 ? eventPanels : <NoEventsFoundBlock />}
         </div>

@@ -7,6 +7,16 @@ import { HTMLContent } from '../components/Content'
 import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 
+//display style of the event date
+export const displayStyle = {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit"
+}
+
 // List of types shown near top of event
 const EventTypeList = ({eventTypes}) => {
     if (eventTypes) {
@@ -20,7 +30,6 @@ const EventTypeList = ({eventTypes}) => {
     }
 }
 
-
 EventTypeList.propTypes = {
     eventTypes: PropTypes.arrayOf(PropTypes.string)
 }
@@ -30,15 +39,6 @@ export const EventInfo = ({title, image, dateTime, eventTypes, content, contentC
     const BodyComponent = contentComponent || HTMLContent
 
     const date = new Date(dateTime)
-
-    const displayStyle = {
-        weekday: "long",
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-        hour: "2-digit",
-        minute: "2-digit"
-    }
 
     return (
         <Layout heroData={heroData} title={title} subtitle={date.toLocaleString("en-GB", displayStyle)}>

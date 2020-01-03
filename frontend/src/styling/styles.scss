@@ -118,3 +118,11 @@ $strawberry-card-size: 14rem;
     margin-left: -50vw;
     margin-right: -50vw;
 }
+
+.add-margin-top {
+    margin-top: 0.6rem;
+}
+
+.calendar.panel .modal.is-active .media.event:nth-child(even),.upcoming.panel>.panel-block:not(.filter):nth-child(even) {
+    background-color: light-grey;
+}

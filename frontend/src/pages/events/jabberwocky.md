@@ -2,7 +2,7 @@
 templateKey: event-info
 title: "Jabberwocky"
 image: /img/jabberwocky.jpg
-dateTime: 2020-01-05T15:45:00.000Z
+dateTime: 2020-01-01T15:45:00.000Z
 eventTypes:
   - 'Meeting - Programming'
   - 'Meeting - Finance'
