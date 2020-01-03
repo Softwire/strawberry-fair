@@ -33,7 +33,6 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
      */
     const previewComponent = ({ entry, widgetFor, widgetsFor, getAsset }) => {
         const dataProps = entry.getIn(['data']).toJS()
-        console.log(dataProps)
         const previewProps = {}
 
         try {
@@ -135,9 +134,6 @@ export const site = (component, additionalPropsExtractor = () => {}) => {
 const siteInsideLayout = (component, additionalPropsExtractor, data, pageContext) => {
     const newProps = {}
 
-    console.log('In \'siteInsideLayout()\':')
-    console.log(data)
-
     if (data.markdownRemark) {
         Object.assign(newProps, data.markdownRemark.frontmatter)
         newProps.content = data.markdownRemark.html
@@ -169,12 +165,15 @@ const extractLayoutProps = data => {
             layoutProps.subtitle = data.markdownRemark.frontmatter.subtitle
     }
 
-    if (data.heroData &&
-        data.heroData.nodes &&
-        data.heroData.nodes[0] &&
-        data.heroData.nodes[0].frontmatter &&
-        data.heroData.nodes[0].frontmatter.heroData) {
-            layoutProps.heroData = data.heroData.nodes[0].frontmatter.heroData
+    if (data.heroData) {
+        if (data.heroData.nodes &&
+            data.heroData.nodes[0] &&
+            data.heroData.nodes[0].frontmatter &&
+            data.heroData.nodes[0].frontmatter.heroData) {
+                layoutProps.heroData = data.heroData.nodes[0].frontmatter.heroData
+        } else {
+            layoutProps.heroData = data.heroData
+        }
     }
 
     return layoutProps
