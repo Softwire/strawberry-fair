@@ -2,6 +2,11 @@
 templateKey: about-page
 title: Full width content page
 subtitle: It's your festival
+heroData:
+  heroImages:
+    - alt: East stage panorama
+      src: /img/revised-east-stage-panorama.jpg
+  isActive: true
 ---
 # H1 Curabitur gravida quam eget leo lacinia egestas. Morbi pharetra ut quam vitae luctus
 

@@ -38,9 +38,8 @@ node (label: 'linux') {
             }
             
             stage('Deploy') {
-                echo 'Tests sucessful. Deploying to production is disabled.'
-                //echo 'Tests successful. Deploying to production...'
-                //sh 'git push origin HEAD:production'
+                echo 'Tests successful. Deploying to production...'
+                sh 'git push origin HEAD:production'
             }
         } catch (e) {
             currentBuild.result = 'FAILED'

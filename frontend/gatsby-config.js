@@ -64,5 +64,11 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        class: 'has-navbar-fixed-top'  // Allows for a fixed navbar
+      }
+    }
   ],
 }

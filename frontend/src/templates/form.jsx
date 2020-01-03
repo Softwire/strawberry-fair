@@ -9,15 +9,14 @@ import { site } from '../util/templating'
 
 // This is used by the website and for CMS previews
 export const FormPage = ({title, form, content, contentComponent, heroData}) => {
-    const BodyComponent = contentComponent || HTMLContent
+  const BodyComponent = contentComponent || HTMLContent
 
-    return (
-      <Layout heroData={heroData}>
-        <h1 className="title has-text-centered">{title}</h1>
-        <BodyComponent content={content} />
-        <FormFrame form={form} />
-      </Layout>
-    )
+  return (
+    <Layout heroData={heroData} title={title}>
+      <BodyComponent content={content} />
+      <FormFrame form={form} />
+    </Layout>
+  )
 }
 
 FormPage.propTypes = {

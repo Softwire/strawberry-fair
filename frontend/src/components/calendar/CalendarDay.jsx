@@ -7,7 +7,6 @@ import { EventMediaBlock } from './Upcoming'
 import { areSameDay } from '../../util/dates'
 
 // Represents a day in the calendar. Will either be empty or contain a preview of an event.
-// Later will have to add support for multiple events.
 const CalendarDay = ({dateTime, events}) => {
     // TODO: Change the method of indicating it's "today", so as still to be visible when there's an event today
     const date = new Date(dateTime)  // The actual Date this CalendarDay is representing
@@ -57,7 +56,7 @@ const CalendarDay = ({dateTime, events}) => {
             <React.Fragment>
                 <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
                 <div className={`box button has-text-left calendar-day ${event.frontmatter.image ? "has-text-white" : "has-text-black"} has-text-weight-bold`} onClick={modalOn} style={event.frontmatter.image ? {
-                        backgroundImage: `url(${event.frontmatter.image.childImageSharp.editedFluid.src})`} : null}>
+                        backgroundImage: `url(${event.frontmatter.image.childImageSharp ? event.frontmatter.image.childImageSharp.editedFluid.src : event.frontmatter.image})`} : null}>
                     <p>{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</p>
                     <p key={event.fields.slug}><Link className={`${event.frontmatter.image ? "has-text-white" : "has-text-black"} has-text-weight-medium`} to={event.fields.slug}>{event.frontmatter.title}</Link></p>
                 </div>
@@ -69,7 +68,7 @@ const CalendarDay = ({dateTime, events}) => {
                 <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
                 {eventsWithPics.map((event, index) =>
                     <div key={event.fields.slug} className="box button has-text-left calendar-day has-text-white has-text-weight-bold" onClick={modalOn} style={{
-                            backgroundImage: `url(${event.frontmatter.image.childImageSharp.editedFluid.src})`,
+                            backgroundImage: `url(${event.frontmatter.image.childImageSharp ? event.frontmatter.image.childImageSharp.editedFluid.src : event.frontmatter.image})`,
                             opacity: index === currentImage ? 1 : 0,
                             transition: `opacity ${imageFadeTimeS}s`,
                             position: "absolute",

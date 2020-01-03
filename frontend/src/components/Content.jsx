@@ -21,3 +21,4 @@ Content.propTypes = {
 }
 
 HTMLContent.propTypes = Content.propTypes
+HTMLContentSmall.propTypes = Content.propTypes
