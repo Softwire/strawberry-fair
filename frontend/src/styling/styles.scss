@@ -128,3 +128,10 @@ $strawberry-card-size: 14rem;
 .calendar.panel .modal.is-active .media.event:nth-child(even),.upcoming.panel>.panel-block:not(.filter):nth-child(even) {
     background-color: light-grey;
 }
+
+// Calendar day pencil circle 'today' indicator
+.pencil-circle {
+    position: absolute;
+    top: -18px;
+    left: -18px;
+}
