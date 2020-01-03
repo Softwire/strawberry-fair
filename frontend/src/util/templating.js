@@ -33,6 +33,7 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
      */
     const previewComponent = ({ entry, widgetFor, widgetsFor, getAsset }) => {
         const dataProps = entry.getIn(['data']).toJS()
+        console.log(dataProps)
         const previewProps = {}
 
         try {
@@ -50,10 +51,14 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
         deepReplaceImageUrlsWithAssets(dataProps, getAsset)
         Object.assign(previewProps, dataProps)
 
+        const layoutProps = extractLayoutPropsPreview(dataProps)
+
         const isPreview = true
         return (
             <PreviewContextWrapper value={isPreview}>
-                {component(Object.assign(placeholderProps, previewProps))}
+                <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle}>
+                    {component(Object.assign(placeholderProps, previewProps))}
+                </Layout>
             </PreviewContextWrapper>
         )
     }
@@ -173,4 +178,17 @@ const extractLayoutProps = data => {
     }
 
     return layoutProps
+}
+
+// The data object is structured differently for previews
+const extractLayoutPropsPreview = previewData => {
+    return extractLayoutProps({
+        markdownRemark: {
+            frontmatter: {
+                title: previewData.title,
+                subtitle: previewData.subtitle
+            }
+        },
+        heroData: previewData.heroData
+    })
 }
