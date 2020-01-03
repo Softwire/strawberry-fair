@@ -26,6 +26,8 @@ $navbar-breakpoint: 1216px;
 
 $section-padding: 0 1.5rem;
 
+$scrapbook-padding-mobile: 0.3rem;
+
 /* Bulma provides default styling (can be imported in separate modules as required) */
 @import "bulma";
 
@@ -45,12 +47,30 @@ $section-padding: 0 1.5rem;
 }
 
 .scrapbook-column {
-    display: flex;
-    flex-direction: column-reverse;
-
+    &.outer-column, &.inner-column {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
     @media(max-width: $tablet) {
-        .right-bottom {
-            flex-direction: column;
+        padding: $scrapbook-padding-mobile;
+
+        &.outer-column, &.inner-column {
+            &.right-bottom {
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+@media(max-width: $tablet) {
+    .scrapbook-columns {
+        margin-left: -1 * $scrapbook-padding-mobile;
+        margin-right: -1 * $scrapbook-padding-mobile;
+        margin-top: -1 * $scrapbook-padding-mobile;
+    
+        &:last-child {
+            margin-bottom: -1 * $scrapbook-padding-mobile;
         }
     }
 }

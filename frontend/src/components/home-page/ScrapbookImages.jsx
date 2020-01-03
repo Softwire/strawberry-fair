@@ -13,7 +13,7 @@ export const ScrapbookImages = ({images}) => {
         if (validImages.length >= 6) {
             const selectedImages = shuffle(validImages).slice(0, 6)
             return (
-                <div className="columns">
+                <div className="columns scrapbook-columns">
                     {generateScrapbookImageMap(selectedImages).map((outerColMap, idx) => <OuterColumn
                                                                                             outerColMap={outerColMap}
                                                                                             position={(idx === 0 ? "left-top" : "right-bottom")}
@@ -28,7 +28,7 @@ export const ScrapbookImages = ({images}) => {
 ScrapbookImages.propTypes = { images: PropTypes.arrayOf(childImageSharpValidator) }
 
 const ScrapbookImg = ({image}) => (
-    <div className="column is-full">
+    <div className="column scrapbook-column is-full">
         <PreviewCompatibleImage imageInfo={image} />
     </div>
 )
@@ -38,8 +38,8 @@ ScrapbookImg.propTypes = {
 }
 
 const InnerColumn = ({innerColMap: {width, images}, position}) => (
-    <div className={`column scrapbook-column ${width} ${position}`}>
-        <div className = "columns is-multiline">
+    <div className={`column scrapbook-column inner-column ${width} ${position}`}>
+        <div className = "columns scrapbook-columns is-multiline">
             {images.map((img, idx) => <ScrapbookImg image={img} key={idx} />)}
         </div>
     </div>
@@ -51,8 +51,8 @@ InnerColumn.propTypes = { innerColMap: PropTypes.shape({
 })}
 
 const OuterColumn = ({outerColMap, position}) => (
-    <div className={`column scrapbook-column ${position}`}>
-        <div className="columns is-mobile">
+    <div className={`column scrapbook-column outer-column ${position}`}>
+        <div className="columns scrapbook-columns is-mobile">
             {outerColMap.map((innerColMap, idx) => <InnerColumn innerColMap={innerColMap}
                                                                 position={position}
                                                                 key={idx} />)}
