@@ -8,17 +8,19 @@ import { generateScrapbookImageMap, shuffle } from '../../util/generateScrapbook
 
 /** Expects an array of at least 6 images */
 export const ScrapbookImages = ({images}) => {
-    if (images && images.length >= 6) {
-        const selectedImages = shuffle(images).slice(0, 6)
-
-        return (
-            <div className="columns">
-                {generateScrapbookImageMap(selectedImages).map((outerColMap, idx) => <OuterColumn
-                                                                                        outerColMap={outerColMap}
-                                                                                        position={(idx === 0 ? "left-top" : "right-bottom")}
-                                                                                        key={idx} />)}
-            </div>
-        )
+    if (images) {
+        const validImages = images.filter((img) => !!img)
+        if (validImages.length >= 6) {
+            const selectedImages = shuffle(images).slice(0, 6)
+            return (
+                <div className="columns">
+                    {generateScrapbookImageMap(selectedImages).map((outerColMap, idx) => <OuterColumn
+                                                                                            outerColMap={outerColMap}
+                                                                                            position={(idx === 0 ? "left-top" : "right-bottom")}
+                                                                                            key={idx} />)}
+                </div>
+            )
+        }
     }
     return null
 }

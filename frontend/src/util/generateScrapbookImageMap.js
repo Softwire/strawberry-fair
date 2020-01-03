@@ -10,12 +10,20 @@ const minInnerColWidth = 4
 
 /** Returns 3-dimensional array representing Bulma column structure of ScrapbookImages component */
 export const generateScrapbookImageMap = (images) => {
-    var imageList = sortByAspect(images)
-    var imageMap = mapImagesToColumns(imageList)
+    // In CMS preview, aspect ratios are ignored
+    if (isPreview(images)) {
+        const imageMap = mapImagesToColumns(images)
+        return assignInnerColWidths(imageMap, true)
+    }
+
+    const imageList = sortByAspect(images)
+    let imageMap = mapImagesToColumns(imageList)
     imageMap = equaliseOuterColAspects(imageMap)
     imageMap = regulariseInnerColAspects(imageMap)
     return assignInnerColWidths(imageMap)
 }
+
+const isPreview = (images) => !(images[0].childImageSharp)
 
 const sortByAspect = (imageList) => imageList.sort((a, b) => getAspect(a) - getAspect(b))
 
@@ -89,9 +97,9 @@ const regulariseInnerColAspects = (imageMap) => {
     return imageMap
 }
 
-const assignInnerColWidths = (imageMap) => {
+const assignInnerColWidths = (imageMap, isPreview=false) => {
     return imageMap.map((outerColMap) => {
-        const validLeftWidths = getValidLeftWidths(outerColMap)
+        const validLeftWidths = getValidLeftWidths(outerColMap, isPreview)
         const leftWidth = getRandEl(validLeftWidths)
 
         const left = { width: `is-${leftWidth}`, images: outerColMap[0] }
@@ -155,7 +163,14 @@ const getPossibleWidths = () => {
 }
 
 /** Returns list of valid bulma widths for left innerCol of an outerCol */
-const getValidLeftWidths = (outerColMap) => getPossibleWidths().filter((lWidth) => isLeftWidthValid(outerColMap, lWidth))
+const getValidLeftWidths = (outerColMap, isPreview=false) => {
+    if (isPreview) {
+        return getPossibleWidths()
+    }
+    else {
+        return getPossibleWidths().filter((lWidth) => isLeftWidthValid(outerColMap, lWidth))
+    }
+}
 
 
 /* RANDOMISATION FUNCTIONS */
