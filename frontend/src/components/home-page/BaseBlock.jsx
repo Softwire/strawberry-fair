@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const BaseBlock = ({block, altBackground = "", children}) => (
-  <React.Fragment>
     <section className={`section ${altBackground && "has-background-light-grey is-viewport-width"}`}>
       <div className="container">
         <h1 className="title is-1">{block.title}</h1>
@@ -14,7 +13,6 @@ const BaseBlock = ({block, altBackground = "", children}) => (
         {children}
       </div>
     </section>
-  </React.Fragment>
 )
 
 BaseBlock.propTypes = {
