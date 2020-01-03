@@ -21,15 +21,15 @@ export const FooterDisplay = ({isPreview, CMSInput}) => {
     let footerContent = isPreview ? (Object.keys(CMSInput).length > 0 ? CMSInput : footerPreviewContent) : getFooterContent()
 
     footerContent.address = convertToHtml(footerContent.address)
-    footerContent.placeHolderText = convertToHtml(footerContent.placeHolderText)
+    footerContent.leftBoxText = convertToHtml(footerContent.leftBoxText)
 
     return(
     <footer className="footer">
         <div className="tile is-ancestor">
             <div className="tile is-parent">
                 <div className="tile is-child box">
-                    <h3 className="title">{footerContent.placeHolderTitle}</h3>
-                    <HTMLContentSmall content={footerContent.placeHolderText}/>
+                    <h3 className="title">{footerContent.leftBoxTitle}</h3>
+                    <HTMLContentSmall content={footerContent.leftBoxText}/>
                 </div>
             </div>
             <div className="tile is-parent">
@@ -70,18 +70,17 @@ export const FooterDisplay = ({isPreview, CMSInput}) => {
     </footer>
     )
 }
-
-function getFooterContent() {
+const getFooterContent = () => {
     const footerContent = useStaticQuery(graphql`
       query footerContent {
-              markdownRemark(fileAbsolutePath: { regex: ".*/src/pages/header-and-footer/footer.md/"}) {
+            markdownRemark(fields: {slug: {eq: "/header-and-footer/footer/"}}) {
                 frontmatter {
                   email
                   address
                   facebookAccount
                   twitterAccount
-                  placeHolderText
-                  placeHolderTitle
+                  leftBoxText
+                  leftBoxTitle
                   copyright
                 }
               }
@@ -91,8 +90,8 @@ function getFooterContent() {
         address: footerContent.markdownRemark.frontmatter.address,
         facebookAccount: footerContent.markdownRemark.frontmatter.facebookAccount,
         twitterAccount: footerContent.markdownRemark.frontmatter.twitterAccount,
-        placeHolderText: footerContent.markdownRemark.frontmatter.placeHolderText,
-        placeHolderTitle: footerContent.markdownRemark.frontmatter.placeHolderTitle,
+        leftBoxText: footerContent.markdownRemark.frontmatter.leftBoxText,
+        leftBoxTitle: footerContent.markdownRemark.frontmatter.leftBoxTitle,
         copyright: footerContent.markdownRemark.frontmatter.copyright}
 }
 

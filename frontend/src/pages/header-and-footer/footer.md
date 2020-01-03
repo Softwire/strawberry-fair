@@ -8,7 +8,7 @@ address: |-
   CB1 0YJ
 facebookAccount: 'https://www.facebook.com/StrawberryFair/'
 twitterAccount: 'https://twitter.com/strawberry_fair'
-placeHolderText: |-
+leftBoxText: |-
   This text
 
   _Has **some**_
@@ -16,6 +16,6 @@ placeHolderText: |-
   _Nice **breaks**_
 
   and Styling
-placeHolderTitle: This is the title
+leftBoxTitle: This is the title
 copyright: © Strawberry Fair 2017
 ---
