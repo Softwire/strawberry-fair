@@ -91,6 +91,7 @@ const deepReplaceImageUrlsWithAssets = (obj, getAsset) => {
 /**
  * @callback siteAdditionalPropsExtractorCallback
  * @param {Object} dataProps - Contains results from the graphql query
+ * @param {Object} pageContext - Extra page properties, passed in by e.g. gatsby-node.js for programmatic page creation
  * @returns {Object} Additional properties to add to the site component
  */
 
@@ -108,7 +109,7 @@ export const site = (component, additionalPropsExtractor = () => {}) => {
      */
     const siteComponent = ({data, pageContext}) => {
         const insideLayout = siteInsideLayout(component, additionalPropsExtractor, data, pageContext)
-        const layoutProps = extractLayoutProps(data)
+        const layoutProps = extractLayoutProps(data, additionalPropsExtractor)
 
         return (
             <React.Fragment>
@@ -150,13 +151,13 @@ const siteInsideLayout = (component, additionalPropsExtractor, data, pageContext
             newProps.heroData = data.heroData.nodes[0].frontmatter.heroData
     }
         
-    Object.assign(newProps, additionalPropsExtractor(data))
+    Object.assign(newProps, additionalPropsExtractor(data, pageContext))
 
     return component(newProps)
 }
 
 // Extract hero image data, a title, and a subtitle (if present) from a GraphQL query data object to be passed to <Layout>
-const extractLayoutProps = data => {
+const extractLayoutProps = (data, additionalPropsExtractor) => {
     const layoutProps = {}
 
     if (data.markdownRemark &&
@@ -175,6 +176,8 @@ const extractLayoutProps = data => {
             layoutProps.heroData = data.heroData
         }
     }
+
+    Object.assign(layoutProps, additionalPropsExtractor(data))
 
     return layoutProps
 }

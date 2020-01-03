@@ -13,15 +13,7 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
   const firstDate = new Date(firstDay)
   const lastDate = new Date(lastDay)
   const selectedNewsArticles = getNewsArticlesInTimeInterval(newsArticles, firstDate, lastDate)
-  let heading = 'News articles from '
-
-  if (isYearInterval(firstDate, lastDate)) {
-    heading = heading + firstDate.getFullYear()
-  } else if (isMonthInterval(firstDate, lastDate)) {
-    heading = heading + monthName(firstDate.getMonth()) + " " + firstDate.getFullYear()
-  } else {
-    console.log("Unexpected date interval passed to page constructor.")
-  }
+  const heading = `News articles from ${generateHeading(firstDate, lastDate)}`
 
   return (
     <React.Fragment>
@@ -68,7 +60,24 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
   )
 }
 
-export default site(NewsTimeIntervalOverview, data => ({newsArticles: data.allMarkdownRemark.edges, title: 'News'}))
+export default site(NewsTimeIntervalOverview, (data, pageContext) => {
+  console.log(pageContext)
+
+  return {
+    newsArticles: data.allMarkdownRemark.edges,
+    title: pageContext ? pageContext.title : 'News'
+  }
+})
+
+const generateHeading = (firstDate, lastDate) => {
+  if (isYearInterval(firstDate, lastDate)) {
+    return firstDate.getFullYear()
+  } else if (isMonthInterval(firstDate, lastDate)) {
+    return monthName(firstDate.getMonth()) + " " + firstDate.getFullYear()
+  } else {
+    console.log("Unexpected date interval passed to page constructor.")
+  }
+}
 
 export const query = graphql`
 query newsMonthOverviewTemplate{

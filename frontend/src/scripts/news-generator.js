@@ -35,7 +35,8 @@ exports.NewsInTimeIntervalGenerator = async ({ actions: { createPage }, graphql 
       ),
       context: {
         firstDay,
-        lastDay
+        lastDay,
+        title: `News - ${year}`
       },
     })
 
@@ -50,7 +51,8 @@ exports.NewsInTimeIntervalGenerator = async ({ actions: { createPage }, graphql 
         ),
         context: {
           firstDay,
-          lastDay
+          lastDay,
+          title: `News - ${firstDay.toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}`
         },
       })
     })
