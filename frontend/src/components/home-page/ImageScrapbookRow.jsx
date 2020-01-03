@@ -64,7 +64,7 @@ ColumnWithOneImage.propTypes = {
 }
 
 const ImageScrapbookRow = ({scrapbookImages: images}) => {
-  const selectedImages = selectImages(images)
+  const selectedImages = selectImages(images.map(image => image.src))
 
   let imageCols = [
     <ColumnWithTwoImages size="is-one-fifth" topImage={selectedImages[0]} bottomImage={selectedImages[1]} key={0}/>,
