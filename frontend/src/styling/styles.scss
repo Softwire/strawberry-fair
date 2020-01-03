@@ -3,6 +3,7 @@
 // Colours from design mock-up
 $red: #ae1414;
 $black: #1d1d1d;
+$light-grey: #f3f3f3;
 
 $primary: $red;
 $secondary: $black;
@@ -15,7 +16,8 @@ $radius: 0px;
 $radius-large: 0px;
 // is-secondary doesn't produce any effect without this
 $custom-colors: ( 
-    "secondary": $secondary
+    "secondary": $secondary,
+    "light-grey": $light-grey
 );
 
 $navbar-padding-vertical: 0;
@@ -106,4 +108,13 @@ $strawberry-card-size: 14rem;
     width: $strawberry-card-size;
     height: 0;
     padding-bottom: $strawberry-card-size - $box-padding;
+}
+
+.is-viewport-width {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
 }
