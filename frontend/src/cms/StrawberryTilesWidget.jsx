@@ -14,7 +14,7 @@ export class StrawberryTilesControl extends React.Component {
                 label: "Text",
                 name: "text",
                 widget: "string",
-                pattern: ["[\s\S]{0,200}", "200 characters max"],
+                pattern: ["[\s\S]{0,200}", "200 characters max"], // eslint-disable-line no-useless-escape
                 hint: "200 characters max"
             })
         })

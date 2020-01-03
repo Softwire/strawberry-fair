@@ -39,8 +39,13 @@ export const newsArticleValidator = PropTypes.shape({
   node: PropTypes.shape({
     frontmatter: PropTypes.shape({
       title: PropTypes.string,
-      image: previewCompatibleImageValidator
+      subtitle: PropTypes.string,
+      author: PropTypes.string,
+      image: previewCompatibleImageValidator,
+      date: PropTypes.string,
+      tags: PropTypes.arrayOf(PropTypes.string)
     }),
+    html: PropTypes.string,
     fields: PropTypes.shape({
       slug: PropTypes.string
     })

@@ -2,6 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import { PreviewContext } from '../util/context.jsx'
 import headerButtonPreviewData from '../data/headerButtonPreviewData'
+import PropTypes from 'prop-types'
 
 const HeaderButtons = () => (
   <PreviewContext.Consumer>
@@ -13,7 +14,6 @@ export default HeaderButtons
 
 const HeaderButtonsDisplay = ({isPreview}) => {
   const data = isPreview ? headerButtonPreviewData : getHeaderButtonLinksAndText()
-
     
     return(
             <div className="field is-grouped is-pulled-right">
@@ -42,4 +42,8 @@ function getHeaderButtonLinksAndText() {
               }
           }`
         )
+}
+
+HeaderButtonsDisplay.propTypes = {
+  isPreview: PropTypes.bool.isRequired
 }
