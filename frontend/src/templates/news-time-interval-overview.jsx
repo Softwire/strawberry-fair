@@ -13,12 +13,12 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
   const firstDate = new Date(firstDay)
   const lastDate = new Date(lastDay)
   const selectedNewsArticles = getNewsArticlesInTimeInterval(newsArticles, firstDate, lastDate)
-  let heading = ''
+  let heading = 'News articles from '
 
   if (isYearInterval(firstDate, lastDate)) {
-    heading = firstDate.getFullYear()
+    heading = heading + firstDate.getFullYear()
   } else if (isMonthInterval(firstDate, lastDate)) {
-    heading = monthName(firstDate.getMonth()) + " " + firstDate.getFullYear()
+    heading = heading + monthName(firstDate.getMonth()) + " " + firstDate.getFullYear()
   } else {
     console.log("Unexpected date interval passed to page constructor.")
   }
