@@ -28,9 +28,7 @@ export const FooterDisplay = ({isPreview, CMSInput}) => {
         <div className="tile is-ancestor">
             <div className="tile is-parent">
                 <div className="tile is-child box">
-                    <h3 className="title">
-                        Placeholder
-                    </h3>
+                    <h3 className="title">{footerContent.placeHolderTitle}</h3>
                     <HTMLContentSmall content={footerContent.placeHolderText}/>
                 </div>
             </div>
@@ -83,6 +81,7 @@ function getFooterContent() {
                   facebookAccount
                   twitterAccount
                   placeHolderText
+                  placeHolderTitle
                   copyright
                 }
               }
@@ -93,6 +92,7 @@ function getFooterContent() {
         facebookAccount: footerContent.markdownRemark.frontmatter.facebookAccount,
         twitterAccount: footerContent.markdownRemark.frontmatter.twitterAccount,
         placeHolderText: footerContent.markdownRemark.frontmatter.placeHolderText,
+        placeHolderTitle: footerContent.markdownRemark.frontmatter.placeHolderTitle,
         copyright: footerContent.markdownRemark.frontmatter.copyright}
 }
 

@@ -16,5 +16,6 @@ placeHolderText: |-
   _Nice **breaks**_
 
   and Styling
+placeHolderTitle: This is the title
 copyright: © Strawberry Fair 2017
 ---

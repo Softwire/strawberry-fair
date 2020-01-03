@@ -37,7 +37,8 @@ definitions:
   - &address {label: Address, name: address, widget: markdown}
   - &facebook {label: Facebook Account, name: facebookAccount, widget: string}
   - &twitter {label: Twitter Account, name: twitterAccount, widget: string}
-  - &placeHolder {label: Place Holder, name: placeHolderText, widget: markdown}
+  - &placeHolder {label: Place Holder Text, name: placeHolderText, widget: markdown}
+  - &placeHolderTitle {label: Place Holder Title, name: placeHolderTitle, widget: string}
   - &copyright {label: Copyright, name: copyright, widget: string}
   - contentBlock: &contentBlock
       label: Content Blocks
@@ -213,6 +214,7 @@ collections:
         label: "Footer"
         name: "footer"
         fields:
+          - *placeHolderTitle
           - *placeHolder
           - *facebook
           - *twitter
