@@ -124,5 +124,5 @@ $strawberry-card-size: 14rem;
 }
 
 .calendar.panel .modal.is-active .media.event:nth-child(even),.upcoming.panel>.panel-block:not(.filter):nth-child(even) {
-    background-color: light-grey;
+    background-color: $light-grey;
 }
