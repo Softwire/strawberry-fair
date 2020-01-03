@@ -4,12 +4,13 @@ import Img from 'gatsby-image'
 import { previewCompatibleImageValidator } from './validators'
 
 const PreviewCompatibleImage = ({ imageInfo, style }) => {
+
   if (!imageInfo) {
     return null
   }
 
   const imageStyle = (style ? style : {})
-  const { alt = '', childImageSharp, image } = imageInfo
+  const { alt = '', childImageSharp, image, src } = imageInfo
 
   if (!!image && !!image.childImageSharp) {
     return (
@@ -17,9 +18,18 @@ const PreviewCompatibleImage = ({ imageInfo, style }) => {
     )
   }
 
+  if (!!src && !!src.childImageSharp) {
+    return (
+      <Img style={imageStyle} fluid={src.childImageSharp.fluid} alt={alt} />
+    )
+  }
+
   if (childImageSharp) {
     return <Img style={imageStyle} fluid={childImageSharp.fluid} alt={alt} />
   }
+  
+  if (!!src && typeof src === 'string')
+    return <img style={imageStyle} src={src} alt={alt} />
 
   if (!!image && typeof image === 'string')
     return <img style={imageStyle} src={image} alt={alt} />
