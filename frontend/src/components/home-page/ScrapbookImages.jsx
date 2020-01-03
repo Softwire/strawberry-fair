@@ -11,7 +11,7 @@ export const ScrapbookImages = ({images}) => {
     if (images) {
         const validImages = images.filter((img) => !!img)
         if (validImages.length >= 6) {
-            const selectedImages = shuffle(images).slice(0, 6)
+            const selectedImages = shuffle(validImages).slice(0, 6)
             return (
                 <div className="columns">
                     {generateScrapbookImageMap(selectedImages).map((outerColMap, idx) => <OuterColumn
