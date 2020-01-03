@@ -44,18 +44,13 @@ contentBlocks:
     subtitle: B
     title: A
     scrapbookImages:
-      - /img/love-a-fair.jpg
-      - /img/hatters10.jpg
-      - /img/strawberry.jpg
       - /img/band.jpg
       - /img/banner-carrying.jpg
       - /img/crowd-shot.jpg
       - /img/drums.jpg
-      - /img/flames.jpg
       - /img/guitar-girl.jpg
       - /img/instruments.jpg
       - /img/music.jpg
-      - /img/orangedress.jpg
       - /img/stilts.jpg
       - /img/wide-parade.jpg
     sideSnippet: >-
@@ -94,18 +89,13 @@ contentBlocks:
     contentSubtitle: B
     contentTitle: A
     scrapbookImages:
-      - /img/love-a-fair.jpg
-      - /img/hatters10.jpg
-      - /img/strawberry.jpg
       - /img/band.jpg
       - /img/banner-carrying.jpg
       - /img/crowd-shot.jpg
       - /img/drums.jpg
-      - /img/flames.jpg
       - /img/guitar-girl.jpg
       - /img/instruments.jpg
       - /img/music.jpg
-      - /img/orangedress.jpg
       - /img/stilts.jpg
       - /img/wide-parade.jpg
     sideSnippet: 'For more details, contact email us here or on our Facebook page'
