@@ -28,6 +28,8 @@ $navbar-breakpoint: 1216px;
 
 $section-padding: 0 1.5rem;
 
+$tabs-link-active-color: $primary;
+
 /* Bulma provides default styling (can be imported in separate modules as required) */
 @import "bulma";
 
