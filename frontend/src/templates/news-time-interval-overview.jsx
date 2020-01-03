@@ -7,7 +7,6 @@ import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 import NewsMenu, { monthName } from '../components/NewsMenu.jsx'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
-import PropTypes from 'prop-types'
 import NewsArticleSnapshots from '../components/NewsArticleSnapshots'
 
 // This is used by the website and for CMS previews
@@ -113,12 +112,6 @@ function isMonthInterval(firstDate, lastDate) {
     firstDate.getDate() === 1 &&
     lastDate.getDate() === 1
   )
-}
-
-NewsTimeIntervalOverview.propTypes = {
-  newsArticles: NewsMenu.propTypes.newsArticles,
-  firstDay: PropTypes.string,
-  lastDay: PropTypes.string
 }
 
 NewsTimeIntervalOverview.propTypes = {
