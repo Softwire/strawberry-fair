@@ -90,6 +90,7 @@ definitions:
       label: "Strawberry Tiles"
       name: "strawberryTiles"
       widget: "list"
+      required: false
       field:
           label: "Text"
           name: "text"
