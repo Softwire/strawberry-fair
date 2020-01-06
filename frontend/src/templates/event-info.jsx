@@ -5,6 +5,8 @@ import { graphql } from 'gatsby'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
 import { site } from '../util/templating'
+import { generateEventICS } from '../util/generateEventICS'
+import { downloadBlob } from '../util/downloadBlob'
 
 //display style of the event date
 export const displayStyle = {
@@ -40,10 +42,18 @@ export const EventInfo = ({image, eventTypes, content, contentComponent}) => {
     return (
         <React.Fragment>
             <EventTypeList eventTypes={eventTypes} />
+            <button className="button" onClick={() => generateAndDownloadEvent(title, dateTime, content)}>
+                Download
+            </button>
             <BodyComponent content={content} />
             <PreviewCompatibleImage imageInfo={image} />
         </React.Fragment>
     )
+}
+
+const generateAndDownloadEvent = (title, dateTime, content) => {
+    const eventBlob = generateEventICS(title, dateTime, content)
+    downloadBlob(eventBlob, `${title}.ics`)
 }
 
 EventInfo.propTypes = {
