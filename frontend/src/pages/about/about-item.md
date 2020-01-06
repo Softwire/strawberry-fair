@@ -3,7 +3,7 @@ templateKey: about-page
 title: About Item
 subtitle: this is a subtitle
 strawberryTiles:
-  - something asd
+  - something asd sadfadsfa
   - something
 ---
 
