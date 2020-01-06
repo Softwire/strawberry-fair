@@ -11,12 +11,12 @@ export const CalendarViewToggle = ({view}) => (
                 <ul>
                     <li className={view == 'calendar' ? 'is-active' : ''}>
                         <Link to="/calendar">
-                        <span className="icon is-small"><FaCalendar /></span>Calendar
+                            <span className="icon is-small"><FaCalendar /></span><h1>Calendar</h1>
                         </Link>
                     </li>
                     <li className={view == 'upcoming' ? 'is-active' : ''}>
                         <Link to="/events">
-                        <span className="icon is-small"><FaListUl /></span>Upcoming events
+                            <span className="icon is-small"><FaListUl /></span><h1>Upcoming events</h1>
                         </Link>
                     </li>
                 </ul>
