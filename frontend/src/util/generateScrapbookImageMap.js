@@ -10,9 +10,9 @@ const minInnerColWidth = 4
 
 /** Returns 3-dimensional array representing Bulma column structure of ScrapbookImages component */
 export const generateScrapbookImageMap = (images, isPreview) => {
-    // In CMS preview, aspect ratios are ignored
+    // In CMS preview, aspect ratios are ignored and images are not stacked
     if (isPreview) {
-        const imageMap = mapImagesToColumns(images)
+        const imageMap = mapImagesToColumns(images, true)
         return assignInnerColWidths(imageMap, true)
     }
 
@@ -26,8 +26,14 @@ export const generateScrapbookImageMap = (images, isPreview) => {
 const sortByAspect = (imageList) => imageList.sort((a, b) => getAspect(a) - getAspect(b))
 
 /** Returns a randomised map of images */
-const mapImagesToColumns = (imageList) => {
-    
+const mapImagesToColumns = (imageList, isPreview=false) => {
+    if (!imageList || imageList.length === 0) {
+        throw new Error("No images passed to generateScrapbookImageMap()")
+    }
+    if (imageList.length !== 6) {
+        throw new Error("Wrong number of images passed to generateScrapbookImageMap(): must receive exactly 6 images")
+    }
+
     // Chosen to ensure aspects are evenly balanced
     const possibleCombinations = [
         [ [[0], [2, 5]], [[1], [3, 4]] ],
@@ -44,7 +50,7 @@ const mapImagesToColumns = (imageList) => {
             const imagesToRender = innerColImgIndexes.map((i) => imageList[i])
             
             // Randomly determine whether to render 1 or 2 images in innerCol where necessary
-            if (innerColImgIndexes.length === 2 && Math.random() < 0.5) {
+            if (innerColImgIndexes.length === 2 && (isPreview || Math.random() < 0.5)) {
                 imagesToRender.pop()
             }
 
