@@ -50,49 +50,6 @@ const CalendarDay = ({dateTime, events}) => {
 
     let internals
 
-    /*
-    if (events.length === 1) {
-        const event = events[0]
-
-        internals = (
-            <React.Fragment>
-                <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
-                <div className="box button has-text-left calendar-day has-text-white has-text-weight-bold is-primary" onClick={modalOn} style={event.frontmatter.image ? {
-                        backgroundImage: `url(${event.frontmatter.image.childImageSharp ? event.frontmatter.image.childImageSharp.editedFluid.src : event.frontmatter.image})`} : null}>
-                    <DayText date={date} />
-                    <p key={event.fields.slug}><Link className="has-text-white has-text-weight-medium" to={event.fields.slug}>{event.frontmatter.title}</Link></p>
-                </div>
-            </React.Fragment>
-        )
-    } else if (events.length > 1) {
-        internals = (
-            <div style={{position: "relative"}}>
-                <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
-                {eventsWithPics.map((event, index) =>
-                    <div key={event.fields.slug} className="box button has-text-left calendar-day has-text-white has-text-weight-bold is-primary" onClick={modalOn} style={{
-                            backgroundImage: `url(${event.frontmatter.image.childImageSharp ? event.frontmatter.image.childImageSharp.editedFluid.src : event.frontmatter.image})`,
-                            opacity: index === currentImage ? 1 : 0,
-                            transition: `opacity ${imageFadeTimeS}s`,
-                            position: "absolute",
-                            width: "100%"}}>
-                        <DayText date={date} />
-                        {events.map(event => <p key={event.fields.slug}><Link className="has-text-white has-text-weight-medium" to={event.fields.slug}>{event.frontmatter.title}</Link></p>)}
-                    </div>
-                )}
-            </div>
-        )
-    } else {
-        internals = (
-            <React.Fragment>
-                <NoEventsModal date={date} close={modalOff} active={showModal} />
-                <div className="box button has-text-left calendar-day" onClick={modalOn}>
-                    <DayText date={date} />
-                </div>
-            </React.Fragment>
-        )
-    }
-    */
-
     if (eventsWithPics.length === 0) {
         // No pictures to show
         if (events.length === 0) {
