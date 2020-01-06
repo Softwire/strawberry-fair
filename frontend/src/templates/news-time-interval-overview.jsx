@@ -61,11 +61,11 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
 }
 
 export default site(NewsTimeIntervalOverview, (data, pageContext) => {
-  console.log(pageContext)
+  console.log("This is additionalPropsExtractor being called.")
 
   return {
     newsArticles: data.allMarkdownRemark.edges,
-    title: pageContext ? pageContext.title : 'News Archive'
+    title: pageContext && pageContext.title ? pageContext.title : 'News Archive'
   }
 })
 

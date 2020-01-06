@@ -108,8 +108,8 @@ export const site = (component, additionalPropsExtractor = () => {}) => {
      * @returns {React.Component} Component to be rendered by Gatsby
      */
     const siteComponent = ({data, pageContext}) => {
-        const insideLayout = siteInsideLayout(component, additionalPropsExtractor, data, pageContext)
-        const layoutProps = extractLayoutProps(data, additionalPropsExtractor)
+        const insideLayout = siteInsideLayout(component, data, pageContext, additionalPropsExtractor)
+        const layoutProps = extractLayoutProps(data, pageContext, additionalPropsExtractor)
 
         return (
             <React.Fragment>
@@ -132,7 +132,7 @@ export const site = (component, additionalPropsExtractor = () => {}) => {
 }
 
 // Generate a view of the site to be wrapped inside <Layout>
-const siteInsideLayout = (component, additionalPropsExtractor, data, pageContext) => {
+const siteInsideLayout = (component, data = {}, pageContext = {}, additionalPropsExtractor = () => {}) => {
     const newProps = {}
 
     if (data.markdownRemark) {
@@ -157,7 +157,7 @@ const siteInsideLayout = (component, additionalPropsExtractor, data, pageContext
 }
 
 // Extract hero image data, a title, and a subtitle (if present) from a GraphQL query data object to be passed to <Layout>
-const extractLayoutProps = (data, additionalPropsExtractor) => {
+const extractLayoutProps = (data = {}, pageContext = {}, additionalPropsExtractor = () => {}) => {
     const layoutProps = {}
 
     if (data.markdownRemark &&
@@ -177,7 +177,27 @@ const extractLayoutProps = (data, additionalPropsExtractor) => {
         }
     }
 
-    Object.assign(layoutProps, additionalPropsExtractor(data))
+    console.log("data:")
+    console.log(data)
+    console.log("pageContext:")
+    console.log(pageContext)
+    console.log("additionalPropsExtractor(data, pageContext):")
+    console.log(additionalPropsExtractor(data, pageContext))
+
+    const additionalProps = additionalPropsExtractor(data, pageContext)
+
+    // Additional props overwrite provided ones
+    if (additionalProps.title) {
+        layoutProps.title = additionalProps.title
+    }
+    if (additionalProps.subtitle) {
+        layoutProps.subtitle = additionalProps.subtitle
+    }
+    if (additionalProps.heroData) {
+        layoutProps.heroData = additionalProps.heroData
+    }
+
+    Object.assign(layoutProps, additionalPropsExtractor(data, pageContext))
 
     return layoutProps
 }
