@@ -20,7 +20,7 @@ import { MultiCollectionRelationControl, MultiCollectionRelationPreview } from '
 import { FormControl } from './FormWidget'
 import { StrawberryTilesControl } from './StrawberryTilesWidget'
 import { LinkControl, LinkPreview } from './LinkWidget'
-import { youtubeControl, youtubePreview } from "netlify-cms-widget-youtube";
+import youtube from "netlify-cms-widget-youtube"
  
 
 

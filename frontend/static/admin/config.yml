@@ -103,8 +103,7 @@ collections:
         label: "Youtube Gallery"
         name: "youtube-gallery"
         fields: 
-          - { name: video, label: Youtube Video Link, widget: youtube, extraInfo: false}
-
+          - { name: video, label: Youtube Video Link, widget: youtube, extraInfo: false }
       - file: "frontend/src/pages/index.md"
         label: "Home Page"
         name: "home"
