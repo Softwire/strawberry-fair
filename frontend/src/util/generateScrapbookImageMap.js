@@ -9,9 +9,9 @@ const minInnerColWidth = 4
 /* IMAGE HANDLING FUNCTIONS */
 
 /** Returns 3-dimensional array representing Bulma column structure of ScrapbookImages component */
-export const generateScrapbookImageMap = (images) => {
+export const generateScrapbookImageMap = (images, isPreview) => {
     // In CMS preview, aspect ratios are ignored
-    if (isPreview(images)) {
+    if (isPreview) {
         const imageMap = mapImagesToColumns(images)
         return assignInnerColWidths(imageMap, true)
     }
@@ -22,8 +22,6 @@ export const generateScrapbookImageMap = (images) => {
     imageMap = regulariseInnerColAspects(imageMap)
     return assignInnerColWidths(imageMap)
 }
-
-const isPreview = (images) => !(images[0].childImageSharp)
 
 const sortByAspect = (imageList) => imageList.sort((a, b) => getAspect(a) - getAspect(b))
 
@@ -60,14 +58,9 @@ const mapImagesToColumns = (imageList) => {
  * This step is taken to ensure column heights are evenly distributed.
 */
 const equaliseOuterColAspects = (imageMap) => {
-    const left = imageMap[0]
-    const right = imageMap[1]
-    
-    const lSum = getOuterColAspectSum(imageMap[0])
-    const rSum = getOuterColAspectSum(imageMap[1])
-
-    const lAdjust = getOuterColAdjustmentRatio(lSum, rSum)
-    const rAdjust = getOuterColAdjustmentRatio(rSum, lSum)
+    const [left, right] = imageMap
+    const [lSum, rSum] = imageMap.map((el) => getOuterColAspectSum(el))
+    const [lAdjust, rAdjust] = [getOuterColAdjustmentRatio(lSum, rSum), getOuterColAdjustmentRatio(rSum, lSum)]
 
     adjustOuterColAspects(left, lAdjust)
     adjustOuterColAspects(right, rAdjust)
@@ -78,18 +71,12 @@ const equaliseOuterColAspects = (imageMap) => {
 /** Adjusts aspects of innerCols so that the rules set by Layout Control Constants can be satisfied */
 const regulariseInnerColAspects = (imageMap) => {
     imageMap.forEach((outerColMap) => {
-        const left = outerColMap[0]
-        const right = outerColMap[1]
-
-        const leftIsTaller = (getInnerColAspect(left) > getInnerColAspect(right))
-
-        const tall = leftIsTaller ? left : right
-        const short = leftIsTaller ? right : left
-
+        const [left, right] = outerColMap
+        const [tall, short] = (getInnerColAspect(left) > getInnerColAspect(right)) ? outerColMap : [outerColMap[1], outerColMap[0]]
         const worstRatio = getWorstCaseInnerColsHeightRatio(tall, short)
 
         if (worstRatio < minInnerColHeightDiffRatio) {
-            const requiredChangeFactor = minInnerColHeightDiffRatio / currRatio
+            const requiredChangeFactor = minInnerColHeightDiffRatio / worstRatio
             adjustInnerColAspects(tall, Math.sqrt(requiredChangeFactor))
             adjustInnerColAspects(short, (1 / Math.sqrt(requiredChangeFactor)))
         }
