@@ -2,7 +2,7 @@
 templateKey: form
 title: Registration Form
 form:
-  isPublic: false
+  isPublic: true
   link: >-
     <iframe
     src="https://docs.google.com/forms/d/e/1FAIpQLSdnbGnGcafdKpNXKZ83mcDnF8lMJ-awaM0-j-135d1RFEC_jQ/viewform?embedded=true"
