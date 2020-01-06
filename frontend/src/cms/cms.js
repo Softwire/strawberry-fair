@@ -47,7 +47,8 @@ const placeholderEvents = placeholderEventDays.map(dayNumber => ({
       alt: 'Placeholder',
       src: '/img/strawberry-64x64.png'
     },
-    dateTime: new Date(today.getFullYear(), today.getMonth(), dayNumber),
+    startDateTime: new Date(today.getFullYear(), today.getMonth(), dayNumber),
+    endDateTime: new Date(today.getFullYear(), today.getMonth(), dayNumber + 1),
     eventTypes: []
   },
   html: '<h2>This is a sample event.</h2>\n<p>This is a sample event.</p>',

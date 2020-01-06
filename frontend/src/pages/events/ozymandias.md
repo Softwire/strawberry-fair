@@ -4,7 +4,8 @@ title: "Ozymandias"
 image:
   alt: Placeholder
   src: /img/ozymandias.jpg
-dateTime: 2020-01-01T12:00:00.000Z
+startDateTime: 2020-01-01T12:00:00.000Z
+endDateTime: 2020-01-02T12:00:00.000Z
 eventTypes:
   - Band competition
 ---

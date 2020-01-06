@@ -13,7 +13,7 @@ import { isOnOrAfterDay } from '../../util/dates'
 import { displayStyle } from '../../templates/event-info'
 
 export const EventMediaBlock = ({event}) => {
-    const date = new Date(event.frontmatter.dateTime)
+    const date = new Date(event.frontmatter.startDateTime)
     const eventUrl = event.fields.slug
 
     return (
@@ -64,7 +64,7 @@ const UpcomingWithContext = ({isPreview, previewEventList}) => {
 
     // Get list of events occurring today or later
     let events = isPreview ? previewEventList : getEventList()
-    events = events.filter(event => isOnOrAfterDay(new Date(), new Date(event.frontmatter.dateTime)))
+    events = events.filter(event => isOnOrAfterDay(new Date(), new Date(event.frontmatter.startDateTime)))
 
     const maxItems = 5
 

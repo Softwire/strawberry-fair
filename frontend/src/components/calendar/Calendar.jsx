@@ -127,5 +127,5 @@ CalendarWithContext.propTypes = {
 
 function eventsOnDate(date, events) {
     // Array of events on this day, empty if none
-    return events.filter(event => areSameDay(new Date(event.frontmatter.dateTime), date))
+    return events.filter(event => areSameDay(new Date(event.frontmatter.startDateTime), date))
 }

@@ -28,7 +28,7 @@ const UpcomingEventsDisplayWithContext = ({isPreview, previewEventList}) => {
   const filterProps = useFilters(eventTypeList)
 
   let events = isPreview ? previewEventList : getEventList()
-  events = events.filter(event => isOnOrAfterDay(new Date(), new Date(event.frontmatter.dateTime)))
+  events = events.filter(event => isOnOrAfterDay(new Date(), new Date(event.frontmatter.startDateTime)))
   
   return (
     <React.Fragment>

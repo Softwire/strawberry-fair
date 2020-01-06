@@ -4,7 +4,8 @@ title: "Jabberwocky"
 image:
   alt: Placeholder
   src: /img/jabberwocky.jpg
-dateTime: 2020-01-01T15:45:00.000Z
+startDateTime: 2020-01-01T09:45:00.000Z
+endDateTime: 2020-01-01T10:00:00.000Z
 eventTypes:
   - 'Meeting - Programming'
   - 'Meeting - Finance'

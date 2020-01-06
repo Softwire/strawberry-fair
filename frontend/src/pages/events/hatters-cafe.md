@@ -4,7 +4,8 @@ title: "Hatters Cafe"
 image:
   alt: Placeholder
   src: /img/hatters10.jpg
-dateTime: 2020-01-01T17:00:00.000Z
+startDateTime: 2020-01-01T17:00:00.000Z
+endDateTime: 2020-01-01T18:30:00.000Z
 eventTypes:
   - Meeting - Finance
   - Band competition

@@ -1,17 +1,25 @@
 const ics = require('ics')
 
-export const generateEventICS = (title, dateTime, content) => {
+export const generateEventICS = (title, startDateTime, endDateTime, content) => {
   let file;
 
   // Generate event information
-  const date = new Date(dateTime)
+  const startDate = new Date(startDateTime)
+  const endDate = new Date(startDateTime)
   const event = {
     start: [
-      date.getFullYear(),
-      date.getMonth() + 1,
-      date.getDate(),
-      date.getHours(),
-      date.getMinutes()
+      startDate.getFullYear(),
+      startDate.getMonth() + 1,
+      startDate.getDate(),
+      startDate.getHours(),
+      startDate.getMinutes()
+    ],
+    end: [
+      endDate.getFullYear(),
+      endDate.getMonth() + 1,
+      endDate.getDate(),
+      endDate.getHours(),
+      endDate.getMinutes()
     ],
     duration: { hours: 1 },
     title: title,

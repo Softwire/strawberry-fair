@@ -36,13 +36,13 @@ EventTypeList.propTypes = {
 }
 
 // used by website and CMS previews
-export const EventInfo = ({image, eventTypes, content, contentComponent}) => {
+export const EventInfo = ({title, image, startDateTime, endDateTime, eventTypes, content, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     return (
         <React.Fragment>
             <EventTypeList eventTypes={eventTypes} />
-            <button className="button" onClick={() => generateAndDownloadEvent(title, dateTime, content)}>
+            <button className="button" onClick={() => generateAndDownloadEvent(title, startDateTime, endDateTime, content)}>
                 Download
             </button>
             <BodyComponent content={content} />
@@ -51,12 +51,15 @@ export const EventInfo = ({image, eventTypes, content, contentComponent}) => {
     )
 }
 
-const generateAndDownloadEvent = (title, dateTime, content) => {
-    const eventBlob = generateEventICS(title, dateTime, content)
+const generateAndDownloadEvent = (title, startDateTime, endDateTime, content) => {
+    const eventBlob = generateEventICS(title, startDateTime, endDateTime, content)
     downloadBlob(eventBlob, `${title}.ics`)
 }
 
 EventInfo.propTypes = {
+    title: PropTypes.string.isRequired,
+    startDateTime: PropTypes.string.isRequired,
+    endDateTime: PropTypes.string.isRequired,
     eventTypes: EventTypeList.propTypes.eventTypes,
     image: PropTypes.object.isRequired,
     content: PropTypes.string.isRequired,
