@@ -4,7 +4,8 @@ title: Flying Pig Stage
 image:
   alt: Placeholder
   src: /img/flying-pig.jpg
-dateTime: 2020-12-23T12:00:00.000Z
+startDateTime: 2020-12-23T12:00:00.000Z
+endDateTime: 2020-12-23T15:00:00.000Z
 eventTypes:
   - Meeting - Programming
 ---

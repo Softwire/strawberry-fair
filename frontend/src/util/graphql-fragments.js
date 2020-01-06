@@ -66,7 +66,8 @@ fragment EventFragment on MarkdownRemark {
     title
     ...ImageFluid64x64Fragment
     eventTypes
-    dateTime
+    startDateTime
+    endDateTime
   }
   html
   excerpt(format: HTML, pruneLength: 150)

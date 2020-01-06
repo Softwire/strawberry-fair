@@ -25,7 +25,9 @@ definitions:
   - &form {label: Form, name: form, widget: form}
   - &author {label: Author, name: author, widget: string}
   - &date {label: Date, name: date, widget: datetime, format: YYYY-MM-DD, dateFormat: YYYY-MM-DD, timeFormat: false}
-  - &dateTime {label: Start Time, name: dateTime, widget: datetime}
+  - &startDateTime {label: Start Time, name: startDateTime, widget: datetime}
+  - &endDateTime {label: End Time, name: endDateTime, widget: datetime}
+  - &strawberryTiles {label: Strawberry Tiles, name: strawberryTiles, widget: strawberryTiles, required: false}
   - &tags {label: Tags, name: tags, widget: list, default: ["news"]}
   - &menuTitle {label: NavBar Dropdown Title, name: title, widget: string}
   - &internalLink {label: Link, name: link, widget: link, hint: Choose the path to the page you want this link to point to. Select "<-- Previous Menu" to undo your last selection.  Make sure you select a complete path by either ending your selection with "index" or checking that the link is displayed on this widget.}
@@ -209,7 +211,8 @@ collections:
       - *title
       - *subtitle
       - *hero
-      - *dateTime
+      - *startDateTime
+      - *endDateTime
       - *eventImage
       - *body
       - *eventTypes
