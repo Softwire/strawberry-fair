@@ -177,13 +177,6 @@ const extractLayoutProps = (data = {}, pageContext = {}, additionalPropsExtracto
         }
     }
 
-    console.log("data:")
-    console.log(data)
-    console.log("pageContext:")
-    console.log(pageContext)
-    console.log("additionalPropsExtractor(data, pageContext):")
-    console.log(additionalPropsExtractor(data, pageContext))
-
     const additionalProps = additionalPropsExtractor(data, pageContext)
 
     // Additional props overwrite provided ones
