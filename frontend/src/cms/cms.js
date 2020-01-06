@@ -20,6 +20,9 @@ import { MultiCollectionRelationControl, MultiCollectionRelationPreview } from '
 import { FormControl } from './FormWidget'
 import { StrawberryTilesControl } from './StrawberryTilesWidget'
 import { LinkControl, LinkPreview } from './LinkWidget'
+import { youtubeControl, youtubePreview } from "netlify-cms-widget-youtube";
+ 
+
 
 const placeholderArticle = {
     node: {
@@ -84,3 +87,4 @@ CMS.registerWidget('multi-collection-relation', MultiCollectionRelationControl, 
 CMS.registerWidget("form", FormControl)
 CMS.registerWidget("strawberryTiles", StrawberryTilesControl)
 CMS.registerWidget('link', LinkControl, LinkPreview)
+CMS.registerWidget("youtube", youtubeControl, youtubePreview);
