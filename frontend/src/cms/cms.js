@@ -12,12 +12,9 @@ import { CalendarPage } from '../templates/calendar-page'
 import { ContactPage } from '../templates/contact-page'
 import { FormPage } from '../templates/form'
 
-import { AccessibleImageControl } from './AccessibleImageWidget'
 import { MultiImageControl } from './MultiImageWidget'
 import { HeroControl } from './HeroWidget'
 import { MultiCollectionRelationControl, MultiCollectionRelationPreview } from './MultiCollectionRelationWidget'
-import { FormControl } from './FormWidget'
-import { StrawberryTilesControl } from './StrawberryTilesWidget'
 import { LinkControl, LinkPreview } from './LinkWidget'
 
 const placeholderArticle = {
@@ -75,10 +72,7 @@ CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {events: plac
 CMS.registerPreviewTemplate('contact-page', preview(ContactPage))
 CMS.registerPreviewTemplate('forms', preview(FormPage))
 
-CMS.registerWidget("accessibleImage", AccessibleImageControl)
 CMS.registerWidget("multiImage", MultiImageControl)
 CMS.registerWidget("hero", HeroControl)
 CMS.registerWidget('multi-collection-relation', MultiCollectionRelationControl, MultiCollectionRelationPreview)
-CMS.registerWidget("form", FormControl)
-CMS.registerWidget("strawberryTiles", StrawberryTilesControl)
 CMS.registerWidget('link', LinkControl, LinkPreview)

@@ -1,9 +1,7 @@
 backend:
-  name: git-gateway
-  branch: production
-  accept_roles:
-    - admin
-    - content
+  name: github
+  repo: Softwire/strawberry-fair
+  branch: sf-107
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -24,7 +22,6 @@ definitions:
   - &body {label: Main Content, name: body, widget: markdown}
   - &newsImage {label: Primary Image, name: image, widget: image, hint: This image will also be used as a preview image for the article}
   - &eventImage {label: Event Image, name: image, widget: image, hint: This image will also be used as a preview image for the event}
-  - &form {label: Form, name: form, widget: form}
   - &author {label: Author, name: author, widget: string}
   - &date {label: Date, name: date, widget: datetime, format: YYYY-MM-DD, dateFormat: YYYY-MM-DD, timeFormat: false}
   - &dateTime {label: Start Time, name: dateTime, widget: datetime}
@@ -88,16 +85,30 @@ definitions:
           valueField: title
           displayFields: [title]
   - strawberryTiles: &strawberryTiles
-      label: Strawberry Tiles
-      name: strawberryTiles
-      widget: list
-      required: false
+      label: "Strawberry Tiles"
+      name: "strawberryTiles"
+      widget: "list"
       field:
-        - label: "Text"
+          label: "Text"
           name: "text"
           widget: "string"
-          pattern: ["something", "200 characters max"]
           hint: "200 characters max"
+          pattern: ["^[\\s\\S]{0,200}$", "200 characters max"]
+  - form: &form
+      label: Form
+      name: form
+      widget: object
+      fields:
+        - {label: "Display form", name: "isPublic", widget: "boolean"}
+        - {label: "Google Form Embed HTML", name: "link", widget: "string", hint: "Copy and paste Embed HTML from your Google Form"}
+  - accessibleImage: &accessibleImage
+      label: Accessible Image
+      name: accessibleImage
+      widget: object
+      fields:
+        - {label: "Description", name: "alt", widget: "string"}
+        - {label: "Image File", name: "src", widget: "image"}
+
 collections:
   - name: "pages"
     label: "Pages"
