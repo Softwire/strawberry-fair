@@ -5,9 +5,12 @@ import { graphql } from 'gatsby'
 export const imageFluidFragment = graphql`
 fragment ImageFluidFragment on MarkdownRemarkFrontmatter {
   image {
-    childImageSharp {
-      fluid {
-        ...GatsbyImageSharpFluid
+    alt
+    src {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }
@@ -17,15 +20,18 @@ fragment ImageFluidFragment on MarkdownRemarkFrontmatter {
 export const imageFluid64x64Fragment = graphql`
 fragment ImageFluid64x64Fragment on MarkdownRemarkFrontmatter {
   image {
-    childImageSharp {
-      fluid {
-        ...GatsbyImageSharpFluid
-      }
-      editedFluid: fluid(duotone: {highlight: "ae1414", shadow: "1d1d1d", opacity: 70}) {
-        ...GatsbyImageSharpFluid
-      }
-      resize(width: 64, height: 64) {
-        src
+    alt
+    src {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+        editedFluid: fluid(duotone: {highlight: "ae1414", shadow: "1d1d1d", opacity: 70}) {
+          ...GatsbyImageSharpFluid
+        }
+        resize(width: 64, height: 64) {
+          src
+        }
       }
     }
   }

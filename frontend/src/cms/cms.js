@@ -25,7 +25,8 @@ const placeholderArticle = {
       },
       frontmatter: {
         image: {
-          image: '/img/strawberry.jpg'
+          alt: 'Placeholder',
+          src: '/img/strawberry.jpg'
         },
         title: 'Placeholder',
         date: '2017-12-04'
@@ -42,7 +43,10 @@ const today = new Date()
 const placeholderEvents = placeholderEventDays.map(dayNumber => ({
   frontmatter: {
     title: 'Event',
-    image: '/img/strawberry-64x64.png',
+    image: {
+      alt: 'Placeholder',
+      src: '/img/strawberry-64x64.png'
+    },
     dateTime: new Date(today.getFullYear(), today.getMonth(), dayNumber),
     eventTypes: []
   },

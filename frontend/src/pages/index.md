@@ -44,11 +44,16 @@ contentBlocks:
     subtitle: B
     title: A
     scrapbookImages:
-      - /img/love-a-fair.jpg
-      - /img/test-pic.png
-      - /img/love-a-fair.jpg
-      - /img/test-pic.png
-      - /img/love-a-fair.jpg
+      - alt: Placeholder
+        src: /img/love-a-fair.jpg
+      - alt: Placeholder
+        src: /img/test-pic.png
+      - alt: Placeholder
+        src: /img/love-a-fair.jpg
+      - alt: Placeholder
+        src: /img/test-pic.png
+      - alt: Placeholder
+        src: /img/love-a-fair.jpg
     sideSnippet: >-
       Next year's festival is happening on June 6th 2020. We'll be announcing
       the theme later in the year
@@ -85,11 +90,16 @@ contentBlocks:
     contentSubtitle: B
     contentTitle: A
     scrapbookImages:
-      - /img/love-a-fair.jpg
-      - /img/test-pic.png
-      - /img/love-a-fair.jpg
-      - /img/test-pic.png
-      - /img/love-a-fair.jpg
+      - alt: Placeholder
+        src: /img/love-a-fair.jpg
+      - alt: Placeholder
+        src: /img/test-pic.png
+      - alt: Placeholder
+        src: /img/love-a-fair.jpg
+      - alt: Placeholder
+        src: /img/test-pic.png
+      - alt: Placeholder
+        src: /img/love-a-fair.jpg
     sideSnippet: 'For more details, contact email us here or on our Facebook page'
 calendarBlock:
   title: Strawberry Fair committee meetings

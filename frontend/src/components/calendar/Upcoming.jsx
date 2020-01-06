@@ -20,9 +20,8 @@ export const EventMediaBlock = ({event}) => {
     <div className="media event">
         <div className="media-left">
             <Link to={eventUrl} className="image is-64x64">
-                <img src={event.frontmatter.image ?
-                    (event.frontmatter.image.childImageSharp ? event.frontmatter.image.childImageSharp.resize.src : event.frontmatter.image) :
-                    null} />
+                {event.frontmatter.image ? <img src={(event.frontmatter.image.src.childImageSharp ? event.frontmatter.image.src.childImageSharp.resize.src : event.frontmatter.image.src)}
+                                                alt={event.frontmatter.image.alt} /> : null}
             </Link>
         </div>
         <div className="media-content">

@@ -1,7 +1,9 @@
 ---
 templateKey: event-info
 title: "Ozymandias"
-image: /img/ozymandias.jpg
+image:
+  alt: Placeholder
+  src: /img/ozymandias.jpg
 dateTime: 2020-01-01T12:00:00.000Z
 eventTypes:
   - Band competition

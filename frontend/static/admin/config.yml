@@ -22,8 +22,7 @@ definitions:
   - &subtitle {label: Subtitle, name: subtitle, widget: string, required: false}
   - &hero {label: Banner, name: heroData, widget: hero, required: false}
   - &body {label: Main Content, name: body, widget: markdown}
-  - &newsImage {label: Primary Image, name: image, widget: image, hint: This image will also be used as a preview image for the article}
-  - &eventImage {label: Event Image, name: image, widget: image, hint: This image will also be used as a preview image for the event}
+  - &form {label: Form, name: form, widget: form}
   - &author {label: Author, name: author, widget: string}
   - &date {label: Date, name: date, widget: datetime, format: YYYY-MM-DD, dateFormat: YYYY-MM-DD, timeFormat: false}
   - &dateTime {label: Start Time, name: dateTime, widget: datetime}
@@ -118,6 +117,8 @@ definitions:
       fields:
         - {label: "Description", name: "alt", widget: "string"}
         - {label: "Image File", name: "src", widget: "image"}
+  - &newsImage {<<: *accessibleImage, label: Primary Image, hint: This image will also be used as a preview image for the article}
+  - &eventImage {<<: *accessibleImage, label: Event Image, hint: This image will also be used as a preview image for the event}
 
 collections:
   - name: "pages"

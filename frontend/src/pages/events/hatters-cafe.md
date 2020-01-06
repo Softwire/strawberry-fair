@@ -1,7 +1,9 @@
 ---
 templateKey: event-info
 title: "Hatters Cafe"
-image: /img/hatters10.jpg
+image:
+  alt: Placeholder
+  src: /img/hatters10.jpg
 dateTime: 2020-01-01T17:00:00.000Z
 eventTypes:
   - Meeting - Finance

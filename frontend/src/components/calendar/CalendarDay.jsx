@@ -20,7 +20,7 @@ const CalendarDay = ({dateTime, events}) => {
     const [ currentImage, setCurrentImage ] = useState(0)
 
     // Revolving image hook
-    const eventsWithPics = events.filter(event => event.frontmatter.image)
+    const eventsWithPics = events.filter(event => event.frontmatter.image.src)
     const nImages = eventsWithPics.length
     const imageRotateTimeMS = 4000
     const imageFadeTimeS = 0.5
@@ -55,10 +55,10 @@ const CalendarDay = ({dateTime, events}) => {
         internals = (
             <React.Fragment>
                 <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
-                <div className={`box button has-text-left calendar-day ${event.frontmatter.image ? "has-text-white" : "has-text-black"} has-text-weight-bold`} onClick={modalOn} style={event.frontmatter.image ? {
-                        backgroundImage: `url(${event.frontmatter.image.childImageSharp ? event.frontmatter.image.childImageSharp.editedFluid.src : event.frontmatter.image})`} : null}>
+                <div className={`box button has-text-left calendar-day ${event.frontmatter.image.src ? "has-text-white" : "has-text-black"} has-text-weight-bold`} onClick={modalOn} style={event.frontmatter.image.src ? {
+                        backgroundImage: `url(${event.frontmatter.image.src.childImageSharp ? event.frontmatter.image.src.childImageSharp.editedFluid.src : event.frontmatter.image.src})`} : null}>
                     <p>{date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}</p>
-                    <p key={event.fields.slug}><Link className={`${event.frontmatter.image ? "has-text-white" : "has-text-black"} has-text-weight-medium`} to={event.fields.slug}>{event.frontmatter.title}</Link></p>
+                    <p key={event.fields.slug}><Link className={`${event.frontmatter.image.src ? "has-text-white" : "has-text-black"} has-text-weight-medium`} to={event.fields.slug}>{event.frontmatter.title}</Link></p>
                 </div>
             </React.Fragment>
         )
@@ -68,7 +68,7 @@ const CalendarDay = ({dateTime, events}) => {
                 <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
                 {eventsWithPics.map((event, index) =>
                     <div key={event.fields.slug} className="box button has-text-left calendar-day has-text-white has-text-weight-bold" onClick={modalOn} style={{
-                            backgroundImage: `url(${event.frontmatter.image.childImageSharp ? event.frontmatter.image.childImageSharp.editedFluid.src : event.frontmatter.image})`,
+                            backgroundImage: `url(${event.frontmatter.image.src.childImageSharp ? event.frontmatter.image.src.childImageSharp.editedFluid.src : event.frontmatter.image.src})`,
                             opacity: index === currentImage ? 1 : 0,
                             transition: `opacity ${imageFadeTimeS}s`,
                             position: "absolute",
