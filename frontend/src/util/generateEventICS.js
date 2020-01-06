@@ -1,11 +1,12 @@
 const ics = require('ics')
+const h2p = require('html2plaintext')
 
 export const generateEventICS = (title, startDateTime, endDateTime, content) => {
   let file;
 
   // Generate event information
   const startDate = new Date(startDateTime)
-  const endDate = new Date(startDateTime)
+  const endDate = new Date(endDateTime)
   const event = {
     start: [
       startDate.getFullYear(),
@@ -21,9 +22,8 @@ export const generateEventICS = (title, startDateTime, endDateTime, content) => 
       endDate.getHours(),
       endDate.getMinutes()
     ],
-    duration: { hours: 1 },
     title: title,
-    description: content
+    description: h2p(content)
   }
 
   // Create event, place in Blob

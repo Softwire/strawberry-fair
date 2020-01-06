@@ -22,6 +22,7 @@
     "gatsby-source-filesystem": "^2.0.26",
     "gatsby-transformer-remark": "^2.6.9",
     "gatsby-transformer-sharp": "^2.1.9",
+    "html2plaintext": "^2.1.2",
     "ics": "^2.18.0",
     "iframe-resizer-react": "^1.0.1",
     "is-url": "^1.2.4",
