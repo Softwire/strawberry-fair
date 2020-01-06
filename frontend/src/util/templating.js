@@ -50,7 +50,7 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
         deepReplaceImageUrlsWithAssets(dataProps, getAsset)
         Object.assign(previewProps, dataProps)
 
-        const layoutProps = extractLayoutPropsPreview(dataProps)
+        const layoutProps = extractLayoutPropsPreview(dataProps, additionalPropsExtractor, widgetsFor)
 
         const isPreview = true
         return (
@@ -177,7 +177,7 @@ const extractLayoutProps = (data = {}, pageContext = {}, additionalPropsExtracto
         }
     }
 
-    const additionalProps = additionalPropsExtractor(data, pageContext)
+    const additionalProps = additionalPropsExtractor(data, pageContext) || {}
 
     // Additional props overwrite provided ones
     if (additionalProps.title) {
@@ -196,7 +196,7 @@ const extractLayoutProps = (data = {}, pageContext = {}, additionalPropsExtracto
 }
 
 // The data object is structured differently for previews
-const extractLayoutPropsPreview = previewData => {
+const extractLayoutPropsPreview = (previewData, additionalPropsExtractor, widgetsFor) => {
     return extractLayoutProps({
         markdownRemark: {
             frontmatter: {
@@ -205,5 +205,5 @@ const extractLayoutPropsPreview = previewData => {
             }
         },
         heroData: previewData.heroData
-    })
+    }, {}, data => additionalPropsExtractor(data, { widgetsFor }))
 }
