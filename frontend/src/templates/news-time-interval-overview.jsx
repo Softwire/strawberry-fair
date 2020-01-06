@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
-import { FaChevronLeft } from 'react-icons/fa'
 import { HTMLContent } from '../components/Content'
 import { site } from '../util/templating'
 import NewsMenu, { monthName } from '../components/NewsMenu.jsx'
@@ -33,18 +32,6 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
 
   return (
     <React.Fragment>
-      <Link to="/news/" className="subtitle">
-        <span className="level is-mobile">
-          <span className="level-left">
-            <span className="level-item">
-              <span className="icon"><FaChevronLeft /></span>
-            </span>
-            <span className="level-item">
-              Back to news overview
-            </span>
-          </span>
-        </span>
-      </Link>
       <NewsArchiveBreadcrumbs breadcrumbs={breadcrumbs} breadcrumbLinks={breadcrumbLinks} />
       <hr />
       <div className="columns">
@@ -89,7 +76,7 @@ const generateHeading = (firstDate, lastDate) => {
 
 const NewsArchiveBreadcrumbs = ({breadcrumbs, breadcrumbLinks}) => {
   return (
-    <nav className="breadcrumb add-margin-top">
+    <nav className="breadcrumb is-large">
       <ul>
         {breadcrumbs.map((breadcrumb, index) => (<li key={breadcrumb}><Link to={breadcrumbLinks[index]}>{breadcrumb}</Link></li>))}
       </ul>
