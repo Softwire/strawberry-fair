@@ -33,6 +33,13 @@ definitions:
   - &menuTitle {label: NavBar Dropdown Title, name: title, widget: string}
   - &internalLink {label: Link, name: link, widget: link, hint: Choose the path to the page you want this link to point to. Select "<-- Previous Menu" to undo your last selection.  Make sure you select a complete path by either ending your selection with "index" or checking that the link is displayed on this widget.}
   - &text {label: Text, name: text, widget: string}
+  - &email {label: Email, name: email, widget: string}
+  - &address {label: Address, name: address, widget: markdown}
+  - &facebook {label: Facebook Account, name: facebookAccount, widget: string}
+  - &twitter {label: Twitter Account, name: twitterAccount, widget: string}
+  - &footerLeftBoxText {label: Left Box Text, name: leftBoxText, widget: markdown}
+  - &footerLeftBoxTitle {label: Left Box Title, name: leftBoxTitle, widget: string}
+  - &copyright {label: Copyright, name: copyright, widget: string}
   - contentBlock: &contentBlock
       label: Content Blocks
       name: contentBlocks
@@ -203,6 +210,17 @@ collections:
   - name: "header-and-footer"
     label: "Header And Footer"
     files:
+      - file: "frontend/src/pages/header-and-footer/footer.md"
+        label: "Footer"
+        name: "footer"
+        fields:
+          - *footerLeftBoxTitle
+          - *footerLeftBoxText
+          - *facebook
+          - *twitter
+          - *address
+          - *email
+          - *copyright
       - file: "frontend/src/pages/header-and-footer/buttons/get-involved.md"
         label: "Get Involved"
         name: "get-involved"
