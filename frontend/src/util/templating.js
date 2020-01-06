@@ -114,7 +114,7 @@ export const site = (component, additionalPropsExtractor = () => {}) => {
         return (
             <React.Fragment>
                 <Helmet>
-                    <title>{layoutProps.title ? layoutProps.title : 'Strawberry Fair'}</title>
+                    <title>{layoutProps.tabTitle ? layoutProps.tabTitle : (layoutProps.title ? layoutProps.title : 'Strawberry Fair')}</title>
                 </Helmet>
                 <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle}>
                     {insideLayout}
@@ -180,6 +180,9 @@ const extractLayoutProps = (data = {}, pageContext = {}, additionalPropsExtracto
     const additionalProps = additionalPropsExtractor(data, pageContext) || {}
 
     // Additional props overwrite provided ones
+    if (additionalProps.tabTitle) {
+        layoutProps.tabTitle = additionalProps.tabTitle
+    }
     if (additionalProps.title) {
         layoutProps.title = additionalProps.title
     }

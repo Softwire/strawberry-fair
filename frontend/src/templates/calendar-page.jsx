@@ -26,7 +26,7 @@ CalendarPage.propTypes = {
   )
 }
 
-export default site(CalendarPage, data => {return {events: data.allMarkdownRemark.edges}})
+export default site(CalendarPage, data => {return {events: data.allMarkdownRemark.edges, tabTitle: "Calendar"}})
 
 export const query = graphql`
 query calendarPageTemplate($id: String!) {
