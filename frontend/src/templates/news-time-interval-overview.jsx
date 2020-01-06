@@ -65,7 +65,7 @@ export default site(NewsTimeIntervalOverview, (data, pageContext) => {
 
   return {
     newsArticles: data.allMarkdownRemark.edges,
-    title: pageContext ? pageContext.title : 'News'
+    title: pageContext ? pageContext.title : 'News Archive'
   }
 })
 
