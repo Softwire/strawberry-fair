@@ -80,27 +80,23 @@ const CalendarWithContext = ({isPreview, previewEventList}) => {
 
 const MonthScrubber = ({monthForward, monthBack, focusDate}) => (
     <div className="panel-block">
-        <div className="columns is-multiline">
-            <div className="column is-full">
-                <div className="columns is-vcentered is-centered">
-                    <div className="column is-narrow">
-                        <button onClick={monthBack} className="button is-white">
-                            <span className="icon is-left has-text-dark">
-                                <FaChevronLeft />
-                            </span>
-                        </button>
-                    </div>
-                    <div className="column">
-                        <p>{new Date(focusDate).toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</p>
-                    </div>
-                    <div className="column is-narrow">
-                        <button onClick={monthForward} className="button is-white">
-                            <span className="icon is-right has-text-dark">
-                                <FaChevronRight />
-                            </span>
-                        </button>
-                    </div>
-                </div>
+        <div className="columns is-vcentered is-centered is-mobile">
+            <div className="column is-narrow">
+                <button onClick={monthBack} className="button is-white">
+                    <span className="icon is-left has-text-dark">
+                        <FaChevronLeft />
+                    </span>
+                </button>
+            </div>
+            <div className="column">
+                <p>{new Date(focusDate).toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</p>
+            </div>
+            <div className="column is-narrow">
+                <button onClick={monthForward} className="button is-white">
+                    <span className="icon is-right has-text-dark">
+                        <FaChevronRight />
+                    </span>
+                </button>
             </div>
         </div>
     </div>
