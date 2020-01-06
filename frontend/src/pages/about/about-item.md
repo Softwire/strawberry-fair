@@ -3,9 +3,7 @@ templateKey: about-page
 title: About Item
 subtitle: this is a subtitle
 strawberryTiles:
-  - >-
-    Arma virumque canō, Trōiae quī prīmus ab ōrīs Ītaliam, fātō profugus,
-    Lāvīniaque vēnit lītora,
+  - Some random latin.
   - >-
     multa quoque et bellō passūs, dum conderet urbem, inferretque deōs Latiō,
     genus unde Latīnum.
