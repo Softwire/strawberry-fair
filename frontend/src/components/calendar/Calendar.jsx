@@ -80,17 +80,29 @@ const CalendarWithContext = ({isPreview, previewEventList}) => {
 
 const MonthScrubber = ({monthForward, monthBack, focusDate}) => (
     <div className="container month-scrubber">
-        <button onClick={monthBack} className="button is-white is-centered">
-            <span className="icon is-left has-text-dark is-large">
-                <FaChevronLeft />
-            </span>
-        </button>
-        <span className="title">{new Date(focusDate).toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</span>
-        <button onClick={monthForward} className="button is-white is-centered">
-            <span className="icon is-right has-text-dark is-large">
-                <FaChevronRight />
-            </span>
-        </button>
+        <div className="level is-mobile">
+            <div className="level-left">
+                <div className="level-item">
+                    <button onClick={monthBack} className="button is-white is-centered">
+                        <span className="icon is-left has-text-dark is-large">
+                            <FaChevronLeft />
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div className="level-item">
+                <span className="title">{new Date(focusDate).toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</span>
+            </div>
+            <div className="level-right">
+                <div className="level-item">
+                    <button onClick={monthForward} className="button is-white is-centered">
+                        <span className="icon is-right has-text-dark is-large">
+                            <FaChevronRight />
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 )
 
