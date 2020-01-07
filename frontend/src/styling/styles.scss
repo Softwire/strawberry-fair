@@ -30,6 +30,8 @@ $navbar-dropdown-arrow: $primary;
 
 $section-padding: 0 1.5rem;
 
+$scrapbook-padding-mobile: 0.3rem;
+
 /* Bulma provides default styling (can be imported in separate modules as required) */
 @import "bulma";
 
@@ -47,9 +49,38 @@ $section-padding: 0 1.5rem;
     height: 170px;
     background-size: cover;
 }
+
+/*
+These styles adjust alignment and override Bulma column padding & margins for the scrapbook images component.
+They provide a custom implementation of the logic at https://github.com/jgthms/bulma/blob/master/css/bulma.css#L9297.
+This is necessary because Bulma's experimental column margin classes do not function properly (feature described at https://bulma.io/documentation/columns/gap/#variable-gap).
+*/
+.scrapbook-column {
+    &.outer-column, &.inner-column {
+        display: flex;
+        flex-direction: column-reverse;
+    }
     
-.scrapbook-image {
-    margin-top: auto;
+    @media(max-width: $tablet) {
+        padding: $scrapbook-padding-mobile;
+
+        &.outer-column, &.inner-column {
+            &.right-bottom {
+                flex-direction: column;
+            }
+        }
+    }
+}
+@media(max-width: $tablet) {
+    .scrapbook-columns {
+        margin-left: -1 * $scrapbook-padding-mobile;
+        margin-right: -1 * $scrapbook-padding-mobile;
+        margin-top: -1 * $scrapbook-padding-mobile;
+    
+        &:last-child {
+            margin-bottom: -1 * $scrapbook-padding-mobile;
+        }
+    }
 }
 
 // Allows navbar dropdowns to work in Edge
