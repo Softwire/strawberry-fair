@@ -37,7 +37,6 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
       <div className="columns">
         <div className="column is-three-quarters">
           <div className="panel">
-            <h2 className="panel-heading">{heading}</h2>
             {selectedNewsArticles.map(article => (
               <Link to={article.node.fields.slug} key={article.node.fields.slug} className="panel-block">
                 <article className="media">
