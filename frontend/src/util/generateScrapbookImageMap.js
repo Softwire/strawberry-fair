@@ -2,6 +2,7 @@
 
 /** Min height difference ratio between the shortest and tallest inner column (to minimise white space) - must be a num between 0 and 1 */
 const minInnerColHeightDiffRatio = 0.6
+const minOuterColHeightDiffRatio = 0.8
 /** Min Bulma height of an inner column - must be an int between 1 and 6 */
 const minInnerColWidth = 4
 
@@ -13,14 +14,11 @@ export const generateScrapbookImageMap = (images, isPreview) => {
     // In CMS preview, aspect ratios are ignored and images are not stacked
     if (isPreview) {
         const imageMap = mapImagesToColumns(images, true)
-        return assignInnerColWidths(imageMap, true)
+        return setColumnWidths(imageMap, true)
     }
-
     const imageList = sortByAspect(images)
     let imageMap = mapImagesToColumns(imageList)
-    imageMap = equaliseOuterColAspects(imageMap)
-    imageMap = regulariseInnerColAspects(imageMap)
-    return assignInnerColWidths(imageMap)
+    return setColumnWidths(imageMap)
 }
 
 const sortByAspect = (imageList) => imageList.sort((a, b) => getAspect(a) - getAspect(b))
@@ -59,117 +57,84 @@ const mapImagesToColumns = (imageList, isPreview=false) => {
     })
 }
 
-/**
- * Adjusts aspects so that, if all inner columns had the same height, both outer columns would be of equal width.
- * This step is taken to ensure column heights are evenly distributed.
-*/
-const equaliseOuterColAspects = (imageMap) => {
-    const [left, right] = imageMap
-    const [lSum, rSum] = imageMap.map((el) => getOuterColAspectSum(el))
-    const [lAdjust, rAdjust] = [getOuterColAdjustmentRatio(lSum, rSum), getOuterColAdjustmentRatio(rSum, lSum)]
+const setColumnWidths = (imageMap, isPreview=false) => {
+    const innerColumnAspects = imageMap.map(outer => outer.map(inner => getInnerColAspect(inner)))
 
-    adjustOuterColAspects(left, lAdjust)
-    adjustOuterColAspects(right, rAdjust)
+    // Initial bulma column width estimates - these may be adjusted
+    const outerColWidths = [6, 6]
+    const innerColWidths = [[6, 6], [6, 6]]
 
-    return imageMap
-}
+    while(!isPreview) {
+        const heights = relativeHeights(innerColumnAspects, innerColWidths, outerColWidths)
 
-/** Adjusts aspects of innerCols so that the rules set by Layout Control Constants can be satisfied */
-const regulariseInnerColAspects = (imageMap) => {
-    imageMap.forEach((outerColMap) => {
-        const [left, right] = outerColMap
-        const [tall, short] = (getInnerColAspect(left) > getInnerColAspect(right)) ? outerColMap : [outerColMap[1], outerColMap[0]]
-        const worstRatio = getWorstCaseInnerColsHeightRatio(tall, short)
+        // balance the left inner column heights
+        if (heights[0][0] / heights[0][1] < minInnerColHeightDiffRatio && innerColWidths[0][1] > minInnerColWidth) {
+            innerColWidths[0][0]++
+            innerColWidths[0][1]--
+            continue
+        }
+        if (heights[0][1] / heights[0][0] < minInnerColHeightDiffRatio && innerColWidths[0][0] > minInnerColWidth) {
+            innerColWidths[0][0]--
+            innerColWidths[0][1]++
+            continue
+        }
 
-        if (worstRatio < minInnerColHeightDiffRatio) {
-            const requiredChangeFactor = minInnerColHeightDiffRatio / worstRatio
-            adjustInnerColAspects(tall, Math.sqrt(requiredChangeFactor))
-            adjustInnerColAspects(short, (1 / Math.sqrt(requiredChangeFactor)))
+        // balance the right inner column heights
+        if (heights[1][0] / heights[1][1] < minInnerColHeightDiffRatio && innerColWidths[1][1] > minInnerColWidth) {
+            innerColWidths[1][0]++
+            innerColWidths[1][1]--
+            continue
+        }
+        if (heights[1][1] / heights[1][0] < minInnerColHeightDiffRatio && innerColWidths[1][0] > minInnerColWidth) {
+            innerColWidths[1][0]--
+            innerColWidths[1][1]++
+            continue
+        }
+
+        // balance the outer column heights based on max innner column heights
+        const leftMax = Math.max(...heights[0])
+        const rightMax = Math.max(...heights[1])
+        if (leftMax / rightMax < minOuterColHeightDiffRatio && outerColWidths[1] > minInnerColWidth) {
+            outerColWidths[0]++
+            outerColWidths[1]--
+            continue
+        }
+        if (leftMax / rightMax > 1 / minOuterColHeightDiffRatio && outerColWidths[0] > minInnerColWidth) {
+            outerColWidths[0]--
+            outerColWidths[1]++
+            continue
+        }
+
+        // at this point column widths have been adjusted
+        // to approximately balance column height
+        break;
+    }
+
+    return imageMap.map((outer, i) => {
+        return { 
+            width: `is-${outerColWidths[i]}`, 
+            images: outer.map((inner, j) => {
+                return { width: `is-${innerColWidths[i][j]}`, images: inner }
+            })
         }
     })
-    return imageMap
 }
 
-const assignInnerColWidths = (imageMap, isPreview=false) => {
-    return imageMap.map((outerColMap) => {
-        const validLeftWidths = getValidLeftWidths(outerColMap, isPreview)
-        const leftWidth = getRandElement(validLeftWidths)
-
-        const left = { width: `is-${leftWidth}`, images: outerColMap[0] }
-        const right = { width: `is-${12 - leftWidth}`, images: outerColMap[1] }
-
-        return [ left, right ]
-    })
+const relativeHeights = (columnAspects, innerColWidths, outerColWidths) => {
+    return columnAspects.map((outer, i) => outer.map((inner, j) => outerColWidths[i] * innerColWidths[i][j] / inner))
 }
 
 const getAspect = (image) => image.src.childImageSharp.fluid.aspectRatio
-
-const setAspect = (image, value) => {
-    image.src.childImageSharp.fluid.aspectRatio = value
-}
 
 /** Returns the combined aspect ratio of two images stacked on top of each other */
 const getStackedAspect = (imgA, imgB) => (getAspect(imgA) * getAspect(imgB)) / (getAspect(imgA) + getAspect(imgB))
 
 const getInnerColAspect = (innerColMap) => (innerColMap.length === 1 ? getAspect(innerColMap[0]) : getStackedAspect(innerColMap[0], innerColMap[1]))
 
-const getOuterColAspectSum = (outerColMap) => outerColMap.reduce(((acc, curr) => acc + getInnerColAspect(curr)), 0)
-
-const getOuterColAdjustmentRatio = (self, other) => (self + other) / (2 * self)
-
-const adjustOuterColAspects = (outerColMap, ratio) => {
-    outerColMap.forEach((innerColMap) => adjustInnerColAspects(innerColMap, ratio))
-}
-
-const adjustInnerColAspects = (innerColMap, ratio) => {
-    innerColMap.forEach((img) => {
-        setAspect(img, getAspect(img) * ratio)
-    })
-}
-
-const getInnerColHeight = (innerColMap, width) => width / getInnerColAspect(innerColMap)
-
-/** Calculates height ratio between two inner columns, given a width for the left column */
-const calculateInnerColsHeightRatio = (outerColMap, lWidth) => {
-    const ratio = getInnerColHeight(outerColMap[0], lWidth) / getInnerColHeight(outerColMap[1], (12 - lWidth))
-
-    if (ratio > 1) {
-        return 1 / ratio
-    }
-    return ratio
-}
-
-/** Calculates worst case height ratio between two innerCols, which can be checked against the minInnerColHeightDiffRatio constraint */
-const getWorstCaseInnerColsHeightRatio = (tall, short) =>  (2 * getInnerColAspect(short)) / getInnerColAspect(tall)
-
-const isLeftWidthValid = (outerColMap, lWidth) => {
-    return calculateInnerColsHeightRatio(outerColMap, lWidth) >= minInnerColHeightDiffRatio
-}
-
-/** Returns list of all possible Bulma widths based on value of minInnerColWidth constraint */
-const getPossibleWidths = () => {
-    const minWidth = minInnerColWidth
-    const maxWidth = 12 - minWidth
-    return Array.from(new Array(maxWidth - minWidth + 1), (_, i) => i + minWidth)
-}
-
-/** Returns list of valid bulma widths for left innerCol of an outerCol */
-const getValidLeftWidths = (outerColMap, isPreview=false) => {
-    if (isPreview) {
-        return getPossibleWidths()
-    }
-    else {
-        return getPossibleWidths().filter((lWidth) => isLeftWidthValid(outerColMap, lWidth))
-    }
-}
-
-
 /* RANDOMISATION FUNCTIONS */
 
 /** Returns 0 <= randInt < max */
 const getRandInt = (max) => Math.floor(Math.random() * max)
-
-const getRandElement = (arr) => arr[getRandInt(arr.length)]
 
 export const shuffle = (arr) => {
     const shuffled = [...arr]
