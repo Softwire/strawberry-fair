@@ -6,9 +6,10 @@ import { site } from '../util/templating'
 // This is used by the websitesite and for CMS previews
 export const YoutubeGallery = ({video, heroData}) => {
     return (
-      <Layout heroData={heroData}>
-          <h1 className="title">Never gonna give you up, Strawbery Fair!</h1>
+      <Layout title="Never gonna give you up, Strawbery Fair!" heroData={heroData}>
+        <section className="section">
           <div align="center" dangerouslySetInnerHTML={{ __html: video}} />
+        </section>
       </Layout>
 )}
 
