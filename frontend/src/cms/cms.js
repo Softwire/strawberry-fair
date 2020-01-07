@@ -1,5 +1,5 @@
 import CMS from 'netlify-cms-app'
-import { getSimplifiedIframe } from '../util/youtubeInfoExtractor'
+import { youtubeEditorComponent } from './youtubeEditorComponent'
 
 import '../styling/styles.scss'
 import { HomePage } from '../templates/home-page'
@@ -90,26 +90,8 @@ CMS.registerWidget('multi-collection-relation', MultiCollectionRelationControl, 
 CMS.registerWidget("form", FormControl)
 CMS.registerWidget("strawberryTiles", StrawberryTilesControl)
 CMS.registerWidget('link', LinkControl, LinkPreview)
-CMS.registerWidget("youtube", youtubeControl, youtubePreview);
+CMS.registerWidget("youtube", youtubeControl, youtubePreview)
 
-CMS.registerEditorComponent({
-  // Internal id of the component
-  id: "youtube",
-  // Visible label
-  label: "Youtube",
-  // Fields the user need to fill out when adding an instance of the component
-  fields: [{name: 'iframe', label: ' Embed Youtube Video <>', widget: 'string'}],
-  // Pattern to identify a block as being an instance of this component
-  pattern: /<figure className="video_container">(<iframe .* src="https:\/\/www\.youtube\.com.*?" .*><\/iframe>)<\/figure>/,
-  // Function to extract data elements from the regexp match
-  fromBlock: function(match) {
-    return {iframe: match[1]}
-  },
-  // Function to create a text block from an instance of this component
-  toBlock: getSimplifiedIframe,
-  // Preview output for this component. Can either be a string or a React component
-  // (component gives better render performance)
-  toPreview: getSimplifiedIframe
-});
+CMS.registerEditorComponent(youtubeEditorComponent)
 
 

@@ -6,7 +6,6 @@ import { HTMLContent } from '../components/Content'
 import { getSimplifiedIframe } from '../util/youtubeInfoExtractor'
 import convertToHtml from '../util/markdown-converter'
 
-// This is used by the websitesite and for CMS previews
 export const YoutubeGallery = ({video, videoAndText, heroData, content, contentComponent}) => {
   const BodyComponent = contentComponent || HTMLContent
   return (
