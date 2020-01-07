@@ -4,7 +4,6 @@
 $red: #ae1414;
 $black: #1d1d1d;
 $light-grey: #f3f3f3;
-$grey: #777;
 
 $primary: $red;
 $secondary: $black;
@@ -34,7 +33,7 @@ $section-padding: 0 1.5rem;
 $scrapbook-padding-mobile: 0.3rem;
 
 $breadcrumb-item-color: $subtitle-color;
-$breadcrumb-item-hover-color: $grey;
+$breadcrumb-item-hover-color: $primary;
 
 /* Bulma provides default styling (can be imported in separate modules as required) */
 @import "bulma";
