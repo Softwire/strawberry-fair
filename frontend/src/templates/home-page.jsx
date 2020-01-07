@@ -64,9 +64,12 @@ query homePageTemplate($id: String!) {
           title
           subtitle
           scrapbookImages {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
+            alt
+            src {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
           }
@@ -97,9 +100,12 @@ query homePageTemplate($id: String!) {
             title
             subtitle
             image {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
+              alt
+              src {
+                childImageSharp {
+                  fluid {
+                    ...GatsbyImageSharpFluid
+                  }
                 }
               }
             }

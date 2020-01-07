@@ -2,7 +2,9 @@
 templateKey: news-article
 title: First message sent over internet
 author: Tim Berners-Lee
-image: /img/internet.jpg
+image:
+  alt: Placeholder
+  src: /img/internet.jpg
 date: '1969-10-29'
 tags: 
     - news

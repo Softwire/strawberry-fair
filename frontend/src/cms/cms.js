@@ -11,13 +11,11 @@ import { UpcomingEvents } from '../templates/upcoming-events'
 import { CalendarPage } from '../templates/calendar-page'
 import { ContactPage } from '../templates/contact-page'
 import { FormPage } from '../templates/form'
+import { Footer } from '../components/Footer.jsx'
 
-import { AccessibleImageControl } from './AccessibleImageWidget'
 import { MultiImageControl } from './MultiImageWidget'
 import { HeroControl } from './HeroWidget'
 import { MultiCollectionRelationControl, MultiCollectionRelationPreview } from './MultiCollectionRelationWidget'
-import { FormControl } from './FormWidget'
-import { StrawberryTilesControl } from './StrawberryTilesWidget'
 import { LinkControl, LinkPreview } from './LinkWidget'
 
 const placeholderArticle = {
@@ -27,7 +25,8 @@ const placeholderArticle = {
       },
       frontmatter: {
         image: {
-          image: '/img/strawberry.jpg'
+          alt: 'Placeholder',
+          src: '/img/strawberry.jpg'
         },
         title: 'Placeholder',
         date: '2017-12-04'
@@ -44,7 +43,10 @@ const today = new Date()
 const placeholderEvents = placeholderEventDays.map(dayNumber => ({
   frontmatter: {
     title: 'Event',
-    image: '/img/strawberry-64x64.png',
+    image: {
+      alt: 'Placeholder',
+      src: '/img/strawberry-64x64.png'
+    },
     dateTime: new Date(today.getFullYear(), today.getMonth(), dayNumber),
     eventTypes: []
   },
@@ -74,11 +76,9 @@ CMS.registerPreviewTemplate('upcoming-events', preview(UpcomingEvents, {events: 
 CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {events: placeholderEvents}))
 CMS.registerPreviewTemplate('contact-page', preview(ContactPage))
 CMS.registerPreviewTemplate('forms', preview(FormPage))
+CMS.registerPreviewTemplate('footer', preview(Footer))
 
-CMS.registerWidget("accessibleImage", AccessibleImageControl)
 CMS.registerWidget("multiImage", MultiImageControl)
 CMS.registerWidget("hero", HeroControl)
 CMS.registerWidget('multi-collection-relation', MultiCollectionRelationControl, MultiCollectionRelationPreview)
-CMS.registerWidget("form", FormControl)
-CMS.registerWidget("strawberryTiles", StrawberryTilesControl)
 CMS.registerWidget('link', LinkControl, LinkPreview)

@@ -22,17 +22,21 @@ definitions:
   - &subtitle {label: Subtitle, name: subtitle, widget: string, required: false}
   - &hero {label: Banner, name: heroData, widget: hero, required: false}
   - &body {label: Main Content, name: body, widget: markdown}
-  - &newsImage {label: Primary Image, name: image, widget: image, hint: This image will also be used as a preview image for the article}
-  - &eventImage {label: Event Image, name: image, widget: image, hint: This image will also be used as a preview image for the event}
   - &form {label: Form, name: form, widget: form}
   - &author {label: Author, name: author, widget: string}
   - &date {label: Date, name: date, widget: datetime, format: YYYY-MM-DD, dateFormat: YYYY-MM-DD, timeFormat: false}
   - &dateTime {label: Start Time, name: dateTime, widget: datetime}
-  - &strawberryTiles {label: Strawberry Tiles, name: strawberryTiles, widget: strawberryTiles, required: false}
   - &tags {label: Tags, name: tags, widget: list, default: ["news"]}
   - &menuTitle {label: NavBar Dropdown Title, name: title, widget: string}
   - &internalLink {label: Link, name: link, widget: link, hint: Choose the path to the page you want this link to point to. Select "<-- Previous Menu" to undo your last selection.  Make sure you select a complete path by either ending your selection with "index" or checking that the link is displayed on this widget.}
   - &text {label: Text, name: text, widget: string}
+  - &email {label: Email, name: email, widget: string}
+  - &address {label: Address, name: address, widget: markdown}
+  - &facebook {label: Facebook Account, name: facebookAccount, widget: string}
+  - &twitter {label: Twitter Account, name: twitterAccount, widget: string}
+  - &footerLeftBoxText {label: Left Box Text, name: leftBoxText, widget: markdown}
+  - &footerLeftBoxTitle {label: Left Box Title, name: leftBoxTitle, widget: string}
+  - &copyright {label: Copyright, name: copyright, widget: string}
   - contentBlock: &contentBlock
       label: Content Blocks
       name: contentBlocks
@@ -88,7 +92,33 @@ definitions:
           searchFields: [title]
           valueField: title
           displayFields: [title]
-
+  - strawberryTiles: &strawberryTiles
+      label: "Strawberry Tiles"
+      name: "strawberryTiles"
+      widget: "list"
+      required: false
+      field:
+          label: "Text"
+          name: "text"
+          widget: "string"
+          hint: "200 characters max"
+          pattern: ["^[\\s\\S]{0,200}$", "200 characters max"]
+  - form: &form
+      label: Form
+      name: form
+      widget: object
+      fields:
+        - {label: "Display form", name: "isPublic", widget: "boolean"}
+        - {label: "Google Form Embed HTML", name: "link", widget: "string", hint: "Copy and paste Embed HTML from your Google Form"}
+  - accessibleImage: &accessibleImage
+      label: Accessible Image
+      name: image
+      widget: object
+      fields:
+        - {label: "Description", name: "alt", widget: "string"}
+        - {label: "Image File", name: "src", widget: "image"}
+  - &newsImage {<<: *accessibleImage, label: Primary Image, hint: This image will also be used as a preview image for the article}
+  - &eventImage {<<: *accessibleImage, label: Event Image, hint: This image will also be used as a preview image for the event}
 
 collections:
   - name: "pages"
@@ -203,6 +233,17 @@ collections:
   - name: "header-and-footer"
     label: "Header And Footer"
     files:
+      - file: "frontend/src/pages/header-and-footer/footer.md"
+        label: "Footer"
+        name: "footer"
+        fields:
+          - *footerLeftBoxTitle
+          - *footerLeftBoxText
+          - *facebook
+          - *twitter
+          - *address
+          - *email
+          - *copyright
       - file: "frontend/src/pages/header-and-footer/buttons/get-involved.md"
         label: "Get Involved"
         name: "get-involved"

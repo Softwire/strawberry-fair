@@ -25,6 +25,8 @@ $navbar-padding-horizontal: 0;
 $navbar-height: 70px;
 $navbar-item-img-max-height: 70px;
 $navbar-breakpoint: 1216px;
+$navbar-item-hover-color: $primary;
+$navbar-dropdown-arrow: $primary;
 
 $section-padding: 0 1.5rem;
 
@@ -126,7 +128,7 @@ $strawberry-card-size: 14rem;
 }
 
 .calendar.panel .modal.is-active .media.event:nth-child(even),.upcoming.panel>.panel-block:not(.filter):nth-child(even) {
-    background-color: light-grey;
+    background-color: $light-grey;
 }
 
 // Calendar day pencil circle 'today' indicator
