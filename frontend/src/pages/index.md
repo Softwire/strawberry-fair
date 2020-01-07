@@ -45,15 +45,23 @@ contentBlocks:
     title: A
     scrapbookImages:
       - alt: Placeholder
-        src: /img/love-a-fair.jpg
+        src: /img/band.jpg
       - alt: Placeholder
-        src: /img/test-pic.png
+        src: /img/banner-carrying.jpg
       - alt: Placeholder
-        src: /img/love-a-fair.jpg
+        src: /img/crowd-shot.jpg
       - alt: Placeholder
-        src: /img/test-pic.png
+        src: /img/drums.jpg
       - alt: Placeholder
-        src: /img/love-a-fair.jpg
+        src: /img/guitar-girl.jpg
+      - alt: Placeholder
+        src: /img/instruments.jpg
+      - alt: Placeholder
+        src: /img/music.jpg
+      - alt: Placeholder
+        src: /img/stilts.jpg
+      - alt: Placeholder
+        src: /img/wide-parade.jpg
     sideSnippet: >-
       Next year's festival is happening on June 6th 2020. We'll be announcing
       the theme later in the year
@@ -91,15 +99,23 @@ contentBlocks:
     contentTitle: A
     scrapbookImages:
       - alt: Placeholder
-        src: /img/love-a-fair.jpg
+        src: /img/band.jpg
       - alt: Placeholder
-        src: /img/test-pic.png
+        src: /img/banner-carrying.jpg
       - alt: Placeholder
-        src: /img/love-a-fair.jpg
+        src: /img/crowd-shot.jpg
       - alt: Placeholder
-        src: /img/test-pic.png
+        src: /img/drums.jpg
       - alt: Placeholder
-        src: /img/love-a-fair.jpg
+        src: /img/guitar-girl.jpg
+      - alt: Placeholder
+        src: /img/instruments.jpg
+      - alt: Placeholder
+        src: /img/music.jpg
+      - alt: Placeholder
+        src: /img/stilts.jpg
+      - alt: Placeholder
+        src: /img/wide-parade.jpg
     sideSnippet: 'For more details, contact email us here or on our Facebook page'
 calendarBlock:
   title: Strawberry Fair committee meetings

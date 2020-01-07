@@ -37,6 +37,13 @@ definitions:
   - &footerLeftBoxText {label: Left Box Text, name: leftBoxText, widget: markdown}
   - &footerLeftBoxTitle {label: Left Box Title, name: leftBoxTitle, widget: string}
   - &copyright {label: Copyright, name: copyright, widget: string}
+  - scrapbookImages: &scrapbookImages
+      label: Scrapbook Images
+      name: scrapbookImages
+      widget: list
+      fields:
+        - {label: "Description", name: "alt", widget: "string"}
+        - {label: "Image File", name: "src", widget: "image"}
   - contentBlock: &contentBlock
       label: Content Blocks
       name: contentBlocks
@@ -44,7 +51,7 @@ definitions:
       fields:
         - {label: Content Block Title, name: title, widget: string}
         - {label: Content Block Subtitle, name: subtitle, widget: string}
-        - {label: Scrapbook Images, name: scrapbookImages, widget: list, field: {label: Scrapbook Image, name: scrapbookImage, widget: image}}
+        - {label: Scrapbook Images, name: scrapbookImages, widget: list, fields: {label: Scrapbook Image, name: scrapbookImage, widget: image}}
         - {label: Content Block Body, name: _markdown_contentBody, widget: markdown}
         - {label: Strawberry Tile, name: sideSnippet, widget: string}
   - calendarBlock: &calendarBlock

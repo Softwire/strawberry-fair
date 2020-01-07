@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import ImageScrapbookRow from './ImageScrapbookRow'
+import { ScrapbookImages } from './ScrapbookImages'
 import { SectionWithStrawberryCard } from '../StrawberryCard'
 
 const ContentBlock = ({contentTitle, contentSubtitle, scrapbookImages, content, sideSnippet, BodyComponent}) => (
   <section className="section">
-    <ImageScrapbookRow scrapbookImages={scrapbookImages}/>
+    <ScrapbookImages images={scrapbookImages}/>
     <h1 className="title is-1">{contentTitle}</h1>
     <div className="columns">
       <div className="column is-three-fifths">
@@ -22,7 +22,7 @@ const ContentBlock = ({contentTitle, contentSubtitle, scrapbookImages, content, 
 ContentBlock.propTypes = {
   contentTitle: PropTypes.node,
   contentSubtitle: PropTypes.node,
-  scrapbookImages: ImageScrapbookRow.propTypes.scrapbookImages,
+  scrapbookImages: ScrapbookImages.propTypes.images,
   content: PropTypes.node,
   sideSnippet: PropTypes.string,
   BodyComponent: PropTypes.elementType
