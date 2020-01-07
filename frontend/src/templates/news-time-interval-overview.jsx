@@ -25,7 +25,7 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
     breadcrumbs.push(firstYear)
     breadcrumbs.push(monthName(firstMonth))
     breadcrumbLinks.push(`/news/${firstYear}`)
-    breadcrumbLinks.push(`/news/${firstYear}/${firstMonth}`)
+    breadcrumbLinks.push(`/news/${firstYear}/${firstMonth + 1}`)
   } else {
     console.log("Unexpected date interval passed to page constructor.")
   }
