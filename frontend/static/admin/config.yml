@@ -51,7 +51,7 @@ definitions:
       fields:
         - {label: Content Block Title, name: title, widget: string}
         - {label: Content Block Subtitle, name: subtitle, widget: string}
-        - {label: Scrapbook Images, name: scrapbookImages, widget: list, fields: {label: Scrapbook Image, name: scrapbookImage, widget: image}}
+        - *scrapbookImages
         - {label: Content Block Body, name: _markdown_contentBody, widget: markdown}
         - {label: Strawberry Tile, name: sideSnippet, widget: string}
   - calendarBlock: &calendarBlock
