@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 import { HTMLContent } from '../components/Content'
+import { getSimplifiedIframeString } from '../util/youtubeInfoExtractor'
 
 // This is used by the websitesite and for CMS previews
 export const YoutubeGallery = ({video, heroData, content, contentComponent}) => {
@@ -10,7 +11,7 @@ export const YoutubeGallery = ({video, heroData, content, contentComponent}) => 
   return (
     <Layout title="Never gonna give you up, Strawbery Fair!" heroData={heroData}>
       <section className="section">
-        <div align="center" dangerouslySetInnerHTML={{ __html: video.url}} />
+        <div align="center" dangerouslySetInnerHTML={{ __html: getSimplifiedIframeString({iframe: video.url})}} />
         <BodyComponent content={content} />
       </section>
     </Layout>

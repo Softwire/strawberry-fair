@@ -1,4 +1,5 @@
 import CMS from 'netlify-cms-app'
+import { getSimplifiedIframeString } from '../util/youtubeInfoExtractor'
 
 import '../styling/styles.scss'
 import { HomePage } from '../templates/home-page'
@@ -99,22 +100,16 @@ CMS.registerEditorComponent({
   // Fields the user need to fill out when adding an instance of the component
   fields: [{name: 'iframe', label: ' Embed Youtube Video <>', widget: 'string'}],
   // Pattern to identify a block as being an instance of this component
-  pattern: /<iframe .*www\.youtube\.com.*><\/iframe>/,
+  pattern: /<figure className="video_container">(<iframe .* src="https:\/\/www\.youtube\.com.*?" .*><\/iframe>)<\/figure>/,
   // Function to extract data elements from the regexp match
   fromBlock: function(match) {
-    return {
-      iframe: match[0]
-    };
+    return {iframe: match[1]}
   },
   // Function to create a text block from an instance of this component
-  toBlock: function(obj) {
-    return obj.iframe;
-  },
+  toBlock: getSimplifiedIframeString,
   // Preview output for this component. Can either be a string or a React component
   // (component gives better render performance)
-  toPreview: function(obj) {
-    return (
-      obj.iframe
-    );
-  }
+  toPreview: getSimplifiedIframeString
 });
+
+
