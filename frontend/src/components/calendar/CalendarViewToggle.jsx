@@ -6,8 +6,8 @@ import { FaCalendar, FaListUl } from 'react-icons/fa'
 
 export const CalendarViewToggle = ({view}) => (
     <React.Fragment>
-        {['is-large is-hidden-touch', 'is-hidden-desktop'].map(modifier => (
-            <div className={`tabs is-centered is-boxed ${modifier}`} key={modifier}>
+        {['is-hidden-touch', 'is-hidden-desktop is-centered'].map(modifier => (
+            <div className={`tabs is-boxed ${modifier}`} key={modifier}>
                 <ul>
                     <li className={view == 'calendar' ? 'is-active' : ''}>
                         <Link to="/calendar">
