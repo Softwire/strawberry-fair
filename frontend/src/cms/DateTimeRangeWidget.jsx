@@ -7,24 +7,7 @@ import PropTypes from 'prop-types'
 const ObjectControl = CMS.getWidget("object").control
 
 export class DateTimeRangeControl extends React.Component {  // Must use a class, as widgets don't (currently) support React hooks
-  render() {
-    const fields = new Map({
-      fields: [
-        new Map({
-          label: "Event start time",
-          name: "startDateTime",
-          widget: "datetime",
-          hint: "The date and time at which this event is due to start."
-        }),
-        new Map({
-          label: "Provide end time",
-          name: "provideEnd",
-          widget: "boolean",
-          hint: "Tick this box if you want to set an end time for this event."
-        })
-      ]
-    })
-    
+  render() {    
     return <ObjectControl {...this.props} onChange={value => this.handleChange(value)} field={this.getFields()} />
   }
 
@@ -51,17 +34,15 @@ export class DateTimeRangeControl extends React.Component {  // Must use a class
       ]
     }
 
-    /*
     // Do they want to provide an end time?
     if (queryObjectChild(this.props.value, "provideEnd")) {
       fields.fields.push(new Map({
         label: "Event end time",
         name: "endDateTime",
-        widget: "dateTime",
+        widget: "datetime",
         hint: "The date and time at which this event is due to end."
       }))
     }
-    */
 
     return new Map(fields)
   }
