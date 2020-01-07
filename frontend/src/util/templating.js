@@ -1,5 +1,10 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Helmet } from 'react-helmet'
+
 import { Content } from '../components/Content'
-import { previewContextWrapper } from './context'
+import { PreviewContextWrapper } from './context'
+import { Layout } from '../components/Layout'
 
 
 /**
@@ -26,7 +31,7 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
      * @param {Function} widgetsFor - Utility function provided by the CMS
      * @param {Function} getAsset - Utility function provided by the CMS
      */
-    return ({ entry, widgetFor, widgetsFor, getAsset }) => {
+    const previewComponent = ({ entry, widgetFor, widgetsFor, getAsset }) => {
         const dataProps = entry.getIn(['data']).toJS()
         const previewProps = {}
 
@@ -45,9 +50,26 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
         deepReplaceImageUrlsWithAssets(dataProps, getAsset)
         Object.assign(previewProps, dataProps)
 
+        const layoutProps = extractLayoutPropsPreview(dataProps, additionalPropsExtractor, widgetsFor)
+
         const isPreview = true
-        return previewContextWrapper(isPreview, component(Object.assign(placeholderProps, previewProps)))
+        return (
+            <PreviewContextWrapper value={isPreview}>
+                <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle}>
+                    {component(Object.assign(placeholderProps, previewProps))}
+                </Layout>
+            </PreviewContextWrapper>
+        )
     }
+
+    previewComponent.propTypes = {
+        entry: PropTypes.object,
+        widgetFor: PropTypes.func,
+        widgetsFor: PropTypes.func,
+        getAsset: PropTypes.func
+    }
+
+    return previewComponent
 }
 
 /**
@@ -69,6 +91,7 @@ const deepReplaceImageUrlsWithAssets = (obj, getAsset) => {
 /**
  * @callback siteAdditionalPropsExtractorCallback
  * @param {Object} dataProps - Contains results from the graphql query
+ * @param {Object} pageContext - Extra page properties, passed in by e.g. gatsby-node.js for programmatic page creation
  * @returns {Object} Additional properties to add to the site component
  */
 
@@ -84,25 +107,106 @@ export const site = (component, additionalPropsExtractor = () => {}) => {
      * @param {Object} data - Data retrieved from GraphQL query specified in the component
      * @returns {React.Component} Component to be rendered by Gatsby
      */
-    return ({data, pageContext}) => {
-        if(data.markdownRemark) {
-            const new_props = data.markdownRemark.frontmatter || {}
-            new_props.content = data.markdownRemark.html
-            new_props.pageContext = pageContext
+    const siteComponent = ({data, pageContext}) => {
+        const insideLayout = siteInsideLayout(component, data, pageContext, additionalPropsExtractor)
+        const layoutProps = extractLayoutProps(data, pageContext, additionalPropsExtractor)
 
-            new_props.heroData = null
-            if (data.heroData &&
-                data.heroData.nodes &&
-                data.heroData.nodes[0] &&
-                data.heroData.nodes[0].frontmatter &&
-                data.heroData.nodes[0].frontmatter.heroData) {
-                    new_props.heroData = data.heroData.nodes[0].frontmatter.heroData
-                }
+        return (
+            <React.Fragment>
+                <Helmet>
+                    <title>{layoutProps.tabTitle ? layoutProps.tabTitle : (layoutProps.title ? layoutProps.title : 'Strawberry Fair')}</title>
+                </Helmet>
+                <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle}>
+                    {insideLayout}
+                </Layout>
+            </React.Fragment>
+        )
+    }
 
-            return component(Object.assign(new_props, additionalPropsExtractor(data)))
-        }
-        else {
-            return component(Object.assign(pageContext, additionalPropsExtractor(data)))
+    siteComponent.propTypes = {
+        data: PropTypes.object,
+        pageContext: PropTypes.object
+    }
+
+    return siteComponent
+}
+
+// Generate a view of the site to be wrapped inside <Layout>
+const siteInsideLayout = (component, data = {}, pageContext = {}, additionalPropsExtractor = () => {}) => {
+    const newProps = {}
+
+    if (data.markdownRemark) {
+        Object.assign(newProps, data.markdownRemark.frontmatter)
+        newProps.content = data.markdownRemark.html
+        newProps.pageContext = pageContext
+    } else {
+        Object.assign(newProps, pageContext)
+    }
+
+    if (data.heroData &&
+        data.heroData.nodes &&
+        data.heroData.nodes[0] &&
+        data.heroData.nodes[0].frontmatter &&
+        data.heroData.nodes[0].frontmatter.heroData) {
+            newProps.heroData = data.heroData.nodes[0].frontmatter.heroData
+    }
+        
+    Object.assign(newProps, additionalPropsExtractor(data, pageContext))
+
+    return component(newProps)
+}
+
+// Extract hero image data, a title, and a subtitle (if present) from a GraphQL query data object to be passed to <Layout>
+const extractLayoutProps = (data = {}, pageContext = {}, additionalPropsExtractor = () => {}) => {
+    const layoutProps = {}
+
+    if (data.markdownRemark &&
+        data.markdownRemark.frontmatter) {
+            layoutProps.title = data.markdownRemark.frontmatter.title
+            layoutProps.subtitle = data.markdownRemark.frontmatter.subtitle
+    }
+
+    if (data.heroData) {
+        if (data.heroData.nodes &&
+            data.heroData.nodes[0] &&
+            data.heroData.nodes[0].frontmatter &&
+            data.heroData.nodes[0].frontmatter.heroData) {
+                layoutProps.heroData = data.heroData.nodes[0].frontmatter.heroData
+        } else {
+            layoutProps.heroData = data.heroData
         }
     }
+
+    const additionalProps = additionalPropsExtractor(data, pageContext) || {}
+
+    // Additional props overwrite provided ones
+    if (additionalProps.tabTitle) {
+        layoutProps.tabTitle = additionalProps.tabTitle
+    }
+    if (additionalProps.title) {
+        layoutProps.title = additionalProps.title
+    }
+    if (additionalProps.subtitle) {
+        layoutProps.subtitle = additionalProps.subtitle
+    }
+    if (additionalProps.heroData) {
+        layoutProps.heroData = additionalProps.heroData
+    }
+
+    Object.assign(layoutProps, additionalPropsExtractor(data, pageContext))
+
+    return layoutProps
+}
+
+// The data object is structured differently for previews
+const extractLayoutPropsPreview = (previewData, additionalPropsExtractor, widgetsFor) => {
+    return extractLayoutProps({
+        markdownRemark: {
+            frontmatter: {
+                title: previewData.title,
+                subtitle: previewData.subtitle
+            }
+        },
+        heroData: previewData.heroData
+    }, {}, data => additionalPropsExtractor(data, { widgetsFor }))
 }

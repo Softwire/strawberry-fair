@@ -3,23 +3,16 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import { site } from '../util/templating'
-import { Layout } from '../components/Layout'
 import { Calendar } from '../components/calendar/Calendar'
 import { CalendarViewToggle } from '../components/calendar/CalendarViewToggle'
 import { eventPropTypeValidator } from '../components/validators'
-import { HTMLContent } from '../components/Content'
 
-export const CalendarPage = ({content, contentComponent, events, heroData}) => {
-const BodyComponent = contentComponent || HTMLContent
-
+export const CalendarPage = ({events}) => {
   return (
-    <Layout heroData={heroData}>
-      <section>
-        <CalendarViewToggle view='calendar' />
-        <BodyComponent content={content} />
-        <Calendar events={events} />
-      </section>
-    </Layout>
+    <section>
+      <CalendarViewToggle view='calendar' />
+      <Calendar events={events} />
+    </section>
   )
 }
 
@@ -30,11 +23,10 @@ CalendarPage.propTypes = {
       PropTypes.shape({
           node: eventPropTypeValidator
       })
-  ),
-  heroData: Layout.propTypes.heroData
+  )
 }
 
-export default site(CalendarPage, data => {return {events: data.allMarkdownRemark.edges}})
+export default site(CalendarPage, data => {return {events: data.allMarkdownRemark.edges, tabTitle: "Calendar"}})
 
 export const query = graphql`
 query calendarPageTemplate($id: String!) {

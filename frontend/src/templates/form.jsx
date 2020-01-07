@@ -3,28 +3,25 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import { HTMLContent } from '../components/Content'
-import { Layout } from '../components/Layout'
 import { FormFrame } from '../components/FormFrame'
 import { site } from '../util/templating'
 
 // This is used by the website and for CMS previews
-export const FormPage = ({title, form, content, contentComponent, heroData}) => {
+export const FormPage = ({form, content, contentComponent}) => {
   const BodyComponent = contentComponent || HTMLContent
 
   return (
-    <Layout heroData={heroData} title={title}>
+    <React.Fragment>
       <BodyComponent content={content} />
       <FormFrame form={form} />
-    </Layout>
+    </React.Fragment>
   )
 }
 
 FormPage.propTypes = {
-  title: PropTypes.string.isRequired,
   form: FormFrame.propTypes.form,
   content: PropTypes.string.isRequired,
-  contentComponent: PropTypes.elementType,  // Not required
-  heroData: Layout.propTypes.heroData
+  contentComponent: PropTypes.elementType
 }
 
 export default site(FormPage)
