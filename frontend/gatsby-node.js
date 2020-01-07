@@ -1,7 +1,7 @@
 const path = require('path')
 const remark = require('remark')
 const remarkHtml = require('remark-html')
-const { createFilePath } = require('gatsby-source-filesystem')
+const { createFilePath, createRemoteFileNode } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 //imports a js script that generates pages for monthly and yearly news
 const newsGenerator = require('./src/scripts/news-generator')
@@ -53,8 +53,8 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
   await savePagePaths.savePagePathsToFile({ actions: graphql })
 }
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+exports.onCreateNode = async ({ node, actions, getNode, store, cache, createNodeId }) => {
+  const { createNodeField, createNode } = actions
   fmImagesToRelative(node) // convert image paths for gatsby images
 
   if (node.internal.type === `MarkdownRemark`) {
@@ -66,6 +66,22 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value,
     })
+
+    if(node.frontmatter.templateKey === 'news-article') {
+      const fileNode = await createRemoteFileNode({
+        url: node.frontmatter.image.src, // string that points to the URL of the image
+        parentNodeId: node.id, // id of the parent node of the fileNode you are going to create
+        createNode, // helper function in gatsby-node to generate the node
+        createNodeId, // helper function in gatsby-node to generate the node id
+        cache, // Gatsby's cache
+        store, // Gatsby's redux store
+      })
+      // if the file was created, attach the new node to the parent node
+      if (fileNode) {
+        // eslint-disable-next-line require-atomic-updates
+        node.frontmatter.image.srcFile___NODE = fileNode.id
+      }
+    }
   }
 }
 

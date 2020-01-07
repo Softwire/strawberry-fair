@@ -10,7 +10,7 @@ const PreviewCompatibleImage = ({ imageInfo, style }) => {
   }
 
   const imageStyle = (style ? style : {})
-  const { alt = '', childImageSharp, image, src } = imageInfo
+  const { alt = '', childImageSharp, image, src, srcFile } = imageInfo
 
   if (!!image && !!image.childImageSharp) {
     return (
@@ -18,6 +18,11 @@ const PreviewCompatibleImage = ({ imageInfo, style }) => {
     )
   }
 
+  if (!!srcFile && !!srcFile.childImageSharp) {
+    return (
+      <Img style={imageStyle} fluid={srcFile.childImageSharp.fluid} alt={alt} />
+    )
+  }
   if (!!src && !!src.childImageSharp) {
     return (
       <Img style={imageStyle} fluid={src.childImageSharp.fluid} alt={alt} />

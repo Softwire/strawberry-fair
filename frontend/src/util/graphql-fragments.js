@@ -13,6 +13,13 @@ fragment ImageFluidFragment on MarkdownRemarkFrontmatter {
         }
       }
     }
+    srcFile {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 }
 `
