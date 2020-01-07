@@ -5,11 +5,20 @@ video:
   imageURL: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg'
   mediaType: video
   url: >-
-    <iframe width="560" height="315"        
-    src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"        
-    allow="accelerometer; autoplay; encrypted-media; gyroscope;        
+    <iframe width="560" height="315"            
+    src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"            
+    allow="accelerometer; autoplay; encrypted-media; gyroscope;            
     picture-in-picture" allowfullscreen></iframe>
-videoAndText: "This is some text."
+videoAndText: >-
+  _This is some **Markdown.**_
+
+
+  This is a youtube video:
+
+
+  <figure className="video-container"><iframe height="315" width="560"
+  src="https://www.youtube.com/embed/KYniUCGPGLs" frameborder="0"
+  allowfullscreen="true"></iframe></figure>
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem donec massa sapien faucibus et. Aliquet nibh praesent tristique magna sit. Sit amet volutpat consequat mauris. Sit amet commodo nulla facilisi. Sit amet risus nullam eget felis. Hendrerit gravida rutrum quisque non tellus orci ac auctor augue. Non enim praesent elementum facilisis leo vel fringilla est ullamcorper. Suspendisse in est ante in nibh mauris. Faucibus scelerisque eleifend donec pretium vulputate.
 
