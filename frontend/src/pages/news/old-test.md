@@ -4,7 +4,8 @@ title: First message sent over internet
 author: Tim Berners-Lee
 image:
   alt: Placeholder
-  src: /img/internet.jpg
+  src: >-
+    https://res.cloudinary.com/strawberryfair/image/upload/v1578395373/internet_bg8vg6.jpg
 date: '1969-10-29'
 tags: 
     - news
