@@ -8,7 +8,7 @@ export function getVideoInfoString(iframe) {
     else return null
 }
 
-export function getSimplifiedIframeString({iframe}) {
+export function getSimplifiedIframe({iframe}) {
     const videoInfo = getVideoInfoString(iframe)
-    return videoInfo ? '<figure className="video_container"><iframe ' + videoInfo + ' frameborder="0" allowfullscreen="true"></iframe></figure>' : ''
+    return videoInfo ? '<figure className="video-container"><iframe ' + videoInfo + ' frameborder="0" allowfullscreen="true"></iframe></figure>' : ''
 }

@@ -1,5 +1,5 @@
 import CMS from 'netlify-cms-app'
-import { getSimplifiedIframeString } from '../util/youtubeInfoExtractor'
+import { getSimplifiedIframe } from '../util/youtubeInfoExtractor'
 
 import '../styling/styles.scss'
 import { HomePage } from '../templates/home-page'
@@ -106,10 +106,10 @@ CMS.registerEditorComponent({
     return {iframe: match[1]}
   },
   // Function to create a text block from an instance of this component
-  toBlock: getSimplifiedIframeString,
+  toBlock: getSimplifiedIframe,
   // Preview output for this component. Can either be a string or a React component
   // (component gives better render performance)
-  toPreview: getSimplifiedIframeString
+  toPreview: getSimplifiedIframe
 });
 
 

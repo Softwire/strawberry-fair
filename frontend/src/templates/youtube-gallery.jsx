@@ -3,15 +3,19 @@ import { graphql } from 'gatsby'
 import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 import { HTMLContent } from '../components/Content'
-import { getSimplifiedIframeString } from '../util/youtubeInfoExtractor'
+import { getSimplifiedIframe } from '../util/youtubeInfoExtractor'
+import convertToHtml from '../util/markdown-converter'
 
 // This is used by the websitesite and for CMS previews
-export const YoutubeGallery = ({video, heroData, content, contentComponent}) => {
+export const YoutubeGallery = ({video, videoAndText, heroData, content, contentComponent}) => {
   const BodyComponent = contentComponent || HTMLContent
   return (
     <Layout title="Never gonna give you up, Strawbery Fair!" heroData={heroData}>
       <section className="section">
-        <div align="center" dangerouslySetInnerHTML={{ __html: getSimplifiedIframeString({iframe: video.url})}} />
+        <h2 className="subtitle">A video from the youtube widget in the frontmatter:</h2>
+        <HTMLContent content={getSimplifiedIframe({iframe: video.url})} />
+        <h2 className="subtitle">A video from a markdown widget in the frontmatter:</h2>
+        <HTMLContent content={convertToHtml(videoAndText)} />
         <BodyComponent content={content} />
       </section>
     </Layout>
@@ -26,6 +30,7 @@ query youtubeGallery($id: String!) {
         video {
           url
         }
+        videoAndText
       }
       html
     }
