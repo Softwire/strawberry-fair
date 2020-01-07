@@ -1,7 +1,9 @@
 backend:
-  name: github
-  repo: Softwire/strawberry-fair
-  branch: SF-115
+  name: git-gateway
+  branch: production
+  accept_roles:
+    - admin
+    - content
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -15,7 +17,7 @@ media_library:
     cloud_name: strawberryfair
     api_key: 631814456675255
 public_folder: /img
-# publish_mode: editorial_workflow
+publish_mode: editorial_workflow
 
 
 definitions:
