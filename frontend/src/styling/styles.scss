@@ -139,5 +139,10 @@ $strawberry-card-size: 14rem;
 }
 
 .month-scrubber {
-    width: 20rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    .title {
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+    }
 }

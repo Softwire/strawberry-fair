@@ -53,51 +53,44 @@ const CalendarWithContext = ({isPreview, previewEventList}) => {
     const days = [...Array(daysInFocusMonth).keys()].map(n => n + 1)
     // TODO: Figure out how to get this to work with screenreaders
     // What would the corect semantic component for this be?
-    // TODO: See https://codepen.io/wikiki/pen/KvqKzK for a way of making the "< December 2019 >" bit span across the whole calendar
     return (
-        <div className="calendar panel">
+        <React.Fragment>
             <MonthScrubber monthForward={monthForward} monthBack={monthBack} focusDate={focusDate} />
-            <EventFilterBlock filterProps={filterProps} />
-            <div className="panel-block">
-                <div className="columns is-multiline is-mobile">
-                    {days.map(dayNumber => {
-                        const date = new Date(focusDate.getFullYear(), focusDate.getMonth(), dayNumber)
+            <div className="calendar panel">
+                <EventFilterBlock filterProps={filterProps} />
+                <div className="panel-block">
+                    <div className="columns is-multiline is-mobile">
+                        {days.map(dayNumber => {
+                            const date = new Date(focusDate.getFullYear(), focusDate.getMonth(), dayNumber)
 
-                        return (
-                            <CalendarDay
-                                key={dayNumber}
-                                dateTime={date}
-                                events={eventsOnDate(date, filterEvents(events, filterProps.activeFilters))}
-                            />
-                        )
-                    })}
+                            return (
+                                <CalendarDay
+                                    key={dayNumber}
+                                    dateTime={date}
+                                    events={eventsOnDate(date, filterEvents(events, filterProps.activeFilters))}
+                                />
+                            )
+                        })}
+                    </div>
                 </div>
             </div>
-        </div>
+        </React.Fragment>
     )
 }
 
 const MonthScrubber = ({monthForward, monthBack, focusDate}) => (
-    <div className="panel-block">
-        <div className="month-scrubber level is-mobile">
-            <div className="level-item">
-                <button onClick={monthBack} className="button is-white">
-                    <span className="icon is-left has-text-dark">
-                        <FaChevronLeft />
-                    </span>
-                </button>
-            </div>
-            <div className="level-item">
-                <span>{new Date(focusDate).toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</span>
-            </div>
-            <div className="level-item">
-                <button onClick={monthForward} className="button is-white">
-                    <span className="icon is-right has-text-dark">
-                        <FaChevronRight />
-                    </span>
-                </button>
-            </div>
-        </div>
+    <div className="container month-scrubber">
+        <button onClick={monthBack} className="button is-white is-centered">
+            <span className="icon is-left has-text-dark is-large">
+                <FaChevronLeft />
+            </span>
+        </button>
+        <span className="title">{new Date(focusDate).toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</span>
+        <button onClick={monthForward} className="button is-white is-centered">
+            <span className="icon is-right has-text-dark is-large">
+                <FaChevronRight />
+            </span>
+        </button>
     </div>
 )
 
