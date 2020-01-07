@@ -38,7 +38,7 @@ definitions:
   - &footerLeftBoxText {label: Left Box Text, name: leftBoxText, widget: markdown}
   - &footerLeftBoxTitle {label: Left Box Title, name: leftBoxTitle, widget: string}
   - &copyright {label: Copyright, name: copyright, widget: string}
-  - &youtube { name: video, label: Youtube Video Link, widget: youtube, extraInfo: true }
+  - &youtube { name: video, label: Embed Youtube Video <>, widget: youtube, extraInfo: true}
   - contentBlock: &contentBlock
       label: Content Blocks
       name: contentBlocks
@@ -106,6 +106,7 @@ collections:
         fields:
           - {<<: *key, default: youtube-gallery}
           - *youtube
+          - *body
       - file: "frontend/src/pages/index.md"
         label: "Home Page"
         name: "home"
