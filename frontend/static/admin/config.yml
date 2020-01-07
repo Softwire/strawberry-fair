@@ -112,7 +112,7 @@ definitions:
         - {label: "Google Form Embed HTML", name: "link", widget: "string", hint: "Copy and paste Embed HTML from your Google Form"}
   - accessibleImage: &accessibleImage
       label: Accessible Image
-      name: accessibleImage
+      name: image
       widget: object
       fields:
         - {label: "Description", name: "alt", widget: "string"}

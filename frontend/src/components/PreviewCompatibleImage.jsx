@@ -28,13 +28,14 @@ const PreviewCompatibleImage = ({ imageInfo, style }) => {
     return <Img style={imageStyle} fluid={childImageSharp.fluid} alt={alt} />
   }
   
-  if (!!src && typeof src === 'string')
-    return <img style={imageStyle} src={src} alt={alt} />
-
   if (!!image && typeof image === 'string')
     return <img style={imageStyle} src={image} alt={alt} />
 
-  // Deals with CMS previews for images nested within widgets
+  // Deals with CMS previews of compound images with an alt and src field
+  if (!!src && typeof src === 'object')
+    return <img style={imageStyle} src={src.path} alt={alt} />
+
+  // Deals with CMS previews of images nested within widgets
   if (!!image && typeof image === 'object' && image.path)
     return <img style={imageStyle} src={image.path} alt={alt} />
 
