@@ -74,7 +74,6 @@ const UpcomingWithContext = ({isPreview, previewEventList}) => {
 
     return (
         <div className="upcoming panel">
-            <h1 className="panel-heading">Upcoming</h1>
             <EventFilterBlock filterProps={filterProps} />
             {eventPanels.length > 0 ? eventPanels : <NoEventsFoundBlock />}
         </div>
