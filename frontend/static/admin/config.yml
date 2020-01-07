@@ -27,6 +27,7 @@ definitions:
   - &date {label: Date, name: date, widget: datetime, format: YYYY-MM-DD, dateFormat: YYYY-MM-DD, timeFormat: false}
   - &startDateTime {label: Start Time, name: startDateTime, widget: datetime}
   - &endDateTime {label: End Time, name: endDateTime, widget: datetime}
+  - &eventDateTimeRange {label: Event Timing, name: dateTimeRange, widget: dateTimeRange}
   - &strawberryTiles {label: Strawberry Tiles, name: strawberryTiles, widget: strawberryTiles, required: false}
   - &tags {label: Tags, name: tags, widget: list, default: ["news"]}
   - &menuTitle {label: NavBar Dropdown Title, name: title, widget: string}
@@ -213,6 +214,7 @@ collections:
       - *hero
       - *startDateTime
       - *endDateTime
+      - *eventDateTimeRange
       - *eventImage
       - *body
       - *eventTypes

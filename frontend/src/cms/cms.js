@@ -17,6 +17,7 @@ import { MultiImageControl } from './MultiImageWidget'
 import { HeroControl } from './HeroWidget'
 import { MultiCollectionRelationControl, MultiCollectionRelationPreview } from './MultiCollectionRelationWidget'
 import { LinkControl, LinkPreview } from './LinkWidget'
+import { DateTimeRangeControl } from './DateTimeRangeWidget'
 
 const placeholderArticle = {
     node: {
@@ -83,3 +84,4 @@ CMS.registerWidget("multiImage", MultiImageControl)
 CMS.registerWidget("hero", HeroControl)
 CMS.registerWidget('multi-collection-relation', MultiCollectionRelationControl, MultiCollectionRelationPreview)
 CMS.registerWidget('link', LinkControl, LinkPreview)
+CMS.registerWidget("dateTimeRange", DateTimeRangeControl)
