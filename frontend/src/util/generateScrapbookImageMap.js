@@ -102,10 +102,10 @@ const assignInnerColWidths = (imageMap, isPreview=false) => {
     })
 }
 
-const getAspect = (image) => image.src.childImageSharp.fluid.aspectRatio
+const getAspect = (image) => image.srcNode.childImageSharp.fluid.aspectRatio
 
 const setAspect = (image, value) => {
-    image.src.childImageSharp.fluid.aspectRatio = value
+    image.srcNode.childImageSharp.fluid.aspectRatio = value
 }
 
 /** Returns the combined aspect ratio of two images stacked on top of each other */

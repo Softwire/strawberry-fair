@@ -67,21 +67,7 @@ exports.onCreateNode = async ({ node, actions, getNode, store, cache, createNode
       value,
     })
 
-    if(node.frontmatter.templateKey === 'news-article') {
-      const fileNode = await createRemoteFileNode({
-        url: node.frontmatter.image.src, // string that points to the URL of the image
-        parentNodeId: node.id, // id of the parent node of the fileNode you are going to create
-        createNode, // helper function in gatsby-node to generate the node
-        createNodeId, // helper function in gatsby-node to generate the node id
-        cache, // Gatsby's cache
-        store, // Gatsby's redux store
-      })
-      // if the file was created, attach the new node to the parent node
-      if (fileNode) {
-        // eslint-disable-next-line require-atomic-updates
-        node.frontmatter.image.srcFile___NODE = fileNode.id
-      }
-    }
+    await deepConvertImageUrlsToGatsbyNodes(node, node.id, createNode, createNodeId, cache, store)
   }
 }
 
@@ -99,5 +85,38 @@ const addHtmlConvertedMarkdownField = (node, createNodeField) => {
       node,
       value: convertedHtmls,
     })
+  }
+}
+
+/**
+ * 
+ * @param {Object} obj - Object to process
+ * @param {String} parentNodeId - Id of the parent node of the fileNode you are going to create
+ * @param {Function} createNode - Helper function in gatsby-node to generate the node
+ * @param {Function} createNodeId - Helper function in gatsby-node to generate the node id
+ * @param {Object} cache - Gatsby's cache
+ * @param {Object} store - Gatsby's redux store
+ */
+const deepConvertImageUrlsToGatsbyNodes = async (obj, parentNodeId, createNode, createNodeId, cache, store) => {
+  const values = Object.values(obj)
+  for (let i = 0; i < values.length; i++) {
+    const value = values[i]
+    if ((typeof value === 'string' || value instanceof String) && value.startsWith('https://res.cloudinary.com/strawberryfair/image/upload/')) {
+      const fileNode = await createRemoteFileNode({
+        url: value,
+        parentNodeId,
+        createNode,
+        createNodeId,
+        cache,
+        store,
+      })
+      // if the file was created, attach the new node to the parent node
+      if (fileNode) {
+        // eslint-disable-next-line require-atomic-updates
+        obj.srcNode___NODE = fileNode.id
+      }
+    } else if (typeof value === 'object' && value !== null) {
+      await deepConvertImageUrlsToGatsbyNodes(value, parentNodeId, createNode, createNodeId, cache, store)
+    } 
   }
 }

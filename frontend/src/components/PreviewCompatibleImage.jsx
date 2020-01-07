@@ -10,7 +10,7 @@ const PreviewCompatibleImage = ({ imageInfo, style }) => {
   }
 
   const imageStyle = (style ? style : {})
-  const { alt = '', childImageSharp, image, src, srcFile } = imageInfo
+  const { alt = '', childImageSharp, image, src, srcNode } = imageInfo
 
   if (!!image && !!image.childImageSharp) {
     return (
@@ -18,14 +18,9 @@ const PreviewCompatibleImage = ({ imageInfo, style }) => {
     )
   }
 
-  if (!!srcFile && !!srcFile.childImageSharp) {
+  if (!!srcNode && !!srcNode.childImageSharp) {
     return (
-      <Img style={imageStyle} fluid={srcFile.childImageSharp.fluid} alt={alt} />
-    )
-  }
-  if (!!src && !!src.childImageSharp) {
-    return (
-      <Img style={imageStyle} fluid={src.childImageSharp.fluid} alt={alt} />
+      <Img style={imageStyle} fluid={srcNode.childImageSharp.fluid} alt={alt} />
     )
   }
 
@@ -35,6 +30,10 @@ const PreviewCompatibleImage = ({ imageInfo, style }) => {
   
   if (!!image && typeof image === 'string')
     return <img style={imageStyle} src={image} alt={alt} />
+    
+  if (!!src && typeof src === 'string') {
+    return <img style={imageStyle} src={src} alt={alt} />
+  }
 
   // Deals with CMS previews of compound images with an alt and src field
   if (!!src && typeof src === 'object')

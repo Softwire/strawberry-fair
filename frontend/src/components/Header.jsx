@@ -74,7 +74,7 @@ const RevolvingHero = ({data}) => {
     )
 }
 
-const RevolvingHeroImage = ({info: {src, alt}, visible}) => {
+const RevolvingHeroImage = ({info: {src, srcNode, alt}, visible}) => {
     const style = {
         opacity: (visible ? 1 : 0),
         transition: `opacity ${imageFadeTimeMills/1000}s`,
@@ -84,10 +84,10 @@ const RevolvingHeroImage = ({info: {src, alt}, visible}) => {
         height: "100%"
     }
     
-    return <PreviewCompatibleImage imageInfo={{alt: alt, image: src}} style={style} />
+    return <PreviewCompatibleImage imageInfo={{alt: alt, image: srcNode || src}} style={style} />
 }
 
-const FixedHero = ({info: {src, alt}}) => {
+const FixedHero = ({info: {src, srcNode, alt}}) => {
     const style = {
         position: "absolute",
         objectFit: "cover",
@@ -97,7 +97,7 @@ const FixedHero = ({info: {src, alt}}) => {
 
     return (
         <section className="hero has-background">
-            <PreviewCompatibleImage imageInfo={{alt: alt, image: src}} style={style} />
+            <PreviewCompatibleImage imageInfo={{alt: alt, image: srcNode || src}} style={style} />
         </section>
     )
 }
