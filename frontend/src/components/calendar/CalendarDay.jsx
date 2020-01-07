@@ -65,7 +65,7 @@ const CalendarDay = ({dateTime, events}) => {
             internals = (
                 <React.Fragment>
                     <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
-                    <div className="box button has-text-left calendar-day has-text-white has-text-weight-bold is-primary" onClick={modalOn}>
+                    <div className="box button has-text-left calendar-day has-text-white has-text-weight-bold is-primary-pale" onClick={modalOn}>
                         <DayText date={date} />
                         {events.slice(0, maxEvents).map(event =>
                         <p key={event.fields.slug}><Link className="has-text-white has-text-weight-medium" to={event.fields.slug}>{event.frontmatter.title}</Link></p>)}
@@ -80,7 +80,7 @@ const CalendarDay = ({dateTime, events}) => {
         internals = (
             <React.Fragment>
                 <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
-                <div className="box button has-text-left calendar-day has-text-white has-text-weight-bold is-primary" onClick={modalOn}
+                <div className="box button has-text-left calendar-day has-text-white has-text-weight-bold" onClick={modalOn}
                 style={eventWithPic.frontmatter.image.src ? {
                     backgroundImage: `url(${eventWithPic.frontmatter.image.src.childImageSharp ? eventWithPic.frontmatter.image.src.childImageSharp.editedFluid.src : eventWithPic.frontmatter.image.src})`} : null}>
                     <DayText date={date} />
@@ -95,7 +95,7 @@ const CalendarDay = ({dateTime, events}) => {
             <div style={{position: "relative"}}>
                 <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
                 {eventsWithPics.map((event, index) =>
-                    <div key={event.fields.slug} className="box button has-text-left calendar-day has-text-white has-text-weight-bold is-primary" onClick={modalOn} style={{
+                    <div key={event.fields.slug} className="box button has-text-left calendar-day has-text-white has-text-weight-bold" onClick={modalOn} style={{
                             backgroundImage: `url(${event.frontmatter.image.src.childImageSharp ? event.frontmatter.image.src.childImageSharp.editedFluid.src : event.frontmatter.image.src})`,
                             opacity: index === currentImage ? 1 : 0,
                             transition: `opacity ${imageFadeTimeS}s`,

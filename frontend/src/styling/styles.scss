@@ -8,6 +8,8 @@ $light-grey: #f3f3f3;
 $primary: $red;
 $secondary: $black;
 
+$primary-pale: #c66;
+
 $title-color: $primary;
 $subtitle-color: $secondary;
 
@@ -17,7 +19,8 @@ $radius-large: 0px;
 // is-secondary doesn't produce any effect without this
 $custom-colors: ( 
     "secondary": $secondary,
-    "light-grey": $light-grey
+    "light-grey": $light-grey,
+    "primary-pale": $primary-pale
 );
 
 $navbar-padding-vertical: 0;
