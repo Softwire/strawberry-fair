@@ -1,14 +1,16 @@
 ---
 templateKey: event-info
-title: "Jabberwocky"
+title: Jabberwocky
+dateTimeRange:
+  endDateTime: 2020-01-16T17:00:40.645Z
+  provideEnd: true
+  startDateTime: 2020-01-16T16:00:41.092Z
 image:
   alt: Placeholder
   src: /img/jabberwocky.jpg
-startDateTime: 2020-01-01T09:45:00.000Z
-endDateTime: 2020-01-01T10:00:00.000Z
 eventTypes:
-  - 'Meeting - Programming'
-  - 'Meeting - Finance'
+  - Meeting - Programming
+  - Meeting - Finance
 ---
 ## By Lewis Carroll
 
