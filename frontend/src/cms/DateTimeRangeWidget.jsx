@@ -46,6 +46,19 @@ export class DateTimeRangeControl extends React.Component {  // Must use a class
 
     return new Map(fields)
   }
+
+  isValid() {
+    // Check to ensure end time is not before start time
+    if (queryObjectChild(this.props.value, "provideEnd")) {
+      const startDateTime = new Date(queryObjectChild(this.props.value, "startDateTime"))
+      const endDateTime = new Date(queryObjectChild(this.props.value, "endDateTime"))
+      if (startDateTime.getTime() > endDateTime.getTime()) {
+        return { error: { message: "The event end time cannot be before the event start time!" } }
+      }
+    }
+
+    return true
+  }
 }
 
 DateTimeRangeControl.propTypes = {
