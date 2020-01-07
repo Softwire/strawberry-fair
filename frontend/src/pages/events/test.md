@@ -4,8 +4,10 @@ title: Parade
 image:
   alt: Placeholder
   src: /img/love-a-fair.jpg
-startDateTime: 2019-12-23T09:30:00.000Z
-endDateTime: 2019-12-23T10:30:00.000Z
+dateTimeRange:
+  startDateTime: 2019-12-23T09:30:00.000Z
+  endDateTime: 2019-12-23T10:30:00.000Z
+  provideEnd: true
 eventTypes:
   - Benefit gig
 ---
