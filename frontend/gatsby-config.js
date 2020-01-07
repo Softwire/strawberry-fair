@@ -69,6 +69,12 @@ module.exports = {
       options: {
         class: 'has-navbar-fixed-top'  // Allows for a fixed navbar
       }
+    },
+    {
+      resolve: 'gatsby-plugin-favicon',
+      options: {
+        logo: './static/img/favicon.png'
+      }
     }
   ],
 }

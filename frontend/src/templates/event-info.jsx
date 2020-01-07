@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
-import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 
 //display style of the event date
@@ -35,30 +34,26 @@ EventTypeList.propTypes = {
 }
 
 // used by website and CMS previews
-export const EventInfo = ({title, image, dateTime, eventTypes, content, contentComponent, heroData}) => {
+export const EventInfo = ({image, eventTypes, content, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
 
-    const date = new Date(dateTime)
-
     return (
-        <Layout heroData={heroData} title={title} subtitle={date.toLocaleString("en-GB", displayStyle)}>
+        <React.Fragment>
             <EventTypeList eventTypes={eventTypes} />
             <BodyComponent content={content} />
             <PreviewCompatibleImage imageInfo={image} />
-        </Layout>
-)}
+        </React.Fragment>
+    )
+}
 
 EventInfo.propTypes = {
-    title: PropTypes.string.isRequired,
-    dateTime: PropTypes.string.isRequired,
     eventTypes: EventTypeList.propTypes.eventTypes,
     image: PropTypes.object.isRequired,
     content: PropTypes.string.isRequired,
-    contentComponent: PropTypes.elementType,
-    heroData: Layout.propTypes.heroData
+    contentComponent: PropTypes.elementType
 }
 
-export default site(EventInfo)
+export default site(EventInfo, data => ({subtitle: new Date(data.markdownRemark.frontmatter.dateTime).toLocaleString("en-GB", displayStyle)}))
 
 export const query = graphql`
 query eventInfoTemplate($id: String!) {

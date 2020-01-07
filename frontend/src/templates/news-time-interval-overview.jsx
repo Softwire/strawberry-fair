@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import { FaChevronLeft } from 'react-icons/fa'
 import { HTMLContent } from '../components/Content'
-import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 import NewsMenu, { monthName } from '../components/NewsMenu.jsx'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
@@ -14,18 +13,10 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
   const firstDate = new Date(firstDay)
   const lastDate = new Date(lastDay)
   const selectedNewsArticles = getNewsArticlesInTimeInterval(newsArticles, firstDate, lastDate)
-  let heading = ''
-
-  if (isYearInterval(firstDate, lastDate)) {
-    heading = firstDate.getFullYear()
-  } else if (isMonthInterval(firstDate, lastDate)) {
-    heading = monthName(firstDate.getMonth()) + " " + firstDate.getFullYear()
-  } else {
-    console.log("Unexpected date interval passed to page constructor.")
-  }
+  const heading = `News articles from ${generateHeading(firstDate, lastDate)}`
 
   return (
-    <Layout title="News archive">
+    <React.Fragment>
       <Link to="/news/" className="subtitle">
         <span className="level is-mobile">
           <span className="level-left">
@@ -65,11 +56,26 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
           <NewsMenu newsArticles={newsArticles}/>
         </div>          
       </div>
-    </Layout>
+    </React.Fragment>
   )
 }
 
-export default site(NewsTimeIntervalOverview, data => ({newsArticles: data.allMarkdownRemark.edges}))
+export default site(NewsTimeIntervalOverview, (data, pageContext) => {
+  return {
+    newsArticles: data.allMarkdownRemark.edges,
+    title: pageContext && pageContext.title ? pageContext.title : 'News Archive'
+  }
+})
+
+const generateHeading = (firstDate, lastDate) => {
+  if (isYearInterval(firstDate, lastDate)) {
+    return firstDate.getFullYear()
+  } else if (isMonthInterval(firstDate, lastDate)) {
+    return monthName(firstDate.getMonth()) + " " + firstDate.getFullYear()
+  } else {
+    console.log("Unexpected date interval passed to page constructor.")
+  }
+}
 
 export const query = graphql`
 query newsMonthOverviewTemplate{
