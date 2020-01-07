@@ -155,3 +155,9 @@ $strawberry-card-size: 14rem;
     @extend .month-scrubber;
     width: 17rem;
 }
+
+// Ensures the header buttons are centred on mobile
+.centre-buttons {
+    text-align: center;
+    display: block;
+}

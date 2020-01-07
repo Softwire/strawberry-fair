@@ -12,10 +12,10 @@ import '../styling/styles.scss'
 export const Layout = ({children, heroData, title, subtitle}) => (
     <React.Fragment>
         <Header heroData={heroData}>
-            <HeaderButtons/>
         </Header>
         <div id="root-layout" className="section">
             <div className="container">
+                <HeaderButtons/>
                 <Titles title={title} subtitle={subtitle} />
                 {children}
                 <Footer />

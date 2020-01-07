@@ -17,7 +17,7 @@ const HeaderButtonsDisplay = ({isPreview}) => {
     
   return(
     <React.Fragment>
-      {["is-pulled-right is-hidden-touch", "is-hidden-desktop"].map(modifier => (
+      {["is-pulled-right is-hidden-touch", "is-hidden-desktop centre-buttons"].map(modifier => (
         <div className={`buttons ${modifier}`} key={modifier}>
           <Link to={data.getInvolved.frontmatter.link} className="button is-secondary">{data.getInvolved.frontmatter.text}</Link>
           <Link to={data.applyToTrade.frontmatter.link} className="button is-primary">{data.applyToTrade.frontmatter.text}</Link>
