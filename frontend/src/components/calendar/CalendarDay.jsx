@@ -6,6 +6,9 @@ import { eventPropTypeValidator } from '../validators'
 import { EventMediaBlock } from './Upcoming'
 import { areSameDay } from '../../util/dates'
 
+// How many events' names should we write in the box, at maximum?
+const maxEvents = 3
+
 // Represents a day in the calendar. Will either be empty or contain a preview of an event.
 const CalendarDay = ({dateTime, events}) => {
     // TODO: Change the method of indicating it's "today", so as still to be visible when there's an event today
@@ -22,9 +25,6 @@ const CalendarDay = ({dateTime, events}) => {
     const nImages = eventsWithPics.length
     const imageRotateTimeMS = 4000
     const imageFadeTimeS = 0.5
-
-    // How many events' names should we write in the box, at maximum?
-    const maxEvents = 3
 
     useEffect(() => {
         if (nImages > 1) {
