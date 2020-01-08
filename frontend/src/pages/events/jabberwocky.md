@@ -1,13 +1,14 @@
 ---
 templateKey: event-info
-title: "Jabberwocky"
+title: Jabberwocky
+dateTime: 2020-01-01T15:45:00.000Z
 image:
   alt: Placeholder
-  src: /img/jabberwocky.jpg
-dateTime: 2020-01-01T15:45:00.000Z
+  src: >-
+    https://res.cloudinary.com/strawberryfair/image/upload/v1578398631/Events/jabberwocky_rgidju.jpg
 eventTypes:
-  - 'Meeting - Programming'
-  - 'Meeting - Finance'
+  - Meeting - Programming
+  - Meeting - Finance
 ---
 ## By Lewis Carroll
 

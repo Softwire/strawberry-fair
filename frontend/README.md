@@ -110,7 +110,7 @@ Behind the scenes, Netlify editorial actions automatically perform git actions a
 | Edit draft     | Pushes another commit to the draft branch/pull request |
 | Publish draft  | Merges pull request and deletes branch                 |
 
-### 1. Adding Google Forms via CMS:
+### Adding Google Forms via CMS:
     To add a Google Form via CMS follow these steps:
       1. Open the form on Google Forms
       2. Click send on the top right corner
@@ -120,9 +120,13 @@ Behind the scenes, Netlify editorial actions automatically perform git actions a
       6. Create a new Form page
       7. Paste into the "Form" box
       8. Fill in the remaining boxes.
-      9. Click "Publish" on the top righ corner.
+      9. Click "Publish" on the top right corner.
 
       Alternatively, in step 4 you can choose to copy the URL only, instead of the whole HTML element.
+
+### Integration with Cloudinary
+
+Images uploaded in the CMS are hosted on Cloudinary. The API credentials can be found at the top of the dashboard after logging into Cloudinary.com.
 
 ## Testing
 

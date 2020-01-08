@@ -1,10 +1,11 @@
 ---
 templateKey: event-info
 title: Flying Pig Stage
+dateTime: 2020-12-23T12:00:00.000Z
 image:
   alt: Placeholder
-  src: /img/flying-pig.jpg
-dateTime: 2020-12-23T12:00:00.000Z
+  src: >-
+    https://res.cloudinary.com/strawberryfair/image/upload/v1578398631/Events/flying-pig_yyce2k.jpg
 eventTypes:
   - Meeting - Programming
 ---

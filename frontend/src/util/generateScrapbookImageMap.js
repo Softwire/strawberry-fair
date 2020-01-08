@@ -151,7 +151,7 @@ const relativeHeights = (columnAspects, innerColWidths, outerColWidths) => {
     return columnAspects.map((outer, i) => outer.map((inner, j) => outerColWidths[i] * innerColWidths[i][j] / inner))
 }
 
-const getAspect = (image) => image.src.childImageSharp.fluid.aspectRatio
+const getAspect = (image) => image.srcNode.childImageSharp.fluid.aspectRatio
 
 /** Returns the combined aspect ratio of two images stacked on top of each other */
 const getStackedAspect = (imgA, imgB) => (getAspect(imgA) * getAspect(imgB)) / (getAspect(imgA) + getAspect(imgB))
