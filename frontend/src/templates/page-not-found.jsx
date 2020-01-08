@@ -12,7 +12,6 @@ export const PageNotFound = ({image}) => {
     width: "60%",
     height: "60%"
   }
-  style["background-color"]="blue"
 
   return (
     <section className="section">
@@ -22,7 +21,7 @@ export const PageNotFound = ({image}) => {
               <div align="center">
                 <PreviewCompatibleImage imageInfo={image} style={style}/>
                 <p className="is-size-2"><strong >Oh no!</strong></p>
-                <p className="is-size-3">This page is not suitable for consumption :(</p>
+                <p className="is-size-3 is-size-5-mobile">This page is not suitable for consumption :(</p>
               </div>
           </div>
         </div>
