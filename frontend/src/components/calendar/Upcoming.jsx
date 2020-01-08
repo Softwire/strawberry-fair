@@ -63,7 +63,7 @@ const UpcomingWithContext = ({isPreview, previewEventList}) => {
 
     // Get list of events occurring today or later
     let events = isPreview ? previewEventList : getEventList()
-    events = events.filter(event => isOnOrAfterDay(new Date(), new Date(event.frontmatter.dateTimeRange.startDateTime)))
+    events = events.filter(event => isOnOrAfterDay(new Date(), new Date(event.frontmatter.dateTimeRange.provideEnd ? event.frontmatter.dateTimeRange.endDateTime : event.frontmatter.dateTimeRange.startDateTime)))
 
     const maxItems = 5
 
