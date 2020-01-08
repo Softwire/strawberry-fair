@@ -34,7 +34,10 @@ query aboutPageTemplate($id: String!) {
       frontmatter {
         title
         subtitle
-        strawberryTiles
+        strawberryTiles {
+          isPublic
+          text
+        }
       }
       html
     }

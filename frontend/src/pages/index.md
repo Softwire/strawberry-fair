@@ -62,9 +62,11 @@ contentBlocks:
         src: /img/stilts.jpg
       - alt: Placeholder
         src: /img/wide-parade.jpg
-    sideSnippet: >-
-      Next year's festival is happening on June 6th 2020. We'll be announcing
-      the theme later in the year
+    strawberryTile: 
+      isPublic: true
+      text: >-
+        Next year's festival is happening on June 6th 2020. We'll be announcing
+        the theme later in the year
   - _markdown_contentBody: >-
       adsfadsfasdf
 
@@ -116,7 +118,9 @@ contentBlocks:
         src: /img/stilts.jpg
       - alt: Placeholder
         src: /img/wide-parade.jpg
-    sideSnippet: 'For more details, contact email us here or on our Facebook page'
+    strawberryTile: 
+      isPublic: true
+      text: For more details, contact email us here or on our Facebook page
 calendarBlock:
   title: Strawberry Fair committee meetings
   subtitle: The next committee meetings are listed below and will be held at...

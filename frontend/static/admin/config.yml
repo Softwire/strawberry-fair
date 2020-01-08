@@ -1,9 +1,7 @@
 backend:
-  name: git-gateway
-  branch: production
-  accept_roles:
-    - admin
-    - content
+  name: github
+  repo: Softwire/strawberry-fair
+  branch: SF-130
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -37,6 +35,13 @@ definitions:
   - &footerLeftBoxText {label: Left Box Text, name: leftBoxText, widget: markdown}
   - &footerLeftBoxTitle {label: Left Box Title, name: leftBoxTitle, widget: string}
   - &copyright {label: Copyright, name: copyright, widget: string}
+  - strawberryTile: &strawberryTile
+      label: StrawberryTile
+      name: strawberryTile
+      widget: object
+      fields:
+        - {label: "Display Tile", name: "isPublic", widget: "boolean"}
+        - {label: Text, name: text, widget: string, hint: 200 characters max, pattern: ["^[\\s\\S]{0,200}$", 200 characters max]}
   - scrapbookImages: &scrapbookImages
       label: Scrapbook Images
       name: scrapbookImages
@@ -53,7 +58,7 @@ definitions:
         - {label: Content Block Subtitle, name: subtitle, widget: string}
         - *scrapbookImages
         - {label: Content Block Body, name: _markdown_contentBody, widget: markdown}
-        - {label: Strawberry Tile, name: sideSnippet, widget: string}
+        - *strawberryTile
   - calendarBlock: &calendarBlock
       label: Calendar Block
       name: calendarBlock
@@ -105,11 +110,7 @@ definitions:
       widget: "list"
       required: false
       field:
-          label: "Text"
-          name: "text"
-          widget: "string"
-          hint: "200 characters max"
-          pattern: ["^[\\s\\S]{0,200}$", "200 characters max"]
+          *strawberryTile
   - form: &form
       label: Form
       name: form
