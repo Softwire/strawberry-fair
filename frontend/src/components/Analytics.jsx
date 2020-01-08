@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react'
 
-export const Analytics = ({children}) => (
+export const Analytics = () => (
     <React.Fragment>
         <AnalyticsPermissionPopUp />
         <GoogleAnalyticsInitialisation />
-        {children}
     </React.Fragment>
 )
 
