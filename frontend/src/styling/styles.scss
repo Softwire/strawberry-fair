@@ -37,6 +37,9 @@ $scrapbook-padding-mobile: 0.3rem;
 
 $tabs-link-active-color: $primary;
 
+$breadcrumb-item-color: $subtitle-color;
+$breadcrumb-item-hover-color: $primary;
+
 /* Bulma provides default styling (can be imported in separate modules as required) */
 @import "bulma";
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
-import { FaChevronLeft } from 'react-icons/fa'
 import { HTMLContent } from '../components/Content'
 import { site } from '../util/templating'
 import NewsMenu, { monthName } from '../components/NewsMenu.jsx'
@@ -11,29 +10,32 @@ import NewsArticleSnapshots from '../components/NewsArticleSnapshots'
 // This is used by the website and for CMS previews
 export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
   const firstDate = new Date(firstDay)
+  const firstYear = firstDate.getFullYear()
+  const firstMonth = firstDate.getMonth()
   const lastDate = new Date(lastDay)
   const selectedNewsArticles = getNewsArticlesInTimeInterval(newsArticles, firstDate, lastDate)
-  const heading = `News articles from ${generateHeading(firstDate, lastDate)}`
+  const breadcrumbs = ['News']
+  const breadcrumbLinks = ['/news']
+
+  if (isYearInterval(firstDate, lastDate)) {
+    breadcrumbs.push(firstYear)
+    breadcrumbLinks.push(`/news/${firstYear}`)
+  } else if (isMonthInterval(firstDate, lastDate)) {
+    breadcrumbs.push(firstYear)
+    breadcrumbs.push(monthName(firstMonth))
+    breadcrumbLinks.push(`/news/${firstYear}`)
+    breadcrumbLinks.push(`/news/${firstYear}/${firstMonth + 1}`)
+  } else {
+    console.log("Unexpected date interval passed to page constructor.")
+  }
 
   return (
     <React.Fragment>
-      <Link to="/news/" className="subtitle">
-        <span className="level is-mobile">
-          <span className="level-left">
-            <span className="level-item">
-              <span className="icon"><FaChevronLeft /></span>
-            </span>
-            <span className="level-item">
-              Back to news overview
-            </span>
-          </span>
-        </span>
-      </Link>
+      <NewsArchiveBreadcrumbs breadcrumbs={breadcrumbs} breadcrumbLinks={breadcrumbLinks} />
       <hr />
       <div className="columns">
         <div className="column is-three-quarters">
           <div className="panel">
-            <h2 className="panel-heading">{heading}</h2>
             {selectedNewsArticles.map(article => (
               <Link to={article.node.fields.slug} key={article.node.fields.slug} className="panel-block">
                 <article className="media">
@@ -60,22 +62,22 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
   )
 }
 
+const NewsArchiveBreadcrumbs = ({breadcrumbs, breadcrumbLinks}) => {
+  return (
+    <nav className="breadcrumb is-large">
+      <ul>
+        {breadcrumbs.map((breadcrumb, index) => (<li key={breadcrumb}><Link to={breadcrumbLinks[index]}>{breadcrumb}</Link></li>))}
+      </ul>
+    </nav>
+  )
+}
+
 export default site(NewsTimeIntervalOverview, (data, pageContext) => {
   return {
     newsArticles: data.allMarkdownRemark.edges,
     title: pageContext && pageContext.title ? pageContext.title : 'News Archive'
   }
 })
-
-const generateHeading = (firstDate, lastDate) => {
-  if (isYearInterval(firstDate, lastDate)) {
-    return firstDate.getFullYear()
-  } else if (isMonthInterval(firstDate, lastDate)) {
-    return monthName(firstDate.getMonth()) + " " + firstDate.getFullYear()
-  } else {
-    console.log("Unexpected date interval passed to page constructor.")
-  }
-}
 
 export const query = graphql`
 query newsMonthOverviewTemplate{
@@ -124,4 +126,9 @@ NewsTimeIntervalOverview.propTypes = {
   newsArticles: NewsArticleSnapshots.propTypes.newsArticles,
   firstDay: PropTypes.string.isRequired,
   lastDay: PropTypes.string.isRequired
+}
+
+NewsArchiveBreadcrumbs.propTypes = {
+  breadcrumbs: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+  breadcrumbLinks: PropTypes.arrayOf(PropTypes.string)
 }
