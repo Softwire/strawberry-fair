@@ -14,7 +14,6 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
   const firstMonth = firstDate.getMonth()
   const lastDate = new Date(lastDay)
   const selectedNewsArticles = getNewsArticlesInTimeInterval(newsArticles, firstDate, lastDate)
-  const heading = `News articles from ${generateHeading(firstDate, lastDate)}`
   const breadcrumbs = ['News']
   const breadcrumbLinks = ['/news']
 
@@ -61,16 +60,6 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
       </div>
     </React.Fragment>
   )
-}
-
-const generateHeading = (firstDate, lastDate) => {
-  if (isYearInterval(firstDate, lastDate)) {
-    return firstDate.getFullYear()
-  } else if (isMonthInterval(firstDate, lastDate)) {
-    return monthName(firstDate.getMonth()) + " " + firstDate.getFullYear()
-  } else {
-    console.log("Unexpected date interval passed to page constructor.")
-  }
 }
 
 const NewsArchiveBreadcrumbs = ({breadcrumbs, breadcrumbLinks}) => {
