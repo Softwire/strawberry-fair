@@ -1,8 +1,8 @@
 export function getVideoInfoString(iframe) {
     if(iframe) {
-        const height = iframe.match(/ (height=".*?") /)
-        const width = iframe.match(/ (width=".*?") /)
-        const source = iframe.match(/<iframe .* (src="https:\/\/www\.youtube\.com.*?") .*><\/iframe>/)
+        const height = iframe.match(/<iframe(?:\s.*)?\s(height=".*?")(?:\s.*>|>)/)
+        const width = iframe.match(/<iframe(?:\s.*)?\s(width=".*?")(?:\s.*>|>)/)
+        const source = iframe.match(/<iframe(?:\s.*)?\s(src="https:\/\/www\.youtube\.com.*?")(?:\s.*>|>)/)
         return source ? (height && width ? height[1] + ' ' + width[1] + ' ' + source[1] : source[1] ) : null
     }
     else return null
@@ -10,5 +10,5 @@ export function getVideoInfoString(iframe) {
 
 export function getSimplifiedIframe({iframe}) {
     const videoInfo = getVideoInfoString(iframe)
-    return videoInfo ? '<figure className="video-container"><iframe ' + videoInfo + ' frameborder="0" allowfullscreen="true"></iframe></figure>' : ''
+    return videoInfo ? '<figure class="video-container"><iframe ' + videoInfo + ' frameborder="0" allowfullscreen="true"></iframe></figure>' : ''
 }
