@@ -24,7 +24,10 @@ ContentBlock.propTypes = {
   contentSubtitle: PropTypes.node,
   scrapbookImages: ScrapbookImages.propTypes.images,
   content: PropTypes.node,
-  strawberryTile: PropTypes.shape(SectionWithStrawberryCard.propTypes),
+  strawberryTile: PropTypes.shape({
+    isPublic: PropTypes.bool,
+    text: PropTypes.string
+  }),
   BodyComponent: PropTypes.elementType
 }
 

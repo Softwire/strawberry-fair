@@ -15,23 +15,19 @@ export const SectionWithStrawberryCard = ({isPublic, image, imageAltText, text, 
         {children}
       </div>
       <div className="column is-narrow">
-        <StrawberryCard isPublic={isPublic} image={image} imageAltText={imageAltText} text={text} />
+        {isPublic && <StrawberryCard image={image} imageAltText={imageAltText} text={text} />}
       </div>
     </div>
   )
 }
 
-const StrawberryCard = ({isPublic, image, imageAltText, text}) => {
-  if (isPublic){
-    return (
-      <React.Fragment>
-        <StrawberryCardDesktop image={image} imageAltText={imageAltText} text={text} />
-        <StrawberryCardMobile image={image} imageAltText={imageAltText} text={text} />
-      </React.Fragment>
-    )
-  } else {
-    return null
-  }
+const StrawberryCard = ({image, imageAltText, text}) => {
+  return (
+    <React.Fragment>
+      <StrawberryCardDesktop image={image} imageAltText={imageAltText} text={text} />
+      <StrawberryCardMobile image={image} imageAltText={imageAltText} text={text} />
+    </React.Fragment>
+  )
 }
 
 const StrawberryCardDesktop = ({image, imageAltText, text}) => {
@@ -66,7 +62,8 @@ export const StrawberryTiles = ({strawberryTiles}) => {
   if (strawberryTiles && strawberryTiles.length > 0) {
     return (
       <VerticalTileColumn>
-        {strawberryTiles.map((tileWrapper, index) => <StrawberryTile isPublic={tileWrapper.strawberryTile.isPublic} text={tileWrapper.strawberryTile.text} key={index}/>)}
+        {strawberryTiles.map((tileWrapper, index) => 
+          tileWrapper.strawberryTile.isPublic && <StrawberryTile text={tileWrapper.strawberryTile.text} key={index}/>)}
       </VerticalTileColumn>
     )
   } else {
@@ -81,13 +78,19 @@ const StrawberryTile = ({isPublic, image, imageAltText, text}) => (
 )
 
 StrawberryCard.propTypes = {
-  isPublic: PropTypes.bool.isRequired,
   image: PropTypes.string,
   imageAltText: PropTypes.string,
   text: PropTypes.string
 }
 
-SectionWithStrawberryCard.propTypes = StrawberryCard.propTypes
+SectionWithStrawberryCard.propTypes = {
+  isPublic: PropTypes.bool.isRequired,
+  image: PropTypes.string,
+  imageAltText: PropTypes.string,
+  text: PropTypes.string,
+  children: PropTypes.element
+}
+
 StrawberryCardDesktop.propTypes = StrawberryCard.propTypes
 StrawberryCardMobile.propTypes = StrawberryCard.propTypes
 StrawberryTile.propTypes = StrawberryCard.propTypes
@@ -95,7 +98,13 @@ StrawberryTile.propTypes = StrawberryCard.propTypes
 StrawberryTiles.propTypes = { 
   strawberryTiles: PropTypes.arrayOf(
     PropTypes.shape({
-      strawberryTile: PropTypes.shape(StrawberryCard.propTypes)
+      strawberryTile: PropTypes.shape(
+        StrawberryCard.propTypes = {
+          isPublic: PropTypes.bool.isRequired,
+          image: PropTypes.string,
+          imageAltText: PropTypes.string,
+          text: PropTypes.string
+        })
     })
   )
 }
