@@ -53,7 +53,7 @@ definitions:
         - {label: Content Block Subtitle, name: subtitle, widget: string}
         - *scrapbookImages
         - {label: Content Block Body, name: _markdown_contentBody, widget: markdown}
-        - {label: Strawberry Tile, name: sideSnippet, widget: string}
+        - {label: Strawberry Tile, name: sideSnippet, widget: text, hint: "140 characters max", pattern: ["^.{0,140}$", "Must have less than 140 characters"]}
   - calendarBlock: &calendarBlock
       label: Calendar Block
       name: calendarBlock
@@ -107,9 +107,9 @@ definitions:
       field:
           label: "Text"
           name: "text"
-          widget: "string"
-          hint: "200 characters max"
-          pattern: ["^[\\s\\S]{0,200}$", "200 characters max"]
+          widget: "text"
+          hint: "140 characters max"
+          pattern: ["^.{0,140}$", "Must have less than 140 characters"]
   - form: &form
       label: Form
       name: form
