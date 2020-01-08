@@ -5,7 +5,7 @@ author: Tim Berners-Lee
 image:
   alt: Placeholder
   src: >-
-    https://res.cloudinary.com/strawberryfair/image/upload/v1578395373/internet_bg8vg6.jpg
+    https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/banner-carrying_m0ufmy.jpg
 date: '1969-10-29'
 tags: 
     - news
