@@ -33,8 +33,7 @@ const NavBar = () => (
 export default NavBar
 
 const NavBarQueryWrapper = ({isPreview}) => {
-  let links
-  let logo
+  let links, logo
   if (isPreview) {
     links = navBarPreviewLinks
     logo = <img alt="Strawberry Fair logo" src="/img/1-line-logo.png" width="280" />

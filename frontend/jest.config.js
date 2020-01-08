@@ -11,8 +11,9 @@ module.exports = {
     globals: {
       __PATH_PREFIX__: ``,
     },
+    testEnvironment: "enzyme",
     testURL: `http://localhost`,
     setupFiles: [`<rootDir>/loadershim.js`],
-    setupFilesAfterEnv: ["<rootDir>/setup-jest-env.js"],
+    setupFilesAfterEnv: ["jest-enzyme"],
     roots: [`<rootDir>/jest`]
   }
