@@ -61,4 +61,25 @@ describe("FormFrame", () => {
       expect(formFrame).toMatchSelector("iframe")
     })
   })
+
+  describe("renders the iframe with the expected height if", () => {
+    test("only a url is given", () => {
+      const formFrame = shallow(<FormFrame form={{isPublic: true, link: "https://docs.google.com/forms/hello"}} />)
+
+      expect(formFrame).toMatchSelector("iframe[height=1427]")
+    })
+
+    test("an iframe without a height is given", () => {
+      const formFrame = shallow(<FormFrame form={{isPublic: true, link: "<iframe src=\"https://docs.google.com/forms/hello\"></iframe>"}} />)
+
+      expect(formFrame).toMatchSelector("iframe[height=1427]")
+    })
+
+    test("an iframe with a height is given", () => {
+      const testHeight = 500
+      const formFrame = shallow(<FormFrame form={{isPublic: true, link: `<iframe src="https://docs.google.com/forms/hello" height="${testHeight}" ></iframe>`}} />)
+
+      expect(formFrame).toMatchSelector(`iframe[height="${testHeight}"]`)  // Speech marks required here I believe due to using shallow wrapping
+    })
+  })
 })
