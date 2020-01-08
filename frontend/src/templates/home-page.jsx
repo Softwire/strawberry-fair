@@ -62,7 +62,7 @@ query homePageTemplate($id: String!) {
           subtitle
           scrapbookImages {
             alt
-            src {
+            srcNode {
               childImageSharp {
                 fluid {
                   ...GatsbyImageSharpFluid
@@ -98,7 +98,7 @@ query homePageTemplate($id: String!) {
             subtitle
             image {
               alt
-              src {
+              srcNode {
                 childImageSharp {
                   fluid {
                     ...GatsbyImageSharpFluid

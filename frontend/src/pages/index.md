@@ -5,13 +5,17 @@ subtitle: The Strawberry Fair is a lot of fun.
 heroData:
   heroImages:
     - alt: Strawberry Fair Banner
-      src: /img/gareths-gate-slide.jpg
+      src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1578398228/Banner/gareths-gate-slide_agpjto.jpg
     - alt: Main Stage
-      src: /img/revised-east-stage-panorama.jpg
+      src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1578398228/Banner/revised-east-stage-panorama_zfwxj4.jpg
     - alt: Crowds and tents
-      src: /img/slide-crowd.jpg
+      src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1578398228/Banner/slide-crowd_jnl1lw.jpg
     - alt: Strawberry Fair entrance
-      src: /img/slide-gate-2017.jpg
+      src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1578398228/Banner/slide-gate-2017_h8epan.jpg
   isActive: true
 contentBlocks:
   - _markdown_contentBody: >-
@@ -41,30 +45,36 @@ contentBlocks:
       dolore 
 
       eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-    subtitle: B
-    title: A
     scrapbookImages:
       - alt: Placeholder
-        src: /img/band.jpg
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/banner-carrying_m0ufmy.jpg
       - alt: Placeholder
-        src: /img/banner-carrying.jpg
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/crowd-shot_f84bne.jpg
       - alt: Placeholder
-        src: /img/crowd-shot.jpg
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398411/Image%20Scrapbook/drums_pgyyyt.jpg
       - alt: Placeholder
-        src: /img/drums.jpg
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/guitar-girl_srefgz.jpg
       - alt: Placeholder
-        src: /img/guitar-girl.jpg
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/instruments_lral6p.jpg
       - alt: Placeholder
-        src: /img/instruments.jpg
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/music_zpcrkm.jpg
       - alt: Placeholder
-        src: /img/music.jpg
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/stilts_g7oq1b.jpg
       - alt: Placeholder
-        src: /img/stilts.jpg
-      - alt: Placeholder
-        src: /img/wide-parade.jpg
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/wide-parade_yev0ai.jpg
     sideSnippet: >-
       Next year's festival is happening on June 6th 2020. We'll be announcing
       the theme later in the year
+    title: A
+    subtitle: B
   - _markdown_contentBody: >-
       adsfadsfasdf
 
@@ -95,28 +105,37 @@ contentBlocks:
       dolore 
 
       eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-    contentSubtitle: B
-    contentTitle: A
     scrapbookImages:
       - alt: Placeholder
-        src: /img/band.jpg
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/band_melwuk.jpg
       - alt: Placeholder
-        src: /img/banner-carrying.jpg
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/banner-carrying_m0ufmy.jpg
       - alt: Placeholder
-        src: /img/crowd-shot.jpg
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/crowd-shot_f84bne.jpg
       - alt: Placeholder
-        src: /img/drums.jpg
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398411/Image%20Scrapbook/drums_pgyyyt.jpg
       - alt: Placeholder
-        src: /img/guitar-girl.jpg
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/guitar-girl_srefgz.jpg
       - alt: Placeholder
-        src: /img/instruments.jpg
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/instruments_lral6p.jpg
       - alt: Placeholder
-        src: /img/music.jpg
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/music_zpcrkm.jpg
       - alt: Placeholder
-        src: /img/stilts.jpg
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/stilts_g7oq1b.jpg
       - alt: Placeholder
-        src: /img/wide-parade.jpg
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/music_zpcrkm.jpg
     sideSnippet: 'For more details, contact email us here or on our Facebook page'
+    title: Content block 2
+    subtitle: Hello
 calendarBlock:
   title: Strawberry Fair committee meetings
   subtitle: The next committee meetings are listed below and will be held at...

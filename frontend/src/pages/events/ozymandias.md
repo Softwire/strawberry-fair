@@ -1,10 +1,11 @@
 ---
 templateKey: event-info
-title: "Ozymandias"
+title: Ozymandias
+dateTime: 2020-01-01T12:00:00.000Z
 image:
   alt: Placeholder
-  src: /img/ozymandias.jpg
-dateTime: 2020-01-01T12:00:00.000Z
+  src: >-
+    https://res.cloudinary.com/strawberryfair/image/upload/v1578398631/Events/ozymandias_rielvp.jpg
 eventTypes:
   - Band competition
 ---

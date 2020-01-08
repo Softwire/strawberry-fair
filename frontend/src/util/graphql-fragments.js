@@ -6,7 +6,7 @@ export const imageFluidFragment = graphql`
 fragment ImageFluidFragment on MarkdownRemarkFrontmatter {
   image {
     alt
-    src {
+    srcNode {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
@@ -21,7 +21,7 @@ export const imageFluid64x64Fragment = graphql`
 fragment ImageFluid64x64Fragment on MarkdownRemarkFrontmatter {
   image {
     alt
-    src {
+    srcNode {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
@@ -46,7 +46,7 @@ fragment HeroFragment on MarkdownRemarkConnection {
         isActive
         heroImages {
           alt
-          src {
+          srcNode {
             childImageSharp {
               fluid {
                 ...GatsbyImageSharpFluid

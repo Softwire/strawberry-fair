@@ -1,4 +1,5 @@
 import CMS from 'netlify-cms-app'
+import cloudinary from 'netlify-cms-media-library-cloudinary'
 
 import '../styling/styles.scss'
 import { HomePage } from '../templates/home-page'
@@ -65,6 +66,8 @@ const homePageAdditionalPropsExtractor = (dataProps, { widgetsFor }) => {
     contentBlocksHtml: contentBlocksMarkdown,
   }
 }
+
+CMS.registerMediaLibrary(cloudinary)
 
 CMS.registerPreviewTemplate('home', preview(HomePage, {newsArticles: placeholderArticles, events: placeholderEvents}, homePageAdditionalPropsExtractor))
 CMS.registerPreviewTemplate('about', preview(AboutPage))

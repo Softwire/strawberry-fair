@@ -29,9 +29,8 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
      * @param {Object} entry.data - The data read from the CMS in Immutable.js object
      * @param {Function} widgetFor - Utility function provided by the CMS
      * @param {Function} widgetsFor - Utility function provided by the CMS
-     * @param {Function} getAsset - Utility function provided by the CMS
      */
-    const previewComponent = ({ entry, widgetFor, widgetsFor, getAsset }) => {
+    const previewComponent = ({ entry, widgetFor, widgetsFor }) => {
         const dataProps = entry.getIn(['data']).toJS()
         const previewProps = {}
 
@@ -45,9 +44,6 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
         previewProps.contentComponent = Content
 
         Object.assign(previewProps, additionalPropsExtractor(dataProps, { widgetsFor }))
-
-        // For image data, call getAsset to get the correct image object.
-        deepReplaceImageUrlsWithAssets(dataProps, getAsset)
         Object.assign(previewProps, dataProps)
 
         const layoutProps = extractLayoutPropsPreview(dataProps, additionalPropsExtractor, widgetsFor)
@@ -70,22 +66,6 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
     }
 
     return previewComponent
-}
-
-/**
- * Replace image urls with assets recursively for the object passed in
- * @param {Object} obj 
- * @param {Function} getAsset - Utility function provided by NetlifyCMS
- */
-const deepReplaceImageUrlsWithAssets = (obj, getAsset) => {
-    Object.entries(obj)
-        .forEach(([key, value]) => {
-            if ((typeof value === 'string' || value instanceof String) && value.startsWith('/img/')) {
-                obj[key] = getAsset(value)
-            } else if (typeof value === 'object' && value !== null) {
-                deepReplaceImageUrlsWithAssets(value, getAsset)
-            } 
-        })
 }
 
 /**

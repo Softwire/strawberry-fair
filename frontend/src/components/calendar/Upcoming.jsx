@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
+import _ from 'lodash'
 
 import { HTMLContentSmall } from '../Content'
 import { eventPropTypeValidator } from '../validators'
@@ -20,7 +21,7 @@ export const EventMediaBlock = ({event}) => {
     <div className="media event">
         <div className="media-left">
             <Link to={eventUrl} className="image is-64x64">
-                {event.frontmatter.image ? <img src={(event.frontmatter.image.src.childImageSharp ? event.frontmatter.image.src.childImageSharp.resize.src : event.frontmatter.image.src)}
+                {event.frontmatter.image ? <img src={_.get(event.frontmatter.image, 'srcNode.childImageSharp.resize.src', event.frontmatter.image.src)}
                                                 alt={event.frontmatter.image.alt} /> : null}
             </Link>
         </div>

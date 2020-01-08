@@ -11,7 +11,11 @@ backend:
     uploadMedia: Netlify CMS - Upload “{{path}}”
     deleteMedia: Netlify CMS - Delete “{{path}}”
 
-media_folder: /frontend/static/img
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: strawberryfair
+    api_key: 631814456675255
 public_folder: /img
 publish_mode: editorial_workflow
 
