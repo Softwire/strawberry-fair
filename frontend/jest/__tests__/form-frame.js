@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React from 'react'
 import { shallow } from 'enzyme'
 
@@ -80,6 +81,20 @@ describe("FormFrame", () => {
       const formFrame = shallow(<FormFrame form={{isPublic: true, link: `<iframe src="https://docs.google.com/forms/hello" height="${testHeight}" ></iframe>`}} />)
 
       expect(formFrame).toMatchSelector(`iframe[height="${testHeight}"]`)  // Speech marks required here I believe due to using shallow wrapping
+    })
+  })
+
+  describe("renders the iframe with the expected source if", () => {
+    test("only a url is given", () => {
+      const formFrame = shallow(<FormFrame form={{isPublic: true, link: "https://docs.google.com/forms/hello"}} />)
+
+      expect(formFrame).toMatchSelector("iframe[src=\"https://docs.google.com/forms/hello\"]")
+    })
+
+    test("an iframe is given", () => {
+      const formFrame = shallow(<FormFrame form={{isPublic: true, link: "<iframe src=\"https://docs.google.com/forms/hello\"></iframe>"}} />)
+
+      expect(formFrame).toMatchSelector("iframe[src=\"https://docs.google.com/forms/hello\"]")
     })
   })
 })
