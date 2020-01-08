@@ -58,14 +58,41 @@ const mapImagesToColumns = (imageList, isPreview=false) => {
 }
 
 const setColumnWidths = (imageMap, isPreview=false) => {
-    const innerColumnAspects = imageMap.map(outer => outer.map(inner => getInnerColAspect(inner)))
+    const innerColAspects = imageMap.map(outer => outer.map(inner => getInnerColAspect(inner)))
+
+    const adjustStartingWidths = widthPair => {
+        switch (getRandInt(3)) {
+            case 1:
+                widthPair[0]++
+                widthPair[1]--
+                break;
+            case 2:
+                widthPair[0]--
+                widthPair[1]++
+                break;
+            default:
+                break;
+        }
+    }
 
     // Initial bulma column width estimates - these may be adjusted
     const outerColWidths = [6, 6]
     const innerColWidths = [[6, 6], [6, 6]]
 
-    while(!isPreview) {
-        const heights = relativeHeights(innerColumnAspects, innerColWidths, outerColWidths)
+    // Randomise them a little to begin
+    adjustStartingWidths(outerColWidths)
+    adjustStartingWidths(innerColWidths[0])
+    adjustStartingWidths(innerColWidths[1])
+
+    // max number of loop iterations expected. 
+    // This guards against an infinite loop cause by incorrect setting of the height limit ratios
+    // this should never happen, but we guard against it anyway
+    let loopCounter = 18
+
+    // iteratively adjust column heights.
+    // For CMS previews we have no aspect ratio information so skip this step.
+    while(!isPreview && loopCounter-- > 0) {
+        const heights = relativeHeights(innerColAspects, innerColWidths, outerColWidths)
 
         // balance the left inner column heights
         if (heights[0][0] / heights[0][1] < minInnerColHeightDiffRatio && innerColWidths[0][1] > minInnerColWidth) {
