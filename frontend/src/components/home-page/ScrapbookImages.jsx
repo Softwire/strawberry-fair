@@ -1,12 +1,10 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 import { childImageSharpValidator, previewCompatibleImageValidator } from '../validators'
 import PreviewCompatibleImage from '../PreviewCompatibleImage'
 import { generateScrapbookImageMap, shuffle } from '../../util/generateScrapbookImageMap'
 import { PreviewContext } from '../../util/context'
-import { useState } from 'react'
-import { useEffect } from 'react'
 
 const useScrapbookLayout = (images, isPreview) => {
     const [imageMap, setImageMap] = useState(null)
