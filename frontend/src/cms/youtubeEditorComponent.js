@@ -6,7 +6,7 @@ export const youtubeEditorComponent = {
     // Visible label
     label: "Youtube",
     // Fields the user need to fill out when adding an instance of the component
-    fields: [{name: 'iframe', label: ' Embed Youtube Video <>', widget: 'string'}],
+    fields: [{name: 'iframe', label: 'Embed Youtube Video <>', widget: 'string'}],
     // Pattern to identify a block as being an instance of this component
     pattern: /<figure className="video-container">(<iframe .* src="https:\/\/www\.youtube\.com.*?" .*><\/iframe>)<\/figure>/,
     // Function to extract data elements from the regexp match
