@@ -13,6 +13,7 @@ module.exports = {
     },
     testURL: `http://localhost`,
     setupFiles: [`<rootDir>/loadershim.js`],
-    setupFilesAfterEnv: ["<rootDir>/setup-jest-env.js"],
-    roots: [`<rootDir>/jest`]
+    roots: [`<rootDir>/jest`],
+    setupFilesAfterEnv: ["jest-enzyme"],
+    testEnvironment: "enzyme"
   }
