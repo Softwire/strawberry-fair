@@ -8,6 +8,7 @@ import { site } from '../util/templating'
 import { generateEventICS } from '../util/generateEventICS'
 import { downloadBlob } from '../util/downloadBlob'
 import { areSameDay } from '../util/dates'
+import { PreviewContext } from '../util/context'
 
 //display style of the event date
 export const displayStyle = {
@@ -37,13 +38,20 @@ EventTypeList.propTypes = {
 }
 
 // used by website and CMS previews
-export const EventInfo = ({title, image, dateTimeRange, eventTypes, content, contentComponent}) => {
+export const EventInfo = ({title, image, dateTimeRange, eventTypes, content, contentComponent}) => (
+    <PreviewContext.Consumer>
+        {value => <EventInfoWithContext isPreview={value} title={title} image={image} dateTimeRange={dateTimeRange}
+        eventTypes={eventTypes} content={content} contentComponent={contentComponent} />}
+    </PreviewContext.Consumer>
+)
+
+const EventInfoWithContext = ({isPreview, title, image, dateTimeRange, eventTypes, content, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     return (
         <React.Fragment>
             <EventTypeList eventTypes={eventTypes} />
-            <button className="button event-download-button" onClick={() => generateAndDownloadEvent(
+            <button className="button event-download-button" onClick={isPreview ? null : () => generateAndDownloadEvent(
                 title,
                 dateTimeRange.startDateTime,
                 dateTimeRange.provideEnd ? dateTimeRange.endDateTime : dateTimeRange.startDateTime,
@@ -61,7 +69,8 @@ const generateAndDownloadEvent = (title, startDateTime, endDateTime, content) =>
     downloadBlob(eventBlob, `${title}.ics`)
 }
 
-EventInfo.propTypes = {
+EventInfoWithContext.propTypes = {
+    isPreview: PropTypes.bool,
     title: PropTypes.string.isRequired,
     dateTimeRange: PropTypes.shape({
         startDateTime: PropTypes.string.isRequired,
@@ -73,6 +82,8 @@ EventInfo.propTypes = {
     content: PropTypes.string.isRequired,
     contentComponent: PropTypes.elementType
 }
+
+EventInfo.propTypes = EventInfoWithContext.propTypes
 
 export const generateEventSubtitle = (data) => {
     const dateTimeRange = data.markdownRemark.frontmatter.dateTimeRange
