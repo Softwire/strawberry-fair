@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Analytics } from './Analytics'
 import { Header } from './Header'
 import { Footer } from './Footer'
 import { Titles } from './Titles'
@@ -11,6 +12,7 @@ import '../styling/styles.scss'
 
 export const Layout = ({children, heroData, title, subtitle}) => (
     <React.Fragment>
+        <Analytics>
         <Header heroData={heroData}>
         </Header>
         <div id="root-layout" className="section">
@@ -23,6 +25,7 @@ export const Layout = ({children, heroData, title, subtitle}) => (
                 <Footer />
             </div>
         </div>
+        </Analytics>
     </React.Fragment>
 )
 
