@@ -24,15 +24,41 @@ describe("FormFrame", () => {
     })
 
     test("given an iframe with an invalid url", () => {
-      const formFrame = shallow(<FormFrame form={{isPublic: true, link: "<iframe src=\"Hello, world!\">"}} />)
+      const formFrame = shallow(<FormFrame form={{isPublic: true, link: "<iframe src=\"Hello, world!\"></iframe>"}} />)
   
       expect(formFrame.isEmptyRender()).toBeTruthy()
     })
 
     test("given an iframe with an valid, but not google forms, url", () => {
-      const formFrame = shallow(<FormFrame form={{isPublic: true, link: "<iframe src=\"https://www.google.com/\">"}} />)
+      const formFrame = shallow(<FormFrame form={{isPublic: true, link: "<iframe src=\"https://www.google.com/\"></iframe>"}} />)
   
       expect(formFrame.isEmptyRender()).toBeTruthy()
+    })
+  })
+
+  describe("renders an iframe if", () => {
+    test("given an invalid google forms url", () => {
+      const formFrame = shallow(<FormFrame form={{isPublic: true, link: "https://docs.google.com/forms/hello"}} />)
+  
+      expect(formFrame.is("iframe")).toBeTruthy()
+    })
+
+    test("given a valid google forms url", () => {
+      const formFrame = shallow(<FormFrame form={{isPublic: true, link: "https://docs.google.com/forms/d/e/1FAIpQLSdnbGnGcafdKpNXKZ83mcDnF8lMJ-awaM0-j-135d1RFEC_jQ/viewform?embedded=true"}} />)
+  
+      expect(formFrame.is("iframe")).toBeTruthy()
+    })
+
+    test("given an iframe with an invalid google forms url", () => {
+      const formFrame = shallow(<FormFrame form={{isPublic: true, link: "<iframe src=\"https://docs.google.com/forms/hello\"></iframe>"}} />)
+  
+      expect(formFrame.is("iframe")).toBeTruthy()
+    })
+
+    test("given an iframe with a valid google forms url", () => {
+      const formFrame = shallow(<FormFrame form={{isPublic: true, link: "<iframe src=\"https://docs.google.com/forms/d/e/1FAIpQLSdnbGnGcafdKpNXKZ83mcDnF8lMJ-awaM0-j-135d1RFEC_jQ/viewform?embedded=true\"></iframe>"}} />)
+  
+      expect(formFrame.is("iframe")).toBeTruthy()
     })
   })
 })
