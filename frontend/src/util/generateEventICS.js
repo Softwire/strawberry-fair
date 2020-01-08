@@ -29,7 +29,7 @@ export const generateEventICS = (title, startDateTime, endDateTime, content) => 
   // Create event, place in Blob
   ics.createEvent(event, (error, value) => {
     if (error) {
-      console.log(error)
+      console.error(error)
     }
     
     file = new Blob([value], {type: 'text/calendar'})
