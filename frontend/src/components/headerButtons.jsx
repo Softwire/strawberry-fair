@@ -15,14 +15,16 @@ export default HeaderButtons
 const HeaderButtonsDisplay = ({isPreview}) => {
   const data = isPreview ? headerButtonPreviewData : getHeaderButtonLinksAndText()
     
-    return(
-            <div className="field is-grouped is-pulled-right">
-                <div className="buttons">
-                    <Link to={data.getInvolved.frontmatter.link} className="button is-secondary">{data.getInvolved.frontmatter.text}</Link>
-                    <Link to={data.applyToTrade.frontmatter.link} className="button is-primary">{data.applyToTrade.frontmatter.text}</Link>
-                </div>
-            </div>
-    )
+  return(
+    <React.Fragment>
+      {["is-pulled-right is-hidden-touch", "is-hidden-desktop centre-buttons"].map(modifier => (
+        <div className={`buttons ${modifier}`} key={modifier}>
+          <Link to={data.getInvolved.frontmatter.link} className="button is-secondary">{data.getInvolved.frontmatter.text}</Link>
+          <Link to={data.applyToTrade.frontmatter.link} className="button is-primary">{data.applyToTrade.frontmatter.text}</Link>
+        </div>
+      ))}
+    </React.Fragment>
+  )
 }
 
 function getHeaderButtonLinksAndText() {

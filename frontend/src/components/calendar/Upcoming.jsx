@@ -72,11 +72,13 @@ const UpcomingWithContext = ({isPreview, previewEventList}) => {
     let eventPanels = filterEvents(events, filterProps.activeFilters).slice(0, maxItems).map(event => <EventPanelBlock key={event.frontmatter.title} event={event} />)
 
     return (
-        <div className="upcoming panel">
-            <h1 className="panel-heading">Upcoming</h1>
-            <EventFilterBlock filterProps={filterProps} />
-            {eventPanels.length > 0 ? eventPanels : <NoEventsFoundBlock />}
-        </div>
+        <React.Fragment>
+            <h1 className="title">Upcoming Events</h1>
+            <div className="upcoming panel">
+                <EventFilterBlock filterProps={filterProps} />
+                {eventPanels.length > 0 ? eventPanels : <NoEventsFoundBlock />}
+            </div>
+        </React.Fragment>
     )
 }
 

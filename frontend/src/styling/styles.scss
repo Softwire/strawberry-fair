@@ -8,6 +8,8 @@ $light-grey: #f3f3f3;
 $primary: $red;
 $secondary: $black;
 
+$primary-pale: #c66;
+
 $title-color: $primary;
 $subtitle-color: $secondary;
 
@@ -17,7 +19,8 @@ $radius-large: 0px;
 // is-secondary doesn't produce any effect without this
 $custom-colors: ( 
     "secondary": $secondary,
-    "light-grey": $light-grey
+    "light-grey": $light-grey,
+    "primary-pale": $primary-pale
 );
 
 $navbar-padding-vertical: 0;
@@ -31,6 +34,8 @@ $navbar-dropdown-arrow: $primary;
 $section-padding: 0 1.5rem;
 
 $scrapbook-padding-mobile: 0.3rem;
+
+$tabs-link-active-color: $primary;
 
 /* Bulma provides default styling (can be imported in separate modules as required) */
 @import "bulma";
@@ -158,4 +163,32 @@ $strawberry-card-size: 14rem;
 
 .calendar.panel .modal.is-active .media.event:nth-child(even),.upcoming.panel>.panel-block:not(.filter):nth-child(even) {
     background-color: $light-grey;
+}
+
+// Calendar day pencil circle 'today' indicator
+.pencil-circle {
+    position: absolute;
+    top: -1.1rem;
+    left: -0.75rem;
+}
+
+.month-scrubber {
+    width: 22rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    .title {
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+    }
+}
+
+.month-scrubber-mobile {
+    @extend .month-scrubber;
+    width: 17rem;
+}
+
+// Ensures the header buttons are centred on mobile
+.centre-buttons {
+    text-align: center;
+    display: block;
 }
