@@ -92,4 +92,10 @@ StrawberryCardDesktop.propTypes = StrawberryCard.propTypes
 StrawberryCardMobile.propTypes = StrawberryCard.propTypes
 StrawberryTile.propTypes = StrawberryCard.propTypes
 
-StrawberryTiles.propTypes = { tileTextArray: PropTypes.arrayOf(PropTypes.string) }
+StrawberryTiles.propTypes = { 
+  strawberryTiles: PropTypes.arrayOf(
+    PropTypes.shape({
+      strawberryTile: PropTypes.shape(StrawberryCard.propTypes)
+    })
+  )
+}
