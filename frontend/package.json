@@ -50,6 +50,7 @@
     "start": "npm run develop",
     "build": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
+    "prod": "npm run build && gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "lint": "eslint --ext js,jsx src",
     "test:unit": "jest",

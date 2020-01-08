@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 import { childImageSharpValidator, previewCompatibleImageValidator } from '../validators'
@@ -6,6 +6,16 @@ import PreviewCompatibleImage from '../PreviewCompatibleImage'
 import { generateScrapbookImageMap, shuffle } from '../../util/generateScrapbookImageMap'
 import { PreviewContext } from '../../util/context'
 
+const useScrapbookLayout = (images, isPreview) => {
+    const [imageMap, setImageMap] = useState(null)
+
+    useEffect(() => {
+        const selectedImages = shuffle(images).slice(0, 6)
+        setImageMap(generateScrapbookImageMap(selectedImages, isPreview))
+    }, [images])
+
+    return imageMap
+}
 
 /** Expects an array of at least 6 images */
 export const ScrapbookImages = ({images}) => (
@@ -16,33 +26,30 @@ export const ScrapbookImages = ({images}) => (
 
 
 const ScrapbookImgs = ({images, isPreview}) => {
-    if (images) {
-        const validImages = images.filter((img) => !!img)
+    const imageMap = useScrapbookLayout(images, isPreview)
 
-        if (validImages.length >= 6) {
-            const selectedImages = shuffle(validImages).slice(0, 6)
-            const imageMap = generateScrapbookImageMap(selectedImages, isPreview)
-            const outerCols = imageMap.map((outerColMap, idx) => (
-                <OuterColumn
-                        outerColMap={outerColMap}
-                        position={(idx === 0 ? "left-top" : "right-bottom")}
-                        key={idx} />
-            ))
-
-            return (
-                <div className="columns scrapbook-columns">
-                    {outerCols}
-                </div>
-            )
-        }
+    if (imageMap === null) {
+        return null
     }
-    return null
+
+    const outerCols = imageMap.map((outerColMap, idx) => (
+        <OuterColumn
+                outerColMap={outerColMap}
+                position={(idx === 0 ? "left-top" : "right-bottom")}
+                key={idx} />
+    ))
+
+    return (
+        <div className="columns scrapbook-columns">
+            {outerCols}
+        </div>
+    )
 }
 
-const OuterColumn = ({outerColMap, position}) => (
-    <div className={`column scrapbook-column outer-column ${position}`}>
+const OuterColumn = ({outerColMap: {width, images}, position}) => (
+    <div className={`column scrapbook-column outer-column ${width} ${position}`}>
         <div className="columns scrapbook-columns is-mobile">
-            {outerColMap.map((innerColMap, idx) => <InnerColumn innerColMap={innerColMap}
+            {images.map((innerColMap, idx) => <InnerColumn innerColMap={innerColMap}
                                                                 position={position}
                                                                 key={idx} />)}
         </div>
@@ -57,11 +64,13 @@ const InnerColumn = ({innerColMap: {width, images}, position}) => (
     </div>
 )
 
-const ScrapbookImg = ({image}) => (
-    <div className="column scrapbook-column is-full">
-        <PreviewCompatibleImage imageInfo={image} />
-    </div>
-)
+const ScrapbookImg = ({image}) => {
+    return (
+        <div className="column scrapbook-column is-full">
+            <PreviewCompatibleImage imageInfo={image} />
+        </div>
+    )
+}
 
 ScrapbookImg.propTypes = {
     image: previewCompatibleImageValidator
@@ -74,7 +83,10 @@ InnerColumn.propTypes = { innerColMap: PropTypes.shape({
 })}
 
 OuterColumn.propTypes = {
-    outerColMap: PropTypes.arrayOf(InnerColumn.propTypes.innerColMap),
+    outerColMap: PropTypes.shape({
+        width: PropTypes.string,
+        images: PropTypes.arrayOf(InnerColumn.propTypes.innerColMap)
+    }),
     position: PropTypes.string
 }
 
