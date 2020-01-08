@@ -70,7 +70,10 @@ query homePageTemplate($id: String!) {
               }
             }
           }
-          sideSnippet
+          strawberryTile {
+            isPublic
+            text
+          }
         }
         calendarBlock {
           title

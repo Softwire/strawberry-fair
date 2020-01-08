@@ -53,15 +53,6 @@ EventInfo.propTypes = {
     contentComponent: PropTypes.elementType
 }
 
-const displayStyle = {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit"
-}
-
 export default site(EventInfo, data => ({subtitle: new Date(data.markdownRemark.frontmatter.dateTime).toLocaleString("en-GB", displayStyle)}))
 
 export const query = graphql`

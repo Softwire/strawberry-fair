@@ -5,7 +5,7 @@ import VerticalTileColumn from './VerticalTileColumn'
 const defaultIcon = '/img/strawberry-icon.png'
 const defaultImageAltText = 'Strawberry Icon'
 
-export const SectionWithStrawberryCard = ({image, imageAltText, text, children}) => {
+export const SectionWithStrawberryCard = ({isPublic, image, imageAltText, text, children}) => {
   // Formats a portion of text or other content alongside a strawberry card so it appears correctly
   // and responsively
 
@@ -15,19 +15,23 @@ export const SectionWithStrawberryCard = ({image, imageAltText, text, children})
         {children}
       </div>
       <div className="column is-narrow">
-        <StrawberryCard image={image} imageAltText={imageAltText} text={text} />
+        <StrawberryCard isPublic={isPublic} image={image} imageAltText={imageAltText} text={text} />
       </div>
     </div>
   )
 }
 
-export const StrawberryCard = ({image, imageAltText, text}) => {
-  return (
-    <React.Fragment>
-      <StrawberryCardDesktop image={image} imageAltText={imageAltText} text={text} />
-      <StrawberryCardMobile  image={image} imageAltText={imageAltText} text={text} />
-    </React.Fragment>
-  )
+const StrawberryCard = ({isPublic, image, imageAltText, text}) => {
+  if (isPublic){
+    return (
+      <React.Fragment>
+        <StrawberryCardDesktop image={image} imageAltText={imageAltText} text={text} />
+        <StrawberryCardMobile image={image} imageAltText={imageAltText} text={text} />
+      </React.Fragment>
+    )
+  } else {
+    return null
+  }
 }
 
 const StrawberryCardDesktop = ({image, imageAltText, text}) => {
@@ -58,37 +62,34 @@ const StrawberryCardMobile = ({image, imageAltText, text}) => {
   )
 }
 
-StrawberryCard.propTypes = {
-  image: PropTypes.string,
-  imageAltText: PropTypes.string,
-  text: PropTypes.string.isRequired
-}
-
-SectionWithStrawberryCard.propTypes = StrawberryCard.propTypes
-
-StrawberryCardDesktop.propTypes = StrawberryCard.propTypes
-StrawberryCardMobile.propTypes = StrawberryCard.propTypes
-
-const StrawberryTile = ({image, imageAltText, text}) => (
-  <div className="tile is-child">
-    <StrawberryCard image={image} imageAltText={imageAltText} text={text} />
-  </div>
-)
-
-StrawberryTile.propTypes = StrawberryCard.propTypes
-
-
-export const StrawberryTiles = ({tileTextArray}) => {
-  if (tileTextArray && tileTextArray.length > 0) {
+export const StrawberryTiles = ({strawberryTiles}) => {
+  if (strawberryTiles && strawberryTiles.length > 0) {
     return (
       <VerticalTileColumn>
-        {tileTextArray.map((text, index) => <StrawberryTile text={text} key={index}/>)}
+        {strawberryTiles.map((tileWrapper, index) => <StrawberryTile isPublic={tileWrapper.strawberryTile.isPublic} text={tileWrapper.strawberryTile.text} key={index}/>)}
       </VerticalTileColumn>
     )
-  }
-  else {
+  } else {
     return null
   }
 }
+
+const StrawberryTile = ({isPublic, image, imageAltText, text}) => (
+  <div className="tile is-child">
+    <StrawberryCard isPublic={isPublic} image={image} imageAltText={imageAltText} text={text} />
+  </div>
+)
+
+StrawberryCard.propTypes = {
+  isPublic: PropTypes.bool.isRequired,
+  image: PropTypes.string,
+  imageAltText: PropTypes.string,
+  text: PropTypes.string
+}
+
+SectionWithStrawberryCard.propTypes = StrawberryCard.propTypes
+StrawberryCardDesktop.propTypes = StrawberryCard.propTypes
+StrawberryCardMobile.propTypes = StrawberryCard.propTypes
+StrawberryTile.propTypes = StrawberryCard.propTypes
 
 StrawberryTiles.propTypes = { tileTextArray: PropTypes.arrayOf(PropTypes.string) }

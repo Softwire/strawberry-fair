@@ -3,10 +3,14 @@ templateKey: about-page
 title: About Item
 subtitle: this is a subtitle
 strawberryTiles:
-  - Some random latin.
-  - >-
-    multa quoque et bellō passūs, dum conderet urbem, inferretque deōs Latiō,
-    genus unde Latīnum.
+  - strawberryTile:
+      isPublic: true
+      text: Some random latin.
+  - strawberryTile:
+      isPublic: true
+      text: >-
+            multa quoque et bellō passūs, dum conderet urbem, inferretque deōs Latiō,
+            genus unde Latīnum.
 ---
 
 # This is H1
