@@ -43,12 +43,12 @@ export const EventInfo = ({title, image, dateTimeRange, eventTypes, content, con
     return (
         <React.Fragment>
             <EventTypeList eventTypes={eventTypes} />
-            <button className="button" onClick={() => generateAndDownloadEvent(
+            <button className="button event-download-button" onClick={() => generateAndDownloadEvent(
                 title,
                 dateTimeRange.startDateTime,
                 dateTimeRange.provideEnd ? dateTimeRange.endDateTime : dateTimeRange.startDateTime,
                 content)}>
-                Download
+                Add to Calendar
             </button>
             <BodyComponent content={content} />
             <PreviewCompatibleImage imageInfo={image} />
