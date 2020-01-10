@@ -52,6 +52,7 @@ definitions:
       label: Scrapbook Images
       name: scrapbookImages
       widget: list
+      hint: "Warning: this will be rendered above the title of this content block"
       fields:
         - {label: "Description", name: "alt", widget: "string"}
         - {label: "Image File", name: "src", widget: "image"}
@@ -60,11 +61,11 @@ definitions:
       name: contentBlocks
       widget: list
       fields:
-        - *scrapbookImages
         - {label: Content Block Title, name: title, widget: string}
         - {label: Content Block Subtitle, name: subtitle, widget: string}
         - {label: Content Block Body, name: _markdown_contentBody, widget: markdown}
         - *strawberryTile
+        - *scrapbookImages
   - calendarBlock: &calendarBlock
       label: Calendar Block
       name: calendarBlock
