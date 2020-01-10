@@ -6,6 +6,16 @@ export function areSameDay(date1, date2) {
     return daysMatch && monthsMatch && yearsMatch                   // Then they render to the same day
 }
 
+// Do two dateTimes occur on the same minute? (Smallest meaningful resolution for events, we've decided)
+export function areSameMinute(date1, date2) {
+    const minutesMatch = date1.getMinutes() === date2.getMinutes()
+    const hoursMatch = date1.getHours() === date2.getHours()
+    const daysMatch = date1.getDate() === date2.getDate()
+    const monthsMatch = date1.getMonth() === date2.getMonth()
+    const yearsMatch = date1.getFullYear() === date2.getFullYear()
+    return minutesMatch && hoursMatch && daysMatch && monthsMatch && yearsMatch
+}
+
 // Does this date occur on or after the given day?
 // Even if an event took place "earlier today", it will still show up
 export function isOnOrAfterDay(baseDate, testDate) {

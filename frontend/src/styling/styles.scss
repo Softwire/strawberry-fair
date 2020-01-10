@@ -201,3 +201,8 @@ $strawberry-card-size: 14rem;
     text-align: center;
     display: block;
 }
+
+// Add a little more spacing after the calendar download button
+.event-download-button {
+    margin-bottom: 1rem;
+}
