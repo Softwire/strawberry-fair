@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const BaseBlock = ({block, altBackground = "", children}) => (
-    <div className={`${altBackground && "has-background-light-grey is-viewport-width"}`}>
+    <div className={`home-page-section ${altBackground && "has-background-light-grey is-viewport-width"}`}>
       <section className={`section ${altBackground && "section-root"}`}>
         <div className="container">
             <h1 className="title">{block.title}</h1>

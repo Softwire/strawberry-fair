@@ -64,6 +64,14 @@ $breadcrumb-item-hover-color: $primary;
     }
 }
 
+.section,
+div {
+    &.home-page-section {
+        padding-bottom: 4em;
+        padding-top: 2em;
+    }
+}
+
 /* Class styling */
 @media(max-width: $tablet){
     .columns{ 
