@@ -76,11 +76,13 @@ ScrapbookImg.propTypes = {
     image: previewCompatibleImageValidator
 }
 
-InnerColumn.propTypes = { innerColMap: PropTypes.shape({
-    width: PropTypes.string,
-    images: PropTypes.arrayOf(previewCompatibleImageValidator),
+InnerColumn.propTypes = { 
+    innerColMap: PropTypes.shape({
+        width: PropTypes.string,
+        images: PropTypes.arrayOf(previewCompatibleImageValidator),
+    }),
     position: PropTypes.string
-})}
+}
 
 OuterColumn.propTypes = {
     outerColMap: PropTypes.shape({
