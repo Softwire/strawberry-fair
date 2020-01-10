@@ -1,37 +1,44 @@
 import React, {useEffect, useState} from 'react'
 import ReactGA from 'react-ga'
+import PropTypes from 'prop-types'
+
+import { PreviewContext } from '../util/context'
 
 export const Analytics = () => (
     <React.Fragment>
         <AnalyticsPermissionModal />
-        <GoogleAnalytics />
+        <GoogleAnalyticsWrapper />
     </React.Fragment>
 )
 
 const useAnalyticsPermissionSettings = () => {
-    const [isEnabled, setIsEnabled] = useState(null)
+    const [analyticsEnabled, setAnalyticsEnabled] = useState(undefined)
 
-    // Synchronises isEnabled flag with localStorage
+    // Synchronises analyticsEnabled flag with localStorage
     useEffect(() => {
-        if (isEnabled !== localStorage.getItem("Analytics Permission")) {
-            if (isEnabled === null) {
-                setIsEnabled(localStorage.getItem("Analytics Permission"))
-            }
-            else {
-                localStorage.setItem("Analytics Permission", isEnabled)
-            }
+        if (analyticsEnabled === undefined) {
+            setAnalyticsEnabled(localStorage.getItem("Analytics Permission"))
+        }
+        else if (analyticsEnabled !== null) {
+            localStorage.setItem("Analytics Permission", analyticsEnabled)
         }
     })
 
-    return [isEnabled, setIsEnabled]
+    return [analyticsEnabled, setAnalyticsEnabled]
 }
 
 const AnalyticsPermissionModal = () => {
-    const [isEnabled, setIsEnabled] = useAnalyticsPermissionSettings()
+    const [analyticsEnabled, setAnalyticsEnabled] = useAnalyticsPermissionSettings()
+    const [modalActive, setModalActive] = useState(analyticsEnabled)
+
+    useEffect(() => {
+        setModalActive(analyticsEnabled === null)
+    }, [analyticsEnabled])
 
     return (
-        <div className={`modal ${(isEnabled === null) ? "is-active" : ""}`}>
-            <div className="modal-background"></div>
+        <div className={`modal ${(modalActive) ? "is-active" : ""}`}>
+            <div className="modal-background"
+                 onClick={() => setModalActive(false)} />
             <div className="modal-card">
                 <header className="modal-card-head">
                     <p className="modal-card-title">Modal title</p>
@@ -43,11 +50,11 @@ const AnalyticsPermissionModal = () => {
                 </section>
                 <footer className="modal-card-foot">
                     <button className="button is-success"
-                            onClick={() => setIsEnabled("1")}>
+                            onClick={() => setAnalyticsEnabled("1")}>
                         Yes
                     </button>
                     <button className="button"
-                            onClick={() => setIsEnabled("0")}>
+                            onClick={() => setAnalyticsEnabled("0")}>
                         Nah
                     </button>
                 </footer>
@@ -56,12 +63,18 @@ const AnalyticsPermissionModal = () => {
     )
 }
 
+const GoogleAnalyticsWrapper = () => (
+    <PreviewContext.Consumer>
+        {(value) => <GoogleAnalytics isPreview={value} />}
+    </PreviewContext.Consumer>
+)
+
 // Analytics only runs in production mode, not build mode
-const GoogleAnalytics = () => {
-    const [isEnabled] = useAnalyticsPermissionSettings()
+const GoogleAnalytics = ({isPreview}) => {
+    const [analyticsEnabled] = useAnalyticsPermissionSettings()
 
     useEffect(() => {
-        if (isEnabled === "1") {
+        if (analyticsEnabled === "1" && !isPreview) {
             if (!ReactGA.ga()) {
                 ReactGA.initialize("UA-63562931-2") // for debugging, add argument { "debug": true }
             }
@@ -71,3 +84,5 @@ const GoogleAnalytics = () => {
 
     return null
 }
+
+GoogleAnalytics.propTypes = { isPreview: PropTypes.bool }
