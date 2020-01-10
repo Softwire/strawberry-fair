@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import ReactGA from 'react-ga'
 import PropTypes from 'prop-types'
 import OutsideClickHandler from 'react-outside-click-handler'
+import { Link } from 'gatsby'
 
 import { PreviewContext } from '../util/context'
 
@@ -48,7 +49,17 @@ const CookieBanner = ({isPreview}) => {
                 <div className="cookies-banner notification">
                     <button className="delete"
                             onClick={() => setBannerActive(false)} />
-                    Enable blah?
+                    <p>
+                        Feed me cookies?
+                    </p>
+                    <p>
+                        Find out how
+                        {"\u00A0"}
+                        <Link to="/privacy">
+                            our cookies are baked
+                        </Link>
+                        .
+                    </p>
                     <footer>
                         <button className="button is-success"
                                 onClick={() => setCookiesEnabled("1")}>
