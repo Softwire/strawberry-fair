@@ -127,25 +127,39 @@ $strawberry-card-size: 14rem;
     background-color: $light-grey;
 }
 
-.video-container {
-    @media(max-width: 560px + 2*$gap) {
-        position: relative;
-        padding-bottom: 56.25%;
-        padding-top: 30px; 
-        width: 100%;
-        height: 0; 
-        max-height: 315px;
-        overflow: hidden;
-    }
+@mixin responsive-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; 
+    width: 100%;
+    height: 0; 
+    max-height: 315px;
+    overflow: hidden;
 }
-.video-container iframe {
+
+@mixin responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-container {
+    &.is-large-on-desktop {
+        @include responsive-container()
+    }
     @media(max-width: 560px + 2*$gap) {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        max-height: 315px;
-        max-width: 560px;
+        @include responsive-container;
+    }
+    iframe {
+        @media(max-width: 560px + 2*$gap) {
+            @include responsive-iframe;
+            max-height: 315px;
+            max-width: 560px;
+        }
+    }
+    &.is-large-on-desktop iframe {
+        @include responsive-iframe;
     }
 }
