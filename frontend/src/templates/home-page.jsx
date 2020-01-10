@@ -46,7 +46,8 @@ HomePage.propTypes = {
 
 const additionalPropsExtractor = graphqlData => ({
   contentBlocksHtml: graphqlData.markdownRemark.fields.contentBlocksHtml,
-  newsArticles: graphqlData.newsData.edges
+  newsArticles: graphqlData.newsData.edges,
+  tabTitle: 'Strawberry Fair'
 })
 
 export default site(HomePage, additionalPropsExtractor)
