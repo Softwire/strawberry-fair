@@ -95,6 +95,7 @@ definitions:
       - 'Meeting - Programming'   # MAKE SURE YOU UPDATE IT IN
       - 'Meeting - Finance'       # src/components/calendar/Events.jsx
       - 'Band competition'        # AS WELL
+      - 'Other'
       multiple: true
   - pageTitles: &pageTitles
       label: Page Titles
@@ -158,7 +159,6 @@ collections:
           - *title
           - *subtitle
           - *hero
-          - *body
       - file: "frontend/src/pages/calendar.md"
         label: "Calendar Page"
         name: "calendar-page"
