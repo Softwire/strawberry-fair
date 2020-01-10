@@ -60,9 +60,9 @@ definitions:
       name: contentBlocks
       widget: list
       fields:
+        - *scrapbookImages
         - {label: Content Block Title, name: title, widget: string}
         - {label: Content Block Subtitle, name: subtitle, widget: string}
-        - *scrapbookImages
         - {label: Content Block Body, name: _markdown_contentBody, widget: markdown}
         - *strawberryTile
   - calendarBlock: &calendarBlock
