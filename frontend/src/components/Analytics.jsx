@@ -2,19 +2,16 @@ import React, {useEffect, useState} from 'react'
 
 export const Analytics = () => (
     <React.Fragment>
-        <AnalyticsPermissionPopUp />
+        <AnalyticsPermissionModal />
         <GoogleAnalyticsInitialisation />
     </React.Fragment>
 )
 
 const useAnalyticsPermissionSettings = () => {
-    const [isEnabled, setIsEnabled] = useState(null)
+    const [isEnabled, setIsEnabled] = useState(localStorage.getItem("Analytics Permission"))
 
     useEffect(() => {
-        if (isEnabled === null) {
-            setIsEnabled(localStorage.getItem("Analytics Permission"))
-        }
-        else if (isEnabled !== localStorage.getItem("Analytics Permission")) {
+        if (isEnabled !== null) {
             localStorage.setItem("Analytics Permission", isEnabled)
         }
     })
@@ -22,7 +19,7 @@ const useAnalyticsPermissionSettings = () => {
     return [isEnabled, setIsEnabled]
 }
 
-const AnalyticsPermissionPopUp = () => {
+const AnalyticsPermissionModal = () => {
     const [isEnabled, setIsEnabled] = useAnalyticsPermissionSettings()
 
     return (
@@ -42,7 +39,7 @@ const AnalyticsPermissionPopUp = () => {
                             onClick={() => setIsEnabled("1")}>
                         Yes
                     </button>
-                    <button className="button is-failure"
+                    <button className="button"
                             onClick={() => setIsEnabled("0")}>
                         Nah
                     </button>
