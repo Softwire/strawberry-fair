@@ -15,8 +15,10 @@ export const Layout = ({children, heroData, title, subtitle}) => (
         </Header>
         <div id="root-layout" className="section">
             <div className="container">
-                <HeaderButtons/>
-                <Titles title={title} subtitle={subtitle} />
+                <div className="title-and-buttons">
+                    <HeaderButtons />
+                    <Titles title={title} subtitle={subtitle} />
+                </div>
                 {children}
                 <Footer />
             </div>
