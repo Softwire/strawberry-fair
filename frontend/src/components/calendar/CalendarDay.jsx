@@ -78,11 +78,6 @@ const CalendarDay = ({dateTime, events}) => {
     } else if (eventsWithPics.length === 1) {
         const eventWithPic = eventsWithPics[0]
 
-
-        eventWithPic.frontmatter.image.srcNode.childImageSharp.editedFluid.src || eventWithPic.frontmatter.image.src
-
-        console.log(eventWithPic)
-
         internals = (
             <React.Fragment>
                 <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
