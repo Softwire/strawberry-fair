@@ -1,7 +1,10 @@
 ---
 templateKey: event-info
 title: Friendly Tree
-dateTime: 2020-12-24T15:40:45.883Z
+dateTimeRange:
+  startDateTime: 2020-12-24T15:40:45.883Z
+  endDateTime: 2020-12-24T16:40:45.883Z
+  provideEnd: true
 eventTypes:
   - Benefit gig
   - Band competition

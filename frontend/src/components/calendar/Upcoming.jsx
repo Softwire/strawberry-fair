@@ -11,10 +11,9 @@ import { getEventList } from './getEventList'
 import { PreviewContext } from '../../util/context'
 import { useFilters } from '../../util/filters'
 import { isOnOrAfterDay } from '../../util/dates'
-import { displayStyle } from '../../templates/event-info'
+import { generateEventSubtitle } from '../../templates/event-info'
 
 export const EventMediaBlock = ({event}) => {
-    const date = new Date(event.frontmatter.dateTime)
     const eventUrl = event.fields.slug
 
     return (
@@ -28,7 +27,7 @@ export const EventMediaBlock = ({event}) => {
         <div className="media-content">
             <Link to={eventUrl}>
                 <h2 className="title is-4"><strong>{event.frontmatter.title}</strong></h2>
-                <h3 className="subtitle is-5">{date.toLocaleString("en-GB", displayStyle)}</h3>
+                <h3 className="subtitle is-5">{generateEventSubtitle({markdownRemark: event})}</h3>
             </Link>
             <HTMLContentSmall className="add-margin-top" content={event.excerpt} />
         </div>
@@ -65,7 +64,7 @@ const UpcomingWithContext = ({isPreview, previewEventList}) => {
 
     // Get list of events occurring today or later
     let events = isPreview ? previewEventList : getEventList()
-    events = events.filter(event => isOnOrAfterDay(new Date(), new Date(event.frontmatter.dateTime)))
+    events = events.filter(event => isOnOrAfterDay(new Date(), new Date(event.frontmatter.dateTimeRange.provideEnd ? event.frontmatter.dateTimeRange.endDateTime : event.frontmatter.dateTimeRange.startDateTime)))
 
     const maxItems = 5
 
