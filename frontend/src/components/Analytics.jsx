@@ -1,18 +1,25 @@
 import React, {useEffect, useState} from 'react'
+import ReactGA from 'react-ga'
 
 export const Analytics = () => (
     <React.Fragment>
         <AnalyticsPermissionModal />
-        <GoogleAnalyticsInitialisation />
+        <GoogleAnalytics />
     </React.Fragment>
 )
 
 const useAnalyticsPermissionSettings = () => {
-    const [isEnabled, setIsEnabled] = useState(localStorage.getItem("Analytics Permission"))
+    const [isEnabled, setIsEnabled] = useState(null)
 
+    // Synchronises isEnabled flag with localStorage
     useEffect(() => {
-        if (isEnabled !== null) {
-            localStorage.setItem("Analytics Permission", isEnabled)
+        if (isEnabled !== localStorage.getItem("Analytics Permission")) {
+            if (isEnabled === null) {
+                setIsEnabled(localStorage.getItem("Analytics Permission"))
+            }
+            else {
+                localStorage.setItem("Analytics Permission", isEnabled)
+            }
         }
     })
 
@@ -49,12 +56,18 @@ const AnalyticsPermissionModal = () => {
     )
 }
 
-const GoogleAnalyticsInitialisation = () => {
+// Analytics only runs in production mode, not build mode
+const GoogleAnalytics = () => {
     const [isEnabled] = useAnalyticsPermissionSettings()
 
-    if (isEnabled === "1") {
-        // Enable G.A.
-        return null
-    }
+    useEffect(() => {
+        if (isEnabled === "1") {
+            if (!ReactGA.ga()) {
+                ReactGA.initialize("UA-63562931-2") // for debugging, add argument { "debug": true }
+            }
+            ReactGA.pageview(location.pathname)
+        }
+    })
+
     return null
 }
