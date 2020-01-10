@@ -54,10 +54,11 @@ $breadcrumb-item-hover-color: $primary;
 /* Bulma provides default styling (can be imported in separate modules as required) */
 @import "bulma";
 
+
 .section {
-    // do not side-pad nested sections
-    // e.g. home-page
-    .section {
+    // do not side-pad nested sections e.g. home-page
+    // the section-root class can be used to override this behaviour
+    .section:not(.section-root) {
         padding-left: 0;
         padding-right: 0;
     }
