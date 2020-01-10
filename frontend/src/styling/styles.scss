@@ -259,3 +259,11 @@ $strawberry-card-size: 14rem;
 .event-download-button {
     margin-bottom: 1rem;
 }
+
+.cookies-banner {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    background: $light-grey;
+}
