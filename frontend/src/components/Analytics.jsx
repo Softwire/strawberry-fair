@@ -46,7 +46,8 @@ const CookieBanner = ({isPreview}) => {
         return (
             <OutsideClickHandler onOutsideClick={() => setBannerActive(false)}>
                 <div className="cookies-banner notification">
-                    <button className="delete" />
+                    <button className="delete"
+                            onClick={() => setBannerActive(false)} />
                     Enable blah?
                     <footer>
                         <button className="button is-success"
