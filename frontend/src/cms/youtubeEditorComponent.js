@@ -17,7 +17,6 @@ export const youtubeEditorComponent = {
     pattern: /<figure(?:\s.*?)?(\sis-large-on-desktop)?(?:\s.*?)?>(<iframe(?:\s.*?)?\ssrc="https:\/\/www\.youtube\.com.*?"(?:\s.*?)?><\/iframe>)<\/figure>/,
     // Function to extract data elements from the regexp match
     fromBlock: function(match) {
-      console.log(match)
       return {iframe: match[2], largeOnDesktop: !!match[1]}
     },
     // Function to create a text block from an instance of this component

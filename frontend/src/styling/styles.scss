@@ -147,7 +147,7 @@ $strawberry-card-size: 14rem;
 
 .video-container {
     &.is-large-on-desktop {
-        @include responsive-container()
+        @include responsive-container;
     }
     @media(max-width: 560px + 2*$gap) {
         @include responsive-container;
