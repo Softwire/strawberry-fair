@@ -16,7 +16,7 @@ videoAndText: >-
   This is a youtube video:
 
 
-  <figure class="video-container"><iframe height="315" width="560"
+  <figure class="video-container is-marginless"><iframe height="315" width="560"
   src="https://www.youtube.com/embed/KYniUCGPGLs" frameborder="0"
   allowfullscreen="true"></iframe></figure>
 ---
@@ -24,7 +24,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ##This video is outside the frontmatter:
 
-<figure class="video-container"><iframe height="315" width="560" src="https://www.youtube.com/embed/hEIg-ycc48s" frameborder="0" allowfullscreen="true"></iframe></figure>
+<figure class="video-container is-marginless"><iframe height="315" width="560" src="https://www.youtube.com/embed/hEIg-ycc48s" frameborder="0" allowfullscreen="true"></iframe></figure>
 
 Sem et tortor consequat id porta. Neque laoreet suspendisse interdum consectetur libero id. Purus viverra accumsan in nisl. Tristique risus nec feugiat in. Habitasse platea dictumst quisque sagittis purus sit amet. Sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit. Et ultrices neque ornare aenean euismod elementum. Donec pretium vulputate sapien nec sagittis aliquam malesuada. Nulla pellentesque dignissim enim sit amet venenatis urna. Lorem ipsum dolor sit amet consectetur adipiscing. Vivamus at augue eget arcu dictum varius duis at. In hendrerit gravida rutrum quisque non tellus orci ac. Dis parturient montes nascetur ridiculus mus mauris. Bibendum enim facilisis gravida neque convallis a cras. Fermentum iaculis eu non diam phasellus. Euismod elementum nisi quis eleifend quam adipiscing vitae. Quis risus sed vulputate odio ut enim blandit volutpat maecenas. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur.
 

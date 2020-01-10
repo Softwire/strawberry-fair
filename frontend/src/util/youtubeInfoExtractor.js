@@ -10,5 +10,5 @@ export function getVideoInfoString(iframe) {
 
 export function getSimplifiedIframe({iframe}) {
     const videoInfo = getVideoInfoString(iframe)
-    return videoInfo ? '<figure class="video-container"><iframe ' + videoInfo + ' frameborder="0" allowfullscreen="true"></iframe></figure>' : ''
+    return videoInfo ? '<figure class="video-container is-marginless"><iframe ' + videoInfo + ' frameborder="0" allowfullscreen="true"></iframe></figure>' : ''
 }
