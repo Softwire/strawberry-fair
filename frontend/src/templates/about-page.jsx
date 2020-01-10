@@ -9,10 +9,10 @@ import { site } from '../util/templating'
 // This is used by the websitesite and for CMS previews
 export const AboutPage = ({content, contentComponent, strawberryTiles}) => {
     const BodyComponent = contentComponent || HTMLContent
-
+    
     return (
       <div className="columns reverse-columns">
-        <StrawberryTiles tileTextArray={strawberryTiles}/>
+        <StrawberryTiles strawberryTiles={strawberryTiles}/>
         <div className="column">
           <BodyComponent content={content} />
         </div>
@@ -34,7 +34,12 @@ query aboutPageTemplate($id: String!) {
       frontmatter {
         title
         subtitle
-        strawberryTiles
+        strawberryTiles {
+          strawberryTile {
+            isPublic
+            text
+          }
+        }
       }
       html
     }
