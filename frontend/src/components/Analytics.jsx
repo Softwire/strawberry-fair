@@ -8,10 +8,13 @@ export const Analytics = () => (
 )
 
 const useAnalyticsPermissionSettings = () => {
-    const [isEnabled, setIsEnabled] = useState(localStorage.getItem("Analytics Permission"))
+    const [isEnabled, setIsEnabled] = useState(null)
 
     useEffect(() => {
-        if (isEnabled !== localStorage.getItem("Analytics Permission")) {
+        if (isEnabled === null) {
+            setIsEnabled(localStorage.getItem("Analytics Permission"))
+        }
+        else if (isEnabled !== localStorage.getItem("Analytics Permission")) {
             localStorage.setItem("Analytics Permission", isEnabled)
         }
     })
@@ -22,8 +25,31 @@ const useAnalyticsPermissionSettings = () => {
 const AnalyticsPermissionPopUp = () => {
     const [isEnabled, setIsEnabled] = useAnalyticsPermissionSettings()
 
-    return null
-    // return pop up, whose buttons call setIsEnabled with "0" or "1"
+    return (
+        <div className={`modal ${(isEnabled === null) ? "is-active" : ""}`}>
+            <div className="modal-background"></div>
+            <div className="modal-card">
+                <header className="modal-card-head">
+                    <p className="modal-card-title">Modal title</p>
+                </header>
+                <section className="modal-card-body">
+                    <p>
+                        Enable blah?
+                    </p>
+                </section>
+                <footer className="modal-card-foot">
+                    <button className="button is-success"
+                            onClick={() => setIsEnabled("1")}>
+                        Yes
+                    </button>
+                    <button className="button is-failure"
+                            onClick={() => setIsEnabled("0")}>
+                        Nah
+                    </button>
+                </footer>
+            </div>
+        </div>
+    )
 }
 
 const GoogleAnalyticsInitialisation = () => {
@@ -33,8 +59,5 @@ const GoogleAnalyticsInitialisation = () => {
         // Enable G.A.
         return null
     }
-    else {
-        // Perhaps we should check if GA is enabled and disable it if necessary?
-        return null
-    }
+    return null
 }
