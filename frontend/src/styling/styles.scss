@@ -51,9 +51,10 @@ $tabs-link-active-color: $primary;
 $breadcrumb-item-color: $subtitle-color;
 $breadcrumb-item-hover-color: $primary;
 
+$navbar-breakpoint: 1060px;
+
 /* Bulma provides default styling (can be imported in separate modules as required) */
 @import "bulma";
-
 
 .section {
     // do not side-pad nested sections e.g. home-page
