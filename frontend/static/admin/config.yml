@@ -88,7 +88,7 @@ definitions:
       - 'Meeting - Programming'   # MAKE SURE YOU UPDATE IT IN
       - 'Meeting - Finance'       # src/components/calendar/Events.jsx
       - 'Band competition'        # AS WELL
-      - 'Others'
+      - 'Other'
       multiple: true
   - pageTitles: &pageTitles
       label: Page Titles

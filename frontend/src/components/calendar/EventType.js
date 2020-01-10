@@ -6,5 +6,5 @@ export const eventTypeList = [
     'Meeting - Programming',
     'Meeting - Finance',
     'Band competition',
-    'Others',
+    'Other',
 ]
