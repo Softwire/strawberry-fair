@@ -33,6 +33,16 @@ $navbar-dropdown-arrow: $primary;
 
 $section-padding: 0 1.5rem;
 
+/* Font sizing - increased from bulma defaults */
+$size-1: 3.5rem;
+$size-2: 3rem;
+$size-3: 2.5rem;
+$size-4: 2rem;
+$size-5: 1.5rem;
+$size-6: 1.25rem;
+$size-7: 1rem;
+$size-8: 0.75rem;
+
 $scrapbook-padding-mobile: 0.3rem;
 
 $tabs-link-active-color: $primary;
@@ -40,8 +50,27 @@ $tabs-link-active-color: $primary;
 $breadcrumb-item-color: $subtitle-color;
 $breadcrumb-item-hover-color: $primary;
 
+$navbar-breakpoint: 1060px;
+
 /* Bulma provides default styling (can be imported in separate modules as required) */
 @import "bulma";
+
+.section {
+    // do not side-pad nested sections e.g. home-page
+    // the section-root class can be used to override this behaviour
+    .section:not(.section-root) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.section,
+div {
+    &.home-page-section {
+        padding-bottom: 4em;
+        padding-top: 2em;
+    }
+}
 
 /* Class styling */
 @media(max-width: $tablet){
@@ -138,14 +167,34 @@ a:hover, a:active {
     }
 }
 
-// Padding after title and subtitle
-.titles {
-    padding-bottom: 1.5rem;
-}
-
 .title-and-buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+
     .buttons {
-        margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 0 0 auto;
+        margin: 1rem 0 1rem 1rem;
+        .button {
+            // !important is needed to override Bulma pseudo-selectors
+            // and ensure even spacing on mobile
+            margin: 0.25rem !important;
+            padding: 2rem;
+        }
+    }
+
+    @media(max-width: $tablet) {
+        flex-direction: column;
+        justify-content: space-between;
+
+        .buttons {
+            margin: 0 0 1rem 0;
+        }
     }
 }
 
@@ -196,10 +245,14 @@ $strawberry-card-size: 14rem;
     width: 17rem;
 }
 
-// Ensures the header buttons are centred on mobile
-.centre-buttons {
-    text-align: center;
-    display: block;
+// Increase spacing within CMS markdown content
+.content {
+    h2 {
+        margin-top: 32px;
+    }
+    p {
+        margin-top: 24px;
+    }
 }
 
 // Add a little more spacing after the calendar download button
