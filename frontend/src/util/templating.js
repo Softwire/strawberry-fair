@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
+import _ from 'lodash'
 
 import { Content } from '../components/Content'
 import { PreviewContextWrapper } from './context'
@@ -94,7 +95,7 @@ export const site = (component, additionalPropsExtractor = () => {}) => {
         return (
             <React.Fragment>
                 <Helmet>
-                    <title>{layoutProps.tabTitle ? layoutProps.tabTitle : (layoutProps.title ? layoutProps.title : 'Strawberry Fair')}</title>
+                    <title>{layoutProps.tabTitle || layoutProps.title || 'Strawberry Fair'}</title>
                 </Helmet>
                 <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle}>
                     {insideLayout}
@@ -123,12 +124,8 @@ const siteInsideLayout = (component, data = {}, pageContext = {}, additionalProp
         Object.assign(newProps, pageContext)
     }
 
-    if (data.heroData &&
-        data.heroData.nodes &&
-        data.heroData.nodes[0] &&
-        data.heroData.nodes[0].frontmatter &&
-        data.heroData.nodes[0].frontmatter.heroData) {
-            newProps.heroData = data.heroData.nodes[0].frontmatter.heroData
+    if (_.has(data.heroData, 'nodes[0].frontmatter.heroData')) {
+        newProps.heroData = data.heroData.nodes[0].frontmatter.heroData
     }
         
     Object.assign(newProps, additionalPropsExtractor(data, pageContext))
@@ -140,37 +137,13 @@ const siteInsideLayout = (component, data = {}, pageContext = {}, additionalProp
 const extractLayoutProps = (data = {}, pageContext = {}, additionalPropsExtractor = () => {}) => {
     const layoutProps = {}
 
-    if (data.markdownRemark &&
-        data.markdownRemark.frontmatter) {
-            layoutProps.title = data.markdownRemark.frontmatter.title
-            layoutProps.subtitle = data.markdownRemark.frontmatter.subtitle
+    if (_.has(data.markdownRemark, 'frontmatter')) {
+        layoutProps.title = data.markdownRemark.frontmatter.title
+        layoutProps.subtitle = data.markdownRemark.frontmatter.subtitle
     }
 
     if (data.heroData) {
-        if (data.heroData.nodes &&
-            data.heroData.nodes[0] &&
-            data.heroData.nodes[0].frontmatter &&
-            data.heroData.nodes[0].frontmatter.heroData) {
-                layoutProps.heroData = data.heroData.nodes[0].frontmatter.heroData
-        } else {
-            layoutProps.heroData = data.heroData
-        }
-    }
-
-    const additionalProps = additionalPropsExtractor(data, pageContext) || {}
-
-    // Additional props overwrite provided ones
-    if (additionalProps.tabTitle) {
-        layoutProps.tabTitle = additionalProps.tabTitle
-    }
-    if (additionalProps.title) {
-        layoutProps.title = additionalProps.title
-    }
-    if (additionalProps.subtitle) {
-        layoutProps.subtitle = additionalProps.subtitle
-    }
-    if (additionalProps.heroData) {
-        layoutProps.heroData = additionalProps.heroData
+        layoutProps.heroData = _.get(data.heroData.nodes, '[0].frontmatter.heroData', data.heroData)
     }
 
     Object.assign(layoutProps, additionalPropsExtractor(data, pageContext))
