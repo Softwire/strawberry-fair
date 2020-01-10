@@ -25,5 +25,10 @@
     "rules": {
         "react/prop-types": 1,
         "no-var": 1
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
     }
 }
