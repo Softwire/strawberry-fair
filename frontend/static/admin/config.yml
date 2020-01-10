@@ -47,7 +47,7 @@ definitions:
       widget: object
       fields:
         - {label: Display Tile, name: isPublic, widget: boolean, default: false}
-        - {label: Text, name: text, widget: string, required: false, hint: 200 characters max, pattern: ["^[\\s\\S]{0,200}$", 200 characters max]}
+        - {label: Text, name: text, widget: text, required: false, hint: 140 characters max, pattern: ["^.{0,140}$", "Must have less than 140 characters"]}
   - scrapbookImages: &scrapbookImages
       label: Scrapbook Images
       name: scrapbookImages
