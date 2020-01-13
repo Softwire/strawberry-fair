@@ -20,7 +20,7 @@ You should now see your video appearing on the preview.`},
  You should see the video change in size as you toggle the switch.'}
     ],
     // Pattern to identify a block as being an instance of this component
-    pattern: /<figure(?:\s.*?)?(\sis-large-on-desktop)?(?:\s.*?)?>(<iframe(?:\s.*?)?\ssrc="https:\/\/www\.youtube\.com.*?"(?:\s.*?)?><\/iframe>)<\/figure>/,
+    pattern: /<figure(?:\s.*?)?(\sis-large-on-desktop)?(?:\s.*?)?">(<iframe(?:\s.*?)?\ssrc="https:\/\/www\.youtube\.com.*?"(?:\s.*?)?><\/iframe>)<\/figure>/,
     // Function to extract data elements from the regexp match
     fromBlock: function(match) {
       return {iframe: match[2], largeOnDesktop: !!match[1]}
