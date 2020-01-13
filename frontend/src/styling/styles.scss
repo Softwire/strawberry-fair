@@ -145,21 +145,27 @@ $strawberry-card-size: 14rem;
     height: 100%;
 }
 
-.video-container {
-    &.is-large-on-desktop {
-        @include responsive-container;
-    }
-    @media(max-width: 560px + 2*$gap) {
-        @include responsive-container;
-    }
-    iframe {
-        @media(max-width: 560px + 2*$gap) {
-            @include responsive-iframe;
-            max-height: 315px;
-            max-width: 560px;
+.content {
+    figure {
+        &.video-container {
+            margin-right: 0px;
+            margin-left: 0px;
+            &.is-large-on-desktop {
+                @include responsive-container;
+            }
+            @media(max-width: 560px + 2*$gap) {
+                @include responsive-container;
+            }
+            iframe {
+                @media(max-width: 560px + 2*$gap) {
+                    @include responsive-iframe;
+                    max-height: 315px;
+                    max-width: 560px;
+                }
+            }
+            &.is-large-on-desktop iframe {
+                @include responsive-iframe;
+            }
         }
-    }
-    &.is-large-on-desktop iframe {
-        @include responsive-iframe;
     }
 }

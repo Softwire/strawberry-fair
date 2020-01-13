@@ -11,5 +11,5 @@ export function getVideoInfoString(iframe) {
 export function getSimplifiedIframe({iframe, largeOnDesktop}) {
     const videoInfo = getVideoInfoString(iframe)
     const extraClass = largeOnDesktop ? ' is-large-on-desktop' : '' 
-    return videoInfo ? '<figure class="video-container' + extraClass + ' is-marginless"><iframe ' + videoInfo + ' frameborder="0" allowfullscreen="true"></iframe></figure>' : ''
+    return videoInfo ? `<figure class="video-container${extraClass}"><iframe ${videoInfo} frameborder="0" allowfullscreen="true"></iframe></figure>` : ''
 }

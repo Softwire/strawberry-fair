@@ -13,7 +13,6 @@ import { CalendarPage } from '../templates/calendar-page'
 import { ContactPage } from '../templates/contact-page'
 import { FormPage } from '../templates/form'
 import { Footer } from '../components/Footer.jsx'
-import { YoutubeGallery } from '../templates/youtube-gallery'
 
 import { AccessibleImageControl } from './AccessibleImageWidget'
 import { MultiImageControl } from './MultiImageWidget'
@@ -81,7 +80,6 @@ CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {events: plac
 CMS.registerPreviewTemplate('contact-page', preview(ContactPage))
 CMS.registerPreviewTemplate('forms', preview(FormPage))
 CMS.registerPreviewTemplate('footer', preview(Footer))
-CMS.registerPreviewTemplate('youtube-gallery', preview(YoutubeGallery))
 
 CMS.registerWidget("accessibleImage", AccessibleImageControl)
 CMS.registerWidget("multiImage", MultiImageControl)

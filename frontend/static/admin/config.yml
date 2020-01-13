@@ -1,9 +1,7 @@
 backend:
-  name: git-gateway
-  branch: production
-  accept_roles:
-    - admin
-    - content
+  name: github
+  repo: Softwire/strawberry-fair
+  branch: sf-116
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -40,8 +38,6 @@ definitions:
   - &footerLeftBoxText {label: Left Box Text, name: leftBoxText, widget: markdown}
   - &footerLeftBoxTitle {label: Left Box Title, name: leftBoxTitle, widget: string}
   - &copyright {label: Copyright, name: copyright, widget: string}
-  - &youtube { name: video, label: Embed Youtube Video <>, widget: youtube, extraInfo: true}
-  - &videoAndText { name: videoAndText, label: Video and Text, widget: markdown}
   - contentBlock: &contentBlock
       label: Content Blocks
       name: contentBlocks
@@ -103,14 +99,6 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "frontend/src/pages/youtube-gallery.md"
-        label: "Youtube Gallery"
-        name: "youtube-gallery"
-        fields:
-          - {<<: *key, default: youtube-gallery}
-          - *youtube
-          - *videoAndText
-          - *body
       - file: "frontend/src/pages/index.md"
         label: "Home Page"
         name: "home"
