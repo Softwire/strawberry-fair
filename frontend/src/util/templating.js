@@ -95,6 +95,8 @@ export const site = (component, additionalPropsExtractor = () => {}) => {
         return (
             <React.Fragment>
                 <Helmet>
+                    <meta name="twitter:dnt" content="on" />
+                    <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
                     <title>{layoutProps.tabTitle || layoutProps.title || 'Strawberry Fair'}</title>
                 </Helmet>
                 <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle}>
