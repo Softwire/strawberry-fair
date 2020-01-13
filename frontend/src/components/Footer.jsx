@@ -19,12 +19,11 @@ export const FooterDisplay = ({isPreview, CMSInput}) => {
     //if isPreview is true, then the CMS user is either editing a page with the footer or editing the footer itself. 
     //if CMSInput is not an empty object, then the CMS user is editing the footer.
     let footerContent = isPreview ? (Object.keys(CMSInput).length > 0 ? CMSInput : footerPreviewContent) : getFooterContent()
-
+    
     footerContent.address = convertToHtml(footerContent.address)
-    footerContent.leftBoxText = convertToHtml(footerContent.leftBoxText)
 
     return (
-        <footer className="container">
+        <footer>
             <div className="columns">
                 <div className="column is-half">
                     <GetInTouch invitationText={footerContent.invitationText} />
@@ -54,20 +53,20 @@ export const FooterDisplay = ({isPreview, CMSInput}) => {
 }
 
 const GetInTouch = ({invitationText}) => (
-    <div>
-        <h1 className="title is-1">{invitationText}</h1>
-        <HeaderButtons fontSize="is-size-4" />
+    <div className="invitation-and-buttons">
+        <h1 className="title is-2">{invitationText}</h1>
+        <HeaderButtons />
     </div>
 )
 
 const ContactDetails = ({address, email, facebookAccount, twitterAccount}) => (
-    <div className="columns">
+    <div className="columns is-mobile contact-details">
         <div className="column is-half">
-            <h3 className="title is-4">Visit Us</h3>
+            <h3 className="title is-5">Visit Us</h3>
             <HTMLContentSmall content={address}/>
         </div>
         <div className="column">
-            <h3 className="title is-4">Contact Us</h3>
+            <h3 className="title is-5">Contact Us</h3>
             <div>
                 <FacebookIcon facebookAccount={facebookAccount} />
                 <TwitterIcon twitterAccount={twitterAccount} />
