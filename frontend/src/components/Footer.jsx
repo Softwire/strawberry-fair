@@ -7,7 +7,7 @@ import { PreviewContext } from '../util/context.jsx'
 import { HTMLContentSmall } from './Content'
 import PropTypes from 'prop-types'
 import convertToHtml from '../util/markdown-converter.js'
-
+import HeaderButtons from './headerButtons'
 
 export const Footer = (data) => (
     <PreviewContext.Consumer>
@@ -23,76 +23,103 @@ export const FooterDisplay = ({isPreview, CMSInput}) => {
     footerContent.address = convertToHtml(footerContent.address)
     footerContent.leftBoxText = convertToHtml(footerContent.leftBoxText)
 
-    return(
-    <footer className="footer">
-        <div className="tile is-ancestor">
-            <div className="tile is-parent">
-                <div className="tile is-child box">
-                    <h3 className="title">{footerContent.leftBoxTitle}</h3>
-                    <HTMLContentSmall content={footerContent.leftBoxText}/>
+    return (
+        <footer className="container">
+            <div className="columns is-multiline">
+                <div className="column is-half">
+                    <GetInTouch />
+                </div>
+                <div className="column is-half">
+                    <ContactDetails 
+                        address={footerContent.address}
+                        email={footerContent.email}
+                        facebookAccount={footerContent.facebookAccount}
+                        twitterAccount={footerContent.twitterAccount}
+                    />
+                </div>
+                <div className="column is-half column-align-bottom">
+                    <PrivacyPolicy copyright={footerContent.copyright} />
+                </div>
+                <div className="column is-half">
+                    <EmailSubscription />
                 </div>
             </div>
-            <div className="tile is-parent">
-                <div className="tile is-child box">
-                    <h3 className="tile is-content title">
-                        Follow
-                    </h3>
-                    <div className="tile is-parent">
-                        <a className="icon is-large facebook-colour" href={footerContent.facebookAccount}>
-                            <IconContext.Provider value={{size: "2em"}}>
-                                <FaFacebook />
-                            </IconContext.Provider>
-                        </a>
-                        <a className="icon is-large twitter-colour" href={footerContent.twitterAccount}>
-                            <IconContext.Provider value={{size: "2em"}}>
-                                <FaTwitter />
-                            </IconContext.Provider>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div className="tile is-parent">
-                <div className="tile is-child box">
-                    <h3 className="title">
-                        Contact
-                    </h3>
-                    <HTMLContentSmall content={footerContent.address}/><a href={"mailto:" + footerContent.email}>{footerContent.email}</a>
-                </div>
-            </div>
-        </div>
-        <div className="tile is-ancestor">
-            <div className="tile is-parent">
-                <div className="tile is-child box content">
-                {footerContent.copyright} | <Link to="/privacy"> Cookie & Privacy policies</Link>
-                </div>
-            </div>
-        </div>
-    </footer>
+        </footer>
     )
 }
+
+const GetInTouch = () => (
+    <div>
+        <h1 className="title is-1">Come say hello</h1>
+        <HeaderButtons fontSize="is-size-4" />
+    </div>
+)
+
+const ContactDetails = ({address, email, facebookAccount, twitterAccount}) => (
+    <div className="columns">
+        <div className="column is-half">
+            <h3 className="title is-4">Visit Us</h3>
+            <HTMLContentSmall content={address}/>
+        </div>
+        <div className="column">
+            <h3 className="title is-4">Contact Us</h3>
+            <div>
+                <FacebookIcon facebookAccount={facebookAccount} />
+                <TwitterIcon twitterAccount={twitterAccount} />
+            </div>
+            <br/>
+            <a href={"mailto:" + email}>{email}</a>
+        </div>
+    </div>
+)
+
+const FacebookIcon = ({facebookAccount}) => (
+    <a className="icon is-large facebook-colour" href={facebookAccount}>
+        <IconContext.Provider value={{size: "2em"}}>
+            <FaFacebook />
+        </IconContext.Provider>
+    </a>
+)
+
+const TwitterIcon = ({twitterAccount}) => (
+    <a className="icon is-large twitter-colour" href={twitterAccount}>
+        <IconContext.Provider value={{size: "2em"}}>
+            <FaTwitter />
+        </IconContext.Provider>
+    </a>
+)
+
+const PrivacyPolicy = ({copyright}) => (
+    <div>
+        <p className="align-bottom">
+            {copyright} | <Link to="/privacy"> Cookie & Privacy policies</Link>
+        </p>
+    </div>
+)
+
+const EmailSubscription = ({subscriptionText}) => (
+    <button className="button is-medium is-fullwidth has-background-primary has-text-white">
+        Subscribe and stay in the loop! {subscriptionText}
+    </button>
+)
+
 const getFooterContent = () => {
     const footerContent = useStaticQuery(graphql`
-      query footerContent {
+        query footerContent {
             markdownRemark(fields: {slug: {eq: "/header-and-footer/footer/"}}) {
                 frontmatter {
-                  email
-                  address
-                  facebookAccount
-                  twitterAccount
-                  leftBoxText
-                  leftBoxTitle
-                  copyright
+                    email
+                    address 
+                    facebookAccount
+                    twitterAccount
+                    leftBoxText
+                    leftBoxTitle
+                    copyright
                 }
-              }
-            }`
-          )
-    return {email: footerContent.markdownRemark.frontmatter.email,
-        address: footerContent.markdownRemark.frontmatter.address,
-        facebookAccount: footerContent.markdownRemark.frontmatter.facebookAccount,
-        twitterAccount: footerContent.markdownRemark.frontmatter.twitterAccount,
-        leftBoxText: footerContent.markdownRemark.frontmatter.leftBoxText,
-        leftBoxTitle: footerContent.markdownRemark.frontmatter.leftBoxTitle,
-        copyright: footerContent.markdownRemark.frontmatter.copyright}
+            }
+        }`
+    )
+    return footerContent.markdownRemark.frontmatter
 }
 
 Footer.propTypes = {
@@ -102,4 +129,27 @@ Footer.propTypes = {
 FooterDisplay.propTypes = {
     isPreview: PropTypes.bool.isRequired,
     CMSInput: PropTypes.object
+}
+
+ContactDetails.propTypes = {
+    address: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    facebookAccount: PropTypes.string.isRequired,
+    twitterAccount: PropTypes.string.isRequired,
+}
+
+FacebookIcon.propTypes = {
+    facebookAccount: PropTypes.string.isRequired,
+}
+
+TwitterIcon.propTypes = {
+    twitterAccount: PropTypes.string.isRequired,
+}
+
+PrivacyPolicy.propTypes = {
+    copyright: PropTypes.string.isRequired,
+}
+
+EmailSubscription.propTypes = {
+    subscriptionText: PropTypes.string.isRequired,
 }

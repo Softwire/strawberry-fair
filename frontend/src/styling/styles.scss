@@ -73,6 +73,10 @@ div {
 }
 
 /* Class styling */
+.column-align-bottom {
+    margin-top: auto;
+}
+
 @media(max-width: $tablet){
     .columns{ 
         &.reverse-columns {
@@ -143,6 +147,14 @@ This is necessary because Bulma's experimental column margin classes do not func
 .navbar-dropdown {
     .navbar-item {
         padding: 0;
+    }
+}
+
+footer {
+    padding-top: 4rem;
+
+    .column {
+        padding-bottom: 2rem;
     }
 }
 
