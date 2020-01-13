@@ -1,5 +1,6 @@
 import CMS from 'netlify-cms-app'
 import cloudinary from 'netlify-cms-media-library-cloudinary'
+import { youtubeEditorComponent } from './youtubeEditorComponent'
 
 import '../styling/styles.scss'
 import { HomePage } from '../templates/home-page'
@@ -19,6 +20,9 @@ import { HeroControl } from './HeroWidget'
 import { MultiCollectionRelationControl, MultiCollectionRelationPreview } from './MultiCollectionRelationWidget'
 import { LinkControl, LinkPreview } from './LinkWidget'
 import { DateTimeRangeControl } from './DateTimeRangeWidget'
+import youtube from "netlify-cms-widget-youtube"
+ 
+
 
 const placeholderArticle = {
     node: {
@@ -91,3 +95,8 @@ CMS.registerWidget("hero", HeroControl)
 CMS.registerWidget('multi-collection-relation', MultiCollectionRelationControl, MultiCollectionRelationPreview)
 CMS.registerWidget('link', LinkControl, LinkPreview)
 CMS.registerWidget("dateTimeRange", DateTimeRangeControl)
+CMS.registerWidget("youtube", youtubeControl, youtubePreview)
+
+CMS.registerEditorComponent(youtubeEditorComponent)
+
+

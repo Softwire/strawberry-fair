@@ -259,3 +259,46 @@ $strawberry-card-size: 14rem;
 .event-download-button {
     margin-bottom: 1rem;
 }
+
+@mixin responsive-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; 
+    width: 100%;
+    height: 0; 
+    max-height: 315px;
+    overflow: hidden;
+}
+
+@mixin responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    figure {
+        &.video-container {
+            margin-right: 0px;
+            margin-left: 0px;
+            &.is-large-on-desktop {
+                @include responsive-container;
+            }
+            @media(max-width: 560px + 2*$gap) {
+                @include responsive-container;
+            }
+            iframe {
+                @media(max-width: 560px + 2*$gap) {
+                    @include responsive-iframe;
+                    max-height: 315px;
+                    max-width: 560px;
+                }
+            }
+            &.is-large-on-desktop iframe {
+                @include responsive-iframe;
+            }
+        }
+    }
+}
