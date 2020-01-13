@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 /* LAYOUT CONTROL CONSTANTS */
 
 /** Min height difference ratio between the shortest and tallest inner column (to minimise white space) - must be a num between 0 and 1 */
@@ -12,12 +14,8 @@ const minInnerColWidth = 4
 /** Returns 3-dimensional array representing Bulma column structure of ScrapbookImages component */
 export const generateScrapbookImageMap = (images, isPreview) => {
     // In CMS preview, aspect ratios are ignored and images are not stacked
-    if (isPreview) {
-        const imageMap = mapImagesToColumns(images, true)
-        return setColumnWidths(imageMap, true)
-    }
     const imageList = sortByAspect(images)
-    let imageMap = mapImagesToColumns(imageList)
+    let imageMap = mapImagesToColumns(imageList, isPreview)
     return setColumnWidths(imageMap)
 }
 
@@ -57,7 +55,7 @@ const mapImagesToColumns = (imageList, isPreview=false) => {
     })
 }
 
-const setColumnWidths = (imageMap, isPreview=false) => {
+const setColumnWidths = (imageMap) => {
     const innerColAspects = imageMap.map(outer => outer.map(inner => getInnerColAspect(inner)))
 
     const adjustStartingWidths = widthPair => {
@@ -91,7 +89,7 @@ const setColumnWidths = (imageMap, isPreview=false) => {
 
     // iteratively adjust column heights.
     // For CMS previews we have no aspect ratio information so skip this step.
-    while(!isPreview && loopCounter-- > 0) {
+    while(loopCounter-- > 0) {
         const heights = relativeHeights(innerColAspects, innerColWidths, outerColWidths)
 
         // balance the left inner column heights
@@ -151,7 +149,8 @@ const relativeHeights = (columnAspects, innerColWidths, outerColWidths) => {
     return columnAspects.map((outer, i) => outer.map((inner, j) => outerColWidths[i] * innerColWidths[i][j] / inner))
 }
 
-const getAspect = (image) => image.srcNode.childImageSharp.fluid.aspectRatio
+//** Tries to get the aspect ratio of an image. Aspect ratio is unavailable for CMS previews */
+const getAspect = (image) => _.get(image, 'srcNode.childImageSharp.fluid.aspectRatio', 1)
 
 /** Returns the combined aspect ratio of two images stacked on top of each other */
 const getStackedAspect = (imgA, imgB) => (getAspect(imgA) * getAspect(imgB)) / (getAspect(imgA) + getAspect(imgB))
