@@ -31,7 +31,8 @@ export class HeroControl extends React.Component {
                     new Map({
                         label: "Banner Images",
                         name: "heroImages",
-                        widget: "multiImage"
+                        widget: "multiImage",
+                        hint: "If you leave this empty, with no images, the banner will be filled with a random image."
                     })
                 ]
             })
