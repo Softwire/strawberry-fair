@@ -20,7 +20,6 @@ import { HeroControl } from './HeroWidget'
 import { MultiCollectionRelationControl, MultiCollectionRelationPreview } from './MultiCollectionRelationWidget'
 import { LinkControl, LinkPreview } from './LinkWidget'
 import { DateTimeRangeControl } from './DateTimeRangeWidget'
-import youtube from "netlify-cms-widget-youtube"
  
 
 
@@ -95,7 +94,6 @@ CMS.registerWidget("hero", HeroControl)
 CMS.registerWidget('multi-collection-relation', MultiCollectionRelationControl, MultiCollectionRelationPreview)
 CMS.registerWidget('link', LinkControl, LinkPreview)
 CMS.registerWidget("dateTimeRange", DateTimeRangeControl)
-CMS.registerWidget("youtube", youtubeControl, youtubePreview)
 
 CMS.registerEditorComponent(youtubeEditorComponent)
 
