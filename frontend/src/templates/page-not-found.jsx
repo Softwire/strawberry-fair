@@ -5,27 +5,17 @@ import { site } from '../util/templating'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 
-export const PageNotFound = ({image, interjection, info}) => {
-  const style = {
-    width: "100%",
-    height: "100%"
-  }
-
-  return (
-    <section className="section">
-      <div className="container">
-        <div className="columns is-vcentered">
-          <div className="column is-offset-1 is-5 has-text-centered has-text-weight-medium">
-            <p className="is-size-2"><strong >{interjection}</strong></p>
-            <p className="is-size-3 is-size-5-mobile">{info}</p>
-          </div>
-          <div className="column is-5">
-            <PreviewCompatibleImage imageInfo={image} style={style}/>
-          </div>
-        </div>
-      </div>
-    </section>
-)}
+export const PageNotFound = ({image, interjection, info}) => (
+  <div className="columns is-vcentered">
+    <div className="column is-offset-1 is-5 has-text-centered has-text-weight-medium">
+      <p className="is-size-2"><strong >{interjection}</strong></p>
+      <p className="is-size-3 is-size-5-mobile">{info}</p>
+    </div>
+    <div className="column is-5">
+      <PreviewCompatibleImage imageInfo={image}/>
+    </div>
+  </div>
+)
 
 export default site(PageNotFound)
 
@@ -47,7 +37,6 @@ query pageNotFound($id: String!) {
           }
         }
       }
-      html
     }
     heroData: allMarkdownRemark(filter: {id: {eq: $id}}) {
       ...HeroFragment
