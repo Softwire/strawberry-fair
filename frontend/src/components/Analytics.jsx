@@ -68,7 +68,7 @@ const CookieBanner = ({isPreview}) => {
                                     onClick={() => setCookiesEnabled("0")}>
                                 {data.buttons.decline}
                             </button>
-                            <Link to="/privacy" className="button is-small cookie-button">
+                            <Link to="/privacy/" className="button is-small cookie-button">
                                 {data.buttons.policy}
                             </Link>
                         </div>
