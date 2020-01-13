@@ -135,6 +135,16 @@ definitions:
         - {label: "Image File", name: "src", widget: "image"}
   - &newsImage {<<: *accessibleImage, label: Primary Image, hint: This image will also be used as a preview image for the article}
   - &eventImage {<<: *accessibleImage, label: Event Image, hint: This image will also be used as a preview image for the event}
+  - &cookiesPrimaryText {label: Primary Text, name: primaryText, widget: String}
+  - &cookiesSecondaryText {label: Secondary Text, name: secondaryText, widget: String}
+  - cookiesButtons: &cookiesButtons
+      label: Button Text
+      name: buttons
+      widget: object
+      fields:
+        - {label: Accept Cookies, name: accept, widget: String}
+        - {label: Decline Cookies, name: decline, widget: String}
+        - {label: Read Policy, name: policy, widget: String}
 
 collections:
   - name: "pages"
@@ -166,15 +176,6 @@ collections:
         fields:
           - {<<: *key, default: calendar-page}
           - *hero
-      - file: "frontend/src/pages/privacy.md"
-        label: "Privacy Page"
-        name: "privacy-page"
-        fields:
-          - {<<: *key, default: about-page}
-          - *title
-          - *subtitle
-          - *hero
-          - *body
       - file: frontend/src/pages/contact.md
         label: "Contact Page"
         name: contact-page
@@ -279,3 +280,24 @@ collections:
     fields:
       - *menuTitle
       - *pageTitles
+  - label: Cookies and Privacy
+    name: privacy
+    description: Edit the cookies banner and privacy policy page
+    files:
+      - file: "frontend/src/pages/privacy/privacy.md"
+        label: "Privacy Page"
+        name: "privacy-page"
+        fields:
+          - {<<: *key, default: about-page}
+          - *title
+          - *subtitle
+          - *hero
+          - *body
+      - file: frontend/src/pages/privacy/cookies.md
+        label: Cookies Banner
+        name: cookies
+        fields:
+          - *cookiesPrimaryText
+          - *cookiesSecondaryText
+          - *accessibleImage
+          - *cookiesButtons
