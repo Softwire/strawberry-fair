@@ -8,20 +8,20 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 export const PageNotFound = ({image}) => {
   const style = {
-    width: "60%",
-    height: "60%"
+    width: "100%",
+    height: "100%"
   }
 
   return (
     <section className="section">
       <div className="container">
-        <div className="columns is-centered">
+        <div className="columns is-vertical-center">
+          <div className="column is-half has-text-centered has-text-weight-medium">
+            <p className="is-size-2"><strong >Oh no!</strong></p>
+            <p className="is-size-3 is-size-5-mobile">This page is not suitable for consumption :(</p>
+          </div>
           <div className="column is-half">
-              <div align="center">
-                <PreviewCompatibleImage imageInfo={image} style={style}/>
-                <p className="is-size-2"><strong >Oh no!</strong></p>
-                <p className="is-size-3 is-size-5-mobile">This page is not suitable for consumption :(</p>
-              </div>
+            <PreviewCompatibleImage imageInfo={image} style={style}/>
           </div>
         </div>
       </div>
@@ -37,7 +37,7 @@ query pageNotFound($id: String!) {
         title
         image {
           alt
-          src {
+          srcNode {
             childImageSharp {
               fluid {
                 ...GatsbyImageSharpFluid
