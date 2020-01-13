@@ -218,6 +218,38 @@ a:hover, a:active {
     }
 }
 
+.news-snapshot-title {
+    margin-top: 0.5rem;
+}
+
+
+.main-box {
+    .news-preview {
+        .news-excerpt-long {
+            @extend .is-hidden-mobile
+        }
+    
+        .news-excerpt-short {
+            @extend .is-hidden-tablet
+        }
+    }
+}
+
+.side-box {
+    .news-preview {
+        .news-excerpt-long {
+            display: none;
+        }
+    }
+}
+
+.news-preview {
+    .news-excerpt {
+        margin-bottom: 0;
+    }
+}
+
+
 .title-and-buttons {
     display: flex;
     flex-direction: row-reverse;
@@ -353,3 +385,4 @@ $strawberry-card-size: 14rem;
         }
     }
 }
+
