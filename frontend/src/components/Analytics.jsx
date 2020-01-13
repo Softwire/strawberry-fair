@@ -60,16 +60,14 @@ const CookieBanner = ({isPreview}) => {
                         </Link>
                         .
                     </p>
-                    <footer>
-                        <button className="button is-success"
-                                onClick={() => setCookiesEnabled("1")}>
-                            Yes
-                        </button>
-                        <button className="button"
-                                onClick={() => setCookiesEnabled("0")}>
-                            Nah
-                        </button>
-                    </footer>
+                    <button className="button is-success"
+                            onClick={() => setCookiesEnabled("1")}>
+                        OK
+                    </button>
+                    <button className="button"
+                            onClick={() => setCookiesEnabled("0")}>
+                        No thanks
+                    </button>
                 </div>
             </OutsideClickHandler>
         )
