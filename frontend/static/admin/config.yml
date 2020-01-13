@@ -39,6 +39,8 @@ definitions:
   - &footerLeftBoxText {label: Left Box Text, name: leftBoxText, widget: markdown}
   - &footerLeftBoxTitle {label: Left Box Title, name: leftBoxTitle, widget: string}
   - &copyright {label: Copyright, name: copyright, widget: string}
+  - &interjection {label: Interjection, name: interjection, widget: string}
+  - &info {label: Error Info, name: info, widget: string}
   - strawberryTile: &strawberryTile
       label: StrawberryTile
       name: strawberryTile
@@ -144,6 +146,8 @@ collections:
         fields:
           - {<<: *key, default: page-not-found}
           - *title
+          - *interjection
+          - *info
           - *accessibleImage
       - file: "frontend/src/pages/index.md"
         label: "Home Page"

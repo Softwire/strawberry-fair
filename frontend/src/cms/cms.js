@@ -14,6 +14,7 @@ import { CalendarPage } from '../templates/calendar-page'
 import { ContactPage } from '../templates/contact-page'
 import { FormPage } from '../templates/form'
 import { Footer } from '../components/Footer.jsx'
+import { PageNotFound } from '../templates/page-not-found'
 
 import { MultiImageControl } from './MultiImageWidget'
 import { HeroControl } from './HeroWidget'
@@ -88,6 +89,7 @@ CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {events: plac
 CMS.registerPreviewTemplate('contact-page', preview(ContactPage))
 CMS.registerPreviewTemplate('forms', preview(FormPage))
 CMS.registerPreviewTemplate('footer', preview(Footer))
+CMS.registerPreviewTemplate('404', preview(PageNotFound))
 
 CMS.registerWidget("multiImage", MultiImageControl)
 CMS.registerWidget("hero", HeroControl)
