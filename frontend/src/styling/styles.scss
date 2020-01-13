@@ -262,9 +262,53 @@ $strawberry-card-size: 14rem;
 
 .cookies-banner {
     position: fixed;
-    left: 0px;
-    bottom: 0px;
-    width: 100%;
+    left: 10vw;
+    bottom: 0;
+    width: 80vw;
     background: $light-grey;
     z-index: 1;
+
+    @media(max-width: $tablet) {
+        left: 0;
+        width: 100vw;
+        margin: 0;
+    }
 }
+
+.cookie-buttons-column {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.field.is-grouped.is-grouped-multiline.cookie-buttons-field {
+    margin-bottom: 0;
+    justify-content: flex-end;
+
+    @media(max-width: $tablet) {
+        justify-content: center;
+    }
+}
+
+.cookie-button {
+    margin: 0.25rem;
+
+    @media(max-width: $tablet) {
+        display: flex;
+        width: 100%;
+    }
+}
+
+@media(max-width: $tablet) {
+    .cookie-image-column {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 0;
+    }
+
+    .cookie-image {
+        max-height: 25vh;
+        object-fit: contain;
+    }
+}
+
+
