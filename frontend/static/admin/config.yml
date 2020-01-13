@@ -35,7 +35,6 @@ definitions:
   - &internalLink {label: Link, name: link, widget: link, hint: Choose the path to the page you want this link to point to. Select "<-- Previous Menu" to undo your last selection.  Make sure you select a complete path by either ending your selection with "index" or checking that the link is displayed on this widget.}
   - &text {label: Text, name: text, widget: string}
   - &email {label: Email, name: email, widget: string}
-  - &address {label: Address, name: address, widget: text}
   - &facebook {label: Facebook Account, name: facebookAccount, widget: string}
   - &twitter {label: Twitter Account, name: twitterAccount, widget: string}
   - &invitationText {label: Invitation Text, name: invitationText, widget: string}
@@ -136,6 +135,14 @@ definitions:
         - {label: "Image File", name: "src", widget: "image"}
   - &newsImage {<<: *accessibleImage, label: Primary Image, hint: This image will also be used as a preview image for the article}
   - &eventImage {<<: *accessibleImage, label: Event Image, hint: This image will also be used as a preview image for the event}
+  - address: &address 
+      label: Address
+      name: address
+      widget: object
+      fields: 
+        - {label: Address Line 1, name: firstLine, widget: string}
+        - {label: Address Line 2, name: secondLine, widget: string}
+        - {label: Address Line 3, name: thirdLine, widget: string}
 
 collections:
   - name: "pages"

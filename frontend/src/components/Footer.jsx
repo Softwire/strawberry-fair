@@ -4,9 +4,7 @@ import { FaFacebook, FaTwitter } from 'react-icons/fa'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import footerPreviewContent from '../data/footerPreviewContent'
 import { PreviewContext } from '../util/context.jsx'
-import { HTMLContentSmall } from './Content'
 import PropTypes from 'prop-types'
-import convertToHtml from '../util/markdown-converter.js'
 import HeaderButtons from './headerButtons'
 
 export const Footer = (data) => (
@@ -20,8 +18,6 @@ export const FooterDisplay = ({isPreview, CMSInput}) => {
     //if CMSInput is not an empty object, then the CMS user is editing the footer.
     let footerContent = isPreview ? (Object.keys(CMSInput).length > 0 ? CMSInput : footerPreviewContent) : getFooterContent()
     
-    footerContent.address = convertToHtml(footerContent.address)
-
     return (
         <footer>
             <div className="columns">
@@ -63,7 +59,11 @@ const ContactDetails = ({address, email, facebookAccount, twitterAccount}) => (
     <div className="columns is-mobile contact-details">
         <div className="column is-half">
             <h3 className="title is-5">Visit Us</h3>
-            <HTMLContentSmall content={address}/>
+            <div className="content is-small">
+                <p>{address.firstLine}</p>
+                <p>{address.secondLine}</p>
+                <p>{address.thirdLine}</p>
+            </div>
         </div>
         <div className="column">
             <h3 className="title is-5">Contact Us</h3>
@@ -122,7 +122,11 @@ const getFooterContent = () => {
             markdownRemark(fields: {slug: {eq: "/header-and-footer/footer/"}}) {
                 frontmatter {
                     invitationText
-                    address
+                    address {
+                        firstLine
+                        secondLine
+                        thirdLine
+                    }
                     email
                     facebookAccount
                     twitterAccount
