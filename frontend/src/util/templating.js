@@ -25,7 +25,7 @@ import { Layout } from '../components/Layout'
  * @param {Object} cmsUtilityFns - Utility functions provided by the CMS
  * @returns {Function} Function to be passed into the CMS.registerPreviewTemplate(...) function
  */
-export const preview = (component, placeholderProps = {}, additionalPropsExtractor = () => {}) => {
+export const preview = (component, placeholderProps = {}, additionalPropsExtractor = () => {}, previewWithLayout = true) => {
     /**
      * @param {Object} entry.data - The data read from the CMS in Immutable.js object
      * @param {Function} widgetFor - Utility function provided by the CMS
@@ -50,13 +50,21 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
         const layoutProps = extractLayoutPropsPreview(dataProps, additionalPropsExtractor, widgetsFor)
 
         const isPreview = true
-        return (
-            <PreviewContextWrapper value={isPreview}>
-                <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle}>
+        if (previewWithLayout) {
+            return (
+                <PreviewContextWrapper value={isPreview}>
+                    <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle}>
+                        {component(Object.assign(placeholderProps, previewProps))}
+                    </Layout>
+                </PreviewContextWrapper>
+            )
+        } else {
+            return (
+                <PreviewContextWrapper value={isPreview}>
                     {component(Object.assign(placeholderProps, previewProps))}
-                </Layout>
-            </PreviewContextWrapper>
-        )
+                </PreviewContextWrapper>
+            )
+        }
     }
 
     previewComponent.propTypes = {

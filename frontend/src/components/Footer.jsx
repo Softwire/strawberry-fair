@@ -25,9 +25,9 @@ export const FooterDisplay = ({isPreview, CMSInput}) => {
 
     return (
         <footer className="container">
-            <div className="columns is-multiline">
+            <div className="columns">
                 <div className="column is-half">
-                    <GetInTouch />
+                    <GetInTouch invitationText={footerContent.invitationText} />
                 </div>
                 <div className="column is-half">
                     <ContactDetails 
@@ -37,20 +37,25 @@ export const FooterDisplay = ({isPreview, CMSInput}) => {
                         twitterAccount={footerContent.twitterAccount}
                     />
                 </div>
+            </div>
+            <div className="columns reverse-columns">
                 <div className="column is-half column-align-bottom">
                     <PrivacyPolicy copyright={footerContent.copyright} />
                 </div>
                 <div className="column is-half">
-                    <EmailSubscription />
+                    <EmailSubscription 
+                        emailSubscriptionText={footerContent.emailSubscriptionText}
+                        emailSubscriptionLink={footerContent.emailSubscriptionLink}
+                    />
                 </div>
             </div>
         </footer>
     )
 }
 
-const GetInTouch = () => (
+const GetInTouch = ({invitationText}) => (
     <div>
-        <h1 className="title is-1">Come say hello</h1>
+        <h1 className="title is-1">{invitationText}</h1>
         <HeaderButtons fontSize="is-size-4" />
     </div>
 )
@@ -97,10 +102,13 @@ const PrivacyPolicy = ({copyright}) => (
     </div>
 )
 
-const EmailSubscription = ({subscriptionText}) => (
-    <button className="button is-medium is-fullwidth has-background-primary has-text-white">
-        Subscribe and stay in the loop! {subscriptionText}
-    </button>
+const EmailSubscription = ({emailSubscriptionText, emailSubscriptionLink}) => (
+    <a className="box has-background-primary has-text-white is-size-5"
+        href={emailSubscriptionLink}
+        target="_blank"
+        rel="noreferrer noopener">
+        {emailSubscriptionText}
+    </a>
 )
 
 const getFooterContent = () => {
@@ -108,12 +116,13 @@ const getFooterContent = () => {
         query footerContent {
             markdownRemark(fields: {slug: {eq: "/header-and-footer/footer/"}}) {
                 frontmatter {
+                    invitationText
+                    address
                     email
-                    address 
                     facebookAccount
                     twitterAccount
-                    leftBoxText
-                    leftBoxTitle
+                    emailSubscriptionText
+                    emailSubscriptionLink
                     copyright
                 }
             }
@@ -129,6 +138,10 @@ Footer.propTypes = {
 FooterDisplay.propTypes = {
     isPreview: PropTypes.bool.isRequired,
     CMSInput: PropTypes.object
+}
+
+GetInTouch.propTypes= {
+    invitationText: PropTypes.string.isRequired
 }
 
 ContactDetails.propTypes = {
@@ -151,5 +164,6 @@ PrivacyPolicy.propTypes = {
 }
 
 EmailSubscription.propTypes = {
-    subscriptionText: PropTypes.string.isRequired,
+    emailSubscriptionText: PropTypes.string.isRequired,
+    emailSubscriptionLink: PropTypes.string.isRequired,
 }

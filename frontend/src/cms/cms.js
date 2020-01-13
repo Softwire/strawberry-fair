@@ -12,13 +12,13 @@ import { UpcomingEvents } from '../templates/upcoming-events'
 import { CalendarPage } from '../templates/calendar-page'
 import { ContactPage } from '../templates/contact-page'
 import { FormPage } from '../templates/form'
-import { Footer } from '../components/Footer.jsx'
 
 import { MultiImageControl } from './MultiImageWidget'
 import { HeroControl } from './HeroWidget'
 import { MultiCollectionRelationControl, MultiCollectionRelationPreview } from './MultiCollectionRelationWidget'
 import { LinkControl, LinkPreview } from './LinkWidget'
 import { DateTimeRangeControl } from './DateTimeRangeWidget'
+import { Footer } from '../components/Footer'
 
 const placeholderArticle = {
     node: {
@@ -84,7 +84,7 @@ CMS.registerPreviewTemplate('upcoming-events', preview(UpcomingEvents, {events: 
 CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {events: placeholderEvents}))
 CMS.registerPreviewTemplate('contact-page', preview(ContactPage))
 CMS.registerPreviewTemplate('forms', preview(FormPage))
-CMS.registerPreviewTemplate('footer', preview(Footer))
+CMS.registerPreviewTemplate('footer', preview(Footer, {}, ()=>{}, false))
 
 CMS.registerWidget("multiImage", MultiImageControl)
 CMS.registerWidget("hero", HeroControl)

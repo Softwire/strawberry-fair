@@ -35,11 +35,12 @@ definitions:
   - &internalLink {label: Link, name: link, widget: link, hint: Choose the path to the page you want this link to point to. Select "<-- Previous Menu" to undo your last selection.  Make sure you select a complete path by either ending your selection with "index" or checking that the link is displayed on this widget.}
   - &text {label: Text, name: text, widget: string}
   - &email {label: Email, name: email, widget: string}
-  - &address {label: Address, name: address, widget: markdown}
+  - &address {label: Address, name: address, widget: text}
   - &facebook {label: Facebook Account, name: facebookAccount, widget: string}
   - &twitter {label: Twitter Account, name: twitterAccount, widget: string}
-  - &footerLeftBoxText {label: Left Box Text, name: leftBoxText, widget: markdown}
-  - &footerLeftBoxTitle {label: Left Box Title, name: leftBoxTitle, widget: string}
+  - &invitationText {label: Invitation Text, name: invitationText, widget: string}
+  - &emailSubscriptionText {label: Email Subscription Text, name: emailSubscriptionText, widget: string}
+  - &emailSubscriptionLink {label: Email Subscription Link, name: emailSubscriptionLink, widget: string}
   - &copyright {label: Copyright, name: copyright, widget: string}
   - strawberryTile: &strawberryTile
       label: StrawberryTile
@@ -252,12 +253,13 @@ collections:
         label: "Footer"
         name: "footer"
         fields:
-          - *footerLeftBoxTitle
-          - *footerLeftBoxText
+          - *invitationText
+          - *address
           - *facebook
           - *twitter
-          - *address
           - *email
+          - *emailSubscriptionText
+          - *emailSubscriptionLink
           - *copyright
       - file: "frontend/src/pages/header-and-footer/buttons/get-involved.md"
         label: "Get Involved"
