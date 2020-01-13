@@ -16,6 +16,8 @@ Now in our second year, The Flying Pig Stage is dedicated to bringing you a grea
 
 One thing that ties these wonderful acts together  (apart from musical greatness!) is that each has at some point graced the Flying Pig pub with their presence and left a wonderful and lasting memory. We feel live music has been an important part of Strawberry Fair ever since we started attending it as teenagers and are thrilled to play a part in such a fantastic event.
 
+<figure class="video-container"><iframe height="315" width="560" src="https://www.youtube.com/embed/dAiXlxtEd2k" frameborder="0" allowfullscreen="true"></iframe></figure>
+
 All we need now is you!
 
 Lots of love from all of us at The Flying Pig Stage
