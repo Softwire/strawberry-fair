@@ -1,9 +1,7 @@
 backend:
-  name: git-gateway
-  branch: production
-  accept_roles:
-    - admin
-    - content
+  name: github
+  repo: Softwire/strawberry-fair
+  branch: sf-126
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -140,6 +138,13 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
+      - file: "frontend/src/pages/404.md"
+        label: "404 Page"
+        name: "404"
+        fields:
+          - {<<: *key, default: page-not-found}
+          - *title
+          - *accessibleImage
       - file: "frontend/src/pages/index.md"
         label: "Home Page"
         name: "home"
