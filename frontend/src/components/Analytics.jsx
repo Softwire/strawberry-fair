@@ -2,7 +2,8 @@ import React, {useEffect, useState} from 'react'
 import ReactGA from 'react-ga'
 import PropTypes from 'prop-types'
 import OutsideClickHandler from 'react-outside-click-handler'
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
+import { imageFluidFragment } from '../util/graphql-fragments'
 
 import { PreviewContext } from '../util/context'
 
@@ -90,6 +91,26 @@ const GoogleAnalytics = ({isPreview}) => {
 
     return null
 }
+
+
+const cookieBannerQuery = () => useStaticQuery(graphql`
+    query cookieBannerQuery {
+        allMarkdownRemark(filter: {fields: {slug: {eq: "/privacy/cookies/"}}}) {
+            nodes {
+                frontmatter {
+                    primaryText
+                    secondaryText
+                    ...ImageFluidFragment
+                    buttons {
+                        accept
+                        decline
+                        policy
+                    }
+                }
+            }
+        }
+    }
+`)
 
 AnalyticsFragment.propTypes = { isPreview: PropTypes.bool }
 CookieBanner.propTypes = { isPreview: PropTypes.bool }
