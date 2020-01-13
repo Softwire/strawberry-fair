@@ -1,9 +1,7 @@
 backend:
-  name: git-gateway
-  branch: production
-  accept_roles:
-    - admin
-    - content
+  name: github
+  repo: Softwire/strawberry-fair
+  branch: sf-120
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -135,16 +133,16 @@ definitions:
         - {label: "Image File", name: "src", widget: "image"}
   - &newsImage {<<: *accessibleImage, label: Primary Image, hint: This image will also be used as a preview image for the article}
   - &eventImage {<<: *accessibleImage, label: Event Image, hint: This image will also be used as a preview image for the event}
-  - &cookiesPrimaryText {label: Primary Text, name: primaryText, widget: String}
-  - &cookiesSecondaryText {label: Secondary Text, name: secondaryText, widget: String}
+  - &cookiesPrimaryText {label: Primary Text, name: primaryText, widget: string}
+  - &cookiesSecondaryText {label: Secondary Text, name: secondaryText, widget: string}
   - cookiesButtons: &cookiesButtons
       label: Button Text
       name: buttons
       widget: object
       fields:
-        - {label: Accept Cookies, name: accept, widget: String}
-        - {label: Decline Cookies, name: decline, widget: String}
-        - {label: Read Policy, name: policy, widget: String}
+        - {label: Accept Cookies, name: accept, widget: string}
+        - {label: Decline Cookies, name: decline, widget: string}
+        - {label: Read Policy, name: policy, widget: string}
 
 collections:
   - name: "pages"
