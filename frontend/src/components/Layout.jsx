@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Analytics } from './Analytics'
+import { Analytics } from './analytics/Analytics'
 import { Header } from './Header'
 import { Footer } from './Footer'
 import { Titles } from './Titles'
