@@ -304,9 +304,6 @@ $strawberry-card-size: 14rem;
 }
 
 .cookies-banner {
-    position: fixed;
-    left: 10vw;
-    bottom: 0;
     width: 80vw;
     background: $light-grey;
     z-index: 1;
@@ -316,6 +313,12 @@ $strawberry-card-size: 14rem;
         width: 100vw;
         margin: 0;
     }
+}
+
+.cookies-banner.is-fixed-bottom {
+    position: fixed;
+    left: 10vw;
+    bottom: 0;
 }
 
 .cookie-buttons-column {
