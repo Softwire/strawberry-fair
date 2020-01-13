@@ -152,7 +152,7 @@ const DayText = ({date}) => (
     <p>
         {areSameDay(date, new Date()) ? (
             // This day is today, so render a pencil circle around the day text
-            <img className="pencil-circle" src="/img/pencil-circle.png" width="90" />
+            <img className="pencil-circle" src="/img/pencil-circle.png" width="140" />
         ) : null}
         {date.toLocaleDateString('en-GB', dateDisplayFormatOptions)}
     </p>
