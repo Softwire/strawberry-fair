@@ -2,10 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import { HTMLContent } from '../components/Content'
 import { site } from '../util/templating'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
-import { FaKaaba } from 'react-icons/fa'
+
 
 export const PageNotFound = ({image}) => {
   const style = {
@@ -54,5 +53,6 @@ query pageNotFound($id: String!) {
     }
   }
 `
-
-
+PageNotFound.propTypes = {
+  image: PropTypes.gatsbyImageSharpFluidValidator
+}
