@@ -79,7 +79,10 @@ const ContactDetails = ({address, email, facebookAccount, twitterAccount}) => (
 )
 
 const FacebookIcon = ({facebookAccount}) => (
-    <a className="icon is-large facebook-colour" href={facebookAccount}>
+    <a className="icon is-large facebook-colour"
+        href={facebookAccount}
+        target="_blank"
+        rel="noreferrer noopener">
         <IconContext.Provider value={{size: "2em"}}>
             <FaFacebook />
         </IconContext.Provider>
@@ -87,7 +90,10 @@ const FacebookIcon = ({facebookAccount}) => (
 )
 
 const TwitterIcon = ({twitterAccount}) => (
-    <a className="icon is-large twitter-colour" href={twitterAccount}>
+    <a className="icon is-large twitter-colour" 
+        href={twitterAccount}
+        target="_blank"
+        rel="noreferrer noopener">
         <IconContext.Provider value={{size: "2em"}}>
             <FaTwitter />
         </IconContext.Provider>
