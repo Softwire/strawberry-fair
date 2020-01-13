@@ -3,9 +3,9 @@ import ReactGA from 'react-ga'
 import PropTypes from 'prop-types'
 import OutsideClickHandler from 'react-outside-click-handler'
 import { Link, graphql, useStaticQuery } from 'gatsby'
-import { imageFluidFragment } from '../util/graphql-fragments'
 
 import { PreviewContext } from '../util/context'
+import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 export const Analytics = () => (
     <PreviewContext.Consumer>
@@ -39,6 +39,7 @@ const useCookieSettings = () => {
 const CookieBanner = ({isPreview}) => {
     const [cookiesEnabled, setCookiesEnabled] = useCookieSettings()
     const [bannerActive, setBannerActive] = useState(cookiesEnabled)
+    const data = getCookieBannerData()
 
     useEffect(() => {
         setBannerActive(cookiesEnabled === null)
@@ -51,24 +52,26 @@ const CookieBanner = ({isPreview}) => {
                     <button className="delete"
                             onClick={() => setBannerActive(false)} />
                     <p>
-                        Feed me cookies?
+                        {data.primaryText}
                     </p>
                     <p>
-                        Find out how
-                        {"\u00A0"}
-                        <Link to="/privacy">
-                            our cookies are baked
-                        </Link>
-                        .
+                        {data.secondaryText}
                     </p>
+                    <PreviewCompatibleImage imageInfo={data.image} />
                     <button className="button is-success"
                             onClick={() => setCookiesEnabled("1")}>
-                        OK
+                        {data.buttons.accept}
                     </button>
-                    <button className="button"
+                    <button className="button is-danger"
                             onClick={() => setCookiesEnabled("0")}>
-                        No thanks
+                        {data.buttons.decline}
                     </button>
+                    <button className="button">
+                        {data.buttons.policy}
+                    </button>
+                    <Link to="/privacy">
+                        blah
+                    </Link>
                 </div>
             </OutsideClickHandler>
         )
@@ -92,10 +95,14 @@ const GoogleAnalytics = ({isPreview}) => {
     return null
 }
 
+const getCookieBannerData = () => {
+    const data = cookieBannerQuery()
+    return data.cookieBanner.nodes[0].frontmatter
+}
 
 const cookieBannerQuery = () => useStaticQuery(graphql`
     query cookieBannerQuery {
-        allMarkdownRemark(filter: {fields: {slug: {eq: "/privacy/cookies/"}}}) {
+        cookieBanner: allMarkdownRemark(filter: {fields: {slug: {eq: "/privacy/cookies/"}}}) {
             nodes {
                 frontmatter {
                     primaryText
