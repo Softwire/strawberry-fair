@@ -74,17 +74,23 @@ const homePageAdditionalPropsExtractor = (dataProps, { widgetsFor }) => {
 
 CMS.registerMediaLibrary(cloudinary)
 
-CMS.registerPreviewTemplate('home', preview(HomePage, {newsArticles: placeholderArticles, events: placeholderEvents}, homePageAdditionalPropsExtractor))
+CMS.registerPreviewTemplate('home', preview(HomePage, {
+  placeholderProps: {
+    newsArticles: placeholderArticles,
+    events: placeholderEvents
+  }, 
+  additionalPropsExtractor: homePageAdditionalPropsExtractor
+}))
 CMS.registerPreviewTemplate('about', preview(AboutPage))
 CMS.registerPreviewTemplate('privacy-page', preview(AboutPage))
 CMS.registerPreviewTemplate('events', preview(EventInfo))
 CMS.registerPreviewTemplate('news', preview(NewsArticle))
-CMS.registerPreviewTemplate('news-home', preview(NewsOverview, {newsArticles: placeholderArticles}))
-CMS.registerPreviewTemplate('upcoming-events', preview(UpcomingEvents, {events: placeholderEvents}))
-CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {events: placeholderEvents}))
+CMS.registerPreviewTemplate('news-home', preview(NewsOverview, {placeholderProps: {newsArticles: placeholderArticles}}))
+CMS.registerPreviewTemplate('upcoming-events', preview(UpcomingEvents, {placeholderProps: {events: placeholderEvents}}))
+CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {placeholderProps: {events: placeholderEvents}}))
 CMS.registerPreviewTemplate('contact-page', preview(ContactPage))
 CMS.registerPreviewTemplate('forms', preview(FormPage))
-CMS.registerPreviewTemplate('footer', preview(Footer, {}, ()=>{}, false))
+CMS.registerPreviewTemplate('footer', preview(Footer, {previewWithLayout: false}))
 
 CMS.registerWidget("multiImage", MultiImageControl)
 CMS.registerWidget("hero", HeroControl)
