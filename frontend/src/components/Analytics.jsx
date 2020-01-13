@@ -5,7 +5,6 @@ import OutsideClickHandler from 'react-outside-click-handler'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 
 import { PreviewContext } from '../util/context'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 export const Analytics = () => (
     <PreviewContext.Consumer>
@@ -48,30 +47,32 @@ const CookieBanner = ({isPreview}) => {
     if (bannerActive && !isPreview) {
         return (
             <OutsideClickHandler onOutsideClick={() => setBannerActive(false)}>
-                <div className="cookies-banner notification">
+                <div className="cookies-banner notification columns">
                     <button className="delete"
-                            onClick={() => setBannerActive(false)} />
-                    <p>
-                        {data.primaryText}
-                    </p>
-                    <p>
-                        {data.secondaryText}
-                    </p>
-                    <PreviewCompatibleImage imageInfo={data.image} />
-                    <button className="button is-success"
-                            onClick={() => setCookiesEnabled("1")}>
-                        {data.buttons.accept}
+                            onClick={() => setBannerActive(false)}>
                     </button>
-                    <button className="button is-danger"
-                            onClick={() => setCookiesEnabled("0")}>
-                        {data.buttons.decline}
-                    </button>
-                    <button className="button">
-                        {data.buttons.policy}
-                    </button>
-                    <Link to="/privacy">
-                        blah
-                    </Link>
+                    <div className="column is-1 cookie-image-column">
+                        <img className="cookie-image" alt={data.image.alt} src={data.image.srcNode.publicURL} />
+                    </div>
+                    <div className="column">
+                        <h2 className="is-size-4">{data.primaryText}</h2>
+                        <p>{data.secondaryText}</p>
+                    </div>
+                    <div className="column cookie-buttons-column">
+                        <div className="field is-grouped is-grouped-multiline cookie-buttons-field">
+                            <button className="button is-success is-small cookie-button"
+                                    onClick={() => setCookiesEnabled("1")}>
+                                {data.buttons.accept}
+                            </button>
+                            <button className="button is-small cookie-button"
+                                    onClick={() => setCookiesEnabled("0")}>
+                                {data.buttons.decline}
+                            </button>
+                            <Link to="/privacy" className="button is-small cookie-button">
+                                {data.buttons.policy}
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </OutsideClickHandler>
         )
@@ -107,7 +108,12 @@ const cookieBannerQuery = () => useStaticQuery(graphql`
                 frontmatter {
                     primaryText
                     secondaryText
-                    ...ImageFluidFragment
+                    image {
+                        alt
+                        srcNode {
+                            publicURL
+                        }
+                    }
                     buttons {
                         accept
                         decline
