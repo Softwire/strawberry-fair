@@ -1,9 +1,7 @@
 backend:
-  name: git-gateway
-  branch: production
-  accept_roles:
-    - admin
-    - content
+  name: github
+  repo: Softwire/strawberry-fair
+  branch: sf-132
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -44,6 +42,7 @@ definitions:
   - &notes {label: Editor's notes, name: notes, widget: notes, required: false, hint: "Warning: content written here will not be published on the website but will be publicly visible on github"}
   - &interjection {label: Interjection, name: interjection, widget: string}
   - &info {label: Error Info, name: info, widget: string}
+  - &featuredArticle {label: Featured Article, name: featuredArticle, widget: relation, collection: news, searchFields: [title], valueField: title, required: false}
   - strawberryTile: &strawberryTile
       label: Strawberry Tile
       name: strawberryTile
@@ -208,6 +207,7 @@ collections:
           - {<<: *key, default: news-overview}
           - *title
           - *subtitle
+          - *featuredArticle
           - *hero
           - *notes
       - file: "frontend/src/pages/calendar.md"
