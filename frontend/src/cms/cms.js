@@ -15,6 +15,7 @@ import { ContactPage } from '../templates/contact-page'
 import { FormPage } from '../templates/form'
 import { Footer } from '../components/Footer'
 import { PageNotFound } from '../templates/page-not-found'
+import { CookieBanner } from '../components/analytics/CookieBanner'
 
 import { MultiImageControl } from './MultiImageWidget'
 import { HeroControl } from './HeroWidget'
@@ -66,6 +67,13 @@ const placeholderEvents = placeholderEventDays.map(dayNumber => ({
   }
 }))
 
+const cookieBannerPreviewPlaceholderProps = {
+  bannerActive: true,
+  setBannerActive: () => null,
+  setAnalyticsEnabled: () => null, // dummy functions for cookie banner buttons in preview
+  isFixedBottom: false
+}
+
 const homePageAdditionalPropsExtractor = (dataProps, { widgetsFor }) => {
   const contentBlocksMarkdown = widgetsFor('contentBlocks')
     .map(blk => blk.getIn(['widgets', '_markdown_contentBody']))
@@ -96,6 +104,7 @@ CMS.registerPreviewTemplate('contact-page', preview(ContactPage))
 CMS.registerPreviewTemplate('forms', preview(FormPage))
 CMS.registerPreviewTemplate('footer', preview(Footer, {previewWithLayout: false}))
 CMS.registerPreviewTemplate('404', preview(PageNotFound))
+CMS.registerPreviewTemplate('cookies', preview(CookieBanner, {placeholderProps: cookieBannerPreviewPlaceholderProps, previewWithLayout: false}))
 
 CMS.registerWidget("multiImage", MultiImageControl)
 CMS.registerWidget("hero", HeroControl)

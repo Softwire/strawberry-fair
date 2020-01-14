@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Analytics } from './analytics/Analytics'
 import { Header } from './Header'
 import { Footer } from './Footer'
 import { Titles } from './Titles'
@@ -11,8 +12,8 @@ import '../styling/styles.scss'
 
 export const Layout = ({children, heroData, title, subtitle}) => (
     <React.Fragment>
-        <Header heroData={heroData}>
-        </Header>
+        <Analytics />
+        <Header heroData={heroData} />
         <div id="root-layout" className="section">
             <div className="container">
                 <div className="title-and-buttons">

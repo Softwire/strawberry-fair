@@ -54,6 +54,7 @@ export const preview = (component, options = {}) => {
 
         Object.assign(previewProps, additionalPropsExtractor(dataProps, { widgetsFor }))
         Object.assign(previewProps, dataProps)
+        const componentWithProps = component(Object.assign(placeholderProps, previewProps))
 
         const layoutProps = extractLayoutPropsPreview(dataProps, additionalPropsExtractor, widgetsFor)
 
@@ -62,14 +63,14 @@ export const preview = (component, options = {}) => {
             return (
                 <PreviewContextWrapper value={isPreview}>
                     <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle}>
-                        {component(Object.assign(placeholderProps, previewProps))}
+                        {componentWithProps}
                     </Layout>
                 </PreviewContextWrapper>
             )
         } else {
             return (
                 <PreviewContextWrapper value={isPreview}>
-                    {component(Object.assign(placeholderProps, previewProps))}
+                    {componentWithProps}
                 </PreviewContextWrapper>
             )
         }
