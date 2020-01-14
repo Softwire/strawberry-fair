@@ -18,7 +18,7 @@ export const NewsArticle = ({author, content, image, date, tags, contentComponen
         </figure>
         <br/>
         <div className="columns">
-          <div className="column is-one-quarter">
+          <div className="column is-one-fifth">
             <NewsArticleSideInfo author={author} date={date} tags={tags}/>
           </div>
           <div className="column">
