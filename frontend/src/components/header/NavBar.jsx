@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import OutsideClickHandler from 'react-outside-click-handler'
-import { graphql, Link, useStaticQuery } from 'gatsby'
+import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { PreviewContext } from '../../util/context.jsx'
 import { getNavbarLogo } from './getNavbarLogo'
+import { navBarQuery } from './navBarQuery'
+import { getPreviewLinksFromCMSInput, generateLinks, getClassName, getTitle, addSlugs } from './NavBarHelper'
 
 import navBarPreviewLinks from '../../data/navBarPreviewLinks'
 
-const separator = '/'
+
 const navBarTabs = ['About Us', 'Areas & Events', 'News', 'Traders', 'Support the Fair', 'Contact']
 const titleToLinkMap = {
   News: {
@@ -33,9 +35,9 @@ const NavBar = (data) => (
 export default NavBar
 
 const NavBarQueryWrapper = ({isPreview, CMSInput}) => {
-  let logo = isPreview ? <img alt="Strawberry Fair logo" src="/img/1-line-logo.png" width="280" /> : <Img fixed={getNavbarLogo()} alt="Strawberry Fair logo" />
-  let isFixedTop = isPreview ? false : true
-  let links = isPreview ? (Object.keys(CMSInput).length > 0 ? getPreviewLinksFromCMSInput(CMSInput) : navBarPreviewLinks) : getNavBarLinksFromGraphqlData(navBarQuery())
+  const logo = isPreview ? <img alt="Strawberry Fair logo" src="/img/1-line-logo.png" width="280" /> : <Img fixed={getNavbarLogo()} alt="Strawberry Fair logo" />
+  const isFixedTop = isPreview ? false : true
+  const links = isPreview ? (Object.keys(CMSInput).length > 0 ? getPreviewLinksFromCMSInput(CMSInput) : navBarPreviewLinks) : getNavBarLinksFromGraphqlData(navBarQuery())
 
   return <NavBarDisplay links={links} logo={logo} isFixedTop={isFixedTop} />
 }
@@ -68,53 +70,11 @@ export const NavBarDisplay = ({links, logo, isFixedTop}) => {
   )
 }
 
-const navBarQuery = () => useStaticQuery(graphql`
-  query navBarQuery {
-    navBarInfo: allMarkdownRemark(filter: {fields: {slug: {regex: "$//navbar//", ne: "/navbar/"}}}) {
-      edges {
-        node {
-          frontmatter {
-            title 
-            pageTitles {
-              pageTitle
-            }
-          }
-        }
-      }
-    }
-    allPages: allMarkdownRemark {
-      edges {
-        node {
-          frontmatter {
-            title
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  }
-`)
-
 export const getNavBarLinksFromGraphqlData = (data) => {
   let pageTitleToSlugMap = {} 
   data.allPages.edges.forEach(edge => pageTitleToSlugMap[edge.node.frontmatter.title] = edge.node.fields.slug)
   data.navBarInfo.edges.forEach(edge => addSlugs(pageTitleToSlugMap, edge))
   return generateLinks(navBarTabs, titleToLinkMap, data.navBarInfo.edges)
-}
-
-const addSlugs = (map, graphqlEdge) => {
-  graphqlEdge.node.frontmatter.pageTitles.forEach(o => o.slug = map[getTitle(o.pageTitle)])
-}
-
-const getTitle = (pageTitle) => pageTitle.split(separator)[1]
-
-const generateLinks = (navBarTabs, titleToLinkMap, graphqlEdges) => {
-  return navBarTabs.map(tabName => {
-      const associatedEdge = graphqlEdges.find(edge => edge.node.frontmatter.title === tabName)
-      return associatedEdge || titleToLinkMap[tabName] || undefined
-    }).filter(link => link !== undefined)
 }
 
 const NavBurger = ({target, active, setState, collapseAll}) => (
@@ -130,8 +90,6 @@ const NavBurger = ({target, active, setState, collapseAll}) => (
     <span></span>
   </a>
 )
-
-const getClassName = (baseName, toggleName, active) => `${baseName} ${active ? toggleName : ""}`
 
 const NavMenu = ({active, navBarLinks, dropdownsActive, setDropdownsActive}) => {
   const generateNavBarTabs = (tab, tabIndex) => {
@@ -194,20 +152,6 @@ const NavItem = ({ title, link }) => (
   </div>
 )
 
-const getPreviewLinksFromCMSInput = (CMSInput) => (
-  [{
-    node: {
-      frontmatter: {
-        title: CMSInput.title,
-        pageTitles: CMSInput.pageTitles.map(page => {
-          if(!page.pageTitle) page.pageTitle = ""
-          page.slug="/"
-          return page
-        })
-      }
-    }
-  }]
-)
 
 
 NavItem.propTypes = {
