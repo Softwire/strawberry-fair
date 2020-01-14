@@ -42,6 +42,8 @@ definitions:
   - &emailSubscriptionLink {label: Email Subscription Link, name: emailSubscriptionLink, widget: string}
   - &copyright {label: Copyright, name: copyright, widget: string}
   - &notes {label: Editor's notes, name: notes, widget: notes, required: false, hint: "Warning: content written here will not be published on the website but will be publicly visible on github"}
+  - &interjection {label: Interjection, name: interjection, widget: string}
+  - &info {label: Error Info, name: info, widget: string}
   - strawberryTile: &strawberryTile
       label: StrawberryTile
       name: strawberryTile
@@ -149,6 +151,15 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
+      - file: "frontend/src/pages/404.md"
+        label: "404 Page"
+        name: "404"
+        fields:
+          - {<<: *key, default: page-not-found}
+          - *title
+          - *interjection
+          - *info
+          - *accessibleImage
       - file: "frontend/src/pages/index.md"
         label: "Home Page"
         name: "home"
