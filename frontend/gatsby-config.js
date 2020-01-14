@@ -6,6 +6,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-netlify-identity-widget',
     'gatsby-plugin-sass',
+    'gatsby-plugin-netlify',
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
@@ -75,6 +76,6 @@ module.exports = {
       options: {
         logo: './static/img/favicon.png'
       }
-    }
+    },
   ],
 }
