@@ -19,13 +19,21 @@ import { Layout } from '../components/Layout'
  * This function prepares a page template for use as a CMS preview component.
  * It maps props from the CMS preview format to that expected by a "normal" React component.
  * @param {Object} component - Template component to preview
- * @param {Object} placeholderProps - For insertion of props that are unavailable in the CMS
- * @param {previewAdditionalPropsExtractorCallback} additionalPropsExtractor - To extract props that are unavailable in the CMS, e.g. props living in `node.fields`
- * @param {Object} dataProps - The data read from the CMS
- * @param {Object} cmsUtilityFns - Utility functions provided by the CMS
+ * @param {Object} options - Object containing options settings
+ * @param {Object} options.placeholderProps - For insertion of props that are unavailable in the CMS
+ * @param {previewAdditionalPropsExtractorCallback} options.additionalPropsExtractor - To extract props that are unavailable in the CMS, e.g. props living in `node.fields`
+ * @param {Boolean} options.previewWithLayout - Determines whether to render the preview with the Layout component
  * @returns {Function} Function to be passed into the CMS.registerPreviewTemplate(...) function
  */
-export const preview = (component, placeholderProps = {}, additionalPropsExtractor = () => {}) => {
+export const preview = (component, options = {}) => {
+    const defaultOptions = {
+        placeholderProps: {},
+        additionalPropsExtractor: () => {},
+        previewWithLayout: true,
+    }
+
+    const { placeholderProps, additionalPropsExtractor, previewWithLayout } = Object.assign(defaultOptions, options)
+
     /**
      * @param {Object} entry.data - The data read from the CMS in Immutable.js object
      * @param {Function} widgetFor - Utility function provided by the CMS
@@ -50,13 +58,21 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
         const layoutProps = extractLayoutPropsPreview(dataProps, additionalPropsExtractor, widgetsFor)
 
         const isPreview = true
-        return (
-            <PreviewContextWrapper value={isPreview}>
-                <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle}>
+        if (previewWithLayout) {
+            return (
+                <PreviewContextWrapper value={isPreview}>
+                    <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle}>
+                        {component(Object.assign(placeholderProps, previewProps))}
+                    </Layout>
+                </PreviewContextWrapper>
+            )
+        } else {
+            return (
+                <PreviewContextWrapper value={isPreview}>
                     {component(Object.assign(placeholderProps, previewProps))}
-                </Layout>
-            </PreviewContextWrapper>
-        )
+                </PreviewContextWrapper>
+            )
+        }
     }
 
     previewComponent.propTypes = {
