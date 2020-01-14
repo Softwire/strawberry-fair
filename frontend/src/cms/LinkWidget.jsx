@@ -13,8 +13,9 @@ const backOption = "<-- Previous Menu"
 export class LinkControl extends React.Component {
   constructor(props) {
     super(props)
-    this.selectedOptionsHistory = []
+    this.selectedOptionsHistory = typeof props.value === "string" ? props.value.split("/").slice(1) : []
   }
+
   render() {
     return (
       <div>
@@ -34,11 +35,13 @@ export class LinkControl extends React.Component {
         this.props.onChange("")
       }
       else {
-        const selectedOptionWithoutPrefix = selectedOption.split("/").slice(-1)[0]
-        if(selectedOptionWithoutPrefix !== "index") this.selectedOptionsHistory.push(selectedOptionWithoutPrefix)
-        //we couldn't assign value directly to this.props.value since it could contain "index". Instead we build this.props.value from the menuPath.
+      const selectedOptionWithoutPrefix = selectedOption.split("/").pop()
+      if (selectedOptionWithoutPrefix !== "index") {
+        this.selectedOptionsHistory.push(selectedOptionWithoutPrefix)
+      } 
+      //we couldn't assign value directly to this.props.value since it could contain "index". Instead we build this.props.value from the menuPath.
         this.props.onChange("/" + this.selectedOptionsHistory.join("/"))
-        //this line is needed to update menuPath, otherwise making the same selection twice will not call the getFields() function, since react doesn't update the component
+      //this line is needed to update menuPath, otherwise making the same selection twice will not call the getFields() function, since react doesn't update the component
         this.getFields()
       }
   }
@@ -55,9 +58,11 @@ export class LinkControl extends React.Component {
   }
 
   getMenuOptionsObject() {
-    if(this.selectedOptionsHistory.length === 0) return pageTreeObject
+    if (this.selectedOptionsHistory.length === 0) {
+      return pageTreeObject
+    } 
     else {
-    const [ menuOptionsObject, updatedOptionsHistory] = getSubTree(this.selectedOptionsHistory, pageTreeObject, "index")
+      const [ menuOptionsObject, updatedOptionsHistory ] = getSubTree(this.selectedOptionsHistory, pageTreeObject, "index")
     this.selectedOptionsHistory = updatedOptionsHistory
     return menuOptionsObject
     }
@@ -70,6 +75,7 @@ export const LinkPreview = props => (
 
 LinkControl.propTypes = {
   onChange: PropTypes.func,
+  value: PropTypes.string,
 }
 
 LinkPreview.propTypes = {
