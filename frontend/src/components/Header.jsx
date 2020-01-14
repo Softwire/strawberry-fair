@@ -11,6 +11,8 @@ import { PreviewContext } from '../util/context'
 const imageRotationIntervalMillis = 10000
 const imageFadeTimeMills = 2000
 
+const previewDefaultBannerUrl = "https://res.cloudinary.com/strawberryfair/image/upload/v1578398228/Banner/gareths-gate-slide_agpjto.jpg"
+
 export const Header = ({heroData, children}) => (
     <PreviewContext.Consumer>
         {value => <HeaderWithContext isPreview={value} heroData={heroData} >{children}</HeaderWithContext>}
@@ -49,7 +51,10 @@ const HeaderWithContext = ({isPreview, heroData, children}) => {
             return (
                 <React.Fragment>
                     <NavBar />
+                    {isPreview ?
+                    <FixedHero info={{src: previewDefaultBannerUrl, alt: "Default banner placeholder"}} /> :
                     <RandomDefaultHero imageFluids={defaultBannerFluids} />
+                    }
                     {children}
                 </React.Fragment>
             )
