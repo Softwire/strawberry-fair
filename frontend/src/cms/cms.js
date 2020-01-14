@@ -68,9 +68,10 @@ const placeholderEvents = placeholderEventDays.map(dayNumber => ({
 }))
 
 const cookieBannerPreviewPlaceholderProps = {
+  bannerActive: true,
   setBannerActive: () => null,
   setAnalyticsEnabled: () => null, // dummy functions for cookie banner buttons in preview
-  isFixedBottom: true
+  isFixedBottom: false
 }
 
 const homePageAdditionalPropsExtractor = (dataProps, { widgetsFor }) => {

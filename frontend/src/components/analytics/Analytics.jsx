@@ -31,21 +31,17 @@ const AnalyticsFragment = () => {
         }
     }, [analyticsEnabled])
 
-    if (bannerActive) {
-        return (
-            <React.Fragment>
-                <CookieBanner {...getCookieBannerDataProps()}
-                              setBannerActive={setBannerActive}
-                              setAnalyticsEnabled={setAnalyticsEnabled}
-                              isFixedBottom={true}
-                              />
-                <GoogleAnalytics analyticsEnabled={analyticsEnabled} />
-            </React.Fragment>
-        )
-    }
-    else {
-        return <GoogleAnalytics analyticsEnabled={analyticsEnabled} />
-    }
+    return (
+        <React.Fragment>
+            <CookieBanner {...getCookieBannerDataProps()}
+                            bannerActive={bannerActive}
+                            setBannerActive={setBannerActive}
+                            setAnalyticsEnabled={setAnalyticsEnabled}
+                            isFixedBottom={true}
+                            />
+            <GoogleAnalytics analyticsEnabled={analyticsEnabled} />
+        </React.Fragment>
+    )
 }
 
 // Analytics are disabled on all production builds
