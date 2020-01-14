@@ -88,7 +88,7 @@ const RevolvingHero = ({data}) => {
     })
 
     return (
-        <section className="hero has-background">
+        <section className="hero hero-revolving has-background">
             {imageArray}
         </section>
     )
