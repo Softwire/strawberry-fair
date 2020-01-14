@@ -64,6 +64,7 @@ definitions:
       label: Content Blocks
       name: contentBlocks
       widget: list
+      hint: "A content block is just a block of formatted text that appears on the homepage"
       fields:
         - {label: Content Block Title, name: title, widget: string}
         - {label: Content Block Subtitle, name: subtitle, widget: string}
