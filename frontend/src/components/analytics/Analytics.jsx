@@ -48,7 +48,7 @@ const AnalyticsFragment = () => {
     }
 }
 
-// Analytics only runs in production mode, not build mode
+// Analytics are disabled on all production builds
 const GoogleAnalytics = ({analyticsEnabled}) => {
     useEffect(() => {
         if (analyticsEnabled === "1") {
