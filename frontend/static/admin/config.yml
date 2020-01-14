@@ -146,6 +146,16 @@ definitions:
         - {label: Address Line 1, name: firstLine, widget: string}
         - {label: Address Line 2, name: secondLine, widget: string}
         - {label: Address Line 3, name: thirdLine, widget: string}
+  - &cookiesPrimaryText {label: Primary Text, name: primaryText, widget: string}
+  - &cookiesSecondaryText {label: Secondary Text, name: secondaryText, widget: string}
+  - cookiesButtons: &cookiesButtons
+      label: Button Text
+      name: buttons
+      widget: object
+      fields:
+        - {label: Accept Cookies, name: accept, widget: string}
+        - {label: Decline Cookies, name: decline, widget: string}
+        - {label: Read Policy, name: policy, widget: string}
 
 collections:
   - name: "pages"
@@ -188,16 +198,6 @@ collections:
         fields:
           - {<<: *key, default: calendar-page}
           - *hero
-          - *notes
-      - file: "frontend/src/pages/privacy.md"
-        label: "Privacy Page"
-        name: "privacy-page"
-        fields:
-          - {<<: *key, default: about-page}
-          - *title
-          - *subtitle
-          - *hero
-          - *body
           - *notes
       - file: frontend/src/pages/contact.md
         label: "Contact Page"
@@ -314,3 +314,24 @@ collections:
       - *menuTitle
       - *pageTitles
       - *notes
+  - label: Cookies and Privacy
+    name: privacy
+    description: Edit the cookies banner and privacy policy page
+    files:
+      - file: "frontend/src/pages/privacy/index.md"
+        label: "Privacy Page"
+        name: "privacy-page"
+        fields:
+          - {<<: *key, default: about-page}
+          - *title
+          - *subtitle
+          - *hero
+          - *body
+      - file: frontend/src/pages/privacy/cookies.md
+        label: Cookies Banner
+        name: cookies
+        fields:
+          - *cookiesPrimaryText
+          - *cookiesSecondaryText
+          - *accessibleImage
+          - *cookiesButtons
