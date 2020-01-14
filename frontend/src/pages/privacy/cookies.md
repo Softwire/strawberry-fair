@@ -6,8 +6,8 @@ image:
   src: >-
     https://res.cloudinary.com/strawberryfair/image/upload/v1578989620/Cookies/cookie.png
 buttons:
-  accept: 'Mmm, yes please'
+  accept: 'Mmm, yes please!'
   decline: I'm not hungry
-  policy: See inside our cookie jar
+  policy: Look inside our cookie jar
 ---
 
