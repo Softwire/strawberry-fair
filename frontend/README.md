@@ -13,7 +13,15 @@ Prerequisites:
 * npm 6.13.0 or higher
 * gatsby cli (`npm install -g gatsby-cli`)
 
-Checkout the source code and run the following from this directory:
+Checkout the source code, then create a file called `.env` in the `frontend` folder of the repository, which makes available your Cloudinary cloud name, API key and API secret in the following format:
+
+```
+CLOUDINARY_CLOUD_NAME={your cloud name}
+CLOUDINARY_API_KEY={your API key}
+CLOUDINARY_API_SECRET={your API secret}
+```
+
+Then, run the following from this directory:
 1. `npm ci`
 2. `npm start`
 

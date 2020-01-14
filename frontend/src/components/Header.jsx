@@ -1,14 +1,25 @@
 import React, {useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
+import Img from 'gatsby-image'
 
-import { multiImageValidator, accessibleImageValidator } from './validators'
+import { multiImageValidator, accessibleImageValidator, gatsbyImageSharpFluidValidator } from './validators'
 import NavBar from './header/NavBar'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
+import { getDefaultBannerImageFluids } from './header/getDefaultBannerImageFluids'
+import { PreviewContext } from '../util/context'
 
 const imageRotationIntervalMillis = 10000
 const imageFadeTimeMills = 2000
 
-export const Header = ({heroData, children}) => {
+const previewDefaultBannerUrl = "https://res.cloudinary.com/strawberryfair/image/upload/v1578398228/Banner/gareths-gate-slide_agpjto.jpg"
+
+export const Header = ({heroData, children}) => (
+    <PreviewContext.Consumer>
+        {value => <HeaderWithContext isPreview={value} heroData={heroData} >{children}</HeaderWithContext>}
+    </PreviewContext.Consumer>
+)
+
+const HeaderWithContext = ({isPreview, heroData, children}) => {
     if (heroData && heroData.isActive) {
         if (heroData.heroImages && heroData.heroImages.length > 0) {
             if (heroData.heroImages.length === 1) {
@@ -31,10 +42,19 @@ export const Header = ({heroData, children}) => {
             }
         }
         else {
-            // At present, this returns no hero, but should ultimately return a default hero (SF-14)
+            // Use default images from static query
+            let defaultBannerFluids
+            if (!isPreview) {
+                defaultBannerFluids = getDefaultBannerImageFluids()
+            }
+
             return (
                 <React.Fragment>
                     <NavBar />
+                    {isPreview ?
+                    <FixedHero info={{src: previewDefaultBannerUrl, alt: "Default banner placeholder"}} /> :
+                    <RandomDefaultHero imageFluids={defaultBannerFluids} />
+                    }
                     {children}
                 </React.Fragment>
             )
@@ -68,7 +88,7 @@ const RevolvingHero = ({data}) => {
     })
 
     return (
-        <section className="hero has-background">
+        <section className="hero hero-revolving has-background">
             {imageArray}
         </section>
     )
@@ -102,6 +122,32 @@ const FixedHero = ({info: {src, srcNode, alt}}) => {
     )
 }
 
+const RandomDefaultHero = ({imageFluids}) => {
+    // Pick at random
+    if (!imageFluids || imageFluids.length === 0) {
+        return null
+    }
+    const randomIndex = Math.floor(Math.random() * imageFluids.length)
+    const chosenFluid = imageFluids[randomIndex]
+
+    const style = {
+        position: "absolute",
+        objectFit: "cover",
+        width: "100%",
+        height: "100%"
+    }
+
+    return (
+        <section className="hero has-background">
+            <Img fluid={chosenFluid} style={style} />
+        </section>
+    )
+}
+
+RandomDefaultHero.propTypes = {
+    imageFluids: PropTypes.arrayOf(gatsbyImageSharpFluidValidator)
+}
+
 FixedHero.propTypes = {
     info: accessibleImageValidator,
     children: PropTypes.node
@@ -121,5 +167,12 @@ Header.propTypes = {
     heroData: PropTypes.shape({
         isActive: PropTypes.bool,
         heroImages: multiImageValidator
-    })
+    }),
+    children: PropTypes.node
+}
+
+HeaderWithContext.propTypes = {
+    isPreview: PropTypes.bool,
+    heroData: Header.propTypes.heroData,
+    children: Header.propTypes.children
 }
