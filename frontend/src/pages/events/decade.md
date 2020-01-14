@@ -7,5 +7,7 @@ dateTimeRange:
   provideEnd: true
 eventTypes:
   - Meeting - Finance
+heroData:
+  isActive: true
 ---
 It's the roaring 20s... the 2020s, that is! Let's celebrate these 20s with a return of the classics from the last - art deco, jazz music, a global depression, and that classic 20s fashion!

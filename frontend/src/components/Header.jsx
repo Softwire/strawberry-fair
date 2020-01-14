@@ -1,9 +1,11 @@
 import React, {useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
+import Img from 'gatsby-image'
 
-import { multiImageValidator, accessibleImageValidator } from './validators'
+import { multiImageValidator, accessibleImageValidator, gatsbyImageSharpFluidValidator } from './validators'
 import NavBar from './header/NavBar'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
+import { getDefaultBannerImageFluids } from './header/getDefaultBannerImageFluids'
 
 const imageRotationIntervalMillis = 10000
 const imageFadeTimeMills = 2000
@@ -31,10 +33,14 @@ export const Header = ({heroData, children}) => {
             }
         }
         else {
-            // At present, this returns no hero, but should ultimately return a default hero (SF-14)
+            // Use default images from static query
+            const defaultBannerFluids = getDefaultBannerImageFluids()
+
+
             return (
                 <React.Fragment>
                     <NavBar />
+                    <RandomDefaultHero imageFluids={defaultBannerFluids} />
                     {children}
                 </React.Fragment>
             )
@@ -100,6 +106,29 @@ const FixedHero = ({info: {src, srcNode, alt}}) => {
             <PreviewCompatibleImage imageInfo={{alt: alt, image: srcNode || src}} style={style} />
         </section>
     )
+}
+
+const RandomDefaultHero = ({imageFluids}) => {
+    // Pick at random
+    const randomIndex = Math.floor(Math.random() * imageFluids.length)
+    const chosenFluid = imageFluids[randomIndex]
+
+    const style = {
+        position: "absolute",
+        objectFit: "cover",
+        width: "100%",
+        height: "100%"
+    }
+
+    return (
+        <section className="hero has-background">
+            <Img fluid={chosenFluid} style={style} />
+        </section>
+    )
+}
+
+RandomDefaultHero.propTypes = {
+    imageFluids: PropTypes.arrayOf(gatsbyImageSharpFluidValidator)
 }
 
 FixedHero.propTypes = {
