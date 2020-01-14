@@ -1,6 +1,6 @@
 ---
 templateKey: news-overview
-title: A
-subtitle: B
+title: Our News
+subtitle: It's your festival
 ---
 
