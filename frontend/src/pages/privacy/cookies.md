@@ -2,9 +2,9 @@
 primaryText: Feed me cookies?
 secondaryText: We'd like to bake you some cookies to help us make our website sweeter
 image:
-  alt: Smiling Cookie
+  alt: Cookie
   src: >-
-    https://res.cloudinary.com/strawberryfair/image/upload/v1578910820/Cookies/smiling-cookie_d81xti.png
+    https://res.cloudinary.com/strawberryfair/image/upload/v1578989620/Cookies/cookie.png
 buttons:
   accept: 'Mmm, yes please'
   decline: I'm not hungry
