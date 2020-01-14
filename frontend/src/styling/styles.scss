@@ -73,6 +73,12 @@ div {
 }
 
 /* Class styling */
+.column {
+    &.column-align-bottom {
+        margin-top: auto;
+    }    
+}
+
 @media(max-width: $tablet){
     .columns{ 
         &.reverse-columns {
@@ -143,6 +149,51 @@ This is necessary because Bulma's experimental column margin classes do not func
 .navbar-dropdown {
     .navbar-item {
         padding: 0;
+    }
+}
+
+footer {
+    padding-top: 4rem;
+
+    .invitation-and-buttons {
+        .title:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+
+        .buttons {
+            .button {
+                padding: 2rem;
+            }
+    
+            .button:not(:last-child):not(.is-fullwidth) {
+                margin-right: 1rem;
+            }
+        }
+
+        @media(max-width: $tablet) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+            .buttons {
+                justify-content: center;
+                
+                .button {
+                    margin: 0.25rem !important;
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+
+    .column {
+        padding-bottom: 2rem;
+    }
+    
+    @media(max-width: $tablet) {
+        .contact-details {
+            margin: 0 1.5rem;
+        }
     }
 }
 
