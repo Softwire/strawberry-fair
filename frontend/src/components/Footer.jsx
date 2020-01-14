@@ -154,7 +154,11 @@ GetInTouch.propTypes= {
 }
 
 ContactDetails.propTypes = {
-    address: PropTypes.string.isRequired,
+    address: PropTypes.shape({ 
+        firstLine: PropTypes.string,
+        secondLine: PropTypes.string,
+        thirdLine: PropTypes.string,
+    }).isRequired,
     email: PropTypes.string.isRequired,
     facebookAccount: PropTypes.string.isRequired,
     twitterAccount: PropTypes.string.isRequired,
