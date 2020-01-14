@@ -4,6 +4,7 @@
 $red: #ae1414;
 $black: #1d1d1d;
 $light-grey: #f3f3f3;
+$dark-grey: #a9a9a9;
 
 $primary: $red;
 $secondary: $black;
@@ -351,5 +352,24 @@ $strawberry-card-size: 14rem;
                 @include responsive-iframe;
             }
         }
+    }
+}
+
+.news-article-info {
+    text-align: center;
+    
+    @media(min-width: $tablet) {
+        margin-top: 1.5rem;
+    }
+
+    .divider {
+        height: 1px;
+        box-shadow: 1px 0px 1px;
+        color: $dark-grey;
+        background-color: $dark-grey;
+    }
+
+    .bottom-section {
+        line-height: 2;
     }
 }
