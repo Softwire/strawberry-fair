@@ -1,50 +1,44 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import OutsideClickHandler from 'react-outside-click-handler'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 
-export const CookieBanner = ({primaryText, secondaryText, image, buttons, bannerActive, setBannerActive, setLocalStorageEnabled, isFixedBottom}) => {
-    if (bannerActive) {
-        return (
-            <OutsideClickHandler onOutsideClick={() => setBannerActive(false)}>
-                <div className={`cookies-banner notification columns ${isFixedBottom ? "is-fixed-bottom" : ""}`}>
-                    <button className="delete"
-                            onClick={() => setBannerActive(false)}>
+export const CookieBanner = ({primaryText, secondaryText, image, buttons, setBannerActive, setAnalyticsEnabled, isFixedBottom}) => (
+    <div>
+        <div className={`cookies-banner notification columns ${isFixedBottom ? "is-fixed-bottom" : ""}`}>
+            <button className="delete"
+                    onClick={() => setBannerActive(false)}>
+            </button>
+            <div className="column is-1 cookie-image-column">
+                <img className="cookie-image" alt={image.alt} src={getCookieImage(image)} />
+            </div>
+            <div className="column">
+                <h2 className="is-size-4">{primaryText}</h2>
+                <p>{secondaryText}</p>
+            </div>
+            <div className="column cookie-buttons-column">
+                <div className="field is-grouped is-grouped-multiline cookie-buttons-field">
+                    <button className="button is-success is-small cookie-button"
+                            onClick={() => {
+                                        setAnalyticsEnabled("1")
+                                        setBannerActive(false)
+                                    }}>
+                        {buttons.accept}
                     </button>
-                    <div className="column is-1 cookie-image-column">
-                        <img className="cookie-image" alt={image.alt} src={getCookieImage(image)} />
-                    </div>
-                    <div className="column">
-                        <h2 className="is-size-4">{primaryText}</h2>
-                        <p>{secondaryText}</p>
-                    </div>
-                    <div className="column cookie-buttons-column">
-                        <div className="field is-grouped is-grouped-multiline cookie-buttons-field">
-                            <button className="button is-success is-small cookie-button"
-                                    onClick={() => {
-                                                setLocalStorageEnabled("1")
-                                                setBannerActive(false)
-                                            }}>
-                                {buttons.accept}
-                            </button>
-                            <button className="button is-small cookie-button"
-                                    onClick={() => {
-                                                setLocalStorageEnabled("0")
-                                                setBannerActive(false)
-                                            }}>
-                                {buttons.decline}
-                            </button>
-                            <Link to="/privacy/" className="button is-small cookie-button">
-                                {buttons.policy}
-                            </Link>
-                        </div>
-                    </div>
+                    <button className="button is-small cookie-button"
+                            onClick={() => {
+                                        setAnalyticsEnabled("0")
+                                        setBannerActive(false)
+                                    }}>
+                        {buttons.decline}
+                    </button>
+                    <Link to="/privacy/" className="button is-small cookie-button">
+                        {buttons.policy}
+                    </Link>
                 </div>
-            </OutsideClickHandler>
-        )
-    }
-    return null
-}
+            </div>
+        </div>
+    </div>
+)
 
 export const getCookieBannerDataProps = () => {
     const query = cookieBannerGraphqlQuery()
@@ -82,8 +76,7 @@ CookieBanner.propTypes = {
     secondaryText: PropTypes.string,
     image: PropTypes.object,
     buttons: PropTypes.object,
-    bannerActive: PropTypes.bool,
     setBannerActive: PropTypes.func,
-    setLocalStorageEnabled: PropTypes.func,
+    setAnalyticsEnabled: PropTypes.func,
     isFixedBottom: PropTypes.bool
 }

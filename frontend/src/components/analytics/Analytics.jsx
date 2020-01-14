@@ -6,6 +6,8 @@ import { PreviewContext } from '../../util/context'
 import { CookieBanner, getCookieBannerDataProps } from './CookieBanner'
 
 
+const googleAnalyticsProperty = "UA-63562931-2" // ID associated with new Strawberry Fair website and connected to the Fair's GA account
+
 export const Analytics = () => (
     <PreviewContext.Consumer>
         {(isPreview) => isPreview ? null : <AnalyticsFragment />}
@@ -13,42 +15,45 @@ export const Analytics = () => (
 )
 
 const AnalyticsFragment = () => {
-    const [localStorageEnabled, setLocalStorageEnabled] = useState(undefined)
+    const [analyticsEnabled, setAnalyticsEnabled] = useState(undefined)
     const [bannerActive, setBannerActive] = useState(false)
 
     useEffect(() => {
-        // Initialises localStorageEnabled flag and bannerActive flag
-        if (localStorageEnabled === undefined) {
+        // Initialises analyticsEnabled flag and bannerActive flag
+        if (analyticsEnabled === undefined) {
             let permission = localStorage.getItem("Analytics Permission")
-            setLocalStorageEnabled(permission)
+            setAnalyticsEnabled(permission)
             setBannerActive(permission === null)
         }
-        // Synchronises localStorage with localStorageEnabled flag
-        else if (localStorageEnabled !== null) {
-            localStorage.setItem("Analytics Permission", localStorageEnabled)
+        // Synchronises localStorage with analyticsEnabled flag
+        else if (analyticsEnabled !== null) {
+            localStorage.setItem("Analytics Permission", analyticsEnabled)
         }
-    }, [localStorageEnabled])
+    }, [analyticsEnabled])
 
-    
-    return (
-        <React.Fragment>
-            <CookieBanner {...getCookieBannerDataProps()}
-                          bannerActive={bannerActive}
-                          setBannerActive={setBannerActive}
-                          setLocalStorageEnabled={setLocalStorageEnabled}
-                          isFixedBottom={true}
-                          />
-            <GoogleAnalytics localStorageEnabled={localStorageEnabled} />
-        </React.Fragment>
-    )
+    if (bannerActive) {
+        return (
+            <React.Fragment>
+                <CookieBanner {...getCookieBannerDataProps()}
+                              setBannerActive={setBannerActive}
+                              setAnalyticsEnabled={setAnalyticsEnabled}
+                              isFixedBottom={true}
+                              />
+                <GoogleAnalytics analyticsEnabled={analyticsEnabled} />
+            </React.Fragment>
+        )
+    }
+    else {
+        return <GoogleAnalytics analyticsEnabled={analyticsEnabled} />
+    }
 }
 
 // Analytics only runs in production mode, not build mode
-const GoogleAnalytics = ({localStorageEnabled}) => {
+const GoogleAnalytics = ({analyticsEnabled}) => {
     useEffect(() => {
-        if (localStorageEnabled === "1") {
+        if (analyticsEnabled === "1") {
             if (!ReactGA.ga()) {
-                ReactGA.initialize("UA-63562931-2") // for debugging, add argument { "debug": true }
+                ReactGA.initialize(googleAnalyticsProperty) // for debugging, add argument { "debug": true }
             }
             ReactGA.pageview(location.pathname)
         }
@@ -56,4 +61,4 @@ const GoogleAnalytics = ({localStorageEnabled}) => {
     return null
 }
 
-GoogleAnalytics.propTypes = { localStorageEnabled: PropTypes.string }
+GoogleAnalytics.propTypes = { analyticsEnabled: PropTypes.string }
