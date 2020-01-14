@@ -99,12 +99,8 @@ StrawberryTiles.propTypes = {
   strawberryTiles: PropTypes.arrayOf(
     PropTypes.shape({
       strawberryTile: PropTypes.shape(
-        StrawberryCard.propTypes = {
-          isPublic: PropTypes.bool.isRequired,
-          image: PropTypes.string,
-          imageAltText: PropTypes.string,
-          text: PropTypes.string
-        })
+        Object.assign({isPublic: PropTypes.bool.isRequired}, StrawberryCard.PropTypes)
+      )
     })
   )
 }
