@@ -30,7 +30,7 @@ definitions:
   - &author {label: Author, name: author, widget: string}
   - &date {label: Date, name: date, widget: datetime, format: YYYY-MM-DD, dateFormat: YYYY-MM-DD, timeFormat: false}
   - &eventDateTimeRange {label: Event Timing, name: dateTimeRange, widget: dateTimeRange}
-  - &tags {label: Tags, name: tags, widget: list, default: ["news"]}
+  - &tags {label: Tags, name: tags, widget: list, hint: "A list of tags that apply to this news article", default: ["news"]}
   - &menuTitle {label: NavBar Dropdown Title, name: title, widget: string}
   - &internalLink {label: Link, name: link, widget: link, hint: Choose the path to the page you want this link to point to. Select "<-- Previous Menu" to undo your last selection.  Make sure you select a complete path by either ending your selection with "index" or checking that the link is displayed on this widget.}
   - &text {label: Text, name: text, widget: string}
