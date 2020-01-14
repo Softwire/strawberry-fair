@@ -24,26 +24,19 @@ const titleToLinkMap = {
   }
 }
 
-const NavBar = () => (
+const NavBar = (data) => (
   <PreviewContext.Consumer>
-    {value => <NavBarQueryWrapper isPreview={value} />}
+    {value => <NavBarQueryWrapper isPreview={value} CMSInput={data} />}
   </PreviewContext.Consumer>
-)
+  )
 
 export default NavBar
 
-const NavBarQueryWrapper = ({isPreview}) => {
-  let links, logo, isFixedTop
-  if (isPreview) {
-    links = navBarPreviewLinks
-    logo = <img alt="Strawberry Fair logo" src="/img/1-line-logo.png" width="280" />
-    isFixedTop = false
-  }
-  else {
-    links = getNavBarLinksFromGraphqlData(navBarQuery())
-    logo = <Img fixed={getNavbarLogo()} alt="Strawberry Fair logo" />
-    isFixedTop = true
-  }
+const NavBarQueryWrapper = ({isPreview, CMSInput}) => {
+  let logo = isPreview ? <img alt="Strawberry Fair logo" src="/img/1-line-logo.png" width="280" /> : <Img fixed={getNavbarLogo()} alt="Strawberry Fair logo" />
+  let isFixedTop = isPreview ? false : true
+  let links = isPreview ? (Object.keys(CMSInput).length > 0 ? getPreviewLinksFromCMSInput(CMSInput) : navBarPreviewLinks) : getNavBarLinksFromGraphqlData(navBarQuery())
+
   return <NavBarDisplay links={links} logo={logo} isFixedTop={isFixedTop} />
 }
 
@@ -200,6 +193,22 @@ const NavItem = ({ title, link }) => (
     </Link>
   </div>
 )
+
+const getPreviewLinksFromCMSInput = (CMSInput) => (
+  [{
+    node: {
+      frontmatter: {
+        title: CMSInput.title,
+        pageTitles: CMSInput.pageTitles.map(page => {
+          if(!page.pageTitle) page.pageTitle = ""
+          page.slug="/"
+          return page
+        })
+      }
+    }
+  }]
+)
+
 
 NavItem.propTypes = {
   title: PropTypes.string,

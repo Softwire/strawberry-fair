@@ -89,7 +89,8 @@ CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {events: plac
 CMS.registerPreviewTemplate('contact-page', preview(ContactPage))
 CMS.registerPreviewTemplate('forms', preview(FormPage))
 CMS.registerPreviewTemplate('footer', preview(Footer))
-CMS.registerPreviewTemplate('about-us', preview(Navbar))
+CMS.registerPreviewTemplate('navbar', preview(Navbar))
+
 
 CMS.registerWidget("multiImage", MultiImageControl)
 CMS.registerWidget("hero", HeroControl)
