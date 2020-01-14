@@ -79,59 +79,23 @@ const CalendarWithContext = ({isPreview, previewEventList}) => {
 }
 
 const MonthScrubber = ({monthForward, monthBack, focusDate}) => (
-    <React.Fragment>
-        <div className="container month-scrubber is-hidden-mobile">
-            <div className="level is-mobile">
-                <div className="level-left">
-                    <div className="level-item">
-                        <button onClick={monthBack} className="button is-white is-centered">
-                            <span className="icon is-left has-text-dark is-large">
-                                <FaChevronLeft />
-                            </span>
-                        </button>
-                    </div>
-                </div>
-                <div className="level-item">
-                    <span className="title">{new Date(focusDate).toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</span>
-                </div>
-                <div className="level-right">
-                    <div className="level-item">
-                        <button onClick={monthForward} className="button is-white is-centered">
-                            <span className="icon is-right has-text-dark is-large">
-                                <FaChevronRight />
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </div>
+    <div className="month-scrubber">
+        <button onClick={monthBack} className="button is-white is-centered">
+            <span className="icon is-left has-text-dark is-large">
+                <FaChevronLeft />
+            </span>
+        </button>
+        <div className="calendar-month">
+            <p className="title is-hidden-mobile">{new Date(focusDate).toLocaleDateString('en-GB', {year: 'numeric', month: 'long'})}</p>
+            <p className="title is-hidden-tablet">{new Date(focusDate).toLocaleDateString('en-GB', {month: 'long'})}</p>
+            <p className="title is-hidden-tablet">{new Date(focusDate).toLocaleDateString('en-GB', {year: 'numeric'})}</p>
         </div>
-        <div className="container month-scrubber-mobile is-hidden-tablet">
-            <div className="level is-mobile">
-                <div className="level-left">
-                    <div className="level-item">
-                        <button onClick={monthBack} className="button is-white is-centered">
-                            <span className="icon is-left has-text-dark is-large">
-                                <FaChevronLeft />
-                            </span>
-                        </button>
-                    </div>
-                </div>
-                <div className="level-item">
-                    <span className="title is-hidden-mobile">{new Date(focusDate).toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</span>
-                    <span className="title is-4 is-hidden-tablet">{new Date(focusDate).toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</span>
-                </div>
-                <div className="level-right">
-                    <div className="level-item">
-                        <button onClick={monthForward} className="button is-white is-centered">
-                            <span className="icon is-right has-text-dark is-large">
-                                <FaChevronRight />
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </React.Fragment>
+        <button onClick={monthForward} className="button is-white is-centered">
+            <span className="icon is-right has-text-dark is-large">
+                <FaChevronRight />
+            </span>
+        </button>
+    </div>
 )
 
 MonthScrubber.propTypes = {
