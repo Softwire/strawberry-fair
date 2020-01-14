@@ -41,7 +41,7 @@ definitions:
   - &footerLeftBoxText {label: Left Box Text, name: leftBoxText, widget: markdown}
   - &footerLeftBoxTitle {label: Left Box Title, name: leftBoxTitle, widget: string}
   - &copyright {label: Copyright, name: copyright, widget: string}
-  - &notes {label: Editor's notes, name: notes, widget: markdown, required: false, hint: "Warning: content written here will not be published on the website but will be publicly visible on github"}
+  - &notes {label: Editor's notes, name: notes, widget: notes, required: false, hint: "Warning: content written here will not be published on the website but will be publicly visible on github"}
   - strawberryTile: &strawberryTile
       label: StrawberryTile
       name: strawberryTile
