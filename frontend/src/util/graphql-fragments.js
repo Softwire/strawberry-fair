@@ -38,6 +38,24 @@ fragment ImageFluid64x64Fragment on MarkdownRemarkFrontmatter {
 }
 `
 
+export const imageFluidSquareFragment = graphql`
+fragment imageFluidSquareFragment on MarkdownRemarkFrontmatter {
+  image {
+    alt
+    srcNode {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+        fixedAspect: resize(width: 500, height: 400) {
+          src
+        }
+      }
+    }
+  }
+}
+`
+
 export const HeroFragment = graphql`
 fragment HeroFragment on MarkdownRemarkConnection {
   nodes {
@@ -86,11 +104,13 @@ fragment NewsFragment on MarkdownRemark {
     title
     subtitle
     author
-    ...ImageFluidFragment
+    ...imageFluidSquareFragment
     date
     tags
   }
   html
+  shortExcerpt: excerpt(format: HTML, pruneLength: 50)
+  longExcerpt: excerpt(format: HTML, pruneLength: 400)
   fields {
     slug
   }

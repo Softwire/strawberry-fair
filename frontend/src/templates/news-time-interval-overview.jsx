@@ -34,7 +34,7 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
       <NewsArchiveBreadcrumbs breadcrumbs={breadcrumbs} breadcrumbLinks={breadcrumbLinks} />
       <hr />
       <div className="columns">
-        <div className="column is-three-quarters">
+        <div className="column is-four-fifths">
           <div className="panel">
             {selectedNewsArticles.map(article => (
               <Link to={article.node.fields.slug} key={article.node.fields.slug} className="panel-block">

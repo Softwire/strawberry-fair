@@ -11,7 +11,7 @@ export const NewsOverview = ({newsArticles}) => {
   
   return (
     <div className="columns">
-      <div className = "column is-three-quarters">
+      <div className = "column is-four-fifths">
         <NewsArticleSnapshots newsArticles={newsArticles}/>
       </div>
       <div className = "column">
