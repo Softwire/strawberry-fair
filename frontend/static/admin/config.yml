@@ -94,7 +94,7 @@ definitions:
       options:
       - 'Benefit gig'             # IF YOU UPDATE THIS LIST
       - 'Meeting - Programming'   # MAKE SURE YOU UPDATE IT IN
-      - 'Meeting - Finance'       # src/components/calendar/Events.jsx
+      - 'Meeting - Finance'       # src/components/calendar/EventType.js
       - 'Band competition'        # AS WELL
       - 'Other'
       multiple: true
