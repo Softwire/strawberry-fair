@@ -56,7 +56,7 @@ definitions:
       label: Scrapbook Images
       name: scrapbookImages
       widget: list
-      hint: "Warning: this will be rendered above the title of this content block"
+      hint: "Choose a series of images to accompany this content block, separating it from the rest of the page. Warning: this will be rendered above the title of this content block"
       fields:
         - {label: "Description", name: "alt", widget: "string"}
         - {label: "Image File", name: "src", widget: "image"}
