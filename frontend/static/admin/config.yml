@@ -30,7 +30,7 @@ definitions:
   - &author {label: Author, name: author, widget: string}
   - &date {label: Date, name: date, widget: datetime, format: YYYY-MM-DD, dateFormat: YYYY-MM-DD, timeFormat: false}
   - &eventDateTimeRange {label: Event Timing, name: dateTimeRange, widget: dateTimeRange}
-  - &tags {label: Tags, name: tags, widget: list, default: ["news"]}
+  - &tags {label: Tags, name: tags, widget: list, hint: "A list of tags that apply to this news article", default: ["news"]}
   - &menuTitle {label: NavBar Dropdown Title, name: title, widget: string}
   - &internalLink {label: Link, name: link, widget: link, hint: Choose the path to the page you want this link to point to. Select "<-- Previous Menu" to undo your last selection.  Make sure you select a complete path by either ending your selection with "index" or checking that the link is displayed on this widget.}
   - &text {label: Text, name: text, widget: string}
@@ -45,17 +45,18 @@ definitions:
   - &interjection {label: Interjection, name: interjection, widget: string}
   - &info {label: Error Info, name: info, widget: string}
   - strawberryTile: &strawberryTile
-      label: StrawberryTile
+      label: Strawberry Tile
       name: strawberryTile
       widget: object
+      hint: "A \"Strawberry Tile\" is a red box, set aside from the rest of the page's content, that can be used for extra information or emphasis"
       fields:
-        - {label: Display Tile, name: isPublic, widget: boolean, default: false}
+        - {label: Display Tile, name: isPublic, widget: boolean, default: false, hint: "Should this Strawberry Tile be shown?"}
         - {label: Text, name: text, widget: text, required: false, hint: 140 characters max, pattern: ["^.{0,140}$", "Must have less than 140 characters"]}
   - scrapbookImages: &scrapbookImages
       label: Scrapbook Images
       name: scrapbookImages
       widget: list
-      hint: "Warning: this will be rendered above the title of this content block"
+      hint: "Choose a series of images to accompany this content block, separating it from the rest of the page. Warning: this will be rendered above the title of this content block"
       fields:
         - {label: "Description", name: "alt", widget: "string"}
         - {label: "Image File", name: "src", widget: "image"}
@@ -63,6 +64,7 @@ definitions:
       label: Content Blocks
       name: contentBlocks
       widget: list
+      hint: "A content block is just a block of formatted text that appears on the homepage"
       fields:
         - {label: Content Block Title, name: title, widget: string}
         - {label: Content Block Subtitle, name: subtitle, widget: string}
@@ -73,6 +75,7 @@ definitions:
       label: Calendar Block
       name: calendarBlock
       widget: object
+      hint: "A block on the homepage that shows a list of the 4 soonest upcoming events"
       fields: 
         - {label: Calendar Block Title, name: title, widget: string}
         - {label: Calendar Block Subtitle, name: subtitle, widget: string}
@@ -80,6 +83,7 @@ definitions:
       label: News Block
       name: newsBlock
       widget: object
+      hint: "A block on the homepage that shows overviews of some of the most recent blog posts/news articles"
       fields: 
         - {label: News Block Title, name: title, widget: string}
         - {label: News Block Subtitle, name: subtitle, widget: string}
@@ -87,6 +91,7 @@ definitions:
       label: Twitter Block
       name: twitterBlock
       widget: object
+      hint: "A block on the homepage showing the most recent tweets from the Strawberry Fair Twitter account"
       fields: 
         - {label: Twitter Block Title, name: title, widget: string}
         - {label: Twitter Block Subtitle, name: subtitle, widget: string}
@@ -94,6 +99,7 @@ definitions:
       label: 'Event Type(s)'
       name: eventTypes
       widget: select
+      hint: "Select the event types that apply to this event"
       options:
       - 'Benefit gig'             # IF YOU UPDATE THIS LIST
       - 'Meeting - Programming'   # MAKE SURE YOU UPDATE IT IN
@@ -126,6 +132,7 @@ definitions:
       label: Form
       name: form
       widget: object
+      hint: "Embed a form on this page for visitors to the site to fill in"
       fields:
         - {label: "Display form", name: "isPublic", widget: "boolean"}
         - {label: "Google Form Embed HTML", name: "link", widget: "string", hint: "Copy and paste Embed HTML from your Google Form"}
@@ -133,6 +140,7 @@ definitions:
       label: Accessible Image
       name: image
       widget: object
+      hint: "Add an image and a description"
       fields:
         - {label: "Description", name: "alt", widget: "string"}
         - {label: "Image File", name: "src", widget: "image"}
