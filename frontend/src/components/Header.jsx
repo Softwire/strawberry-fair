@@ -6,11 +6,18 @@ import { multiImageValidator, accessibleImageValidator, gatsbyImageSharpFluidVal
 import NavBar from './header/NavBar'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 import { getDefaultBannerImageFluids } from './header/getDefaultBannerImageFluids'
+import { PreviewContext } from '../util/context'
 
 const imageRotationIntervalMillis = 10000
 const imageFadeTimeMills = 2000
 
-export const Header = ({heroData, children}) => {
+export const Header = ({heroData, children}) => (
+    <PreviewContext.Consumer>
+        {value => <HeaderWithContext isPreview={value} heroData={heroData} >{children}</HeaderWithContext>}
+    </PreviewContext.Consumer>
+)
+
+const HeaderWithContext = ({isPreview, heroData, children}) => {
     if (heroData && heroData.isActive) {
         if (heroData.heroImages && heroData.heroImages.length > 0) {
             if (heroData.heroImages.length === 1) {
@@ -34,8 +41,10 @@ export const Header = ({heroData, children}) => {
         }
         else {
             // Use default images from static query
-            const defaultBannerFluids = getDefaultBannerImageFluids()
-
+            let defaultBannerFluids
+            if (!isPreview) {
+                defaultBannerFluids = getDefaultBannerImageFluids()
+            }
 
             return (
                 <React.Fragment>
@@ -110,6 +119,9 @@ const FixedHero = ({info: {src, srcNode, alt}}) => {
 
 const RandomDefaultHero = ({imageFluids}) => {
     // Pick at random
+    if (!imageFluids || imageFluids.length === 0) {
+        return null
+    }
     const randomIndex = Math.floor(Math.random() * imageFluids.length)
     const chosenFluid = imageFluids[randomIndex]
 
@@ -150,5 +162,12 @@ Header.propTypes = {
     heroData: PropTypes.shape({
         isActive: PropTypes.bool,
         heroImages: multiImageValidator
-    })
+    }),
+    children: PropTypes.node
+}
+
+HeaderWithContext.propTypes = {
+    isPreview: PropTypes.bool,
+    heroData: Header.propTypes.heroData,
+    children: Header.propTypes.children
 }
