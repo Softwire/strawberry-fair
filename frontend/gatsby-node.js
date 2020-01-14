@@ -7,6 +7,61 @@ const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 const newsGenerator = require('./src/scripts/news-generator')
 //imports a js script that generates a json file with all the page paths on the website.
 const savePagePaths = require('./src/scripts/save-page-paths')
+//imports a js script that grabs a list of images from Cloudinary to use as a default banner if no image is specified
+const bannerImages = require('./src/scripts/get-banner-images')
+
+exports.sourceNodes = async ({actions, cache, store, createNodeId, createContentDigest, getNode}) => {
+  // Create a top-level node, that can be queried from within GraphQL, which contains
+  // GatsbyImageSharpFluid-shaped links to all of the images in the Cloudinary "Banner" folder
+
+  const { createNode, createParentChildLink } = actions
+
+  // First, get the list of the URLs of the default banner images from Cloudinary
+  // getBannerImages() returns a Promise
+  // On the free tier of Cloudinary, we are allowed 500 API calls per hour. We shouldn't hit this, but it's useful to know while testing
+  // Also, it will return a maximum of 500 images, but again there are unlikely to be more than 500 banner images in the folder
+  let bannerImagesList = []
+  try {
+    const bannerImagesJson = await bannerImages.getBannerImages()
+
+    // Handle case where no images come back
+    if (bannerImagesJson.total_count > 0) {
+      bannerImagesList = bannerImagesJson.resources.map(resource => resource.url)
+    }
+  } catch (e) {
+    // API call failed
+    console.error(e)
+
+    // Continue, just leave the list empty
+  }
+
+  // Create top-level node to hold these
+  const topLevelID = createNodeId("default-banner-images-parent-node")
+  await createNode({
+    id: topLevelID,
+    name: "defaultBannerImagesParent",
+    description: "This node holds the default banner images that can be used in pages' banners.",
+    internal: {
+      type: "DefaultBannerImagesParent",
+      contentDigest: createContentDigest("")
+    }
+  })
+  const parentNode = getNode(topLevelID)
+
+  // Add all the remote image URLs as children of this node
+  return Promise.all(bannerImagesList.map(url => {
+    createRemoteFileNode({
+      url: url,
+      parentNodeId: topLevelID,
+      createNode,
+      createNodeId,
+      cache,
+      store
+    }).then(fileNode => {
+      createParentChildLink({parent: parentNode, child: fileNode})
+    })
+  }))
+}
 
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
   const result = await graphql(`

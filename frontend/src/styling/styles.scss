@@ -142,7 +142,10 @@ This is necessary because Bulma's experimental column margin classes do not func
     &.has-background {
         position: relative;
         overflow: hidden;
-        height: 40vh;
+        height: 30vh;
+        &.hero-revolving {
+            height: 50vh;
+        }
     }
 }
 

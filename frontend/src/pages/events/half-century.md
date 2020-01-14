@@ -7,5 +7,7 @@ dateTimeRange:
   provideEnd: true
 eventTypes:
   - Benefit gig
+heroData:
+  isActive: true
 ---
 Well, well... "L"!! "L" is the Roman numeral for "fifty", and that's the stretch of time we're celebrating the start of here!

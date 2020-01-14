@@ -11,6 +11,8 @@ strawberryTiles:
       text: >-
             multa quoque et bellō passūs, dum conderet urbem, inferretque deōs Latiō,
             genus unde Latīnum.
+heroData:
+  isActive: true
 ---
 # This is H1
 
