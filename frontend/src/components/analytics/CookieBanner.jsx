@@ -13,7 +13,7 @@ export const CookieBanner = ({primaryText, secondaryText, image, buttons, banner
                     <div className="column is-1 cookie-image-column">
                         <img className="cookie-image" alt={image.alt} src={getCookieImage(image)} />
                     </div>
-                    <div className="column">
+                    <div className="column is-5">
                         <h2 className="is-size-4">{primaryText}</h2>
                         <p>{secondaryText}</p>
                     </div>
