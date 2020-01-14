@@ -44,13 +44,14 @@ NewsArticleSnapshot.propTypes = {
   newsArticles: newsArticleValidator
 }
 
-const NewsArticleSnapshots = ({newsArticles}) => {
+const NewsArticleSnapshots = ({newsArticles, featuredArticle}) => {
   const newsArticleSnapshots = newsArticles.map(newsArticles => 
     <NewsArticleSnapshot 
       newsArticles={newsArticles}
       key={newsArticles.node.fields.slug}
     />
   )
+
 
   return (
     <MainTileWithTwoStackedSideTiles 
@@ -66,3 +67,16 @@ NewsArticleSnapshots.propTypes = {
 }
 
 export default NewsArticleSnapshots
+
+const getFeaturedArticle = (featuredArticleTitle, articles) => {
+  featuredArticle = articles.filter(article => article.node.frontmatter.title === featuredArticleTitle )
+  if(featuredArticle.length === 0) {
+    console.log(`No article with title ${featuredArticleTitle} was found.`)
+    return null
+  }
+  else if (featuredArticle.length > 1) {
+    console.log(`${featuredArticle.length} articles with the title ${featuredArticleTitle} were found.`)
+    return null
+  }
+  else return featuredArticle[0]
+}
