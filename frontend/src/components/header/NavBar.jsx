@@ -260,7 +260,8 @@ NavBurger.propTypes = {
 }
 
 NavBarQueryWrapper.propTypes = {
-  isPreview: PropTypes.bool
+  isPreview: PropTypes.bool,
+  CMSInput: PropTypes.object
 }
 
 NavBarDisplay.propTypes = {
