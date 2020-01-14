@@ -3,27 +3,7 @@ import PropTypes from 'prop-types'
 import OutsideClickHandler from 'react-outside-click-handler'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 
-import { useLocalStorageSettings, useCookieBannerSettings } from './Hooks'
-
-
-export const CookieBannerLive = () => (
-    <CookieBanner localStorageHook={useLocalStorageSettings}
-                  bannerActiveHook={useCookieBannerSettings}
-                  data={cookieBannerGraphqlQuery().cookieBanner.nodes[0].frontmatter}
-                  isFixedBottom={true} />
-)
-
-export const CookieBannerPreview = ({entry}) => (
-    <CookieBanner localStorageHook={() => [null, () => null]}
-                  bannerActiveHook={() => [true, () => null]} // dummy hooks generated for preview
-                  data={entry.getIn(["data"]).toJS()}
-                  isFixedBottom={false} />
-)
-
-const CookieBanner = ({localStorageHook, bannerActiveHook, data, isFixedBottom}) => {
-    const [_, setLocalStorageEnabled] = localStorageHook()
-    const [bannerActive, setBannerActive] = bannerActiveHook()
-
+export const CookieBanner = ({primaryText, secondaryText, image, buttons, bannerActive, setBannerActive, setLocalStorageEnabled, isFixedBottom}) => {
     if (bannerActive) {
         return (
             <OutsideClickHandler onOutsideClick={() => setBannerActive(false)}>
@@ -32,24 +12,30 @@ const CookieBanner = ({localStorageHook, bannerActiveHook, data, isFixedBottom})
                             onClick={() => setBannerActive(false)}>
                     </button>
                     <div className="column is-1 cookie-image-column">
-                        <img className="cookie-image" alt={data.image.alt} src={getCookieImage(data)} />
+                        <img className="cookie-image" alt={image.alt} src={getCookieImage(image)} />
                     </div>
                     <div className="column">
-                        <h2 className="is-size-4">{data.primaryText}</h2>
-                        <p>{data.secondaryText}</p>
+                        <h2 className="is-size-4">{primaryText}</h2>
+                        <p>{secondaryText}</p>
                     </div>
                     <div className="column cookie-buttons-column">
                         <div className="field is-grouped is-grouped-multiline cookie-buttons-field">
                             <button className="button is-success is-small cookie-button"
-                                    onClick={() => setLocalStorageEnabled("1")}>
-                                {data.buttons.accept}
+                                    onClick={() => {
+                                                setLocalStorageEnabled("1")
+                                                setBannerActive(false)
+                                            }}>
+                                {buttons.accept}
                             </button>
                             <button className="button is-small cookie-button"
-                                    onClick={() => setLocalStorageEnabled("0")}>
-                                {data.buttons.decline}
+                                    onClick={() => {
+                                                setLocalStorageEnabled("0")
+                                                setBannerActive(false)
+                                            }}>
+                                {buttons.decline}
                             </button>
                             <Link to="/privacy/" className="button is-small cookie-button">
-                                {data.buttons.policy}
+                                {buttons.policy}
                             </Link>
                         </div>
                     </div>
@@ -58,6 +44,11 @@ const CookieBanner = ({localStorageHook, bannerActiveHook, data, isFixedBottom})
         )
     }
     return null
+}
+
+export const getCookieBannerDataProps = () => {
+    const query = cookieBannerGraphqlQuery()
+    return query.cookieBanner.nodes[0].frontmatter
 }
 
 const cookieBannerGraphqlQuery = () => useStaticQuery(graphql`
@@ -84,17 +75,15 @@ const cookieBannerGraphqlQuery = () => useStaticQuery(graphql`
     }
 `)
 
-const getCookieImage = (data) => data.image.src ? data.image.src : data.image.srcNode.publicURL
-
-CookieBannerPreview.propTypes = {
-    entry: PropTypes.object,
-    widgetFor: PropTypes.func,
-    widgetsFor: PropTypes.func,
-    getAsset: PropTypes.func
-}
+const getCookieImage = (image) => image.src ? image.src : image.srcNode.publicURL
 
 CookieBanner.propTypes = {
-    localStorageHook: PropTypes.func,
-    bannerActiveHook: PropTypes.func,
-    data: PropTypes.object
+    primaryText: PropTypes.string,
+    secondaryText: PropTypes.string,
+    image: PropTypes.object,
+    buttons: PropTypes.object,
+    bannerActive: PropTypes.bool,
+    setBannerActive: PropTypes.func,
+    setLocalStorageEnabled: PropTypes.func,
+    isFixedBottom: PropTypes.bool
 }

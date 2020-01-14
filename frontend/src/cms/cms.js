@@ -14,7 +14,7 @@ import { CalendarPage } from '../templates/calendar-page'
 import { ContactPage } from '../templates/contact-page'
 import { FormPage } from '../templates/form'
 import { Footer } from '../components/Footer.jsx'
-import { CookieBannerPreview } from '../components/analytics/CookieBanner'
+import { CookieBanner } from '../components/analytics/CookieBanner'
 
 import { MultiImageControl } from './MultiImageWidget'
 import { HeroControl } from './HeroWidget'
@@ -66,6 +66,13 @@ const placeholderEvents = placeholderEventDays.map(dayNumber => ({
   }
 }))
 
+const cookieBannerPreviewPlaceholderProps = {
+  bannerActive: true,
+  setBannerActive: () => null,
+  setLocalStorageEnabled: () => null, // dummy functions for cookie banner buttons in preview
+  isFixedBottom: true
+}
+
 const homePageAdditionalPropsExtractor = (dataProps, { widgetsFor }) => {
   const contentBlocksMarkdown = widgetsFor('contentBlocks')
     .map(blk => blk.getIn(['widgets', '_markdown_contentBody']))
@@ -89,7 +96,7 @@ CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {events: plac
 CMS.registerPreviewTemplate('contact-page', preview(ContactPage))
 CMS.registerPreviewTemplate('forms', preview(FormPage))
 CMS.registerPreviewTemplate('footer', preview(Footer))
-CMS.registerPreviewTemplate('cookies', CookieBannerPreview)
+CMS.registerPreviewTemplate('cookies', preview(CookieBanner, cookieBannerPreviewPlaceholderProps, () => {}, false))
 
 CMS.registerWidget("multiImage", MultiImageControl)
 CMS.registerWidget("hero", HeroControl)

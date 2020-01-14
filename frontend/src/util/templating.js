@@ -21,11 +21,10 @@ import { Layout } from '../components/Layout'
  * @param {Object} component - Template component to preview
  * @param {Object} placeholderProps - For insertion of props that are unavailable in the CMS
  * @param {previewAdditionalPropsExtractorCallback} additionalPropsExtractor - To extract props that are unavailable in the CMS, e.g. props living in `node.fields`
- * @param {Object} dataProps - The data read from the CMS
- * @param {Object} cmsUtilityFns - Utility functions provided by the CMS
+ * @param {bool} [wrapInLayout=true] - Flag to render full page preview or component only
  * @returns {Function} Function to be passed into the CMS.registerPreviewTemplate(...) function
  */
-export const preview = (component, placeholderProps = {}, additionalPropsExtractor = () => {}) => {
+export const preview = (component, placeholderProps = {}, additionalPropsExtractor = () => {}, wrapInLayout=true) => {
     /**
      * @param {Object} entry.data - The data read from the CMS in Immutable.js object
      * @param {Function} widgetFor - Utility function provided by the CMS
@@ -46,17 +45,29 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
 
         Object.assign(previewProps, additionalPropsExtractor(dataProps, { widgetsFor }))
         Object.assign(previewProps, dataProps)
+        const componentWithProps = component(Object.assign(placeholderProps, previewProps))
 
         const layoutProps = extractLayoutPropsPreview(dataProps, additionalPropsExtractor, widgetsFor)
 
         const isPreview = true
-        return (
-            <PreviewContextWrapper value={isPreview}>
-                <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle}>
-                    {component(Object.assign(placeholderProps, previewProps))}
-                </Layout>
-            </PreviewContextWrapper>
-        )
+
+        if (wrapInLayout) {
+            return (
+                <PreviewContextWrapper value={isPreview}>
+                    <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle}>
+                        {componentWithProps}
+                    </Layout>
+                </PreviewContextWrapper>
+            )
+        }
+        else {
+            return (
+                <PreviewContextWrapper value={isPreview}>
+                    {componentWithProps}
+                </PreviewContextWrapper>
+            )
+        }
+
     }
 
     previewComponent.propTypes = {
