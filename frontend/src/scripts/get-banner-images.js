@@ -24,7 +24,9 @@ exports.getBannerImages = async () => {
         }
     )
 
-    if (bannerImagesResponse.ok) {
+    if (!bannerImagesResponse.ok) {
+        throw "Default banner image search failed."
+    } else {
         return bannerImagesResponse.json()
     }
 }

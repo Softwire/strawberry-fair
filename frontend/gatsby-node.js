@@ -20,8 +20,20 @@ exports.sourceNodes = async ({actions, cache, store, createNodeId, createContent
   // getBannerImages() returns a Promise
   // On the free tier of Cloudinary, we are allowed 500 API calls per hour. We shouldn't hit this, but it's useful to know while testing
   // Also, it will return a maximum of 500 images, but again there are unlikely to be more than 500 banner images in the folder
-  const bannerImagesJson = await bannerImages.getBannerImages()
-  const bannerImagesList = bannerImagesJson.resources.map(resource => resource.url)
+  let bannerImagesList = []
+  try {
+    const bannerImagesJson = await bannerImages.getBannerImages()
+
+    // Handle case where no images come back
+    if (bannerImagesJson.total_count > 0) {
+      bannerImagesList = bannerImagesJson.resources.map(resource => resource.url)
+    }
+  } catch (e) {
+    // API call failed
+    console.error(e)
+
+    // Continue, just leave the list empty
+  }
 
   // Create top-level node to hold these
   const topLevelID = createNodeId("default-banner-images-parent-node")
