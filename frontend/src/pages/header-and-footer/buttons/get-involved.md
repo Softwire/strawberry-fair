@@ -1,5 +1,5 @@
 ---
 text: Get Involved
-link: /index
+link: /events/index
 ---
 
