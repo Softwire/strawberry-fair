@@ -41,6 +41,7 @@ definitions:
   - &emailSubscriptionText {label: Email Subscription Text, name: emailSubscriptionText, widget: string}
   - &emailSubscriptionLink {label: Email Subscription Link, name: emailSubscriptionLink, widget: string}
   - &copyright {label: Copyright, name: copyright, widget: string}
+  - &notes {label: Editor's notes, name: notes, widget: notes, required: false, hint: "Warning: content written here will not be published on the website but will be publicly visible on github"}
   - strawberryTile: &strawberryTile
       label: StrawberryTile
       name: strawberryTile
@@ -160,6 +161,7 @@ collections:
           - *calendarBlock
           - *newsBlock
           - *twitterBlock
+          - *notes
       - file: "frontend/src/pages/news/index.md"
         label: "News Home"
         name: "news-home"
@@ -168,12 +170,14 @@ collections:
           - *title
           - *subtitle
           - *hero
+          - *notes
       - file: "frontend/src/pages/calendar.md"
         label: "Calendar Page"
         name: "calendar-page"
         fields:
           - {<<: *key, default: calendar-page}
           - *hero
+          - *notes
       - file: "frontend/src/pages/privacy.md"
         label: "Privacy Page"
         name: "privacy-page"
@@ -183,6 +187,7 @@ collections:
           - *subtitle
           - *hero
           - *body
+          - *notes
       - file: frontend/src/pages/contact.md
         label: "Contact Page"
         name: contact-page
@@ -192,12 +197,14 @@ collections:
           - *subtitle
           - *hero
           - *body
+          - *notes
       - file: "frontend/src/pages/events/index.md"
         label: "Upcoming Events"
         name: "upcoming-events"
         fields:
           - {<<: *key, default: upcoming-events}
           - *hero
+          - *notes
   - name: "news"
     label: "News Articles"
     folder: "frontend/src/pages/news/"
@@ -214,6 +221,7 @@ collections:
       - *newsImage
       - *body
       - *tags
+      - *notes
   - name: "events"
     label: "Events"
     folder: "frontend/src/pages/events/"
@@ -229,6 +237,7 @@ collections:
       - *eventImage
       - *body
       - *eventTypes
+      - *notes
   - name: "about"
     label: "About"
     folder: "frontend/src/pages/about/"
@@ -241,6 +250,7 @@ collections:
       - *hero
       - *body
       - *strawberryTiles
+      - *notes
   - name: "forms"
     label: "Forms"
     folder: "frontend/src/pages/forms/"
@@ -253,6 +263,7 @@ collections:
       - *hero
       - *body
       - *form
+      - *notes
   - name: "header-and-footer"
     label: "Header And Footer"
     files:
@@ -268,18 +279,21 @@ collections:
           - *emailSubscriptionText
           - *emailSubscriptionLink
           - *copyright
+          - *notes
       - file: "frontend/src/pages/header-and-footer/buttons/get-involved.md"
         label: "Get Involved"
         name: "get-involved"
         fields:
           - *text
           - *internalLink
+          - *notes
       - file: "frontend/src/pages/header-and-footer/buttons/apply-to-trade.md"
         label: "Apply to Trade"
         name: "apply-to-trade"
         fields:
           - *text
           - *internalLink
+          - *notes
   - label: Site Navigation
     name: navbar
     folder: frontend/src/pages/navbar/
@@ -288,3 +302,4 @@ collections:
     fields:
       - *menuTitle
       - *pageTitles
+      - *notes
