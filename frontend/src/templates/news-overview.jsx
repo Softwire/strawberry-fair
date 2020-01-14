@@ -7,7 +7,7 @@ import NewsMenu from '../components/NewsMenu.jsx'
 
 
 // This is used by the website and for CMS previews
-export const NewsOverview = ({newsArticles}) => {
+export const NewsOverview = ({newsArticles, featuredArticle}) => {
   // Only show "more news" if there are more than three news articles
   const moreNews = newsArticles.length > 3
   
@@ -15,7 +15,7 @@ export const NewsOverview = ({newsArticles}) => {
     <React.Fragment>
       <div className="columns">
         <div className = "column is-four-fifths">
-          <NewsArticleSnapshots newsArticles={newsArticles}/>
+          <NewsArticleSnapshots newsArticles={newsArticles} featuredArticle={featuredArticle}/>
         </div>
         <div className = "column">
           <NewsMenu newsArticles={newsArticles}/>
@@ -43,7 +43,7 @@ NewsOverview.propTypes = {
   newsArticles: NewsArticleSnapshots.propTypes.newsArticles
 }
 
-export default site(NewsOverview, data => ({newsArticles: data.allMarkdownRemark.edges}))
+export default site(NewsOverview, data => ({newsArticles: data.allMarkdownRemark.edges, featuredArticle: data.markdownRemark.frontmatter.featuredArticle}))
 
 export const query = graphql`
 query newsOverviewTemplate($id: String!) {
@@ -51,6 +51,7 @@ query newsOverviewTemplate($id: String!) {
       frontmatter {
         title
         subtitle
+        featuredArticle
       }
       html
     }
