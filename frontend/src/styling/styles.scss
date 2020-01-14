@@ -243,11 +243,23 @@ a:hover, a:active {
     }
 }
 
-.news-preview {
-    .news-excerpt {
-        margin-bottom: 0;
+.main-box,
+.side-box {
+    .news-preview {
+        .news-excerpt {
+            margin-bottom: 0;
+        }
+        .subtitle {
+            line-height: 2;
+            margin-bottom: 0;
+        }
+    
+        p {
+            margin-top: 12px;
+        }
     }
 }
+
 
 
 .title-and-buttons {
