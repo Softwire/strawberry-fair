@@ -11,6 +11,8 @@ dateTimeRange:
   provideEnd: true
 eventTypes:
   - Meeting - Programming
+heroData:
+  isActive: true
 ---
 Now in our second year, The Flying Pig Stage is dedicated to bringing you a great day of live music; a handpicked choice of some of the best musicians and bands we have been lucky enough to find. A mixture of styles including -  but certainly not limited to - Cajun, Americana, Funk, Blues, Rock and Roll, Folk, Jazz and Country Art Rock. Some local, including the winners of Best Acoustic Act at this year's Cambridge Band Competition, some from further afield; this year we have bands from Rome and NYC added so we feel we are truly going international!
 

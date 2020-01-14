@@ -10,6 +10,8 @@ dateTimeRange:
   provideEnd: false
 eventTypes:
   - Band competition
+heroData:
+  isActive: true
 ---
 ## By Percy Shelley
 

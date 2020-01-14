@@ -31,7 +31,12 @@ export class HeroControl extends React.Component {
                     new Map({
                         label: "Banner Images",
                         name: "heroImages",
-                        widget: "multiImage"
+                        widget: "multiImage",
+                        hint: `If you leave this empty, with no images, the banner will be filled with a random image.
+
+                        If you provide one image, the banner will always show that image.
+                        
+                        If you provide more than one image, the banner will 'rotate' through those images one-by-one.`
                     })
                 ]
             })

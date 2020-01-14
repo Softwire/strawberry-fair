@@ -11,6 +11,8 @@ dateTimeRange:
   provideEnd: true
 eventTypes:
   - Benefit gig
+heroData:
+  isActive: true
 ---
 ## Join the Parade!
 
