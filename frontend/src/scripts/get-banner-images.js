@@ -25,7 +25,8 @@ exports.getBannerImages = async () => {
     )
 
     if (!bannerImagesResponse.ok) {
-        throw "Default banner image search failed."
+        throw `Request to Cloudinary search API failed.
+Status ${bannerImagesResponse.status}: ${bannerImagesResponse.statusText}`
     } else {
         return bannerImagesResponse.json()
     }
