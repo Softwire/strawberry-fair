@@ -80,8 +80,8 @@ const CalendarWithContext = ({isPreview, previewEventList}) => {
 
 const MonthScrubber = ({monthForward, monthBack, focusDate}) => (
     <div className="month-scrubber">
-        <button onClick={monthBack} className="button is-white is-centered">
-            <span className="icon is-left has-text-dark is-large">
+        <button onClick={monthBack} className="button is-white">
+            <span className="icon has-text-dark is-large">
                 <FaChevronLeft />
             </span>
         </button>
@@ -90,8 +90,8 @@ const MonthScrubber = ({monthForward, monthBack, focusDate}) => (
             <p className="title is-hidden-tablet">{new Date(focusDate).toLocaleDateString('en-GB', {month: 'long'})}</p>
             <p className="title is-hidden-tablet">{new Date(focusDate).toLocaleDateString('en-GB', {year: 'numeric'})}</p>
         </div>
-        <button onClick={monthForward} className="button is-white is-centered">
-            <span className="icon is-right has-text-dark is-large">
+        <button onClick={monthForward} className="button is-white">
+            <span className="icon has-text-dark is-large">
                 <FaChevronRight />
             </span>
         </button>
