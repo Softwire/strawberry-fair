@@ -11,7 +11,6 @@ const savePagePaths = require('./src/scripts/save-page-paths')
 const bannerImages = require('./src/scripts/get-banner-images')
 
 exports.sourceNodes = async ({actions, cache, store, createNodeId, createContentDigest, getNode}) => {
-  console.log(arguments[0])
   // Create a top-level node, that can be queried from within GraphQL, which contains
   // GatsbyImageSharpFluid-shaped links to all of the images in the Cloudinary "Banner" folder
 
@@ -38,20 +37,18 @@ exports.sourceNodes = async ({actions, cache, store, createNodeId, createContent
   const parentNode = getNode(topLevelID)
 
   // Add all the remote image URLs as children of this node
-  for (let url of bannerImagesList) {
-    const fileNode = await createRemoteFileNode({
+  return Promise.all(bannerImagesList.map(url => {
+    createRemoteFileNode({
       url: url,
       parentNodeId: topLevelID,
       createNode,
       createNodeId,
       cache,
       store
+    }).then(fileNode => {
+      createParentChildLink({parent: parentNode, child: fileNode})
     })
-
-    createParentChildLink({parent: parentNode, child: fileNode})
-  }
-
-  // Must return a Promise
+  }))
 }
 
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
