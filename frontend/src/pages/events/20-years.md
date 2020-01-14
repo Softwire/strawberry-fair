@@ -7,5 +7,7 @@ dateTimeRange:
   provideEnd: true
 eventTypes:
   - Band competition
+heroData:
+  isActive: true
 ---
 The next twenty years, by definition, start *now*! What's your viginti-annual resolution?
