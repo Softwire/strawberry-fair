@@ -12,14 +12,14 @@ export const useLocalStorageSettings = () => {
         else if (localStorageEnabled !== null) {
             localStorage.setItem("Analytics Permission", localStorageEnabled)
         }
-    })
+    }, [localStorageEnabled])
 
     return [localStorageEnabled, setLocalStorageEnabled]
 }
 
 export const useCookieBannerSettings = () => {
     const [localStorageEnabled] = useLocalStorageSettings()
-    const [bannerActive, setBannerActive] = useState(localStorageEnabled)
+    const [bannerActive, setBannerActive] = useState(false)
 
     useEffect(() => {
         setBannerActive(localStorageEnabled === null)
