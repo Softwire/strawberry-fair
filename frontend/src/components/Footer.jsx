@@ -59,7 +59,7 @@ const ContactDetails = ({address, email, facebookAccount, twitterAccount}) => (
     <div className="columns is-mobile contact-details">
         <div className="column is-half">
             <h3 className="title is-5">Visit Us</h3>
-            <div className="content is-small">
+            <div className="content is-small address">
                 <p>{address.firstLine}</p>
                 <p>{address.secondLine}</p>
                 <p>{address.thirdLine}</p>
