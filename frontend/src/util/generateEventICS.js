@@ -1,9 +1,8 @@
 const ics = require('ics')
 const h2p = require('html2plaintext')
+const { writeFileSync } = require('fs')
 
-export const generateEventICS = (title, startDateTime, endDateTime, content) => {
-  let file;
-
+exports.generateEventICS = (filePath, title, startDateTime, endDateTime, content) => {
   // Generate event information
   const startDate = new Date(startDateTime)
   const endDate = new Date(endDateTime)
@@ -30,12 +29,8 @@ export const generateEventICS = (title, startDateTime, endDateTime, content) => 
   ics.createEvent(event, (error, value) => {
     if (error) {
       console.error(error)
+    } else {
+      writeFileSync(filePath, value)
     }
-    
-    file = new Blob([value], {type: 'text/calendar'})
   })
-
-  if (file) {
-    return file
-  }
 }
