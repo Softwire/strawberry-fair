@@ -75,11 +75,11 @@ export default NewsArticleSnapshots
 const checkFeaturedArticleExists = (featuredTitle, articles) => {
   const featuredArticle = articles.filter(article => article.node.frontmatter.title === featuredTitle )
   if(featuredArticle.length === 0) {
-    console.log(`No article with title ${featuredArticleTitle} was found.`)
+    console.log(`No article with title ${featuredTitle} was found.`)
     return false
   }
   else if (featuredArticle.length > 1) {
-    console.log(`${featuredArticle.length} articles with the title ${featuredArticleTitle} were found.`)
+    console.log(`${featuredArticle.length} articles with the title ${featuredTitle} were found.`)
     return false
   }
   else return true
