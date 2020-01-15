@@ -5,7 +5,7 @@ import { areSameMinute } from '../../util/dates'
 export const getEventList = () => {
   const { allMarkdownRemark } = useStaticQuery(graphql`
   query eventList {
-      allMarkdownRemark(filter: {fields: {slug: {regex: "$//events//", ne: "/events/"}}}, sort: {fields: frontmatter___dateTimeRange___startDateTime, order: ASC}) {
+      allMarkdownRemark(filter: {fields: {slug: {regex: "$//events//", nin: ["/events/", "/events/template/"]}}}, sort: {fields: frontmatter___dateTimeRange___startDateTime, order: ASC}) {
           nodes {
               ...EventFragment
           }

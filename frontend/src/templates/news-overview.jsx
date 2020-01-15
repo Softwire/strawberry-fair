@@ -36,7 +36,7 @@ query newsOverviewTemplate($id: String!) {
       }
       html
     }
-    allMarkdownRemark(filter: {fields: {slug: {regex: "$//news//", ne: "/news/"}}}, sort: {fields: frontmatter___date, order: DESC}) {
+    allMarkdownRemark(filter: {fields: {slug: {regex: "$//news//", nin: ["/news/", "/news/template/"]}}}, sort: {fields: frontmatter___date, order: DESC}) {
       edges {
         node {
           ...NewsFragment
