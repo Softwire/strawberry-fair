@@ -83,7 +83,7 @@ const CalendarDay = ({dateTime, events}) => {
                 <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
                 <div className="box button has-text-left calendar-day has-text-white has-text-weight-bold" onClick={modalOn}
                 style={{
-                    backgroundImage: `url(${_.get(eventWithPic.frontmatter.image, 'srcNode.childImageSharp.editedFluid.src', eventWithPic.frontmatter.image.src)})`}}>
+                    backgroundImage: `url(${_.get(eventWithPic.frontmatter.image, 'srcNode.childImageSharp.fixedAspect.src', eventWithPic.frontmatter.image.src)})`}}>
                     <DayText date={date} />
                     {events.slice(0, maxEvents).map(event =>
                     <p key={event.fields.slug}><Link className="has-text-white has-text-weight-medium" to={event.fields.slug}>{event.frontmatter.title}</Link></p>)}
@@ -97,7 +97,7 @@ const CalendarDay = ({dateTime, events}) => {
                 <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
                 {eventsWithPics.map((event, index) =>
                     <div key={event.fields.slug} className="box button has-text-left calendar-day has-text-white has-text-weight-bold" onClick={modalOn} style={{
-                            backgroundImage: `url(${_.get(event.frontmatter.image, 'srcNode.childImageSharp.editedFluid.src', event.frontmatter.image.src)})`,
+                            backgroundImage: `url(${_.get(event.frontmatter.image, 'srcNode.childImageSharp.fixedAspect.src', event.frontmatter.image.src)})`,
                             opacity: index === currentImage ? 1 : 0,
                             transition: `opacity ${imageFadeTimeS}s`,
                             position: "absolute",

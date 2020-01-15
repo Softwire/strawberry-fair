@@ -7,7 +7,7 @@ image:
     https://res.cloudinary.com/strawberryfair/image/upload/v1578398631/Events/jabberwocky_rgidju.jpg
   shouldDisplay: true
 dateTimeRange:
-  endDateTime: 2020-04-16T17:00:40.645Z
+  endDateTime: 2020-01-24T17:00:40.645Z
   provideEnd: true
   startDateTime: 2020-04-16T16:00:41.092Z
 eventTypes:
