@@ -7,7 +7,7 @@ import Img from 'gatsby-image'
 import { PreviewContext } from '../../util/context.jsx'
 import { getNavbarLogo } from './getNavbarLogo'
 import { navBarQuery } from './navBarQuery'
-import { getPreviewLinksFromCMSInput, generateLinks, getClassName, getTitle, addSlugs } from './NavBarHelper'
+import { getPreviewLinksFromCMSInput, generateLinks, getClassName, getTitle, addSlugs } from './navBarHelper'
 
 import navBarPreviewLinks from '../../data/navBarPreviewLinks'
 
