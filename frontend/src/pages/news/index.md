@@ -2,6 +2,6 @@
 templateKey: news-overview
 title: Our News
 subtitle: It's your festival
-featuredArticle: Hello There
+featuredTitle: Hello There
 ---
 

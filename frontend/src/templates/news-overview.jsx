@@ -7,7 +7,7 @@ import NewsMenu from '../components/NewsMenu.jsx'
 
 
 // This is used by the website and for CMS previews
-export const NewsOverview = ({newsArticles, featuredArticle}) => {
+export const NewsOverview = ({newsArticles, featuredTitle}) => {
   // Only show "more news" if there are more than three news articles
   const moreNews = newsArticles.length > 3
   
@@ -15,7 +15,7 @@ export const NewsOverview = ({newsArticles, featuredArticle}) => {
     <React.Fragment>
       <div className="columns">
         <div className = "column is-four-fifths">
-          <NewsArticleSnapshots newsArticles={newsArticles} featuredArticle={featuredArticle}/>
+          <NewsArticleSnapshots newsArticles={newsArticles} featuredTitle={featuredTitle}/>
         </div>
         <div className = "column">
           <NewsMenu newsArticles={newsArticles}/>
@@ -51,7 +51,7 @@ query newsOverviewTemplate($id: String!) {
       frontmatter {
         title
         subtitle
-        featuredArticle
+        featuredTitle
       }
       html
     }

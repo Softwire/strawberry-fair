@@ -44,7 +44,11 @@ NewsArticleSnapshot.propTypes = {
   newsArticles: newsArticleValidator
 }
 
-const NewsArticleSnapshots = ({newsArticles, featuredArticle}) => {
+const NewsArticleSnapshots = ({newsArticles, featuredTitle}) => {
+  if(!!featuredTitle && checkFeaturedArticleExists(featuredTitle, newsArticles)) {
+    const indexFeaturedArticle = getIndexOfFeaturedArticle(featuredTitle, newsArticles)
+    newsArticles = moveArticleToTheFront(indexFeaturedArticle, newsArticles)
+  }
   const newsArticleSnapshots = newsArticles.map(newsArticles => 
     <NewsArticleSnapshot 
       newsArticles={newsArticles}
@@ -68,15 +72,26 @@ NewsArticleSnapshots.propTypes = {
 
 export default NewsArticleSnapshots
 
-const getFeaturedArticle = (featuredArticleTitle, articles) => {
-  featuredArticle = articles.filter(article => article.node.frontmatter.title === featuredArticleTitle )
+const checkFeaturedArticleExists = (featuredTitle, articles) => {
+  const featuredArticle = articles.filter(article => article.node.frontmatter.title === featuredTitle )
   if(featuredArticle.length === 0) {
     console.log(`No article with title ${featuredArticleTitle} was found.`)
-    return null
+    return false
   }
   else if (featuredArticle.length > 1) {
     console.log(`${featuredArticle.length} articles with the title ${featuredArticleTitle} were found.`)
-    return null
+    return false
   }
-  else return featuredArticle[0]
+  else return true
+}
+
+const getIndexOfFeaturedArticle = (featuredTitle, articles) => {
+  return articles.findIndex(article => article.node.frontmatter.title === featuredTitle)
+}
+
+const moveArticleToTheFront = (articleIndex, articles) => {
+  const article = articles[articleIndex]
+  articles.splice(articleIndex, 1)
+  articles.unshift(article)
+  return articles
 }
