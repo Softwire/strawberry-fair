@@ -15,7 +15,7 @@ export const displayStyle = {
   year: "numeric"
 }
 
-const NewsArticleSnapshot = ({newsArticles}) => {
+export const NewsArticleSnapshot = ({newsArticles}) => {
   const publicationDate = new Date(newsArticles.node.frontmatter.date)
 
   const imageInfo = _.get(
