@@ -84,7 +84,7 @@ export const eventFragment = graphql`
 fragment EventFragment on MarkdownRemark {
   frontmatter {
     title
-    ...ImageFluid64x64Fragment
+    ...ImageFluidFragment
     eventTypes
     dateTimeRange {
       startDateTime

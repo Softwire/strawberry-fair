@@ -16,6 +16,12 @@ export function areSameMinute(date1, date2) {
     return minutesMatch && hoursMatch && daysMatch && monthsMatch && yearsMatch
 }
 
+export function areCurrentYear(date1, date2) {
+    const today = new Date()
+    const currentYear = today.getFullYear()
+    return (date1.getFullYear() === currentYear && date2.getFullYear() === currentYear)
+}
+
 // Does this date occur on or after the given day?
 // Even if an event took place "earlier today", it will still show up
 export function isOnOrAfterDay(baseDate, testDate) {
@@ -23,6 +29,24 @@ export function isOnOrAfterDay(baseDate, testDate) {
     const testPureDate = toPureDate(testDate)
 
     return testPureDate.getTime() >= basePureDate.getTime()
+}
+
+export function toDateTimeString(dateTime, {isShort, withYear}) {
+    //display style of the event date
+    const displayStyle = {
+        weekday: (isShort ? "short" : "long"),
+        day: "numeric",
+        month: (isShort ? "short" : "long"),
+        hour: "2-digit",
+        minute: "2-digit"
+    }
+    if (withYear) {
+        displayStyle.year = "numeric"
+    }
+
+    const dtString = dateTime.toLocaleDateString("en-GB", displayStyle)
+
+    return dtString.replace(",", "") // Removes comma after weekday
 }
 
 // Removes the time part of a Date

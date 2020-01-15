@@ -507,3 +507,31 @@ $strawberry-card-size: 14rem;
 }
 
 
+.upcoming-block {
+    width: 100%;
+    padding: 1rem;
+
+    .upcoming-image {
+        
+    }
+
+    .upcoming-header {
+        .upcoming-title {
+            
+        }
+
+        .upcoming-subtitle {
+
+        }
+    }
+
+    .upcoming-excerpt {
+        p {
+            margin-top: 0;
+
+            @media(min-width: $tablet) {
+                font-size: $size-6;
+            }
+        }
+    }
+}
