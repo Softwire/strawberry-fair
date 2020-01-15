@@ -5,6 +5,7 @@ image:
   alt: Placeholder
   src: >-
     https://res.cloudinary.com/strawberryfair/image/upload/v1578398631/Events/flying-pig_yyce2k.jpg
+  shouldDisplay: true
 dateTimeRange:
   startDateTime: 2020-12-23T12:00:00.000Z
   endDateTime: 2020-12-23T15:00:00.000Z

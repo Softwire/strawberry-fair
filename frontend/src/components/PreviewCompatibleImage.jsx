@@ -1,24 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
+import _ from 'lodash'
+
 import { previewCompatibleImageValidator } from './validators'
 
 const PreviewCompatibleImage = ({ imageInfo, style }) => {
-
   if (!imageInfo) {
     return null
   }
 
   const imageStyle = (style ? style : {})
-  const { alt = '', childImageSharp, image, src, srcNode } = imageInfo
+  const { alt = '', childImageSharp, image, src, srcNode, shouldDisplay } = imageInfo
+  
+  if (shouldDisplay === false) {
+    return null
+  }
 
-  if (!!image && !!image.childImageSharp) {
+  if (_.has(image, 'childImageSharp')) {
     return (
       <Img style={imageStyle} fluid={image.childImageSharp.fluid} alt={alt} />
     )
   }
 
-  if (!!srcNode && !!srcNode.childImageSharp) {
+  if (_.has(srcNode, 'childImageSharp')) {
     return (
       <Img style={imageStyle} fluid={srcNode.childImageSharp.fluid} alt={alt} />
     )

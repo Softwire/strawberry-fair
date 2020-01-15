@@ -9,6 +9,7 @@ image:
   alt: Placeholder
   src: >-
     https://res.cloudinary.com/strawberryfair/image/upload/v1578398631/Events/flying-pig_yyce2k.jpg
+  shouldDisplay: true
 eventTypes:
   - Benefit gig
   - Band competition

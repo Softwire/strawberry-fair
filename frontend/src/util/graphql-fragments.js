@@ -34,6 +34,7 @@ fragment ImageFluid64x64Fragment on MarkdownRemarkFrontmatter {
         }
       }
     }
+    shouldDisplay
   }
 }
 `
@@ -52,6 +53,7 @@ fragment imageFluidSquareFragment on MarkdownRemarkFrontmatter {
         }
       }
     }
+    shouldDisplay
   }
 }
 `

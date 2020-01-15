@@ -10,7 +10,7 @@ import { site } from '../util/templating'
 // This is used by the website and for CMS previews
 export const NewsArticle = ({author, content, image, date, tags, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
-
+  console.log(image)
     return (
       <React.Fragment>
         <figure className="image">
