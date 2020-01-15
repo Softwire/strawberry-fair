@@ -2,6 +2,7 @@ const path = require('path')
 const remark = require('remark')
 const remarkHtml = require('remark-html')
 const removeMd = require('remove-markdown')
+const { mkdir } = require('fs')
 const { createFilePath, createRemoteFileNode } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 //imports a js script that generates pages for monthly and yearly news
@@ -130,17 +131,19 @@ exports.onCreateNode = async ({ node, actions, getNode, store, cache, createNode
 
   // If this node holds data for an event, generate a calendar .ics file, then add it into the tree as
   // a node called "icsFile"
-  if (node.internal.type === "MarkdownRemark" && node.frontmatter.templateKey === "event-info") {
-    const filePath = `${__dirname}/static/ics${node.fields.slug.slice(0, -1)}.ics`
-    const dateTimeRange = node.frontmatter.dateTimeRange
-    generateEventICS(
-      filePath,
-      node.frontmatter.title,
-      dateTimeRange.startDateTime,
-      dateTimeRange.provideEnd ? dateTimeRange.endDateTime : dateTimeRange.startDateTime,
-      removeMd(node.rawMarkdownBody)
-    )
-  }
+  mkdir(`${__dirname}/public/ics/events`, {recursive: true}, () => {
+    if (node.internal.type === "MarkdownRemark" && node.frontmatter.templateKey === "event-info") {
+      const filePath = `${__dirname}/public/ics${node.fields.slug.slice(0, -1)}.ics`
+      const dateTimeRange = node.frontmatter.dateTimeRange
+      generateEventICS(
+        filePath,
+        node.frontmatter.title,
+        dateTimeRange.startDateTime,
+        dateTimeRange.provideEnd ? dateTimeRange.endDateTime : dateTimeRange.startDateTime,
+        removeMd(node.rawMarkdownBody)
+      )
+    }
+  })
 }
 
 // Currently this only works for the Content Blocks in the homepage!

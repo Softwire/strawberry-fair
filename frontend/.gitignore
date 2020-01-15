@@ -18,6 +18,3 @@ __tests__/__snapshots__
 
 # Secret API keys (shh!)
 .env
-
-# Auto-generated .ics files
-static/ics/
