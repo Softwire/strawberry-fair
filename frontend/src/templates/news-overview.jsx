@@ -25,7 +25,7 @@ export const NewsOverview = ({newsArticles}) => {
       (
         <React.Fragment>
           <h2 className="subtitle">More news</h2>
-          <hr />
+          <hr className="more-news-hr" />
           <div className="columns">
             {newsArticles.slice(3, 6).map(newsArticle => (
               <div key={newsArticle.node.fields.slug} className="column is-one-third">
