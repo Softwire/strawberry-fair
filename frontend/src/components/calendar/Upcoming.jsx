@@ -40,10 +40,10 @@ export const EventMediaBlock = ({event}) => {
     else {
         return (
         <div className="columns upcoming-block">
-            <div className="column is-2 upcoming-image">
+            <div className="column is-3 upcoming-image left-column-desktop">
                 <EventImage image={event.frontmatter.image} />
             </div>
-            <div className="column">
+            <div className="column right-column-desktop">
                 <div className="columns is-multiline">
                     <div className="column is-full upcoming-header">
                         <EventHeader event={event} isMobile={false} />
@@ -60,36 +60,44 @@ export const EventMediaBlock = ({event}) => {
 
 const EventImage = ({image}) => {
     if (image) {
+        const imageInfo = {
+            alt: image.alt,
+            src: _.get(image, 'srcNode.childImageSharp.fixedAspect.src', image.src)
+        }
+
         return (
-            <PreviewCompatibleImage imageInfo={image} />
+            <PreviewCompatibleImage imageInfo={imageInfo} />
         )
     }
     return null
 }
 
+
 const EventHeader = ({event, isMobile}) => (
     <Link to={event.fields.slug}>
-        <h2 className={`title is-${isMobile ? "4" : "3"} upcoming-title`}><strong>{event.frontmatter.title}</strong></h2>
+        <h2 className={`title is-4 upcoming-title`}><strong>{event.frontmatter.title}</strong></h2>
         <h3 className={`subtitle is-${isMobile ? "6" : "5"} upcoming-subtitle`}><strong>{generateEventSubtitle({markdownRemark: event}, isMobile)}</strong></h3>
     </Link>
 )
 
 const EventExcerpt = ({excerpt}) => (
-    <HTMLContentSmall className="add-margin-top" content={excerpt} />
+    <HTMLContentSmall content={excerpt} />
 )
 
 const EventPanelBlock = ({event}) => {
     return (
-        <div className="panel-block">
-            <EventMediaBlock event={event} />
+        <div className="upcoming-panel">
+            <div className="container">
+                <EventMediaBlock event={event} />
+            </div>
         </div>
     )
 }
 
 const NoEventsFoundBlock = () => (
-    <div className="panel-block">
-        <div className="media">
-            <div className="media-content">
+    <div className="upcoming-panel">
+        <div className="container">
+            <div className="no-events">
                 <p><strong>No events match the selected filters.</strong></p>
             </div>
         </div>
@@ -117,9 +125,11 @@ const UpcomingWithContext = ({isPreview, previewEventList}) => {
     return (
         <React.Fragment>
             <h1 className="title">Upcoming Events</h1>
-            <div className="upcoming panel">
-                <EventFilterBlock filterProps={filterProps} />
-                {eventPanels.length > 0 ? eventPanels : <NoEventsFoundBlock />}
+            <div>
+                <EventFilterBlock filterProps={filterProps} withDivider={false} />
+                <div className="upcoming is-viewport-width">
+                    {eventPanels.length > 0 ? eventPanels : <NoEventsFoundBlock />}
+                </div>
             </div>
         </React.Fragment>
     )

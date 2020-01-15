@@ -2,8 +2,8 @@
 templateKey: event-info
 title: Friendly Tree
 dateTimeRange:
-  startDateTime: 2020-12-24T15:40:45.883Z
-  endDateTime: 2020-12-24T16:40:45.883Z
+  startDateTime: 2020-01-24T15:40:45.883Z
+  endDateTime: 2020-01-24T16:40:45.883Z
   provideEnd: true
 image:
   alt: Placeholder

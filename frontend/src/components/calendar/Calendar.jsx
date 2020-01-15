@@ -57,7 +57,7 @@ const CalendarWithContext = ({isPreview, previewEventList}) => {
         <React.Fragment>
             <MonthScrubber monthForward={monthForward} monthBack={monthBack} focusDate={focusDate} />
             <div className="calendar panel">
-                <EventFilterBlock filterProps={filterProps} />
+                <EventFilterBlock filterProps={filterProps} withDivider={true} />
                 <div className="panel-block">
                     <div className="columns is-multiline is-mobile">
                         {days.map(dayNumber => {

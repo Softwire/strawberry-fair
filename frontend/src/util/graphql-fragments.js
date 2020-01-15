@@ -39,8 +39,8 @@ fragment ImageFluid64x64Fragment on MarkdownRemarkFrontmatter {
 }
 `
 
-export const imageFluidSquareFragment = graphql`
-fragment imageFluidSquareFragment on MarkdownRemarkFrontmatter {
+export const imageFluidFixedAspectFragment = graphql`
+fragment ImageFluidFixedAspectFragment on MarkdownRemarkFrontmatter {
   image {
     alt
     srcNode {
@@ -84,7 +84,7 @@ export const eventFragment = graphql`
 fragment EventFragment on MarkdownRemark {
   frontmatter {
     title
-    ...ImageFluidFragment
+    ...ImageFluidFixedAspectFragment
     eventTypes
     dateTimeRange {
       startDateTime
@@ -106,7 +106,7 @@ fragment NewsFragment on MarkdownRemark {
     title
     subtitle
     author
-    ...imageFluidSquareFragment
+    ...ImageFluidFixedAspectFragment
     date
     tags
   }

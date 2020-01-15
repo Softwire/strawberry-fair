@@ -19,10 +19,13 @@ DisabledFilterTag.propTypes = {
     add: PropTypes.func
 }
 
-export const EventFilterBlock = ({filterProps}) => (
-    <div className="panel-block filter">
-        <EventFilterTags filterProps={filterProps} />
-    </div>
+export const EventFilterBlock = ({filterProps, withDivider}) => (
+    <React.Fragment>
+        <div className="filter-block">
+            <EventFilterTags filterProps={filterProps} />
+        </div>
+        {withDivider ? <hr className="filter-block-divider"/> : null}
+    </React.Fragment>
 )
 
 export const EventFilterTags = ({filterProps: {allFilters, activeFilters, addFilter, removeFilter, clearFilters}}) => {

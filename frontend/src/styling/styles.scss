@@ -324,7 +324,7 @@ $strawberry-card-size: 14rem;
     margin-top: 0.6rem;
 }
 
-.calendar.panel .modal.is-active .media.event:nth-child(even),.upcoming.panel>.panel-block:not(.filter):nth-child(even) {
+.calendar.panel .modal.is-active .media.event:nth-child(even) {
     background-color: $light-grey;
 }
 
@@ -506,31 +506,50 @@ $strawberry-card-size: 14rem;
     }
 }
 
+.filter-block {
+    padding: 1rem 0.5rem;
+}
 
-.upcoming-block {
-    width: 100%;
+.filter-block-divider {
+    margin: 0;
+}
+
+.upcoming-panel {
+    justify-content: center;
     padding: 1rem;
 
-    .upcoming-image {
-        
+    &:not(.filter):nth-child(odd) {
+        background-color: $light-grey;
     }
 
-    .upcoming-header {
-        .upcoming-title {
-            
-        }
-
-        .upcoming-subtitle {
-
-        }
+    .no-events {
+        padding-left: 0.5rem;
     }
+    
+    .upcoming-block {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    
+        .left-column-desktop {
+            padding-right: 1rem;
+        }
 
-    .upcoming-excerpt {
-        p {
-            margin-top: 0;
+        .right-column-desktop {
+            padding-left: 1rem;
+        }
+    
+        .upcoming-excerpt {
+            .content {
+                :first-child {
+                    margin-top: 0;
+                }
 
-            @media(min-width: $tablet) {
-                font-size: $size-6;
+                @media(min-width: $tablet) {
+                    p {
+                        font-size: $size-6
+                    }
+                }
             }
         }
     }
