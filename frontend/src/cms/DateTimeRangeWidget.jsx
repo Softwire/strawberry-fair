@@ -23,13 +23,13 @@ export class DateTimeRangeControl extends React.Component {  // Must use a class
           label: "Event start time",
           name: "startDateTime",
           widget: "datetime",
-          hint: "The date and time at which this event is due to start."
+          hint: "The date and time at which this event is due to start"
         }),
         new Map({
           label: "Provide end time",
           name: "provideEnd",
           widget: "boolean",
-          hint: "Tick this box if you want to set an end time for this event."
+          hint: "Tick this box if you want to set an end time for this event"
         })
       ]
     }
@@ -40,7 +40,7 @@ export class DateTimeRangeControl extends React.Component {  // Must use a class
         label: "Event end time",
         name: "endDateTime",
         widget: "datetime",
-        hint: "The date and time at which this event is due to end."
+        hint: "The date and time at which this event is due to end"
       }))
     }
 
