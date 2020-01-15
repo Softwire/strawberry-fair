@@ -129,8 +129,7 @@ exports.onCreateNode = async ({ node, actions, getNode, store, cache, createNode
     await deepConvertImageUrlsToGatsbyNodes(node, node.id, createNode, createNodeId, cache, store)
   }
 
-  // If this node holds data for an event, generate a calendar .ics file, then add it into the tree as
-  // a node called "icsFile"
+  // If this node holds data for an event, generate a calendar .ics file in /public
   mkdir(`${__dirname}/public/ics/events`, {recursive: true}, () => {
     if (node.internal.type === "MarkdownRemark" && node.frontmatter.templateKey === "event-info") {
       const filePath = `${__dirname}/public/ics${node.fields.slug.slice(0, -1)}.ics`
