@@ -10,6 +10,7 @@ export const imageEditorComponent = {
     {
       name: 'size', label: 'Desktop Size Limit', widget: 'select', default: 'Medium', 
       options: ['Small', 'Medium', 'Large'],
+      hint: 'This will limit the maximum size of the image only for desktop users. Images within the size restrictions will not be affected'
     }
   ],
   // Pattern to identify a block as being an instance of this component
