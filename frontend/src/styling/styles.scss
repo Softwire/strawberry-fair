@@ -408,6 +408,22 @@ $strawberry-card-size: 14rem;
                 @include responsive-iframe;
             }
         }
+        
+        img {
+            @media(min-width: $tablet) {
+                &.html-embedded-image-small {
+                    max-width: 40%;
+                }
+    
+                &.html-embedded-image-medium {
+                    max-width: 70%;
+                }
+    
+                &.html-embedded-image-large {
+                    max-width: 100%;
+                }
+            }
+        }
     }
 }
 
