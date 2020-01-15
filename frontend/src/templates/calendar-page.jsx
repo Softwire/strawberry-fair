@@ -33,7 +33,7 @@ query calendarPageTemplate($id: String!) {
   markdownRemark(id: { eq: $id }) {
     html
   }
-  allMarkdownRemark(filter: {fields: {slug: {regex: "$//events//", nin: ["/events/", "/events/template/"]}}}, sort: {fields: frontmatter___dateTimeRange___startDateTime, order: ASC}) {
+  allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "event-info"}}}, sort: {fields: frontmatter___dateTimeRange___startDateTime, order: ASC}) {
     edges {
       node {
         ...EventFragment
