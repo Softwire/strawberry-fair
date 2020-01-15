@@ -168,6 +168,7 @@ definitions:
 collections:
   - name: "pages"
     label: "Pages"
+    delete: false
     files:
       - file: "frontend/src/pages/404.md"
         label: "404 Page"
@@ -285,6 +286,7 @@ collections:
       - *notes
   - name: "header-and-footer"
     label: "Header And Footer"
+    delete: false
     files:
       - file: "frontend/src/pages/header-and-footer/footer.md"
         label: "Footer"
@@ -315,6 +317,7 @@ collections:
           - *notes
   - label: Site Navigation
     name: navbar
+    delete: false
     folder: frontend/src/pages/navbar/
     description: Customise which pages appear in each dropdown menu in the Navigation Bar
     summary: "Dropdown: {{title}}"
@@ -324,6 +327,7 @@ collections:
       - *notes
   - label: Cookies and Privacy
     name: privacy
+    delete: false
     description: Edit the cookies banner and privacy policy page
     files:
       - file: "frontend/src/pages/privacy/index.md"

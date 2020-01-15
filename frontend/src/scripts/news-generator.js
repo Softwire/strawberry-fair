@@ -4,7 +4,7 @@ const path = require('path')
 exports.NewsInTimeIntervalGenerator = async ({ actions: { createPage }, graphql }) => {
   const result = await graphql(`
   query newsOverviewTemplate {
-    allMarkdownRemark(filter: {fields: {slug: {regex: "$//news//", ne: "/news/"}}}, sort: {fields: frontmatter___date, order: DESC}) {
+    allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "news-article"}}}, sort: {fields: frontmatter___date, order: DESC}) {
       edges {
         node {
           frontmatter {
