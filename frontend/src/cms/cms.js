@@ -22,6 +22,7 @@ import { HeroControl } from './HeroWidget'
 import { MultiCollectionRelationControl, MultiCollectionRelationPreview } from './MultiCollectionRelationWidget'
 import { LinkControl, LinkPreview } from './LinkWidget'
 import { DateTimeRangeControl } from './DateTimeRangeWidget'
+import { IdControl } from './IdWidget'
  
 
 
@@ -112,6 +113,7 @@ CMS.registerWidget('multi-collection-relation', MultiCollectionRelationControl, 
 CMS.registerWidget('link', LinkControl, LinkPreview)
 CMS.registerWidget("dateTimeRange", DateTimeRangeControl)
 CMS.registerWidget('notes', CMS.getWidget('markdown').control, () => null)
+CMS.registerWidget('id', IdControl)
 
 CMS.registerEditorComponent(youtubeEditorComponent)
 
