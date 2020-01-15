@@ -16,6 +16,7 @@ import { FormPage } from '../templates/form'
 import { Footer } from '../components/Footer'
 import { PageNotFound } from '../templates/page-not-found'
 import { CookieBanner } from '../components/analytics/CookieBanner'
+import Navbar from '../components/header/NavBar.jsx'
 
 import { MultiImageControl } from './MultiImageWidget'
 import { HeroControl } from './HeroWidget'
@@ -105,6 +106,8 @@ CMS.registerPreviewTemplate('forms', preview(FormPage))
 CMS.registerPreviewTemplate('footer', preview(Footer, {previewWithLayout: false}))
 CMS.registerPreviewTemplate('404', preview(PageNotFound))
 CMS.registerPreviewTemplate('cookies', preview(CookieBanner, {placeholderProps: cookieBannerPreviewPlaceholderProps, previewWithLayout: false}))
+CMS.registerPreviewTemplate('navbar', preview(Navbar, {previewWithLayout: false}))
+
 
 CMS.registerWidget("multiImage", MultiImageControl)
 CMS.registerWidget("hero", HeroControl)
