@@ -42,7 +42,7 @@ definitions:
   - &notes {label: Editor's notes, name: notes, widget: notes, required: false, hint: "Warning: content written here will not be published on the website but will be publicly visible on github"}
   - &interjection {label: Interjection, name: interjection, widget: string}
   - &info {label: Error Info, name: info, widget: string}
-  - &featuredArticle {label: Featured Article, name: featuredTitle, widget: relation, collection: news, searchFields: [title, author, date], displayFields: [title, date], valueField: uniqueID, required: false}
+  - &featuredArticle {label: Featured Article, name: featuredId, widget: relation, collection: news, searchFields: [title, author, date], displayFields: [title, author, date], valueField: uniqueID, required: false}
   - strawberryTile: &strawberryTile
       label: Strawberry Tile
       name: strawberryTile
