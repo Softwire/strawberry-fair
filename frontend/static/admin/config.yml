@@ -45,7 +45,7 @@ definitions:
   - &interjection {label: Interjection, name: interjection, widget: string}
   - &info {label: Error Info, name: info, widget: string}
   - &featuredArticle {label: Featured Article, name: featuredId, widget: relation, collection: news, searchFields: [title, author, date], displayFields: [title, author, date], valueField: uniqueId, required: false}
-  - &uniqueId { label: News Article, name: uniqueId, widget: id}
+  - &uniqueId { label: Unique Id, name: uniqueId, widget: id}
   - strawberryTile: &strawberryTile
       label: Strawberry Tile
       name: strawberryTile

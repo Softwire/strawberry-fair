@@ -44,9 +44,7 @@ NewsArticleSnapshot.propTypes = {
   newsArticles: newsArticleValidator
 }
 
-const NewsArticleSnapshots = ({newsArticles, featuredId}) => {
-  if(!!featuredId) moveArticleToTheFront(getIndexOfFeaturedArticle(featuredId, newsArticles), newsArticles)
-
+const NewsArticleSnapshots = ({newsArticles}) => {
   const newsArticleSnapshots = newsArticles.map(newsArticles => 
     <NewsArticleSnapshot 
       newsArticles={newsArticles}
@@ -65,19 +63,6 @@ const NewsArticleSnapshots = ({newsArticles, featuredId}) => {
 
 NewsArticleSnapshots.propTypes = {
   newsArticles: PropTypes.arrayOf(newsArticleValidator),
-  featuredId: PropTypes.string
 }
 
 export default NewsArticleSnapshots
-
-const getIndexOfFeaturedArticle = (featuredId, articles) => {
-  return articles.findIndex(article => article.node.frontmatter.uniqueId === featuredId)
-}
-
-const moveArticleToTheFront = (articleIndex, articles) => {
-  if(articleIndex !== -1) {
-    const article = articles[articleIndex]
-    articles.splice(articleIndex, 1)
-    articles.unshift(article)
-  }
-}
