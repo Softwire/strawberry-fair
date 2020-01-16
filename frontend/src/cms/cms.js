@@ -23,7 +23,7 @@ import { MultiCollectionRelationControl, MultiCollectionRelationPreview } from '
 import { LinkControl, LinkPreview } from './LinkWidget'
 import { DateTimeRangeControl } from './DateTimeRangeWidget'
 import { IdControl } from './IdWidget'
- 
+import { ScrapbookControl } from './ScrapbookImagesWidget'
 
 import { youtubeEditorComponent } from './youtubeEditorComponent'
 import { imageEditorComponent } from './imageEditorComponent'
@@ -118,6 +118,7 @@ CMS.registerWidget('link', LinkControl, LinkPreview)
 CMS.registerWidget("dateTimeRange", DateTimeRangeControl)
 CMS.registerWidget('notes', CMS.getWidget('markdown').control, () => null)
 CMS.registerWidget('id', IdControl)
+CMS.registerWidget('scrapbook', ScrapbookControl)
 
 CMS.registerEditorComponent(youtubeEditorComponent)
 CMS.registerEditorComponent(imageEditorComponent)

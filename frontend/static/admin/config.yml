@@ -54,14 +54,6 @@ definitions:
       fields:
         - {label: Display Tile, name: isPublic, widget: boolean, default: false, hint: "Should this Strawberry Tile be shown?"}
         - {label: Text, name: text, widget: text, required: false, hint: 140 characters max, pattern: ["^.{0,140}$", "Must have less than 140 characters"]}
-  - scrapbookImages: &scrapbookImages
-      label: Scrapbook Images
-      name: scrapbookImages
-      widget: list
-      hint: "Choose a series of images to accompany this content block, separating it from the rest of the page. Warning: this will be rendered above the title of this content block"
-      fields:
-        - {label: "Description", name: "alt", widget: "string"}
-        - {label: "Image File", name: "src", widget: "image"}
   - contentBlock: &contentBlock
       label: Content Blocks
       name: contentBlocks
@@ -72,7 +64,7 @@ definitions:
         - {label: Content Block Subtitle, name: subtitle, widget: string}
         - {label: Content Block Body, name: _markdown_contentBody, widget: markdown}
         - *strawberryTile
-        - *scrapbookImages
+        - {label: Scrapbook Images, name: scrapbookImages, widget: scrapbook}
   - calendarBlock: &calendarBlock
       label: Calendar Block
       name: calendarBlock
