@@ -2,6 +2,7 @@
 templateKey: news-article
 title: First message sent over internet
 author: Tim Berners-Lee
+uniqueId: '7'
 image:
   alt: Placeholder
   src: >-
