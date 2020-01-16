@@ -9,3 +9,7 @@ export class IdControl extends React.Component {
   }
 }
 
+IdControl.propTypes = {
+  onChange: PropTypes.func,
+  value: PropTypes.string,
+}
