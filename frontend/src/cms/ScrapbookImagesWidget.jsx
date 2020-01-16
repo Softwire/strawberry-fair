@@ -23,12 +23,13 @@ export class ScrapbookControl extends React.Component {
             ])
         })
 
-        console.log(this.props.value)
-
         return <ListControl {...this.props} field={field} />
     }
 
     isValid() {
+        if (this.props.size < 6) {
+            return { error: { message: "At least six images must be uploaded." } }
+        }
         return true
     }
 }
