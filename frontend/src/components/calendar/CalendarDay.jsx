@@ -5,6 +5,8 @@ import _ from 'lodash'
 
 import { eventPropTypeValidator } from '../validators'
 import { areSameDay } from '../../util/dates'
+import { PanelBlock } from '../Panel'
+import { getEventPanelData } from './Upcoming'
 
 // How many events' names should we write in the box, at maximum?
 const maxEvents = 3
@@ -55,7 +57,7 @@ const CalendarDay = ({dateTime, events}) => {
         if (events.length === 0) {
             internals = (
                 <React.Fragment>
-                    <NoEventsModal date={date} close={modalOff} active={showModal} />
+                    <CalendarDayModal date={date} close={modalOff} active={showModal} />
                     <div className="box button has-text-left calendar-day" onClick={modalOn}>
                         <DayText date={date} />
                     </div>
@@ -82,7 +84,7 @@ const CalendarDay = ({dateTime, events}) => {
                 <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
                 <div className="box button has-text-left calendar-day has-text-white has-text-weight-bold" onClick={modalOn}
                 style={{
-                    backgroundImage: `url(${_.get(eventWithPic.frontmatter.image, 'srcNode.childImageSharp.fixedAspect.src', eventWithPic.frontmatter.image.src)})`}}>
+                    backgroundImage: `url(${_.get(eventWithPic.frontmatter.image, 'srcNode.childImageSharp.editedFluid.src', eventWithPic.frontmatter.image.src)})`}}>
                     <DayText date={date} />
                     {events.slice(0, maxEvents).map(event =>
                     <p key={event.fields.slug}><Link className="has-text-white has-text-weight-medium" to={event.fields.slug}>{event.frontmatter.title}</Link></p>)}
@@ -96,7 +98,7 @@ const CalendarDay = ({dateTime, events}) => {
                 <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
                 {eventsWithPics.map((event, index) =>
                     <div key={event.fields.slug} className="box button has-text-left calendar-day has-text-white has-text-weight-bold" onClick={modalOn} style={{
-                            backgroundImage: `url(${_.get(event.frontmatter.image, 'srcNode.childImageSharp.fixedAspect.src', event.frontmatter.image.src)})`,
+                            backgroundImage: `url(${_.get(event.frontmatter.image, 'srcNode.childImageSharp.editedFluid.src', event.frontmatter.image.src)})`,
                             opacity: index === currentImage ? 1 : 0,
                             transition: `opacity ${imageFadeTimeS}s`,
                             position: "absolute",
@@ -119,15 +121,16 @@ const CalendarDay = ({dateTime, events}) => {
 }
 
 const CalendarDayModal = ({date, events, close, active}) => {
+    const panelData = events ? events.map((event) => getEventPanelData(event)) : []
+    const emptyText = "No events found."
+    
     return (
         <div className={`modal ${active ? "is-active" : ""}`}>
-            <div className="modal-background" onClick={close}></div>
+            <div className="modal-background" onClick={close} />
             <div className="modal-content">
                 <div className="message">
                     <h1 className="message-header is-primary">{date.toLocaleDateString('en-GB', longDateFormatOptions)}</h1>
-                    <div className="message-body">
-                        {events.map(event => null)}
-                    </div>
+                    <PanelBlock panelData={panelData} emptyText={emptyText} />
                 </div>
             </div>
             <button className="modal-close is-large" aria-label="close" onClick={close}></button>
@@ -135,7 +138,7 @@ const CalendarDayModal = ({date, events, close, active}) => {
     )
 }
 // <EventMediaBlock key={event.fields.slug} event={event} />
-
+/*
 const NoEventsModal = ({date, close, active}) => (
     <div className={`modal ${active ? "is-active" : ""}`}>
         <div className="modal-background" onClick={close}></div>
@@ -147,6 +150,7 @@ const NoEventsModal = ({date, close, active}) => (
         <button className="modal-close is-large" aria-label="close" onClick={close}></button>
     </div>
 )
+*/
 
 const DayText = ({date}) => (
     <p>
@@ -176,12 +180,13 @@ CalendarDayModal.propTypes = {
     close: PropTypes.func,
     active: PropTypes.bool
 }
-
+/*
 NoEventsModal.propTypes = {
     date: PropTypes.instanceOf(Date),
     close: PropTypes.func,
     active: PropTypes.bool
 }
+*/
 
 DayText.propTypes = {
     date: PropTypes.instanceOf(Date)

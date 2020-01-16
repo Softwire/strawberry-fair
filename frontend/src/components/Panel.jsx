@@ -46,7 +46,7 @@ const WrappedPanel = ({withContainer, panel}) => {
 
 const EmptyPanel = ({text}) => {
     return (
-        <div className="xpanel xpanel-empty">
+        <div className="xpanel">
             {text}
         </div>
     )
@@ -133,7 +133,7 @@ const getPanels = (panelData, emptyText, isMobile) => {
                                                isMobile={isMobile}
                                                key={i} />)
     }
-    return <EmptyPanel text={emptyText} />
+    return [<EmptyPanel text={emptyText} />]
 }
 
 const getWrappedPanels = (panels, withContainer) => (

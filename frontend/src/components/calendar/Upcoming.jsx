@@ -29,7 +29,7 @@ const UpcomingWithContext = ({isPreview, previewEventList}) => {
     const maxItems = 5
 
     // Construct array of event panel data
-    const panelData = filterEvents(events, filterProps.activeFilters).slice(0, maxItems).map(event => getPanelData(event))
+    const panelData = filterEvents(events, filterProps.activeFilters).slice(0, maxItems).map(event => getEventPanelData(event))
 
     const emptyText = "No events match the selected filters."
 
@@ -44,7 +44,7 @@ const UpcomingWithContext = ({isPreview, previewEventList}) => {
     )
 }
 
-const getPanelData = (event) => {
+export const getEventPanelData = (event) => {
     return {
         image: event.frontmatter.image,
         slug: event.fields.slug,

@@ -17,8 +17,8 @@ fragment ImageFluidFragment on MarkdownRemarkFrontmatter {
 }
 `
 
-export const imageFluid64x64Fragment = graphql`
-fragment ImageFluid64x64Fragment on MarkdownRemarkFrontmatter {
+export const imageFluidFixedAspectFragment = graphql`
+fragment ImageFluidFixedAspectFragment on MarkdownRemarkFrontmatter {
   image {
     alt
     srcNode {
@@ -27,25 +27,6 @@ fragment ImageFluid64x64Fragment on MarkdownRemarkFrontmatter {
           ...GatsbyImageSharpFluid
         }
         editedFluid: fluid(duotone: {highlight: "ae1414", shadow: "1d1d1d", opacity: 70}) {
-          ...GatsbyImageSharpFluid
-        }
-        resize(width: 64, height: 64) {
-          src
-        }
-      }
-    }
-    shouldDisplay
-  }
-}
-`
-
-export const imageFluidFixedAspectFragment = graphql`
-fragment ImageFluidFixedAspectFragment on MarkdownRemarkFrontmatter {
-  image {
-    alt
-    srcNode {
-      childImageSharp {
-        fluid {
           ...GatsbyImageSharpFluid
         }
         fixedAspect: resize(width: 500, height: 400) {
