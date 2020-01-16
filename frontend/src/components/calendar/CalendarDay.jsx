@@ -14,13 +14,10 @@ const widthBreakpoint = 500
 const CalendarDay = ({dateTime, events}) => {
     // How many events' names should we write in the box, at maximum?
     // If the screen is certain widths, only ever show the ellipsis
-    let maxEvents
-    const w = window.innerWidth
-    if (w > widthBreakpoint) {
-        maxEvents = 3
-    } else {
-        maxEvents = 0
-    }
+    const [ maxEvents, setMaxEvents ] = useState(window.innerWidth > widthBreakpoint ? 3 : 0)
+
+    // Set callback to update this
+    window.onresize = () => {setMaxEvents(window.innerWidth > widthBreakpoint ? 3 : 0)}
 
     const date = new Date(dateTime)  // The actual Date this CalendarDay is representing
 
