@@ -509,3 +509,11 @@ $strawberry-card-size: 14rem;
 .reduce-top-margin {
     margin-top: -0.5rem;
 }
+
+.limit-lines {
+    display: block;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 3.6em;
+    line-height: 1.8em;
+}

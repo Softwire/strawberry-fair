@@ -6,39 +6,9 @@ import _ from 'lodash'
 import { eventPropTypeValidator } from '../validators'
 import { EventMediaBlock } from './Upcoming'
 import { areSameDay } from '../../util/dates'
-import { truncateString } from '../../util/truncate-string'
-
-// The window width below which we stop showing the names of events and just show ellipses
-const widthBreakpoint = 500
-
-const maxTitleLength = 17
-
-// Helper function to extract the title from an event, and, if it's too long, truncate it and add an ellipsis
-const displayTitle = (event) => {
-    if (event && event.frontmatter && event.frontmatter.title) {
-        const title = event.frontmatter.title
-        if (title.length <= maxTitleLength) {
-            return title
-        } else {
-            return truncateString(title, maxTitleLength - 2, "...")
-        }
-    }
-}
 
 // Represents a day in the calendar. Will either be empty or contain a preview of an event.
 const CalendarDay = ({dateTime, events}) => {
-    // How many events' names should we write in the box, at maximum?
-    // If the screen is certain widths, only ever show the ellipsis
-    const [ maxEvents, setMaxEvents ] = useState(window.innerWidth > widthBreakpoint ? 3 : 0)
-
-    // Set callback to update this
-    useEffect(() => {
-        const updateMaxEvents = () => {setMaxEvents(window.innerWidth > widthBreakpoint ? 3 : 0)}
-
-        window.addEventListener("resize", updateMaxEvents)
-
-        return () => {window.removeEventListener("resize", updateMaxEvents)}
-    })
 
     const date = new Date(dateTime)  // The actual Date this CalendarDay is representing
 
@@ -95,9 +65,15 @@ const CalendarDay = ({dateTime, events}) => {
                     <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
                     <div className="box button has-text-left calendar-day has-text-white has-text-weight-bold is-primary-pale" onClick={modalOn}>
                         <DayText date={date} />
-                        {events.slice(0, maxEvents).map(event =>
-                        <p key={event.fields.slug}><Link className="has-text-white has-text-weight-medium" to={event.fields.slug}>{displayTitle(event)}</Link></p>)}
-                        {events.length > maxEvents ? <p>...</p> : null}
+                        <p className="limit-lines">
+                            {events.map(event => (
+                                <React.Fragment key={event.fields.slug}>
+                                    <span><Link className="has-text-white has-text-weight-medium" to={event.fields.slug}>{event.frontmatter.title}</Link></span>
+                                    <br />
+                                </React.Fragment>
+                            ))}
+                        </p>
+                        <p>...</p>
                     </div>
                 </React.Fragment>
             )
@@ -112,9 +88,15 @@ const CalendarDay = ({dateTime, events}) => {
                 style={{
                     backgroundImage: `url(${_.get(eventWithPic.frontmatter.image, 'srcNode.childImageSharp.editedFluid.src', eventWithPic.frontmatter.image.src)})`}}>
                     <DayText date={date} />
-                    {events.slice(0, maxEvents).map(event =>
-                    <p key={event.fields.slug}><Link className="has-text-white has-text-weight-medium" to={event.fields.slug}>{displayTitle(event)}</Link></p>)}
-                    {events.length > maxEvents ? <p>...</p> : null}
+                    <p className="limit-lines">
+                        {events.map(event => (
+                            <React.Fragment key={event.fields.slug}>
+                                <span key={event.fields.slug}><Link className="has-text-white has-text-weight-medium" to={event.fields.slug}>{event.frontmatter.title}</Link></span>
+                                <br />
+                            </React.Fragment>
+                        ))}
+                    </p>
+                    <p>...</p>
                 </div>
             </React.Fragment>
         )
@@ -130,9 +112,15 @@ const CalendarDay = ({dateTime, events}) => {
                             position: "absolute",
                             width: "100%"}}>
                         <DayText date={date} />
-                        {events.slice(0, maxEvents).map(event =>
-                        <p key={event.fields.slug}><Link className="has-text-white has-text-weight-medium" to={event.fields.slug}>{displayTitle(event)}</Link></p>)}
-                        {events.length > maxEvents ? <p>...</p> : null}
+                        <p className="limit-lines">
+                            {events.map(event => (
+                                <React.Fragment key={event.fields.slug}>
+                                    <span key={event.fields.slug}><Link className="has-text-white has-text-weight-medium" to={event.fields.slug}>{event.frontmatter.title}</Link></span>
+                                    <br />
+                                </React.Fragment>
+                            ))}
+                        </p>
+                        <p>...</p>
                     </div>
                 )}
             </div>
