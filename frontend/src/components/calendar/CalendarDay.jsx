@@ -17,7 +17,13 @@ const CalendarDay = ({dateTime, events}) => {
     const [ maxEvents, setMaxEvents ] = useState(window.innerWidth > widthBreakpoint ? 3 : 0)
 
     // Set callback to update this
-    window.onresize = () => {setMaxEvents(window.innerWidth > widthBreakpoint ? 3 : 0)}
+    useEffect(() => {
+        const updateMaxEvents = () => {setMaxEvents(window.innerWidth > widthBreakpoint ? 3 : 0)}
+
+        window.addEventListener("resize", updateMaxEvents)
+
+        return () => {window.removeEventListener("resize", updateMaxEvents)}
+    })
 
     const date = new Date(dateTime)  // The actual Date this CalendarDay is representing
 
