@@ -10,12 +10,12 @@
         "name": {
             "label": "Your name",
             "key": "entry.1716293616",
-            "placeholder": "Barry Fairstraw"
+            "placeholder": "Your name"
         },
         "email": {
             "label": "Your email",
             "key": "entry.1697399272",
-            "placeholder": "ilovestraws@barry.com"
+            "placeholder": "Your email"
         },
         "message": {
             "label": "How can we help?",
