@@ -10,6 +10,8 @@ import { eventTypeList } from '../calendar/EventType'
 import { PreviewContext } from '../../util/context'
 import { useFilters } from '../../util/filters'
 import { isOnOrAfterDay } from '../../util/dates'
+import { generateEventSubtitle } from '../../templates/event-info'
+import { HTMLContentSmall } from '../Content'
 
 const CalendarBlock = ({calendarBlock, events}) => (
   <BaseBlock block={calendarBlock} altBackground={true}>
@@ -37,7 +39,7 @@ const UpcomingEventsDisplayWithContext = ({isPreview, previewEventList}) => {
           .map(event => (
             <div className="column is-half" key={event.fields.slug}>
               <div className="box">
-                {null}
+                <EventMediaBlock event={event} />
               </div>
             </div>
             )
@@ -46,6 +48,28 @@ const UpcomingEventsDisplayWithContext = ({isPreview, previewEventList}) => {
         <MoreEventsLinkBox />
       </div>
     </React.Fragment>
+  )
+}
+
+export const EventMediaBlock = ({event}) => {
+  const eventUrl = event.fields.slug
+
+  return (
+  <div className="media event">
+      <div className="media-left">
+          <Link to={eventUrl} className="image is-64x64">
+              {event.frontmatter.image ? <img src={_.get(event.frontmatter.image, 'srcNode.childImageSharp.fixedAspect.src', event.frontmatter.image.src)}
+                                              alt={event.frontmatter.image.alt} /> : null}
+          </Link>
+      </div>
+      <div className="media-content">
+          <Link to={eventUrl}>
+              <h2 className="title is-4"><strong>{event.frontmatter.title}</strong></h2>
+              <h3 className="subtitle is-5">{generateEventSubtitle({markdownRemark: event})}</h3>
+          </Link>
+          <HTMLContentSmall className="add-margin-top" content={event.excerpt} />
+      </div>
+  </div>
   )
 }
 
@@ -61,7 +85,11 @@ CalendarBlock.propTypes = {
     PropTypes.shape({
         node: eventPropTypeValidator
     })
-)
+  )
+}
+
+EventMediaBlock.propTypes = {
+  event: PropTypes.object
 }
 
 UpcomingEventsDisplay.propTypes = {

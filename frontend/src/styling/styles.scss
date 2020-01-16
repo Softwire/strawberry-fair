@@ -324,10 +324,6 @@ $strawberry-card-size: 14rem;
     margin-top: 0.6rem;
 }
 
-.calendar.panel .modal.is-active .media.event:nth-child(even) {
-    background-color: $light-grey;
-}
-
 // Calendar day pencil circle 'today' indicator
 .pencil-circle {
     position: absolute;
@@ -524,6 +520,10 @@ $strawberry-card-size: 14rem;
         &:nth-child(odd) {
             background-color: $light-grey;
         }
+
+        &:nth-child(even) {
+            background-color: $white;
+        } // necessary to override Bulma modal styling
 
         .xpanel {
             width: 100%;
