@@ -1,5 +1,5 @@
 {
-    "url": "https://docs.google.com/forms/d/e/1FAIpQLSfoV9wrbfUBP286FyJgGBONTzyOjr6_a3riLWcMS13oYRK3LQ/formResponse",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLScZobiqwLN2RRb3OJLTMzKzCckvxgBvqL9odcCzpwQNyG18kg/formResponse",
     "method": "POST",
     "headers": {
         "content-type": "application/x-www-form-urlencoded"
@@ -9,15 +9,18 @@
     "fields": {
         "name": {
             "label": "Your name",
-            "key": "entry.222775737"
+            "key": "entry.1716293616",
+            "placeholder": "Barry Fairstraw"
         },
         "email": {
             "label": "Your email",
-            "key": "entry.943351010"
+            "key": "entry.1697399272",
+            "placeholder": "ilovestraws@barry.com"
         },
         "message": {
-            "label": "Your message",
-            "key": "entry.750036952"
+            "label": "How can we help?",
+            "key": "entry.999559034",
+            "placeholder": "Please tell us how we can help. We will get back to you as soon as we can, but please understand that we are a voluntary organisation"
         }
     }
 }
