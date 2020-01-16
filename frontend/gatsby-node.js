@@ -1,6 +1,8 @@
 const path = require('path')
 const remark = require('remark')
 const remarkHtml = require('remark-html')
+const removeMd = require('remove-markdown')
+const { mkdir } = require('fs')
 const { createFilePath, createRemoteFileNode } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 //imports a js script that generates pages for monthly and yearly news
@@ -9,6 +11,8 @@ const newsGenerator = require('./src/scripts/news-generator')
 const savePagePaths = require('./src/scripts/save-page-paths')
 //imports a js script that grabs a list of images from Cloudinary to use as a default banner if no image is specified
 const bannerImages = require('./src/scripts/get-banner-images')
+//js util function to generate an ics file from event data
+const { generateEventICS } = require('./src/util/generateEventICS')
 
 exports.sourceNodes = async ({actions, cache, store, createNodeId, createContentDigest, getNode}) => {
   // Create a top-level node, that can be queried from within GraphQL, which contains
@@ -124,6 +128,21 @@ exports.onCreateNode = async ({ node, actions, getNode, store, cache, createNode
 
     await deepConvertImageUrlsToGatsbyNodes(node, node.id, createNode, createNodeId, cache, store)
   }
+
+  // If this node holds data for an event, generate a calendar .ics file in /public
+  mkdir(`${__dirname}/public/ics/events`, {recursive: true}, () => {
+    if (node.internal.type === "MarkdownRemark" && node.frontmatter.templateKey === "event-info") {
+      const filePath = `${__dirname}/public/ics${node.fields.slug.slice(0, -1)}.ics`
+      const dateTimeRange = node.frontmatter.dateTimeRange
+      generateEventICS(
+        filePath,
+        node.frontmatter.title,
+        dateTimeRange.startDateTime,
+        dateTimeRange.provideEnd ? dateTimeRange.endDateTime : dateTimeRange.startDateTime,
+        removeMd(node.rawMarkdownBody)
+      )
+    }
+  })
 }
 
 // Currently this only works for the Content Blocks in the homepage!

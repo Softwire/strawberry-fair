@@ -6,6 +6,7 @@
   "dependencies": {
     "bulma": "^0.8.0",
     "dotenv": "^8.2.0",
+    "dwnld-attr-polyfill": "^1.1.6",
     "gatsby": "^2.13.31",
     "gatsby-background-image": "^0.9.11",
     "gatsby-image": "^2.0.23",
@@ -48,6 +49,7 @@
     "react-outside-click-handler": "^1.3.0",
     "remark": "^11.0.2",
     "remark-html": "^10.0.0",
+    "remove-markdown": "^0.3.0",
     "uuid": "^3.2.1"
   },
   "keywords": [

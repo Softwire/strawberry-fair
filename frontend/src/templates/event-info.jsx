@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+// Allow "download" <a> attribute to work in IE11
+import 'dwnld-attr-polyfill'
 
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
 import { site } from '../util/templating'
-import { generateEventICS } from '../util/generateEventICS'
-import { downloadBlob } from '../util/downloadBlob'
 import { areSameDay } from '../util/dates'
 import { PreviewContext } from '../util/context'
 
@@ -38,45 +38,32 @@ EventTypeList.propTypes = {
 }
 
 // used by website and CMS previews
-export const EventInfo = ({title, image, dateTimeRange, eventTypes, content, contentComponent}) => (
+export const EventInfo = ({image, slug, eventTypes, content, contentComponent}) => (
     <PreviewContext.Consumer>
-        {value => <EventInfoWithContext isPreview={value} title={title} image={image} dateTimeRange={dateTimeRange}
+        {value => <EventInfoWithContext isPreview={value} image={image} slug={slug}
         eventTypes={eventTypes} content={content} contentComponent={contentComponent} />}
     </PreviewContext.Consumer>
 )
 
-const EventInfoWithContext = ({isPreview, title, image, dateTimeRange, eventTypes, content, contentComponent}) => {
+const EventInfoWithContext = ({isPreview, image, slug, eventTypes, content, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     return (
         <React.Fragment>
             <EventTypeList eventTypes={eventTypes} />
-            <button className="button event-download-button" onClick={isPreview ? null : () => generateAndDownloadEvent(
-                title,
-                dateTimeRange.startDateTime,
-                dateTimeRange.provideEnd ? dateTimeRange.endDateTime : dateTimeRange.startDateTime,
-                content)}>
-                Add to Calendar
-            </button>
+            {!isPreview && slug ? (
+                <a className="button event-download-button" href={`/ics${slug.slice(0, -1)}.ics`} download>
+                    Add to Calendar
+                </a>
+            ) : null}
             <BodyComponent content={content} />
             <PreviewCompatibleImage imageInfo={image} />
         </React.Fragment>
     )
 }
 
-const generateAndDownloadEvent = (title, startDateTime, endDateTime, content) => {
-    const eventBlob = generateEventICS(title, startDateTime, endDateTime, content)
-    downloadBlob(eventBlob, `${title}.ics`)
-}
-
 EventInfoWithContext.propTypes = {
     isPreview: PropTypes.bool,
-    title: PropTypes.string.isRequired,
-    dateTimeRange: PropTypes.shape({
-        startDateTime: PropTypes.string.isRequired,
-        provideEnd: PropTypes.bool.isRequired,
-        endDateTime: PropTypes.string
-    }),
     eventTypes: EventTypeList.propTypes.eventTypes,
     image: PropTypes.object.isRequired,
     content: PropTypes.string.isRequired,

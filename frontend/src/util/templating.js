@@ -139,6 +139,9 @@ const siteInsideLayout = (component, data = {}, pageContext = {}, additionalProp
         Object.assign(newProps, data.markdownRemark.frontmatter)
         newProps.content = data.markdownRemark.html
         newProps.pageContext = pageContext
+        if (data.markdownRemark.fields && data.markdownRemark.fields.slug) {
+            newProps.slug = data.markdownRemark.fields.slug
+        }
     } else {
         Object.assign(newProps, pageContext)
     }
