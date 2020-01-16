@@ -21,7 +21,7 @@ export const NewsOverview = ({newsArticles}) => {
           <NewsMenu newsArticles={newsArticles}/>
         </div>          
       </div>
-      { moreNews ?
+      { moreNews &&
       (
         <React.Fragment>
           <h2 className="subtitle">More news</h2>
@@ -34,7 +34,7 @@ export const NewsOverview = ({newsArticles}) => {
             ))}
           </div>
         </React.Fragment>
-      ) : null }
+      )}
     </React.Fragment>
   )
 }
