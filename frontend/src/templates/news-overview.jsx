@@ -7,11 +7,11 @@ import NewsMenu from '../components/NewsMenu.jsx'
 
 
 // This is used by the website and for CMS previews
-export const NewsOverview = ({newsArticles, featuredTitle}) => {
+export const NewsOverview = ({newsArticles, featuredId}) => {
   return (
     <div className="columns">
       <div className = "column is-four-fifths">
-        <NewsArticleSnapshots newsArticles={newsArticles} featuredTitle={featuredTitle}/>
+        <NewsArticleSnapshots newsArticles={newsArticles} featuredTitle={featuredId}/>
       </div>
       <div className = "column">
         <NewsMenu newsArticles={newsArticles}/>
@@ -32,7 +32,7 @@ query newsOverviewTemplate($id: String!) {
       frontmatter {
         title
         subtitle
-        featuredTitle
+        featuredId
       }
       html
     }
