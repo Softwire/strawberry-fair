@@ -18,7 +18,7 @@ export const NewsOverview = ({newsArticles, featuredId}) => {
     <React.Fragment>
       <div className="columns">
         <div className = "column is-four-fifths">
-          <NewsArticleSnapshots newsArticles={newsArticles} featuredId={featuredId}/>
+          <NewsArticleSnapshots newsArticles={newsArticles}/>
         </div>
         <div className = "column">
           <NewsMenu newsArticles={newsArticles}/>
