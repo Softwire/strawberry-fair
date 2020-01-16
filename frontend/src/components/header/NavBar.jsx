@@ -26,18 +26,32 @@ const titleToLinkMap = {
 
 const NavBar = () => (
   <PreviewContext.Consumer>
-    {value => <NavBarDisplay isPreview={value} />}
+    {value => <NavBarQueryWrapper isPreview={value} />}
   </PreviewContext.Consumer>
 )
 
 export default NavBar
 
-const NavBarDisplay = ({isPreview}) => {
+const NavBarQueryWrapper = ({isPreview}) => {
+  let links, logo, isFixedTop
+  if (isPreview) {
+    links = navBarPreviewLinks
+    logo = <img alt="Strawberry Fair logo" src="/img/1-line-logo.png" width="280" />
+    isFixedTop = false
+  }
+  else {
+    links = getNavBarLinksFromGraphqlData(navBarQuery())
+    logo = <Img fixed={getNavbarLogo()} alt="Strawberry Fair logo" />
+    isFixedTop = true
+  }
+  return <NavBarDisplay links={links} logo={logo} isFixedTop={isFixedTop} />
+}
+
+export const NavBarDisplay = ({links, logo, isFixedTop}) => {
   const [menuActive, setMenuState] = useState(false)
-  const navBarLinks = isPreview ? navBarPreviewLinks : getNavBarLinksFromGraphqlData()
 
   // List holding which dropdowns are open (on mobile)
-  const [dropdownsActive, setDropdownsActive] = useState(Array.from(navBarLinks).fill(false))
+  const [dropdownsActive, setDropdownsActive] = useState(Array.from(links).fill(false))
 
   // Function to collapse all child dropdowns
   const collapseAll = () => {
@@ -47,49 +61,50 @@ const NavBarDisplay = ({isPreview}) => {
   return (
       <header>
         <OutsideClickHandler onOutsideClick={() => {collapseAll(); setMenuState(false)}} display="contents">
-          <nav className="navbar is-fixed-top">
+          <nav className={`navbar ${isFixedTop ? 'is-fixed-top' : ''}`}>
             <div className="navbar-brand">
               <Link className="navbar-item" to="/">
-                {isPreview ? <img alt="Strawberry Fair logo" src="/img/1-line-logo.png" width="280" /> : <Img fixed={getNavbarLogo()} alt="Strawberry Fair logo" />}
+                {logo}
               </Link>
               <NavBurger target="navigationBar" active={menuActive} setState={setMenuState} collapseAll={collapseAll} />
             </div>
-            <NavMenu active={menuActive} navBarLinks={navBarLinks} collapseAll={collapseAll} dropdownsActive={dropdownsActive} setDropdownsActive={setDropdownsActive} />
+            <NavMenu active={menuActive} navBarLinks={links} collapseAll={collapseAll} dropdownsActive={dropdownsActive} setDropdownsActive={setDropdownsActive} />
           </nav>
         </OutsideClickHandler>
       </header>
   )
 }
 
-const getNavBarLinksFromGraphqlData = () => {
-  const data = useStaticQuery(graphql`
-    query navBarQuery {
-      navBarInfo: allMarkdownRemark(filter: {fields: {slug: {regex: "$//navbar//", ne: "/navbar/"}}}) {
-        edges {
-          node {
-            frontmatter {
-              title 
-              pageTitles {
-                pageTitle
-              }
+const navBarQuery = () => useStaticQuery(graphql`
+  query navBarQuery {
+    navBarInfo: allMarkdownRemark(filter: {fields: {slug: {regex: "$//navbar//", ne: "/navbar/"}}}) {
+      edges {
+        node {
+          frontmatter {
+            title 
+            pageTitles {
+              pageTitle
             }
           }
         }
       }
-      allPages: allMarkdownRemark {
-        edges {
-          node {
-            frontmatter {
-              title
-            }
-            fields {
-              slug
-            }
+    }
+    allPages: allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            title
+          }
+          fields {
+            slug
           }
         }
       }
-    }`)
+    }
+  }
+`)
 
+export const getNavBarLinksFromGraphqlData = (data) => {
   let pageTitleToSlugMap = {} 
   data.allPages.edges.forEach(edge => pageTitleToSlugMap[edge.node.frontmatter.title] = edge.node.fields.slug)
   data.navBarInfo.edges.forEach(edge => addSlugs(pageTitleToSlugMap, edge))
@@ -235,6 +250,12 @@ NavBurger.propTypes = {
   collapseAll: PropTypes.func.isRequired
 }
 
-NavBarDisplay.propTypes = {
+NavBarQueryWrapper.propTypes = {
   isPreview: PropTypes.bool
+}
+
+NavBarDisplay.propTypes = {
+  links: NavMenu.propTypes.navBarLinks,
+  logo: PropTypes.element,
+  isFixedTop: PropTypes.bool
 }

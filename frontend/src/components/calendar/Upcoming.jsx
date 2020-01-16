@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
+import _ from 'lodash'
 
 import { HTMLContentSmall } from '../Content'
 import { eventPropTypeValidator } from '../validators'
@@ -10,24 +11,23 @@ import { getEventList } from './getEventList'
 import { PreviewContext } from '../../util/context'
 import { useFilters } from '../../util/filters'
 import { isOnOrAfterDay } from '../../util/dates'
-import { displayStyle } from '../../templates/event-info'
+import { generateEventSubtitle } from '../../templates/event-info'
 
 export const EventMediaBlock = ({event}) => {
-    const date = new Date(event.frontmatter.dateTime)
     const eventUrl = event.fields.slug
 
     return (
     <div className="media event">
         <div className="media-left">
             <Link to={eventUrl} className="image is-64x64">
-                {event.frontmatter.image ? <img src={(event.frontmatter.image.src.childImageSharp ? event.frontmatter.image.src.childImageSharp.resize.src : event.frontmatter.image.src)}
+                {event.frontmatter.image ? <img src={_.get(event.frontmatter.image, 'srcNode.childImageSharp.resize.src', event.frontmatter.image.src)}
                                                 alt={event.frontmatter.image.alt} /> : null}
             </Link>
         </div>
         <div className="media-content">
             <Link to={eventUrl}>
                 <h2 className="title is-4"><strong>{event.frontmatter.title}</strong></h2>
-                <h3 className="subtitle is-5">{date.toLocaleString("en-GB", displayStyle)}</h3>
+                <h3 className="subtitle is-5">{generateEventSubtitle({markdownRemark: event})}</h3>
             </Link>
             <HTMLContentSmall className="add-margin-top" content={event.excerpt} />
         </div>
@@ -64,7 +64,7 @@ const UpcomingWithContext = ({isPreview, previewEventList}) => {
 
     // Get list of events occurring today or later
     let events = isPreview ? previewEventList : getEventList()
-    events = events.filter(event => isOnOrAfterDay(new Date(), new Date(event.frontmatter.dateTime)))
+    events = events.filter(event => isOnOrAfterDay(new Date(), new Date(event.frontmatter.dateTimeRange.provideEnd ? event.frontmatter.dateTimeRange.endDateTime : event.frontmatter.dateTimeRange.startDateTime)))
 
     const maxItems = 5
 
@@ -72,11 +72,13 @@ const UpcomingWithContext = ({isPreview, previewEventList}) => {
     let eventPanels = filterEvents(events, filterProps.activeFilters).slice(0, maxItems).map(event => <EventPanelBlock key={event.frontmatter.title} event={event} />)
 
     return (
-        <div className="upcoming panel">
-            <h1 className="panel-heading">Upcoming</h1>
-            <EventFilterBlock filterProps={filterProps} />
-            {eventPanels.length > 0 ? eventPanels : <NoEventsFoundBlock />}
-        </div>
+        <React.Fragment>
+            <h1 className="title">Upcoming Events</h1>
+            <div className="upcoming panel">
+                <EventFilterBlock filterProps={filterProps} />
+                {eventPanels.length > 0 ? eventPanels : <NoEventsFoundBlock />}
+            </div>
+        </React.Fragment>
     )
 }
 

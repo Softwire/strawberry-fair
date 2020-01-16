@@ -1,9 +1,7 @@
 backend:
-  name: git-gateway
-  branch: production
-  accept_roles:
-    - admin
-    - content
+  name: github
+  repo: Softwire/strawberry-fair
+  branch: sf-132
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -11,7 +9,11 @@ backend:
     uploadMedia: Netlify CMS - Upload “{{path}}”
     deleteMedia: Netlify CMS - Delete “{{path}}”
 
-media_folder: /frontend/static/img
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: strawberryfair
+    api_key: 631814456675255
 public_folder: /img
 publish_mode: editorial_workflow
 
@@ -22,17 +24,40 @@ definitions:
   - &subtitle {label: Subtitle, name: subtitle, widget: string, required: false}
   - &hero {label: Banner, name: heroData, widget: hero, required: false}
   - &body {label: Main Content, name: body, widget: markdown}
-  - &newsImage {label: Primary Image, name: image, widget: accessibleImage, hint: This image will also be used as a preview image for the article}
-  - &eventImage {label: Event Image, name: image, widget: accessibleImage, hint: This image will also be used as a preview image for the event}
   - &form {label: Form, name: form, widget: form}
   - &author {label: Author, name: author, widget: string}
   - &date {label: Date, name: date, widget: datetime, format: YYYY-MM-DD, dateFormat: YYYY-MM-DD, timeFormat: false}
-  - &dateTime {label: Start Time, name: dateTime, widget: datetime}
-  - &strawberryTiles {label: Strawberry Tiles, name: strawberryTiles, widget: strawberryTiles, required: false}
+  - &eventDateTimeRange {label: Event Timing, name: dateTimeRange, widget: dateTimeRange}
   - &tags {label: Tags, name: tags, widget: list, default: ["news"]}
   - &menuTitle {label: NavBar Dropdown Title, name: title, widget: string}
   - &internalLink {label: Link, name: link, widget: link, hint: Choose the path to the page you want this link to point to. Select "<-- Previous Menu" to undo your last selection.  Make sure you select a complete path by either ending your selection with "index" or checking that the link is displayed on this widget.}
   - &text {label: Text, name: text, widget: string}
+  - &email {label: Email, name: email, widget: string}
+  - &facebook {label: Facebook Account, name: facebookAccount, widget: string}
+  - &twitter {label: Twitter Account, name: twitterAccount, widget: string}
+  - &invitationText {label: Invitation Text, name: invitationText, widget: string}
+  - &emailSubscriptionText {label: Email Subscription Text, name: emailSubscriptionText, widget: string}
+  - &emailSubscriptionLink {label: Email Subscription Link, name: emailSubscriptionLink, widget: string}
+  - &copyright {label: Copyright, name: copyright, widget: string}
+  - &notes {label: Editor's notes, name: notes, widget: notes, required: false, hint: "Warning: content written here will not be published on the website but will be publicly visible on github"}
+  - &interjection {label: Interjection, name: interjection, widget: string}
+  - &info {label: Error Info, name: info, widget: string}
+  - &featuredArticle {label: Featured Article, name: featuredTitle, widget: relation, collection: news, searchFields: [title, author, date], displayFields: [title, date], valueField: uniqueID, required: false}
+  - strawberryTile: &strawberryTile
+      label: StrawberryTile
+      name: strawberryTile
+      widget: object
+      fields:
+        - {label: Display Tile, name: isPublic, widget: boolean, default: false}
+        - {label: Text, name: text, widget: text, required: false, hint: 140 characters max, pattern: ["^.{0,140}$", "Must have less than 140 characters"]}
+  - scrapbookImages: &scrapbookImages
+      label: Scrapbook Images
+      name: scrapbookImages
+      widget: list
+      hint: "Warning: this will be rendered above the title of this content block"
+      fields:
+        - {label: "Description", name: "alt", widget: "string"}
+        - {label: "Image File", name: "src", widget: "image"}
   - contentBlock: &contentBlock
       label: Content Blocks
       name: contentBlocks
@@ -40,9 +65,9 @@ definitions:
       fields:
         - {label: Content Block Title, name: title, widget: string}
         - {label: Content Block Subtitle, name: subtitle, widget: string}
-        - {label: Scrapbook Images, name: scrapbookImages, widget: list, field: {label: Scrapbook Image, name: scrapbookImage, widget: image}}
         - {label: Content Block Body, name: _markdown_contentBody, widget: markdown}
-        - {label: Strawberry Tile, name: sideSnippet, widget: string}
+        - *strawberryTile
+        - *scrapbookImages
   - calendarBlock: &calendarBlock
       label: Calendar Block
       name: calendarBlock
@@ -71,8 +96,9 @@ definitions:
       options:
       - 'Benefit gig'             # IF YOU UPDATE THIS LIST
       - 'Meeting - Programming'   # MAKE SURE YOU UPDATE IT IN
-      - 'Meeting - Finance'       # src/components/calendar/Events.jsx
+      - 'Meeting - Finance'       # src/components/calendar/EventType.js
       - 'Band competition'        # AS WELL
+      - 'Other'
       multiple: true
   - pageTitles: &pageTitles
       label: Page Titles
@@ -88,12 +114,61 @@ definitions:
           searchFields: [title]
           valueField: title
           displayFields: [title]
-
+  - strawberryTiles: &strawberryTiles
+      label: Strawberry Tiles
+      name: strawberryTiles
+      widget: list
+      required: false
+      fields: 
+        - *strawberryTile
+  - form: &form
+      label: Form
+      name: form
+      widget: object
+      fields:
+        - {label: "Display form", name: "isPublic", widget: "boolean"}
+        - {label: "Google Form Embed HTML", name: "link", widget: "string", hint: "Copy and paste Embed HTML from your Google Form"}
+  - accessibleImage: &accessibleImage
+      label: Accessible Image
+      name: image
+      widget: object
+      fields:
+        - {label: "Description", name: "alt", widget: "string"}
+        - {label: "Image File", name: "src", widget: "image"}
+  - &newsImage {<<: *accessibleImage, label: Primary Image, hint: This image will also be used as a preview image for the article}
+  - &eventImage {<<: *accessibleImage, label: Event Image, hint: This image will also be used as a preview image for the event}
+  - address: &address 
+      label: Address
+      name: address
+      widget: object
+      fields: 
+        - {label: Address Line 1, name: firstLine, widget: string}
+        - {label: Address Line 2, name: secondLine, widget: string}
+        - {label: Address Line 3, name: thirdLine, widget: string}
+  - &cookiesPrimaryText {label: Primary Text, name: primaryText, widget: string}
+  - &cookiesSecondaryText {label: Secondary Text, name: secondaryText, widget: string}
+  - cookiesButtons: &cookiesButtons
+      label: Button Text
+      name: buttons
+      widget: object
+      fields:
+        - {label: Accept Cookies, name: accept, widget: string}
+        - {label: Decline Cookies, name: decline, widget: string}
+        - {label: Read Policy, name: policy, widget: string}
 
 collections:
   - name: "pages"
     label: "Pages"
     files:
+      - file: "frontend/src/pages/404.md"
+        label: "404 Page"
+        name: "404"
+        fields:
+          - {<<: *key, default: page-not-found}
+          - *title
+          - *interjection
+          - *info
+          - *accessibleImage
       - file: "frontend/src/pages/index.md"
         label: "Home Page"
         name: "home"
@@ -106,6 +181,7 @@ collections:
           - *calendarBlock
           - *newsBlock
           - *twitterBlock
+          - *notes
       - file: "frontend/src/pages/news/index.md"
         label: "News Home"
         name: "news-home"
@@ -113,23 +189,16 @@ collections:
           - {<<: *key, default: news-overview}
           - *title
           - *subtitle
+          - *featuredArticle
           - *hero
-          - *body
+          - *notes
       - file: "frontend/src/pages/calendar.md"
         label: "Calendar Page"
         name: "calendar-page"
         fields:
           - {<<: *key, default: calendar-page}
           - *hero
-      - file: "frontend/src/pages/privacy.md"
-        label: "Privacy Page"
-        name: "privacy-page"
-        fields:
-          - {<<: *key, default: about-page}
-          - *title
-          - *subtitle
-          - *hero
-          - *body
+          - *notes
       - file: frontend/src/pages/contact.md
         label: "Contact Page"
         name: contact-page
@@ -139,12 +208,14 @@ collections:
           - *subtitle
           - *hero
           - *body
+          - *notes
       - file: "frontend/src/pages/events/index.md"
         label: "Upcoming Events"
         name: "upcoming-events"
         fields:
           - {<<: *key, default: upcoming-events}
           - *hero
+          - *notes
   - name: "news"
     label: "News Articles"
     folder: "frontend/src/pages/news/"
@@ -153,6 +224,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {<<: *key, default: news-article}
+      - { label: News Article, name: uniqueID, widget: "id"}
       - *title
       - *subtitle
       - *hero
@@ -161,6 +233,7 @@ collections:
       - *newsImage
       - *body
       - *tags
+      - *notes
   - name: "events"
     label: "Events"
     folder: "frontend/src/pages/events/"
@@ -172,10 +245,11 @@ collections:
       - *title
       - *subtitle
       - *hero
-      - *dateTime
+      - *eventDateTimeRange
       - *eventImage
       - *body
       - *eventTypes
+      - *notes
   - name: "about"
     label: "About"
     folder: "frontend/src/pages/about/"
@@ -188,6 +262,7 @@ collections:
       - *hero
       - *body
       - *strawberryTiles
+      - *notes
   - name: "forms"
     label: "Forms"
     folder: "frontend/src/pages/forms/"
@@ -200,21 +275,37 @@ collections:
       - *hero
       - *body
       - *form
+      - *notes
   - name: "header-and-footer"
     label: "Header And Footer"
     files:
+      - file: "frontend/src/pages/header-and-footer/footer.md"
+        label: "Footer"
+        name: "footer"
+        fields:
+          - *invitationText
+          - *address
+          - *facebook
+          - *twitter
+          - *email
+          - *emailSubscriptionText
+          - *emailSubscriptionLink
+          - *copyright
+          - *notes
       - file: "frontend/src/pages/header-and-footer/buttons/get-involved.md"
         label: "Get Involved"
         name: "get-involved"
         fields:
           - *text
           - *internalLink
+          - *notes
       - file: "frontend/src/pages/header-and-footer/buttons/apply-to-trade.md"
         label: "Apply to Trade"
         name: "apply-to-trade"
         fields:
           - *text
           - *internalLink
+          - *notes
   - label: Site Navigation
     name: navbar
     folder: frontend/src/pages/navbar/
@@ -223,3 +314,25 @@ collections:
     fields:
       - *menuTitle
       - *pageTitles
+      - *notes
+  - label: Cookies and Privacy
+    name: privacy
+    description: Edit the cookies banner and privacy policy page
+    files:
+      - file: "frontend/src/pages/privacy/index.md"
+        label: "Privacy Page"
+        name: "privacy-page"
+        fields:
+          - {<<: *key, default: about-page}
+          - *title
+          - *subtitle
+          - *hero
+          - *body
+      - file: frontend/src/pages/privacy/cookies.md
+        label: Cookies Banner
+        name: cookies
+        fields:
+          - *cookiesPrimaryText
+          - *cookiesSecondaryText
+          - *accessibleImage
+          - *cookiesButtons

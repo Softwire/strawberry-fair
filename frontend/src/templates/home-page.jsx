@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import { HTMLContent } from '../components/Content'
-import { Layout } from '../components/Layout'
 
 import ContentBlocks from '../components/home-page/ContentBlocks'
 import CalendarBlock from '../components/home-page/CalendarBlock'
@@ -13,11 +12,11 @@ import TwitterBlock from '../components/home-page/TwitterBlock'
 import { site } from '../util/templating'
 
 // This is used by the website and for CMS previews
-export const HomePage = ({title, contentBlocks, contentBlocksHtml, calendarBlock, events, newsBlock, newsArticles, twitterBlock, contentComponent, heroData}) => {
+export const HomePage = ({contentBlocks, contentBlocksHtml, calendarBlock, events, newsBlock, newsArticles, twitterBlock, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     return (
-      <Layout heroData={heroData} title={title}>
+      <React.Fragment>
         <ContentBlocks 
           contentBlocks={contentBlocks}
           contentBlocksHtml={contentBlocksHtml}
@@ -30,12 +29,11 @@ export const HomePage = ({title, contentBlocks, contentBlocksHtml, calendarBlock
           // TODO: Finish News overview
           // TODO: Finish Twitter integration
         }
-      </Layout>
+      </React.Fragment>
   )
 }
 
 HomePage.propTypes = {
-  title: PropTypes.string,
   contentBlocks: ContentBlocks.propTypes.contentBlocks,
   contentBlocksHtml: ContentBlocks.propTypes.contentBlocksHtml,
   calendarBlock: CalendarBlock.propTypes.calendarBlock,
@@ -44,12 +42,12 @@ HomePage.propTypes = {
   newsArticles: NewsBlock.propTypes.newsArticles,
   twitterBlock: TwitterBlock.propTypes.twitterBlock,
   contentComponent: PropTypes.elementType,
-  heroData: Layout.propTypes.heroData
 }
 
 const additionalPropsExtractor = graphqlData => ({
   contentBlocksHtml: graphqlData.markdownRemark.fields.contentBlocksHtml,
-  newsArticles: graphqlData.newsData.edges
+  newsArticles: graphqlData.newsData.edges,
+  tabTitle: 'Strawberry Fair'
 })
 
 export default site(HomePage, additionalPropsExtractor)
@@ -65,7 +63,7 @@ query homePageTemplate($id: String!) {
           subtitle
           scrapbookImages {
             alt
-            src {
+            srcNode {
               childImageSharp {
                 fluid {
                   ...GatsbyImageSharpFluid
@@ -73,7 +71,10 @@ query homePageTemplate($id: String!) {
               }
             }
           }
-          sideSnippet
+          strawberryTile {
+            isPublic
+            text
+          }
         }
         calendarBlock {
           title
@@ -96,24 +97,7 @@ query homePageTemplate($id: String!) {
     newsData: allMarkdownRemark(filter: {fields: {slug: {regex: "$//news//", ne: "/news/"}}}, sort: {fields: frontmatter___date, order: DESC}) {
       edges {
         node {
-          frontmatter {
-            title
-            subtitle
-            image {
-              alt
-              src {
-                childImageSharp {
-                  fluid {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
-          }
-          fields {
-            slug
-          }
-          html
+          ...NewsFragment
         }
       }
     }

@@ -13,7 +13,15 @@ Prerequisites:
 * npm 6.13.0 or higher
 * gatsby cli (`npm install -g gatsby-cli`)
 
-Checkout the source code and run the following from this directory:
+Checkout the source code, then create a file called `.env` in the `frontend` folder of the repository, which makes available your Cloudinary cloud name, API key and API secret in the following format:
+
+```
+CLOUDINARY_CLOUD_NAME={your cloud name}
+CLOUDINARY_API_KEY={your API key}
+CLOUDINARY_API_SECRET={your API secret}
+```
+
+Then, run the following from this directory:
 1. `npm ci`
 2. `npm start`
 
@@ -110,7 +118,7 @@ Behind the scenes, Netlify editorial actions automatically perform git actions a
 | Edit draft     | Pushes another commit to the draft branch/pull request |
 | Publish draft  | Merges pull request and deletes branch                 |
 
-### 1. Adding Google Forms via CMS:
+### Adding Google Forms via CMS:
     To add a Google Form via CMS follow these steps:
       1. Open the form on Google Forms
       2. Click send on the top right corner
@@ -120,9 +128,13 @@ Behind the scenes, Netlify editorial actions automatically perform git actions a
       6. Create a new Form page
       7. Paste into the "Form" box
       8. Fill in the remaining boxes.
-      9. Click "Publish" on the top righ corner.
+      9. Click "Publish" on the top right corner.
 
       Alternatively, in step 4 you can choose to copy the URL only, instead of the whole HTML element.
+
+### Integration with Cloudinary
+
+Images uploaded in the CMS are hosted on Cloudinary. The API credentials can be found at the top of the dashboard after logging into Cloudinary.com.
 
 ## Testing
 

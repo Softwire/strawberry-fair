@@ -20,7 +20,7 @@ export const FormFrame = ({form: {isPublic, link}}) => {
             const url = urlSearch[1]
   
             if (isUrl(url) && url.includes("docs.google.com/forms/")) {
-                const heightSearch = link.match(/\sheight="([0-9]+)?"\s/)
+                const heightSearch = link.match(/\sheight="([0-9]+)?"[\s>]/)
                 const height = (heightSearch && heightSearch[1]) ? heightSearch[1] : IFRAMEHEIGHT
   
                 return (

@@ -5,7 +5,11 @@ export const eventPropTypeValidator = PropTypes.shape({
   frontmatter: PropTypes.shape({
     title: PropTypes.string.isRequired,
     image: PropTypes.object,
-    dateTime: PropTypes.string.isRequired,
+    dateTimeRange: PropTypes.shape({
+      startDateTime: PropTypes.string.isRequired,
+      endDateTime: PropTypes.string,
+      provideEnd: PropTypes.bool.isRequired
+    }),
     eventTypes: PropTypes.arrayOf(PropTypes.string).isRequired
   }),
   html: PropTypes.string.isRequired,

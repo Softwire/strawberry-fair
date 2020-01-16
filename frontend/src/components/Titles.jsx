@@ -7,8 +7,8 @@ export const Titles = ({title, subtitle}) => {
   if (title || subtitle) {
     return (
       <div className="titles">
-        <h1 className="title">{title}</h1>
-        <p className="subtitle">{subtitle}</p>
+        <h1 className="title is-2 is-spaced">{title}</h1>
+        <p className="subtitle is-5">{subtitle}</p>
       </div>
     )
   } else {

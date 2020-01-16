@@ -5,39 +5,36 @@ import { graphql } from 'gatsby'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
 import NewsArticleSideInfo from '../components/NewsArticleSideInfo'
-import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 
 // This is used by the website and for CMS previews
-export const NewsArticle = ({title, author, content, image, date, tags, contentComponent, heroData}) => {
+export const NewsArticle = ({author, content, image, date, tags, contentComponent}) => {
     const BodyComponent = contentComponent || HTMLContent
 
     return (
-      <Layout heroData={heroData} title={title}>
+      <React.Fragment>
         <figure className="image">
           {image && <PreviewCompatibleImage imageInfo={image}/>} 
         </figure>
         <br/>
         <div className="columns">
-          <div className="column is-one-quarter">
+          <div className="column is-one-fifth">
             <NewsArticleSideInfo author={author} date={date} tags={tags}/>
           </div>
           <div className="column">
             <BodyComponent content={content} />
           </div>
         </div>
-      </Layout>
+      </React.Fragment>
 )}
 
 NewsArticle.propTypes = {
-  title: PropTypes.node,
-  author: NewsArticleSideInfo.propTypes.author,  // Reuse validators
+  author: NewsArticleSideInfo.propTypes.author,
   content: PropTypes.node,
   image: PreviewCompatibleImage.propTypes.imageInfo,
   date: NewsArticleSideInfo.propTypes.date,
   tags: NewsArticleSideInfo.propTypes.tags,
-  contentComponent: PropTypes.elementType,
-  heroData: Layout.propTypes.heroData
+  contentComponent: PropTypes.elementType
 }
 
 export default site(NewsArticle)

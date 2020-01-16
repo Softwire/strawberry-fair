@@ -3,7 +3,13 @@ templateKey: form
 title: Registration Form
 form:
   isPublic: true
-  link: <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdnbGnGcafdKpNXKZ83mcDnF8lMJ-awaM0-j-135d1RFEC_jQ/viewform?embedded=true" width="640" height="1427" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  link: >-
+    <iframe
+    src="https://docs.google.com/forms/d/e/1FAIpQLSdnbGnGcafdKpNXKZ83mcDnF8lMJ-awaM0-j-135d1RFEC_jQ/viewform?embedded=true"
+    width="640" height="1427" frameborder="0" marginheight="0"
+    marginwidth="0">Loading…</iframe>
+heroData:
+  isActive: true
 ---
 This is the registration form. 
 

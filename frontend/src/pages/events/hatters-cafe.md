@@ -1,10 +1,13 @@
 ---
 templateKey: event-info
-title: "Hatters Cafe"
+title: Hatters Cafe
 image:
   alt: Placeholder
-  src: /img/hatters10.jpg
-dateTime: 2020-01-01T17:00:00.000Z
+  src: >-
+    https://res.cloudinary.com/strawberryfair/image/upload/v1578398631/Events/hatters10_n7j9ts.jpg
+dateTimeRange:
+  startDateTime: 2020-01-01T17:00:00.000Z
+  provideEnd: false
 eventTypes:
   - Meeting - Finance
   - Band competition

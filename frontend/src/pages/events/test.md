@@ -3,10 +3,16 @@ templateKey: event-info
 title: Parade
 image:
   alt: Placeholder
-  src: /img/love-a-fair.jpg
-dateTime: 2019-12-23T09:30:00.000Z
+  src: >-
+    https://res.cloudinary.com/strawberryfair/image/upload/v1578398631/Events/love-a-fair_acip8g.jpg
+dateTimeRange:
+  startDateTime: 2019-12-23T09:30:00.000Z
+  endDateTime: 2019-12-23T10:30:00.000Z
+  provideEnd: true
 eventTypes:
   - Benefit gig
+heroData:
+  isActive: true
 ---
 ## Join the Parade!
 

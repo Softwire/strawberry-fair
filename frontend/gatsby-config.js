@@ -6,6 +6,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-netlify-identity-widget',
     'gatsby-plugin-sass',
+    'gatsby-plugin-netlify',
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
@@ -69,6 +70,12 @@ module.exports = {
       options: {
         class: 'has-navbar-fixed-top'  // Allows for a fixed navbar
       }
-    }
+    },
+    {
+      resolve: 'gatsby-plugin-favicon',
+      options: {
+        logo: './static/img/favicon.png'
+      }
+    },
   ],
 }

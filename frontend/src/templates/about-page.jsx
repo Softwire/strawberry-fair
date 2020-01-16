@@ -4,32 +4,26 @@ import { graphql } from 'gatsby'
 
 import { HTMLContent } from '../components/Content'
 import { StrawberryTiles } from '../components/StrawberryCard'
-import { Layout } from '../components/Layout'
 import { site } from '../util/templating'
 
 // This is used by the websitesite and for CMS previews
-export const AboutPage = ({title, subtitle, content, contentComponent, strawberryTiles, heroData}) => {
+export const AboutPage = ({content, contentComponent, strawberryTiles}) => {
     const BodyComponent = contentComponent || HTMLContent
-
+    
     return (
-      <Layout heroData={heroData} title={title} subtitle={subtitle}>
-        <div className="columns reverse-columns">
-          <StrawberryTiles tileTextArray={strawberryTiles}/>
-          <div className="column">
-            <BodyComponent content={content} />
-          </div>
+      <div className="columns reverse-columns">
+        <StrawberryTiles strawberryTiles={strawberryTiles}/>
+        <div className="column">
+          <BodyComponent content={content} />
         </div>
-      </Layout>
+      </div>
 )}
 
 AboutPage.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
   image: PropTypes.object.isRequired,
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.elementType,
-  strawberryTiles: PropTypes.arrayOf(PropTypes.string),
-  heroData: Layout.propTypes.heroData
+  strawberryTiles: PropTypes.arrayOf(PropTypes.string)
 }
 
 export default site(AboutPage)
@@ -40,7 +34,12 @@ query aboutPageTemplate($id: String!) {
       frontmatter {
         title
         subtitle
-        strawberryTiles
+        strawberryTiles {
+          strawberryTile {
+            isPublic
+            text
+          }
+        }
       }
       html
     }

@@ -4,9 +4,12 @@
 $red: #ae1414;
 $black: #1d1d1d;
 $light-grey: #f3f3f3;
+$dark-grey: #a9a9a9;
 
 $primary: $red;
 $secondary: $black;
+
+$primary-pale: #c66;
 
 $title-color: $primary;
 $subtitle-color: $secondary;
@@ -17,7 +20,8 @@ $radius-large: 0px;
 // is-secondary doesn't produce any effect without this
 $custom-colors: ( 
     "secondary": $secondary,
-    "light-grey": $light-grey
+    "light-grey": $light-grey,
+    "primary-pale": $primary-pale
 );
 
 $navbar-padding-vertical: 0;
@@ -25,13 +29,57 @@ $navbar-padding-horizontal: 0;
 $navbar-height: 70px;
 $navbar-item-img-max-height: 70px;
 $navbar-breakpoint: 1216px;
+$navbar-item-hover-color: $primary;
+$navbar-dropdown-arrow: $primary;
 
 $section-padding: 0 1.5rem;
+
+/* Font sizing - increased from bulma defaults */
+$size-1: 3.5rem;
+$size-2: 3rem;
+$size-3: 2.5rem;
+$size-4: 2rem;
+$size-5: 1.5rem;
+$size-6: 1.25rem;
+$size-7: 1rem;
+$size-8: 0.75rem;
+
+$scrapbook-padding-mobile: 0.3rem;
+
+$tabs-link-active-color: $primary;
+
+$breadcrumb-item-color: $subtitle-color;
+$breadcrumb-item-hover-color: $primary;
+
+$navbar-breakpoint: 1060px;
 
 /* Bulma provides default styling (can be imported in separate modules as required) */
 @import "bulma";
 
+.section {
+    // do not side-pad nested sections e.g. home-page
+    // the section-root class can be used to override this behaviour
+    .section:not(.section-root) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.section,
+div {
+    &.home-page-section {
+        padding-bottom: 4em;
+        padding-top: 2em;
+    }
+}
+
 /* Class styling */
+.column {
+    &.column-align-bottom {
+        margin-top: auto;
+    }    
+}
+
 @media(max-width: $tablet){
     .columns{ 
         &.reverse-columns {
@@ -45,9 +93,38 @@ $section-padding: 0 1.5rem;
     height: 170px;
     background-size: cover;
 }
+
+/*
+These styles adjust alignment and override Bulma column padding & margins for the scrapbook images component.
+They provide a custom implementation of the logic at https://github.com/jgthms/bulma/blob/master/css/bulma.css#L9297.
+This is necessary because Bulma's experimental column margin classes do not function properly (feature described at https://bulma.io/documentation/columns/gap/#variable-gap).
+*/
+.scrapbook-column {
+    &.outer-column, &.inner-column {
+        display: flex;
+        flex-direction: column-reverse;
+    }
     
-.scrapbook-image {
-    margin-top: auto;
+    @media(max-width: $tablet) {
+        padding: $scrapbook-padding-mobile;
+
+        &.outer-column, &.inner-column {
+            &.right-bottom {
+                flex-direction: column;
+            }
+        }
+    }
+}
+@media(max-width: $tablet) {
+    .scrapbook-columns {
+        margin-left: -1 * $scrapbook-padding-mobile;
+        margin-right: -1 * $scrapbook-padding-mobile;
+        margin-top: -1 * $scrapbook-padding-mobile;
+    
+        &:last-child {
+            margin-bottom: -1 * $scrapbook-padding-mobile;
+        }
+    }
 }
 
 // Allows navbar dropdowns to work in Edge
@@ -65,7 +142,10 @@ $section-padding: 0 1.5rem;
     &.has-background {
         position: relative;
         overflow: hidden;
-        height: 40vh;
+        height: 30vh;
+        &.hero-revolving {
+            height: 50vh;
+        }
     }
 }
 
@@ -73,6 +153,51 @@ $section-padding: 0 1.5rem;
 .navbar-dropdown {
     .navbar-item {
         padding: 0;
+    }
+}
+
+footer {
+    padding-top: 4rem;
+
+    .invitation-and-buttons {
+        .title:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+
+        .buttons {
+            .button {
+                padding: 2rem;
+            }
+    
+            .button:not(:last-child):not(.is-fullwidth) {
+                margin-right: 1rem;
+            }
+        }
+
+        @media(max-width: $tablet) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+            .buttons {
+                justify-content: center;
+                
+                .button {
+                    margin: 0.25rem !important;
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+
+    .column {
+        padding-bottom: 2rem;
+    }
+    
+    @media(max-width: $tablet) {
+        .contact-details {
+            margin: 0 1.5rem;
+        }
     }
 }
 
@@ -97,9 +222,79 @@ a:hover, a:active {
     }
 }
 
-// Padding after title and subtitle
-.titles {
-    padding-bottom: 1.5rem;
+.news-snapshot-title {
+    margin-top: 0.5rem;
+}
+
+
+.main-box {
+    .news-preview {
+        .news-excerpt-long {
+            @extend .is-hidden-mobile
+        }
+    
+        .news-excerpt-short {
+            @extend .is-hidden-tablet
+        }
+    }
+}
+
+.side-box {
+    .news-preview {
+        .news-excerpt-long {
+            display: none;
+        }
+    }
+}
+
+.main-box,
+.side-box {
+    .news-preview {
+        .news-excerpt {
+            margin-bottom: 0;
+        }
+        .subtitle {
+            line-height: 2;
+            margin-bottom: 0;
+        }
+    
+        p {
+            margin-top: 12px;
+        }
+    }
+}
+
+
+
+.title-and-buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 0 0 auto;
+        margin: 1rem 0 1rem 1rem;
+        .button {
+            // !important is needed to override Bulma pseudo-selectors
+            // and ensure even spacing on mobile
+            margin: 0.25rem !important;
+            padding: 2rem;
+        }
+    }
+
+    @media(max-width: $tablet) {
+        flex-direction: column;
+        justify-content: space-between;
+
+        .buttons {
+            margin: 0 0 1rem 0;
+        }
+    }
 }
 
 // Make strawberry cards/tiles square on desktop
@@ -126,3 +321,158 @@ $strawberry-card-size: 14rem;
 .calendar.panel .modal.is-active .media.event:nth-child(even),.upcoming.panel>.panel-block:not(.filter):nth-child(even) {
     background-color: $light-grey;
 }
+
+// Calendar day pencil circle 'today' indicator
+.pencil-circle {
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+}
+
+.month-scrubber {
+    width: 22rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    .title {
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+    }
+}
+
+.month-scrubber-mobile {
+    @extend .month-scrubber;
+    width: 17rem;
+}
+
+// Increase spacing within CMS markdown content
+.content {
+    h2 {
+        margin-top: 32px;
+    }
+    p {
+        margin-top: 24px;
+    }
+}
+
+// Add a little more spacing after the calendar download button
+.event-download-button {
+    margin-bottom: 1rem;
+}
+
+@mixin responsive-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; 
+    width: 100%;
+    height: 0; 
+    max-height: 315px;
+    overflow: hidden;
+}
+
+@mixin responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    figure {
+        &.video-container {
+            margin-right: 0px;
+            margin-left: 0px;
+            &.is-large-on-desktop {
+                @include responsive-container;
+            }
+            @media(max-width: 560px + 2*$gap) {
+                @include responsive-container;
+            }
+            iframe {
+                @media(max-width: 560px + 2*$gap) {
+                    @include responsive-iframe;
+                    max-height: 315px;
+                    max-width: 560px;
+                }
+            }
+            &.is-large-on-desktop iframe {
+                @include responsive-iframe;
+            }
+        }
+    }
+}
+
+.news-article-info {
+    text-align: center;
+    
+    @media(min-width: $tablet) {
+        margin-top: 1.5rem;
+    }
+
+    .divider {
+        height: 1px;
+        box-shadow: 1px 0px 1px;
+        color: $dark-grey;
+        background-color: $dark-grey;
+    }
+
+    .bottom-section {
+        line-height: 2;
+    }
+}
+
+.cookies-banner {
+    width: 80vw;
+    left: 10vw;
+    background: $light-grey;
+    z-index: 1;
+
+    @media(max-width: $tablet) {
+        left: 0;
+        width: 100vw;
+        margin: 0;
+    }
+}
+
+.cookies-banner.is-fixed-bottom {
+    position: fixed;
+    bottom: 0;
+}
+
+.cookie-buttons-column {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.field.is-grouped.is-grouped-multiline.cookie-buttons-field {
+    margin-bottom: 0;
+    justify-content: flex-end;
+
+    @media(max-width: $tablet) {
+        justify-content: center;
+    }
+}
+
+.cookie-button {
+    margin: 0.25rem;
+
+    @media(max-width: $tablet) {
+        display: flex;
+        width: 100%;
+    }
+}
+
+@media(max-width: $tablet) {
+    .cookie-image-column {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 0;
+    }
+
+    .cookie-image {
+        max-height: 25vh;
+        object-fit: contain;
+    }
+}
+
+

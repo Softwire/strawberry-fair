@@ -1,19 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import ImageScrapbookRow from './ImageScrapbookRow'
+import { ScrapbookImages } from './ScrapbookImages'
 import { SectionWithStrawberryCard } from '../StrawberryCard'
 
-const ContentBlock = ({contentTitle, contentSubtitle, scrapbookImages, content, sideSnippet, BodyComponent}) => (
-  <section className="section">
-    <ImageScrapbookRow scrapbookImages={scrapbookImages}/>
+const ContentBlock = ({contentTitle, contentSubtitle, scrapbookImages, content, strawberryTile, BodyComponent}) => (
+  <section className="section home-page-section">
+    <ScrapbookImages images={scrapbookImages}/>
     <h1 className="title is-1">{contentTitle}</h1>
     <div className="columns">
       <div className="column is-three-fifths">
         <h3 className="subtitle is-5">{contentSubtitle}</h3>
       </div>
     </div>
-    <SectionWithStrawberryCard text={sideSnippet}>
+    <SectionWithStrawberryCard isPublic={strawberryTile.isPublic} text={strawberryTile.text}>
       <BodyComponent content={content}/>
     </SectionWithStrawberryCard>
   </section>
@@ -22,9 +22,12 @@ const ContentBlock = ({contentTitle, contentSubtitle, scrapbookImages, content, 
 ContentBlock.propTypes = {
   contentTitle: PropTypes.node,
   contentSubtitle: PropTypes.node,
-  scrapbookImages: ImageScrapbookRow.propTypes.scrapbookImages,
+  scrapbookImages: ScrapbookImages.propTypes.images,
   content: PropTypes.node,
-  sideSnippet: PropTypes.string,
+  strawberryTile: PropTypes.shape({
+    isPublic: PropTypes.bool,
+    text: PropTypes.string
+  }),
   BodyComponent: PropTypes.elementType
 }
 
@@ -36,7 +39,7 @@ const ContentBlocks = ({contentBlocks, contentBlocksHtml, BodyComponent}) => (
           contentSubtitle={block.subtitle}
           scrapbookImages={block.scrapbookImages || []}
           content={contentBlocksHtml[index]}
-          sideSnippet={block.sideSnippet}
+          strawberryTile={block.strawberryTile}
           BodyComponent={BodyComponent}
           key={index}
         />
@@ -51,7 +54,7 @@ ContentBlocks.propTypes = {
       title: ContentBlock.propTypes.contentTitle,
       subtitle: ContentBlock.propTypes.contentSubtitle,
       scrapbookImages: ContentBlock.propTypes.scrapbookImages,
-      sideSnippet: ContentBlock.propTypes.sideSnippet,
+      strawberryTile: ContentBlock.propTypes.strawberryTile,
       BodyComponent: PropTypes.elementType
     })
   ),

@@ -53,49 +53,51 @@ const CalendarWithContext = ({isPreview, previewEventList}) => {
     const days = [...Array(daysInFocusMonth).keys()].map(n => n + 1)
     // TODO: Figure out how to get this to work with screenreaders
     // What would the corect semantic component for this be?
-    // TODO: See https://codepen.io/wikiki/pen/KvqKzK for a way of making the "< December 2019 >" bit span across the whole calendar
     return (
-        <div className="calendar panel">
-            <h1 className="panel-heading">Calendar</h1>
+        <React.Fragment>
             <MonthScrubber monthForward={monthForward} monthBack={monthBack} focusDate={focusDate} />
-            <EventFilterBlock filterProps={filterProps} />
-            <div className="panel-block">
-                <div className="columns is-multiline is-mobile">
-                    {days.map(dayNumber => {
-                        const date = new Date(focusDate.getFullYear(), focusDate.getMonth(), dayNumber)
+            <div className="calendar panel">
+                <EventFilterBlock filterProps={filterProps} />
+                <div className="panel-block">
+                    <div className="columns is-multiline is-mobile">
+                        {days.map(dayNumber => {
+                            const date = new Date(focusDate.getFullYear(), focusDate.getMonth(), dayNumber)
 
-                        return (
-                            <CalendarDay
-                                key={dayNumber}
-                                dateTime={date}
-                                events={eventsOnDate(date, filterEvents(events, filterProps.activeFilters))}
-                            />
-                        )
-                    })}
+                            return (
+                                <CalendarDay
+                                    key={dayNumber}
+                                    dateTime={date}
+                                    events={eventsOnDate(date, filterEvents(events, filterProps.activeFilters))}
+                                />
+                            )
+                        })}
+                    </div>
                 </div>
             </div>
-        </div>
+        </React.Fragment>
     )
 }
 
 const MonthScrubber = ({monthForward, monthBack, focusDate}) => (
-    <div className="panel-block">
-        <div className="columns is-multiline">
-            <div className="column is-full">
-                <div className="columns is-vcentered is-centered">
-                    <div className="column is-narrow">
-                        <button onClick={monthBack} className="button is-white">
-                            <span className="icon is-left has-text-dark">
+    <React.Fragment>
+        <div className="container month-scrubber is-hidden-mobile">
+            <div className="level is-mobile">
+                <div className="level-left">
+                    <div className="level-item">
+                        <button onClick={monthBack} className="button is-white is-centered">
+                            <span className="icon is-left has-text-dark is-large">
                                 <FaChevronLeft />
                             </span>
                         </button>
                     </div>
-                    <div className="column">
-                        <p>{new Date(focusDate).toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</p>
-                    </div>
-                    <div className="column is-narrow">
-                        <button onClick={monthForward} className="button is-white">
-                            <span className="icon is-right has-text-dark">
+                </div>
+                <div className="level-item">
+                    <span className="title">{new Date(focusDate).toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</span>
+                </div>
+                <div className="level-right">
+                    <div className="level-item">
+                        <button onClick={monthForward} className="button is-white is-centered">
+                            <span className="icon is-right has-text-dark is-large">
                                 <FaChevronRight />
                             </span>
                         </button>
@@ -103,7 +105,33 @@ const MonthScrubber = ({monthForward, monthBack, focusDate}) => (
                 </div>
             </div>
         </div>
-    </div>
+        <div className="container month-scrubber-mobile is-hidden-tablet">
+            <div className="level is-mobile">
+                <div className="level-left">
+                    <div className="level-item">
+                        <button onClick={monthBack} className="button is-white is-centered">
+                            <span className="icon is-left has-text-dark is-large">
+                                <FaChevronLeft />
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div className="level-item">
+                    <span className="title is-hidden-mobile">{new Date(focusDate).toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</span>
+                    <span className="title is-4 is-hidden-tablet">{new Date(focusDate).toLocaleDateString('en-GB', {month: 'long', year: 'numeric'})}</span>
+                </div>
+                <div className="level-right">
+                    <div className="level-item">
+                        <button onClick={monthForward} className="button is-white is-centered">
+                            <span className="icon is-right has-text-dark is-large">
+                                <FaChevronRight />
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </React.Fragment>
 )
 
 MonthScrubber.propTypes = {
@@ -127,5 +155,5 @@ CalendarWithContext.propTypes = {
 
 function eventsOnDate(date, events) {
     // Array of events on this day, empty if none
-    return events.filter(event => areSameDay(new Date(event.frontmatter.dateTime), date))
+    return events.filter(event => areSameDay(new Date(event.frontmatter.dateTimeRange.startDateTime), date))
 }

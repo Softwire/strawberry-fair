@@ -1,5 +1,11 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Helmet } from 'react-helmet'
+import _ from 'lodash'
+
 import { Content } from '../components/Content'
-import { previewContextWrapper } from './context'
+import { PreviewContextWrapper } from './context'
+import { Layout } from '../components/Layout'
 
 
 /**
@@ -13,20 +19,27 @@ import { previewContextWrapper } from './context'
  * This function prepares a page template for use as a CMS preview component.
  * It maps props from the CMS preview format to that expected by a "normal" React component.
  * @param {Object} component - Template component to preview
- * @param {Object} placeholderProps - For insertion of props that are unavailable in the CMS
- * @param {previewAdditionalPropsExtractorCallback} additionalPropsExtractor - To extract props that are unavailable in the CMS, e.g. props living in `node.fields`
- * @param {Object} dataProps - The data read from the CMS
- * @param {Object} cmsUtilityFns - Utility functions provided by the CMS
+ * @param {Object} options - Object containing options settings
+ * @param {Object} options.placeholderProps - For insertion of props that are unavailable in the CMS
+ * @param {previewAdditionalPropsExtractorCallback} options.additionalPropsExtractor - To extract props that are unavailable in the CMS, e.g. props living in `node.fields`
+ * @param {Boolean} options.previewWithLayout - Determines whether to render the preview with the Layout component
  * @returns {Function} Function to be passed into the CMS.registerPreviewTemplate(...) function
  */
-export const preview = (component, placeholderProps = {}, additionalPropsExtractor = () => {}) => {
+export const preview = (component, options = {}) => {
+    const defaultOptions = {
+        placeholderProps: {},
+        additionalPropsExtractor: () => {},
+        previewWithLayout: true,
+    }
+
+    const { placeholderProps, additionalPropsExtractor, previewWithLayout } = Object.assign(defaultOptions, options)
+
     /**
      * @param {Object} entry.data - The data read from the CMS in Immutable.js object
      * @param {Function} widgetFor - Utility function provided by the CMS
      * @param {Function} widgetsFor - Utility function provided by the CMS
-     * @param {Function} getAsset - Utility function provided by the CMS
      */
-    return ({ entry, widgetFor, widgetsFor, getAsset }) => {
+    const previewComponent = ({ entry, widgetFor, widgetsFor }) => {
         const dataProps = entry.getIn(['data']).toJS()
         const previewProps = {}
 
@@ -40,35 +53,43 @@ export const preview = (component, placeholderProps = {}, additionalPropsExtract
         previewProps.contentComponent = Content
 
         Object.assign(previewProps, additionalPropsExtractor(dataProps, { widgetsFor }))
-
-        // For image data, call getAsset to get the correct image object.
-        deepReplaceImageUrlsWithAssets(dataProps, getAsset)
         Object.assign(previewProps, dataProps)
+        const componentWithProps = component(Object.assign(placeholderProps, previewProps))
+
+        const layoutProps = extractLayoutPropsPreview(dataProps, additionalPropsExtractor, widgetsFor)
 
         const isPreview = true
-        return previewContextWrapper(isPreview, component(Object.assign(placeholderProps, previewProps)))
+        if (previewWithLayout) {
+            return (
+                <PreviewContextWrapper value={isPreview}>
+                    <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle}>
+                        {componentWithProps}
+                    </Layout>
+                </PreviewContextWrapper>
+            )
+        } else {
+            return (
+                <PreviewContextWrapper value={isPreview}>
+                    {componentWithProps}
+                </PreviewContextWrapper>
+            )
+        }
     }
-}
 
-/**
- * Replace image urls with assets recursively for the object passed in
- * @param {Object} obj 
- * @param {Function} getAsset - Utility function provided by NetlifyCMS
- */
-const deepReplaceImageUrlsWithAssets = (obj, getAsset) => {
-    Object.entries(obj)
-        .forEach(([key, value]) => {
-            if ((typeof value === 'string' || value instanceof String) && value.startsWith('/img/')) {
-                obj[key] = getAsset(value)
-            } else if (typeof value === 'object' && value !== null) {
-                deepReplaceImageUrlsWithAssets(value, getAsset)
-            } 
-        })
+    previewComponent.propTypes = {
+        entry: PropTypes.object,
+        widgetFor: PropTypes.func,
+        widgetsFor: PropTypes.func,
+        getAsset: PropTypes.func
+    }
+
+    return previewComponent
 }
 
 /**
  * @callback siteAdditionalPropsExtractorCallback
  * @param {Object} dataProps - Contains results from the graphql query
+ * @param {Object} pageContext - Extra page properties, passed in by e.g. gatsby-node.js for programmatic page creation
  * @returns {Object} Additional properties to add to the site component
  */
 
@@ -84,25 +105,80 @@ export const site = (component, additionalPropsExtractor = () => {}) => {
      * @param {Object} data - Data retrieved from GraphQL query specified in the component
      * @returns {React.Component} Component to be rendered by Gatsby
      */
-    return ({data, pageContext}) => {
-        if(data.markdownRemark) {
-            const new_props = data.markdownRemark.frontmatter || {}
-            new_props.content = data.markdownRemark.html
-            new_props.pageContext = pageContext
+    const siteComponent = ({data, pageContext}) => {
+        const insideLayout = siteInsideLayout(component, data, pageContext, additionalPropsExtractor)
+        const layoutProps = extractLayoutProps(data, pageContext, additionalPropsExtractor)
 
-            new_props.heroData = null
-            if (data.heroData &&
-                data.heroData.nodes &&
-                data.heroData.nodes[0] &&
-                data.heroData.nodes[0].frontmatter &&
-                data.heroData.nodes[0].frontmatter.heroData) {
-                    new_props.heroData = data.heroData.nodes[0].frontmatter.heroData
-                }
-
-            return component(Object.assign(new_props, additionalPropsExtractor(data)))
-        }
-        else {
-            return component(Object.assign(pageContext, additionalPropsExtractor(data)))
-        }
+        return (
+            <React.Fragment>
+                <Helmet>
+                    <meta name="twitter:dnt" content="on" />
+                    <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+                    <title>{layoutProps.tabTitle || layoutProps.title || 'Strawberry Fair'}</title>
+                </Helmet>
+                <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle}>
+                    {insideLayout}
+                </Layout>
+            </React.Fragment>
+        )
     }
+
+    siteComponent.propTypes = {
+        data: PropTypes.object,
+        pageContext: PropTypes.object
+    }
+
+    return siteComponent
+}
+
+// Generate a view of the site to be wrapped inside <Layout>
+const siteInsideLayout = (component, data = {}, pageContext = {}, additionalPropsExtractor = () => {}) => {
+    const newProps = {}
+
+    if (data.markdownRemark) {
+        Object.assign(newProps, data.markdownRemark.frontmatter)
+        newProps.content = data.markdownRemark.html
+        newProps.pageContext = pageContext
+    } else {
+        Object.assign(newProps, pageContext)
+    }
+
+    if (_.has(data.heroData, 'nodes[0].frontmatter.heroData')) {
+        newProps.heroData = data.heroData.nodes[0].frontmatter.heroData
+    }
+        
+    Object.assign(newProps, additionalPropsExtractor(data, pageContext))
+
+    return component(newProps)
+}
+
+// Extract hero image data, a title, and a subtitle (if present) from a GraphQL query data object to be passed to <Layout>
+const extractLayoutProps = (data = {}, pageContext = {}, additionalPropsExtractor = () => {}) => {
+    const layoutProps = {}
+
+    if (_.has(data.markdownRemark, 'frontmatter')) {
+        layoutProps.title = data.markdownRemark.frontmatter.title
+        layoutProps.subtitle = data.markdownRemark.frontmatter.subtitle
+    }
+
+    if (data.heroData) {
+        layoutProps.heroData = _.get(data.heroData.nodes, '[0].frontmatter.heroData', data.heroData)
+    }
+
+    Object.assign(layoutProps, additionalPropsExtractor(data, pageContext))
+
+    return layoutProps
+}
+
+// The data object is structured differently for previews
+const extractLayoutPropsPreview = (previewData, additionalPropsExtractor, widgetsFor) => {
+    return extractLayoutProps({
+        markdownRemark: {
+            frontmatter: {
+                title: previewData.title,
+                subtitle: previewData.subtitle
+            }
+        },
+        heroData: previewData.heroData
+    }, {}, data => additionalPropsExtractor(data, { widgetsFor }))
 }

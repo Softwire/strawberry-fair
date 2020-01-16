@@ -15,3 +15,6 @@ src/data/pagePaths.json
 
 # Unit test snapshots
 __tests__/__snapshots__
+
+# Secret API keys (shh!)
+.env

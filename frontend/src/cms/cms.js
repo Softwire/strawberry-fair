@@ -1,4 +1,6 @@
 import CMS from 'netlify-cms-app'
+import cloudinary from 'netlify-cms-media-library-cloudinary'
+import { youtubeEditorComponent } from './youtubeEditorComponent'
 
 import '../styling/styles.scss'
 import { HomePage } from '../templates/home-page'
@@ -11,14 +13,18 @@ import { UpcomingEvents } from '../templates/upcoming-events'
 import { CalendarPage } from '../templates/calendar-page'
 import { ContactPage } from '../templates/contact-page'
 import { FormPage } from '../templates/form'
+import { Footer } from '../components/Footer'
+import { PageNotFound } from '../templates/page-not-found'
+import { CookieBanner } from '../components/analytics/CookieBanner'
 
-import { AccessibleImageControl } from './AccessibleImageWidget'
 import { MultiImageControl } from './MultiImageWidget'
 import { HeroControl } from './HeroWidget'
 import { MultiCollectionRelationControl, MultiCollectionRelationPreview } from './MultiCollectionRelationWidget'
-import { FormControl } from './FormWidget'
-import { StrawberryTilesControl } from './StrawberryTilesWidget'
 import { LinkControl, LinkPreview } from './LinkWidget'
+import { DateTimeRangeControl } from './DateTimeRangeWidget'
+import { IdControl } from './IdWidget'
+ 
+
 
 const placeholderArticle = {
     node: {
@@ -49,7 +55,11 @@ const placeholderEvents = placeholderEventDays.map(dayNumber => ({
       alt: 'Placeholder',
       src: '/img/strawberry-64x64.png'
     },
-    dateTime: new Date(today.getFullYear(), today.getMonth(), dayNumber),
+    dateTimeRange: {
+      startDateTime: new Date(today.getFullYear(), today.getMonth(), dayNumber),
+      endDateTime: new Date(today.getFullYear(), today.getMonth(), dayNumber + 1),
+      provideEnd: true
+    },
     eventTypes: []
   },
   html: '<h2>This is a sample event.</h2>\n<p>This is a sample event.</p>',
@@ -57,6 +67,13 @@ const placeholderEvents = placeholderEventDays.map(dayNumber => ({
     slug: 'test'
   }
 }))
+
+const cookieBannerPreviewPlaceholderProps = {
+  bannerActive: true,
+  setBannerActive: () => null,
+  setAnalyticsEnabled: () => null, // dummy functions for cookie banner buttons in preview
+  isFixedBottom: false
+}
 
 const homePageAdditionalPropsExtractor = (dataProps, { widgetsFor }) => {
   const contentBlocksMarkdown = widgetsFor('contentBlocks')
@@ -68,21 +85,36 @@ const homePageAdditionalPropsExtractor = (dataProps, { widgetsFor }) => {
   }
 }
 
-CMS.registerPreviewTemplate('home', preview(HomePage, {newsArticles: placeholderArticles, events: placeholderEvents}, homePageAdditionalPropsExtractor))
+CMS.registerMediaLibrary(cloudinary)
+
+CMS.registerPreviewTemplate('home', preview(HomePage, {
+  placeholderProps: {
+    newsArticles: placeholderArticles,
+    events: placeholderEvents
+  }, 
+  additionalPropsExtractor: homePageAdditionalPropsExtractor
+}))
 CMS.registerPreviewTemplate('about', preview(AboutPage))
 CMS.registerPreviewTemplate('privacy-page', preview(AboutPage))
 CMS.registerPreviewTemplate('events', preview(EventInfo))
 CMS.registerPreviewTemplate('news', preview(NewsArticle))
-CMS.registerPreviewTemplate('news-home', preview(NewsOverview, {newsArticles: placeholderArticles}))
-CMS.registerPreviewTemplate('upcoming-events', preview(UpcomingEvents, {events: placeholderEvents}))
-CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {events: placeholderEvents}))
+CMS.registerPreviewTemplate('news-home', preview(NewsOverview, {placeholderProps: {newsArticles: placeholderArticles}}))
+CMS.registerPreviewTemplate('upcoming-events', preview(UpcomingEvents, {placeholderProps: {events: placeholderEvents}}))
+CMS.registerPreviewTemplate('calendar-page', preview(CalendarPage, {placeholderProps: {events: placeholderEvents}}))
 CMS.registerPreviewTemplate('contact-page', preview(ContactPage))
 CMS.registerPreviewTemplate('forms', preview(FormPage))
+CMS.registerPreviewTemplate('footer', preview(Footer, {previewWithLayout: false}))
+CMS.registerPreviewTemplate('404', preview(PageNotFound))
+CMS.registerPreviewTemplate('cookies', preview(CookieBanner, {placeholderProps: cookieBannerPreviewPlaceholderProps, previewWithLayout: false}))
 
-CMS.registerWidget("accessibleImage", AccessibleImageControl)
 CMS.registerWidget("multiImage", MultiImageControl)
 CMS.registerWidget("hero", HeroControl)
 CMS.registerWidget('multi-collection-relation', MultiCollectionRelationControl, MultiCollectionRelationPreview)
-CMS.registerWidget("form", FormControl)
-CMS.registerWidget("strawberryTiles", StrawberryTilesControl)
 CMS.registerWidget('link', LinkControl, LinkPreview)
+CMS.registerWidget("dateTimeRange", DateTimeRangeControl)
+CMS.registerWidget('notes', CMS.getWidget('markdown').control, () => null)
+CMS.registerWidget('id', IdControl)
+
+CMS.registerEditorComponent(youtubeEditorComponent)
+
+
