@@ -28,7 +28,7 @@ export const NewsOverview = ({newsArticles}) => {
           <hr className="more-news-hr" />
           <div className="columns is-multiline">
             {newsArticles.slice(3, 9).map(newsArticle => (  // Show the next 1-6 articles
-              <div key={newsArticle.node.fields.slug} className="column is-one-third">
+              <div key={newsArticle.node.fields.slug} className="column small-box is-one-third">
                 <NewsArticleSnapshot newsArticles={newsArticle} />
               </div>
             ))}
