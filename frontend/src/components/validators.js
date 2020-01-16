@@ -36,7 +36,8 @@ export const previewCompatibleImageValidator = PropTypes.shape({
     PropTypes.string,
     childImageSharpValidator
   ]),
-  value: PropTypes.string
+  value: PropTypes.string,
+  shouldDisplay: PropTypes.bool,
 })
 
 export const newsArticleValidator = PropTypes.shape({

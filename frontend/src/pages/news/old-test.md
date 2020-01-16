@@ -6,6 +6,7 @@ image:
   alt: Placeholder
   src: >-
     https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/banner-carrying_m0ufmy.jpg
+  shouldDisplay: true
 date: '1969-10-29'
 tags: 
     - news
