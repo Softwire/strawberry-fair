@@ -245,7 +245,7 @@ a:hover, a:active {
     }
 }
 
-.side-box {
+.small-box {
     .news-preview {
         .news-excerpt-long {
             display: none;
@@ -254,7 +254,7 @@ a:hover, a:active {
 }
 
 .main-box,
-.side-box {
+.small-box {
     .news-preview {
         .news-excerpt {
             margin-bottom: 0;
@@ -506,4 +506,6 @@ $strawberry-card-size: 14rem;
     }
 }
 
-
+.more-news-hr {
+    margin-top: -1rem;
+}

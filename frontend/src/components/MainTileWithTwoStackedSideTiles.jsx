@@ -8,11 +8,11 @@ const MainTileWithTwoStackedSideTiles = ({mainTile, sideTopTile, sideBottomTile}
         {mainTile}
       </div>
     </div>
-    <div className="tile is-4 is-vertical is-parent side-box">
-      <div className="tile is-child box side-box">
+    <div className="tile is-4 is-vertical is-parent small-box">
+      <div className="tile is-child box small-box">
         {sideTopTile}  
       </div>
-      <div className="tile is-child box side-box">
+      <div className="tile is-child box small-box">
         {sideBottomTile}  
       </div>
     </div>
