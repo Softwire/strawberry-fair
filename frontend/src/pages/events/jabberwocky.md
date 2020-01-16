@@ -5,6 +5,7 @@ image:
   alt: Placeholder
   src: >-
     https://res.cloudinary.com/strawberryfair/image/upload/v1578398631/Events/jabberwocky_rgidju.jpg
+  shouldDisplay: true
 dateTimeRange:
   endDateTime: 2020-01-16T17:00:40.645Z
   provideEnd: true
