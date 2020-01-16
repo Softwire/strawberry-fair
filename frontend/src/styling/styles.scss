@@ -190,6 +190,12 @@ footer {
         }
     }
 
+    .address {
+        p {
+            margin-top: 12px;
+        }
+    }
+
     .column {
         padding-bottom: 2rem;
     }
@@ -330,18 +336,27 @@ $strawberry-card-size: 14rem;
 }
 
 .month-scrubber {
-    width: 22rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    .title {
-        margin-right: 0.5rem;
-        margin-left: 0.5rem;
-    }
-}
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
 
-.month-scrubber-mobile {
-    @extend .month-scrubber;
-    width: 17rem;
+    .calendar-month {
+        width: 25em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media(max-width: $tablet) {
+            flex-direction: column;
+            width: 15em;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
 }
 
 // Increase spacing within CMS markdown content
@@ -397,6 +412,22 @@ $strawberry-card-size: 14rem;
             }
             &.is-large-on-desktop iframe {
                 @include responsive-iframe;
+            }
+        }
+        
+        img {
+            @media(min-width: $tablet) {
+                &.html-embedded-image-small {
+                    max-width: 40%;
+                }
+    
+                &.html-embedded-image-medium {
+                    max-width: 70%;
+                }
+    
+                &.html-embedded-image-large {
+                    max-width: 100%;
+                }
             }
         }
     }
