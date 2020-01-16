@@ -1,7 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useViewportWidth } from '../../util/useViewportWidth'
+import { Link } from 'gatsby'
 
+import { useViewportWidth } from '../util/useViewportWidth'
+import PreviewCompatibleImage from './PreviewCompatibleImage'
+import { HTMLContentSmall } from './Content'
 
 const bulmaTabletWidthMixin = 769
 
@@ -12,21 +15,30 @@ export const PanelBlock = ({panelData, emptyText, isViewportWidthDesktop}) => {
 
     const isMobile = useViewportWidth() <= bulmaTabletWidthMixin
     const panels = getPanels(panelData, emptyText, isMobile)
+    const isViewportWidth = isMobile || isViewportWidthDesktop
+    const wrappedPanels = getWrappedPanels(panels, isViewportWidth)
 
-    if (isMobile || isViewportWidthDesktop) {
+    return (
+        <div className={`xpanel-block ${isViewportWidth ? "is-viewport-width" : ""}`}>
+            {wrappedPanels}
+        </div>
+    )
+}
+
+const WrappedPanel = ({withContainer, panel}) => {
+    if (withContainer) {
         return (
-            <div className="xpanel-block is-viewport-width">
+            <div className="xpanel-background">
                 <div className="container">
-                    {panels}
+                    {panel}
                 </div>
             </div>
         )
     }
     else {
-        // Allows the news archive to display beside the archive menu on desktop
         return (
-            <div className="xpanel-block">
-                {panels}
+            <div className="xpanel-background">
+                {panel}
             </div>
         )
     }
@@ -50,17 +62,19 @@ const Panel = ({image, slug, title, subtitle, mobileSubtitle, excerpt, isMobile}
     const panelExcerpt = <PanelExcerpt excerpt={excerpt} />
 
     if (isMobile) {
-        <div className="columns is-mobile is-multiline xpanel">
-            <div className="column is-full xpanel-header">
-                {panelHeader}
+        return (
+            <div className="columns is-mobile is-multiline xpanel">
+                <div className="column is-full xpanel-header">
+                    {panelHeader}
+                </div>
+                {!!image && <div className="column is-full xpanel-image">
+                                {panelImage}
+                            </div>}
+                <div className="column is-full xpanel-excerpt">
+                    {panelExcerpt}
+                </div>
             </div>
-            {!!image && <div className="column is-full xpanel-image">
-                            {panelImage}
-                        </div>}
-            <div className="column is-full xpanel-excerpt">
-                {panelImage}
-            </div>
-        </div>
+        )
     }
     else {
         return (
@@ -110,19 +124,24 @@ const PanelExcerpt = ({excerpt}) => (
 
 const getPanels = (panelData, emptyText, isMobile) => {
     if (panelData.length > 0) {
-        return panelData.map((el) => <Panel image={el.image}
-                                            slug={el.slug}
-                                            title={el.title}
-                                            subtitle={el.subtitle}
-                                            mobileSubtitle={el.mobileSubtitle}
-                                            excerpt={el.excerpt}
-                                            isMobile={isMobile} />)
+        return panelData.map((el, i) => <Panel image={el.image}
+                                               slug={el.slug}
+                                               title={el.title}
+                                               subtitle={el.subtitle}
+                                               mobileSubtitle={el.mobileSubtitle}
+                                               excerpt={el.excerpt}
+                                               isMobile={isMobile}
+                                               key={i} />)
     }
     return <EmptyPanel text={emptyText} />
 }
 
+const getWrappedPanels = (panels, withContainer) => (
+    panels.map((panel) => <WrappedPanel panel={panel} withContainer={withContainer} />)
+)
 
-PanelExcerpt.propTypes = PropTypes.string
+
+PanelExcerpt.propTypes = { excerpt: PropTypes.string }
 
 PanelHeader.propTypes = {
     slug: PropTypes.string,
@@ -145,8 +164,13 @@ Panel.propTypes = {
 
 EmptyPanel.propTypes = { text: PropTypes.string }
 
+WrappedPanel.propTypes = {
+    panel: PropTypes.element,
+    withContainer: PropTypes.bool
+}
+
 PanelBlock.propTypes = {
-    panelData: PropTypes.arrayOf(Panel.propTypes),
-    emptyText: EmptyPanel.propTypes,
+    panelData: PropTypes.arrayOf(PropTypes.object),
+    emptyText: PropTypes.string,
     isViewportWidthDesktop: PropTypes.bool
 }

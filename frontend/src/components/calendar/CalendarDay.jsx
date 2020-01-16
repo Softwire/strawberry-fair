@@ -4,7 +4,6 @@ import { Link } from 'gatsby'
 import _ from 'lodash'
 
 import { eventPropTypeValidator } from '../validators'
-import { EventMediaBlock } from './Upcoming'
 import { areSameDay } from '../../util/dates'
 
 // How many events' names should we write in the box, at maximum?
@@ -127,7 +126,7 @@ const CalendarDayModal = ({date, events, close, active}) => {
                 <div className="message">
                     <h1 className="message-header is-primary">{date.toLocaleDateString('en-GB', longDateFormatOptions)}</h1>
                     <div className="message-body">
-                        {events.map(event => <EventMediaBlock key={event.fields.slug} event={event} />)}
+                        {events.map(event => null)}
                     </div>
                 </div>
             </div>
@@ -135,6 +134,7 @@ const CalendarDayModal = ({date, events, close, active}) => {
         </div>
     )
 }
+// <EventMediaBlock key={event.fields.slug} event={event} />
 
 const NoEventsModal = ({date, close, active}) => (
     <div className={`modal ${active ? "is-active" : ""}`}>

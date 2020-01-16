@@ -4,7 +4,6 @@ import { Link } from 'gatsby'
 
 import BaseBlock from './BaseBlock'
 import { getEventList } from '../calendar/getEventList'
-import { EventMediaBlock } from '../calendar/Upcoming'
 import { eventPropTypeValidator } from '../validators'
 import { EventFilterTags, filterEvents } from '../calendar/EventFilter'
 import { eventTypeList } from '../calendar/EventType'
@@ -38,7 +37,7 @@ const UpcomingEventsDisplayWithContext = ({isPreview, previewEventList}) => {
           .map(event => (
             <div className="column is-half" key={event.fields.slug}>
               <div className="box">
-                <EventMediaBlock event={event} />
+                {null}
               </div>
             </div>
             )
