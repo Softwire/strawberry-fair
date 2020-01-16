@@ -1,6 +1,6 @@
 import React from 'react'
 import CMS from 'netlify-cms-app'
-import { Map } from 'immutable'
+import { List, Map } from 'immutable'
 
 const ListControl = CMS.getWidget("list").control
 
