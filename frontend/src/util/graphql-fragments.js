@@ -109,6 +109,7 @@ fragment NewsFragment on MarkdownRemark {
     ...imageFluidSquareFragment
     date
     tags
+    uniqueId
   }
   html
   shortExcerpt: excerpt(format: HTML, pruneLength: 50)

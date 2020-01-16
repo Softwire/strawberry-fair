@@ -74,7 +74,8 @@ NewsArticleSnapshots.propTypes = {
 export default NewsArticleSnapshots
 
 const checkFeaturedArticleExists = (featuredId, articles) => {
-  const featuredArticle = articles.filter(article => article.node.frontmatter.uniqueId === featuredId )
+  const featuredArticle = articles.filter(article => {
+    return article.node.frontmatter.uniqueId === featuredId} )
   if(featuredArticle.length === 0) {
     console.log(`No article with id ${featuredId} was found.`)
     return false
