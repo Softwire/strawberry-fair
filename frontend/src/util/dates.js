@@ -32,7 +32,6 @@ export function isOnOrAfterDay(baseDate, testDate) {
 }
 
 export function toDateTimeString(dateTime, {isShort, withYear}) {
-    //display style of the event date
     const displayStyle = {
         weekday: (isShort ? "short" : "long"),
         day: "numeric",
@@ -47,6 +46,15 @@ export function toDateTimeString(dateTime, {isShort, withYear}) {
     const dtString = dateTime.toLocaleDateString("en-GB", displayStyle)
 
     return dtString.replace(",", "") // Removes comma after weekday
+}
+
+export function toDateString(date) {
+    const displayStyle = {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    }
+    return date.toLocaleDateString("en-GB", displayStyle)
 }
 
 // Removes the time part of a Date

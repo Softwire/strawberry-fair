@@ -7,6 +7,7 @@ import PreviewCompatibleImage from './PreviewCompatibleImage'
 import MainTileWithTwoStackedSideTiles from './MainTileWithTwoStackedSideTiles'
 import { newsArticleValidator } from './validators'
 import { HTMLContent } from './Content'
+import { toDateString } from '../util/dates'
 
 //display style of the event date
 export const displayStyle = {
@@ -33,7 +34,7 @@ const NewsArticleSnapshot = ({newsArticles}) => {
         <PreviewCompatibleImage imageInfo={imageInfo} style={imageWrapperStyle} />
         <h2 className="title is-5 news-snapshot-title">{newsArticles.node.frontmatter.title}</h2>
       </Link>
-      <h3 className="subtitle is-7">{publicationDate.toLocaleDateString("en-GB", displayStyle)}</h3>
+      <h3 className="subtitle is-7">{toDateString(publicationDate)}</h3>
       <HTMLContent content={newsArticles.node.shortExcerpt} className="news-excerpt news-excerpt-short" />
       <HTMLContent content={newsArticles.node.longExcerpt} className="news-excerpt news-excerpt-long" />
   </article>

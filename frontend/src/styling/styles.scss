@@ -519,6 +519,8 @@ $strawberry-card-size: 14rem;
     padding: 0;
 
     .xpanel-background {
+        border: 2px solid $light-grey;
+        
         &:nth-child(odd) {
             background-color: $light-grey;
         }

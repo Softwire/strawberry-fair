@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
-import { HTMLContent } from '../components/Content'
+
+import { PanelBlock } from '../components/Panel'
+import { toDateString } from '../util/dates'
 import { site } from '../util/templating'
 import NewsMenu, { monthName } from '../components/NewsMenu.jsx'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import NewsArticleSnapshots from '../components/NewsArticleSnapshots'
 
 // This is used by the website and for CMS previews
@@ -35,24 +36,7 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
       <hr />
       <div className="columns">
         <div className="column is-four-fifths">
-          <div className="panel">
-            {selectedNewsArticles.map(article => (
-              <Link to={article.node.fields.slug} key={article.node.fields.slug} className="panel-block">
-                <article className="media">
-                  <figure className="media-left">
-                    <div className="image is-64x64">
-                      <PreviewCompatibleImage imageInfo={article.node.frontmatter.image}/>
-                    </div>
-                  </figure>
-                  <div className="media-content">
-                    <h1 className="has-text-primary">{article.node.frontmatter.title}</h1>
-                    <time className="has-text-secondary" dateTime={article.node.frontmatter.date}>{article.node.frontmatter.date}</time>
-                    <HTMLContent content = {article.node.html.substring(0,360)+" ..."}/>
-                  </div>
-                </article>
-              </Link>
-            ))}
-          </div>
+          <PanelBlock panelData={selectedNewsArticles.map((article) => getPanelData(article))} isViewportWidthDesktop={false} />
         </div>
         <div className="column">
           <NewsMenu newsArticles={newsArticles}/>
@@ -60,6 +44,16 @@ export const NewsTimeIntervalOverview = ({newsArticles, firstDay, lastDay}) => {
       </div>
     </React.Fragment>
   )
+}
+
+const getPanelData = (article) => {
+  return {
+    image: article.node.frontmatter.image,
+    slug: article.node.fields.slug,
+    title: article.node.frontmatter.title,
+    subtitle: toDateString(new Date(article.node.frontmatter.date)),
+    excerpt: article.node.html.substring(0,360)+" ..."
+  }
 }
 
 const NewsArchiveBreadcrumbs = ({breadcrumbs, breadcrumbLinks}) => {
