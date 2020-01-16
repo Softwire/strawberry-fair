@@ -1,9 +1,7 @@
 backend:
-  name: git-gateway
-  branch: production
-  accept_roles:
-    - admin
-    - content
+  name: github
+  repo: Softwire/strawberry-fair
+  branch: sf-132
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
@@ -210,8 +208,8 @@ collections:
           - {<<: *key, default: news-overview}
           - *title
           - *subtitle
-          - *featuredArticle
           - *hero
+          - *featuredArticle
           - *notes
       - file: "frontend/src/pages/calendar.md"
         label: "Calendar Page"
