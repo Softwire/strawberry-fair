@@ -58,7 +58,7 @@ definitions:
       label: Scrapbook Images
       name: scrapbookImages
       widget: list
-      hint: "Choose a series of images to accompany this content block, separating it from the rest of the page. Warning: this will be rendered above the title of this content block"
+      hint: "Choose a series of images to accompany this content block, separating it from the rest of the page"
       fields:
         - {label: "Description", name: "alt", widget: "string"}
         - {label: "Image File", name: "src", widget: "image"}
@@ -68,11 +68,12 @@ definitions:
       widget: list
       hint: "A content block is just a block of formatted text that appears on the homepage"
       fields:
+        - {label: Block Display Label, name: displayLabel, widget: hidden, value: Content Block, default: Content Block}
+        - *scrapbookImages
         - {label: Content Block Title, name: title, widget: string}
         - {label: Content Block Subtitle, name: subtitle, widget: string}
         - {label: Content Block Body, name: _markdown_contentBody, widget: markdown}
         - *strawberryTile
-        - *scrapbookImages
   - calendarBlock: &calendarBlock
       label: Calendar Block
       name: calendarBlock

@@ -18,7 +18,8 @@ heroData:
         https://res.cloudinary.com/strawberryfair/image/upload/v1578398228/Banner/slide-gate-2017_h8epan.jpg
   isActive: true
 contentBlocks:
-  - _markdown_contentBody: >-
+  - displayLabel: Content Block
+    _markdown_contentBody: >-
       **asdasdasd**
 
 
@@ -77,7 +78,8 @@ contentBlocks:
         the theme later in the year
     title: A
     subtitle: B
-  - _markdown_contentBody: >-
+  - displayLabel: Content Block
+    _markdown_contentBody: >-
       adsfadsfasdf
 
 
