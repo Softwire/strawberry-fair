@@ -62,7 +62,7 @@ const NewsArticleSnapshots = ({newsArticles}) => {
 }
 
 NewsArticleSnapshots.propTypes = {
-  newsArticles: PropTypes.arrayOf(newsArticleValidator),
+  newsArticles: PropTypes.arrayOf(newsArticleValidator)
 }
 
 export default NewsArticleSnapshots

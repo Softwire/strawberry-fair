@@ -12,7 +12,7 @@ export const NewsOverview = ({newsArticles, featuredId}) => {
   // Only show "more news" if there are more than three news articles
   const moreNews = newsArticles.length > 3
   
-  if(!!featuredId) moveArticleToTheFront(getIndexOfFeaturedArticle(featuredId, newsArticles), newsArticles)
+  if(featuredId) moveArticleToTheFront(getIndexOfFeaturedArticle(featuredId, newsArticles), newsArticles)
 
   return (
     <React.Fragment>
