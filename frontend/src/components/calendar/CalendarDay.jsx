@@ -7,12 +7,21 @@ import { eventPropTypeValidator } from '../validators'
 import { EventMediaBlock } from './Upcoming'
 import { areSameDay } from '../../util/dates'
 
-// How many events' names should we write in the box, at maximum?
-const maxEvents = 3
+// The window width below which we stop showing the names of events and just show ellipses
+const widthBreakpoint = 500
 
 // Represents a day in the calendar. Will either be empty or contain a preview of an event.
 const CalendarDay = ({dateTime, events}) => {
-    // TODO: Change the method of indicating it's "today", so as still to be visible when there's an event today
+    // How many events' names should we write in the box, at maximum?
+    // If the screen is certain widths, only ever show the ellipsis
+    let maxEvents
+    const w = window.innerWidth
+    if (w > widthBreakpoint) {
+        maxEvents = 3
+    } else {
+        maxEvents = 0
+    }
+
     const date = new Date(dateTime)  // The actual Date this CalendarDay is representing
 
     // Are we showing the modal?
@@ -113,7 +122,7 @@ const CalendarDay = ({dateTime, events}) => {
     }
 
     return (
-        <div className="column is-half-mobile is-one-quarter-tablet is-2-desktop">
+        <div className="column is-half-touch is-one-quarter-desktop">
             {internals}
         </div>
     )

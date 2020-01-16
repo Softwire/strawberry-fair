@@ -20,8 +20,9 @@ DisabledFilterTag.propTypes = {
 }
 
 export const EventFilterBlock = ({filterProps}) => (
-    <div className="panel-block filter">
+    <div className="filter">
         <EventFilterTags filterProps={filterProps} />
+        <hr className="reduce-top-margin" />
     </div>
 )
 

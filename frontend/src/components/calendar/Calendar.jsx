@@ -51,28 +51,22 @@ const CalendarWithContext = ({isPreview, previewEventList}) => {
     }
 
     const days = [...Array(daysInFocusMonth).keys()].map(n => n + 1)
-    // TODO: Figure out how to get this to work with screenreaders
-    // What would the corect semantic component for this be?
     return (
         <React.Fragment>
             <MonthScrubber monthForward={monthForward} monthBack={monthBack} focusDate={focusDate} />
-            <div className="calendar panel">
-                <EventFilterBlock filterProps={filterProps} />
-                <div className="panel-block">
-                    <div className="columns is-multiline is-mobile">
-                        {days.map(dayNumber => {
-                            const date = new Date(focusDate.getFullYear(), focusDate.getMonth(), dayNumber)
+            <EventFilterBlock filterProps={filterProps} />
+            <div className="columns is-multiline is-mobile">
+                {days.map(dayNumber => {
+                    const date = new Date(focusDate.getFullYear(), focusDate.getMonth(), dayNumber)
 
-                            return (
-                                <CalendarDay
-                                    key={dayNumber}
-                                    dateTime={date}
-                                    events={eventsOnDate(date, filterEvents(events, filterProps.activeFilters))}
-                                />
-                            )
-                        })}
-                    </div>
-                </div>
+                    return (
+                        <CalendarDay
+                            key={dayNumber}
+                            dateTime={date}
+                            events={eventsOnDate(date, filterEvents(events, filterProps.activeFilters))}
+                        />
+                    )
+                })}
             </div>
         </React.Fragment>
     )
