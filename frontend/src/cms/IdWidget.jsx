@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 export class IdControl extends React.Component {
   render() {
     if(!this.props.value) {
-      this.props.onChange(new Date().toLocaleString())
+      this.props.onChange(new Date().getTime())
     }
     return null
   }
