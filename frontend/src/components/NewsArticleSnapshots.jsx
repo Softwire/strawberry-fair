@@ -44,9 +44,9 @@ NewsArticleSnapshot.propTypes = {
   newsArticles: newsArticleValidator
 }
 
-const NewsArticleSnapshots = ({newsArticles, featuredTitle}) => {
-  if(!!featuredTitle && checkFeaturedArticleExists(featuredTitle, newsArticles)) {
-    const indexFeaturedArticle = getIndexOfFeaturedArticle(featuredTitle, newsArticles)
+const NewsArticleSnapshots = ({newsArticles, featuredId}) => {
+  if(!!featuredId && checkFeaturedArticleExists(featuredId, newsArticles)) {
+    const indexFeaturedArticle = getIndexOfFeaturedArticle(featuredId, newsArticles)
     newsArticles = moveArticleToTheFront(indexFeaturedArticle, newsArticles)
   }
   const newsArticleSnapshots = newsArticles.map(newsArticles => 
@@ -67,26 +67,27 @@ const NewsArticleSnapshots = ({newsArticles, featuredTitle}) => {
 }
 
 NewsArticleSnapshots.propTypes = {
-  newsArticles: PropTypes.arrayOf(newsArticleValidator)
+  newsArticles: PropTypes.arrayOf(newsArticleValidator),
+  featuredId: PropTypes.String
 }
 
 export default NewsArticleSnapshots
 
-const checkFeaturedArticleExists = (featuredTitle, articles) => {
-  const featuredArticle = articles.filter(article => article.node.frontmatter.title === featuredTitle )
+const checkFeaturedArticleExists = (featuredId, articles) => {
+  const featuredArticle = articles.filter(article => article.node.frontmatter.uniqueId === featuredId )
   if(featuredArticle.length === 0) {
-    console.log(`No article with title ${featuredTitle} was found.`)
+    console.log(`No article with id ${featuredId} was found.`)
     return false
   }
   else if (featuredArticle.length > 1) {
-    console.log(`${featuredArticle.length} articles with the title ${featuredTitle} were found.`)
+    console.log(`${featuredArticle.length} articles with the id ${featuredId} were found.`)
     return false
   }
   else return true
 }
 
-const getIndexOfFeaturedArticle = (featuredTitle, articles) => {
-  return articles.findIndex(article => article.node.frontmatter.title === featuredTitle)
+const getIndexOfFeaturedArticle = (featuredId, articles) => {
+  return articles.findIndex(article => article.node.frontmatter.uniqueId === featuredId)
 }
 
 const moveArticleToTheFront = (articleIndex, articles) => {
