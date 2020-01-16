@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
 
 import NewsArticleSnapshots, { NewsArticleSnapshot } from '../components/NewsArticleSnapshots'
 import { site } from '../util/templating'
@@ -7,10 +8,14 @@ import NewsMenu from '../components/NewsMenu.jsx'
 
 
 // This is used by the website and for CMS previews
-export const NewsOverview = ({newsArticles}) => {
+export const NewsOverview = ({newsArticles, featuredId}) => {
   // Only show "more news" if there are more than three news articles
   const moreNews = newsArticles.length > 3
   
+  if (featuredId) {
+    moveArticleToTheFront(getIndexOfFeaturedArticle(featuredId, newsArticles), newsArticles)
+  }
+
   return (
     <React.Fragment>
       <div className="columns">
@@ -40,10 +45,11 @@ export const NewsOverview = ({newsArticles}) => {
 }
 
 NewsOverview.propTypes = {
-  newsArticles: NewsArticleSnapshots.propTypes.newsArticles
+  newsArticles: NewsArticleSnapshots.propTypes.newsArticles,
+  featuredId: PropTypes.string
 }
 
-export default site(NewsOverview, data => ({newsArticles: data.allMarkdownRemark.edges}))
+export default site(NewsOverview, data => ({newsArticles: data.allMarkdownRemark.edges, featuredArticle: data.markdownRemark.frontmatter.featuredArticle}))
 
 export const query = graphql`
 query newsOverviewTemplate($id: String!) {
@@ -51,6 +57,7 @@ query newsOverviewTemplate($id: String!) {
       frontmatter {
         title
         subtitle
+        featuredId
       }
       html
     }
@@ -66,3 +73,14 @@ query newsOverviewTemplate($id: String!) {
     }
   }
 `
+const getIndexOfFeaturedArticle = (featuredId, articles) => {
+  return articles.findIndex(article => article.node.frontmatter.uniqueId === featuredId)
+}
+
+const moveArticleToTheFront = (articleIndex, articles) => {
+  if(articleIndex !== -1) {
+    const article = articles[articleIndex]
+    articles.splice(articleIndex, 1)
+    articles.unshift(article)
+  }
+}
