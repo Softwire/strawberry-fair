@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import useForm from 'react-hook-form'
+import _ from 'lodash'
 
 import contactFormConfig from '../data/contactForm.config'
 
@@ -11,7 +11,31 @@ const SUBMISSION_STATUS = { SUBMITTED: 'SUBMITTED', UNSUBMITTED: 'UNSUBMITTED', 
 const ContactForm = () => {
   const [status, setStatus] = useState(SUBMISSION_STATUS.UNSUBMITTED)
 
-  const { register, handleSubmit, errors } = useForm()
+  const [name, setName] = useState("")
+  const [nameError, setNameError] = useState("")
+  const nameErrorOptions = {
+    required: requiredErrorMessage,
+    maxLength: {
+      value: 80,
+      message: 'Max length is 80 characters',
+    }
+  }
+
+  const [email, setEmail] = useState("")
+  const [emailError, setEmailError] = useState("")
+  const emailErrorOptions = {
+    required: requiredErrorMessage,
+    pattern: {
+      value: /^\S+@\S+\.\S+$/i,
+      message: 'Invalid email address'
+    }
+  }
+
+  const [message, setMessage] = useState("")
+  const [messageError, setMessageError] = useState("")
+  const messageErrorOptions = {required: requiredErrorMessage}
+
+
   const configFields = contactFormConfig.fields
 
   if (status === SUBMISSION_STATUS.SUBMITTED) {
@@ -23,42 +47,43 @@ const ContactForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(submitForm(setStatus))}>
-      <FormField label={configFields.name.label} error={errors.name}>
+    <form onSubmit={event => {
+      handleStateChange(name, setName, setNameError, nameErrorOptions)
+      handleStateChange(email, setEmail, setEmailError, emailErrorOptions)
+      handleStateChange(message, setMessage, setMessageError, messageErrorOptions)
+      
+      const data = {name, email, message}
+      const errors = {nameError, emailError, messageError}
+      submitForm(event, data, errors, setStatus)
+      }}>
+      <FormField label={configFields.name.label} error={nameError}>
         <input className="input" 
           type="text"
           placeholder="Stan Desk"
           name="name"
-          ref={register({
-            required: requiredErrorMessage,
-            maxLength: {
-              value: 80,
-              message: 'Max length is 80 characters'
-            }
-          })}
+          onChange={event => 
+            handleStateChange(event.target.value, setName, setNameError, nameErrorOptions)
+          }
         />
       </FormField>
-      <FormField label={configFields.email.label} error={errors.email}>
+      <FormField label={configFields.email.label} error={emailError}>
         <input className="input"
           type="text" 
           placeholder="StanDesk@NoSitting.com" 
           name="email"
-          ref={register({
-            required: requiredErrorMessage,
-            pattern: {
-              value: /^\S+@\S+\.\S+$/i,
-              message: 'Invalid email address'
-            }
-          })} 
+          onChange={event => 
+            handleStateChange(event.target.value, setEmail, setEmailError, emailErrorOptions)
+          }
         />
-      </FormField>
-      <FormField label={configFields.message.label} error={errors.message}>
+        </FormField>
+      <FormField label={configFields.message.label} error={messageError}>
         <textarea className="textarea"
           name="message"
-          ref={register({required: requiredErrorMessage})}
+          onChange={event => 
+            handleStateChange(event.target.value, setMessage, setMessageError, messageErrorOptions)
+          }
         />
       </FormField>
-      
       <button className="button has-background-primary has-text-white" type="submit">
         Submit
       </button>
@@ -67,16 +92,42 @@ const ContactForm = () => {
   )
 }
 
+const handleStateChange = (value, setState, setStateError, validationOptions) => {
+  setState(value)
+  if (validationOptions.required && !value) {
+    setStateError(_.get(validationOptions.required, "message", validationOptions.required))
+
+  } else if (value.length > _.get(validationOptions, 'maxLength.value')) {
+    setStateError(validationOptions.maxLength.message)
+
+  } else if (_.get(validationOptions, 'pattern.value', '') instanceof RegExp && !validationOptions.pattern.value.test(value)) {
+    setStateError(validationOptions.pattern.message)
+
+  } else {
+    setStateError("")
+  }
+}
+
 export default ContactForm
 
-const submitForm = (setStatus) => {
-  return data => {
-    let formData = new FormData()
-    const names = ["name", "email", "message"]
-    names.forEach(id => formData.append(contactFormConfig.fields[id].key, data[id]))
-  
-    const queryString = new URLSearchParams(formData).toString()
-  
+const submitForm = (event, data, errors, setStatus) => {
+  event.preventDefault() // Prevents submission from redirecting the page
+
+  if (
+    Object.values(errors).filter(e => e !== "").length > 0 || 
+    Object.values(data).filter(v => v === "").length > 0 // This is required to handle race conditions with setState
+  ) {
+    console.error(errors)
+    setStatus(SUBMISSION_STATUS.SUBMISSION_FAILED)
+    return
+  }
+
+  let postBody = {}
+
+  Object.keys(data).forEach(label =>  postBody[contactFormConfig.fields[label].key] = data[label])
+  const queryString = toQueryString(postBody)
+
+  try {
     fetch(contactFormConfig.url, {
       method: contactFormConfig.method,
       headers: contactFormConfig.headers,
@@ -86,9 +137,14 @@ const submitForm = (setStatus) => {
     })
     .then(() => setStatus(SUBMISSION_STATUS.SUBMITTED))
     .catch(() => setStatus(SUBMISSION_STATUS.SUBMISSION_FAILED))
+  } catch (error) {
+    console.error(error)
+    setStatus(SUBMISSION_STATUS.SUBMISSION_FAILED)
   }
 }
 
+const toQueryString = (obj) =>
+  Object.keys(obj).map(key => `${key}=${encodeURIComponent(obj[key])}`).join('&')
 
 const FormField = ({label, error, children}) => {
   const newClassName = error ? children.props.className + ' is-primary' : children.props.className
@@ -107,7 +163,7 @@ const FormField = ({label, error, children}) => {
 const InvalidInputError = ({error}) => {
   if (error) {
     return (
-      <span className="has-text-primary">{error.message}</span>
+      <span className="has-text-primary">{error}</span>
     )
   } else { 
     return null
@@ -118,7 +174,7 @@ const FailedSubmissionError = ({status}) => {
   if (status === SUBMISSION_STATUS.SUBMISSION_FAILED) {
     return (
       <div className="has-text-primary">
-        Your submission failed. Please try again or directly email us at a@b.c
+        Your submission failed. Please try again or directly email us at enquiries@strawberry-fair.org.uk
       </div>
     )
   } else {
