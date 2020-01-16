@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 import BaseBlock from './BaseBlock'
+import { Panel } from '../Panel'
+import { getEventPanelData } from '../calendar/Upcoming'
 import { getEventList } from '../calendar/getEventList'
 import { eventPropTypeValidator } from '../validators'
 import { EventFilterTags, filterEvents } from '../calendar/EventFilter'
@@ -12,6 +14,7 @@ import { useFilters } from '../../util/filters'
 import { isOnOrAfterDay } from '../../util/dates'
 import { generateEventSubtitle } from '../../templates/event-info'
 import { HTMLContentSmall } from '../Content'
+import { viewportIsMobile } from '../../util/useViewportWidth'
 
 const CalendarBlock = ({calendarBlock, events}) => (
   <BaseBlock block={calendarBlock} altBackground={true}>
@@ -26,20 +29,22 @@ const UpcomingEventsDisplay = ({events}) => (
 )
 
 const UpcomingEventsDisplayWithContext = ({isPreview, previewEventList}) => {
+  const isMobile = viewportIsMobile()
+  
   const filterProps = useFilters(eventTypeList)
 
   let events = isPreview ? previewEventList : getEventList()
   events = events.filter(event => isOnOrAfterDay(new Date(), new Date(event.frontmatter.dateTimeRange.provideEnd ? event.frontmatter.dateTimeRange.endDateTime : event.frontmatter.dateTimeRange.startDateTime)))
-  
+
   return (
     <React.Fragment>
       <EventFilterTags filterProps={filterProps} />
       <div className="columns is-multiline">
         {filterEvents(events, filterProps.activeFilters)
           .map(event => (
-            <div className="column is-half" key={event.fields.slug}>
-              <div className="box">
-                <EventMediaBlock event={event} />
+            <div className="column is-half calendar-block-column" key={event.fields.slug}>
+              <div className="box calendar-block-box">
+                <Panel {...getEventPanelData(event)} isMobile={isMobile} />
               </div>
             </div>
             )
@@ -74,7 +79,7 @@ export const EventMediaBlock = ({event}) => {
 }
 
 const MoreEventsLinkBox = () => (
-  <div className="column is-half">
+  <div className="calendar-block-column column is-half">
     <Link className="box button" to="/events">See more events...</Link>
   </div>
 )

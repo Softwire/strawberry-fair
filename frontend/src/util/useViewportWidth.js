@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 
+const bulmaTabletWidthMixin = 769
+
 export const useViewportWidth = () => {
     const [width, setWidth] = useState(window.innerWidth)
     
@@ -13,3 +15,5 @@ export const useViewportWidth = () => {
     
     return width;
 }
+
+export const viewportIsMobile = () => useViewportWidth() <= bulmaTabletWidthMixin

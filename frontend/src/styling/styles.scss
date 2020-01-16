@@ -554,3 +554,19 @@ $strawberry-card-size: 14rem;
         }
     }
 }
+
+.calendar-block-column {
+    @media(max-width: $tablet) {
+        padding: 0.75rem 0;
+    }
+    
+    .calendar-block-box {
+        height: 100%;
+
+        .xpanel .xpanel-excerpt .content {
+            :first-child {
+                margin-top: 0;
+            }
+        }
+    }
+}

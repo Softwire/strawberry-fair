@@ -2,18 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-import { useViewportWidth } from '../util/useViewportWidth'
+import { viewportIsMobile } from '../util/useViewportWidth'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 import { HTMLContentSmall } from './Content'
-
-const bulmaTabletWidthMixin = 769
 
 
 // Component used in News Archive, Upcoming Events & Calendar Day Modal
 // CSS classes use name "xpanel" to distinguish from Bulma panel class
 export const PanelBlock = ({panelData, emptyText, isViewportWidthDesktop}) => {
 
-    const isMobile = useViewportWidth() <= bulmaTabletWidthMixin
+    const isMobile = viewportIsMobile()
     const panels = getPanels(panelData, emptyText, isMobile)
     const isViewportWidth = isMobile || isViewportWidthDesktop
     const wrappedPanels = getWrappedPanels(panels, isViewportWidth)
@@ -52,7 +50,7 @@ const EmptyPanel = ({text}) => {
     )
 }
 
-const Panel = ({image, slug, title, subtitle, mobileSubtitle, excerpt, isMobile}) => {
+export const Panel = ({image, slug, title, subtitle, mobileSubtitle, excerpt, isMobile}) => {
 
     const panelImage = <PanelImage image={image} />
     const panelHeader = <PanelHeader slug={slug}
@@ -79,7 +77,7 @@ const Panel = ({image, slug, title, subtitle, mobileSubtitle, excerpt, isMobile}
     else {
         return (
             <div className="columns xpanel">
-                <div className="column is-3 xpanel-image left-column-desktop">
+                <div className="column is-4 xpanel-image left-column-desktop">
                     {panelImage}
                 </div>
                 <div className="column right-column-desktop">
