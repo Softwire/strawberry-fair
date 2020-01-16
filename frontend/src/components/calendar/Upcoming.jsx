@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import _ from 'lodash'
@@ -78,10 +78,6 @@ const EventHeader = ({event, isMobile}) => (
         <h2 className={`title is-4 upcoming-title`}><strong>{event.frontmatter.title}</strong></h2>
         <h3 className={`subtitle is-${isMobile ? "6" : "5"} upcoming-subtitle`}><strong>{generateEventSubtitle({markdownRemark: event}, isMobile)}</strong></h3>
     </Link>
-)
-
-const EventExcerpt = ({excerpt}) => (
-    <HTMLContentSmall content={excerpt} />
 )
 
 const EventPanelBlock = ({event}) => {
