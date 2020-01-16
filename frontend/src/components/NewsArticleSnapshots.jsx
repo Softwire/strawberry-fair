@@ -68,7 +68,7 @@ const NewsArticleSnapshots = ({newsArticles, featuredId}) => {
 
 NewsArticleSnapshots.propTypes = {
   newsArticles: PropTypes.arrayOf(newsArticleValidator),
-  featuredId: PropTypes.String
+  featuredId: PropTypes.string
 }
 
 export default NewsArticleSnapshots
