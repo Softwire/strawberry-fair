@@ -30,9 +30,17 @@ node (label: 'linux') {
                         
                     }
                     stage('Test') {
-                        sh 'npm run lint'
-                        sh 'npm run test'
-                        sh 'npm run build'
+
+                        environment {
+                            CLOUDINARY_CLOUD_NAME = 'strawberryfair'
+                            CLOUDINARY_API_KEY    = '631814456675255'
+                        }
+
+                        withCredentials([string(credentialsId: 'CLOUDINARY_API_SECRET', variable: 'CLOUDINARY_API_SECRET')]) {
+                            sh 'npm run lint'
+                            sh 'npm run test'
+                            sh 'npm run build'
+                        }
                     }
                 } 
             }
