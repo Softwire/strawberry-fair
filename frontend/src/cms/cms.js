@@ -22,6 +22,8 @@ import { HeroControl } from './HeroWidget'
 import { MultiCollectionRelationControl, MultiCollectionRelationPreview } from './MultiCollectionRelationWidget'
 import { LinkControl, LinkPreview } from './LinkWidget'
 import { DateTimeRangeControl } from './DateTimeRangeWidget'
+import { IdControl } from './IdWidget'
+ 
 
 import { youtubeEditorComponent } from './youtubeEditorComponent'
 import { imageEditorComponent } from './imageEditorComponent'
@@ -42,7 +44,7 @@ const placeholderArticle = {
     }
 }
 
-const placeholderArticles = new Array(3).fill(placeholderArticle)
+const placeholderArticles = new Array(4).fill(placeholderArticle)
 
 // Which days of the current month should we put placeholder events on?
 const placeholderEventDays = [1, 3, 7, 7, 10, 19, 21, 21, 25, 30, 31, 40, 41, 49, 50, 50]  // Leaks into the next month, this is fine
@@ -115,6 +117,7 @@ CMS.registerWidget('multi-collection-relation', MultiCollectionRelationControl, 
 CMS.registerWidget('link', LinkControl, LinkPreview)
 CMS.registerWidget("dateTimeRange", DateTimeRangeControl)
 CMS.registerWidget('notes', CMS.getWidget('markdown').control, () => null)
+CMS.registerWidget('id', IdControl)
 
 CMS.registerEditorComponent(youtubeEditorComponent)
 CMS.registerEditorComponent(imageEditorComponent)

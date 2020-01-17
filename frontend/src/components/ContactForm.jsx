@@ -27,7 +27,7 @@ const ContactForm = () => {
       <FormField label={configFields.name.label} error={errors.name}>
         <input className="input" 
           type="text"
-          placeholder="Stan Desk"
+          placeholder={configFields.name.placeholder}
           name="name"
           ref={register({
             required: requiredErrorMessage,
@@ -41,7 +41,7 @@ const ContactForm = () => {
       <FormField label={configFields.email.label} error={errors.email}>
         <input className="input"
           type="text" 
-          placeholder="StanDesk@NoSitting.com" 
+          placeholder={configFields.email.placeholder}
           name="email"
           ref={register({
             required: requiredErrorMessage,
@@ -54,6 +54,7 @@ const ContactForm = () => {
       </FormField>
       <FormField label={configFields.message.label} error={errors.message}>
         <textarea className="textarea"
+          placeholder={configFields.message.placeholder}
           name="message"
           ref={register({required: requiredErrorMessage})}
         />

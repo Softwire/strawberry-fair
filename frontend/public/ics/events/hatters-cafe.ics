@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:adamgibbons/ics
+METHOD:PUBLISH
+X-PUBLISHED-TTL:PT1H
+BEGIN:VEVENT
+UID:8205c6c2-0695-4fb0-8c6a-9a096bc93897
+SUMMARY:Hatters Cafe
+DTSTAMP:20200117T113100Z
+DTSTART:20200101T170000Z
+DTEND:20200101T170000Z
+DESCRIPTION:Hatters Cafe is a chilled out area for hanging out in and a mee
+	ting point for family and friends. We have a variety of bands throughout t
+	he day and DJs in the evening. Our area is safe and secure\, surrounded by
+	 a white picket fence\, and inside we have our own cafe\, serving a range 
+	of hot and cold beverages (some a little naughty) and cakes. There's lots 
+	going on at Hatters to keep everyone happy\, so come visit us!
+END:VEVENT
+END:VCALENDAR

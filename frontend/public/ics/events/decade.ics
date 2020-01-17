@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:adamgibbons/ics
+METHOD:PUBLISH
+X-PUBLISHED-TTL:PT1H
+BEGIN:VEVENT
+UID:922aecc7-df9d-4cc5-b70c-e36a42c2b1e3
+SUMMARY:The Decade
+DTSTAMP:20200117T113100Z
+DTSTART:20200101T000000Z
+DTEND:20300101T000000Z
+DESCRIPTION:It's the roaring 20s... the 2020s\, that is! Let's celebrate th
+	ese 20s with a return of the classics from the last - art deco\, jazz musi
+	c\, a global depression\, and that classic 20s fashion!
+END:VEVENT
+END:VCALENDAR

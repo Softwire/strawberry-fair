@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: production
+  branch: master
   accept_roles:
     - admin
     - content
@@ -44,6 +44,8 @@ definitions:
   - &notes {label: Editor's notes, name: notes, widget: notes, required: false, hint: "Warning: content written here will not be published on the website but will be publicly visible on github"}
   - &interjection {label: Interjection, name: interjection, widget: string}
   - &info {label: Error Info, name: info, widget: string}
+  - &featuredArticle {label: Featured Article, name: featuredId, widget: relation, collection: news, searchFields: [title, author, date], displayFields: [title, date], valueField: uniqueId, required: false}
+  - &uniqueId { label: Unique Id, name: uniqueId, widget: id}
   - strawberryTile: &strawberryTile
       label: Strawberry Tile
       name: strawberryTile
@@ -209,6 +211,7 @@ collections:
           - *title
           - *subtitle
           - *hero
+          - *featuredArticle
           - *notes
       - file: "frontend/src/pages/calendar.md"
         label: "Calendar Page"
@@ -242,6 +245,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {<<: *key, default: news-article}
+      - *uniqueId
       - *title
       - *subtitle
       - *hero

@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "name": "strawberry-fair",
+  "description": null,
+  "icons": {
+    "60": "/icons-9b86e65cf558dcc51146e2b33e1cc634/firefox_app_60x60.png",
+    "128": "/icons-9b86e65cf558dcc51146e2b33e1cc634/firefox_app_128x128.png",
+    "512": "/icons-9b86e65cf558dcc51146e2b33e1cc634/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": null,
+    "url": null
+  }
+}
