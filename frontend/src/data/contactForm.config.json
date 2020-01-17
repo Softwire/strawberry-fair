@@ -9,8 +9,7 @@
     "fields": {
         "name": {
             "label": "Your name",
-            "key": "entry.1716293616",
-            "placeholder": "Your name"
+            "key": "entry.1753481828"
         },
         "email": {
             "label": "Your email",
