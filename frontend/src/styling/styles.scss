@@ -513,3 +513,10 @@ $strawberry-card-size: 14rem;
 .more-news-hr {
     margin-top: -1rem;
 }
+
+.calendar-day-text {
+    display: block;
+    text-overflow: ellipsis;
+    word-wrap: none;
+    overflow: hidden;
+}
