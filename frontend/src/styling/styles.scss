@@ -528,6 +528,24 @@ $strawberry-card-size: 14rem;
 .xpanel-block {
     padding: 0;
 
+    &.box {
+        padding: 0 1rem;
+
+        .xpanel {
+            @media(max-width: $tablet * 2) {
+                grid-template: 
+                "heading"   auto
+                "image"     auto
+                "text"      auto
+                / 100%;
+    
+                .xpanel-image {
+                    margin: 1rem 0;
+                }
+            }
+        }
+    }
+
     .xpanel-background {
         border: 2px solid $light-grey;
         
@@ -557,8 +575,13 @@ $strawberry-card-size: 14rem;
             grid-area: image;
             margin: 0.5rem 1.5rem 0.5rem 0;
             display: flex;
+            flex-direction: column;
+            justify-content: start;
             align-content: center;
-            justify-content: center;
+
+            img {
+                object-fit: contain;
+            }
         }
 
         .xpanel-excerpt {

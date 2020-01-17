@@ -32,7 +32,7 @@ const EmptyPanel = ({text}) => {
     )
 }
 
-const Panel = ({image, slug, title, subtitle, mobileSubtitle, excerpt}) => {
+export const Panel = ({image, slug, title, subtitle, mobileSubtitle, excerpt}) => {
 
     const panelImage = <PanelImage image={image} />
     const panelHeader = <PanelHeader slug={slug}

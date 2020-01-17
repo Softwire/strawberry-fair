@@ -13,6 +13,8 @@ import { useFilters } from '../../util/filters'
 import { isOnOrAfterDay } from '../../util/dates'
 import { generateEventSubtitle } from '../../templates/event-info'
 import { HTMLContentSmall } from '../Content'
+import { getEventPanelData } from '../calendar/Upcoming'
+import { Panel } from '../Panel'
 
 const CalendarBlock = ({calendarBlock, events}) => (
   <BaseBlock block={calendarBlock} altBackground={true}>
@@ -39,8 +41,8 @@ const UpcomingEventsDisplayWithContext = ({isPreview, previewEventList}) => {
         {filterEvents(events, filterProps.activeFilters)
           .map(event => (
             <div className="column is-half" key={event.fields.slug}>
-              <div className="box">
-                <EventMediaBlock event={event} />
+              <div className="box xpanel-block">
+                <Panel {...getEventPanelData(event)} />
               </div>
             </div>
             )
