@@ -14,8 +14,8 @@ node (label: 'linux') {
             returnStdout: true,
             script: 'git show -s --format=%B'
         ).trim()}""",
-        "CLOUDINARY_CLOUD_NAME='strawberryfair'",
-        "CLOUDINARY_API_KEY='631814456675255'",
+        "CLOUDINARY_CLOUD_NAME=strawberryfair",
+        "CLOUDINARY_API_KEY=631814456675255",
         "HOME=${WORKSPACE}"
     ]) {
         try {
