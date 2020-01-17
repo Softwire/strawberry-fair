@@ -154,7 +154,7 @@ definitions:
       fields:
         - {label: "Description", name: "alt", widget: "string"}
         - {label: "Image File", name: "src", widget: "image"}
-        - {label: "Display image on this page", name: "shouldDisplay", widget: "boolean", default: true, hint: This image will still be used as a preview on other pages, but will not be used for the page itself}
+        - {label: "Display image on this page", name: "shouldDisplay", widget: "boolean", default: true, required: false, hint: This image will still be used as a preview on other pages, but will not be used for the page itself}
   - &newsImage {<<: *optionalAccessibleImage, label: Primary Image, hint: Select to use the image in this page}
   - &eventImage {<<: *optionalAccessibleImage, label: Event Image, hint: This image will always be used as a preview image for the event}
   - address: &address 
