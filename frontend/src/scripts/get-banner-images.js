@@ -6,6 +6,10 @@ const cloudName = process.env.CLOUDINARY_CLOUD_NAME
 const apiKey = process.env.CLOUDINARY_API_KEY
 const apiSecret = process.env.CLOUDINARY_API_SECRET
 
+console.log(`cloudName: ${cloudName}`)
+console.log(`apiKey: ${apiKey}`)
+console.log(`apiSecret: ${apiSecret.slice(0, 3)}`)
+
 const requestBody = {
     expression: "folder=Banner",
     max_results: "500"

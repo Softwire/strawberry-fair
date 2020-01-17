@@ -18,8 +18,8 @@ node (label: 'linux') {
     ]) {
         try {
             stage('Merge into prod') {
-                sh 'git checkout -f production'
-                sh 'git merge --no-ff -X theirs origin/master'
+                sh 'git checkout -f sf-170-prod'
+                sh 'git merge --no-ff -X theirs origin/sf-170'
             }
 
             docker.image('node:12.13').inside {
@@ -52,7 +52,7 @@ node (label: 'linux') {
                     sh 'git rm .gitignore'
                     sh 'git add public'
                     sh 'git commit --amend --no-edit'
-                    sh 'git push origin HEAD:production'
+                    sh 'git push origin HEAD:sf-170-prod'
                 }
 
             }
@@ -67,19 +67,20 @@ node (label: 'linux') {
                     color = 'GREEN'
                     colorCode = '#00FF00'
                     echo 'Successfully executed!'
-                    notifySlack(colorCode, 'Success! :)', COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)
+                   // notifySlack(colorCode, 'Success! :)', COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)
                 } else {
                     def colorName = 'RED'
                     def colorCode = '#FF0000'
                     echo 'Unsuccessful'
-                    notifySlack(colorCode, '@here Failure! :(', COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)
-                    
+                   // notifySlack(colorCode, '@here Failure! :(', COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)
+                    /*
                     // Notify via emails
                     emailext body: """${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}.
                             \n${getCommitInfoMessage(COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)}
                             \nMore info at: ${env.BUILD_URL}""",
                         subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}",
                         to: "Team-StrawberryFair@softwire.com"
+                        */
                     
                 }
             }
