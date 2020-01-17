@@ -14,6 +14,8 @@ node (label: 'linux') {
             returnStdout: true,
             script: 'git show -s --format=%B'
         ).trim()}""",
+        "CLOUDINARY_CLOUD_NAME='strawberryfair'",
+        "CLOUDINARY_API_KEY='631814456675255'",
         "HOME=${WORKSPACE}"
     ]) {
         try {
@@ -30,13 +32,7 @@ node (label: 'linux') {
                         
                     }
                     stage('Test') {
-                        withCredentials([string(credentialsId: 'CLOUDINARY_API_SECRET', variable: 'CLOUDINARY_API_SECRET')]) {
-
-                            environment {
-                                CLOUDINARY_CLOUD_NAME = 'strawberryfair'
-                                CLOUDINARY_API_KEY    = '631814456675255'
-                            }
-                            
+                        withCredentials([string(credentialsId: 'CLOUDINARY_API_SECRET', variable: 'CLOUDINARY_API_SECRET')]) {                           
                             sh 'npm run lint'
                             sh 'npm run test'
                             sh 'npm run build'
