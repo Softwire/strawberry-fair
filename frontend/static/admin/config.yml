@@ -118,7 +118,7 @@ definitions:
         - label: Page Title
           name: pageTitle
           widget: multi-collection-relation
-          options: [Pages, Events, About, Forms]
+          options: [Pages, Events, About, Forms, News]
           pagesOptions: [Calendar Page, Upcoming Events]
           searchFields: [title]
           valueField: title
