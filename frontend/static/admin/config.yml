@@ -128,7 +128,8 @@ definitions:
       name: strawberryTiles
       widget: list
       required: false
-      fields: 
+      fields:
+        - {label: Strawberry Tile, name: "tile", widget: "hidden", default: Strawberry Tile}
         - *strawberryTile
   - form: &form
       label: Form

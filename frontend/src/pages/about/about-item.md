@@ -5,10 +5,12 @@ subtitle: this is a subtitle
 heroData:
   isActive: true
 strawberryTiles:
-  - strawberryTile:
+  - tile: Strawberry Tile
+    strawberryTile:
       isPublic: true
       text: Some random latin.
-  - strawberryTile:
+  - tile: Strawberry Tile
+    strawberryTile:
       isPublic: true
       text: >-
         multa quoque et bellō passūs, dum conderet urbem, inferretque deōs

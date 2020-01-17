@@ -6,10 +6,12 @@ templateKey: null   # This must be null to avoid creating a page for it
 title: Test
 subtitle: It's your festival
 strawberryTiles:
-  - strawberryTile:
+  - tile: Strawberry Tile
+    strawberryTile:
       isPublic: true
       text: Some random latin.
-  - strawberryTile:
+  - tile: Strawberry Tile
+    strawberryTile:
       isPublic: true
       text: >-
             multa quoque et bellō passūs, dum conderet urbem, inferretque deōs Latiō,
