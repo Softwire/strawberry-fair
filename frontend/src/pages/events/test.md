@@ -7,8 +7,8 @@ image:
     https://res.cloudinary.com/strawberryfair/image/upload/v1578398631/Events/love-a-fair_acip8g.jpg
   shouldDisplay: true
 dateTimeRange:
-  startDateTime: 2019-12-23T09:30:00.000Z
-  endDateTime: 2019-12-23T10:30:00.000Z
+  startDateTime: 2021-12-23T09:30:00.000Z
+  endDateTime: 2021-12-23T10:30:00.000Z
   provideEnd: true
 eventTypes:
   - Benefit gig

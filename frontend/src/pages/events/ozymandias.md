@@ -7,7 +7,7 @@ image:
     https://res.cloudinary.com/strawberryfair/image/upload/v1578398631/Events/ozymandias_rielvp.jpg
   shouldDisplay: true
 dateTimeRange:
-  startDateTime: 2020-01-01T12:00:00.000Z
+  startDateTime: 2020-06-01T12:00:00.000Z
   provideEnd: false
 eventTypes:
   - Band competition

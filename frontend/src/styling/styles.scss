@@ -328,10 +328,6 @@ $strawberry-card-size: 14rem;
     margin-top: 0.6rem;
 }
 
-.calendar.panel .modal.is-active .media.event:nth-child(even),.upcoming.panel>.panel-block:not(.filter):nth-child(even) {
-    background-color: $light-grey;
-}
-
 // Calendar day pencil circle 'today' indicator
 .pencil-circle {
     position: absolute;
@@ -519,4 +515,66 @@ $strawberry-card-size: 14rem;
     text-overflow: ellipsis;
     word-wrap: none;
     overflow: hidden;
+}
+.filter-block {
+    padding: 1rem 0.5rem;
+}
+
+.filter-block-divider {
+    margin: 0;
+}
+
+
+.xpanel-block {
+    padding: 0;
+
+    .xpanel-background {
+        border: 2px solid $light-grey;
+        
+        &:nth-child(odd) {
+            background-color: $light-grey;
+        }
+
+        &:nth-child(even) {
+            background-color: $white;
+        } // necessary to override Bulma modal styling
+    }
+
+    .xpanel {
+        padding: 1rem 0;
+        display: grid;
+
+        grid-template: 
+        "image  heading"    min-content
+        "image  text"       1fr
+        / 1fr 2fr;
+
+        .xpanel-heading {
+            grid-area: heading;
+        }
+
+        .xpanel-image {
+            grid-area: image;
+            margin: 0.5rem 1.5rem 0.5rem 0;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .xpanel-excerpt {
+            grid-area: text;
+        }
+
+        @media(max-width: $tablet) {
+            grid-template: 
+            "heading"   auto
+            "image"     auto
+            "text"      auto
+            / 100%;
+
+            .xpanel-image {
+                margin: 1rem 0;
+            }
+        }
+    }
 }

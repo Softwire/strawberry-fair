@@ -4,15 +4,15 @@ import { Link } from 'gatsby'
 import _ from 'lodash'
 
 import { eventPropTypeValidator } from '../validators'
-import { EventMediaBlock } from './Upcoming'
 import { areSameDay } from '../../util/dates'
+import { PanelBlock } from '../Panel'
+import { getEventPanelData } from './Upcoming'
 
 // How many events' names should we write in the box, at maximum?
 const maxEvents = 3
 
 // Represents a day in the calendar. Will either be empty or contain a preview of an event.
 const CalendarDay = ({dateTime, events}) => {
-    // TODO: Change the method of indicating it's "today", so as still to be visible when there's an event today
     const date = new Date(dateTime)  // The actual Date this CalendarDay is representing
 
     // Are we showing the modal?
@@ -56,7 +56,7 @@ const CalendarDay = ({dateTime, events}) => {
         if (events.length === 0) {
             internals = (
                 <React.Fragment>
-                    <NoEventsModal date={date} close={modalOff} active={showModal} />
+                    <CalendarDayModal date={date} close={modalOff} active={showModal} />
                     <div className="box button has-text-left calendar-day" onClick={modalOn}>
                         <DayText date={date} />
                     </div>
@@ -124,33 +124,22 @@ const DayDescription = ({events, date}) => (
 )
 
 const CalendarDayModal = ({date, events, close, active}) => {
+    const panelData = events ? events.map((event) => getEventPanelData(event)) : []
+    const emptyText = "No events found."
+    
     return (
         <div className={`modal ${active ? "is-active" : ""}`}>
-            <div className="modal-background" onClick={close}></div>
+            <div className="modal-background" onClick={close} />
             <div className="modal-content">
                 <div className="message">
                     <h1 className="message-header is-primary">{date.toLocaleDateString('en-GB', longDateFormatOptions)}</h1>
-                    <div className="message-body">
-                        {events.map(event => <EventMediaBlock key={event.fields.slug} event={event} />)}
-                    </div>
+                    <PanelBlock panelData={panelData} emptyText={emptyText} />
                 </div>
             </div>
             <button className="modal-close is-large" aria-label="close" onClick={close}></button>
         </div>
     )
 }
-
-const NoEventsModal = ({date, close, active}) => (
-    <div className={`modal ${active ? "is-active" : ""}`}>
-        <div className="modal-background" onClick={close}></div>
-        <div className="modal-content">
-            <div className="notification">
-                <p>No events on {date.toLocaleDateString('en-GB', longDateFormatOptions)}.</p>
-            </div>
-        </div>
-        <button className="modal-close is-large" aria-label="close" onClick={close}></button>
-    </div>
-)
 
 const DayText = ({date}) => (
     <p>
@@ -187,12 +176,6 @@ DayDescription.propTypes = {
 CalendarDayModal.propTypes = {
     date: PropTypes.instanceOf(Date),
     events: CalendarDay.propTypes.events,
-    close: PropTypes.func,
-    active: PropTypes.bool
-}
-
-NoEventsModal.propTypes = {
-    date: PropTypes.instanceOf(Date),
     close: PropTypes.func,
     active: PropTypes.bool
 }

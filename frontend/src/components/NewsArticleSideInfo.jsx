@@ -1,8 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { toDateString } from '../util/dates'
+
 const NewsArticleSideInfo = ({author, tags, date}) => {
-  const formattedDate = new Date(date).toLocaleDateString('en-UK', {year: 'numeric', month: 'long', day: 'numeric'});
+  const formattedDate = toDateString(new Date(date))
   const formattedTags = tags && tags.join(', ')
 
   return (

@@ -1,9 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import _ from 'lodash'
 
-import { HTMLContentSmall } from '../Content'
+import { PanelBlock } from '../Panel'
 import { eventPropTypeValidator } from '../validators'
 import { EventFilterBlock, filterEvents } from './EventFilter'
 import { eventTypeList } from './EventType'
@@ -13,47 +11,8 @@ import { useFilters } from '../../util/filters'
 import { isOnOrAfterDay } from '../../util/dates'
 import { generateEventSubtitle } from '../../templates/event-info'
 
-export const EventMediaBlock = ({event}) => {
-    const eventUrl = event.fields.slug
 
-    return (
-    <div className="media event">
-        <div className="media-left">
-            <Link to={eventUrl} className="image is-64x64">
-                {event.frontmatter.image ? <img src={_.get(event.frontmatter.image, 'srcNode.childImageSharp.resize.src', event.frontmatter.image.src)}
-                                                alt={event.frontmatter.image.alt} /> : null}
-            </Link>
-        </div>
-        <div className="media-content">
-            <Link to={eventUrl}>
-                <h2 className="title is-4"><strong>{event.frontmatter.title}</strong></h2>
-                <h3 className="subtitle is-5">{generateEventSubtitle({markdownRemark: event})}</h3>
-            </Link>
-            <HTMLContentSmall className="add-margin-top" content={event.excerpt} />
-        </div>
-    </div>
-    )
-}
-
-const EventPanelBlock = ({event}) => {
-    return (
-        <div className="panel-block">
-            <EventMediaBlock event={event} />
-        </div>
-    )
-}
-
-const NoEventsFoundBlock = () => (
-    <div className="panel-block">
-        <div className="media">
-            <div className="media-content">
-                <p><strong>No events match the selected filters.</strong></p>
-            </div>
-        </div>
-    </div>
-)
-
-export const Upcoming = ({events}) => (  // 'events' is only used if it is a preview, otherwise it uses a static query
+export const Upcoming = ({events}) => (  // 'events' is only_ used if it is a preview, otherwise it uses a static query
     <PreviewContext.Consumer>
         {value => <UpcomingWithContext isPreview={value} previewEventList={events} />}
     </PreviewContext.Consumer>
@@ -68,27 +27,33 @@ const UpcomingWithContext = ({isPreview, previewEventList}) => {
 
     const maxItems = 5
 
-    // Construct array of list elements
-    let eventPanels = filterEvents(events, filterProps.activeFilters).slice(0, maxItems).map(event => <EventPanelBlock key={event.frontmatter.title} event={event} />)
+    // Construct array of event panel data
+    const panelData = filterEvents(events, filterProps.activeFilters).slice(0, maxItems).map(event => getEventPanelData(event))
+
+    const emptyText = "No events match the selected filters."
 
     return (
         <React.Fragment>
             <h1 className="title">Upcoming Events</h1>
-            <div className="upcoming panel">
-                <EventFilterBlock filterProps={filterProps} />
-                {eventPanels.length > 0 ? eventPanels : <NoEventsFoundBlock />}
+            <div>
+                <EventFilterBlock filterProps={filterProps} withDivider={false} />
+                <PanelBlock panelData={panelData} emptyText={emptyText} isViewportWidthDesktop={true}/>
             </div>
         </React.Fragment>
     )
 }
 
-EventMediaBlock.propTypes = {
-    event: eventPropTypeValidator
+export const getEventPanelData = (event) => {
+    return {
+        image: event.frontmatter.image,
+        slug: event.fields.slug,
+        title: event.frontmatter.title,
+        subtitle: generateEventSubtitle({markdownRemark: event}, false),
+        mobileSubtitle: generateEventSubtitle({markdownRemark: event}, true),
+        excerpt: event.excerpt
+    }
 }
 
-EventPanelBlock.propTypes = {
-    event: EventMediaBlock.propTypes.event
-}
 
 Upcoming.propTypes = {
     events: PropTypes.arrayOf(

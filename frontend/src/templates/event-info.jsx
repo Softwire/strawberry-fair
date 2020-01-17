@@ -5,18 +5,10 @@ import { graphql } from 'gatsby'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
 import { site } from '../util/templating'
-import { areSameDay } from '../util/dates'
+import { areSameDay, areCurrentYear, toDateTimeString } from '../util/dates'
 import { PreviewContext } from '../util/context'
 
-//display style of the event date
-export const displayStyle = {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit"
-}
+
 
 // List of types shown near top of event
 const EventTypeList = ({eventTypes}) => {
@@ -70,19 +62,22 @@ EventInfoWithContext.propTypes = {
 
 EventInfo.propTypes = EventInfoWithContext.propTypes
 
-export const generateEventSubtitle = (data) => {
+export const generateEventSubtitle = (data, isMobile=false) => {
     const dateTimeRange = data.markdownRemark.frontmatter.dateTimeRange
 
     const startDate = new Date(dateTimeRange.startDateTime)
     const endDate = new Date(dateTimeRange.endDateTime)
-    const start = startDate.toLocaleDateString("en-GB", displayStyle)
+    
+    const bothCurrentYear = areCurrentYear(startDate, endDate)
 
+    const start = toDateTimeString(startDate, {isShort: isMobile, withYear: !bothCurrentYear})
+    
     if (!dateTimeRange.provideEnd) {
         return start
     } else if (areSameDay(startDate, endDate)) {
         return start + `–${endDate.toLocaleTimeString("en-GB", {hour: "2-digit", minute: "2-digit"})}`
     } else {
-        return start + ` – ${endDate.toLocaleDateString("en-GB", displayStyle)}`
+        return start + ` – ${toDateTimeString(endDate, {isShort: isMobile, withYear: !bothCurrentYear})}`
     }
     // This allows for events to go on overnight / over multiple days
 }
