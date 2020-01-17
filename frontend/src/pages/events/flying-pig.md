@@ -3,10 +3,6 @@ templateKey: event-info
 title: Flying Pig Stage
 heroData:
   isActive: true
-dateTimeRange:
-  endDateTime: 2020-12-23T15:00:00.000Z
-  provideEnd: true
-  startDateTime: 2020-12-23T12:00:00.000Z
 image:
   alt: Placeholder
   src: >-
