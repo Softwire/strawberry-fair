@@ -67,10 +67,7 @@ const CalendarDay = ({dateTime, events}) => {
                 <React.Fragment>
                     <CalendarDayModal date={date} events={events} close={modalOff} active={showModal} />
                     <div className="box button has-text-left calendar-day has-text-white has-text-weight-bold is-primary-pale" onClick={modalOn}>
-                        <DayText date={date} />
-                        {events.slice(0, maxEvents).map(event =>
-                        <p key={event.fields.slug}><Link className="has-text-white has-text-weight-medium" to={event.fields.slug}>{event.frontmatter.title}</Link></p>)}
-                        {events.length > maxEvents ? <p>...</p> : null}
+                        <DayDescription events={events} date={date} />
                     </div>
                 </React.Fragment>
             )
@@ -85,10 +82,7 @@ const CalendarDay = ({dateTime, events}) => {
                 <div className="box button has-text-left calendar-day has-text-white has-text-weight-bold" onClick={modalOn}
                 style={{
                     backgroundImage: `url(${_.get(eventWithPic.frontmatter.image, 'srcNode.childImageSharp.editedFluid.src', eventWithPic.frontmatter.image.src)})`}}>
-                    <DayText date={date} />
-                    {events.slice(0, maxEvents).map(event =>
-                    <p key={event.fields.slug}><Link className="has-text-white has-text-weight-medium calendar-day-text" to={event.fields.slug}>{event.frontmatter.title}</Link></p>)}
-                    {events.length > maxEvents ? <p>...</p> : null}
+                    <DayDescription events={events} date={date} />
                 </div>
             </React.Fragment>
         )
@@ -103,11 +97,7 @@ const CalendarDay = ({dateTime, events}) => {
                             transition: `opacity ${imageFadeTimeS}s`,
                             position: "absolute",
                             width: "100%"}}>
-                        <DayText date={date} />
-
-                        {events.slice(0, maxEvents).map(event =>
-                        <p key={event.fields.slug}><Link className="has-text-white has-text-weight-medium calendar-day-text" to={event.fields.slug}>{event.frontmatter.title}</Link></p>)}
-                        {events.length > maxEvents ? <p>...</p> : null}
+                        <DayDescription events={events} date={date} />
                     </div>
                 )}
             </div>
@@ -120,6 +110,18 @@ const CalendarDay = ({dateTime, events}) => {
         </div>
     )
 }
+ 
+const EventLink = ({slug, title}) => (
+    <p><Link className="has-text-white has-text-weight-medium calendar-day-text" to={slug}>{title}</Link></p>
+)
+
+const DayDescription = ({events, date}) => (
+    <React.Fragment>
+        <DayText date={date} />
+        {events.slice(0, maxEvents).map(event => (<EventLink slug={event.fields.slug} title={event.frontmatter.title} key={event.frontmatter.title} />))}
+        {events.length > maxEvents ? <p>...</p> : null}
+    </React.Fragment>
+)
 
 const CalendarDayModal = ({date, events, close, active}) => {
     return (
@@ -170,6 +172,16 @@ CalendarDay.propTypes = {
     events: PropTypes.arrayOf(
         eventPropTypeValidator
     )
+}
+
+EventLink.propTypes = {
+    slug: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
+}
+
+DayDescription.propTypes = {
+    events: PropTypes.arrayOf(PropTypes.object).isRequired,
+    date: PropTypes.instanceOf(Date),
 }
 
 CalendarDayModal.propTypes = {
