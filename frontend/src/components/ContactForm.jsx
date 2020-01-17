@@ -11,30 +11,23 @@ const SUBMISSION_STATUS = { SUBMITTED: 'SUBMITTED', UNSUBMITTED: 'UNSUBMITTED', 
 const ContactForm = () => {
   const [status, setStatus] = useState(SUBMISSION_STATUS.UNSUBMITTED)
 
-  const [name, setName] = useState("")
-  const [nameError, setNameError] = useState("")
-  const nameErrorOptions = {
+  const [name, nameError, setName] = useValidatedState("", {
     required: requiredErrorMessage,
     maxLength: {
       value: 80,
       message: 'Max length is 80 characters',
     }
-  }
-
-  const [email, setEmail] = useState("")
-  const [emailError, setEmailError] = useState("")
-  const emailErrorOptions = {
+  })
+  
+  const [email, emailError, setEmail] = useValidatedState("", {
     required: requiredErrorMessage,
     pattern: {
       value: /^\S+@\S+\.\S+$/i,
       message: 'Invalid email address'
     }
-  }
+  })
 
-  const [message, setMessage] = useState("")
-  const [messageError, setMessageError] = useState("")
-  const messageErrorOptions = {required: requiredErrorMessage}
-
+  const [message, messageError, setMessage] = useValidatedState("", {required: requiredErrorMessage})
 
   const configFields = contactFormConfig.fields
 
@@ -48,22 +41,20 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={event => {
-      handleStateChange(name, setName, setNameError, nameErrorOptions)
-      handleStateChange(email, setEmail, setEmailError, emailErrorOptions)
-      handleStateChange(message, setMessage, setMessageError, messageErrorOptions)
-      
-      const data = {name, email, message}
-      const errors = {nameError, emailError, messageError}
-      submitForm(event, data, errors, setStatus)
+        setName(name)
+        setEmail(email)
+        setMessage(message)
+        
+        const data = {name, email, message}
+        const errors = {nameError, emailError, messageError}
+        submitForm(event, data, errors, setStatus)
       }}>
       <FormField label={configFields.name.label} error={nameError}>
         <input className="input" 
           type="text"
           placeholder="Stan Desk"
           name="name"
-          onChange={event => 
-            handleStateChange(event.target.value, setName, setNameError, nameErrorOptions)
-          }
+          onChange={event => setName(event.target.value)}
         />
       </FormField>
       <FormField label={configFields.email.label} error={emailError}>
@@ -71,17 +62,13 @@ const ContactForm = () => {
           type="text" 
           placeholder="StanDesk@NoSitting.com" 
           name="email"
-          onChange={event => 
-            handleStateChange(event.target.value, setEmail, setEmailError, emailErrorOptions)
-          }
+          onChange={event => setEmail(event.target.value)}
         />
         </FormField>
       <FormField label={configFields.message.label} error={messageError}>
         <textarea className="textarea"
           name="message"
-          onChange={event => 
-            handleStateChange(event.target.value, setMessage, setMessageError, messageErrorOptions)
-          }
+          onChange={event => setMessage(event.target.value)}
         />
       </FormField>
       <button className="button has-background-primary has-text-white" type="submit">
@@ -92,20 +79,33 @@ const ContactForm = () => {
   )
 }
 
-const handleStateChange = (value, setState, setStateError, validationOptions) => {
-  setState(value)
-  if (validationOptions.required && !value) {
-    setStateError(_.get(validationOptions.required, "message", validationOptions.required))
+/**
+ * Helper function for setting state with validation
+ * @param {Any} initialState 
+ * @param {Object} validationOptions
+ * @returns {Array} [state, errorMessage, setValidatedState]
+ */
+const useValidatedState = (initialState, validationOptions) => {
+  const [state, setState] = useState(initialState)
+  const [errorMessage, setErrorMessage] = useState("")
 
-  } else if (value.length > _.get(validationOptions, 'maxLength.value')) {
-    setStateError(validationOptions.maxLength.message)
+  const setValidatedState = (newState) => {
+    setState(newState)
+    if (validationOptions.required && !newState) {
+      setErrorMessage(_.get(validationOptions.required, "message", validationOptions.required))
 
-  } else if (_.get(validationOptions, 'pattern.value', '') instanceof RegExp && !validationOptions.pattern.value.test(value)) {
-    setStateError(validationOptions.pattern.message)
+    } else if (newState.length > _.get(validationOptions, 'maxLength.value')) {
+      setErrorMessage(validationOptions.maxLength.message)
 
-  } else {
-    setStateError("")
+    } else if (_.get(validationOptions, 'pattern.value', '') instanceof RegExp && !validationOptions.pattern.value.test(newState)) {
+      setErrorMessage(validationOptions.pattern.message)
+
+    } else {
+      setErrorMessage("")
+    }
   }
+
+  return [state, errorMessage, setValidatedState]
 }
 
 export default ContactForm
@@ -117,9 +117,7 @@ const submitForm = (event, data, errors, setStatus) => {
     Object.values(errors).filter(e => e !== "").length > 0 || 
     Object.values(data).filter(v => v === "").length > 0 // This is required to handle race conditions with setState
   ) {
-    console.error(errors)
-    setStatus(SUBMISSION_STATUS.SUBMISSION_FAILED)
-    return
+    return console.error(errors)
   }
 
   let postBody = {}
