@@ -14,6 +14,8 @@ node (label: 'linux') {
             returnStdout: true,
             script: 'git show -s --format=%B'
         ).trim()}""",
+        "CLOUDINARY_CLOUD_NAME=strawberryfair",
+        "CLOUDINARY_API_KEY=631814456675255",
         "HOME=${WORKSPACE}"
     ]) {
         try {
@@ -30,15 +32,31 @@ node (label: 'linux') {
                         
                     }
                     stage('Test') {
-                        sh 'npm run lint'
-                        sh 'npm run test'
-                        sh 'npm run build'
+                        withCredentials([string(credentialsId: 'CLOUDINARY_API_SECRET', variable: 'CLOUDINARY_API_SECRET')]) {
+                            sh 'npm run lint'
+                            sh 'npm run test'
+                            sh 'npm run build'
+                        }
                     }
                 } 
             }
             
             stage('Deploy') {
                 echo 'Tests successful.'
+                dir('frontend') {
+                    echo 'Committing build artefact.'
+
+                    try {
+                        sh 'git rm .gitignore'
+                    } catch (e) {
+                        echo 'No .gitignore file found'
+                    }
+
+                    sh 'git add public'
+                    sh 'git commit --amend --no-edit'
+                    sh 'git push origin HEAD:production'
+                }
+
             }
         } catch (e) {
             currentBuild.result = 'FAILED'
@@ -57,13 +75,14 @@ node (label: 'linux') {
                     def colorCode = '#FF0000'
                     echo 'Unsuccessful'
                     notifySlack(colorCode, '@here Failure! :(', COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)
-
+                    
                     // Notify via emails
                     emailext body: """${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}.
                             \n${getCommitInfoMessage(COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)}
                             \nMore info at: ${env.BUILD_URL}""",
                         subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}",
                         to: "Team-StrawberryFair@softwire.com"
+                    
                 }
             }
             stage('Clean') {
