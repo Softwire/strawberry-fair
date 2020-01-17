@@ -39,6 +39,14 @@ node (label: 'linux') {
             
             stage('Deploy') {
                 echo 'Tests successful.'
+                dir('frontend') {
+                    echo 'Committing build artefact.'
+                    sh 'git rm .gitignore'
+                    sh 'git add public'
+                    sh 'git commit --amend --no-edit'
+                    sh 'git push origin HEAD:production'
+                }
+
             }
         } catch (e) {
             currentBuild.result = 'FAILED'
@@ -57,13 +65,14 @@ node (label: 'linux') {
                     def colorCode = '#FF0000'
                     echo 'Unsuccessful'
                     notifySlack(colorCode, '@here Failure! :(', COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)
-
+                    
                     // Notify via emails
                     emailext body: """${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}.
                             \n${getCommitInfoMessage(COMMIT_AUTHOR, COMMIT_HASH_SHORT, COMMIT_SUBJECT)}
                             \nMore info at: ${env.BUILD_URL}""",
                         subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}",
                         to: "Team-StrawberryFair@softwire.com"
+                    
                 }
             }
             stage('Clean') {

@@ -1,4 +1,4 @@
 [build]
     base = "frontend/"
     publish = "public/"
-    command = "gatsby build"
+    command = "echo 'Using build artefact from repo'"
