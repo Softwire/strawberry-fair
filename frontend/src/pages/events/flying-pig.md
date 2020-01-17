@@ -1,19 +1,19 @@
 ---
 templateKey: event-info
 title: Flying Pig Stage
-image:
-  alt: Placeholder
-  src: >-
-    https://res.cloudinary.com/strawberryfair/image/upload/v1578398631/Events/flying-pig_yyce2k.jpg
-  shouldDisplay: true
-dateTimeRange:
-  startDateTime: 2020-12-23T12:00:00.000Z
-  endDateTime: 2020-12-23T15:00:00.000Z
-  provideEnd: true
-eventTypes:
-  - Meeting - Programming
 heroData:
   isActive: true
+dateTimeRange:
+  endDateTime: 2020-12-23T15:00:00.000Z
+  provideEnd: true
+  startDateTime: 2020-12-23T12:00:00.000Z
+image:
+  alt: Placeholder
+  shouldDisplay: false
+  src: >-
+    https://res.cloudinary.com/strawberryfair/image/upload/v1578398631/Events/flying-pig_yyce2k.jpg
+eventTypes:
+  - Meeting - Programming
 ---
 Now in our second year, The Flying Pig Stage is dedicated to bringing you a great day of live music; a handpicked choice of some of the best musicians and bands we have been lucky enough to find. A mixture of styles including -  but certainly not limited to - Cajun, Americana, Funk, Blues, Rock and Roll, Folk, Jazz and Country Art Rock. Some local, including the winners of Best Acoustic Act at this year's Cambridge Band Competition, some from further afield; this year we have bands from Rome and NYC added so we feel we are truly going international!
 
