@@ -13,7 +13,6 @@ const maxEvents = 3
 
 // Represents a day in the calendar. Will either be empty or contain a preview of an event.
 const CalendarDay = ({dateTime, events}) => {
-    // TODO: Change the method of indicating it's "today", so as still to be visible when there's an event today
     const date = new Date(dateTime)  // The actual Date this CalendarDay is representing
 
     // Are we showing the modal?
@@ -137,20 +136,6 @@ const CalendarDayModal = ({date, events, close, active}) => {
         </div>
     )
 }
-// <EventMediaBlock key={event.fields.slug} event={event} />
-/*
-const NoEventsModal = ({date, close, active}) => (
-    <div className={`modal ${active ? "is-active" : ""}`}>
-        <div className="modal-background" onClick={close}></div>
-        <div className="modal-content">
-            <div className="notification">
-                <p>No events on {date.toLocaleDateString('en-GB', longDateFormatOptions)}.</p>
-            </div>
-        </div>
-        <button className="modal-close is-large" aria-label="close" onClick={close}></button>
-    </div>
-)
-*/
 
 const DayText = ({date}) => (
     <p>
@@ -180,13 +165,6 @@ CalendarDayModal.propTypes = {
     close: PropTypes.func,
     active: PropTypes.bool
 }
-/*
-NoEventsModal.propTypes = {
-    date: PropTypes.instanceOf(Date),
-    close: PropTypes.func,
-    active: PropTypes.bool
-}
-*/
 
 DayText.propTypes = {
     date: PropTypes.instanceOf(Date)

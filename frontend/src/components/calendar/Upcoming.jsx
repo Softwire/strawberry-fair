@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import _ from 'lodash'
 
 import { PanelBlock } from '../Panel'
 import { eventPropTypeValidator } from '../validators'
@@ -13,7 +12,7 @@ import { isOnOrAfterDay } from '../../util/dates'
 import { generateEventSubtitle } from '../../templates/event-info'
 
 
-export const Upcoming = ({events}) => (  // 'events' is only used if it is a preview, otherwise it uses a static query
+export const Upcoming = ({events}) => (  // 'events' is only_ used if it is a preview, otherwise it uses a static query
     <PreviewContext.Consumer>
         {value => <UpcomingWithContext isPreview={value} previewEventList={events} />}
     </PreviewContext.Consumer>

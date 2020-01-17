@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
+import _ from 'lodash'
 
 import BaseBlock from './BaseBlock'
 import { getEventList } from '../calendar/getEventList'
@@ -65,7 +66,8 @@ export const EventMediaBlock = ({event}) => {
       <div className="media-content">
           <Link to={eventUrl}>
               <h2 className="title is-4"><strong>{event.frontmatter.title}</strong></h2>
-              <h3 className="subtitle is-5">{generateEventSubtitle({markdownRemark: event})}</h3>
+              <h3 className="subtitle is-5 is-hidden-tablet">{generateEventSubtitle({markdownRemark: event}, true)}</h3>
+              <h3 className="subtitle is-5 is-hidden-mobile">{generateEventSubtitle({markdownRemark: event}, false)}</h3>
           </Link>
           <HTMLContentSmall className="add-margin-top" content={event.excerpt} />
       </div>
