@@ -7,5 +7,6 @@ pageTitles:
   - pageTitle: Events/Hatters Cafe
   - pageTitle: Events/Hatters Cafe
   - pageTitle: Forms/Registration Form
+  - pageTitle: News/hello word
 ---
 
