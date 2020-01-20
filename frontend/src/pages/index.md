@@ -55,9 +55,6 @@ contentBlocks:
       - alt: Placeholder
         src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1578398411/Image%20Scrapbook/drums_pgyyyt.jpg
-      - alt: Placeholder
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/guitar-girl_srefgz.jpg
     strawberryTile:
       isPublic: true
       text: >-
