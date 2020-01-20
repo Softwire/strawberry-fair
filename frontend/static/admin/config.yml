@@ -26,7 +26,6 @@ definitions:
   - &subtitle {label: Subtitle, name: subtitle, widget: string, required: false}
   - &hero {label: Banner, name: heroData, widget: hero, required: false}
   - &body {label: Main Content, name: body, widget: markdown}
-  - &form {label: Form, name: form, widget: form}
   - &author {label: Author, name: author, widget: string}
   - &date {label: Date, name: date, widget: datetime, format: YYYY-MM-DD, dateFormat: YYYY-MM-DD, timeFormat: false}
   - &eventDateTimeRange {label: Event Timing, name: dateTimeRange, widget: dateTimeRange}
@@ -130,7 +129,16 @@ definitions:
       hint: "Embed a form on this page for visitors to the site to fill in"
       fields:
         - {label: "Display form", name: "isPublic", widget: "boolean"}
-        - {label: "Google Form Embed HTML", name: "link", widget: "string", hint: "Copy and paste Embed HTML from your Google Form"}
+        - {label: "Google Form Embed HTML", name: "link", widget: "string", hint: "To embed a Google form please take the following steps:\n
+        1. Open the desired form on the Google Forms page.\n
+        2. Click on the gear \"Settings\" icon at the top-right corner.\n
+        3. Untick the \"Limit to 1 response\" box as this requires Google sign-in.\n
+        4. Click \"Save\" at the bottom-left corner.\n
+        5. Click on the \"Send\" box, at the top-right corner.\n
+        6. Click on the \"<>\" button.\n
+        7. Click \"Copy\" at the bottom-right corner.\n
+        8. Paste into the box above.\n
+        You should now see the form appearing on the preview."}
   - accessibleImage: &accessibleImage
       label: Accessible Image
       name: image
