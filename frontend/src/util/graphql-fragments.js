@@ -2,6 +2,8 @@ import { graphql } from 'gatsby'
 
 // GraphQL reusable fragments
 
+// All gatsby images pre-load with a red-coloured traced SVG: see https://using-gatsby-image.gatsbyjs.org/traced-svg/
+
 export const imageFluidFragment = graphql`
 fragment ImageFluidFragment on MarkdownRemarkFrontmatter {
   image {
