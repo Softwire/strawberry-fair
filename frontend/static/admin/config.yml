@@ -64,7 +64,7 @@ definitions:
         - {label: Content Block Subtitle, name: subtitle, widget: string}
         - {label: Content Block Body, name: _markdown_contentBody, widget: markdown}
         - *strawberryTile
-        - {label: Scrapbook Images, name: scrapbookImages, widget: scrapbook}
+        - {label: Scrapbook Images, name: scrapbookImages, widget: scrapbook, hint: "Select six or more images to accompany this content block. Each time the webpage is loaded, a random selection of these images will appear."}
   - calendarBlock: &calendarBlock
       label: Calendar Block
       name: calendarBlock
