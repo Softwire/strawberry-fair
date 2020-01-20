@@ -70,7 +70,10 @@ contentBlocks:
       - alt: Placeholder
         src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/wide-parade_yev0ai.jpg
-    strawberryTile: 
+      - alt: Test1
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578910864/sample.jpg
+    strawberryTile:
       isPublic: true
       text: >-
         Next year's festival is happening on June 6th 2020. We'll be announcing
@@ -135,9 +138,9 @@ contentBlocks:
       - alt: Placeholder
         src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/music_zpcrkm.jpg
-    strawberryTile: 
+    strawberryTile:
       isPublic: true
-      text: For more details, contact email us here or on our Facebook page
+      text: 'For more details, contact email us here or on our Facebook page'
     title: Content block 2
     subtitle: Hello
 calendarBlock:
