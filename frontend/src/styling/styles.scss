@@ -34,6 +34,8 @@ $navbar-dropdown-arrow: $primary;
 
 $section-padding: 0 1.5rem;
 
+$layout-gap: 80px;
+
 /* Font sizing - increased from bulma defaults */
 $size-1: 3.5rem;
 $size-2: 3rem;
@@ -599,5 +601,17 @@ $strawberry-card-size: 14rem;
                 margin: 1rem 0;
             }
         }
+    }
+}
+
+.container {
+    @media screen and (min-width: $desktop) {
+      max-width: $desktop - (2*$layout-gap);
+    }
+    @media screen and (min-width: $widescreen) {
+      max-width: $widescreen - (2*$layout-gap);
+    }
+    @media screen and (min-width: $fullhd) {
+      max-width: $fullhd - (2*$layout-gap);
     }
 }
