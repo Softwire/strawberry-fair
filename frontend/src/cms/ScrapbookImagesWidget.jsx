@@ -9,6 +9,7 @@ export class ScrapbookControl extends React.Component {
         const field = new Map({
             label: "Scrapbook Images",
             name: "scrapbookImages",
+            hint: "Select six or more images to accompany this content block. Each time the webpage is loaded, a random selection of these images will appear."
             fields: new List([
                 new Map({
                     label: "Description",
