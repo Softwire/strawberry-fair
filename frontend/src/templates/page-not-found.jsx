@@ -30,7 +30,7 @@ query pageNotFound($id: String!) {
           alt
           srcNode {
             childImageSharp {
-              fluid {
+              fluid(traceSVG: {background: "#fff", color: "#ae1414",  turdSize: 50}) {
                 ...GatsbyImageSharpFluid_tracedSVG
               }
             }

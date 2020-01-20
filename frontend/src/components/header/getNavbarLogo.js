@@ -6,7 +6,7 @@ export const getNavbarLogo = () => {
   query navbarLogo {
     file(relativePath: {eq: "1-line-logo.png"}) {
       childImageSharp {
-        fixed(width: 280) {
+        fixed(width: 280, traceSVG: {background: "#fff", color: "#ae1414",  turdSize: 50}) {
           ...GatsbyImageSharpFixed_tracedSVG
         }
       }
