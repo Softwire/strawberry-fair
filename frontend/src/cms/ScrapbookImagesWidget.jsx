@@ -27,7 +27,7 @@ export class ScrapbookControl extends React.Component {
     }
 
     isValid() {
-        if (this.props.size < 6) {
+        if (this.props.field.size < 6) {
             return { error: { message: "At least six images must be uploaded." } }
         }
         return true
