@@ -66,7 +66,7 @@ query homePageTemplate($id: String!) {
             srcNode {
               childImageSharp {
                 fluid {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_tracedSVG
                 }
               }
             }

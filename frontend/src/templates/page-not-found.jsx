@@ -31,7 +31,7 @@ query pageNotFound($id: String!) {
           srcNode {
             childImageSharp {
               fluid {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_tracedSVG
               }
             }
           }

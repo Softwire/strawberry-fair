@@ -10,7 +10,7 @@ export const getDefaultBannerImageFluids = () => {
         children {
           ... on ImageSharp {
             fluid {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
