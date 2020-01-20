@@ -143,6 +143,30 @@ contentBlocks:
       text: 'For more details, contact email us here or on our Facebook page'
     title: Content block 2
     subtitle: Hello
+  - _markdown_contentBody: Hello3
+    scrapbookImages:
+      - alt: Test2
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578910864/sample.jpg
+      - alt: Test3
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578910864/sample.jpg
+      - alt: Test4
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578910864/sample.jpg
+      - alt: Test5
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578910864/sample.jpg
+      - alt: Test6
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578910864/sample.jpg
+      - alt: Test7
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578910864/sample.jpg
+    strawberryTile:
+      isPublic: false
+    title: Hello
+    subtitle: Hello2
 calendarBlock:
   title: Strawberry Fair committee meetings
   subtitle: The next committee meetings are listed below and will be held at...
