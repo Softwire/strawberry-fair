@@ -1,7 +1,9 @@
 backend:
-  name: github
-  repo: Softwire/strawberry-fair
+  name: git-gateway
   branch: master
+  accept_roles:
+    - admin
+    - content
   commit_messages:
     create: Netlify CMS - Create {{collection}} “{{slug}}”
     update: Netlify CMS - Update {{collection}} “{{slug}}”
