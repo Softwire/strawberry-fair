@@ -314,16 +314,16 @@ collections:
           - *emailSubscriptionLink
           - *copyright
           - *notes
-      - file: "frontend/src/pages/header-and-footer/buttons/get-involved.md"
-        label: "Get Involved"
-        name: "get-involved"
+      - file: "frontend/src/pages/header-and-footer/buttons/black-button.md"
+        label: "Black Button"
+        name: "black-button"
         fields:
           - *text
           - *internalLink
           - *notes
-      - file: "frontend/src/pages/header-and-footer/buttons/apply-to-trade.md"
-        label: "Apply to Trade"
-        name: "apply-to-trade"
+      - file: "frontend/src/pages/header-and-footer/buttons/red-button.md"
+        label: "Red Button"
+        name: "red-button"
         fields:
           - *text
           - *internalLink
