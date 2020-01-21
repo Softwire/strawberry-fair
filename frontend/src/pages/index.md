@@ -46,18 +46,10 @@ contentBlocks:
 
       eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
     scrapbookImages:
-      - alt: Placeholder
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/instruments_lral6p.jpg
-      - alt: Placeholder
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/music_zpcrkm.jpg
-      - alt: Placeholder
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/stilts_g7oq1b.jpg
-      - alt: Placeholder
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/wide-parade_yev0ai.jpg
+      - {}
+      - {}
+      - {}
+      - {}
       - {}
       - {}
     strawberryTile:
