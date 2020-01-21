@@ -48,18 +48,6 @@ contentBlocks:
     scrapbookImages:
       - alt: Placeholder
         src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/banner-carrying_m0ufmy.jpg
-      - alt: Placeholder
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/crowd-shot_f84bne.jpg
-      - alt: Placeholder
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398411/Image%20Scrapbook/drums_pgyyyt.jpg
-      - alt: Placeholder
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/guitar-girl_srefgz.jpg
-      - alt: Placeholder
-        src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/instruments_lral6p.jpg
       - alt: Placeholder
         src: >-
@@ -70,6 +58,8 @@ contentBlocks:
       - alt: Placeholder
         src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/wide-parade_yev0ai.jpg
+      - {}
+      - {}
     strawberryTile:
       isPublic: true
       text: >-
