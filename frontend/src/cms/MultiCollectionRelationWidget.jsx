@@ -80,8 +80,16 @@ export class MultiCollectionRelationControl extends React.Component {
     this.props.onChange(this.getCollection(this.props.value) + separator + value)
   }
 
-  isValid() { 
-    return this.props.value.includes(separator)
+  isValid() {
+    if (!this.props.value) {
+      return false // a default Netlify CMS error message displays
+    }
+    else if (!this.props.value.includes(separator)) {
+      return { error: { message: "Page selection missing." } }
+    }
+    else {
+      return true
+    }
   }
 }
 
