@@ -16,6 +16,9 @@ heroData:
     - alt: Strawberry Fair entrance
       src: >-
         https://res.cloudinary.com/strawberryfair/image/upload/v1578398228/Banner/slide-gate-2017_h8epan.jpg
+    - alt: Test
+      src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1578910864/sample.jpg
   isActive: true
 contentBlocks:
   - _markdown_contentBody: >-
