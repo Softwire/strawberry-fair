@@ -1,6 +1,6 @@
 ---
 templateKey: home-page
-title: By the people of Cambridge.  For the people of Cambridge.
+title: 'By the people of Cambridge.  For the people of Cambridge. '
 subtitle: The Strawberry Fair is a lot of fun.
 heroData:
   heroImages:
