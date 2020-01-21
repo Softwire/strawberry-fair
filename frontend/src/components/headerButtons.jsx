@@ -18,13 +18,9 @@ const HeaderButtonsDisplay = ({isPreview}) => {
   const data = isPreview ? headerButtonPreviewData : getHeaderButtonLinksAndText()
 
   return (
-    <div className="field is-grouped">
-      <p class="control">
+    <div className="black-and-red buttons ">
         <InternalLink to={data.getInvolved.frontmatter.link} className="button is-secondary">{data.getInvolved.frontmatter.text}</InternalLink>
-      </p>
-      <p class="control">
         <InternalLink to={data.applyToTrade.frontmatter.link} className="button is-primary">{data.applyToTrade.frontmatter.text}</InternalLink>
-      </p>
     </div>
   )
 }
