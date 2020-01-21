@@ -23,9 +23,11 @@ export const ScrapbookImages = ({images}) => {
         return null
     }
     return (
-        <PreviewContext.Consumer>
-            {value => <ScrapbookImgs images={images} isPreview={value} />}
-        </PreviewContext.Consumer>
+        <div className="scrapbook-container">
+            <PreviewContext.Consumer>
+                {value => <ScrapbookImgs images={images} isPreview={value} />}
+            </PreviewContext.Consumer>
+        </div>
     )
 }
 

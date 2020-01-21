@@ -129,6 +129,11 @@ This is necessary because Bulma's experimental column margin classes do not func
     }
 }
 
+.scrapbook-container {
+    min-height: 30vh;
+    padding-bottom: 2rem;
+}
+
 // Allows navbar dropdowns to work in Edge
 @include desktop {
     .navbar-item {
