@@ -29,17 +29,13 @@ export const queryObjectChild = (parentValue, childName) => {
 }
 
 /**
- * Query child widget of list widgets
- * @param {Object} parentValue - value prop of widget control class OR value of a nested parent widget
- * @param {string} childName - name of child widget to be queried
- * @returns {Array} - values of all instances of the child widget if found; else null
+ * Extracts list of values from a list widget
+ * @param {Object} listWidgetValue - value prop of list widget control
+ * @returns {Array} array of values
  */
-export const queryListChild = (parentValue, childName) => {
-    if (parentValue &&
-        parentValue._tail &&
-        parentValue._tail.array) {
-
-        return parentValue._tail.array.map((el) => queryObjectChild(el, childName))
+export const extractList = (listWidgetValue) => {
+    if (listWidgetValue && listWidgetValue._tail) {
+        return listWidgetValue._tail.array
     }
     return null
 }
