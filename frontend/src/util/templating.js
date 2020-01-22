@@ -26,13 +26,7 @@ import { Layout } from '../components/Layout'
  * @returns {Function} Function to be passed into the CMS.registerPreviewTemplate(...) function
  */
 export const preview = (component, options = {}) => {
-    const defaultOptions = {
-        placeholderProps: {},
-        additionalPropsExtractor: () => {},
-        previewWithLayout: true,
-    }
-
-    const { placeholderProps, additionalPropsExtractor, previewWithLayout } = Object.assign(defaultOptions, options)
+    const { placeholderProps = {}, additionalPropsExtractor = () => {}, previewWithLayout = true } = options
 
     /**
      * @param {Object} entry.data - The data read from the CMS in Immutable.js object
@@ -103,12 +97,7 @@ export const preview = (component, options = {}) => {
  * @returns {Function} Function that renders the component with the data passed in by Graphql, according to Gatsby convention
  */
 export const site = (component, options = {}) => {
-    const defaultOptions = {
-        additionalPropsExtractor: () => {},
-        isNarrow: false,
-    }
-
-    const { additionalPropsExtractor, isNarrow } = Object.assign(defaultOptions, options)
+    const { additionalPropsExtractor = () => {}, isNarrow = false } = options
 
     /**
      * @param {Object} data - Data retrieved from GraphQL query specified in the component
