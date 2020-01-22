@@ -129,6 +129,8 @@ This is necessary because Bulma's experimental column margin classes do not func
     }
 }
 
+// Fixes content jumping on homepage
+// Downside is that on rare occasions that scrapbook is less than 30vw high, this adds whitespace
 .scrapbook-container {
     min-height: 30vh;
     padding-bottom: 2rem;
