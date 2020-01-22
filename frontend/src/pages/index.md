@@ -34,9 +34,9 @@ contentBlocks:
       - src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1579684138/Image%20Scrapbook/Gareth_Nunns_282_DSC_7747_ah1kyj.jpg
       - src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/band_melwuk.jpg
+          https://res.cloudinary.com/strawberryfair/image/upload/v1579684382/Image%20Scrapbook/Gareth_Nunns_259_DSC_7639_xdpod8.jpg
       - src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/banner-carrying_m0ufmy.jpg
+          https://res.cloudinary.com/strawberryfair/image/upload/v1579684375/Image%20Scrapbook/Gareth_Nunns_254_DSC_7613_m1a3ya.jpg
     strawberryTile:
       isPublic: true
       text: >-
