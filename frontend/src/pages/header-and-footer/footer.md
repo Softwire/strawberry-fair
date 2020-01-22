@@ -1,5 +1,5 @@
 ---
-invitationText: Come say hello
+invitationText: Become a part of the Fair!
 address:
   firstLine: PO BOX 1261
   secondLine: Cambridge
