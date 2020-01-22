@@ -47,7 +47,7 @@ contentBlocks:
     strawberryTile:
       isPublic: true
       text: >-
-        Next year's festival is happening on June 6th 2020, on Midsummer Common,
+        This year's festival is happening on June 6th 2020, on Midsummer Common,
         Cambridge.
     title: Welcome to Strawberry Fair
     subtitle: 'Saturday 6th June 2020. Trader applications are now open. '
