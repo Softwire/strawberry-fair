@@ -5,7 +5,7 @@ const BaseBlock = ({block, altBackground = "", children}) => (
     <div className={`home-page-section ${altBackground && "has-background-light-grey is-viewport-width"}`}>
       <section className={`section ${altBackground && "section-root"}`}>
         <div className="container">
-            <h1 className="title">{block.title}</h1>
+            <h1 className="title is-3 is-size-4-mobile">{block.title}</h1>
             <div className="columns">
               <div className="column is-three-fifths">
                 <h3 className="subtitle">{block.subtitle}</h3>

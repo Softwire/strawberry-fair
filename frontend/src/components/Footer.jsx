@@ -50,7 +50,7 @@ export const FooterDisplay = ({isPreview, CMSInput}) => {
 
 const GetInTouch = ({invitationText}) => (
     <div className="invitation-and-buttons">
-        <h1 className="title is-2">{invitationText}</h1>
+        <h1 className="title is-3 is-size-4-mobile">{invitationText}</h1>
         <HeaderButtons />
     </div>
 )
