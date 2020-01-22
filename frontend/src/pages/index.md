@@ -24,12 +24,18 @@ contentBlocks:
   - _markdown_contentBody: "From humble beginnings, Strawberry Fair has grown to be the most popular free, entirely volunteer run, one day music & arts event in Cambridge (and probably across Europe!), attracting over 30,000 visitors throughout the day. On the first Saturday of June and now passed our 40th year, residents and visitors have gathered together on Midsummer Common to celebrate their vibrant and creative city.\r\n\nThe Fair is run entirely by volunteers (affectionately known as Strawberry Fairies) who give their energy, imagination and vision to present to their friends and neighbours in Cambridge a great free day out."
     scrapbookImages:
       - {}
-      - {}
-      - {}
-      - {}
-      - {}
-      - {}
-      - {}
+      - src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/crowd-shot2_wr9l5a.jpg
+      - src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/wide-parade_yev0ai.jpg
+      - src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/stilts_g7oq1b.jpg
+      - src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/band_melwuk.jpg
+      - src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/crowd-shot_f84bne.jpg
+      - src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/banner-carrying_m0ufmy.jpg
     strawberryTile:
       isPublic: true
       text: >-
