@@ -1,7 +1,6 @@
 ---
 templateKey: home-page
 title: By the people of Cambridge. For the people of Cambridge.
-subtitle: Cambridge's most popular event. 100% volunteer-powered.
 heroData:
   heroImages:
     - alt: Strawberry Fair Banner
