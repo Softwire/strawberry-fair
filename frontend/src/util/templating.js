@@ -26,13 +26,7 @@ import { Layout } from '../components/Layout'
  * @returns {Function} Function to be passed into the CMS.registerPreviewTemplate(...) function
  */
 export const preview = (component, options = {}) => {
-    const defaultOptions = {
-        placeholderProps: {},
-        additionalPropsExtractor: () => {},
-        previewWithLayout: true,
-    }
-
-    const { placeholderProps, additionalPropsExtractor, previewWithLayout } = Object.assign(defaultOptions, options)
+    const { placeholderProps = {}, additionalPropsExtractor = () => {}, previewWithLayout = true } = options
 
     /**
      * @param {Object} entry.data - The data read from the CMS in Immutable.js object
@@ -97,10 +91,14 @@ export const preview = (component, options = {}) => {
  * This function prepares a page template for use by GatsbyJS.
  * It maps props from the graphql response format to that expected by a "normal" React component.
  * @param {Object} component - Component to preview, e.g. "home-page"
- * @param {siteAdditionalPropsExtractorCallback} additionalPropsExtractor - To extract props that are unavailable in the CMS, e.g. props living in `node.fields`
+ * @param {Object} options - Object containing options settings
+ * @param {siteAdditionalPropsExtractorCallback} options.additionalPropsExtractor - To extract props that are unavailable in the CMS, e.g. props living in `node.fields`
+ * @param {Bool} options.isNarrow - Determines if page width is narrow or default
  * @returns {Function} Function that renders the component with the data passed in by Graphql, according to Gatsby convention
  */
-export const site = (component, additionalPropsExtractor = () => {}) => {
+export const site = (component, options = {}) => {
+    const { additionalPropsExtractor = () => {}, isNarrow = false } = options
+
     /**
      * @param {Object} data - Data retrieved from GraphQL query specified in the component
      * @returns {React.Component} Component to be rendered by Gatsby
@@ -116,7 +114,7 @@ export const site = (component, additionalPropsExtractor = () => {}) => {
                     <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
                     <title>{layoutProps.tabTitle || layoutProps.title || 'Strawberry Fair'}</title>
                 </Helmet>
-                <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle}>
+                <Layout heroData={layoutProps.heroData} title={layoutProps.title} subtitle={layoutProps.subtitle} isNarrow={isNarrow}>
                     {insideLayout}
                 </Layout>
             </React.Fragment>

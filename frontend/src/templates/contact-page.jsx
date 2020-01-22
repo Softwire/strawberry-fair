@@ -17,7 +17,9 @@ export const ContactPage = ({content, contentComponent}) => {
     </section>
 )}
 
-export default site(ContactPage, () => ({tabTitle: 'Contact Us'}))
+const extractor = () => ({tabTitle: 'Contact Us'})
+
+export default site(ContactPage, { additionalPropsExtractor: extractor })
 
 export const query = graphql`
 query contactPageTemplate($id: String!) {

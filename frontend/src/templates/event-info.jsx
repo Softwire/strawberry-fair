@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import _ from 'lodash'
 
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
@@ -46,8 +47,9 @@ const EventInfoWithContext = ({isPreview, image, slug, eventTypes, content, cont
                     Add to Calendar
                 </a>
             ) : null}
+            <PreviewCompatibleImage imageInfo={{src: _.get(image, 'srcNode.childImageSharp.fixedAspect.src', image.src),
+                                                alt: image.alt}} />
             <BodyComponent content={content} />
-            <PreviewCompatibleImage imageInfo={image} />
         </React.Fragment>
     )
 }
@@ -82,7 +84,9 @@ export const generateEventSubtitle = (data, isMobile=false) => {
     // This allows for events to go on overnight / over multiple days
 }
 
-export default site(EventInfo, data => ({subtitle: generateEventSubtitle(data)}))
+const extractor = (data) => ({subtitle: generateEventSubtitle(data)})
+
+export default site(EventInfo, { additionalPropsExtractor: extractor, isNarrow: true })
 
 export const query = graphql`
 query eventInfoTemplate($id: String!) {

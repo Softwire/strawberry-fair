@@ -66,12 +66,12 @@ const NewsArchiveBreadcrumbs = ({breadcrumbs, breadcrumbLinks}) => {
   )
 }
 
-export default site(NewsTimeIntervalOverview, (data, pageContext) => {
-  return {
-    newsArticles: data.allMarkdownRemark.edges,
-    title: pageContext && pageContext.title ? pageContext.title : 'News Archive'
-  }
+const extractor = (data, pageContext) => ({
+  newsArticles: data.allMarkdownRemark.edges,
+  title: pageContext && pageContext.title ? pageContext.title : 'News Archive'
 })
+
+export default site(NewsTimeIntervalOverview, { additionalPropsExtractor: extractor })
 
 export const query = graphql`
 query newsMonthOverviewTemplate{
