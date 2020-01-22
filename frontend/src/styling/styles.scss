@@ -55,6 +55,9 @@ $breadcrumb-item-hover-color: $primary;
 
 $navbar-breakpoint: 1060px;
 
+$black-and-red-buttons-max-width: 380px;
+$black-and-red-buttons-breakpoint: $black-and-red-buttons-max-width + 48px;
+
 /* Bulma provides default styling (can be imported in separate modules as required) */
 @import "bulma";
 
@@ -241,20 +244,25 @@ footer {
 }
 
 .black-and-red.buttons {
-        display: inline-block;
-        max-width: 100%;
+        max-width: $black-and-red-buttons-max-width;
+        width: 100%;
         white-space: nowrap;
         justify-content: center;
         align-items: center;
-        margin: 1rem 0 1rem 1rem;
+        margin: 1rem 0 1rem 0;
         .button {
             // !important is needed to override Bulma pseudo-selectors
             // and ensure even spacing on mobile
             margin: 0.25rem !important;
             padding: 2rem;
-            width: 50%;
+            width: 46%;
             box-sizing: border-box;
-            font-size: 120%;
+            @media screen and (max-width: $black-and-red-buttons-breakpoint) {
+                font-size: 100%;
+            }
+            @media not screen and (max-width: $black-and-red-buttons-breakpoint) {
+                font-size: 120%
+            }
         }
 }
 
