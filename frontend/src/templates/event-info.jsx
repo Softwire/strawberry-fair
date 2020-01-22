@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import _ from 'lodash'
 
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
@@ -46,7 +47,8 @@ const EventInfoWithContext = ({isPreview, image, slug, eventTypes, content, cont
                     Add to Calendar
                 </a>
             ) : null}
-            <PreviewCompatibleImage imageInfo={image} />
+            <PreviewCompatibleImage imageInfo={{src: _.get(image, 'srcNode.childImageSharp.fixedAspect.src', image.src),
+                                                alt: image.alt}} />
             <BodyComponent content={content} />
         </React.Fragment>
     )

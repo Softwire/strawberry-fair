@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import _ from 'lodash'
 
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { HTMLContent } from '../components/Content'
@@ -14,7 +15,8 @@ export const NewsArticle = ({author, content, image, date, tags, contentComponen
     return (
       <React.Fragment>
         <figure className="image">
-          {image && <PreviewCompatibleImage imageInfo={image}/>} 
+          {image && <PreviewCompatibleImage imageInfo={{src: _.get(image, 'srcNode.childImageSharp.fixedAspect.src', image.src),
+                                                        alt: image.alt}} />}
         </figure>
         <br/>
         <div className="columns">

@@ -31,7 +31,7 @@ fragment ImageFluidFixedAspectFragment on MarkdownRemarkFrontmatter {
         editedFluid: fluid(traceSVG: {background: "#fff", color: "#ae1414",  turdSize: 50}, duotone: {highlight: "ae1414", shadow: "1d1d1d", opacity: 70}) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
-        fixedAspect: resize(width: 500, height: 400) {
+        fixedAspect: resize(width: 1000, height: 800) {
           src
         }
       }
