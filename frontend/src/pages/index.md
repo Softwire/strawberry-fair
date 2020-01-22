@@ -61,8 +61,8 @@ contentBlocks:
       text: >-
         Next year's festival is happening on June 6th 2020. We'll be announcing
         the theme later in the year
-    title: Welcome to Strawberry Fair; Cambridge's most popular event
-    subtitle: B
+    title: Welcome to Strawberry Fair
+    subtitle: Cambridge's most popular event
   - _markdown_contentBody: >-
       adsfadsfasdf
 
