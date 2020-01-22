@@ -19,12 +19,13 @@ const useScrapbookLayout = (images, isPreview) => {
 
 /** Expects an array of at least 6 images */
 export const ScrapbookImages = ({images}) => {
-    if (images.length < 6) {
+    const validImages = images.filter((image) => image.src || image.srcNode)
+    if (validImages.length < 6) {
         return null
     }
     return (
         <PreviewContext.Consumer>
-            {value => <ScrapbookImgs images={images} isPreview={value} />}
+            {value => <ScrapbookImgs images={validImages} isPreview={value} />}
         </PreviewContext.Consumer>
     )
 }
