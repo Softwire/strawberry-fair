@@ -37,7 +37,7 @@ NewsArticle.propTypes = {
   contentComponent: PropTypes.elementType
 }
 
-export default site(NewsArticle)
+export default site(NewsArticle, { isNarrow: true })
 
 export const query = graphql`
 query newsArticleTemplate($id: String!) {

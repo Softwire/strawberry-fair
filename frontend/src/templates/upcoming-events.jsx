@@ -18,7 +18,9 @@ UpcomingEvents.propTypes = {
   events: Upcoming.propTypes.events
 }
 
-export default site(UpcomingEvents, data => {return {events: data.allMarkdownRemark.edges, tabTitle: "Upcoming Events"}})
+const extractor = (data) => ({events: data.allMarkdownRemark.edges, tabTitle: "Upcoming Events"})
+
+export default site(UpcomingEvents, { additionalPropsExtractor: extractor })
 
 export const query = graphql`
 query upcomingEventsTemplate($id: String!) {

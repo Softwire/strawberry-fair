@@ -46,8 +46,8 @@ const EventInfoWithContext = ({isPreview, image, slug, eventTypes, content, cont
                     Add to Calendar
                 </a>
             ) : null}
-            <BodyComponent content={content} />
             <PreviewCompatibleImage imageInfo={image} />
+            <BodyComponent content={content} />
         </React.Fragment>
     )
 }
@@ -82,7 +82,9 @@ export const generateEventSubtitle = (data, isMobile=false) => {
     // This allows for events to go on overnight / over multiple days
 }
 
-export default site(EventInfo, data => ({subtitle: generateEventSubtitle(data)}))
+const extractor = (data) => ({subtitle: generateEventSubtitle(data)})
+
+export default site(EventInfo, { additionalPropsExtractor: extractor, isNarrow: true })
 
 export const query = graphql`
 query eventInfoTemplate($id: String!) {

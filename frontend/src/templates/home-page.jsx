@@ -44,13 +44,13 @@ HomePage.propTypes = {
   contentComponent: PropTypes.elementType,
 }
 
-const additionalPropsExtractor = graphqlData => ({
+const extractor = graphqlData => ({
   contentBlocksHtml: graphqlData.markdownRemark.fields.contentBlocksHtml,
   newsArticles: graphqlData.newsData.edges,
   tabTitle: 'Strawberry Fair'
 })
 
-export default site(HomePage, additionalPropsExtractor)
+export default site(HomePage, { additionalPropsExtractor: extractor })
 
 
 export const query = graphql`
