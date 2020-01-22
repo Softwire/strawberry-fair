@@ -33,7 +33,7 @@ const StrawberryCard = ({image, imageAltText, text}) => {
 const StrawberryCardDesktop = ({image, imageAltText, text}) => {
   return (
     <div className="box has-background-primary is-hidden-mobile strawberry-square">
-      <figure className="image is-64x64">
+      <figure className="image is-64x64 strawberry-card-desktop-image">
         <img src={image || defaultIcon} alt={imageAltText || defaultImageAltText} />
       </figure>
       <p className="has-text-white">{text}</p>

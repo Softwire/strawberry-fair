@@ -330,11 +330,15 @@ a:hover, a:active {
 }
 
 // Make strawberry cards/tiles square on desktop
-$strawberry-card-size: 14rem;
+$strawberry-card-size: 14.5rem;
 .strawberry-square {
     width: $strawberry-card-size;
     height: 0;
     padding-bottom: $strawberry-card-size - $box-padding;
+}
+
+.strawberry-card-desktop-image {
+    margin-bottom: 0.5rem;
 }
 
 .is-viewport-width {
