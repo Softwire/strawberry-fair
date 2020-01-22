@@ -75,8 +75,8 @@ contentBlocks:
     strawberryTile:
       isPublic: true
       text: >-
-        Why not come along to a benefit gig, one of our regular meetings, or get
-        in touch via this website? No experience necessary. 
+        Interested? Why not come along to a benefit gig, one of our regular
+        meetings, or get in touch via this website?
     title: Help! Volunteer at Strawberry Fair
     subtitle: We always need more people to help us put on this magical day
 calendarBlock:
