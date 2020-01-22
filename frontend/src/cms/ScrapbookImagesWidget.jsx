@@ -36,11 +36,11 @@ export class ScrapbookControl extends React.Component {
             return { error: { message: "At least six images must be uploaded." } }
         }
 
-        for (const el of extractList(this.props.value)) {
-            if (!queryObjectChild(el, "alt")) {
+        for (const image of extractList(this.props.value)) {
+            if (!queryObjectChild(image, "alt")) {
                 return { error: { message: "Some image descriptions are missing." } }
             }
-            if (!queryObjectChild(el, "src")) {
+            if (!queryObjectChild(image, "src")) {
                 return { error: { message: "Some image files are missing." } }
             }
         }
