@@ -1,12 +1,12 @@
 {
-    "getInvolved": {
+    "blackButton": {
         "frontmatter": {
             "link": "/about/about-item",
             "text": "Get Involved"
         }
     },
 
-    "applyToTrade": {
+    "redButton": {
         "frontmatter": {
             "link": "/news",
             "text": "Apply To Trade"
