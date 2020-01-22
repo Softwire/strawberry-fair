@@ -1,6 +1,8 @@
 import React from 'react'
 import CMS from 'netlify-cms-app'
 import { List, Map } from 'immutable'
+import PropTypes from 'prop-types'
+
 import { extractList, queryObjectChild } from './queryNestedWidgets'
 
 const ListControl = CMS.getWidget("list").control
@@ -48,3 +50,5 @@ export class ScrapbookControl extends React.Component {
         return true
     }
 }
+
+ScrapbookControl.propTypes = { value: PropTypes.object }
