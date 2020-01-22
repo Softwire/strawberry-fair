@@ -34,7 +34,7 @@ contentBlocks:
       - src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1579684138/Image%20Scrapbook/Gareth_Nunns_282_DSC_7747_ah1kyj.jpg
       - src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/crowd-shot_f84bne.jpg
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/band_melwuk.jpg
       - src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/banner-carrying_m0ufmy.jpg
     strawberryTile:
