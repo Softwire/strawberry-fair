@@ -19,8 +19,8 @@ const HeaderButtonsDisplay = ({isPreview}) => {
 
   return (
     <div className="black-and-red buttons ">
-        <InternalLink to={data.getInvolved.frontmatter.link} className="button is-secondary">{data.getInvolved.frontmatter.text}</InternalLink>
-        <InternalLink to={data.applyToTrade.frontmatter.link} className="button is-primary">{data.applyToTrade.frontmatter.text}</InternalLink>
+        <InternalLink to={data.blackButton.frontmatter.link} className="button is-secondary">{data.blackButton.frontmatter.text}</InternalLink>
+        <InternalLink to={data.redButton.frontmatter.link} className="button is-primary">{data.redButton.frontmatter.text}</InternalLink>
     </div>
   )
 }
@@ -28,13 +28,13 @@ const HeaderButtonsDisplay = ({isPreview}) => {
 function getHeaderButtonLinksAndText() {
   return useStaticQuery(graphql`
     query headerButtons {
-      applyToTrade: markdownRemark(fileAbsolutePath: { regex: ".*/src/pages/header-and-footer/buttons/red-button.md/"}) {
+      redButton: markdownRemark(fileAbsolutePath: { regex: ".*/src/pages/header-and-footer/buttons/red-button.md/"}) {
         frontmatter {
           link
           text
         }
       }
-      getInvolved: markdownRemark(fileAbsolutePath: { regex: ".*/src/pages/header-and-footer/buttons/black-button.md/"}) {
+      blackButton: markdownRemark(fileAbsolutePath: { regex: ".*/src/pages/header-and-footer/buttons/black-button.md/"}) {
           frontmatter {
             link
             text
