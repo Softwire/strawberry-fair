@@ -6,9 +6,7 @@ import BaseBlock from './BaseBlock'
 
 const NewsBlock = ({newsBlock, newsArticles}) => (
   <BaseBlock block={newsBlock}>
-    <div className="columns">
-      <NewsArticleSnapshots newsArticles={newsArticles || "Hello"}/>
-    </div>
+    <NewsArticleSnapshots newsArticles={newsArticles || "Hello"}/>
   </BaseBlock>
 )
 
