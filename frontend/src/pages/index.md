@@ -1,7 +1,7 @@
 ---
 templateKey: home-page
 title: By the people of Cambridge. For the people of Cambridge.
-subtitle: The Strawberry Fair is a lot of fun.
+subtitle: Cambridge's most popular event. 100% volunteer-powered.
 heroData:
   heroImages:
     - alt: Strawberry Fair Banner
@@ -21,33 +21,7 @@ heroData:
         https://res.cloudinary.com/strawberryfair/image/upload/v1578910864/sample.jpg
   isActive: true
 contentBlocks:
-  - _markdown_contentBody: >-
-      **asdasdasd**
-
-
-      ## asdasd
-
-
-      ## asdasd
-
-
-      # asdasd
-
-      Hello
-
-      orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor 
-
-      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis 
-
-      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. 
-
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-      dolore 
-
-      eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+  - _markdown_contentBody: "From humble beginnings, Strawberry Fair has grown to be the most popular free, entirely volunteer run, one day music & arts event in Cambridge (and probably across Europe!), attracting over 30,000 visitors throughout the day. On the first Saturday of June and now passed our 40th year, residents and visitors have gathered together on Midsummer Common to celebrate their vibrant and creative city.\r\n\nThe Fair is run entirely by volunteers (affectionately known as Strawberry Fairies) who give their energy, imagination and vision to present to their friends and neighbours in Cambridge a great free day out."
     scrapbookImages:
       - {}
       - {}
@@ -59,10 +33,10 @@ contentBlocks:
     strawberryTile:
       isPublic: true
       text: >-
-        Next year's festival is happening on June 6th 2020. We'll be announcing
-        the theme later in the year
+        Next year's festival is happening on June 6th 2020, on Midsummer Common,
+        Cambridge.
     title: Welcome to Strawberry Fair
-    subtitle: Cambridge's most popular event
+    subtitle: 'Saturday 6th June 2020. Trader applications are now open. '
   - _markdown_contentBody: >-
       adsfadsfasdf
 
