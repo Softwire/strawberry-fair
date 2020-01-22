@@ -23,19 +23,26 @@ heroData:
 contentBlocks:
   - _markdown_contentBody: "From humble beginnings, Strawberry Fair has grown to be the most popular free, entirely volunteer run, one day music & arts event in Cambridge (and probably across Europe!), attracting over 30,000 visitors throughout the day. On the first Saturday of June and now passed our 40th year, residents and visitors have gathered together on Midsummer Common to celebrate their vibrant and creative city.\r\n\nThe Fair is run entirely by volunteers (affectionately known as Strawberry Fairies) who give their energy, imagination and vision to present to their friends and neighbours in Cambridge a great free day out."
     scrapbookImages:
-      - src: >-
+      - alt: Happy crowd
+        src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1579684139/Image%20Scrapbook/Gareth_Nunns_275_DSC_7705_gsev57.jpg
-      - src: >-
+      - alt: More happy crowds
+        src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/crowd-shot2_wr9l5a.jpg
-      - src: >-
+      - alt: Fair goers
+        src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1579683916/Image%20Scrapbook/Gareth_Nunns_280_DSC_7727_gonuxd.jpg
-      - src: >-
+      - alt: Guitarist
+        src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1579684138/Image%20Scrapbook/Gareth_Nunns_286_DSC_7789_yyj4zc.jpg
-      - src: >-
+      - alt: Dancing on shoulders
+        src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1579684138/Image%20Scrapbook/Gareth_Nunns_282_DSC_7747_ah1kyj.jpg
-      - src: >-
+      - alt: Steward
+        src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1579684382/Image%20Scrapbook/Gareth_Nunns_259_DSC_7639_xdpod8.jpg
-      - src: >-
+      - alt: Happy crowds
+        src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1579684375/Image%20Scrapbook/Gareth_Nunns_254_DSC_7613_m1a3ya.jpg
     strawberryTile:
       isPublic: true
