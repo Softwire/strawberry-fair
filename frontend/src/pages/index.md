@@ -43,36 +43,7 @@ contentBlocks:
         Cambridge.
     title: Welcome to Strawberry Fair
     subtitle: 'Saturday 6th June 2020. Trader applications are now open. '
-  - _markdown_contentBody: >-
-      adsfadsfasdf
-
-
-      adsfasfadsf
-
-
-      adsfasdfasdf
-
-
-      # asdfadsf
-
-
-      ## adsfadf
-
-      Hello
-
-      orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor 
-
-      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis 
-
-      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. 
-
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-      dolore 
-
-      eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+  - _markdown_contentBody: "Strawberry Fair is a not-for-profit organisation run entirely by a team of volunteers (The Fairies!) who work throughout the year (yes it really does take that long to organise!) sorting out everything to do with the Fair; from finding artists and organising stages, to managing traders and fundraising, right through to working out how many toilets are needed....!!\r\n\nStrawberry Fair couldn't happen without all of the people who, generously, volunteer their time and effort throughout the to make our unique event happen."
     scrapbookImages:
       - alt: Placeholder
         src: >-
@@ -103,9 +74,11 @@ contentBlocks:
           https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/music_zpcrkm.jpg
     strawberryTile:
       isPublic: true
-      text: 'For more details, contact email us here or on our Facebook page'
-    title: Content block 2
-    subtitle: Hello
+      text: >-
+        Why not come along to a benefit gig, one of our regular meetings, or get
+        in touch via this website. No experience necessary. 
+    title: Help! Volunteer at Strawberry Fair
+    subtitle: We always need more people to help us put on this magical day
 calendarBlock:
   title: Strawberry Fair committee meetings
   subtitle: The next committee meetings are listed below and will be held at...
