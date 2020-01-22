@@ -47,8 +47,8 @@ const EventInfoWithContext = ({isPreview, image, slug, eventTypes, content, cont
                     Add to Calendar
                 </a>
             ) : null}
-            <PreviewCompatibleImage imageInfo={{src: _.get(image, 'srcNode.childImageSharp.fixedAspect.src', image.src),
-                                                alt: image.alt}} />
+            <PreviewCompatibleImage imageInfo={image ? {src: _.get(image, 'srcNode.childImageSharp.fixedAspect.src', image.src),
+                                                        alt: image.alt} : null} />
             <BodyComponent content={content} />
         </React.Fragment>
     )

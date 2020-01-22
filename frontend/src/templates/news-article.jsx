@@ -15,8 +15,8 @@ export const NewsArticle = ({author, content, image, date, tags, contentComponen
     return (
       <React.Fragment>
         <figure className="image">
-          {image && <PreviewCompatibleImage imageInfo={{src: _.get(image, 'srcNode.childImageSharp.fixedAspect.src', image.src),
-                                                        alt: image.alt}} />}
+          {image && <PreviewCompatibleImage imageInfo={image ? {src: _.get(image, 'srcNode.childImageSharp.fixedAspect.src', image.src),
+                                                                alt: image.alt} : null} />}
         </figure>
         <br/>
         <div className="columns">
