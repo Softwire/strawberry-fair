@@ -5,23 +5,7 @@ import VerticalTileColumn from './VerticalTileColumn'
 const defaultIcon = '/img/strawberry-icon.png'
 const defaultImageAltText = 'Strawberry Icon'
 
-export const SectionWithStrawberryCard = ({isPublic, image, imageAltText, text, children}) => {
-  // Formats a portion of text or other content alongside a strawberry card so it appears correctly
-  // and responsively
-
-  return (
-    <div className="columns">
-      <div className="column">
-        {children}
-      </div>
-      <div className="column is-narrow">
-        {isPublic && <StrawberryCard image={image} imageAltText={imageAltText} text={text} />}
-      </div>
-    </div>
-  )
-}
-
-const StrawberryCard = ({image, imageAltText, text}) => {
+export const StrawberryCard = ({image, imageAltText, text}) => {
   return (
     <React.Fragment>
       <StrawberryCardDesktop image={image} imageAltText={imageAltText} text={text} />
@@ -81,14 +65,6 @@ StrawberryCard.propTypes = {
   image: PropTypes.string,
   imageAltText: PropTypes.string,
   text: PropTypes.string
-}
-
-SectionWithStrawberryCard.propTypes = {
-  isPublic: PropTypes.bool.isRequired,
-  image: PropTypes.string,
-  imageAltText: PropTypes.string,
-  text: PropTypes.string,
-  children: PropTypes.element
 }
 
 StrawberryCardDesktop.propTypes = StrawberryCard.propTypes

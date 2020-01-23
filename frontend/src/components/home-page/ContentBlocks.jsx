@@ -2,20 +2,21 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { ScrapbookImages } from './ScrapbookImages'
-import { SectionWithStrawberryCard } from '../StrawberryCard'
+import { StrawberryCard } from '../StrawberryCard'
 
 const ContentBlock = ({contentTitle, contentSubtitle, scrapbookImages, content, strawberryTile, BodyComponent}) => (
-  <section className="section home-page-section">
+  <section className="section home-page-section home-page-content-block">
     <ScrapbookImages images={scrapbookImages}/>
     <h1 className="title is-2 is-size-3-mobile">{contentTitle}</h1>
     <div className="columns">
-      <div className="column is-three-fifths">
+      <div className="column">
         <h3 className="subtitle is-5">{contentSubtitle}</h3>
+        <BodyComponent content={content}/>
+      </div>
+      <div className="column home-strawberry-column is-narrow">
+        {strawberryTile.isPublic && <StrawberryCard text={strawberryTile.text} />}
       </div>
     </div>
-    <SectionWithStrawberryCard isPublic={strawberryTile.isPublic} text={strawberryTile.text}>
-      <BodyComponent content={content}/>
-    </SectionWithStrawberryCard>
   </section>
 )
 

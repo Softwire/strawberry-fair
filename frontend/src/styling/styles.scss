@@ -77,7 +77,29 @@ $black-and-red-buttons-breakpoint: $black-and-red-buttons-max-width + 48px;
 div {
     &.home-page-section {
         padding-bottom: 4em;
-        padding-top: 2em;
+        padding-top: 3em;
+
+        @media(max-width: $tablet) {
+            padding-bottom: 3em;
+            padding-top: 2em;
+        }
+
+        &.home-page-content-block {
+            padding-top: 0;
+            
+            .subtitle {
+                padding-bottom: 0.5rem;
+            }
+
+            .home-strawberry-column {
+                display: flex;
+                align-items: center;
+
+                .strawberry-square {
+                    margin-bottom: 0;
+                }
+            }
+        }
     }
 }
 
@@ -116,6 +138,9 @@ div {
                 }
                 h3, h4, h5, h6 {
                     font-size: $size-7;
+                }
+                :first-child {
+                    margin-top: 10px;
                 }
             }
         }
@@ -180,11 +205,16 @@ This is necessary because Bulma's experimental column margin classes do not func
 }
 
 // Fixes content jumping on homepage on desktop
-// Downside is that on rare occasions that scrapbook is less than 30vh high, this adds whitespace
+// Downside is that on rare occasions that scrapbook is less than 27vh high, this adds whitespace
 .scrapbook-container {
-    min-height: 30vh;
-    padding-bottom: 2rem;
+    min-height: 27vh;
+    padding-bottom: 3em;
+    display: grid;
+    align-items: flex-end;
 
+    @media(max-width: $tablet) {
+        padding-bottom: 2em;
+    }
 }
 
 // Allows navbar dropdowns to work in Edge
@@ -217,7 +247,7 @@ This is necessary because Bulma's experimental column margin classes do not func
 }
 
 footer {
-    padding-top: 4rem;
+    padding-top: 3rem;
 
     .invitation-and-buttons {
         .title:not(:last-child) {
@@ -275,7 +305,7 @@ footer {
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 0;
+    padding: 3em 0;
 
     .titles {
         padding-right: 0.5rem;
@@ -288,6 +318,7 @@ footer {
     @media(max-width: $tablet) {
         flex-direction: column;
         justify-content: space-between;
+        padding: 2em 0;
 
         .buttons {
             margin: 0 0 1rem 0;
@@ -609,6 +640,7 @@ $strawberry-card-size: 14.5rem;
 
 .xpanel-block {
     padding: 0;
+    height: 100%;
 
     &.box {
         padding: 0 1rem;
