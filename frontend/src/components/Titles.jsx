@@ -25,4 +25,5 @@ Titles.propTypes = {
   subtitle: PropTypes.node
 }
 
+// New sentences are rendered as new lines
 const addBreaks = (title) => title.replace(/\. /g, ".<br>")
