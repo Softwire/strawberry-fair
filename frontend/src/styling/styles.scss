@@ -34,8 +34,9 @@ $navbar-dropdown-arrow: $primary;
 
 $section-padding: 0 1.5rem;
 
-$default-layout-gap: 80px;
-$narrow-page-layout-gap: 300px;
+$wide-layout-gap: 20px;
+$default-layout-gap: 120px;
+$narrow-layout-gap: 300px;
 
 /* Font sizing - increased from bulma defaults */
 $size-1: 3.5rem;
@@ -138,6 +139,7 @@ This is necessary because Bulma's experimental column margin classes do not func
 .scrapbook-container {
     min-height: 30vh;
     padding-bottom: 2rem;
+
 }
 
 // Allows navbar dropdowns to work in Edge
@@ -646,5 +648,27 @@ $strawberry-card-size: 14.5rem;
 }
 
 .container.narrow-container {
-    @include containerWidth($narrow-page-layout-gap);
+    @include containerWidth($narrow-layout-gap);
+}
+
+@mixin scrapbookContainer($screen-width) {
+    $width: $screen-width - 2 * ($wide-layout-gap);
+    position: relative;
+    width: $width;
+    left: 50%;
+    right: 50%;
+    margin-left: (-$width / 2);
+    margin-right: (-$width / 2);
+}
+
+.scrapbook-container {
+    @media screen and (min-width: $desktop) {
+        @include scrapbookContainer($desktop);
+    }
+    @media screen and (min-width: $widescreen) {
+        @include scrapbookContainer($widescreen);
+    }
+    @media screen and (min-width: $fullhd) {
+        @include scrapbookContainer($fullhd);
+    }
 }
