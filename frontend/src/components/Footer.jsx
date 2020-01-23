@@ -56,8 +56,8 @@ const GetInTouch = ({invitationText}) => (
 )
 
 const ContactDetails = ({address, email, facebookAccount, twitterAccount}) => (
-    <div className="fancy-title-box">
-        <h3 className="title fancy is-5" align="left"><span>Contact Us</span></h3>
+    <div className="footer-contact-us">
+        <h3 className="title middle-line is-5" align="left"><span>Contact Us</span></h3>
         <div className="columns is-mobile contact-details is-vcentered">
             <div className="column address">
                 <div className="content is-small address has-text-weight-semibold" align="left">
