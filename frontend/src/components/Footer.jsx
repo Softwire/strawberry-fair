@@ -1,6 +1,6 @@
 import React from 'react'
 import { IconContext } from 'react-icons'
-import { FaFacebook, FaTwitter } from 'react-icons/fa'
+import { FaFacebook, FaTwitter, FaEnvelopeOpenText } from 'react-icons/fa'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import footerPreviewContent from '../data/footerPreviewContent'
 import { PreviewContext } from '../util/context.jsx'
@@ -58,27 +58,25 @@ const GetInTouch = ({invitationText}) => (
 const ContactDetails = ({address, email, facebookAccount, twitterAccount}) => (
     <div className="fancy-title-box">
         <h3 className="title fancy is-5" align="left"><span>Contact Us</span></h3>
-        <div className="columns is-mobile contact-details">
-            <div className="column is-4">
-                <div className="content is-small address" align="left">
+        <div className="columns is-mobile contact-details is-vcentered">
+            <div className="column address">
+                <div className="content is-small address has-text-weight-semibold" align="left">
                     <p>{address.firstLine}</p>
                     <p>{address.secondLine}</p>
                     <p>{address.thirdLine}</p>
                 </div>
             </div>
-            <div className="column is-8 is-offset-1">
+            <div className="column icons">
                 <div className="tile is-ancestor">
-                    <div className="tile is-vertical is-parent">
-                        <div className="tile is-horizontal is-8 is-parent">
-                            <div className="tile is-6 is-child">
-                                <FacebookIcon facebookAccount={facebookAccount} />
-                            </div>
-                            <div className="tile is-6 is-child">
-                                <TwitterIcon twitterAccount={twitterAccount} />
-                            </div>
+                    <div className="contact tile is-parent has-text-centered">
+                        <div className="tile is-4 is-child">
+                            <FacebookIcon facebookAccount={facebookAccount} />
                         </div>
-                        <div className="tile is-6 is-child">
-                            <a href={"mailto:" + email}>{email}</a>
+                        <div className="tile is-4 is-child">
+                            <TwitterIcon twitterAccount={twitterAccount} />
+                        </div>
+                        <div className="tile is-4 is-child">
+                        <ContactFormIcon/>
                         </div>
                     </div>
                 </div>
@@ -107,6 +105,17 @@ const TwitterIcon = ({twitterAccount}) => (
             <FaTwitter />
         </IconContext.Provider>
     </a>
+)
+
+const ContactFormIcon = () => (
+    <Link className="icon is-large twitter-colour has-text-primary" 
+        to="/contact"
+        target="_blank"
+        rel="noreferrer noopener">
+        <IconContext.Provider value={{size: "3em"}}>
+            <FaEnvelopeOpenText />
+        </IconContext.Provider>
+    </Link>
 )
 
 const PrivacyPolicy = ({copyright}) => (

@@ -736,20 +736,104 @@ $strawberry-card-size: 14.5rem;
 .fancy {
     line-height: 1rem;
     text-align: left;
-  }
-  .fancy span {
-    display: inline-block;
-    position: relative;  
-  }
-  .fancy span:after {
-    content: "";
-    position: absolute;
-    height: 0.7rem;
-    border-bottom: 1px solid $primary;
-    top: 0;
-    width: 600px;
-  }
-  .fancy span:after {
-    left: 100%;
-    margin-left: 15px;
-  }
+}
+.fancy span {
+display: inline-block;
+position: relative;  
+}
+.fancy span:after {
+content: "";
+position: absolute;
+height: 0.7rem;
+border-bottom: 1px solid $primary;
+top: 0;
+width: 600px;
+}
+.fancy span:after {
+left: 100%;
+margin-left: 15px;
+}
+
+@media screen and (max-width: 400px) {
+    .contact.tile.is-parent {
+            flex-direction: column;
+            display: flex;
+        }
+    .fancy-title-box {
+        .columns {
+            .column {
+                &.address {
+                    flex: none;
+                    width: 70%;
+                }
+                &.icons {
+                    flex: none;
+                    width: 30%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: $tablet) {
+    .contact.tile.is-parent {
+        flex-direction: row;
+        display: flex;
+    }
+    .fancy-title-box {
+        .columns {
+            .column {
+                &.address {
+                    flex: none;
+                    width: 40%;
+                }
+                &.icons {
+                    flex: none;
+                    width: 60%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $tablet) and (max-width: 1250px) {
+    .contact.tile.is-parent {
+        flex-direction: column;
+        display: flex;
+    }
+    .fancy-title-box {
+        .columns {
+            .column {
+                &.address {
+                    flex: none;
+                    width: 70%;
+                }
+                &.icons {
+                    flex: none;
+                    width: 30%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1250px) {
+    .contact.tile.is-parent {
+        flex-direction: row;
+        display: flex;
+    }
+    .fancy-title-box {
+        .columns {
+            .column {
+                &.address {
+                    flex: none;
+                    width: 40%;
+                }
+                &.icons {
+                    flex: none;
+                    width: 60%;
+                }
+            }
+        }
+    }
+}
