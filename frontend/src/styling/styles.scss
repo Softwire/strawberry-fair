@@ -77,6 +77,11 @@ div {
     &.home-page-section {
         padding-bottom: 4em;
         padding-top: 2em;
+
+        &.home-page-content-block {
+            padding-bottom: 1em;
+            padding-top: 1em;
+        }
     }
 }
 
@@ -181,9 +186,8 @@ This is necessary because Bulma's experimental column margin classes do not func
 // Fixes content jumping on homepage on desktop
 // Downside is that on rare occasions that scrapbook is less than 30vh high, this adds whitespace
 .scrapbook-container {
-    min-height: 30vh;
-    padding-bottom: 2rem;
-
+    min-height: 25vh;
+    padding-bottom: 2em;
 }
 
 // Allows navbar dropdowns to work in Edge

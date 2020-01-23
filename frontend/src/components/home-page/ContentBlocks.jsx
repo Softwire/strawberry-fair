@@ -5,7 +5,7 @@ import { ScrapbookImages } from './ScrapbookImages'
 import { SectionWithStrawberryCard } from '../StrawberryCard'
 
 const ContentBlock = ({contentTitle, contentSubtitle, scrapbookImages, content, strawberryTile, BodyComponent}) => (
-  <section className="section home-page-section">
+  <section className="section home-page-section home-page-content-block">
     <ScrapbookImages images={scrapbookImages}/>
     <h1 className="title is-2 is-size-3-mobile">{contentTitle}</h1>
     <div className="columns">
