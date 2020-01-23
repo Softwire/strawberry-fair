@@ -729,3 +729,27 @@ $strawberry-card-size: 14.5rem;
         @include scrapbookContainer($fullhd);
     }
 }
+
+.fancy-title-box {
+    overflow: hidden;
+}
+.fancy {
+    line-height: 1rem;
+    text-align: left;
+  }
+  .fancy span {
+    display: inline-block;
+    position: relative;  
+  }
+  .fancy span:after {
+    content: "";
+    position: absolute;
+    height: 0.7rem;
+    border-bottom: 1px solid $primary;
+    top: 0;
+    width: 600px;
+  }
+  .fancy span:after {
+    left: 100%;
+    margin-left: 15px;
+  }

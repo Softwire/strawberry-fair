@@ -21,10 +21,10 @@ export const FooterDisplay = ({isPreview, CMSInput}) => {
     return (
         <footer>
             <div className="columns">
-                <div className="column is-half">
+                <div className="column is-6">
                     <GetInTouch invitationText={footerContent.invitationText} />
                 </div>
-                <div className="column is-half">
+                <div className="column is-4 is-offset-1">
                     <ContactDetails 
                         address={footerContent.address}
                         email={footerContent.email}
@@ -56,23 +56,33 @@ const GetInTouch = ({invitationText}) => (
 )
 
 const ContactDetails = ({address, email, facebookAccount, twitterAccount}) => (
-    <div className="columns is-mobile contact-details">
-        <div className="column is-half">
-            <h3 className="title is-5">Visit Us</h3>
-            <div className="content is-small address">
-                <p>{address.firstLine}</p>
-                <p>{address.secondLine}</p>
-                <p>{address.thirdLine}</p>
+    <div className="fancy-title-box">
+        <h3 className="title fancy is-5" align="left"><span>Contact Us</span></h3>
+        <div className="columns is-mobile contact-details">
+            <div className="column is-4">
+                <div className="content is-small address" align="left">
+                    <p>{address.firstLine}</p>
+                    <p>{address.secondLine}</p>
+                    <p>{address.thirdLine}</p>
+                </div>
             </div>
-        </div>
-        <div className="column">
-            <h3 className="title is-5">Contact Us</h3>
-            <div>
-                <FacebookIcon facebookAccount={facebookAccount} />
-                <TwitterIcon twitterAccount={twitterAccount} />
+            <div className="column is-8 is-offset-1">
+                <div className="tile is-ancestor">
+                    <div className="tile is-vertical is-parent">
+                        <div className="tile is-horizontal is-8 is-parent">
+                            <div className="tile is-6 is-child">
+                                <FacebookIcon facebookAccount={facebookAccount} />
+                            </div>
+                            <div className="tile is-6 is-child">
+                                <TwitterIcon twitterAccount={twitterAccount} />
+                            </div>
+                        </div>
+                        <div className="tile is-6 is-child">
+                            <a href={"mailto:" + email}>{email}</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <br/>
-            <a href={"mailto:" + email}>{email}</a>
         </div>
     </div>
 )
@@ -82,7 +92,7 @@ const FacebookIcon = ({facebookAccount}) => (
         href={facebookAccount}
         target="_blank"
         rel="noreferrer noopener">
-        <IconContext.Provider value={{size: "2em"}}>
+        <IconContext.Provider value={{size: "3em"}}>
             <FaFacebook />
         </IconContext.Provider>
     </a>
@@ -93,7 +103,7 @@ const TwitterIcon = ({twitterAccount}) => (
         href={twitterAccount}
         target="_blank"
         rel="noreferrer noopener">
-        <IconContext.Provider value={{size: "2em"}}>
+        <IconContext.Provider value={{size: "3em"}}>
             <FaTwitter />
         </IconContext.Provider>
     </a>
