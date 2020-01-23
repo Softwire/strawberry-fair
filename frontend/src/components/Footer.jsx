@@ -55,7 +55,7 @@ const GetInTouch = ({invitationText}) => (
     </div>
 )
 
-const ContactDetails = ({address, email, facebookAccount, twitterAccount}) => (
+const ContactDetails = ({address, facebookAccount, twitterAccount}) => (
     <div className="footer-contact-us">
         <h3 className="title middle-line is-5" align="left"><span>Contact Us</span></h3>
         <div className="columns is-mobile contact-details is-vcentered">
@@ -178,7 +178,6 @@ ContactDetails.propTypes = {
         secondLine: PropTypes.string,
         thirdLine: PropTypes.string,
     }).isRequired,
-    email: PropTypes.string.isRequired,
     facebookAccount: PropTypes.string.isRequired,
     twitterAccount: PropTypes.string.isRequired,
 }
