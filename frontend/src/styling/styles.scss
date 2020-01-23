@@ -78,6 +78,50 @@ div {
     }
 }
 
+//homepage base blocks styling
+@mixin base-block-styling {
+    @media screen and (max-width: $tablet) {
+        .title {
+            font-size: $size-5;
+        }
+        .subtitle {
+            font-size: $size-7;
+        }
+    }
+    @media not screen and (max-width: $tablet) {
+        .title {
+            font-size: $size-4;
+        }
+        .subtitle {
+            font-size: $size-6;
+        }
+    }
+}
+.home-page-section {
+    .xpanel-block {
+        .xpanel-header {
+            @include base-block-styling;
+        }
+        .xpanel-excerpt {
+            .content {
+                font-size: $size-7;
+                h1 {
+                    font-size: $size-5;
+                }
+                h2 {
+                    font-size: $size-6;
+                }
+                h3, h4, h5, h6 {
+                    font-size: $size-7;
+                }
+            }
+        }
+    }
+    .news-preview {
+        @include base-block-styling;
+    }
+}
+
 /* Class styling */
 .column {
     &.column-align-bottom {
