@@ -13,7 +13,7 @@ const ContentBlock = ({contentTitle, contentSubtitle, scrapbookImages, content, 
         <h3 className="subtitle is-5">{contentSubtitle}</h3>
         <BodyComponent content={content}/>
       </div>
-      <div className="column is-narrow">
+      <div className="column home-strawberry-column is-narrow">
         {strawberryTile.isPublic && <StrawberryCard text={strawberryTile.text} />}
       </div>
     </div>

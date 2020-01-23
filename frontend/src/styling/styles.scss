@@ -79,7 +79,20 @@ div {
         padding-top: 2em;
 
         &.home-page-content-block {
-            padding-bottom: 2em;
+            padding-top: 0;
+            
+            .title, .subtitle {
+                padding-bottom: 1rem;
+            }
+
+            .home-strawberry-column {
+                display: flex;
+                align-items: center;
+
+                .strawberry-square {
+                    margin-bottom: 0;
+                }
+            }
         }
     }
 }
