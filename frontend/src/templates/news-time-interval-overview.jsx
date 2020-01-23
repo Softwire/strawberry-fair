@@ -71,7 +71,7 @@ const extractor = (data, pageContext) => ({
   title: pageContext && pageContext.title ? pageContext.title : 'News Archive'
 })
 
-export default site(NewsTimeIntervalOverview, { additionalPropsExtractor: extractor })
+export default site(NewsTimeIntervalOverview, { additionalPropsExtractor: extractor, isWide: true })
 
 export const query = graphql`
 query newsMonthOverviewTemplate{
