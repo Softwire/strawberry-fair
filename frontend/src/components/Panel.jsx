@@ -14,7 +14,7 @@ export const PanelBlock = ({panelData, emptyText, isViewportWidthDesktop}) => (
             getPanels(panelData, emptyText).map((panel, idx) => (
                 <div key={idx} className={`xpanel-background ${isViewportWidthDesktop ? "is-viewport-width" : ""}`}>
                     <section className = "section section-root">
-                        <div className="container">
+                        <div className="container wide-container">
                             {panel}
                         </div>
                     </section>
