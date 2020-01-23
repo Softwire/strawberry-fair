@@ -1,6 +1,6 @@
 import React from 'react'
 import { IconContext } from 'react-icons'
-import { FaFacebook, FaTwitter } from 'react-icons/fa'
+import { FaFacebook, FaTwitter, FaEnvelopeOpenText } from 'react-icons/fa'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import footerPreviewContent from '../data/footerPreviewContent'
 import { PreviewContext } from '../util/context.jsx'
@@ -21,10 +21,10 @@ export const FooterDisplay = ({isPreview, CMSInput}) => {
     return (
         <footer>
             <div className="columns">
-                <div className="column is-half">
+                <div className="column is-6">
                     <GetInTouch invitationText={footerContent.invitationText} />
                 </div>
-                <div className="column is-half">
+                <div className="column is-4 is-offset-1">
                     <ContactDetails 
                         address={footerContent.address}
                         email={footerContent.email}
@@ -56,23 +56,31 @@ const GetInTouch = ({invitationText}) => (
 )
 
 const ContactDetails = ({address, email, facebookAccount, twitterAccount}) => (
-    <div className="columns is-mobile contact-details">
-        <div className="column is-half">
-            <h3 className="title is-5">Visit Us</h3>
-            <div className="content is-small address">
-                <p>{address.firstLine}</p>
-                <p>{address.secondLine}</p>
-                <p>{address.thirdLine}</p>
+    <div className="footer-contact-us">
+        <h3 className="title middle-line is-5" align="left"><span>Contact Us</span></h3>
+        <div className="columns is-mobile contact-details is-vcentered">
+            <div className="column address">
+                <div className="content is-small address has-text-weight-semibold" align="left">
+                    <p>{address.firstLine}</p>
+                    <p>{address.secondLine}</p>
+                    <p>{address.thirdLine}</p>
+                </div>
             </div>
-        </div>
-        <div className="column">
-            <h3 className="title is-5">Contact Us</h3>
-            <div>
-                <FacebookIcon facebookAccount={facebookAccount} />
-                <TwitterIcon twitterAccount={twitterAccount} />
+            <div className="column icons">
+                <div className="tile is-ancestor">
+                    <div className="contact tile is-parent has-text-centered">
+                        <div className="tile is-4 is-child">
+                            <FacebookIcon facebookAccount={facebookAccount} />
+                        </div>
+                        <div className="tile is-4 is-child">
+                            <TwitterIcon twitterAccount={twitterAccount} />
+                        </div>
+                        <div className="tile is-4 is-child">
+                        <ContactFormIcon/>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <br/>
-            <a href={"mailto:" + email}>{email}</a>
         </div>
     </div>
 )
@@ -82,7 +90,7 @@ const FacebookIcon = ({facebookAccount}) => (
         href={facebookAccount}
         target="_blank"
         rel="noreferrer noopener">
-        <IconContext.Provider value={{size: "2em"}}>
+        <IconContext.Provider value={{size: "3em"}}>
             <FaFacebook />
         </IconContext.Provider>
     </a>
@@ -93,10 +101,21 @@ const TwitterIcon = ({twitterAccount}) => (
         href={twitterAccount}
         target="_blank"
         rel="noreferrer noopener">
-        <IconContext.Provider value={{size: "2em"}}>
+        <IconContext.Provider value={{size: "3em"}}>
             <FaTwitter />
         </IconContext.Provider>
     </a>
+)
+
+const ContactFormIcon = () => (
+    <Link className="icon is-large twitter-colour has-text-primary" 
+        to="/contact"
+        target="_blank"
+        rel="noreferrer noopener">
+        <IconContext.Provider value={{size: "3em"}}>
+            <FaEnvelopeOpenText />
+        </IconContext.Provider>
+    </Link>
 )
 
 const PrivacyPolicy = ({copyright}) => (

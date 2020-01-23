@@ -708,8 +708,8 @@ $strawberry-card-size: 14.5rem;
     @include containerWidth($wide-layout-gap);
 }
 
-@mixin scrapbookContainer($screen-width) {
-    $width: $screen-width - 2 * ($scrapbook-layout-gap);
+@mixin setWidth($screen-width, $gap) {
+    $width: $screen-width - 2 * ($gap);
     position: relative;
     width: $width;
     left: 50%;
@@ -718,14 +718,134 @@ $strawberry-card-size: 14.5rem;
     margin-right: (-$width / 2);
 }
 
-.scrapbook-container {
+footer {
     @media screen and (min-width: $desktop) {
-        @include scrapbookContainer($desktop);
+        @include setWidth($desktop, $wide-layout-gap);
     }
     @media screen and (min-width: $widescreen) {
-        @include scrapbookContainer($widescreen);
+        @include setWidth($widescreen, $wide-layout-gap);
     }
     @media screen and (min-width: $fullhd) {
-        @include scrapbookContainer($fullhd);
+        @include setWidth($fullhd, $wide-layout-gap);
+    }
+}
+
+.scrapbook-container {
+    @media screen and (min-width: $desktop) {
+        @include setWidth($desktop, $scrapbook-layout-gap);
+    }
+    @media screen and (min-width: $widescreen) {
+        @include setWidth($widescreen, $scrapbook-layout-gap);
+    }
+    @media screen and (min-width: $fullhd) {
+        @include setWidth($fullhd, $scrapbook-layout-gap);
+    }
+}
+
+.footer-contact-us {
+    overflow: hidden;
+}
+.middle-line {
+    line-height: 1rem;
+    text-align: left;
+}
+.middle-line span {
+    display: inline-block;
+    position: relative;  
+}
+.middle-line span:after {
+    content: "";
+    position: absolute;
+    height: 0.7rem;
+    border-bottom: 1px solid $primary;
+    top: 0;
+    width: 600px;
+}
+.middle-line span:after {
+    left: 100%;
+    margin-left: 15px;
+}
+
+@media screen and (max-width: 400px) {
+    .contact.tile.is-parent {
+            flex-direction: column;
+            display: flex;
+        }
+    .footer-contact-us {
+        .columns {
+            .column {
+                &.address {
+                    flex: none;
+                    width: 70%;
+                }
+                &.icons {
+                    flex: none;
+                    width: 30%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: $tablet) {
+    .contact.tile.is-parent {
+        flex-direction: row;
+        display: flex;
+    }
+    .footer-contact-us {
+        .columns {
+            .column {
+                &.address {
+                    flex: none;
+                    width: 40%;
+                }
+                &.icons {
+                    flex: none;
+                    width: 60%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $tablet) and (max-width: 1250px) {
+    .contact.tile.is-parent {
+        flex-direction: column;
+        display: flex;
+    }
+    .footer-contact-us {
+        .columns {
+            .column {
+                &.address {
+                    flex: none;
+                    width: 70%;
+                }
+                &.icons {
+                    flex: none;
+                    width: 30%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1250px) {
+    .contact.tile.is-parent {
+        flex-direction: row;
+        display: flex;
+    }
+    .footer-contact-us {
+        .columns {
+            .column {
+                &.address {
+                    flex: none;
+                    width: 40%;
+                }
+                &.icons {
+                    flex: none;
+                    width: 60%;
+                }
+            }
+        }
     }
 }
