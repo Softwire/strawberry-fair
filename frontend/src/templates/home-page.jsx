@@ -50,7 +50,7 @@ const extractor = graphqlData => ({
   tabTitle: 'Strawberry Fair'
 })
 
-export default site(HomePage, { additionalPropsExtractor: extractor })
+export default site(HomePage, { additionalPropsExtractor: extractor, isWide: true })
 
 
 export const query = graphql`

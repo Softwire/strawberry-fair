@@ -51,7 +51,7 @@ NewsOverview.propTypes = {
 
 const extractor = (data) => ({newsArticles: data.allMarkdownRemark.edges, featuredArticle: data.markdownRemark.frontmatter.featuredArticle})
 
-export default site(NewsOverview, { additionalPropsExtractor: extractor })
+export default site(NewsOverview, { additionalPropsExtractor: extractor, isWide: true })
 
 export const query = graphql`
 query newsOverviewTemplate($id: String!) {

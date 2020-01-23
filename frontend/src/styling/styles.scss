@@ -34,8 +34,9 @@ $navbar-dropdown-arrow: $primary;
 
 $section-padding: 0 1.5rem;
 
-$wide-layout-gap: 20px;
-$default-layout-gap: 120px;
+$scrapbook-layout-gap: 20px;
+$wide-layout-gap: 120px;
+$default-layout-gap: 220px;
 $narrow-layout-gap: 300px;
 
 /* Font sizing - increased from bulma defaults */
@@ -275,6 +276,14 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 0;
+
+    .titles {
+        padding-right: 0.5rem;
+    }
+
+    .black-and-red {
+        padding-left: 0.5rem;
+    }
 
     @media(max-width: $tablet) {
         flex-direction: column;
@@ -695,8 +704,12 @@ $strawberry-card-size: 14.5rem;
     @include containerWidth($narrow-layout-gap);
 }
 
+.container.wide-container {
+    @include containerWidth($wide-layout-gap);
+}
+
 @mixin scrapbookContainer($screen-width) {
-    $width: $screen-width - 2 * ($wide-layout-gap);
+    $width: $screen-width - 2 * ($scrapbook-layout-gap);
     position: relative;
     width: $width;
     left: 50%;
