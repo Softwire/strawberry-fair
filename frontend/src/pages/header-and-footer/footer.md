@@ -6,7 +6,6 @@ address:
   thirdLine: CB1 0YJ
 facebookAccount: 'https://www.facebook.com/StrawberryFair/'
 twitterAccount: 'https://twitter.com/strawberry_fair'
-email: enquiries@strawberry-fair.org.uk
 emailSubscriptionText: Join our mailing list and stay up to date!
 emailSubscriptionLink: >-
   https://strawberry-fair.us2.list-manage.com/subscribe?u=5528f00f9868e21135103186b&id=972fa2f207

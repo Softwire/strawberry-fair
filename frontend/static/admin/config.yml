@@ -33,7 +33,6 @@ definitions:
   - &menuTitle {label: NavBar Dropdown Title, name: title, widget: string}
   - &internalLink {label: Link, name: link, widget: link, hint: Choose the path to the page you want this link to point to. Select "<-- Previous Menu" to undo your last selection.  Make sure you select a complete path by either ending your selection with "index" or checking that the link is displayed on this widget.}
   - &text {label: Text, name: text, widget: string}
-  - &email {label: Email, name: email, widget: string}
   - &facebook {label: Facebook Account, name: facebookAccount, widget: string}
   - &twitter {label: Twitter Account, name: twitterAccount, widget: string}
   - &invitationText {label: Invitation Text, name: invitationText, widget: string}
@@ -308,7 +307,6 @@ collections:
           - *address
           - *facebook
           - *twitter
-          - *email
           - *emailSubscriptionText
           - *emailSubscriptionLink
           - *copyright

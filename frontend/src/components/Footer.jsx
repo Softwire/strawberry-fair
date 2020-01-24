@@ -27,7 +27,6 @@ export const FooterDisplay = ({isPreview, CMSInput}) => {
                 <div className="column is-4 is-offset-1">
                     <ContactDetails 
                         address={footerContent.address}
-                        email={footerContent.email}
                         facebookAccount={footerContent.facebookAccount}
                         twitterAccount={footerContent.twitterAccount}
                     />
@@ -146,7 +145,6 @@ const getFooterContent = () => {
                         secondLine
                         thirdLine
                     }
-                    email
                     facebookAccount
                     twitterAccount
                     emailSubscriptionText
