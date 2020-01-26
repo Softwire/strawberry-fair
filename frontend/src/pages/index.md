@@ -49,6 +49,15 @@ contentBlocks:
       - alt: Happy crowds
         src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1579684375/Image%20Scrapbook/Gareth_Nunns_254_DSC_7613_m1a3ya.jpg
+      - alt: Man with microphone
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1580043119/Image%20Scrapbook/Gareth_Nunns_241_DSC_7520_oti2y2.jpg
+      - alt: Site crew
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1580042719/Image%20Scrapbook/Gareth_Nunns_017_DSC_6323_dwwkgi.jpg
+      - alt: Happy crowd
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1580043133/Image%20Scrapbook/Gareth_Nunns_200_DSC_7249_r4y9yu.jpg
     strawberryTile:
       isPublic: true
       text: >-
@@ -58,33 +67,33 @@ contentBlocks:
     title: Welcome to Strawberry Fair
   - _markdown_contentBody: "Strawberry Fair is a not-for-profit organisation run entirely by a team of volunteers (The Fairies!) who work throughout the year (yes it really does take that long to organise!) sorting out everything to do with the Fair; from finding artists and organising stages, to managing traders and fundraising, right through to working out how many toilets are needed....!!\r\n\nStrawberry Fair couldn't happen without all of the people who, generously, volunteer their time and effort throughout the to make our unique event happen."
     scrapbookImages:
-      - alt: Placeholder
+      - alt: Flying Pig stage
         src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/band_melwuk.jpg
-      - alt: Placeholder
+      - alt: Parade
         src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/banner-carrying_m0ufmy.jpg
-      - alt: Placeholder
+      - alt: Girl with guitar
         src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/crowd-shot_f84bne.jpg
-      - alt: Placeholder
+          https://res.cloudinary.com/strawberryfair/image/upload/v1580043160/Image%20Scrapbook/Gareth_Nunns_147_DSC_6981_kbsxhn.jpg
+      - alt: Drummers on parade
         src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1578398411/Image%20Scrapbook/drums_pgyyyt.jpg
-      - alt: Placeholder
+      - alt: Singer
         src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/guitar-girl_srefgz.jpg
-      - alt: Placeholder
+      - alt: Samba band
         src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/instruments_lral6p.jpg
-      - alt: Placeholder
+      - alt: Girls dancing
         src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/music_zpcrkm.jpg
-      - alt: Placeholder
+          https://res.cloudinary.com/strawberryfair/image/upload/v1580042736/Image%20Scrapbook/Gareth_Nunns_207_DSC_7285_wxuk6q.jpg
+      - alt: Stilt wedding
         src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/stilts_g7oq1b.jpg
-      - alt: Placeholder
+      - alt: Singer
         src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/music_zpcrkm.jpg
+          https://res.cloudinary.com/strawberryfair/image/upload/v1580043113/Image%20Scrapbook/Gareth_Nunns_253_DSC_7609_d49scp.jpg
     strawberryTile:
       isPublic: true
       text: >-
@@ -97,7 +106,7 @@ calendarBlock:
   title: Strawberry Fair committee meetings
 newsBlock:
   subtitle: Stay in the loop
-  title: Our news
+  title: Latest news
 twitterBlock:
   subtitle: Stay in the loop
   title: Join the conversation
