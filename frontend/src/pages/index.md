@@ -102,8 +102,8 @@ contentBlocks:
     subtitle: We always need more people to help us put on this magical day
     title: Help! Volunteer at Strawberry Fair
 calendarBlock:
-  subtitle: The next committee meetings are listed below and will be held at...
-  title: Strawberry Fair committee meetings
+  subtitle: 'Committee meetings, benefit gigs and events'
+  title: Upcoming meetings and events
 newsBlock:
   subtitle: Stay in the loop
   title: Latest news
