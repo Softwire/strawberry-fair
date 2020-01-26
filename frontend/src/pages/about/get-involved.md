@@ -34,6 +34,8 @@ There are a number of jobs we need to fill every year. You can find out a bit mo
 
 If you're not sure yet what you'd be interested in doing but would still like to get involved, then come to a meeting anyway and see what takes your fancy. 
 
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1579684382/Image%20Scrapbook/Gareth_Nunns_259_DSC_7639_xdpod8.jpg" alt="alt" class="html-embedded-image-medium"></figure>
+
 **Stewarding**
 
 Stewards are absolutely key to the running of both the Fair and Parade. Stewards usually work in pairs, so it is an excellent way for you and a friend to get involved on the day. They provide information to fair-goers, watch out for health and safety issues, and assist in emergencies. Separately, we also need people to hand out programmes, collect donations and sell our merchandise. Just two hours of your time on the day will help us enormously. <mailto:iwanttohelp@strawberry-fair.org.uk>.
