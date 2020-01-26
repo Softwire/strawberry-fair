@@ -1,5 +1,5 @@
 ---
 text: Get Involved
-link: /events/index
+link: /about/about-the-fair
 ---
 
