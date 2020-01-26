@@ -13,7 +13,7 @@ Strawberry Fair takes place on Midsummer Common in Cambridge on the first Saturd
 
 ## How much does it cost?
 
-Absolutely nothing! It is our strong belief that all music and entertainment should be provided free of charge to the general public. We fund raise throughout the year to do so and your donations http://strawberry-fair.org.uk/pages/donate/ really support us to do this.
+Absolutely nothing! It is our strong belief that all music and entertainment should be provided free of charge to the general public. We fund raise throughout the year to do so and your donations really do make a massive difference, as we operate on a shoestring budget.
 
 ## Timings for the Day
 
