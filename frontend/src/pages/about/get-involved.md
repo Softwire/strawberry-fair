@@ -34,7 +34,7 @@ There are a number of jobs we need to fill every year. You can find out a bit mo
 
 If you're not sure yet what you'd be interested in doing but would still like to get involved, then come to a meeting anyway and see what takes your fancy. 
 
-<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1579684382/Image%20Scrapbook/Gareth_Nunns_259_DSC_7639_xdpod8.jpg" alt="alt" class="html-embedded-image-medium"></figure>
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1579684382/Image%20Scrapbook/Gareth_Nunns_259_DSC_7639_xdpod8.jpg" alt="Steward" class="html-embedded-image-medium"></figure>
 
 **Stewarding**
 
@@ -44,7 +44,7 @@ Stewards are absolutely key to the running of both the Fair and Parade. Stewards
 
 The Strawberry Fair site crew is renowned across the country as one of the most efficient and 'on the ball' event teams. If you don't mind getting your hands dirty and shifting all kinds of infrastructure (staging, fencing, tables, chairs etc) and are available anytime - even just for one day - during the week before the Fair or a few days afterwards, then please get in touch. No prior experience or skills required, just a smile and a willing disposition. <mailto:iwanttohelp@strawberry-fair.org.uk>
 
-<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1580042719/Image%20Scrapbook/Gareth_Nunns_017_DSC_6323_dwwkgi.jpg" alt="alt" class="html-embedded-image-medium"></figure>
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1580042719/Image%20Scrapbook/Gareth_Nunns_017_DSC_6323_dwwkgi.jpg" alt="Site crew" class="html-embedded-image-medium"></figure>
 
 **Communications & Publicity**
 
@@ -73,6 +73,8 @@ Strawberry Fair relies on the donations we receive throughout the year and one o
 **Trader Management**
 
 Attracting a wide variety of interesting businesses and traders to the market areas of the fair is crucial to the vibe we set out to create. With over 200 traders on site, our team recruit, book-in and liaise in advance before co-ordinating the arrival and location siting at the fair. <mailto:iwanttohelp@strawberry-fair.org.uk>
+
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1580054859/Committee-pics/sfmeeting_lgoskf.jpg" alt="Committee meeting" class="html-embedded-image-medium"></figure>
 
 **Local Relationships**
 
