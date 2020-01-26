@@ -5,8 +5,8 @@ pageTitles:
   - pageTitle: About/Frequently Asked Questions
   - pageTitle: About/Organisation
   - pageTitle: About/Full width content page
-  - pageTitle: Forms/Registration Form
   - pageTitle: About/History
+  - pageTitle: About/Environment
 notes: >-
   * You can only link to pages that have been published so you might need to
   publish the page, then edit the nav bar. 
