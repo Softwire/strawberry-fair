@@ -10,7 +10,10 @@ heroData:
   isActive: true
 strawberryTiles:
   - strawberryTile:
-      isPublic: false
+      isPublic: true
+      text: >-
+        Strawberry Fair is registered as a Community Interest Company (CIC) and
+        is run entirely by volunteers
     tile: Strawberry Tile
 ---
 ## Starting the summer season in Cambridge for over 40 years
@@ -24,6 +27,8 @@ The Fair is run entirely by volunteers (affectionately known as Strawberry Fairi
 We're all about taking pride in our community and put the local at the heart of the Fair as much as possible. We are not-for-profit and non-political, independent and self-funding. Strawberry Fair is run by the community for the community. 
 
 We love to see new faces among the Strawberry Fairies and need volunteers throughout the year to make the day of the Fair a success.
+
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1580044562/Image%20Scrapbook/Gareth_Nunns_114_DSC_6844_mievyu.jpg" alt="alt" class="html-embedded-image-large"></figure>
 
 ## Yes, but what IS Strawberry Fair?
 
