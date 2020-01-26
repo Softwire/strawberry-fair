@@ -26,7 +26,7 @@ Volunteering for Strawberry Fair is a great opportunity to get experience and de
 
 To get in touch and find out more, please complete our volunteers' enquiry form - We're sure we can find something that you'd be interested in!
 
-What we need
+# What we need
 
 Can you help us with any of the roles below? How about something else entirely?
 
@@ -34,50 +34,52 @@ There are a number of jobs we need to fill every year. You can find out a bit mo
 
 If you're not sure yet what you'd be interested in doing but would still like to get involved, then come to a meeting anyway and see what takes your fancy. 
 
-Stewarding
+**Stewarding**
 
-Stewards are absolutely key to the running of both the Fair and Parade. Stewards usually work in pairs, so it is an excellent way for you and a friend to get involved on the day. They provide information to fair-goers, watch out for health and safety issues, and assist in emergencies. Separately, we also need people to hand out programmes, collect donations and sell our merchandise. Just two hours of your time on the day will help us enormously. iwanttohelp@strawberry-fair.org.uk.
+Stewards are absolutely key to the running of both the Fair and Parade. Stewards usually work in pairs, so it is an excellent way for you and a friend to get involved on the day. They provide information to fair-goers, watch out for health and safety issues, and assist in emergencies. Separately, we also need people to hand out programmes, collect donations and sell our merchandise. Just two hours of your time on the day will help us enormously. <mailto:iwanttohelp@strawberry-fair.org.uk>.
 
-Site Crew
+**Site Crew**
 
-The Strawberry Fair site crew is renowned across the country as one of the most efficient and 'on the ball' event teams. If you don't mind getting your hands dirty and shifting all kinds of infrastructure (staging, fencing, tables, chairs etc) and are available anytime - even just for one day - during the week before the Fair or a few days afterwards, then please get in touch. No prior experience or skills required, just a smile and a willing disposition. iwanttohelp@strawberry-fair.org.uk
+The Strawberry Fair site crew is renowned across the country as one of the most efficient and 'on the ball' event teams. If you don't mind getting your hands dirty and shifting all kinds of infrastructure (staging, fencing, tables, chairs etc) and are available anytime - even just for one day - during the week before the Fair or a few days afterwards, then please get in touch. No prior experience or skills required, just a smile and a willing disposition. <mailto:iwanttohelp@strawberry-fair.org.uk>
 
-Communications & Publicity
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1580042719/Image%20Scrapbook/Gareth_Nunns_017_DSC_6323_dwwkgi.jpg" alt="alt" class="html-embedded-image-medium"></figure>
 
-We love Strawberry Fair and we want the whole of Cambridge to as well. The communications team work to promote the Fair itself and other Strawberry events throughout the year, in the local media, at gigs and events. It is also responsible for producing the printed programme for the Fair. So if you're good with people and good with words, get in touch! iwanttohelp@strawberry-fair.org.uk
+**Communications & Publicity**
 
-Media Team
+We love Strawberry Fair and we want the whole of Cambridge to as well. The communications team work to promote the Fair itself and other Strawberry events throughout the year, in the local media, at gigs and events. It is also responsible for producing the printed programme for the Fair. So if you're good with people and good with words, get in touch! <mailto:iwanttohelp@strawberry-fair.org.uk>
 
-Are you a budding director? A keen photographer? We're on the lookout for people to help us capture the essence and the memories of the fair. iwanttohelp@strawberry-fair.org.uk
+**Media Team**
 
-Festival Admin
+Are you a budding director? A keen photographer? We're on the lookout for people to help us capture the essence and the memories of the fair. <mailto:iwanttohelp@strawberry-fair.org.uk>
 
-The Festival Admin team liaises with stallholders, organises the Fair's official merchandise and handles all on-the-day administration. If you're methodical and keen to learn the nuts and bolts of event management, the Festival Admin team wants to hear from you. iwanttohelp@strawberry-fair.org.uk
+**Festival Admin**
 
-Environment Team
+The Festival Admin team liaises with stallholders, organises the Fair's official merchandise and handles all on-the-day administration. If you're methodical and keen to learn the nuts and bolts of event management, the Festival Admin team wants to hear from you. <mailto:iwanttohelp@strawberry-fair.org.uk>
 
-Ready to muck in? Strawberry Fair strives to be environmentally friendly so we recycle as much as we can - about 40% at the moment. This year we want to recycle at least 50%, for which we will need your help - just turn up on the day, or the Sunday and Monday after, and ask for a bin bag. Gloves and grabbers are provided, though if you have them please bring your own! Just a couple of hours of your time will really help get Midsummer Common cleared up and given back to the cows. iwanttohelp@strawberry-fair.org.uk
+**Environment Team**
 
-Artists/Designers
+Ready to muck in? Strawberry Fair strives to be environmentally friendly so we recycle as much as we can - about 40% at the moment. This year we want to recycle at least 50%, for which we will need your help - just turn up on the day, or the Sunday and Monday after, and ask for a bin bag. Gloves and grabbers are provided, though if you have them please bring your own! Just a couple of hours of your time will really help get Midsummer Common cleared up and given back to the cows. <mailto:iwanttohelp@strawberry-fair.org.uk>
 
-Every year we're always looking for the creative types to help us dress and decorate the site & stage areas, draw funky logos and posters during planning, or create merchandise that we can sell. iwanttohelp@strawberry-fair.org.uk
+**Artists/Designers**
 
-Fundraising
+Every year we're always looking for the creative types to help us dress and decorate the site & stage areas, draw funky logos and posters during planning, or create merchandise that we can sell. <mailto:iwanttohelp@strawberry-fair.org.uk>
 
-Strawberry Fair relies on the donations we receive throughout the year and one of the ways to do this is ensuring we are more than just a day in June for the local community. If you have an idea and the time to dedicate to its success, let us know. We have a varied and experienced team of people that may be able to help you. iwanttohelp@strawberry-fair.org.uk
+**Fundraising**
 
-Trader Management
+Strawberry Fair relies on the donations we receive throughout the year and one of the ways to do this is ensuring we are more than just a day in June for the local community. If you have an idea and the time to dedicate to its success, let us know. We have a varied and experienced team of people that may be able to help you. <mailto:iwanttohelp@strawberry-fair.org.uk>
 
-Attracting a wide variety of interesting businesses and traders to the market areas of the fair is crucial to the vibe we set out to create. With over 200 traders on site, our team recruit, book-in and liaise in advance before co-ordinating the arrival and location siting at the fair. iwanttohelp@strawberry-fair.org.uk
+**Trader Management**
 
-Local Relationships
+Attracting a wide variety of interesting businesses and traders to the market areas of the fair is crucial to the vibe we set out to create. With over 200 traders on site, our team recruit, book-in and liaise in advance before co-ordinating the arrival and location siting at the fair. <mailto:iwanttohelp@strawberry-fair.org.uk>
 
-Important to the Fair is strengthening the link and maintaining the strong relationships with our local businesses and community. We work hard on this throughout the year and are on the lookout for someone to co-ordinate these activities, ensuring the Fair gives back as much as we receive. iwanttohelp@strawberry-fair.org.uk.
+**Local Relationships**
 
-Strawberry Fair Committee
+Important to the Fair is strengthening the link and maintaining the strong relationships with our local businesses and community. We work hard on this throughout the year and are on the lookout for someone to co-ordinate these activities, ensuring the Fair gives back as much as we receive. <mailto:iwanttohelp@strawberry-fair.org.uk>.
+
+**Strawberry Fair Committee**
 
 If you are also interested in joining the Strawberry Fair committee with the planning of the fair or co-ordinating an area, you'll find more information here.
 
-Performing
+**Performing**
 
-Did you come here looking to perform at the fair? Email the programming team at iwanttoplay@strawberry-fair.org.uk.
+Did you come here looking to perform at the fair? Email the programming team at <mailto:iwanttoplay@strawberry-fair.org.uk>.
