@@ -1,10 +1,9 @@
 ---
 title: About Us
 pageTitles:
-  - pageTitle: About/About the Fair
   - pageTitle: About/Frequently Asked Questions
+  - pageTitle: About/About the Fair
   - pageTitle: About/Organisation
-  - pageTitle: About/Full width content page
   - pageTitle: About/History
   - pageTitle: About/Environment
 notes: >-
