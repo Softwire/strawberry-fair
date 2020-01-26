@@ -4,8 +4,9 @@ title: History
 subtitle: A survivor from the free festival movement
 heroData:
   heroImages:
-    - {}
-  isActive: false
+    - src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580047824/Banner/old-fair_gybfma.jpg
+  isActive: true
 strawberryTiles:
   - strawberryTile:
       isPublic: false
@@ -30,4 +31,6 @@ Growth continued in the 1990s - a trapeze act provided a new finale in 1991, and
 
 In the past decade regulatory requirements and economic conditions have made it ever harder to stage the fair - the 1989 fair cost £6,000, but thirty years later this figure is well over £100,000, all of which has to be raised from traders, merchandise, benefit events and donations. With the Police appealing the Fair's licence, the committee decided not to hold the 2010 event, taking the year off as an opportunity to rethink the Fair's future. Strawberry Fair returned in 2011 with a new site layout, new venues and a renewed emphasis on kids and young people. 
 
-2019 marked forty five years since the first Strawberry Fair and, with your continuing support, it will still be going in another forty five years: a day of music and entertainment, provided free of charge, by the people of Cambridge, for the people of Cambridge.
+2019 marked forty five years since the first Strawberry Fair and, with your continuing support, it will still be going in another forty five years: a day of music and entertainment, provided free of charge, by the people of Cambridge, for the people of Cambridge. 
+
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1580048151/Historical%20pics/img20180228_11480946_tshdpy.jpg" alt="alt" class="html-embedded-image-large"></figure>
