@@ -31,14 +31,18 @@ Cambridge Museum of Technology is a Charitable Incorporated Organisation registe
 
 # Phoenix Trust
 
-Phoenix Trust (Milton) is a charity and social enterprise providing opportunities for adults with learning difficulties and students with additional or complex needs to gain work experience and life skills. Phoenix produces and sells hand-crafted paving slabs, garden ornaments, a range of hand-made wooden items, such as picnic benches, work benches, log stores and a variety of plants for the garden. Phoenix is tucked away in Milton alongside the Country Park, and open Tuesday to Friday, 8.30 am -3.30pm. Contact 01223 420669 for any enquiries.
+
 
 <figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1580051962/Partners/phoenix_logo_zvrcao.jpg" alt="Phoenix Trust Logo" class="html-embedded-image-medium"></figure>
 
+Phoenix Trust (Milton) is a charity and social enterprise providing opportunities for adults with learning difficulties and students with additional or complex needs to gain work experience and life skills. Phoenix produces and sells hand-crafted paving slabs, garden ornaments, a range of hand-made wooden items, such as picnic benches, work benches, log stores and a variety of plants for the garden. Phoenix is tucked away in Milton alongside the Country Park, and open Tuesday to Friday, 8.30 am -3.30pm. Contact 01223 420669 for any enquiries.
+
 # Cambridgeshire Hearing Help
+
+
+
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1580052245/Partners/cambridgeshire_hearing_help_eomnga.jpg" alt="Cambridgeshire Hearing Help logo" class="html-embedded-image-medium"></figure>
 
 Cambridgeshire Hearing Help supports people with hearing loss to maintain their wellbeing and independence. Its services include the provision of community-based NHS hearing aid maintenance for 6,000 people per year who face barriers to accessing mainstream audiology services for routine hearing aid maintenance because they are older, frail, have other disabilities, or live in rural areas. Other services include: hearing loss information/advice/signposting, awareness-raising talks to community groups, hearing-aid maintenance training for residential homes and care agencies, lip-reading classes in Cambridge, Living Well with Hearing Loss workshops for people with a newly acquired hearing loss, peer support, and rewarding volunteering roles.
 
 For more information, visit their website, email them, or call them on 01223 416141.
-
-<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1580052245/Partners/cambridgeshire_hearing_help_eomnga.jpg" alt="Cambridgeshire Hearing Help logo" class="html-embedded-image-medium"></figure>
