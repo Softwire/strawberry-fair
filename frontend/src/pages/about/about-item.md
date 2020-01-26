@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
-title: About Strawberry Fair
-subtitle: What makes Strawberry Fair special?
+title: Lose this page
+subtitle: 'What makes Strawberry Fair special? '
 heroData:
   isActive: true
 strawberryTiles:
