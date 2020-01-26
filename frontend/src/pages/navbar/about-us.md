@@ -6,6 +6,7 @@ pageTitles:
   - pageTitle: About/Organisation
   - pageTitle: About/Full width content page
   - pageTitle: Forms/Registration Form
+  - pageTitle: About/History
 notes: >-
   * You can only link to pages that have been published so you might need to
   publish the page, then edit the nav bar. 
