@@ -36,8 +36,6 @@ The Fair has community stalls where you can find out what local people are doing
 
 In Cambridge the Strawberry season starts early, with workshops, benefit gigs and of course the Cambridge Band Competition (now in it's 35th year), which starts with the new Under 18s competition in November, through to the various heats and finals in March. 
 
-If you live in or around Cambridge, there are plenty of opportunities for you to create, perform and take part. 
-
-As you explore our website you'll find more information on the various elements that make us what we are. 
+If you live in or around Cambridge, there are plenty of opportunities for you to create, perform and take part. As you explore our website you'll find more information on the various elements that make us what we are. 
 
 And of course to the performers, the designers and the Fairies that all give up many of their own hours for free to make this happen: Strawberry Love to you all! x.
