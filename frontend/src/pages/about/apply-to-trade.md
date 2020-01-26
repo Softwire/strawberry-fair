@@ -27,7 +27,7 @@ Bar pitches for 2020 have already been allocated. No new applications are being 
 
 Please complete the non-food trader application form here:
 
-https://docs.google.com/forms/d/e/1FAIpQLSeZJci_Ql8b4tX0iJBwhtfxhuHaXASK5Tty0GfzgEJlX5gcjw/viewform?usp=pp_url
+[Non-food trader application form](https://docs.google.com/forms/d/e/1FAIpQLSeZJci_Ql8b4tX0iJBwhtfxhuHaXASK5Tty0GfzgEJlX5gcjw/viewform?usp=pp_url)
 
 If you have any queries, please see our [Trader FAQ](http://strawberry-fair.org.uk/about/trader-faq/), or  email <mailto:traders@strawberry-fair.org.uk> if you can't find the answer.
 
@@ -35,7 +35,7 @@ If you have any queries, please see our [Trader FAQ](http://strawberry-fair.org.
 
 Please complete the food trader application form here:
 
-https://docs.google.com/forms/d/e/1FAIpQLSdgFAK1bt0EnOKAiskEFgvIMT-SVmU5FW-kMRMM6ZJ2o0LEHA/viewform?usp=pp_url
+[Food trader application form](https://docs.google.com/forms/d/e/1FAIpQLSdgFAK1bt0EnOKAiskEFgvIMT-SVmU5FW-kMRMM6ZJ2o0LEHA/viewform?usp=pp_url)
 
 Applications for food trader pitches at the 2020 fair are open until 29th February 2020.
 
