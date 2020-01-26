@@ -36,4 +36,4 @@ You can ask us to remove your personal information or correct inaccurate or out 
 
 You can specify the level of future contact you receive from Strawberry Fair and we will respect your wishes.
 
-If you wish to amend your details, or be removed from our contact database, or if you wish to contact us for any other reason in connection with this privacy policy, please do so by email to <mailto:enquiries@strawberry-fair.org.uk>, or in writing to Strawberry Fair, PO BOX 1261, Cambridge, CB1 0YJ.
+If you wish to amend your details, or be removed from our contact database, or if you wish to contact us for any other reason in connection with this privacy policy, please do so by email to <mailto:enquiries@strawberry-fair.org.uk>, or in writing to: Strawberry Fair, PO BOX 1261, Cambridge, CB1 0YJ.
