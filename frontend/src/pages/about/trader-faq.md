@@ -15,3 +15,5 @@ strawberryTiles:
 You can now find a downloadable, and printable version of our Trader Frequently Asked Questions here: 
 
  [Strawberry Fair Trader FAQ](https://docs.google.com/document/d/1VK62GAmE1bzmHqwnoVzksYNBo0hmcGAaqFn3pZUGEgY/edit?usp=sharing)
+
+If you have read the FAQ and still have questions, please email <mailto:traders@strawberry-fair.org.uk>
