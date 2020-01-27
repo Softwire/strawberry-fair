@@ -7,8 +7,6 @@ strawberryTiles:
       isPublic: false
     tile: Strawberry Tile
 ---
-https://docs.google.com/document/d/1VK62GAmE1bzmHqwnoVzksYNBo0hmcGAaqFn3pZUGEgY/edit?usp=sharing
-
 # Applications are open to trade at Strawberry Fair on 6th June 2020
 
 We are looking for traders and organisations offering as many different flavours and tastes, products and produce, weird and wonderful hobbies and interesting people to amuse and entertain our visitors. Our market is one of the most important features of the Fair - bringing a diverse range of stalls right to the heart of Cambridge.
