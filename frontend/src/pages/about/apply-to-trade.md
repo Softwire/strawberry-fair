@@ -40,7 +40,7 @@ If you have any queries, please see [Trader FAQ](https://docs.google.com/documen
 
 Please complete the food trader application form here:
 
-Food Trader Application Form
+[Food Trader Application Form](http://strawberry-fair.netlify.com/forms/food-trader-application)
 
 Applications for food trader pitches at the 2020 fair are open until 29th February 2020.
 
