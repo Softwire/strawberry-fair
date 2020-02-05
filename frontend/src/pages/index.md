@@ -6,6 +6,9 @@ heroData:
     - alt: Strawberry Fair Banner
       src: >-
         https://res.cloudinary.com/strawberryfair/image/upload/v1580041740/Banner/Gareth_Nunns_DSC_9179_qyvav9.jpg
+    - alt: High definition banner
+      src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580896136/Banner/Hidef_banner_x6jywu.jpg
     - alt: Panorama from stage
       src: >-
         https://res.cloudinary.com/strawberryfair/image/upload/v1580041739/Banner/East_Stage_Panorama_2_web_qbzcvf.jpg
