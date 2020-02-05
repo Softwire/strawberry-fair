@@ -1,6 +1,7 @@
 ---
 title: Traders
 pageTitles:
-  - pageTitle: Forms/Registration Form
+  - pageTitle: About/Apply to Trade
+  - pageTitle: About/Trader FAQ
 ---
 

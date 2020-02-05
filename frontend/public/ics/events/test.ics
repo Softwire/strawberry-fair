@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:adamgibbons/ics
+METHOD:PUBLISH
+X-PUBLISHED-TTL:PT1H
+BEGIN:VEVENT
+UID:4657aed3-7f0c-4fdb-8389-a4a1868b3849
+SUMMARY:Parade
+DTSTAMP:20200205T161400Z
+DTSTART:20211223T093000Z
+DTEND:20211223T103000Z
+DESCRIPTION:Join the Parade! The Parade marks the start of Strawberry Fair\
+	, leaving from Christ's Pieces\, venturing through town\, around the Marke
+	t Square and back to Midsummer Common in full technicolour glory. From sam
+	ba to capoeira\; from belly dancers to stiltwalking pirates to Lindy Hoppe
+	rs\, including local costume designers\, school children\, parents\, dance
+	rs\, taggers along and random members of the public\, the Strawberry Fair 
+	Parade is the most colourful and exciting spectacle to grace the streets o
+	f Cambridge. Get involved We'd love everyone and anyone to join the parade
+	. We're also looking for local community groups involving dance\, movement
+	 and colourful displays to join us in the parade and on our dedicated perf
+	ormance arena 'The Village Green' after the parade\, so if you know of a h
+	idden gem in Cambridge's fair city\, please get in touch. If you want to g
+	et involved or have any ideas for the parade\, please fill in this form or
+	 email parade@strawberry-fair.org.uk. Keep up to date with the latest news
+	\, including costume making\, on the Facebook page.
+END:VEVENT
+END:VCALENDAR

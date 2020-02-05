@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:adamgibbons/ics
+METHOD:PUBLISH
+X-PUBLISHED-TTL:PT1H
+BEGIN:VEVENT
+UID:767398af-d833-48d1-aa6d-c0661bd63e61
+SUMMARY:The Half-century
+DTSTAMP:20200205T161400Z
+DTSTART:20210101T000000Z
+DTEND:20700101T000000Z
+DESCRIPTION:Well\, well... "L"!! "L" is the Roman numeral for "fifty"\, and
+	 that's the stretch of time we're celebrating the start of here!
+END:VEVENT
+END:VCALENDAR

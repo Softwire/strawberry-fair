@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:adamgibbons/ics
+METHOD:PUBLISH
+X-PUBLISHED-TTL:PT1H
+BEGIN:VEVENT
+UID:98d056b4-8614-4787-afe1-7e114be7c4bf
+SUMMARY:Ozymandias
+DTSTAMP:20200205T161400Z
+DTSTART:20200601T120000Z
+DTEND:20200601T120000Z
+DESCRIPTION:By Percy Shelley I met a traveller from an antique land\, Who s
+	aid—“Two vast and trunkless legs of stone Stand in the desert. . . . Near 
+	them\, on the sand\, Half sunk a shattered visage lies\, whose frown\, And
+	 wrinkled lip\, and sneer of cold command\, Tell that its sculptor well th
+	ose passions read Which yet survive\, stamped on these lifeless things\, T
+	he hand that mocked them\, and the heart that fed\; And on the pedestal\, 
+	these words appear: My name is Ozymandias\, King of Kings\; Look on my Wor
+	ks\, ye Mighty\, and despair! Nothing beside remains. Round the decay Of t
+	hat colossal Wreck\, boundless and bare The lone and level sands stretch f
+	ar away.”
+END:VEVENT
+END:VCALENDAR
