@@ -12,6 +12,7 @@ src/data/pagePaths.json
 
 # IDE settings
 .vscode
+.idea
 
 # Unit test snapshots
 __tests__/__snapshots__
