@@ -10,7 +10,7 @@ fragment ImageFluidFragment on MarkdownRemarkFrontmatter {
     alt
     srcNode {
       childImageSharp {
-        fluid(traceSVG: {background: "#fff", color: "#ae1414",  turdSize: 50}) {
+        fluid(quality: 80, traceSVG: {background: "#fff", color: "#ae1414",  turdSize: 50}) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
@@ -25,13 +25,13 @@ fragment ImageFluidFixedAspectFragment on MarkdownRemarkFrontmatter {
     alt
     srcNode {
       childImageSharp {
-        fluid(traceSVG: {background: "#fff", color: "#ae1414",  turdSize: 50}) {
+        fluid(quality: 80, traceSVG: {background: "#fff", color: "#ae1414",  turdSize: 50}) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
-        editedFluid: fluid(traceSVG: {background: "#fff", color: "#ae1414",  turdSize: 50}, duotone: {highlight: "ae1414", shadow: "1d1d1d", opacity: 70}) {
+        editedFluid: fluid(quality: 80, traceSVG: {background: "#fff", color: "#ae1414",  turdSize: 50}, duotone: {highlight: "ae1414", shadow: "1d1d1d", opacity: 70}) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
-        fixedAspect: resize(width: 1000, height: 800) {
+        fixedAspect: resize(quality: 80, width: 1000, height: 800) {
           src
         }
       }
