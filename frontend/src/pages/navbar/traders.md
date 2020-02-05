@@ -1,7 +1,7 @@
 ---
 title: Traders
 pageTitles:
-  - pageTitle: Forms/Registration Form
-  - pageTitle: 'Forms/Food Trader Application '
+  - pageTitle: About/Apply to Trade
+  - pageTitle: About/Trader FAQ
 ---
 
