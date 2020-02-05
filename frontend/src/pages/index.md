@@ -11,7 +11,7 @@ heroData:
         https://res.cloudinary.com/strawberryfair/image/upload/v1580902878/Banner/Hidef_mother_son_kkuljg.jpg
     - alt: Strawberry Fair Banner 2
       src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1580903249/Banner/Hidef_sf_banner_p7ifbf.jpg
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580908539/Banner/Hidef_sf_banner_2_p0u2oz.jpg
     - alt: Kid soft focus
       src: >-
         https://res.cloudinary.com/strawberryfair/image/upload/v1580896136/Banner/Hidef_banner_x6jywu.jpg
