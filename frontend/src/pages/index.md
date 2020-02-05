@@ -6,27 +6,27 @@ heroData:
     - alt: Strawberry Fair Banner
       src: >-
         https://res.cloudinary.com/strawberryfair/image/upload/v1580041740/Banner/Gareth_Nunns_DSC_9179_qyvav9.jpg
-    - alt: High definition banner
-      src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1580896136/Banner/Hidef_banner_x6jywu.jpg
-    - alt: Panorama from stage
-      src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1580041739/Banner/East_Stage_Panorama_2_web_qbzcvf.jpg
-    - alt: Crowds and tents
-      src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1578398228/Banner/slide-crowd_jnl1lw.jpg
     - alt: Happy people
       src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1580042011/Banner/Gareth_Nunns_052_DSC_6515_gatxsl.jpg
-    - alt: Skies
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580902878/Banner/Hidef_mother_son_kkuljg.jpg
+    - alt: Strawberry Fair Banner 2
       src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1580041738/Banner/sky_lmvpbk.jpg
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580903249/Banner/Hidef_sf_banner_p7ifbf.jpg
+    - alt: Kid soft focus
+      src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580896136/Banner/Hidef_banner_x6jywu.jpg
     - alt: Samba band
       src: >-
         https://res.cloudinary.com/strawberryfair/image/upload/v1580042014/Banner/Arco_z4f9oy.jpg
+    - alt: Panorama from stage
+      src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580902733/Banner/Hidef_east_stage_oagns6.jpg
     - alt: Crowd
       src: >-
         https://res.cloudinary.com/strawberryfair/image/upload/v1580042492/Banner/18020191843_ed6f984240_4k-banner_cua4t4.jpg
+    - alt: Skies
+      src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580041738/Banner/sky_lmvpbk.jpg
   isActive: true
 contentBlocks:
   - _markdown_contentBody: "From humble beginnings, Strawberry Fair has grown to be the most popular free, entirely volunteer run, one day music & arts event in Cambridge (and probably across Europe!), attracting over 30,000 visitors throughout the day. On the first Saturday of June and now passed our 40th year, residents and visitors have gathered together on Midsummer Common to celebrate their vibrant and creative city.\r\n\nThe Fair is run entirely by volunteers (affectionately known as Strawberry Fairies) who give their energy, imagination and vision to present to their friends and neighbours in Cambridge a great free day out."
