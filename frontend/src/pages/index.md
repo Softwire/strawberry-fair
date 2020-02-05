@@ -17,7 +17,7 @@ heroData:
         https://res.cloudinary.com/strawberryfair/image/upload/v1580896136/Banner/Hidef_banner_x6jywu.jpg
     - alt: Samba band
       src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1580042014/Banner/Arco_z4f9oy.jpg
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580904067/Banner/Hidef_samba_d17yqw.jpg
     - alt: Panorama from stage
       src: >-
         https://res.cloudinary.com/strawberryfair/image/upload/v1580902733/Banner/Hidef_east_stage_oagns6.jpg
