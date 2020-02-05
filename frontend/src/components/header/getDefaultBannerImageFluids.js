@@ -9,7 +9,7 @@ export const getDefaultBannerImageFluids = () => {
       children {
         children {
           ... on ImageSharp {
-            fluid(traceSVG: {background: "#fff", color: "#ae1414",  turdSize: 50}) {
+            fluid(maxWidth: 2000, traceSVG: {background: "#fff", color: "#ae1414",  turdSize: 50}) {
               ...GatsbyImageSharpFluid_tracedSVG
             }
           }

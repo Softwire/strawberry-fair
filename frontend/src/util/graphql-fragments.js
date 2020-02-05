@@ -10,7 +10,7 @@ fragment ImageFluidFragment on MarkdownRemarkFrontmatter {
     alt
     srcNode {
       childImageSharp {
-        fluid(traceSVG: {background: "#fff", color: "#ae1414",  turdSize: 50}) {
+        fluid(quality: 80, traceSVG: {background: "#fff", color: "#ae1414",  turdSize: 50}) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
@@ -51,7 +51,7 @@ fragment HeroFragment on MarkdownRemarkConnection {
           alt
           srcNode {
             childImageSharp {
-              fluid(traceSVG: {background: "#fff", color: "#ae1414",  turdSize: 50}) {
+              fluid(maxWidth: 2000, traceSVG: {background: "#fff", color: "#ae1414",  turdSize: 50}) {
                 ...GatsbyImageSharpFluid_tracedSVG
               }
             }
