@@ -3,9 +3,7 @@ templateKey: about-page
 title: Apply to Trade
 subtitle: ''
 heroData:
-  heroImages:
-    - src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1580041739/Banner/East_Stage_Panorama_2_web_qbzcvf.jpg
+  heroImages: []
   isActive: true
 strawberryTiles:
   - strawberryTile:
