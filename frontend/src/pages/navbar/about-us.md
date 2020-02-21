@@ -4,8 +4,8 @@ pageTitles:
   - pageTitle: About/Get Involved
   - pageTitle: About/Frequently Asked Questions
   - pageTitle: About/About the Fair
-  - pageTitle: About/Organisation
   - pageTitle: About/History
+  - pageTitle: About/Organisation
   - pageTitle: About/Environment
   - pageTitle: About/Bucket Collection Partners
 notes: >-
