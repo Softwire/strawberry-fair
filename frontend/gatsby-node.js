@@ -31,6 +31,8 @@ exports.sourceNodes = async ({actions, cache, store, createNodeId, createContent
     // Handle case where no images come back
     if (bannerImagesJson.total_count > 0) {
       bannerImagesList = bannerImagesJson.resources.map(resource => resource.url)
+    } else {
+      console.warn("No banner images found. Is this intentional?")
     }
   } catch (e) {
     // API call failed
@@ -176,19 +178,26 @@ const deepConvertImageUrlsToGatsbyNodes = async (obj, parentNodeId, createNode, 
   for (let i = 0; i < values.length; i++) {
     const value = values[i]
     if ((typeof value === 'string' || value instanceof String) && value.startsWith('https://res.cloudinary.com/strawberryfair/image/upload/')) {
-      const fileNode = await createRemoteFileNode({
-        url: value,
-        parentNodeId,
-        createNode,
-        createNodeId,
-        cache,
-        store,
-      })
+      try {
+        const fileNode = await createRemoteFileNode({
+          url: value,
+          parentNodeId,
+          createNode,
+          createNodeId,
+          cache,
+          store,
+        })
+      
       // if the file was created, attach the new node to the parent node
       if (fileNode) {
         // eslint-disable-next-line require-atomic-updates
         obj.srcNode___NODE = fileNode.id
       }
+
+    } catch (e) {
+      console.error(`An error occured accessing an image. Has it been removed? ${value}`)
+    }
+
     } else if (typeof value === 'object' && value !== null) {
       await deepConvertImageUrlsToGatsbyNodes(value, parentNodeId, createNode, createNodeId, cache, store)
     } 
