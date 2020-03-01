@@ -19,7 +19,7 @@ Strawberry Fair 2019 in the Eastern Bloco Area was a beautiful sunny Saturday of
 
 <figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1582668256/Ian%27s%20Pictures/Eastern%20Bloco/Eastern_Blocco_9_fwvmzd.jpg" alt="alt" class="html-embedded-image-medium"></figure>
 
-Programme Information - What Happened....
+Programme Information - What Happened....
 
 * In and around The Geodisic dome; arty workshops, discussions and chill out space;
 * Free Shop & Freetale; Challenge capitalism and get your next outfit for free;
@@ -27,7 +27,7 @@ Strawberry Fair 2019 in the Eastern Bloco Area was a beautiful sunny Saturday of
 * Wild Strawberries Festival Stage; spoken word, Open Mic with special guests, Strawberry Slam in assoc with Hammer & Tongue and Strawberry Jam to finish;
 * Mrs Fubbs Parlour; Celebrate the body & all its bits; A salubrious installation by Helen Judge, Jane Hellings and Cathy Dunbar;
 * Pete Treglown; Multimedia Artist with Listening Post;
-* Oblique Arts; ‘Wall of Faces’ Interactive sculpture;
+* Oblique Arts; ‘Wall of Faces’ Interactive sculpture;
 * Cambridge Community Art; photography exhibition;
 * Haddenham Art Centre; Interactive giant collective Jigsaw;
 * Archaeology & Anthropology Museum; interactive sculpture and information, ‘A Message to our Oceans';
@@ -39,9 +39,7 @@ Strawberry Fair 2019 in the Eastern Bloco Area was a beautiful sunny Saturday of
 
 And in our beautiful 25 foot Geodesic Dome performances by SIN-CRU - about mental health; Steven Carne - comedy about activism around anti-privatisation of the NHS; Junk Modelling with Cambridge Greenpeace and other things to be announced.
 
-
-
-## A Trio of Local Environmental Campaigning Groups were there too: 
+**A Trio of Local Environmental Campaigning Groups were there too:** 
 
 * Cambridge Friends of the Earth: challenging environmentally damaging activities and policies and promoting sustainable alternatives since 1974;
 * Cambridge Greenpeace - Freestyle junk modelling workshop, meet the Superheroes who will be helping you find your inner environmental superhero; 
