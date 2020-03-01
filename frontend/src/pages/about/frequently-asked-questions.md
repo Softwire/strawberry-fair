@@ -4,8 +4,7 @@ title: Frequently Asked Questions
 subtitle: Important information at a glance
 heroData:
   heroImages:
-    - src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1580047824/Banner/old-fair_gybfma.jpg
+    - src: ''
   isActive: true
 strawberryTiles:
   - strawberryTile:
