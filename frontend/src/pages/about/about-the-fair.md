@@ -10,7 +10,7 @@ heroData:
   isActive: true
 strawberryTiles:
   - strawberryTile:
-      isPublic: true
+      isPublic: false
       text: >-
         Strawberry Fair is registered as a Community Interest Company (CIC) and
         is run entirely by volunteers
