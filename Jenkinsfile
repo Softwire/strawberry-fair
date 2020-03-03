@@ -54,7 +54,7 @@ node (label: 'linux') {
 
                     sh 'git add public'
                     sh 'git commit --amend --no-edit'
-                    sh 'git push origin HEAD:production'
+                    sh 'git push -f origin HEAD:production'
                 }
 
             }
