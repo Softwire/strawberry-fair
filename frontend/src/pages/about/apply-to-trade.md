@@ -91,7 +91,7 @@ notes: >-
 ---
 # Applications are closed
 
-We have had to take the difficult decision to cancel Strawberry Fair in 2020. We have tried to contact all traders to refund any deposits already paid. If you haven't had your deposit returned, please contact <mailto:traders@strawberry-fair.org.uk>. 
+We have had to take the difficult decision to cancel [Strawberry Fair in 2020](/news/entries/2020-04-18-strawberry-fair-2020-cancelled). We have tried to contact all traders to refund any deposits already paid. If you haven't had your deposit returned, please contact <mailto:traders@strawberry-fair.org.uk>. 
 
 The events industry has been hit partifularly hard by the Coronavirus, and we want to thank the traders that support us and we wish you the best during these turbulent times. 
 
