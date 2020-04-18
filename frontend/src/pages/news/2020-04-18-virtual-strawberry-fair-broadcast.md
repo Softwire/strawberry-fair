@@ -3,7 +3,7 @@ templateKey: news-article
 uniqueId: '1587208689130'
 title: Virtual Strawberry Fair Broadcast
 subtitle: It's virtually the same thing
-author: Martin
+author: Official Announcement
 date: '2020-04-18'
 image:
   alt: Cambridge 105 logo
