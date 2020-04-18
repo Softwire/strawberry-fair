@@ -2,6 +2,9 @@
 templateKey: contact-page
 title: Contact us
 heroData:
+  heroImages:
+    - src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580908539/Banner/Hidef_sf_banner_2_p0u2oz.jpg
   isActive: true
 ---
 
