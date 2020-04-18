@@ -1,7 +1,7 @@
 ---
 templateKey: form
 title: Perform at Strawberry Fair 2021
-subtitle: There will be no Strawberry Fair in 2020
+subtitle: Strawberry Fair 2020 has been cancelled
 heroData:
   isActive: true
 form:
