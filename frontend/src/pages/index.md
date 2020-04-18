@@ -29,7 +29,21 @@ heroData:
         https://res.cloudinary.com/strawberryfair/image/upload/v1580041738/Banner/sky_lmvpbk.jpg
   isActive: true
 contentBlocks:
-  - _markdown_contentBody: "From humble beginnings, Strawberry Fair has grown to be the most popular free, entirely volunteer run, one day music & arts event in Cambridge (and probably across Europe!), attracting over 30,000 visitors throughout the day. On the first Saturday of June and now passed our 40th year, residents and visitors have gathered together on Midsummer Common to celebrate their vibrant and creative city.\r\n\nThe Fair is run entirely by volunteers (affectionately known as Strawberry Fairies) who give their energy, imagination and vision to present to their friends and neighbours in Cambridge a great free day out."
+  - _markdown_contentBody: >-
+      We have had to take the hard decision to cancel Strawberry Fair 2020 as a
+      result of the Coronavirus. We are devastated as a lot of work had already
+      gone into making this the best fair ever. 
+
+
+      We're not taking the whole year off through! We have teamed up with
+      Cambridge 105 and will be bringing you a 12 hour marathon broadcast on the
+      6th June that will feature many of the areas and acts that had been booked
+      to play this year. Full details will be made available on this website
+      soon, but in the meantime, [check out the press
+      release](/news/2020-04-18-virtual-strawberry-fair-broadcast/). 
+
+
+      Stay safe. Much love. See you in person in 2021!
     scrapbookImages:
       - alt: Happy crowd
         src: >-
@@ -63,10 +77,8 @@ contentBlocks:
           https://res.cloudinary.com/strawberryfair/image/upload/v1580043133/Image%20Scrapbook/Gareth_Nunns_200_DSC_7249_r4y9yu.jpg
     strawberryTile:
       isPublic: true
-      text: >-
-        This year's festival is happening on June 6th 2020, on Midsummer Common,
-        Cambridge.
-    subtitle: 'Saturday 6th June 2020. Trader applications are now open. '
+      text: There will be no Strawberry Fair in 2020. Stay safe. See you in 2021.
+    subtitle: We have had to cancel Strawberry Fair 2020
     title: Welcome to Strawberry Fair
   - _markdown_contentBody: "Strawberry Fair is a not-for-profit organisation run entirely by a team of volunteers (The Fairies!) who work throughout the year (yes it really does take that long to organise!) sorting out everything to do with the Fair; from finding artists and organising stages, to managing traders and fundraising, right through to working out how many toilets are needed....!!\r\n\nStrawberry Fair couldn't happen without all of the people who, generously, volunteer their time and effort throughout the to make our unique event happen."
     scrapbookImages:
@@ -113,5 +125,22 @@ newsBlock:
 twitterBlock:
   subtitle: Stay in the loop
   title: Join the conversation
+notes: >-
+  \[For re-inserting next year]
+
+
+
+
+  From humble beginnings, Strawberry Fair has grown to be the most popular free,
+  entirely volunteer run, one day music & arts event in Cambridge (and probably
+  across Europe!), attracting over 30,000 visitors throughout the day. On the
+  first Saturday of June and now passed our 40th year, residents and visitors
+  have gathered together on Midsummer Common to celebrate their vibrant and
+  creative city.
+
+
+  The Fair is run entirely by volunteers (affectionately known as Strawberry
+  Fairies) who give their energy, imagination and vision to present to their
+  friends and neighbours in Cambridge a great free day out.
 ---
 
