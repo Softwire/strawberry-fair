@@ -81,7 +81,7 @@ contentBlocks:
     subtitle: >-
       Instead we'll bring you a virtual event showcasing the best local
       performers
-    title: Strawberry Fair Cancelled
+    title: Strawberry Fair 2020 Cancelled
   - _markdown_contentBody: "Strawberry Fair is a not-for-profit organisation run entirely by a team of volunteers (The Fairies!) who work throughout the year (yes it really does take that long to organise!) sorting out everything to do with the Fair; from finding artists and organising stages, to managing traders and fundraising, right through to working out how many toilets are needed....!!\r\n\nStrawberry Fair couldn't happen without all of the people who, generously, volunteer their time and effort throughout the to make our unique event happen."
     scrapbookImages:
       - alt: Flying Pig stage
