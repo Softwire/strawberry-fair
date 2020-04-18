@@ -2,6 +2,8 @@
 templateKey: about-page
 title: Cambridge Band Competition
 subtitle: The UK's longest running band competiton!
+heroData:
+  isActive: true
 strawberryTiles:
   - strawberryTile:
       isPublic: false
