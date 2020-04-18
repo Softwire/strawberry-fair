@@ -1,7 +1,7 @@
 ---
 templateKey: news-overview
-title: Our News
+title: Latest News
 subtitle: It's your festival
-featuredId: '1579187981509'
+featuredId: '1587201670334'
 ---
 
