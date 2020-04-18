@@ -12,6 +12,7 @@ image:
     https://res.cloudinary.com/strawberryfair/image/upload/v1587207056/News/site-screenshot_n3f8fj.png
 tags:
   - news
+  - Website
 ---
 ## Welcome to our shiny new website!
 
