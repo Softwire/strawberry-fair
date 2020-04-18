@@ -16,4 +16,4 @@ eventTypes:
 ---
 Strawberries coming at you across the airwaves and through the interpipes. 
 
-Join us for a special 12 hour long broadcast on Cambridge 105 Radio. [Read the full announcement here](/news/2020-04-18-virtual-strawberry-fair-broadcast/).
+Join us for a special 12 hour long broadcast on Cambridge 105 Radio, showcasing all the areas and a lot of the acts that had been booked to play at this years Strawberry Fair. [Read the full announcement here](/news/2020-04-18-virtual-strawberry-fair-broadcast/).
