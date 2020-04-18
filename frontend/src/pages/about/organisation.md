@@ -5,7 +5,7 @@ subtitle: A bit about how we operate
 heroData:
   heroImages:
     - {}
-  isActive: false
+  isActive: true
 strawberryTiles:
   - strawberryTile:
       isPublic: false
