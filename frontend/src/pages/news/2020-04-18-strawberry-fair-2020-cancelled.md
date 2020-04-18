@@ -13,6 +13,6 @@ image:
 tags:
   - news
 ---
-The Starwberry Fair organising committee has had to take the very difficult decision to cancel the Fair in 2020.
+The Strawberry Fair organising committee has had to take the very difficult decision to cancel the Fair in 2020.
 
 Stay well x
