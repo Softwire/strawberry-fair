@@ -32,7 +32,7 @@ Throughout the year, we hold a variety of fundraising events, from benefit gigs,
 
 ## Buy our Strawberry goodies
 
-We also have a wide selection of exclusive Strawberry Fair merchandise created locally, available in our online shop and from our stalls at the Fair and fundraising events.
+We also have a wide selection of exclusive Strawberry Fair merchandise created locally, available from our stalls at the Fair and fundraising events.
 
 ## Volunteer
 
