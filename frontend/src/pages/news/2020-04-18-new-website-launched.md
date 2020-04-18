@@ -4,7 +4,7 @@ uniqueId: '1587206880477'
 title: New Website Launched
 subtitle: Now we just need to keep it updated...
 author: Martin
-date: '2020-04-18'
+date: '2020-04-14'
 image:
   alt: Screenshot of the home page
   shouldDisplay: true
