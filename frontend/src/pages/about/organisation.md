@@ -3,8 +3,7 @@ templateKey: about-page
 title: Organisation
 subtitle: A bit about how we operate
 heroData:
-  heroImages:
-    - {}
+  heroImages: []
   isActive: true
 strawberryTiles:
   - strawberryTile:
