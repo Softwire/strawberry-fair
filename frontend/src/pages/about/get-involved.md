@@ -3,9 +3,7 @@ templateKey: about-page
 title: Get Involved
 subtitle: Become a part of the Fair's future
 heroData:
-  heroImages:
-    - src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1580054401/Banner/alb_tnaiwh.jpg
+  heroImages: []
   isActive: true
 strawberryTiles:
   - strawberryTile:
