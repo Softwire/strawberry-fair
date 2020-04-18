@@ -2,6 +2,8 @@
 templateKey: about-page
 title: Environment
 subtitle: Managing the impact of the Fair
+heroData:
+  isActive: true
 strawberryTiles:
   - strawberryTile:
       isPublic: true

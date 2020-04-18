@@ -3,8 +3,7 @@ templateKey: about-page
 title: Frequently Asked Questions
 subtitle: Important information at a glance
 heroData:
-  heroImages:
-    - src: ''
+  heroImages: []
   isActive: true
 strawberryTiles:
   - strawberryTile:

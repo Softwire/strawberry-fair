@@ -1,7 +1,7 @@
 ---
 templateKey: form
-title: Perform at Strawberry Fair
-subtitle: Applications are now open for 2020
+title: Perform at Strawberry Fair 2021
+subtitle: Strawberry Fair 2020 has been cancelled
 heroData:
   isActive: true
 form:
