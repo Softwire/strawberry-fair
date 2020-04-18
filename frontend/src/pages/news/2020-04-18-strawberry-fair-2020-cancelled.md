@@ -23,9 +23,7 @@ This is a decision that has been made by all of us together.
 
 We are all devastated as we know the impact that cancellation will on our traders, charity partners and performers. We are thinking of other things that we could do over the Spring and Summer and then going forwards to next year's Fair.
 
-The Fair is run and supported by volunteers who are part of their local communities and we have lots of ideas for not only including people, but entertaining them as well.
-
-We are also looking at how to make Strawberry Fair 2021 twice as great.
+Strawberry Fair is run by a team of unpaid volunteers and despite the lockdown we are still meeting and planning online and we are always keen to hear from anyone who would like to join the team. More than just a day in June, the planning takes all year! We also welcome people to join us on site through the week before the Fair, at the Fair itself and after the Fair. From building the site, to spending a few hours as a steward, to working in site production, to helping with site clear-up, there is always something to do. Being involved in the Fair is also a great way to learn about event management. If you would like to learn how to plan and manage a festival from the beginning to the end get in touch and join the team. 
 
 Look after yourselves, stay safe and keep in touch.
 
