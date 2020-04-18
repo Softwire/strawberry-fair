@@ -1,6 +1,6 @@
 ---
 templateKey: contact-page
-title: Hello from the Strawberry Fair Committee!
+title: Contact the Strawberry Fair Committee
 heroData:
   isActive: true
 ---
