@@ -6,7 +6,7 @@ subtitle: ''
 heroData:
   isActive: true
 author: Band Comp Team
-date: '2020-04-18'
+date: '2020-04-16'
 image:
   alt: Band jumping
   shouldDisplay: true
