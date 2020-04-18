@@ -17,7 +17,7 @@ tags:
 
 As most people reading this will know, Strawberry Fair is run entirely by volunteers, on an extremely limited budget. One our our committee members works for one of the UK's leading custom software development agencies, [Softwire](http://www.softwire.com), who opened a Cambridge office in 2019 and kindly made this a project for a cohort of graduate developers on a pro bono basis. 
 
-As well as a customised Netlify CMS, the team included some lovely bells and whistles in the new site, such as the image scrapbook strips on the home page, and the initial vector image loading transitions. 
+As well as a customised Netlify CMS, the team included some lovely bells and whistles in the new site, such as the image scrapbook strips on the home page, and the vectorised image loading transitions. 
 
 The code will be open sourced and available to other charities, community groups and not-for-profits to use. We're happy to provide advice on whether this is the best option for you, just get in touch via the [contact form](/contact). 
 
