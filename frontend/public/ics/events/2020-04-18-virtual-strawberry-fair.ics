@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:adamgibbons/ics
+METHOD:PUBLISH
+X-PUBLISHED-TTL:PT1H
+BEGIN:VEVENT
+UID:4316a9c0-afc1-4952-8d8f-bf9e1d91d4f3
+SUMMARY:Virtual Strawberry Fair
+DTSTAMP:20200418T121400Z
+DTSTART:20200606T100000Z
+DTEND:20200606T100000Z
+DESCRIPTION:Strawberries coming at you across the airwaves and through the 
+	interpipes. Join us for a special 12 hour long broadcast on Cambridge 105 
+	Radio. Read the full announcement here.
+END:VEVENT
+END:VCALENDAR
