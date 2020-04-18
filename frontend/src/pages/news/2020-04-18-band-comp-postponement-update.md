@@ -4,7 +4,7 @@ uniqueId: '1587206407425'
 title: Band Comp Postponement Update
 subtitle: ''
 heroData:
-  isActive: true
+  isActive: false
 author: Band Comp Team
 date: '2020-04-18'
 image:
