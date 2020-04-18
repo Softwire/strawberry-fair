@@ -3,7 +3,7 @@ templateKey: news-article
 uniqueId: '1587201670334'
 title: Strawberry Fair 2020 Cancelled
 subtitle: See you in 2021
-author: Official Announcement
+author: Official
 date: '2020-04-18'
 image:
   alt: Strawberry on black
