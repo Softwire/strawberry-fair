@@ -35,8 +35,8 @@ contentBlocks:
       gone into making this the best fair ever. 
 
 
-      We're not taking the whole year off through! We have teamed up with
-      Cambridge 105 and will be bringing you a 12 hour marathon broadcast on the
+      We're not taking the whole year off through! Instead, we have teamed up
+      with Cambridge 105 and will be bringing you a **12 hour broadcast** on the
       6th June that will feature many of the areas and acts that had been booked
       to play this year. Full details will be made available on this website
       soon, but in the meantime, [check out the press
@@ -77,9 +77,11 @@ contentBlocks:
           https://res.cloudinary.com/strawberryfair/image/upload/v1580043133/Image%20Scrapbook/Gareth_Nunns_200_DSC_7249_r4y9yu.jpg
     strawberryTile:
       isPublic: true
-      text: There will be no Strawberry Fair in 2020. Stay safe. See you in 2021.
-    subtitle: We have had to cancel Strawberry Fair 2020
-    title: Welcome to Strawberry Fair
+      text: 'Make sure to tune in to Cambridge 105 on Saturday 6th June. '
+    subtitle: >-
+      Instead we'll bring you a virtual event showcasing the best local
+      performers
+    title: Strawberry Fair Cancelled
   - _markdown_contentBody: "Strawberry Fair is a not-for-profit organisation run entirely by a team of volunteers (The Fairies!) who work throughout the year (yes it really does take that long to organise!) sorting out everything to do with the Fair; from finding artists and organising stages, to managing traders and fundraising, right through to working out how many toilets are needed....!!\r\n\nStrawberry Fair couldn't happen without all of the people who, generously, volunteer their time and effort throughout the to make our unique event happen."
     scrapbookImages:
       - alt: Flying Pig stage
