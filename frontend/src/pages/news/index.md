@@ -1,7 +1,9 @@
 ---
 templateKey: news-overview
 title: Latest News
-subtitle: It's your festival
+subtitle: All the latest happenings in Fairy-land
+heroData:
+  isActive: true
 featuredId: '1587201670334'
 ---
 
