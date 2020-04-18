@@ -2,7 +2,7 @@
 templateKey: contact-page
 title: Hello from the Strawberry Fair Committee!
 heroData:
-   isActive: true
+  isActive: true
 ---
 
 ## Traders
