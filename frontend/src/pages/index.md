@@ -43,7 +43,7 @@ contentBlocks:
       release](/news/2020-04-18-virtual-strawberry-fair-broadcast/). 
 
 
-      Stay safe. Much love. See you in person in 2021!
+      Stay safe. Much love. **See you in person in 2021**!
     scrapbookImages:
       - alt: Happy crowd
         src: >-
