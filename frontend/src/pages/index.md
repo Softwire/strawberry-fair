@@ -1,6 +1,6 @@
 ---
 templateKey: home-page
-title: By the people of Cambridge. For the people of Cambridge. In Cambridge
+title: 'By the people of Cambridge. For the people of Cambridge. '
 heroData:
   heroImages:
     - alt: Strawberry Fair Banner
