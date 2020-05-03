@@ -86,7 +86,7 @@ export const generateEventSubtitle = (data, isMobile=false) => {
 
 const extractor = (data) => ({subtitle: generateEventSubtitle(data)})
 
-export default site(EventInfo, { additionalPropsExtractor: extractor, isNarrow: true })
+export default site(EventInfo, { additionalPropsExtractor: extractor, isNarrow: false })
 
 export const query = graphql`
 query eventInfoTemplate($id: String!) {
