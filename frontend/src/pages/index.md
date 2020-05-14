@@ -36,10 +36,10 @@ contentBlocks:
 
 
       We're not taking the whole year off through! Instead, we have teamed up
-      with Cambridge 105 and will be bringing you a **12 hour broadcast** on the
-      6th June that will feature many of the areas and acts that had been booked
-      to play this year. Full details will be made available on this website
-      soon, but in the meantime, [check out the press
+      with Cambridge 105 Radio and will be bringing you a **12 hour broadcast**
+      on the 6th June that will feature many of the areas and acts that had been
+      booked to play this year. Full details will be made available on this
+      website soon, but in the meantime, [check out the press
       release](/news/2020-04-18-virtual-strawberry-fair-broadcast/). 
 
 
@@ -77,7 +77,7 @@ contentBlocks:
           https://res.cloudinary.com/strawberryfair/image/upload/v1580043133/Image%20Scrapbook/Gareth_Nunns_200_DSC_7249_r4y9yu.jpg
     strawberryTile:
       isPublic: true
-      text: 'Make sure to tune in to Cambridge 105 on Saturday 6th June. '
+      text: 'Make sure to tune in to Cambridge 105 Radio on Saturday 6th June. '
     subtitle: >-
       Instead we'll bring you a virtual event showcasing the best local
       performers
