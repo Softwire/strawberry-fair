@@ -3,6 +3,13 @@ templateKey: news-article
 uniqueId: '1589641492329'
 title: Enter the Kids Art and Story Competitions Now
 subtitle: Calling all budding artists and authors
+heroData:
+  heroImages:
+    - src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580896136/Banner/Hidef_banner_x6jywu.jpg
+    - src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580902878/Banner/Hidef_mother_son_kkuljg.jpg
+  isActive: true
 author: Martin
 date: '2020-05-16'
 image:
