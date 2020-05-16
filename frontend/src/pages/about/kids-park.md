@@ -3,7 +3,11 @@ templateKey: about-page
 title: Kids Park
 subtitle: Calling all budding artists and authors
 heroData:
-  heroImages: []
+  heroImages:
+    - src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580902878/Banner/Hidef_mother_son_kkuljg.jpg
+    - src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580902878/Banner/Hidef_mother_son_kkuljg.jpg
   isActive: true
 strawberryTiles:
   - strawberryTile:
