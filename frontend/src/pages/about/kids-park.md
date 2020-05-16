@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
 title: Kids Park
-subtitle: Fun fun fun fun
+subtitle: Calling all budding artists and authors
 heroData:
   heroImages: []
   isActive: true
