@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
 title: Kids Park
-subtitle: Fun fun fun fun
+subtitle: Keeping the magic alive in 2020
 heroData:
   heroImages: []
   isActive: true
