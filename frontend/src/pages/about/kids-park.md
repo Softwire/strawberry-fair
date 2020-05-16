@@ -1,16 +1,20 @@
 ---
 templateKey: about-page
 title: Kids Park
-subtitle: Fun fun fun fun
+subtitle: Calling all budding artists and authors
 heroData:
-  heroImages: []
+  heroImages:
+    - src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580902878/Banner/Hidef_mother_son_kkuljg.jpg
+    - src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580902878/Banner/Hidef_mother_son_kkuljg.jpg
   isActive: true
 strawberryTiles:
   - strawberryTile:
       isPublic: false
     tile: Strawberry Tile
 ---
-With no Strawberry Fair happening in 2020, we're doing what we can to bring you fun and entertaining things to do at home instead! In partnership with Cambridge 105 Radio, we're holding a story competition, and an art compeition. There are some great prizes to be won. 
+With no Strawberry Fair happening in 2020, we're doing what we can to bring you fun and entertaining things to do at home instead! In partnership with Cambridge 105 Radio, we're holding a story competition, and an art competition. There are some great prizes to be won. 
 
 # How to enter
 
