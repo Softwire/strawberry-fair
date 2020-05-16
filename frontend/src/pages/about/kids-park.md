@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
 title: Kids Park
-subtitle: Keeping the magic alive in 2020
+subtitle: Fun fun fun fun
 heroData:
   heroImages: []
   isActive: true
@@ -10,7 +10,7 @@ strawberryTiles:
       isPublic: false
     tile: Strawberry Tile
 ---
-With no Strawberry Fair happening in 2020, we're doing everything we can to bring you fun and entertaining things to do at home instead! In partnership with Cambridge 105 Radio, we're holding a story competition, and an art compeition. There are some great prizes to be won, including having your story read out on the radio! 
+With no Strawberry Fair happening in 2020, we're doing what we can to bring you fun and entertaining things to do at home instead! In partnership with Cambridge 105 Radio, we're holding a story competition, and an art compeition. There are some great prizes to be won. 
 
 # How to enter
 
