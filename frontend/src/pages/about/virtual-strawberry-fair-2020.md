@@ -17,13 +17,13 @@ The local, and internet, radio station is to broadcast a 12-hour show on Saturda
 
 ## Here's what's happening on the day
 
-Why not crack open a few cold ones – get the jerk chicken sizzling on the BBQ and settle down and get tuned in to Cambridge 105 Radio for a solid 12 hours of the magic of Strawberry Fair.
+Why not crack open a few cold ones – get the jerk chicken sizzling on the BBQ and settle down and get tuned in to **Cambridge 105 Radio** for a solid 12 hours of the magic of Strawberry Fair.
 
 PLUS! for those that want to go the whole distance – Join us when that’s finished for the Virtual Strawberry Fair Dance After-Party with Supertunes and Green Machine!
 
 Schedule for the day:-
 
-**11am**: The fun starts with the build up to the fair broadcast on both Cambridge 105 Radio and Star. We’ll look at the history of the event and what goes in to putting the whole thing together!
+**11am**: The fun starts with the build up to the fair broadcast on both **Cambridge 105 Radio** and **Star**. We’ll look at the history of the event and what goes in to putting the whole thing together!
 
 **12 noon**: Carry on listening on Cambridge 105 Radio, where **the Parade** takes us onto the Common for the Mayor to officially open the Fair. Settle in to hearing some of the bands from this year’s Cambridge Band Competition on the Centre stage.
 
@@ -35,7 +35,7 @@ Schedule for the day:-
 
 **4pm**: Let’s head over to the **Flying Pig** where they present some of the best of the established Cambridge bands on their virtual stage.
 
-**5pm**: Sit back and relax as we check into the **Hatters Café**. It starts with some of the best Jazz from the Cambridge Jazz Festival whilst you enjoy the coffee from their bar. After the Jazz settle down to some more great bands finishing with some great tunes from their resident DJ.
+**5pm**: Sit back and relax as we check into the **Hatters Café**. It starts with some of the best Jazz from the Cambridge Jazz Festival whilst you enjoy the coffee from their bar. After the Jazz settle down to some more great bands finishing with some great tunes from their resident DJ.
 
 **6pm**: We take a wander around **Scarecrow Corner** at the far end of the Common, with an opening ceremony in the Druids circle, a look at some of the healing and campaign stalls whilst listening to some fantastic music from some of the best bands on the travelling festival scene.
 
