@@ -29,21 +29,7 @@ heroData:
         https://res.cloudinary.com/strawberryfair/image/upload/v1580041738/Banner/sky_lmvpbk.jpg
   isActive: true
 contentBlocks:
-  - _markdown_contentBody: >-
-      We have had to take the hard decision to cancel Strawberry Fair 2020 as a
-      result of the Coronavirus. We are devastated as a lot of work had already
-      gone into making this the best fair ever. 
-
-
-      We're not taking the whole year off through! Instead, we have teamed up
-      with Cambridge 105 Radio and will be bringing you a **12 hour broadcast**
-      on the 6th June that will feature many of the areas and acts that had been
-      booked to play this year. Full details will be made available on this
-      website soon, but in the meantime, [check out the press
-      release](/news/2020-04-18-virtual-strawberry-fair-broadcast/). 
-
-
-      Stay safe. Much love. **See you in person in 2021**!
+  - _markdown_contentBody: "We've partnered with the wonderful Cambridge 105 Radio to broadcast a virtual Strawberry Fair\r via FM, and also streamed online via [their website](https://cambridge105.co.uk/). \n\n\rThe local and internet radio station is to broadcast a 12-hour show on Saturday June 6th that will reflect the music, poetry and drama of the Midsummer Common event alongside additional material for children.\r\n\nCheck out [this page](https://strawberry-fair.org.uk/about/virtual-strawberry-fair-2020/) for the full line up and more information"
     scrapbookImages:
       - alt: Happy crowd
         src: >-
@@ -78,10 +64,8 @@ contentBlocks:
     strawberryTile:
       isPublic: true
       text: 'Make sure to tune in to Cambridge 105 Radio on Saturday 6th June. '
-    subtitle: >-
-      Instead we'll bring you a virtual event showcasing the best local
-      performers
-    title: Strawberry Fair 2020 Cancelled
+    subtitle: 'Actually the best thing happening in Cambridge on the 6th June ... '
+    title: It's Virtually Strawberry Fair 2020!
   - _markdown_contentBody: >-
       Strawberry Fair is a not-for-profit organisation run entirely by a team of
       volunteers (The Fairies!) who work throughout the year (yes it really does
