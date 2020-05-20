@@ -27,7 +27,7 @@ Schedule for the day:-
 
 **12 noon**: Carry on listening on Cambridge 105 Radio, where **the Parade** takes us onto the Common for the Mayor to officially open the Fair. Settle in to hearing some of the bands from this year’s Cambridge Band Competition on the Centre stage.
 
-**1pm**: We head to the **Kids Park** for music, fun and stories and some tunes from the young acts on the Love Music Hate Racism stage.
+**1pm**: We head to the **Kids Park** for music, fun and stories and some tunes from the young acts on the **Love Music Hate Racism Stage**.
 
 **2pm**: The **Cambridge 105 Radio Stage** itself is the venue for the fourth hour of the event. Did you know this will be the 10thFair the station has been a part of? So they’ll be looking back at some of the highlights from the acts on the stage during that time together with a look at some fresh upcoming acts on the Folk scene.
 
