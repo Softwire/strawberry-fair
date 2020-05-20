@@ -15,7 +15,9 @@ Fans of music and arts festival Strawberry Fair will be able to participate in t
 
 The local, and internet, radio station is to broadcast a 12-hour show on Saturday June 6th that will reflect the music, poetry and drama of the Midsummer Common event alongside additional material for children.
 
-Cambridge residents can listen via 105 FM - and it will also be streamed via their website:  <https://cambridge105.co.uk/>
+## How do I listen?
+
+Across the city and South Cambridgeshire tune your radio to 105 FM, use DAB Digital Radio or go online with one of the free [RadioPlayer](http://www.radioplayer.co.uk/) apps and by clicking the ‘LISTEN’ button in the top right-hand corner of this and every page.
 
 ## Here's what's happening on the day
 
