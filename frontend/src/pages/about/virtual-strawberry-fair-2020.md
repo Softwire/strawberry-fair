@@ -51,6 +51,6 @@ Schedule for the day:-
 
 **10pm**: And so to the last hour of the festival, as we visit a long-time favourite area of the fair the **Wigwam Stage** with our journey finally ending at the East end of the Common for some of the great great music presented by the Shady Nasty Crew and the Finale closing at 11pm.
 
-BUT! If you’ve still got the stamina and you want to dance…come to the Cambridge 105 Radio Strawberry Fair after-party from 11pm for two hours of beats to get you jumping as the **Supertunes DJs** and **Green Machine** take to the airwaves!
+BUT! If you’ve still got the stamina and you want to dance…come to the Cambridge 105 Radio Strawberry Fair **after-party** from 11pm for two hours of beats to get you jumping as the **Supertunes DJs** and **Green Machine** take to the airwaves!
 
 Lots more information to come soon
