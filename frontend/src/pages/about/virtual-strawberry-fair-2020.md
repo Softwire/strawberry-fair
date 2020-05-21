@@ -43,7 +43,7 @@ Schedule for the day:-
 
 **6pm**: We take a wander around **Scarecrow Corner** at the far end of the Common, with an opening ceremony in the Druids circle, a look at some of the healing and campaign stalls whilst listening to some fantastic music from some of the best bands on the travelling festival scene.
 
-**7pm**: Time to take some refreshment now as the largest indoor stage in the **Portland Ballroom** opens for us to sample songs from the 17 acts booked to play there this year. Plus! Find out how the Portland Arms puts it all together.
+**7pm**: Time to take in some more magical music and refreshments now at the largest indoor stage.  **The Portland Ballroom** opens for us to sample songs from the 17 acts booked to play there this year. Plus! Find out how the **Portland Arms** sets up and runs the Bar on the day - and their support for the Fair all year long.
 
 **8pm**: It’s time to hear from some of the Cambridge Buskers on the **Cambuskers Showcase** stage. Then wander over to listen in to what’s going down in the Random Bullshit Generator “pop up” stage area.
 
