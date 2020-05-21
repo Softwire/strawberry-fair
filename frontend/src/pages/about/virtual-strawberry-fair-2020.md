@@ -39,7 +39,7 @@ PLUS! for those that want to go the whole distance – Join us when that’s fin
 
 **4pm**: Let’s head over to the **Flying Pig** where they present some of the best of the established Cambridge bands on their virtual stage.
 
-**5pm**: Sit back and relax as we check into the **Hatters Café**. It starts with some of the best Jazz from the Cambridge Jazz Festival whilst you enjoy the coffee from their bar. After the Jazz settle down to some more great bands finishing with some great tunes from their resident DJ.
+**5pm**: Sit back and relax as we check into the **Hatters Café**. It starts with some of the best Jazz from the **Cambridge Jazz Festival** whilst you enjoy the coffee from their bar. After the Jazz settle down to some more great bands finishing with some great tunes from their resident DJ.
 
 **6pm**: We take a wander around **Scarecrow Corner** at the far end of the Common, with an opening ceremony in the Druids circle, a look at some of the healing and campaign stalls whilst listening to some fantastic music from some of the best bands on the travelling festival scene.
 
@@ -49,7 +49,7 @@ PLUS! for those that want to go the whole distance – Join us when that’s fin
 
 **9pm**: After the watershed we head over to the highly recommended **Rebel Arts Stage** where the emphasis is totally focused this year on female-fronted bands and the music is set to challenge.
 
-**10pm**: And so to the last hour of the festival, as we visit a long-time favourite area of the fair the **Wigwam Stage** with our journey finally ending at the East end of the Common for some of the great great music presented by the Shady Nasty Crew and the Finale closing at 11pm.
+**10pm**: And so to the last hour of the festival, as we visit a long-time favourite area of the fair the **Wigwam Stage** with our journey finally ending at the East end of the Common for some of the great great music presented by the **Shady Nasty Crew** and the Finale closing at 11pm.
 
 BUT! If you’ve still got the stamina and you want to dance…come to the Cambridge 105 Radio Strawberry Fair **after-party** from 11pm for two hours of beats to get you jumping as the **Supertunes DJs** and **Green Machine** take to the airwaves!
 
