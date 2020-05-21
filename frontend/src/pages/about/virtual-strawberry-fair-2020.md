@@ -39,7 +39,7 @@ PLUS! for those that want to go the whole distance – Join us when that’s fin
 
 **4pm**: Let’s head over to the **Flying Pig** where they present some of the best of the established Cambridge bands on their virtual stage.
 
-**5pm**: Sit back and relax as we check into the **Hatters Café**. It starts with some of the best Jazz from the Cambridge Jazz Festival whilst you enjoy the coffee from their bar. After the Jazz settle down to some more great bands finishing with some great tunes from their resident DJ.
+**5pm**: Sit back and relax as we check into the **Hatters Café**. It starts with some of the best Jazz from the **Cambridge Jazz Festival** whilst you enjoy the coffee from their bar. After the Jazz settle down to some more great bands finishing with some great tunes from their resident DJ.
 
 **6pm**: We take a wander around **Scarecrow Corner** at the far end of the Common, with an opening ceremony in the Druids circle, a look at some of the healing and campaign stalls whilst listening to some fantastic music from some of the best bands on the travelling festival scene.
 
