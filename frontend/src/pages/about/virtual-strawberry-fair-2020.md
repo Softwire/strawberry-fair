@@ -49,7 +49,7 @@ Schedule for the day:-
 
 **9pm**: After the watershed we head over to the highly recommended **Rebel Arts Stage** where the emphasis is totally focused this year on female-fronted bands and the music is set to challenge.
 
-**10pm**: And so to the last hour of the festival, as we visit a long-time favourite area of the fair the **Wig Wam Stage** with our journey finally ending at the East end of the Common for some of the great great music presented by the Shady Nasty Crew and the Finale closing at 11pm.
+**10pm**: And so to the last hour of the festival, as we visit a long-time favourite area of the fair the **Wigwam Stage** with our journey finally ending at the East end of the Common for some of the great great music presented by the Shady Nasty Crew and the Finale closing at 11pm.
 
 BUT! If you’ve still got the stamina and you want to dance…come to the Cambridge 105 Radio Strawberry Fair after-party from 11pm for two hours of beats to get you jumping as the **Supertunes DJs** and **Green Machine** take to the airwaves!
 
