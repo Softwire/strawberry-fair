@@ -43,14 +43,14 @@ Schedule for the day:-
 
 **6pm**: We take a wander around **Scarecrow Corner** at the far end of the Common, with an opening ceremony in the Druids circle, a look at some of the healing and campaign stalls whilst listening to some fantastic music from some of the best bands on the travelling festival scene.
 
-**7pm**: Time to take some refreshment now as the largest indoor stage in the **Portland Ballroom** opens for us to sample songs from the 17 acts booked to play there this year. Plus! Find out how the Portland Arms puts it all together.
+**7pm**: Time to take in some more magical music and refreshments now at the largest indoor stage.  **The Portland Ballroom** opens for us to sample songs from the 17 acts booked to play there this year. Plus! Find out how the **Portland Arms** sets up and runs the Bar on the day - and their support for the Fair all year long.
 
 **8pm**: It’s time to hear from some of the Cambridge Buskers on the **Cambuskers Showcase** stage. Then wander over to listen in to what’s going down in the Random Bullshit Generator “pop up” stage area.
 
 **9pm**: After the watershed we head over to the highly recommended **Rebel Arts Stage** where the emphasis is totally focused this year on female-fronted bands and the music is set to challenge.
 
-**10pm**: And so to the last hour of the festival, as we visit a long-time favourite area of the fair the **Wig Wam Stage** with our journey finally ending at the East end of the Common for some of the great great music presented by the Shady Nasty Crew and the Finale closing at 11pm.
+**10pm**: And so to the last hour of the festival, as we visit a long-time favourite area of the fair the **Wigwam Stage** with our journey finally ending at the East end of the Common for some of the great great music presented by the Shady Nasty Crew and the Finale closing at 11pm.
 
-BUT! If you’ve still got the stamina and you want to dance…come to the Cambridge 105 Radio Strawberry Fair after-party from 11pm for two hours of beats to get you jumping as the **Supertunes DJs** and **Green Machine** take to the airwaves!
+BUT! If you’ve still got the stamina and you want to dance…come to the Cambridge 105 Radio Strawberry Fair **after-party** from 11pm for two hours of beats to get you jumping as the **Supertunes DJs** and **Green Machine** take to the airwaves!
 
 Lots more information to come soon
