@@ -25,7 +25,7 @@ Why not crack open a few cold ones – get the jerk chicken sizzling on the BBQ 
 
 PLUS! for those that want to go the whole distance – Join us when that’s finished for the Virtual Strawberry Fair Dance After-Party with Supertunes and Green Machine!
 
-Schedule for the day:-
+## Schedule
 
 **11am**: The fun starts with the build up to the fair broadcast on both **Cambridge 105 Radio** and **Star**. We’ll look at the history of the event and what goes in to putting the whole thing together!
 
