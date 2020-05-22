@@ -16,7 +16,7 @@ image:
   alt: Kids at Strawberry Fair
   shouldDisplay: true
   src: >-
-    https://res.cloudinary.com/strawberryfair/image/upload/v1589641233/News/kids-at-fair_n5ahtk.jpg
+    https://res.cloudinary.com/strawberryfair/image/upload/v1590135970/News/DSC_6786-2_soyswj.jpg
 tags:
   - news
 ---
