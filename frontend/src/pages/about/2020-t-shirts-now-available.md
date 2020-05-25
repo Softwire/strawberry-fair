@@ -51,4 +51,4 @@ Email <mailto:tshirts@strawberry-fair.org.uk> the following:
 
 If you are reading this on Virtual Fair Day or after, we can still sell you our t-shirts, stock and sizes being available.
 
-_PS - Yes Fudge, we've put a couple aside for you x_
+__
