@@ -7,9 +7,9 @@ strawberryTiles:
       isPublic: false
     tile: Strawberry Tile
 ---
-Joining us for our Virtual Strawberry Fair on Saturday 6th June? Dress to impress by buying one of our fabulous 2020 Magic themed t-shirts, which we had printed before having to cancel the main event!
+Joining us for our Virtual Strawberry Fair on Saturday 6th June? Dress to impress by buying one of our fabulous **2020 Magic-themed t-shirts**, which we had printed before having to cancel the main event!
 
-Here are the designs and the styles and sizes, all in black:
+Here are the designs; all in black:
 
 ## Strawberry Bunny
 
