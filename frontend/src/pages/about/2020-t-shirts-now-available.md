@@ -2,6 +2,8 @@
 templateKey: about-page
 title: 2020 T-Shirts Now Available
 subtitle: Get your collector's item now
+heroData:
+  isActive: true
 strawberryTiles:
   - strawberryTile:
       isPublic: false
