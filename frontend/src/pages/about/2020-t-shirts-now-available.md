@@ -47,7 +47,7 @@ Email <mailto:tshirts@strawberry-fair.org.uk> the following:
 
 1. Name, Address (inc postcode) and mobile phone number
 2. Order details – ie 1 Adult Standard in Bunny in size large
-3. Pay by PayPal by clicking on the following link: [**paypal.me/StrawFair**](http://paypal.me/StrawFair)****
+3. Pay by PayPal by clicking on the following link: [**paypal.me/StrawFair**](http://paypal.me/StrawFair)
 4. We will email you back confirming your order has been received and payment received
 5. Your t-shirt will be packed and dispatched by post
 
