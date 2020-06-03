@@ -17,7 +17,7 @@ The local, and internet, radio station is to broadcast a 12-hour show on Saturda
 
 ## How do I listen?
 
-Across the city and South Cambridgeshire tune your radio to 105 FM, use DAB Digital Radio. People outside of this area can go to [Cambridge105 Radio](http://cambridge105.co.uk)'s website and listen online. 
+Across the city and South Cambridgeshire tune your radio to 105 FM, use DAB Digital Radio. People outside of this area can go to [Cambridge 105 Radio](http://cambridge105.co.uk)'s website and listen online. 
 
 ## Here's what's happening on the day
 
