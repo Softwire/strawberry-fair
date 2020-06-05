@@ -24,8 +24,8 @@ Here are the designs; all in black:
 ## Adult Standard Fit
 
 * Available in _Magic Bunny in a Hat_ (**Bunny**) and _Starry Strawberry_ (**Strawberry**).
-* **SIZES:** for Standard Fit: _Small, Medium, Large (Strawberry only) Extra Large, 2XL_ and _3XL_  
-* _(Bunny Large=SOLD OUT!)_
+* **SIZES:** for Standard Fit: _Small, Medium, ~~Large~~, Extra Large, 2XL_ and _3XL_  
+* _(ALL Large=SOLD OUT!)_
 * **PRICE:** £15 each including postage and packing
 
 ## Adult Ladies Fit
