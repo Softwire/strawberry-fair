@@ -15,7 +15,7 @@ image:
 tags:
   - news
 ---
-For over forty years, Strawberry Fair has filled Midsummer Common with art and music and poetry and love and joy and laughter and dancing and thousands of smiles.  As we could not do that this year, we partnered with Cambridge 105 Radio to bring you a virtual Strawberry Fair instead, with over 12 hours exploring each of the areas that make up Cambridge's favourite event. \
+For over forty years, Strawberry Fair has filled Midsummer Common with art and music and poetry and love and joy and laughter and dancing and thousands of smiles.  As we could not do that this year, we partnered with Cambridge 105 Radio to bring you a virtual Strawberry Fair instead, with over 12 hours exploring each of the areas that make up Cambridge's favourite event.  \
 \
 On the way we learned more about the history and ethos of Strawberry Fair and we met many of the volunteers who give their time and energy through the year to make the Fair happen. We learned what the areas and stages are all about, and listened to some of what they had planned to share with us all on the day, from children’s comedy and storytelling, to arts activities to activists and to music of all kinds.
 
