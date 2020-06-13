@@ -19,7 +19,7 @@ For over forty years, Strawberry Fair has filled Midsummer Common with art and m
 \
 On the way we learned more about the history and ethos of Strawberry Fair and we met many of the volunteers who give their time and energy through the year to make the Fair happen. We learned what the areas and stages are all about, and listened to some of what they had planned to share with us all on the day, from children’s comedy and storytelling, to arts activities to activists and to music of all kinds.
 
-It wasn’t the Strawberry Fair that we had planned to bring you, but we're really proud of the results, which you can still hear via the link below. 
+It wasn’t the Strawberry Fair that we had planned to bring you, but we're delighted with the results, which you can still hear via the link below. 
 
 ## Listen again online
 
