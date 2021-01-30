@@ -79,8 +79,8 @@ contentBlocks:
     strawberryTile:
       isPublic: true
       text: >-
-        Make sure to tune in to Cambridge 105 Radio on Saturday 6th June. Check
-        out the event page for more info.
+        Stay safe. We look forward to welcoming you back to Midsummer Common
+        next year. 
     subtitle: Unable to proceed under the current restrictions
     title: No Strawberry Fair in 2021
   - _markdown_contentBody: >-
