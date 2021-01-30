@@ -14,7 +14,7 @@ image:
   src: >-
     https://res.cloudinary.com/strawberryfair/image/upload/v1587202718/News/sad-strawberry_ujijoo.jpg
 tags:
-  - news announcement
+  - news
 ---
 The volunteer organising commitee is very sad to announce that there will be no Strawberry Fair in 2021.
 
