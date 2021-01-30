@@ -6,7 +6,7 @@ subtitle: 'Stay safe. We look forward to seeing you in 2022. '
 heroData:
   heroImages: []
   isActive: false
-author: Martin
+author: Official
 date: '2021-01-30'
 image:
   alt: Strawberry on black background
