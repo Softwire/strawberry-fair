@@ -30,19 +30,21 @@ heroData:
   isActive: true
 contentBlocks:
   - _markdown_contentBody: >-
-      We've partnered with the wonderful Cambridge 105 Radio to broadcast a
-      virtual Strawberry Fair via FM, and also streamed online via [their
-      website](https://cambridge105.co.uk/). 
+      The volunteer organising committee has had to take the difficult decision
+      to cancel Strawberry Fair 2021. 
 
 
-      The local and internet radio station is to broadcast a 12-hour show on
-      Saturday June 6th that will reflect the music, poetry and drama of the
-      Midsummer Common event alongside additional material for children.
+      We know that this will be a huge disappointment to everyone who was
+      looking forward to starting the summer of 2021 with Strawberry Fair and
+      perhaps an even bigger disappointment to the traders and suppliers who
+      have their own strong links to the Fair and are very much a part of the
+      Strawberry Fair family.
 
 
-      Check out [this
-      page](https://strawberry-fair.org.uk/about/virtual-strawberry-fair-2020/)
-      for the full line up and more information
+      We are working on other things (not least the famous Cambridge Band
+      Competition) that we may be able to do over the summer of 2021(watch this
+      space!!) and, of course, on the return of Strawberry Fair in the summer of
+      2022.
     scrapbookImages:
       - alt: Happy crowd
         src: >-
@@ -77,10 +79,10 @@ contentBlocks:
     strawberryTile:
       isPublic: true
       text: >-
-        Make sure to tune in to Cambridge 105 Radio on Saturday 6th June. Check
-        out the event page for more info.
-    subtitle: 'Actually the best thing happening in Cambridge on the 6th June ... '
-    title: It's Virtually Strawberry Fair 2020!
+        Stay safe. We look forward to welcoming you back to Midsummer Common
+        next year. 
+    subtitle: Unable to proceed under the current restrictions
+    title: No Strawberry Fair in 2021
   - _markdown_contentBody: >-
       Strawberry Fair is a not-for-profit organisation run entirely by a team of
       volunteers (The Fairies!) who work throughout the year (yes it really does
