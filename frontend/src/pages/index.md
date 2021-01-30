@@ -34,14 +34,6 @@ contentBlocks:
       to cancel Strawberry Fair 2021. 
 
 
-      Planning for Strawberry Fair usually starts in September, with many months
-      of regular meetings of our various subcommittees, plus then actually
-      booking all the traders and acts, creating the site decor and working with
-      the Council and other agencies. Sadly, none of this is really possible at
-      the moment. We can only do so much via video calls, and we don't know if
-      we'll be able to meet in large numbers by the start of the summer. 
-
-
       We know that this will be a huge disappointment to everyone who was
       looking forward to starting the summer of 2021 with Strawberry Fair and
       perhaps an even bigger disappointment to the traders and suppliers who
