@@ -12,7 +12,7 @@ form:
 ---
 To enter the band competition, please complete this form and submit working on-line links to two tracks. These will be used by the selection panel to determine whether your act will get through to the heats.
 
-* All material must be original - covers are not allowed.
+* All material must be original - covers are not allowed
 * Please also include a current photo of your act with your application form.
 * Entries OPEN at 9am on 1st November. All entries must reach us before 09/01/2020 23:59. We will contact those acts selected for the heats by February 10th.
 * Your Act must be based within 30 miles of Cambridge or within the county of Cambridgeshire.
