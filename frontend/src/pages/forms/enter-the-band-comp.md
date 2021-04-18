@@ -14,7 +14,7 @@ To enter the band competition, please complete this form and submit working on-l
 
 * All material must be original - covers are not allowed
 * Please also include a current photo of your act with your application form.
-* Entries OPEN at 9am on 1st April. All entries must reach us before midnight 1st June 2021. We will contact those acts selected for the heats by ?????????
+* Entries OPEN at 9am on 1st April. All entries must reach us before midnight 1st June 2021. We will contact those acts selected for the heats by Wednesday 16 June 2021.
 * Your Act must be based within 30 miles of Cambridge or within the county of Cambridgeshire.
 * If the majority of your band members are under 18 you will automatically be entered into the Under-18s event
 
