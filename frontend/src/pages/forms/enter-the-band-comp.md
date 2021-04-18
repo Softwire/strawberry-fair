@@ -14,21 +14,20 @@ To enter the band competition, please complete this form and submit working on-l
 
 * All material must be original - covers are not allowed
 * Please also include a current photo of your act with your application form.
-* Entries OPEN at 9am on 1st November. All entries must reach us before 09/01/2020 23:59. We will contact those acts selected for the heats by February 10th.
+* Entries OPEN at 9am on 1st April. All entries must reach us before midnight 1st June 2021. We will contact those acts selected for the heats by ?????????
 * Your Act must be based within 30 miles of Cambridge or within the county of Cambridgeshire.
 * If the majority of your band members are under 18 you will automatically be entered into the Under-18s event
 
 The heats will be held on the following Saturdays:
 
-* 29th February
-* 7th March
-* 14th March
-* 21st March
-* 28th March
+* 7th August
+* 14th August
+* 21st August
+* 28th August - final of the U18
 
 All heats will be held The Portland Arms, from 7pm – 11pm. Please ensure you are available.
 
-The final is on Friday 24th April at The Junction.
+The final is on Thuesday 24 October at The Junction.
 
 The Band Competition is a fundraising event for Strawberry Fair. Any guest list will be limited to music industry professionals selected by Strawberry Fair.
 
