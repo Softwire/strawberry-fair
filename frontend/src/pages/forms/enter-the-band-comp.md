@@ -1,7 +1,7 @@
 ---
 templateKey: form
 title: Enter the Band Comp
-subtitle: Applications are open!
+subtitle: Applications are Open!
 form:
   isPublic: true
   link: >-
