@@ -42,3 +42,5 @@ All decisions taken by the promoters (Strawberry Fair) are final.
 Good Luck!
 
 _\-- The Strawberry Fair Programming Team_
+
+The information you provide to us will be held in accordance with our [Privacy Policy ](https://strawberry-fair.org.uk/privacy)and only used for the purposes of the Cambridge Band Competition.
