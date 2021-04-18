@@ -13,6 +13,9 @@ strawberryTiles:
       isPublic: false
       text: ''
     tile: Strawberry Tile
+  - strawberryTile:
+      isPublic: false
+    tile: Strawberry Tile
 ---
 # History
 
@@ -25,3 +28,75 @@ Ezio were named as Tony Blair's favourite band and has established an internatio
 Members of other bands have gone on to work with some top names in the industry, and all have fond recollections of being involved in the event.
 
 Previously held at the Guildhall, and then the Corn Exchange (sold out heats and finals), the competition in the 1990's then moved to the Junction, where the finals have been held ever since.
+
+**CAMBRIDGE BAND COMPETITION WINNERS:**
+
+2019 - Grassroof
+
+2018 - Influx of Insanity
+
+2017 - Flint Moore
+
+2016 - Permission to Dance
+
+2015 - Swamptruck
+
+2014 - 4th Labyrinth
+
+2013 - The Simpletone
+
+2012 - Grace Sarah
+
+2011 - Supercasino
+
+2010 - Th' Parish
+
+2009 - Ed Hope and Friends
+
+2008 - The Winter Kings 
+
+2007 - The Hot Bang
+
+2006 - The Alex Harris Band
+
+2005 - Lounge
+
+2004 - AR (AnAchoic Reflection)
+
+2003 - Houston 500
+
+2002 - Bag One
+
+2001 - Alice Band
+
+2000 - Calling Orson
+
+1999 - Simplicity
+
+1998 - Fabulous Kitchenware
+
+1997 - FUR
+
+1996 - Summerhouse
+
+1995 - Beach Blanket Bingo
+
+1994 - Summerhouse
+
+1993 - Ezio
+
+1992 - Tribe of Dan
+
+1991 - The View from Without
+
+1990 - The Big Blue
+
+1989 - Cherry Orchard
+
+1988 - Nutmeg
+
+1987 - Spirit Walk
+
+1986 - Double Yellow Line
+
+1985 - The Detective
