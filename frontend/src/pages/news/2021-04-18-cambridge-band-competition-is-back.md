@@ -29,6 +29,6 @@ The winner of the Under 18’s Competition will also be a competitor at the Junc
 
 Although Covid is very much on our minds and at the forefront of our plans we very much hope that everything goes according to plan and we will be able to once more present the very best of local music to a live audience.
 
-If you would like to be part of this unique event you can find the entry form on the Band Competition Facebook page <https://www.facebook.com/CambridgeBandCompetition/ >or you can email bandcomp@strawberry-fair.org.uk for a direct link to the entry form.
+If you would like to be part of this unique event you can find the entry form on the [Band Competition Facebook page ](https://www.facebook.com/CambridgeBandCompetition/) or you can email <a href='mailto:bandcomp@strawberry-fair.org.uk'>bandcomp@strawberry-fair.org.uk</a> for a direct link to the entry form.
 
 The Cambridge Band Competition has been a fixture on the Cambridge live music scene since it began as the Cambridge Rock Competition in 1985. Strawberry Fair has been running it since 2010 and it’s the longest running competition of its format in the UK today.  Over the past 36 years the Band Competition has produced some great winners and many of the competitors have gone on to work with some top names in the industry, and all have fond recollections of being involved in the event.
