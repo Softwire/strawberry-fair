@@ -4,6 +4,6 @@ title: Latest News
 subtitle: All the latest happenings in Fairy-land
 heroData:
   isActive: true
-featuredId: '1592048055434'
+featuredId: ''
 ---
 
