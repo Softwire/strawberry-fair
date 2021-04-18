@@ -19,7 +19,7 @@ Now the wait is over!
 
 **The Cambridge Band Competition 2020/21 opened for entries on 1st April with entries closing at midnight on 1st June.**
 
-[Band Compy Entry Form](https://strawberry-fair.org.uk/forms/enter-the-band-comp/)
+[Band Comp Entry Form](https://strawberry-fair.org.uk/forms/enter-the-band-comp/)
 
 Cambridge Band Competition is about music in all its variety. Applications are welcomed from any performers of original music, from solo performers to full bands.  All genres are acceptable, so long as material is original music. Soloists, comedy musicians, and classical musicians are also encouraged to apply – it’s not just about full bands, the competition is for every musician in Cambridgeshire or within 30 miles of the city of Cambridge. 
 
