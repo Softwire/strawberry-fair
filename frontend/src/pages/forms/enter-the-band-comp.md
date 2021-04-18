@@ -2,6 +2,11 @@
 templateKey: form
 title: Enter the Band Comp
 subtitle: Applications are Open!
+heroData:
+  heroImages:
+    - src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580047824/Banner/old-fair_gybfma.jpg
+  isActive: true
 form:
   isPublic: true
   link: >-
