@@ -41,10 +41,9 @@ contentBlocks:
       Strawberry Fair family.
 
 
-      We are working on other things (not least the famous Cambridge Band
-      Competition) that we may be able to do over the summer of 2021(watch this
-      space!!) and, of course, on the return of Strawberry Fair in the summer of
-      2022.
+      We are still planning to run the popular Cambridge Band Competition and
+      entries are now open. Check out the [Band Comp
+      ](/about/cambridge-band-competition)pages for more info
     scrapbookImages:
       - alt: Happy crowd
         src: >-
@@ -84,18 +83,10 @@ contentBlocks:
     subtitle: Unable to proceed under the current restrictions
     title: No Strawberry Fair in 2021
   - _markdown_contentBody: >-
-      Strawberry Fair is a not-for-profit organisation run entirely by a team of
-      volunteers (The Fairies!) who work throughout the year (yes it really does
-      take that long to organise!) sorting out everything to do with the Fair;
-      from finding artists and organising stages, to managing traders and
-      fundraising, right through to working out how many toilets are
-      needed....!!
-
-
-      Strawberry Fair couldn't happen without all of the people who, generously,
-      volunteer their time and effort throughout the to make our unique event
-      happen. Even though there's no main event in 2020, there's still loads of
-      ways you can get involved in the region's most exciting arts organisation.
+      We are delighted to annouce that the Cambridge Band Competition is going
+      full steam ahead in 2021, albeit later in the year than usual! If you're
+      in a band from the Cambridge area, check out the Band Comp pages where you
+      will find information about the competition and find the entry form.
     scrapbookImages:
       - alt: Flying Pig stage
         src: >-
@@ -129,8 +120,8 @@ contentBlocks:
       text: >-
         Interested? Why not come along to a benefit gig, one of our regular
         meetings, or get in touch via this website?
-    subtitle: We always need more people to help us put on this magical day
-    title: Help! Volunteer at Strawberry Fair
+    subtitle: Entries are now open
+    title: Enter the Cambridge Band Competition 2021
 calendarBlock:
   subtitle: 'Committee meetings, benefit gigs and events'
   title: Upcoming meetings and events
@@ -144,8 +135,6 @@ notes: >-
   \[For re-inserting next year]
 
 
-
-
   From humble beginnings, Strawberry Fair has grown to be the most popular free,
   entirely volunteer run, one day music & arts event in Cambridge (and probably
   across Europe!), attracting over 30,000 visitors throughout the day. On the
@@ -157,5 +146,28 @@ notes: >-
   The Fair is run entirely by volunteers (affectionately known as Strawberry
   Fairies) who give their energy, imagination and vision to present to their
   friends and neighbours in Cambridge a great free day out.
+
+
+  \[Next Content Block to replace]
+
+
+
+
+  Help! Volunteer at Strawberry Fair
+
+
+
+
+  Strawberry Fair is a not-for-profit organisation run entirely by a team of
+  volunteers (The Fairies!) who work throughout the year (yes it really does
+  take that long to organise!) sorting out everything to do with the Fair; from
+  finding artists and organising stages, to managing traders and fundraising,
+  right through to working out how many toilets are needed....!!
+
+
+  Strawberry Fair couldn't happen without all of the people who, generously,
+  volunteer their time and effort throughout the to make our unique event
+  happen. Even though there's no main event in 2020, there's still loads of ways
+  you can get involved in the region's most exciting arts organisation.
 ---
 
