@@ -85,8 +85,9 @@ contentBlocks:
   - _markdown_contentBody: >-
       We are delighted to annouce that the Cambridge Band Competition is going
       full steam ahead in 2021, albeit later in the year than usual! If you're
-      in a band from the Cambridge area, check out the Band Comp pages where you
-      will find information about the competition and find the entry form.
+      in a band from the Cambridge area, check out the [Band Comp
+      ](/about/-cambridge-band-competition)pages where you will find information
+      about the history of the competition and find the entry form.
     scrapbookImages:
       - alt: Flying Pig stage
         src: >-
@@ -116,7 +117,7 @@ contentBlocks:
         src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1580043113/Image%20Scrapbook/Gareth_Nunns_253_DSC_7609_d49scp.jpg
     strawberryTile:
-      isPublic: true
+      isPublic: false
       text: >-
         Interested? Why not come along to a benefit gig, one of our regular
         meetings, or get in touch via this website?
