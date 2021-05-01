@@ -15,4 +15,4 @@ eventTypes:
 ---
 The Cambridge Band Competition continues in the evening with the Over 18s at the Portland Arms on Mitchums Corner.
 
-Bands TBC
+Acts TBC
