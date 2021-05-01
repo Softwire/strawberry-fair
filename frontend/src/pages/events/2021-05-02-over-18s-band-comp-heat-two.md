@@ -4,7 +4,7 @@ title: Over 18's Band Comp - Heat Two
 heroData:
   isActive: true
 dateTimeRange:
-  startDateTime: 2021-08-13T23:17:11.787Z
+  startDateTime: 2021-08-14T18:00:00.000Z
 image:
   alt: Band on Stage
   shouldDisplay: true
@@ -14,3 +14,5 @@ eventTypes:
   - Band competition
 ---
 The Cambridge Band Competition continues in the evening with the Over 18s at the Portland Arms on Mitchums Corner.
+
+Bands TBC
