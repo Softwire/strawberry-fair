@@ -4,7 +4,7 @@ title: Over 18's Band Comp - Heat One
 heroData:
   isActive: true
 dateTimeRange:
-  startDateTime: 2021-08-07T12:00:00.000Z
+  startDateTime: 2021-08-07T18:00:00.000Z
 image:
   alt: Band on Stage
   shouldDisplay: true
@@ -13,6 +13,6 @@ image:
 eventTypes:
   - Band competition
 ---
-The Cambridge Over 18’s Band Competition Final will be at the Junction, Cambridge Leisure Park.
+The Cambridge Band Competition continues in the evening with the Over 18s at the Portland Arms on Mitchums Corner. 
 
 Acts TBC
