@@ -15,4 +15,4 @@ eventTypes:
 ---
 The Cambridge Over 18’s Band Competition Final will be at the Junction, Cambridge Leisure Park,   alongside the heat winners of the Under 18’s.
 
-Band TBC
+Bands TBC
