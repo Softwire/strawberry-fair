@@ -16,7 +16,7 @@ image:
 tags:
   - news
 ---
-The volunteer organising commitee is very sad to announce that there will be no Strawberry Fair in 2021.
+The volunteer organising committee is very sad to announce that there will be no Strawberry Fair in 2021.
 
 By this time of year we would be booking performers, booking the first of many traders, placing orders for infrastructure from toilets to marquees to stages and so much more and contacting all of our fantastic volunteers who come to the Common every year to form the crew and to steward the Fair. The committee has had to ask itself whether it should do that while not knowing whether the Fair was actually going to happen.
 
