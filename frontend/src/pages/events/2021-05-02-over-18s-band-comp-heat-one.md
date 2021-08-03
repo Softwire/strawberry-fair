@@ -4,7 +4,9 @@ title: Over 18's Band Comp - Heat One
 heroData:
   isActive: true
 dateTimeRange:
-  startDateTime: 2021-08-07T18:00:00.000Z
+  endDateTime: 2021-08-07T22:00:00.000Z
+  provideEnd: true
+  startDateTime: 2021-08-07T18:30:00.000Z
 image:
   alt: Band on Stage
   shouldDisplay: true
@@ -13,6 +15,13 @@ image:
 eventTypes:
   - Band competition
 ---
-The Cambridge Band Competition continues in the evening with the Over 18s at the Portland Arms on Mitchums Corner. 
+Heat one of the Over 18's Cambridge Band Competition is at the Portland Arms on Mitchums Corner. 
 
-Acts TBC
+* Tantris
+* Slava B
+* Planet Fatale
+* BleedEasy
+
+£5 advance, £6 on door
+
+<http://theportlandarms.co.uk/wp/the-return-of-live-shows/>
