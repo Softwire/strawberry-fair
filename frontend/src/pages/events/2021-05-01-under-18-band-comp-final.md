@@ -4,7 +4,7 @@ title: Under 18 Band Comp - Final
 heroData:
   isActive: true
 dateTimeRange:
-  startDateTime: 2021-08-28T12:30:00.000Z
+  startDateTime: 2021-09-05T12:30:00.000Z
 image:
   alt: Band on Stage
   shouldDisplay: true
@@ -13,6 +13,10 @@ image:
 eventTypes:
   - Band competition
 ---
-The Cambridge Band Competition will start with the Under 18s at the Portland Arms on Mitchums Corner.
+The Cambridge Band Competition Under18s at the Portland Arms on Mitchums Corner.
 
-Acts TBC
+* Karma Violets
+* Substation
+* Mythopoeic
+* Chloe Lorentzen
+* Charles Arbon
