@@ -15,7 +15,7 @@ image:
 eventTypes:
   - Band competition
 ---
-Heat three of the Over 18's Cambridge Band Competition is at the Portland Arms on Mitchums Corner. 
+Heat four of the Over 18's Cambridge Band Competition is at the Portland Arms on Mitchums Corner. 
 
 £5 advance, £6 on door
 
