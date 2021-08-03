@@ -1,6 +1,6 @@
 ---
 templateKey: event-info
-title: Under 18 Band Comp - Final
+title: Under 18 Band Comp
 heroData:
   isActive: true
 dateTimeRange:
@@ -13,10 +13,12 @@ image:
 eventTypes:
   - Band competition
 ---
-The Cambridge Band Competition Under18s at the Portland Arms on Mitchums Corner.
+The Cambridge Band Competition Under18s event at the Portland Arms on Mitchums Corner.
 
 * Karma Violets
 * Substation
 * Mythopoeic
 * Chloe Lorentzen
 * Charles Arbon
+
+<http://theportlandarms.co.uk/wp/the-return-of-live-shows/>
