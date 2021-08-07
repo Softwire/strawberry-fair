@@ -1,6 +1,6 @@
 ---
 templateKey: event-info
-title: Under 18 Band Comp
+title: Under 18 Band Comp Final
 heroData:
   isActive: true
 dateTimeRange:
