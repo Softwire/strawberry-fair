@@ -1,12 +1,12 @@
 ---
 templateKey: event-info
-title: Over 18's Band Comp - Heat Two
+title: Over 18's Band Comp - Heat Four
 heroData:
   isActive: true
 dateTimeRange:
   endDateTime: 2021-08-14T22:00:00.000Z
   provideEnd: true
-  startDateTime: 2021-08-14T18:30:00.000Z
+  startDateTime: 2021-08-14T18:00:00.000Z
 image:
   alt: Band on Stage
   shouldDisplay: true
@@ -15,7 +15,7 @@ image:
 eventTypes:
   - Band competition
 ---
-Heat two of the Over 18's Cambridge Band Competition is at the Portland Arms on Mitchums Corner. 
+Heat four of the Over 18's Cambridge Band Competition is at the Portland Arms on Mitchums Corner. 
 
 £5 advance, £6 on the door
 
