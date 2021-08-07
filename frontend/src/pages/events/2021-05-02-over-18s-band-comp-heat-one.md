@@ -6,7 +6,7 @@ heroData:
 dateTimeRange:
   endDateTime: 2021-08-07T22:00:00.000Z
   provideEnd: true
-  startDateTime: 2021-08-07T18:30:00.000Z
+  startDateTime: 2021-08-07T18:00:00.000Z
 image:
   alt: Band on Stage
   shouldDisplay: true
