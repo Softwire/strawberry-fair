@@ -5,12 +5,13 @@ PRODID:adamgibbons/ics
 METHOD:PUBLISH
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
-UID:f80b465b-1cdb-4c07-b33b-4503fa625d56
-SUMMARY:Over 18's Band Comp - Heat One
-DTSTAMP:20210807T145600Z
-DTSTART:20210807T180000Z
-DTEND:20210807T180000Z
-DESCRIPTION:The Cambridge Band Competition continues in the evening with th
-	e Over 18s at the Portland Arms on Mitchums Corner. Acts TBC
+UID:16c20b52-c26b-4663-8b31-49e82cc4d202
+SUMMARY:Over 18's Band Comp - Heat Three
+DTSTAMP:20210807T150100Z
+DTSTART:20210807T183000Z
+DTEND:20210807T220000Z
+DESCRIPTION:Heat three of the Over 18's Cambridge Band Competition is at th
+	e Portland Arms on Mitchums Corner. Tantris Slava B Planet Fatale BleedEas
+	y £5 advance\, £6 on door
 END:VEVENT
 END:VCALENDAR
