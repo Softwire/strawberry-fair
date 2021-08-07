@@ -1,6 +1,6 @@
 ---
 templateKey: event-info
-title: Over 18's Band Comp - Heat One
+title: Over 18's Band Comp - Heat Three
 heroData:
   isActive: true
 dateTimeRange:
@@ -15,7 +15,7 @@ image:
 eventTypes:
   - Band competition
 ---
-Heat one of the Over 18's Cambridge Band Competition is at the Portland Arms on Mitchums Corner. 
+Heat three of the Over 18's Cambridge Band Competition is at the Portland Arms on Mitchums Corner. 
 
 * Tantris
 * Slava B
