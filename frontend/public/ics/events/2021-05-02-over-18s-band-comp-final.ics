@@ -5,13 +5,13 @@ PRODID:adamgibbons/ics
 METHOD:PUBLISH
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
-UID:7fc334af-6113-4493-8333-8fbb10daf336
+UID:719b70f7-7e44-486c-96a9-07000609d65c
 SUMMARY:Over 18's Band Comp - Final
-DTSTAMP:20210807T145100Z
+DTSTAMP:20210807T145600Z
 DTSTART:20211028T180000Z
 DTEND:20211028T180000Z
 DESCRIPTION:The Cambridge Over 18’s Band Competition Final will be at the J
 	unction\, Cambridge Leisure Park\, alongside the heat winners of the Under
-	 18’s.
+	 18’s. Acts TBC
 END:VEVENT
 END:VCALENDAR

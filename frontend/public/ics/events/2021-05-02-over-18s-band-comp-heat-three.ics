@@ -5,12 +5,13 @@ PRODID:adamgibbons/ics
 METHOD:PUBLISH
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
-UID:8a6c463a-b812-4bac-86a7-4154cb8ff54e
-SUMMARY:Over 18's Band Comp - Heat Three
-DTSTAMP:20210807T145100Z
+UID:0b8d8986-2c11-41fa-88a0-d712dbc9b9e7
+SUMMARY:Over 18's Band Comp - Heat Five
+DTSTAMP:20210807T145600Z
 DTSTART:20210821T180000Z
-DTEND:20210821T180000Z
-DESCRIPTION:The Cambridge Band Competition continues in the evening with th
-	e Over 18s at the Portland Arms on Mitchums Corner. Acts TBC
+DTEND:20210821T220000Z
+DESCRIPTION:Heat five of the Over 18's Cambridge Band Competition is at the
+	 Portland Arms on Mitchums Corner. £5 advance\, £6 on door The Rambling Cl
+	ub Jenem Sara Ashley Coves
 END:VEVENT
 END:VCALENDAR

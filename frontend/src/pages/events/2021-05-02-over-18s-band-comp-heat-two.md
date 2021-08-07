@@ -1,9 +1,11 @@
 ---
 templateKey: event-info
-title: Over 18's Band Comp - Heat Two
+title: Over 18's Band Comp - Heat Four
 heroData:
   isActive: true
 dateTimeRange:
+  endDateTime: 2021-08-14T22:00:00.000Z
+  provideEnd: true
   startDateTime: 2021-08-14T18:00:00.000Z
 image:
   alt: Band on Stage
@@ -13,6 +15,13 @@ image:
 eventTypes:
   - Band competition
 ---
-The Cambridge Band Competition continues in the evening with the Over 18s at the Portland Arms on Mitchums Corner.
+Heat four of the Over 18's Cambridge Band Competition is at the Portland Arms on Mitchums Corner. 
 
-Acts TBC
+£5 advance, £6 on the door
+
+* Chris Andrews
+* Curtis Cronin
+* Karmen Idol
+* Recks
+
+<http://theportlandarms.co.uk/wp/the-return-of-live-shows/>
