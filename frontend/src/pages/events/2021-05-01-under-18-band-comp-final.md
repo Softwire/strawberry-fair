@@ -4,7 +4,7 @@ title: Under 18 Band Comp
 heroData:
   isActive: true
 dateTimeRange:
-  startDateTime: 2021-09-05T12:30:00.000Z
+  startDateTime: 2021-09-05T13:00:00.000Z
 image:
   alt: Band on Stage
   shouldDisplay: true
