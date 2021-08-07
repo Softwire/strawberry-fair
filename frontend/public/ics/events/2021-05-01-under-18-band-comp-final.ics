@@ -5,12 +5,13 @@ PRODID:adamgibbons/ics
 METHOD:PUBLISH
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
-UID:905306f6-0962-4199-8348-83cbf09c4626
-SUMMARY:Under 18 Band Comp - Final
-DTSTAMP:20210803T223600Z
-DTSTART:20210828T123000Z
-DTEND:20210828T123000Z
-DESCRIPTION:The Cambridge Band Competition will start with the Under 18s at
-	 the Portland Arms on Mitchums Corner. Acts TBC
+UID:e6a52703-e3d7-4d1f-81d9-7d8620ef5da9
+SUMMARY:Under 18 Band Comp Final
+DTSTAMP:20210807T145100Z
+DTSTART:20210905T130000Z
+DTEND:20210905T170000Z
+DESCRIPTION:The Cambridge Band Competition Under18s event at the Portland A
+	rms on Mitchums Corner. Karma Violets Substation Mythopoeic Chloe Lorentze
+	n Charles Arbon
 END:VEVENT
 END:VCALENDAR
