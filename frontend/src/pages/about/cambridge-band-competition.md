@@ -25,11 +25,9 @@ The Cambridge Band Competition 2020/21 opened for entries on 1st April with entr
 
 Cambridge Band Competition is about music in all its variety. Applications are welcomed from any performers of original music, from solo performers to full bands. All genres are acceptable, so long as material is original music. Soloists, comedy musicians, and classical musicians are also encouraged to apply – it’s not just about full bands, the competition is for every musician in Cambridgeshire or within 30 miles of the city of Cambridge.
 
-The Heats will be held in the Portland Arms on the Saturdays in August with the Final at the Junction on Thursday 24th October. The Band Competition is actually two competitions, the Over 18’s and the Under 18’s. Both competitions will run in tandem with each other, with the heats for the Under 18’s on the Saturday afternoons and the heats for the Over 18’s on the Saturday nights. The final of the Under 18’s Competition will be at The Portland Arms on the last Saturday in August.
+The Heats will be held in the Portland Arms on the Saturdays in August with the Final at the Junction on Thursday 28th October. The Band Competition is actually two competitions, the Over 18’s and the Under 18’s. The Under 18’s this year will be a Final on Sunday 5 September at the Portand Arms, and the heats for the Over 18’s are on the Saturday nights in August.
 
 The winner of the Under 18’s Competition will also be a competitor at the Junction alongside the heat winners of the Over 18’s Competition. 
-
-
 
 # History
 
