@@ -21,7 +21,7 @@ Heat four of the Over 18's Cambridge Band Competition is at the Portland Arms on
 
 * Chris Andrews
 * Curtis Cronin
-* Karmen Idol
-* Recks
+* The Routine
+* to be confirmed
 
 <http://theportlandarms.co.uk/wp/the-return-of-live-shows/>
