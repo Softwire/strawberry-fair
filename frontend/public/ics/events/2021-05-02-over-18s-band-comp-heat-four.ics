@@ -5,13 +5,13 @@ PRODID:adamgibbons/ics
 METHOD:PUBLISH
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
-UID:c165b5c1-2623-44bc-af6d-e27f91df7876
+UID:6205d027-d3cf-45e7-bbed-94fe1e52c94a
 SUMMARY:Over 18's Band Comp - Heat Six
-DTSTAMP:20210812T224100Z
+DTSTAMP:20210823T001800Z
 DTSTART:20210828T180000Z
 DTEND:20210828T220000Z
 DESCRIPTION:Heat six of the Over 18's Cambridge Band Competition is at the 
-	Portland Arms on Mitchums Corner. £5 advance\, £6 on door Rafa Triskell Th
-	ree Years Younger Jose's Son Strawberry Lace For the Hornets
+	Portland Arms on Mitchums Corner. £5 advance\, £6 on door Rafa Triskell Jo
+	se's Son Strawberry Lace For the Hornets
 END:VEVENT
 END:VCALENDAR
