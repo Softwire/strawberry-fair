@@ -20,7 +20,6 @@ Heat six of the Over 18's Cambridge Band Competition is at the Portland Arms on 
 £5 advance, £6 on door
 
 * Rafa Triskell
-* Three Years Younger
 * Jose's Son
 * Strawberry Lace
 * For the Hornets
