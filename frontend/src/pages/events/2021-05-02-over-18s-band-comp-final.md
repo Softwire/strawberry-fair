@@ -15,8 +15,9 @@ eventTypes:
 ---
 The Cambridge Over 18’s Band Competition Final will be at the Junction, Cambridge Leisure Park,   alongside the heat winners of the Under 18’s.
 
-* Charles Arbon
-* Mythopoeic
-* Substation
-* Karma Violets
+* Shambertans
+* Pink Lemonade
+* Bleed Easy
+* Jenem
+* Strawberry Lace
 * Chloe Lorentzen
