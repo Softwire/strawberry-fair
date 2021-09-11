@@ -21,3 +21,5 @@ The Cambridge Over 18’s Band Competition Final will be at the Junction, Cambri
 * Jenem
 * Strawberry Lace
 * Chloe Lorentzen
+
+Please note that The Junction have a Covid policy for entry that you can see here:    [**https://www.junction.co.uk/covid-19-entry-requirements**](https://www.junction.co.uk/covid-19-entry-requirements)****
