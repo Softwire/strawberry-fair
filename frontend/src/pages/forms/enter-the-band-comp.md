@@ -15,4 +15,11 @@ form:
     width="640" height="1904" frameborder="0" marginheight="0"
     marginwidth="0">Loading…</iframe>
 ---
-Band Comp heats have happened for this year, and winners from each heat will be on stage at The Junction Thursday 24 August 2021. Come along and support your favourite act from:
+Band Comp heats have happened for this year, and winners from each heat will be on stage at The Junction Thursday 28 October 2021. Come along and support your favourite act.
+
+* Shambertans
+* Pink Lemonade
+* Bleed Easy
+* Jenem
+* Strawberry Lace
+* Chloe Lorentzen
