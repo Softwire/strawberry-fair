@@ -1,6 +1,6 @@
 ---
 templateKey: event-info
-title: Over 18's Band Comp - Final
+title: Cambridge Band Comp - Final
 heroData:
   isActive: true
 dateTimeRange:
@@ -15,4 +15,11 @@ eventTypes:
 ---
 The Cambridge Over 18’s Band Competition Final will be at the Junction, Cambridge Leisure Park,   alongside the heat winners of the Under 18’s.
 
-Acts TBC
+* Shambertans
+* Pink Lemonade
+* Bleed Easy
+* Jenem
+* Strawberry Lace
+* Chloe Lorentzen
+
+Please note that The Junction have a Covid policy for entry that you can see here:    [**https://www.junction.co.uk/covid-19-entry-requirements**](https://www.junction.co.uk/covid-19-entry-requirements)****
