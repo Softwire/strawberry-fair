@@ -82,46 +82,6 @@ contentBlocks:
         next year. 
     subtitle: Unable to proceed under the current restrictions
     title: No Strawberry Fair in 2021
-  - _markdown_contentBody: >-
-      We are delighted to annouce that the Cambridge Band Competition is going
-      full steam ahead in 2021, albeit later in the year than usual! If you're
-      in a band from the Cambridge area, check out the Band Comp pages where you
-      will find information about the competition and find the entry form.
-    scrapbookImages:
-      - alt: Flying Pig stage
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/band_melwuk.jpg
-      - alt: Parade
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/banner-carrying_m0ufmy.jpg
-      - alt: Girl with guitar
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1580043160/Image%20Scrapbook/Gareth_Nunns_147_DSC_6981_kbsxhn.jpg
-      - alt: Drummers on parade
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398411/Image%20Scrapbook/drums_pgyyyt.jpg
-      - alt: Singer
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/guitar-girl_srefgz.jpg
-      - alt: Samba band
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/instruments_lral6p.jpg
-      - alt: Girls dancing
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1580042736/Image%20Scrapbook/Gareth_Nunns_207_DSC_7285_wxuk6q.jpg
-      - alt: Stilt wedding
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/stilts_g7oq1b.jpg
-      - alt: Singer
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1580043113/Image%20Scrapbook/Gareth_Nunns_253_DSC_7609_d49scp.jpg
-    strawberryTile:
-      isPublic: true
-      text: >-
-        Interested? Why not come along to a benefit gig, one of our regular
-        meetings, or get in touch via this website?
-    subtitle: Entries are now open
-    title: Enter the Cambridge Band Competition 2021
 calendarBlock:
   subtitle: 'Committee meetings, benefit gigs and events'
   title: Upcoming meetings and events
