@@ -3,6 +3,8 @@ templateKey: news-article
 uniqueId: '1618760851210'
 title: Cambridge Band Competition is Back
 subtitle: The wait is over! Enter the Band Comp now
+heroData:
+  isActive: true
 author: Official
 date: '2021-04-18'
 image:
