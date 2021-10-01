@@ -4,7 +4,7 @@ title: Cambridge Band Comp - Final
 heroData:
   isActive: true
 dateTimeRange:
-  startDateTime: 2021-10-28T18:00:00.000Z
+  startDateTime: 2021-10-28T17:30:00.000Z
 image:
   alt: Band on Stage
   shouldDisplay: true
@@ -13,16 +13,15 @@ image:
 eventTypes:
   - Band competition
 ---
-The Cambridge Over 18’s Band Competition Final will be at the Junction, Cambridge Leisure Park,   alongside the heat winners of the Under 18’s.
+The Cambridge Over 18’s Band Competition Final will be at the Junction, Cambridge Leisure Park,   alongside the heat winners of the Under 18’s. Prizes for the winners and for best acts in many different categories, PLUS the prestigious Kimberley Rew Best Song Prize.
 
 * Shambertans
 * Pink Lemonade
 * Bleed Easy
+* The Routine
 * Jenem
 * Strawberry Lace
-* Chloe
-
-
+* Chloe Lorentzen
 
 **https://www.junction.co.uk/cambridge-band-competition-final**
 
