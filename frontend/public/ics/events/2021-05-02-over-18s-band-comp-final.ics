@@ -5,16 +5,18 @@ PRODID:adamgibbons/ics
 METHOD:PUBLISH
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
-UID:4d97f4be-98bb-47fd-a40d-b0ad92ec8c92
+UID:f375330e-62af-49a2-a13e-c94bd75b36b0
 SUMMARY:Cambridge Band Comp - Final
-DTSTAMP:20210925T233800Z
-DTSTART:20211028T180000Z
-DTEND:20211028T180000Z
+DTSTAMP:20211001T220100Z
+DTSTART:20211028T173000Z
+DTEND:20211028T173000Z
 DESCRIPTION:The Cambridge Over 18’s Band Competition Final will be at the J
 	unction\, Cambridge Leisure Park\, alongside the heat winners of the Under
-	 18’s. Shambertans Pink Lemonade Bleed Easy Jenem Strawberry Lace Chloe ht
-	tps://www.junction.co.uk/cambridge-band-competition-final Please note that
-	 The Junction have a Covid policy for entry that you can see here: https:/
-	/www.junction.co.uk/covid-19-entry-requirements
+	 18’s. Prizes for the winners and for best acts in many different categori
+	es\, PLUS the prestigious Kimberley Rew Best Song Prize. Shambertans Pink 
+	Lemonade Bleed Easy The Routine Jenem Strawberry Lace Chloe Lorentzen http
+	s://www.junction.co.uk/cambridge-band-competition-final Please note that T
+	he Junction have a Covid policy for entry that you can see here: https://w
+	ww.junction.co.uk/covid-19-entry-requirements
 END:VEVENT
 END:VCALENDAR
