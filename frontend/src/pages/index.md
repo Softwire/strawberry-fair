@@ -30,19 +30,16 @@ heroData:
   isActive: true
 contentBlocks:
   - _markdown_contentBody: >-
-      The volunteer organising committee has had to take the difficult decision
-      to cancel Strawberry Fair 2021. 
+      Yes, it's confirmed, Starwberry Fair will be back on **11th June 2022**
+      after the longest break in its history.
 
 
-      We know that this will be a huge disappointment to everyone who was
-      looking forward to starting the summer of 2021 with Strawberry Fair and
-      perhaps an even bigger disappointment to the traders and suppliers who
-      have their own strong links to the Fair and are very much a part of the
-      Strawberry Fair family.
+      We're looking forward to catching up with old friends and making new ones,
+      but we can't make it happen without [**YOU**!](/about/get-involved)
 
 
-      We are still planning to run the popular Cambridge Band Competition and
-      entries are now open. Check out the [Band Comp
+      Throughout all of everything, we did still manage to hold the popular
+      Cambridge Band Competition though..... Check out the [**Band Comp**
       ](/about/cambridge-band-competition)pages for more info
     scrapbookImages:
       - alt: Happy crowd
@@ -77,11 +74,9 @@ contentBlocks:
           https://res.cloudinary.com/strawberryfair/image/upload/v1580043133/Image%20Scrapbook/Gareth_Nunns_200_DSC_7249_r4y9yu.jpg
     strawberryTile:
       isPublic: true
-      text: >-
-        Stay safe. We look forward to welcoming you back to Midsummer Common
-        next year. 
-    subtitle: Unable to proceed under the current restrictions
-    title: No Strawberry Fair in 2021
+      text: ' We''re looking forward to welcoming everyone back to Midsummer Common next year. '
+    subtitle: Strawberry Fair will take place on 11th June 2022
+    title: We're Back in 2022!
 calendarBlock:
   subtitle: 'Committee meetings, benefit gigs and events'
   title: Upcoming meetings and events
