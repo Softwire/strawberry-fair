@@ -30,7 +30,7 @@ heroData:
   isActive: true
 contentBlocks:
   - _markdown_contentBody: >-
-      Yes, it's confirmed, Starwberry Fair will be back on **11th June 2022**
+      Yes, it's confirmed, Strawberry Fair will be back on **11th June 2022**
       after the longest break in its history.
 
 
@@ -38,8 +38,8 @@ contentBlocks:
       but we can't make it happen without [**YOU**!](/about/get-involved)
 
 
-      Throughout all of everything, we did still manage to hold the popular
-      Cambridge Band Competition though..... Check out the [**Band Comp**
+      Throughout all of everything, we still managed to hold the popular
+      Cambridge Band Competition. Check out the [**Band Comp**
       ](/about/cambridge-band-competition)pages for more info
     scrapbookImages:
       - alt: Happy crowd
