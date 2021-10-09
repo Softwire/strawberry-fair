@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
-title: Applications closed
-subtitle: Strawberry Fair 2021 has been cancelled
+title: Applications to trade at Strawberry Fair in 2022 will open in November
+subtitle: Strawberry Fair will be back in 2022!
 heroData:
   heroImages: []
   isActive: true
@@ -89,8 +89,8 @@ notes: >-
   FAQ](https://docs.google.com/document/d/1VK62GAmE1bzmHqwnoVzksYNBo0hmcGAaqFn3pZUGEgY/edit?usp=sharing)
   or email <mailto:traders@strawberry-fair.org.uk> if you can't find the answer.
 ---
-We have had to take the difficult decision to cancel Strawberry Fair in 2021. We have tried to contact all traders to refund any deposits already paid. If you haven't had your deposit returned, please contact <mailto:traders@strawberry-fair.org.uk>. 
+We had to take the difficult decision to cancel Strawberry Fair in 2021. We have tried to contact all traders to refund any deposits already paid. If you haven't had your deposit returned, please contact <mailto:traders@strawberry-fair.org.uk>. 
 
-The events industry has been hit partifularly hard by the Coronavirus, and we want to thank the traders that support us and we wish you the best during these turbulent times. 
+The events industry has been hit particularly hard by the Coronavirus and we want to thank the traders that support us and we wish you the best during these turbulent times and look forward to welcoming you all in 2022.
 
-Stay well and see you in 2022 x
+Stay well and see you then x
