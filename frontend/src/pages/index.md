@@ -31,7 +31,7 @@ heroData:
 contentBlocks:
   - _markdown_contentBody: >-
       Yes, it's confirmed, Strawberry Fair will be back on **11th June 2022**
-      after the longest break in its history.
+      after the longest break in its history with the theme Love the Planet.
 
 
       We're looking forward to catching up with old friends and making new ones,
