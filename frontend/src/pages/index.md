@@ -113,7 +113,7 @@ contentBlocks:
           https://res.cloudinary.com/strawberryfair/image/upload/v1580042729/Image%20Scrapbook/Gareth_Nunns_143_DSC_6966_yntwez.jpg
     strawberryTile:
       isPublic: false
-    subtitle: 'By the people of Cambridge, for the people of Cambridge'
+    subtitle: 'Starting the summer season in Cambridge for over 40 years '
     title: About Strawberry Fair
 calendarBlock:
   subtitle: 'Committee meetings, benefit gigs and events'
