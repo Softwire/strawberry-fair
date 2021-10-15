@@ -1,7 +1,7 @@
 ---
 templateKey: form
 title: Volunteer Form
-subtitle: Tell us a bit about how you'd like to get involved
+subtitle: Tell us a bit about you and your interests
 heroData:
   heroImages:
     - alt: Bunting
