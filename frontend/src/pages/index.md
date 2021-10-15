@@ -77,6 +77,44 @@ contentBlocks:
       text: ' We''re looking forward to welcoming everyone back to Midsummer Common next year. '
     subtitle: Strawberry Fair will take place on 11th June 2022
     title: We're Back in 2022!
+  - _markdown_contentBody: >-
+      From humble beginnings, Strawberry Fair has grown to be the most popular
+      free, entirely volunteer run, one day music & arts event in Cambridge (and
+      probably across Europe!), attracting over 30,000 visitors throughout the
+      day. On the first Saturday of June and now passed our 40th year, residents
+      and visitors have gathered together on Midsummer Common to celebrate their
+      vibrant and creative city.
+
+
+      The Fair is run entirely by volunteers (affectionately known as Strawberry
+      Fairies) who give their energy, imagination and vision to present to their
+      friends and neighbours in Cambridge a great free day out.
+    scrapbookImages:
+      - alt: Site crew
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1580044562/Image%20Scrapbook/Gareth_Nunns_114_DSC_6844_mievyu.jpg
+      - alt: Guitarist
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1579684138/Image%20Scrapbook/Gareth_Nunns_286_DSC_7789_yyj4zc.jpg
+      - alt: Stilt walkers
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/stilts_g7oq1b.jpg
+      - alt: Guitarist
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/guitar-girl_srefgz.jpg
+      - alt: Crowd
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/crowd-shot_f84bne.jpg
+      - alt: Happy crowd
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1579684375/Image%20Scrapbook/Gareth_Nunns_254_DSC_7613_m1a3ya.jpg
+      - alt: Guitarist
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1580042729/Image%20Scrapbook/Gareth_Nunns_143_DSC_6966_yntwez.jpg
+    strawberryTile:
+      isPublic: false
+    subtitle: 'Starting the summer season in Cambridge for over 40 years '
+    title: About Strawberry Fair
 calendarBlock:
   subtitle: 'Committee meetings, benefit gigs and events'
   title: Upcoming meetings and events
