@@ -3,7 +3,7 @@ templateKey: event-info
 title: Finance Meeting
 subtitle: All Welcome!!
 dateTimeRange:
-  startDateTime: 2021-10-24T19:00:39.468Z
+  startDateTime: 2021-10-20T19:00:39.468Z
 image:
   alt: Logo
   shouldDisplay: true
