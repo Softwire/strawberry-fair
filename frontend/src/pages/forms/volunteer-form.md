@@ -1,7 +1,7 @@
 ---
 templateKey: form
 title: Volunteer Form
-subtitle: Tell us a bit about you and your interests
+subtitle: Tell us a bit about yourself and how you'd like to get involved
 heroData:
   heroImages:
     - alt: Bunting
@@ -16,4 +16,6 @@ form:
     width="640" height="808" frameborder="0" marginheight="0"
     marginwidth="0">Loading…</iframe>
 ---
-We are always on the look out for volunteers - and whatever skills you have are needed! Please tell us a bit about you, and what you are interested in, and we will get in touch to discuss this with you.
+We are always on the look out for volunteers - and whatever skills you have are needed!
+
+Please tell us a bit about yourself and what you are interested in and we'll get in touch to discuss this with you.
