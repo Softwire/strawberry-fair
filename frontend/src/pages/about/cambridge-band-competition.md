@@ -21,7 +21,7 @@ strawberryTiles:
 
 The Cambridge Band Competition 2022 is now open for entries! Musicians simply need to fill in the online form
 
-2022 Entry Form
+[2022 Entry Form](/forms/band-comp-2022-entry-form)
 
 All genres of music and all types of performer are welcome to enter as long as they are based within 30 miles of Cambridge or within Cambridgeshire and play original material. **Young performers** are particularly welcome to apply and indeed under 18s performers, like progressive Jazz Rock trio "Influx of Insanity", have won the competition in the past!  
 
