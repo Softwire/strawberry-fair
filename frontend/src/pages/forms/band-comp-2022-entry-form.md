@@ -3,6 +3,9 @@ templateKey: form
 title: Cambridge Band Competition 2022
 subtitle: Enter now
 heroData:
+  heroImages:
+    - src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580908539/Banner/Hidef_sf_banner_2_p0u2oz.jpg
   isActive: true
 form:
   isPublic: true
