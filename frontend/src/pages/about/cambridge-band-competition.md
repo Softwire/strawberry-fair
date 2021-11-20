@@ -19,6 +19,10 @@ strawberryTiles:
 ---
 # Enter the 2022 Band Comp Now!
 
+The Cambridge Band Competition 2022 is now open for entries! Musicians simply need to fill in the online form
+
+2022 Entry Form
+
 All genres of music and all types of performer are welcome to enter as long as they are based within 30 miles of Cambridge or within Cambridgeshire and play original material. **Young performers** are particularly welcome to apply and indeed under 18s performers, like progressive Jazz Rock trio "Influx of Insanity", have won the competition in the past!  
 
 The closing date for entries is midnight **18th January 2022**
@@ -30,8 +34,6 @@ There will be four Heats held at the **Portland Arms** on Sundays 27th February,
 And the **Grand Final** of the Competition will be held at **Cambridge Junction J1** on **Thursday 5th May**
 
 There are a number of cash, performance and artist development prizes up for grabs including the prestigious **Kimberley Rew Songwriting Prize**,and **all finalists** will get to **play at Strawberry Fair 2022** on Saturday June 11th
-
-
 
 # History
 
