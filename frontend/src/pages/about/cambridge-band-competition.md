@@ -19,7 +19,7 @@ strawberryTiles:
 ---
 # Enter the 2022 Band Comp Now!
 
-The Cambridge Band Competition 2022 is now open for entries! Musicians simply need to fill in the online form
+The Cambridge Band Competition 2022 is now open for entries! Musicians simply need to fill in the online form:
 
 [2022 Entry Form](/forms/band-comp-2022-entry-form)
 
