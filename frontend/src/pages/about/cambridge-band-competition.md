@@ -17,6 +17,22 @@ strawberryTiles:
       isPublic: false
     tile: Strawberry Tile
 ---
+# Enter the 2022 Band Comp Now!
+
+All genres of music and all types of performer are welcome to enter as long as they are based within 30 miles of Cambridge or within Cambridgeshire and play original material. **Young performers** are particularly welcome to apply and indeed under 18s performers, like progressive Jazz Rock trio "Influx of Insanity", have won the competition in the past!  
+
+The closing date for entries is midnight **18th January 2022**
+
+All entries will go forward to the listening panel of judges which will meet the following week and those acts getting through to the heats will be announced at the beginning of February 2022. 
+
+There will be four Heats held at the **Portland Arms** on Sundays 27th February, 6th March, 13th March and 20th March.
+
+And the **Grand Final** of the Competition will be held at **Cambridge Junction J1** on **Thursday 5th May**
+
+There are a number of cash, performance and artist development prizes up for grabs including the prestigious **Kimberley Rew Songwriting Prize**,and **all finalists** will get to **play at Strawberry Fair 2022** on Saturday June 11th
+
+
+
 # History
 
 First launched in 1985 at Cambridge's Guildhall, the competition picked up immediate national attention thanks to Trevor Dann and The Old Grey Whistle Test. Infamously, Colonel Gomez caused a national controversy with their performance on that show, controversy that even led to questions being asked in Parliament about the incident! More was to come though, with the 'debatable' decision to award the first prize to The Detective - a decision that caused consternation amongst some as, although they made the tapes themselves, The Detective performed on stage to a backing track!
@@ -31,6 +47,7 @@ Previously held at the Guildhall, and then the Corn Exchange (sold out heats and
 
 **CAMBRIDGE BAND COMPETITION WINNERS:**
 
+* 2020/21 Strawberry Lace
 * 2019 - Grassroof
 * 2018 - Influx of Insanity
 * 2017 - Flint Moore
