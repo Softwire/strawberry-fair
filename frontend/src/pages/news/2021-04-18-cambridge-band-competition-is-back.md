@@ -17,7 +17,7 @@ tags:
 ---
 **The Cambridge Band Competition 2021/22 is now open for entries, with entries closing at midnight on 18th January 2022.**
 
-****[**See here for the Final of the 2020/21 Band Competition.**](https://www.youtube.com/watch?v=GdS32992Q68&t=12332s)****
+[See here for the Final of the 2020/21 Band Competition.](https://youtu.be/GdS32992Q68)
 
 [Band Comp Entry Form](https://docs.google.com/forms/d/e/1FAIpQLSemT8AqQF-bPBfR8oq980bwGxCo6JWrfVclrazYcnuhBLOyKA/viewform?fbclid=IwAR0xViIvFLs_Y8pQdrKVw20_sLtUD-bYxcCyYvsaGKtPDpAL7zifAVkPBYQ)
 
