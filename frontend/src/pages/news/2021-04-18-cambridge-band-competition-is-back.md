@@ -23,8 +23,8 @@ tags:
 
 Cambridge Band Competition is about music in all its variety. Applications are welcomed from any performers of original music, from solo performers to full bands.  All genres are acceptable, so long as material is original music. Soloists, comedy musicians and classical musicians are also encouraged to apply – it’s not just about full bands, the competition is for every musician in Cambridgeshire or within 30 miles of the city of Cambridge. 
 
- The Band Competition is actually two competitions, the Over 18’s and the Under 18’s.\
-Both competitions will run in tandem with each other, with the heats for the Under 18’s on the Saturday afternoons and the heats for the Over 18’s on the Saturday nights. The final of the Under 18’s Competition will be at The Portland Arms on the last Saturday in August. 
+The Band Competition is actually two competitions, the Over 18’s and the Under 18’s.\
+Both competitions will run in tandem with each other, with the heats for the Under 18’s on the Saturday afternoons and the heats for the Over 18’s on the Saturday nights. 
 
 [Band Comp Entry Form](/forms/band-comp-2022-entry-form/)
 
