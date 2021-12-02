@@ -46,9 +46,9 @@ contentBlocks:
       Competition**](https://strawberry-fair.org.uk/about/cambridge-band-competition/).
 
 
-      Check out the [**Band Comp**](/about/cambridge-band-competition) ****pages
-      for more information on the UK's longest running band competition and how
-      to enter for the 2022 competition
+      Check out the [**Band Comp**](/about/cambridge-band-competition) pages for
+      more information on the UK's longest running band competition and how to
+      enter for the 2022 competition.
     scrapbookImages:
       - alt: Happy crowd
         src: >-
