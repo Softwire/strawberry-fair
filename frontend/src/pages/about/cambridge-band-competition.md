@@ -7,6 +7,8 @@ heroData:
     - alt: Band on stage
       src: >-
         https://res.cloudinary.com/strawberryfair/image/upload/v1580047824/Banner/old-fair_gybfma.jpg
+    - src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1638486462/Events/Band_Comp_2022_kos8de.jpg
   isActive: true
 strawberryTiles:
   - strawberryTile:
