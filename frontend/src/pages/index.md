@@ -38,9 +38,17 @@ contentBlocks:
       but we can't make it happen without [**YOU**!](/about/get-involved)
 
 
+      ## Cambridge Band Competition
+
+
       Throughout all of everything, we still managed to hold the popular
-      Cambridge Band Competition. Check out the [**Band Comp**
-      ](/about/cambridge-band-competition)pages for more info
+      [**Cambridge Band
+      Competition**](https://strawberry-fair.org.uk/about/cambridge-band-competition/).
+
+
+      Check out the [**Band Comp**](/about/cambridge-band-competition) ****pages
+      for more information on the UK's longest running band competition and how
+      to enter for the 2022 competition
     scrapbookImages:
       - alt: Happy crowd
         src: >-
