@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
-title: Applications to trade at Strawberry Fair in 2022 will open in November
-subtitle: Strawberry Fair will be back in 2022!
+title: Applications to trade at Strawberry Fair are now open!!
+subtitle: Strawberry Fair is Back!!
 heroData:
   heroImages: []
   isActive: true
@@ -89,8 +89,34 @@ notes: >-
   FAQ](https://docs.google.com/document/d/1VK62GAmE1bzmHqwnoVzksYNBo0hmcGAaqFn3pZUGEgY/edit?usp=sharing)
   or email <mailto:traders@strawberry-fair.org.uk> if you can't find the answer.
 ---
-We had to take the difficult decision to cancel Strawberry Fair in 2021. We have tried to contact all traders to refund any deposits already paid. If you haven't had your deposit returned, please contact <mailto:traders@strawberry-fair.org.uk>. 
+Strawberry Fair 2022 will be on Saturday 11th June. This is a week later than usual because of the Jubilee celebrations on the first weekend of June. The Faeries are so happy to be back and so looking forward to seeing you again after the terrible past years. Let’s all celebrate by making this the best Strawberry Fair ever!
 
-The events industry has been hit particularly hard by the Coronavirus and we want to thank the traders that support us and we wish you the best during these turbulent times and look forward to welcoming you all in 2022.
+The theme this year will be **LOVE OUR PLANET**. 
 
-Stay well and see you then x
+We are looking for traders and organisations offering as many different flavours and tastes, products and produce, weird and wonderful hobbies and interesting people to amuse and entertain our visitors. Our market is one of the most important features of the Fair - bringing a diverse range of stalls right to the heart of Cambridge.
+
+## Why Trade at Strawberry Fair?
+
+* We regularly attract 35,000-40,000 visitors throughout the one day event
+* We are a free event, but many punters tell us they come specifically to buy from our market.
+* We reach an eclectic mix of people of all ages including residents, visitors and tourists.
+* We do our best to limit the number of similar stalls to ensure that our traders are offering different things.
+* We offer a range of pitch fees and types to suit all needs, including food stalls, craft stalls, blanket pitches, mobile sellers and charity stands.
+
+## Bars / Alcohol
+
+Bar pitches for 2020 have already been allocated. No new applications are being accepted.
+
+## **Non-Food applications**
+
+Click on the link below, complete the form and click ‘submit’. We will then contact you with a quote for your stall.
+
+[**Non-Food Trader Application Form**](https://forms.gle/ufMeSUucbmjhFYiA6)****
+
+## **Food applications**
+
+Click on the link below, complete the form and click ‘submit’. We will consider food applications and let you know in the first week of February whether we have been able to allocate you a space for 2022.
+
+[**Food Trader Application Form**](https://forms.gle/eiQtXNbs7NDtHY4H9)****
+
+If you have any questions, check the [Trader FAQ](https://docs.google.com/document/d/1VK62GAmE1bzmHqwnoVzksYNBo0hmcGAaqFn3pZUGEgY/edit?usp=sharing) section for more information about the fair. If you need more help email us at <mailto:traders@strawberry-fair.org.uk>
