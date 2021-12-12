@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
-title: Applications to trade at Strawberry Fair are now open!!
-subtitle: Strawberry Fair is Back!!
+title: Apply to Trade
+subtitle: Strawberry Fair is Back in 2022!
 heroData:
   heroImages: []
   isActive: true
@@ -89,6 +89,22 @@ notes: >-
   FAQ](https://docs.google.com/document/d/1VK62GAmE1bzmHqwnoVzksYNBo0hmcGAaqFn3pZUGEgY/edit?usp=sharing)
   or email <mailto:traders@strawberry-fair.org.uk> if you can't find the answer.
 ---
+## **Non-Food applications**
+
+Complete the following form and we will then contact you with a quote for your stall.
+
+[**Non-Food Trader Application Form**](https://forms.gle/ufMeSUucbmjhFYiA6)
+
+## **Food applications**
+
+Complete the following form and we will consider food applications and let you know in the first week of February whether we have been able to allocate you a space for 2022.
+
+[**Food Trader Application Form**](https://forms.gle/eiQtXNbs7NDtHY4H9)
+
+If you have any questions, check the [Trader FAQ](https://docs.google.com/document/d/1VK62GAmE1bzmHqwnoVzksYNBo0hmcGAaqFn3pZUGEgY/edit?usp=sharing) section for more information about the fair. If you need more help email us at <mailto:traders@strawberry-fair.org.uk>
+
+# Trading at Strawberry Fair
+
 Strawberry Fair 2022 will be on Saturday 11th June. This is a week later than usual because of the Jubilee celebrations on the first weekend of June. The Faeries are so happy to be back and so looking forward to seeing you again after the terrible past years. Let’s all celebrate by making this the best Strawberry Fair ever!
 
 The theme this year will be **LOVE OUR PLANET**. 
@@ -105,18 +121,4 @@ We are looking for traders and organisations offering as many different flavours
 
 ## Bars / Alcohol
 
-Bar pitches for 2020 have already been allocated. No new applications are being accepted.
-
-## **Non-Food applications**
-
-Click on the link below, complete the form and click ‘submit’. We will then contact you with a quote for your stall.
-
-[**Non-Food Trader Application Form**](https://forms.gle/ufMeSUucbmjhFYiA6)****
-
-## **Food applications**
-
-Click on the link below, complete the form and click ‘submit’. We will consider food applications and let you know in the first week of February whether we have been able to allocate you a space for 2022.
-
-[**Food Trader Application Form**](https://forms.gle/eiQtXNbs7NDtHY4H9)****
-
-If you have any questions, check the [Trader FAQ](https://docs.google.com/document/d/1VK62GAmE1bzmHqwnoVzksYNBo0hmcGAaqFn3pZUGEgY/edit?usp=sharing) section for more information about the fair. If you need more help email us at <mailto:traders@strawberry-fair.org.uk>
+Bar pitches for 2022 have already been allocated. No new applications are being accepted.
