@@ -10,7 +10,11 @@ heroData:
   isActive: true
 strawberryTiles:
   - strawberryTile:
-      isPublic: false
+      isPublic: true
+      text: Hello this is a tile
+    tile: Strawberry Tile
+  - strawberryTile:
+      isPublic: true
     tile: Strawberry Tile
 ---
 # Title
