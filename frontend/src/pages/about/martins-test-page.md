@@ -3,7 +3,10 @@ templateKey: about-page
 title: Martins test page
 subtitle: Fun fun fun fun
 heroData:
-  heroImages: []
+  heroImages:
+    - alt: Bunting
+      src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580041739/Banner/bunting_unwt07.jpg
   isActive: true
 strawberryTiles:
   - strawberryTile:
