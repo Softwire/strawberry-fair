@@ -1,7 +1,7 @@
 ---
 title: Traders
 pageTitles:
-  - pageTitle: About/Applications to trade at Strawberry Fair are now open!!
+  - pageTitle: About/Apply to Trade
   - pageTitle: About/Trader FAQ
 ---
 
