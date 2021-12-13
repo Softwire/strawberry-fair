@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
 title: Apply to Trade
-subtitle: Strawberry Fair is Back in 2022!
+subtitle: Strawberry Fair is back in 2022!
 heroData:
   heroImages: []
   isActive: true
