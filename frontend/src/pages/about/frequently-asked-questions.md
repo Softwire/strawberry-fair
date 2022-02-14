@@ -32,7 +32,7 @@ Absolutely nothing! It is our strong belief that all music and entertainment sho
 
 ## Is there a theme?
 
-Yes! This year the theme is “MAGIC”. 
+Yes! This year the theme is “LOVE THE PLANET”. 
 
 ## What is/isn't allowed on site?
 
