@@ -12,7 +12,7 @@ strawberryTiles:
 ---
 ## When and Where is it?
 
-Strawberry Fair takes place on Midsummer Common in Cambridge on the first Saturday of June. 
+Strawberry Fair will take place on Midsummer Common in Cambridge on Saturday 11th of June. 
 
 ## How much does it cost?
 
