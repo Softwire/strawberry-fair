@@ -3,7 +3,7 @@ templateKey: event-info
 title: General Meeting
 subtitle: All Welcome
 dateTimeRange:
-  startDateTime: 2022-02-23T20:00:12.437Z
+  startDateTime: 2022-03-09T08:00:00.000Z
 image:
   alt: Committee Meeting
   shouldDisplay: false
