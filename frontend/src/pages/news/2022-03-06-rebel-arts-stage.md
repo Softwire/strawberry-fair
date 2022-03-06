@@ -2,8 +2,8 @@
 templateKey: news-article
 uniqueId: '1646573156762'
 title: Rebel Arts Stage
-subtitle: Funbdraiser
-author: Ian
+subtitle: Fundraiser
+author: Rebel Arts
 date: '2022-03-06'
 image:
   alt: Rebel Arts Stage
