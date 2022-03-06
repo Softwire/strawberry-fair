@@ -1,6 +1,6 @@
 ---
 templateKey: event-info
-title: General Meeting 9th March
+title: General Meeting 16th March
 subtitle: All Welcome
 dateTimeRange:
   startDateTime: 2022-03-16T20:00:00.000Z
