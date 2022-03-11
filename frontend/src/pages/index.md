@@ -3,30 +3,8 @@ templateKey: home-page
 title: 'By the people of Cambridge. For the people of Cambridge. '
 heroData:
   heroImages:
-    - alt: Strawberry Fair Banner
-      src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1580041740/Banner/Gareth_Nunns_DSC_9179_qyvav9.jpg
-    - alt: Happy people
-      src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1580902878/Banner/Hidef_mother_son_kkuljg.jpg
-    - alt: Strawberry Fair Banner 2
-      src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1580908539/Banner/Hidef_sf_banner_2_p0u2oz.jpg
-    - alt: Kid soft focus
-      src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1580896136/Banner/Hidef_banner_x6jywu.jpg
-    - alt: Samba band
-      src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1580904067/Banner/Hidef_samba_d17yqw.jpg
-    - alt: Panorama from stage
-      src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1580902733/Banner/Hidef_east_stage_oagns6.jpg
-    - alt: Crowd
-      src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1580042492/Banner/18020191843_ed6f984240_4k-banner_cua4t4.jpg
-    - alt: Skies
-      src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1580041738/Banner/sky_lmvpbk.jpg
+    - src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1647028298/Misc/SF_NeedsYou_bols8v.jpg
   isActive: true
 contentBlocks:
   - _markdown_contentBody: >-
@@ -82,7 +60,7 @@ contentBlocks:
           https://res.cloudinary.com/strawberryfair/image/upload/v1580043133/Image%20Scrapbook/Gareth_Nunns_200_DSC_7249_r4y9yu.jpg
     strawberryTile:
       isPublic: true
-      text: ' We''re looking forward to welcoming everyone back to Midsummer Common next year. '
+      text: ' We''re looking forward to welcoming everyone back to Midsummer Common this year. '
     subtitle: Strawberry Fair will take place on 11th June 2022
     title: We're Back in 2022!
   - _markdown_contentBody: >-
