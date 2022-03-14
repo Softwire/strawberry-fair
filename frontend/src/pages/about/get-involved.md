@@ -3,7 +3,9 @@ templateKey: about-page
 title: Get Involved
 subtitle: Become a part of the Fair's future
 heroData:
-  heroImages: []
+  heroImages:
+    - src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1647301988/SF_NeedsYou_nczbim.jpg
   isActive: true
 strawberryTiles:
   - strawberryTile:
