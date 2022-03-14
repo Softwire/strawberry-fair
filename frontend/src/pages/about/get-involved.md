@@ -4,14 +4,15 @@ title: Get Involved
 subtitle: Become a part of the Fair's future
 heroData:
   heroImages:
-    - src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1647301988/SF_NeedsYou_nczbim.jpg
+    - src: ''
   isActive: true
 strawberryTiles:
   - strawberryTile:
       isPublic: false
     tile: Strawberry Tile
 ---
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1647301988/SF_NeedsYou_nczbim.jpg" alt="alt" class="html-embedded-image-medium"></figure>
+
 # Now is the perfect time to get involved!
 
 In fact, it's always the perfect time to get involved!
