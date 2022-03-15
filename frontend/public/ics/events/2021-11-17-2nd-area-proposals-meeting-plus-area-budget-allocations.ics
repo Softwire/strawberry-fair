@@ -5,9 +5,9 @@ PRODID:adamgibbons/ics
 METHOD:PUBLISH
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
-UID:a633b5cd-b93f-42e1-857f-f9b5376f7cad
+UID:e2f8c4ec-b48b-4a5f-9df6-2c4b14dd0fcf
 SUMMARY:2nd Area Proposals Meeting\, plus Area budget allocations
-DTSTAMP:20220314T235600Z
+DTSTAMP:20220315T000300Z
 DTSTART:20211117T200000Z
 DTEND:20211117T200000Z
 DESCRIPTION:Meeting to discuss further Area proposals and thier budgets.
