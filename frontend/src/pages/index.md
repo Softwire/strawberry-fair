@@ -4,7 +4,12 @@ title: 'By the people of Cambridge. For the people of Cambridge. '
 heroData:
   heroImages:
     - src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1647028298/Misc/SF_NeedsYou_bols8v.jpg
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580908539/Banner/Hidef_sf_banner_2_p0u2oz.jpg
+    - src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1578398228/Banner/slide-crowd_jnl1lw.jpg
+    - src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1580902733/Banner/Hidef_east_stage_oagns6.jpg
+    - {}
   isActive: true
 contentBlocks:
   - _markdown_contentBody: >-
