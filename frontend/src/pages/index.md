@@ -5,11 +5,12 @@ heroData:
   heroImages:
     - src: >-
         https://res.cloudinary.com/strawberryfair/image/upload/v1580908539/Banner/Hidef_sf_banner_2_p0u2oz.jpg
-    - src: >-
+    - alt: Event day
+      src: >-
         https://res.cloudinary.com/strawberryfair/image/upload/v1578398228/Banner/slide-crowd_jnl1lw.jpg
-    - src: >-
+    - alt: Crowd enjoying the fair
+      src: >-
         https://res.cloudinary.com/strawberryfair/image/upload/v1580902733/Banner/Hidef_east_stage_oagns6.jpg
-    - {}
   isActive: true
 contentBlocks:
   - _markdown_contentBody: >-
