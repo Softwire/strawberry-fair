@@ -22,6 +22,15 @@ contentBlocks:
       but we can't make it happen without [**YOU**!](/about/get-involved)
 
 
+      ## Love the Planet
+
+
+      This year we're paying even more attention than normal to taking care of
+      the environment. We're re-doubling our recycling efforts, introducing a
+      deposit scheme for glasses from the bars and stopping the sale of water in
+      plastic water bottles.
+
+
       ## Cambridge Band Competition
 
 
@@ -30,9 +39,9 @@ contentBlocks:
       Competition**](https://strawberry-fair.org.uk/about/cambridge-band-competition/).
 
 
-      Check out the [**Band Comp**](/about/cambridge-band-competition) ****pages
-      for more information on the UK's longest running band competition and how
-      to enter for the 2022 competition
+      Check out the [**Band Comp**](/about/cambridge-band-competition)
+      \*\*\*\*pages for more information on the UK's longest running band
+      competition.
     scrapbookImages:
       - alt: Happy crowd
         src: >-
@@ -82,9 +91,6 @@ contentBlocks:
       Fairies) who give their energy, imagination and vision to present to their
       friends and neighbours in Cambridge a great free day out.
     scrapbookImages:
-      - alt: Site crew
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1580044562/Image%20Scrapbook/Gareth_Nunns_114_DSC_6844_mievyu.jpg
       - alt: Guitarist
         src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1579684138/Image%20Scrapbook/Gareth_Nunns_286_DSC_7789_yyj4zc.jpg
@@ -103,6 +109,12 @@ contentBlocks:
       - alt: Guitarist
         src: >-
           https://res.cloudinary.com/strawberryfair/image/upload/v1580042729/Image%20Scrapbook/Gareth_Nunns_143_DSC_6966_yntwez.jpg
+      - alt: Love the Planet
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1652394027/Banner/Love_the_Planet_sa7hzw.jpg
+      - alt: Love the Palnet
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1652394027/Banner/Love_the_Planet_sa7hzw.jpg
     strawberryTile:
       isPublic: false
     subtitle: 'Starting the summer season in Cambridge for over 40 years '
