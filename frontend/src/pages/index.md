@@ -48,7 +48,7 @@ contentBlocks:
       * Increased recycling of cardboard and plastic (along with our usual
       comprehensive recycling of drinks cans).
 
-      * Trialling of compostible rubbish bags for bins and litter picking.
+      * Trialling of compostable rubbish bags for bins and litter picking.
 
 
       ## Shake Ya Bucket!!
