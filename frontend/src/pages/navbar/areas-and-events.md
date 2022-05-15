@@ -6,5 +6,6 @@ pageTitles:
   - pageTitle: About/Virtual Strawberry Fair 2020
   - pageTitle: About/Kids Park
   - pageTitle: Pages/Upcoming Events
+  - pageTitle: About/Shady Nasty Stage
 ---
 
