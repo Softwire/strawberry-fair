@@ -22,13 +22,47 @@ contentBlocks:
       but we can't make it happen without [**YOU**!](/about/get-involved)
 
 
-      ## Love the Planet
+      ## Love Our Planet
 
 
       This year we're paying even more attention than normal to taking care of
-      the environment. We're re-doubling our recycling efforts, introducing a
-      deposit scheme for glasses from the bars and stopping the sale of water in
-      plastic water bottles.
+      the environment.
+
+
+      We're re-doubling our recycling efforts:
+
+
+      * Introducing a deposit scheme for glasses from the bars and stopping the
+      sale of water in plastic water bottles.
+
+      * Increased use of only recycled/re-used/upcycled materials for our decor.
+
+      * Emphasising local acts on our stages to minimise vehicle use.
+
+      * No paper Programme for 2022,  instead our Programme will be on-line as a
+      free app.
+
+      * The ever popular Scarecrow Corner is a generator free zone and will be
+      featuring a solar powered stage and a solar coffee bus.
+
+      * Increased recycling of cardboard and plastic (along with our usual
+      comprehensive recycling of drinks cans).
+
+      * Trialling of compostible rubbish bags for bins and litter picking.
+
+
+      ## Shake Ya Bucket!!
+
+
+      **Fancy raising some money for a charity of YOUR choice?** 
+
+
+      25% of the collection is donated to the chosen charity & the 75% goes to
+      Strawberry Fair.
+
+
+      If you can spare some time between 11.30am and 10.30pm, please get in
+      touch by emailing anaterriente8@gmail.com
 
 
       ## Cambridge Band Competition
