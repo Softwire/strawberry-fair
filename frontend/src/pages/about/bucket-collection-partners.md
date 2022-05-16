@@ -16,33 +16,59 @@ We are proud to collaborate with some outstanding local charities in our fundrai
 
 The charities we are collaborating with this year are:
 
-# Cambridge Museum of Technology
+## Woodgreen
 
-Cambridge Museum of Technology enables people to explore, enjoy and learn about our local industrial heritage. The Museum, based in the city’s Victorian Pumping Station next to the River Cam, is currently undergoing a major redevelopment, funded by the Heritage Lottery Fund, which will be completed in 2019. This will create a vibrant new asset for local people and visitors to Cambridge to enjoy.
+## (Victoria Avenue and Mitchums Bridge gates)
 
-<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1580051962/Partners/museum_of_tech_logo_us9ymp.jpg" alt="Cambridge Museum of Technology Logo" class="html-embedded-image-medium"></figure>
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1652738010/Wood_Green_swx6e8.jpg" alt="Woodgreen" class="html-embedded-image-medium"></figure>
 
-The Engineer in charge of the Pumping Station lived in a handsome house next to the site.  The house, which had been sadly neglected for some years, has now come into the possession of the Museum.  We want to restore the building to its former glory, reclaim the garden and develop it as an exciting new space for the local community.   The costs for this are not covered by the redevelopment project so we are seeking help for this unique initiative.
+Woodgreen is a charity that's here for pets and their people.
 
-To find out more about the Engineer’s House, the Museum, and how you can support our work, please visit [www.museumoftechnology.com
-](http://www.museumoftechnology.com)
+We want all pets to live the best possible life, and we do everything we can to make that a reality – every step of the way. Any pet who comes through our doors is given specialist care which meets their individual needs. And when they’re ready, we find them a loving new home – a second chance at happiness.
 
-Cambridge Museum of Technology is a Charitable Incorporated Organisation registered in England with charity No. 1156685
+As well as being a safe haven for homeless and vulnerable pets – including those in need of urgent, life-saving care –
 
-# Phoenix Trust
+we provide expert pet advice and hands-on support in the community. With almost 100 years of experience in rehabilitating pets, no issue is too big or too small for us.
 
+From shelter and care to practical support, everything we do is about helping pets live happy, fulfilling lives with their humans. 
 
+[**https://woodgreen.org.uk/**](https://woodgreen.org.uk/)****
 
-<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1580051962/Partners/phoenix_logo_zvrcao.jpg" alt="Phoenix Trust Logo" class="html-embedded-image-medium"></figure>
+## Cam Sight
 
-Phoenix Trust (Milton) is a charity and social enterprise providing opportunities for adults with learning difficulties and students with additional or complex needs to gain work experience and life skills. Phoenix produces and sells hand-crafted paving slabs, garden ornaments, a range of hand-made wooden items, such as picnic benches, work benches, log stores and a variety of plants for the garden. Phoenix is tucked away in Milton alongside the Country Park, and open Tuesday to Friday, 8.30 am -3.30pm. Contact 01223 420669 for any enquiries.
+## (Wallnut Tree gate- until 5pm)
 
-# Cambridgeshire Hearing Help
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1652737994/Camsight_Logo_bdnaiw.jpg" alt="Camsight" class="html-embedded-image-medium"></figure>
 
+Cam Sight is a small Cambridgeshire charity that supports local people of all ages living with low vision and blindness to live the lives they choose. We work to enhance independence, improve well-being, and improve inclusion. Our beneficiaries are at the heart of everything we do at Cam Sight. We see individuals as whole people, not defined by one element of their lives. Our work is holistic in approach. All are welcome at Cam Sight. Over 1900 people access our services every year and demand is increasing. Cam Sight’s services are wide ranging, from Peer Support groups, befrienders, emotional support and counselling, sports and leisure, equipment and tech, to awareness training and talks.
 
+**You can find out more info at**[**: www.camsight.org.uk**](< www.camsight.org.uk>)****\
+**Call: 01223 420033**\
+**Or Email:** [**info@camsight.org.uk**](info@camsight.org.uk)****
 
-<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1580052245/Partners/cambridgeshire_hearing_help_eomnga.jpg" alt="Cambridgeshire Hearing Help logo" class="html-embedded-image-medium"></figure>
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1652737987/Camsight_Picture_h9951t.jpg" alt="Camsight Picture" class="html-embedded-image-medium"></figure>
 
-Cambridgeshire Hearing Help supports people with hearing loss to maintain their wellbeing and independence. Its services include the provision of community-based NHS hearing aid maintenance for 6,000 people per year who face barriers to accessing mainstream audiology services for routine hearing aid maintenance because they are older, frail, have other disabilities, or live in rural areas. Other services include: hearing loss information/advice/signposting, awareness-raising talks to community groups, hearing-aid maintenance training for residential homes and care agencies, lip-reading classes in Cambridge, Living Well with Hearing Loss workshops for people with a newly acquired hearing loss, peer support, and rewarding volunteering roles.
+## Mums4Ukraine
 
-For more information, visit their website, email them, or call them on 01223 416141.
+## (Main gate)
+
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1652737969/Mums_4_Ukraine_1_bqn0ya.jpg" alt="Mums4Ukraine 1" class="html-embedded-image-medium"></figure>
+
+Mums4Ukraine is a grassroots volunteer run charity supporting Ukraine. Our mission is to use our connections and our own hard work to create better outcomes for Ukrainian families and to help all people that, directly or indirectly, have been affected by the Russian invasion in Ukraine. 
+
+Since we formed as a group in March 2022, we arranged humanitarian aid and help Ukrainian people affected by the war, we set up collection points in Cambridge and with the help of our members and the generosity of the people of Cambridge, we sent lorry-loads of humanitarian aid directly into Ukraine. Our members tirelessly raised funds by organising online silent auctions, children’s events, open garden parties, cake and pant sales and more. We helped Ukrainians find hosts in Cambridgeshire and some of our own members host Ukrainian refugees too. We also raised awareness about visa delays in the UK and got a lot of national and international media attention. 
+
+Our plans for the near future include helping Ukrainian refugees in Cambridge to settle and to make local connections; we do this in collaboration with Ukrainians and support them to set up their own initiatives. We are an open group and welcome every individual and business who want to join in.   
+
+[**www.mums4ukraine.com**](www.mums4ukraine.com)****[****\
+**https://www.facebook.com/Mums4Ukraine**](https://www.facebook.com/Mums4Ukraine)****
+
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1652737958/Mums4_Ukraine_Flag_rpsc4k.jpg" alt="Flag" class="html-embedded-image-medium"></figure>
+
+## Cambridge 4 Ukraine
+
+## (Wallnut Tree gate - until 5pm)
+
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1652737947/C4U_Logo_f7tbq5.jpg" alt="C4U" class="html-embedded-image-medium"></figure>
+
+C4U is a volunteer group that was established by Ukrainians who live in Cambridge. The aim of C4U is to help Ukrainians - refugees and also those who remains in Ukraine - during the barbaric Russian invasion in Ukraine. We are organising protests, lectures, fundraising events, merchandise, helping refugees arriving to Cambridge and students. All the collected money at Strawberry Fair will be transferred to Hospitaliers ([**www.hospitaliers.life**](www.hospitaliers.life)) – medic volunteer organisation that saves lives of people directly on a frontline.
