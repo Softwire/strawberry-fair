@@ -65,6 +65,10 @@ contentBlocks:
       touch by emailing anaterriente8@gmail.com
 
 
+      [**Here are our current Bucket Collection Partners for
+      2022**](https://strawberry-fair.org.uk/about/bucket-collection-partners/)****
+
+
       ## Cambridge Band Competition
 
 
@@ -73,9 +77,8 @@ contentBlocks:
       Competition**](https://strawberry-fair.org.uk/about/cambridge-band-competition/).
 
 
-      Check out the [**Band Comp**](/about/cambridge-band-competition)
-      \*\*\*\*pages for more information on the UK's longest running band
-      competition.
+      Check out the [**Band Comp**](/about/cambridge-band-competition) pages for
+      more information on the UK's longest running band competition.
     scrapbookImages:
       - alt: Happy crowd
         src: >-
