@@ -6,5 +6,6 @@ pageTitles:
   - pageTitle: About/Shady Nasty Stage
   - pageTitle: About/Kids Park
   - pageTitle: About/Scarecrow Corner
+  - pageTitle: About/Portland Ballroom and Cambuskers Showcase
 ---
 
