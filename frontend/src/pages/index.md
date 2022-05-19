@@ -25,6 +25,11 @@ contentBlocks:
       ## Love Our Planet
 
 
+      <figure><img
+      src="https://res.cloudinary.com/strawberryfair/image/upload/v1653003074/Hug_Globe_umyhbi.jpg"
+      alt="alt" class="html-embedded-image-small"></figure>
+
+
       This year we're paying even more attention than normal to taking care of
       the environment.
 
@@ -66,7 +71,7 @@ contentBlocks:
 
 
       [**Here are our current Bucket Collection Partners for
-      2022**](https://strawberry-fair.org.uk/about/bucket-collection-partners/)****
+      2022**](https://strawberry-fair.org.uk/about/bucket-collection-partners/)\*\*\*\*
 
 
       ## Cambridge Band Competition
