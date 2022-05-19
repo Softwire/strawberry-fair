@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
 title: Stewards Training
-subtitle: A short introduction to Stewarding at Strawberry Fair
+subtitle: A short introduction to stewarding at Strawberry Fair
 strawberryTiles:
   - strawberryTile:
       isPublic: false
