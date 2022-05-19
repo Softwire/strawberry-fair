@@ -22,6 +22,7 @@ notes: >-
 
   Table syntax:
 ---
+
 To use a table, you have to switch to "Markdown" using the button on the top right of this content block. You will then see an example of the syntax. 
 
 See editors notes at the bottom of the page for more
