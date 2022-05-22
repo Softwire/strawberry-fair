@@ -8,5 +8,6 @@ pageTitles:
   - pageTitle: About/Scarecrow Corner
   - pageTitle: About/Portland Ballroom and Cambuskers Showcase
   - pageTitle: About/Hatters Cafe
+  - pageTitle: About/Love Rebels
 ---
 
