@@ -22,6 +22,11 @@ contentBlocks:
       but we can't make it happen without [**YOU**!](/about/get-involved)
 
 
+      <figure><img
+      src="https://res.cloudinary.com/strawberryfair/image/upload/v1653257379/Poster_Official_a7wrfo.jpg"
+      alt="alt" class="html-embedded-image-medium"></figure>
+
+
       ## Love Our Planet
 
 
