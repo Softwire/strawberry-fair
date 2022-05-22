@@ -7,5 +7,6 @@ pageTitles:
   - pageTitle: About/Kids Park
   - pageTitle: About/Scarecrow Corner
   - pageTitle: About/Portland Ballroom and Cambuskers Showcase
+  - pageTitle: About/Hatters Cafe
 ---
 
