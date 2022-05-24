@@ -28,6 +28,8 @@ We will be bringing you a cornucopia of delights including The Soundscape Solar 
 * Junkyard Orphan
 * Spoken word from Jean Dark and Justin Thyme
 
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1653429342/Solar_Stage_Scarecrow_Corner_szd09l.jpg" alt="alt" class="html-embedded-image-medium"></figure>
+
 **Plus DJ's**
 
 **ATTRACTIONS**
