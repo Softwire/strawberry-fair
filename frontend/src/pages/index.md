@@ -23,7 +23,7 @@ contentBlocks:
 
 
       <figure><img
-      src="https://res.cloudinary.com/strawberryfair/image/upload/v1653257379/Poster_Official_a7wrfo.jpg"
+      src="https://res.cloudinary.com/strawberryfair/image/upload/v1653608616/Strawberry_Fair_Poster_New_qdcco3.jpg"
       alt="alt" class="html-embedded-image-medium"></figure>
 
 
