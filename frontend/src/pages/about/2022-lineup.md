@@ -49,6 +49,25 @@ noon to 9pm
 Wild Strawberries Festival Tent - spoken word, Open Mic with special guests, Strawberry Slam in association with Hammer & Tongue, Strawberry Jam to finish off.
 The Cat Basket - a yurt to chill out in. More of an evening things to relax in a warm and cosy space
 
+## CAMBRIDGE 105 RADIO
+
+| Time  | Act                        |
+| ----- | -------------------------- |
+| 12:00 | Francis Botcherby          |
+| 12:30 | Kelvin Davies & Gary Jones |
+| 13:20 | Anorak                     |
+| 14:05 | Fuze                       |
+| 14:50 | Substation                 |
+| 15:35 | Crossroader                |
+| 16:20 | HYDEAWAY                   |
+| 17:05 | The Fifths                 |
+| 17:50 | Radegunds                  |
+| 18:35 | Gabby Rivers               |
+| 19:25 | Reno & Rome                |
+| 20:15 | Collars                    |
+| 21:50 | Shambertans                |
+| 22:00 | False Hearts               |
+
 ## CENTRE STAGE
 
 | Time  | Act                        |
@@ -123,6 +142,25 @@ The Cat Basket - a yurt to chill out in. More of an evening things to relax in a
 | 21:40 | The Magic Es                             |
 | 22:25 | Thank you and Good Night                 |
 
+## RBG STAGE
+
+| Time  | Act                                      |
+| ----- | --------------------------               |
+| 12:00 | Urb DJ Set                               |
+| 14:30 | Joe DJ Set                               |
+| 15:45 | Games                                    |
+| 17:00 | Dressing Gown Mob                        |
+| 18:00 | Games                                    |
+| 19:00 | Ghost DJ Set                             |
+| 20:00 | Kunt - act                               |
+| 21:00 | Stand-Up                                 |
+| 19:00 | Benny T. DJ Set                          |
+| 20:00 | Spunk - Band                             |
+| 21:00 | Skin DJ Set                              |
+| 19:00 | RBG Gang                                 |
+| 20:00 | Spunk - Band                             |
+| 21:00 | Skin DJ Set                              |
+
 ## SCARECROW CORNER
 
 | Time  | Act                                      |
@@ -149,3 +187,18 @@ The Cat Basket - a yurt to chill out in. More of an evening things to relax in a
 | 20:55 | Anarchistwood                            |
 | 21:40 | DJ - TBA                                 |
 | 22:30 | End                                      |
+
+## SHADYNASTIES
+
+| Time  | Act                                      |
+| ----- | --------------------------               |
+| 12:00 | Chris Jolly                              |
+| 12:20 | The High Points                          |
+| 12:40 | East Angles Bra                          |
+| 13:05 | Clackman Duke                            |
+| 13:30 | New Groove Formation                     |
+| 13:55 | Blunders with Convoy Cabaret             |
+| 14:20 | Thy Last Drop                            |
+| 14:45 | My Bad Sister                            |
+| 15:10 | OTC                                      |
+| 15:35 | Dirty Dike & Friends                     |
