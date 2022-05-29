@@ -15,17 +15,7 @@ It is 25 years since we set up as the original Green Area as a space for environ
 We will be bringing you a cornucopia of delights including The Soundscape Solar Stage and a host of attractions. We are a generator free zone.
 **SOUNDSCAPE SOLAR STAGE:**
 
-* anarchistwood
-* Dread Messiah
-* The Skraelings
-* Pete Um
-* 13th Chime
-* The Brewers Daughter
-* Champignon (Ullulators/Dream Machine)
-* Cara Means Friend (vocalist with Zion Train)
-* Thee BrouHaHa
-* Junkyard Orphan
-* Spoken word from Jean Dark and Justin Thyme
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1653854450/Scarecrow_Corner_New_Set_List_jvyzmt.jpg" alt="alt" class="html-embedded-image-medium"></figure>
 
 **Plus DJ's**
 
