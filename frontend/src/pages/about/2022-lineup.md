@@ -205,20 +205,6 @@ Please remember to donate! All donations are really appreciated, as they help to
 | 20:00 | OTC                          |
 | 21:30 | Dirty Dike & Friends         |
 
-## SHADYNASTIES
-
-| Time  | Act                          |
-| ----- | ---------------------------- |
-| 12:15 | Chris Jolly                  |
-| 13:00 | The High Points              |
-| 14:00 | East Angles Brass            |
-| 15:00 | Clackman Duke                |
-| 16:00 | New Groove Formation         |
-| 17:00 | Blunders with Convoy Cabaret |
-| 18:00 | Thy Last Drop                |
-| 19:10 | My Bad Sister                |
-| 20:00 | OTC                          |
-| 21:30 | Dirty Dike & Friends         |
 
 ## WIGWAM
 
