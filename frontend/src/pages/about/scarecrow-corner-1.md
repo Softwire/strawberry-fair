@@ -3,7 +3,8 @@ templateKey: about-page
 title: Scarecrow Corner
 heroData:
   heroImages:
-    - src: ''
+    - src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1653995981/Banner/Scarecrow_rqbkm3.jpg
   isActive: true
 strawberryTiles:
   - strawberryTile:
