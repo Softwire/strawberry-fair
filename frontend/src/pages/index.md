@@ -56,13 +56,18 @@ contentBlocks:
       src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" /></form>
 
 
-      ****[**Pay by Card**](https://pay.sumup.io/b2c/Q6SY3650)****
+      **Pay by Card:**
+
+
+      <https://pay.sumup.io/b2c/Q6SY3650>
 
 
       **Do the QR thing:**
 
 
-      https://mobile-payments-pdf.sumup.com/v1/mobile-payments/tokens/Q6SY3650/pdf
+      <figure><img
+      src="https://res.cloudinary.com/strawberryfair/image/upload/v1654283575/QR_Code_ukdqbh.jpg"
+      alt="alt" class="html-embedded-image-medium"></figure>
 
 
       ## Love Our Planet
@@ -262,11 +267,7 @@ notes: >-
   \[Next Content Block to replace]
 
 
-
-
   Help! Volunteer at Strawberry Fair
-
-
 
 
   Strawberry Fair is a not-for-profit organisation run entirely by a team of
