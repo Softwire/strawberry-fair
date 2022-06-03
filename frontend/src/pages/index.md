@@ -46,8 +46,6 @@ contentBlocks:
       **Get PayPaling:**
 
 
-      ```
-
       <form target="_top" action="https://www.paypal.com/cgi-bin/webscr"
       method="post"><input type="hidden" name="cmd" value="_s-xclick" /> <input
       type="hidden" name="hosted_button_id" value="TX2E4BTL9HENG" /> <input
@@ -57,13 +55,8 @@ contentBlocks:
       width="1" alt="" height="1" border="0"
       src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" /></form>
 
-      ```
 
-
-      **Wave yer plastic:**
-
-
-      ****[**https://pay.sumup.io/b2c/Q6SY3650**](https://pay.sumup.io/b2c/Q6SY3650)****
+      ****[**Pay by Card**](https://pay.sumup.io/b2c/Q6SY3650)****
 
 
       **Do the QR thing:**
