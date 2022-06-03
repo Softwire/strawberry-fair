@@ -27,6 +27,51 @@ contentBlocks:
       alt="alt" class="html-embedded-image-medium"></figure>
 
 
+      ## Donations - Help!!
+
+
+      Like everyone else we've had a tough couple of years and we're not out of
+      the woods yet. Our income is down and our expenses have increased
+      massively.
+
+
+      Put simply, we need your help.....
+
+
+      If everyone who attends donates just £1, we'd completely cover our
+      additional expenses for 2022 and be able to look forward to more of the
+      same or better in the future.
+
+
+      **Get PayPaling:**
+
+
+      ```
+
+      <form target="_top" action="https://www.paypal.com/cgi-bin/webscr"
+      method="post"><input type="hidden" name="cmd" value="_s-xclick" /> <input
+      type="hidden" name="hosted_button_id" value="TX2E4BTL9HENG" /> <input
+      type="image" alt="PayPal &ndash; The safer, easier way to pay online."
+      border="0" name="submit"
+      src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" /> <img
+      width="1" alt="" height="1" border="0"
+      src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" /></form>
+
+      ```
+
+
+      **Wave yer plastic:**
+
+
+      ****[**https://pay.sumup.io/b2c/Q6SY3650**](https://pay.sumup.io/b2c/Q6SY3650)****
+
+
+      **Do the QR thing:**
+
+
+      https://mobile-payments-pdf.sumup.com/v1/mobile-payments/tokens/Q6SY3650/pdf
+
+
       ## Love Our Planet
 
 
