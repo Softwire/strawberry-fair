@@ -12,6 +12,5 @@ pageTitles:
   - pageTitle: About/Scarecrow Corner
   - pageTitle: About/Cambridge 105
   - pageTitle: About/Centre Stage
-  - pageTitle: About/Flying Pig
 ---
 
