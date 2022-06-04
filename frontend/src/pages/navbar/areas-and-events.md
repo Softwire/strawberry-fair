@@ -10,5 +10,6 @@ pageTitles:
   - pageTitle: About/Hatters Cafe
   - pageTitle: About/Love Rebels
   - pageTitle: About/Scarecrow Corner
+  - pageTitle: About/Cambridge 105
 ---
 
