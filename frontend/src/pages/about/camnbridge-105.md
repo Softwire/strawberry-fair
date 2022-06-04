@@ -1,7 +1,10 @@
 ---
 templateKey: about-page
-title: Camnbridge 105
+title: Cambridge 105
 heroData:
+  heroImages:
+    - src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1654333416/CAMBRIDGE_105_llljgp.jpg
   isActive: true
 strawberryTiles:
   - strawberryTile:
