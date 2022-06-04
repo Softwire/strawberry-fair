@@ -1,6 +1,8 @@
 ---
 templateKey: about-page
 title: Cambridge 105
+heroData:
+  isActive: true
 strawberryTiles:
   - strawberryTile:
       isPublic: false
