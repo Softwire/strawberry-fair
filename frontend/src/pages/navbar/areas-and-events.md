@@ -11,5 +11,6 @@ pageTitles:
   - pageTitle: About/Love Rebels
   - pageTitle: About/Scarecrow Corner
   - pageTitle: About/Cambridge 105
+  - pageTitle: About/Centre Stage
 ---
 
