@@ -41,7 +41,7 @@ Please remember to donate! All donations are really appreciated, as they help to
 
 | Time  | Act                        |
 | ----- | -------------------------- |
-| 12:00 | Isla May                   |
+| 12:00 | Isla Mae                   |
 | 12:15 | Francis Botcherby          |
 | 12:35 | Kelvin Davies & Gary Jones |
 | 13:20 | Anorak                     |
