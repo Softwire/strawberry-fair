@@ -22,6 +22,14 @@ We understand that disposable income is tight these days - that's why we've had 
 
 <form target="_top" action="https://www.paypal.com/cgi-bin/webscr" method="post"><input type="hidden" name="cmd" value="_s-xclick" /> <input type="hidden" name="hosted_button_id" value="TX2E4BTL9HENG" /> <input type="image" alt="PayPal &ndash; The safer, easier way to pay online." border="0" name="submit" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" /> <img width="1" alt="" height="1" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" /></form>
 
+**Pay by Card:**
+
+<https://pay.sumup.io/b2c/Q6SY3650>
+
+**Do the QR thing:**
+
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1654450756/SF_sumup_QR_code_1_qumzvj.png" alt="alt" class="html-embedded-image-medium"></figure>
+
 ## Give on the day
 
 We now partner with a number of charities and community organisations to accept donations on the day. If you see our bucket collectors, please give what change you can to help ensure the future of the Fair. 25% of the money taken goes to helping other local good causes, which is a significantly higher percentage than offered by similar events. 
