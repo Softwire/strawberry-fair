@@ -86,4 +86,4 @@ Lost property is held in our Production Office. Please contact a member of our s
 
 ## In an emergency
 
-Please contact a steward in the event assistance is required. Stewards roam the site and are available at each entertainment area. St John's Ambulance are based near the Information Tent at Maid's Causeway Entrance. Our onsite security team and St John's Ambulance also patrol around the site.
+Please contact a steward in the event assistance is required. Stewards roam the site and are available at each entertainment area. Medical provision is based near the Information Tent at Maid's Causeway Entrance. Our onsite Security team and Medical teams also patrol around the site.
