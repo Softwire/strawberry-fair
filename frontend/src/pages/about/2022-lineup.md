@@ -29,7 +29,7 @@ notes: >-
   HELP - Not sure why the spacing is different on each table as you view it on
   the site!?
 ---
-## What's on for ALL Stages and areas below...
+## What's on for ALL Stages and Areas below...
 
 Please remember to donate! All donations are really appreciated, as they help to keep the Fair free! 
 
@@ -39,8 +39,9 @@ Please remember to donate! All donations are really appreciated, as they help to
 
 | Time  | Act                        |
 | ----- | -------------------------- |
-| 12:00 | Francis Botcherby          |
-| 12:30 | Kelvin Davies & Gary Jones |
+| 12:00 | Isla May                   |
+| 12:15 | Francis Botcherby          |
+| 12:35 | Kelvin Davies & Gary Jones |
 | 13:20 | Anorak                     |
 | 14:05 | Fuze                       |
 | 14:50 | Substation                 |
@@ -103,6 +104,21 @@ Please remember to donate! All donations are really appreciated, as they help to
 | 20:00 | Cactus Summinks                 |
 | 21:00 | Mode Project                    |
 
+## KIDS PARK
+
+| Time  | Act                           |
+| ----- | ----------------------------- |
+| 12:20 | Formations Dance & Acrobatics |
+| 13:00 | Fudge the Clown               |
+| 14:00 | Green Peace - Story Telling   |
+| 14:30 | Luca                          |
+| 15:00 | Green Peace - Story Telling   |
+| 15:30 | Luca                          |
+| 15:45 | Fudge the Clown               |
+| 16:30 | Black Salmon (Band Camp Band) |
+| 16:45 | Sanskrit Dance                |
+| 17:00 | Music/Open Mic                |
+
 ## PORTLAND BALLROOM/CAMBUSKERS
 
 | Time  | Act                          |
@@ -124,9 +140,9 @@ Please remember to donate! All donations are really appreciated, as they help to
 | 17:40 | Big 10                       |
 | 18:20 | This Circus Life             |
 | 19:00 | Standing Like Statues        |
-| 19:40 | The Grenadiers               |
+| 19:40 | The Love Asylum              |
 | 20:20 | When Rivers Meet             |
-| 20:55 | The Mojo Slide               |
+| 21:00 | The Mojo Slide               |
 | 21:40 | The Magic Es                 |
 | 22:25 | Thank you and Good Night     |
 
@@ -155,22 +171,9 @@ Please remember to donate! All donations are really appreciated, as they help to
 
 ## RBG STAGE
 
-| Time  | Act               |
-| ----- | ----------------- |
-| 12:00 | Urb DJ Set        |
-| 14:30 | Joe DJ Set        |
-| 15:45 | Games             |
-| 17:00 | Dressing Gown Mob |
-| 18:00 | Games             |
-| 19:00 | Ghost DJ Set      |
-| 20:00 | Kunt - act        |
-| 21:00 | Stand-Up          |
-| 19:00 | Benny T. DJ Set   |
-| 20:00 | Spunk - Band      |
-| 21:00 | Skin DJ Set       |
-| 19:00 | RBG Gang          |
-| 20:00 | Spunk - Band      |
-| 21:00 | Skin DJ Set       |
+| Time | Act |
+| ---- | --- |
+| TBC  | TBC |
 
 ## SCARECROW CORNER
 
@@ -192,19 +195,18 @@ Please remember to donate! All donations are really appreciated, as they help to
 
 ## SHADYNASTIES
 
-| Time  | Act                          |
-| ----- | ---------------------------- |
-| 12:15 | Chris Jolly                  |
-| 13:00 | The High Points              |
-| 14:00 | East Angles Brass            |
-| 15:00 | Clackman Duke                |
-| 16:00 | New Groove Formation         |
-| 17:00 | Blunders with Convoy Cabaret |
-| 18:00 | Thy Last Drop                |
-| 19:10 | My Bad Sister                |
-| 20:00 | OTC                          |
-| 21:30 | Dirty Dike & Friends         |
-
+| Time  | Act                  |
+| ----- | -------------------- |
+| 12:15 | Chris Jolly          |
+| 13:00 | The High Points      |
+| 14:00 | East Angles Brass    |
+| 15:00 | Clackman Duke        |
+| 16:00 | New Groove Formation |
+| 17:00 | Blunders             |
+| 18:00 | Thy Last Drop        |
+| 19:10 | My Bad Sister        |
+| 20:00 | OTC                  |
+| 21:30 | Dirty Dike & Friends |
 
 ## WIGWAM
 
@@ -227,33 +229,34 @@ Please remember to donate! All donations are really appreciated, as they help to
 
 ## ARTS AREA
 
-#### Noon to 5/6pm
+#### Noon to 6pm
 
 Independent Artists - Pete Treglown - The Listening Post, experimental audi
 Independent Artists - Richard Downes - painter and poet
 
-
 GreenPeace stand with meeting the super heroes and help then save the planet
-
 
 Little Blue Dot & Friends of the River Cambs - campaign against sewage in the river - watch out for those poos
 
-
 Friends of the Earth - windmill power sculpture - you can make one at home, find out how
-
 
 Cambridge Art Salon with crafty café - mocktails, cakes, teas/coffees \[frugalPAC donated loads of full recyclable paper cups], donation base
 
 #### Workshops
 
-Noon-5/6pm - Little Blue Dot in collaboration with Friends of the River Cambs - (all day thing)
-1pm - GreenPeace - craft workshop in the geodome with 'Postcard Pledges' help the planet
-3pm - SinCRU - dance workshop to get you moving.
+* 12pm to 6pm - Little Blue Dot in collaboration with Friends of the River Cambs - (all day thing)
+* 1pm - GreenPeace -  craft workshop in the geodome with 'Postcard Pledges' help the planet 
+* 2pm - sing along with the Tuneless Choir leader Lulu Agate to festival song such as portaloo and
+* show me the way to amarillo
+* 3pm - SinCRU - dance workshop to get you moving
+* 4pm - Hula Hooping workshop with Joanna Ferreday 
 
 #### Noon to 9pm
 
-Wild Strawberries Festival Tent - spoken word, Open Mic with special guests, 
+Wild Strawberries: Spoken Word Tent line up
 
-Strawberry Slam in association with Hammer & Tongue, Strawberry Jam to finish off.
+* 12 noon to 7pm - Wild Strawberries Open Mic with Special Guests;
+* 7 to 8pm Strawberry Slam in association with Hammer & Tongue Cambridge;
+* 8pm to close Strawberry Jam (anything goes!).
 
 The Cat Basket - a yurt to chill out in. More of an evening things to relax in a warm and cosy space
