@@ -121,7 +121,7 @@ Please remember to donate! All donations are really appreciated, as they help to
 | 16:45 | Sanskrit Dance                |
 | 17:00 | Music/Open Mic                |
 
-## PORTLAND BALLROOM/CAMBUSKERS
+## PORTLAND BALLROOM & CAMBUSKERS
 
 | Time  | Act                          |
 | ----- | ---------------------------- |
@@ -173,9 +173,27 @@ Please remember to donate! All donations are really appreciated, as they help to
 
 ## RBG STAGE
 
-| Time | Act |
-| ---- | --- |
-| TBC  | TBC |
+| Time  | Act                                             |
+| ----- | -------------------------------------           |
+| 12:00 | Bullshit DJs                                    |
+| 12:30 | Bucket of Cum DJ                                |
+| 13:00 | Game: Hit the Shit                              |
+| 13:30 | Urb DJ Roots D&B Who Knows What                 |
+| 14:30 | The Dressing Gown Mob Hip Hop                   |
+| 15:00 | Pete Um Tape poet and Radio 3 Favourite         |
+| 15:30 | Game                                            |
+| 15:45 | Magic Phil Political Poet Standup               |
+| 16:15 | Ghost L4L Jungalist Breakcore                   |
+| 16:45 | Circuit Breaker                                 |
+| 17:23 | How Not To Write A Play The Hard Way            |
+| 18:00 | Spunk on the Vicar Band Who Says Shit like it is|
+| 18:15 | Doghouse Techno Punk                            |
+| 19:00 | Mono Region Techno DJ                           |
+| 20:00 | Bell End Competition & Custard Pie Fight        |
+| 20:30 | The Great Laronzo Comedy                        |
+| 21:00 | The Morphics Punk Band                          |
+| 22:00 | Bullshit DJs                                    |
+| 22:30 | Th-Th-Th-Th-That’s all folks!!. Go and see Zion Train at Rebel Love |
 
 ## SCARECROW CORNER
 
