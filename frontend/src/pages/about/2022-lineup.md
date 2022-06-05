@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
 title: 2022 Lineup
-subtitle: Strawberry Fair (Love Our Planet) 2022 Line Up
+subtitle: Strawberry Fair (Love Our Planet) 2022 Map & Line Up
 strawberryTiles:
   - strawberryTile:
       isPublic: false
@@ -29,6 +29,8 @@ notes: >-
   HELP - Not sure why the spacing is different on each table as you view it on
   the site!?
 ---
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1654437973/Maps/Strawberry_Fair_Stages_Map_V2-01_vzbvxx.jpg" alt="alt" class="html-embedded-image-medium"></figure>
+
 ## What's on for ALL Stages and Areas below...
 
 Please remember to donate! All donations are really appreciated, as they help to keep the Fair free! 
@@ -260,3 +262,5 @@ Wild Strawberries: Spoken Word Tent line up
 * 8pm to close Strawberry Jam (anything goes!).
 
 The Cat Basket - a yurt to chill out in. More of an evening things to relax in a warm and cosy space
+
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1654437973/Maps/Strawberry_Fair_Stages_Map_V2-01_vzbvxx.jpg" alt="alt" class="html-embedded-image-medium"></figure>
