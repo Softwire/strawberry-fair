@@ -85,8 +85,8 @@ contentBlocks:
       We're re-doubling our recycling efforts:
 
 
-      * Introducing a deposit scheme for glasses from the bars and stopping the
-      sale of water in plastic water bottles.
+      * Introducing a deposit scheme for glasses from the bars and discouraging
+      the sale of water in plastic water bottles.
 
       * Increased use of only recycled/re-used/upcycled materials for our decor.
 
