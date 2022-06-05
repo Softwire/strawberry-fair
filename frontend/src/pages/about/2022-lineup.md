@@ -29,7 +29,7 @@ notes: >-
   HELP - Not sure why the spacing is different on each table as you view it on
   the site!?
 ---
-## What's on for ALL Stages and areas below...
+## What's on for ALL Stages and Areas below...
 
 Please remember to donate! All donations are really appreciated, as they help to keep the Fair free! 
 
