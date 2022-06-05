@@ -66,7 +66,7 @@ contentBlocks:
 
 
       <figure><img
-      src="https://res.cloudinary.com/strawberryfair/image/upload/v1654283575/QR_Code_ukdqbh.jpg"
+      src="https://res.cloudinary.com/strawberryfair/image/upload/v1654450756/SF_sumup_QR_code_1_qumzvj.png"
       alt="alt" class="html-embedded-image-medium"></figure>
 
 
