@@ -25,9 +25,9 @@ Absolutely nothing! It is our strong belief that all music and entertainment sho
 * 12:00 - Parade arrives at Midsummer Common marking the official opening of the Fair.
 * 12:00 - Stages, bars and area entertainment begins.
 * 18:00 - Kid's Area closes.
-* 22:00-22:30 - Stages and area entertainment closes. Head to the Village Green.
+* 22:00-22:30 - Stages and area entertainment closes. Head to the Rebel Love Stage.
 * 22:30 - Stall holders and bars close.
-* 22:30 - Closing Finale from Cambridge Community Circus in the Village Green
+* 22:30 - Closing Finale at Rebel Love Stage. 
 * 23:00 - Event closes.
 
 ## Is there a theme?
