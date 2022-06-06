@@ -204,7 +204,7 @@ Please remember to donate! All donations are really appreciated, as they help to
 | 14:00 | East Angles Brass            |
 | 15:00 | Clackman Duke                |
 | 16:00 | New Groove Formation         |
-| 17:00 | Blunders                     |
+| 17:00 | Glitchers                    |
 | 18:00 | Thy Last Drop                |
 | 19:10 | My Bad Sister                |
 | 20:00 | OTC with UMA                 |
