@@ -173,9 +173,27 @@ Please remember to donate! All donations are really appreciated, as they help to
 
 ## RBG STAGE
 
-| Time | Act |
-| ---- | --- |
-| TBC  | TBC |
+| Time  | Act                                     |
+| ----- | -------------------------------------   |
+| 12:00 | Bullshit Djs                            |
+| 12:30 | Bucket of Cum DJ                        |
+| 13:00 | Game: Hit the Shit                      |
+| 13:30 | Urb DJ Roots D&B who knows what         |
+| 14:30 | Game tba                                |
+| 15:00 | The Dressing Gown Mob hip hop           |
+| 15:15 | Pete Um Tape poet and Radio 3 favourite |
+| 15:45 | Magic Phil Political poet standup       |
+| 16:00 | Circuit Breaker DJ                      |
+| 16:45 | Ghost L4L Jungalist breakcore           |
+| 17:23 | How to not to write a play the hard way |
+| 18:00 | Spunk on the Vicar Band who says shit like it is   |
+| 18:15 | Doghouse Techno Punk                               |
+| 19:00 | Mono Region Techno DJ                              |
+| 20:00 | Bell End competition and custard pie fight         |
+| 20:30 | The Great Laronzo Comedy                           |
+| 21:00 | The Morphics Punk Band                             |
+| 22:00 | Bullshit DJs                                       |
+| 22:30 | Th-Th-Th-Th-That’s all folks!!. Go and see Zion Train at Rebel Love|
 
 ## SCARECROW CORNER
 
@@ -204,7 +222,7 @@ Please remember to donate! All donations are really appreciated, as they help to
 | 14:00 | East Angles Brass            |
 | 15:00 | Clackman Duke                |
 | 16:00 | New Groove Formation         |
-| 17:00 | Glitchers                    |
+| 17:00 | Blunders                     |
 | 18:00 | Thy Last Drop                |
 | 19:10 | My Bad Sister                |
 | 20:00 | OTC with UMA                 |
@@ -214,7 +232,7 @@ Please remember to donate! All donations are really appreciated, as they help to
 
 | Time  | Act                            |
 | ----- | ------------------------------ |
-| 12:00 | Minutes to Midnight            |
+| 12:00 | Curtis Cronin                  |
 | 12:45 | Flaming June                   |
 | 13:30 | Old Man Boom                   |
 | 14:00 | TNT                            |
@@ -224,9 +242,9 @@ Please remember to donate! All donations are really appreciated, as they help to
 | 17:30 | Pink Lemonade                  |
 | 18:15 | 29th Funktion                  |
 | 19:00 | Jenem                          |
-| 19:30 | Slava B                        |
+| 19:30 | Max Bianco                     |
 | 20:00 | Swamptruck                     |
-| 21:00 | Max Bianco                     |
+| 21:00 | Slava B                        |
 | 21:30 | The Routine                    |
 
 ## ARTS AREA
