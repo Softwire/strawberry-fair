@@ -29,7 +29,7 @@ notes: >-
   HELP - Not sure why the spacing is different on each table as you view it on
   the site!?
 ---
-<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1654437973/Maps/Strawberry_Fair_Stages_Map_V2-01_vzbvxx.jpg" alt="alt" class="html-embedded-image-medium"></figure>
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1654544958/Maps/Strawberry_Fair_Stages_Map_V3-01_tbepzu.jpg" alt="alt" class="html-embedded-image-large"></figure>
 
 ## What's on for ALL Stages and Areas below...
 
@@ -173,27 +173,27 @@ Please remember to donate! All donations are really appreciated, as they help to
 
 ## RBG STAGE
 
-| Time  | Act                                     |
-| ----- | -------------------------------------   |
-| 12:00 | Bullshit Djs                            |
-| 12:30 | Bucket of Cum DJ                        |
-| 13:00 | Game: Hit the Shit                      |
-| 13:30 | Urb DJ Roots D&B who knows what         |
-| 14:30 | Game tba                                |
-| 15:00 | The Dressing Gown Mob hip hop           |
-| 15:15 | Pete Um Tape poet and Radio 3 favourite |
-| 15:45 | Magic Phil Political poet standup       |
-| 16:00 | Circuit Breaker DJ                      |
-| 16:45 | Ghost L4L Jungalist breakcore           |
-| 17:23 | How to not to write a play the hard way |
-| 18:00 | Spunk on the Vicar Band who says shit like it is   |
-| 18:15 | Doghouse Techno Punk                               |
-| 19:00 | Mono Region Techno DJ                              |
-| 20:00 | Bell End competition and custard pie fight         |
-| 20:30 | The Great Laronzo Comedy                           |
-| 21:00 | The Morphics Punk Band                             |
-| 22:00 | Bullshit DJs                                       |
-| 22:30 | Th-Th-Th-Th-That’s all folks!!. Go and see Zion Train at Rebel Love|
+| Time  | Act                                                                 |
+| ----- | ------------------------------------------------------------------- |
+| 12:00 | Bullshit Djs                                                        |
+| 12:30 | Bucket of Cum DJ                                                    |
+| 13:00 | Game: Hit the Shit                                                  |
+| 13:30 | Urb DJ Roots D&B who knows what                                     |
+| 14:30 | Game tba                                                            |
+| 15:00 | The Dressing Gown Mob hip hop                                       |
+| 15:15 | Pete Um Tape poet and Radio 3 favourite                             |
+| 15:45 | Magic Phil Political poet standup                                   |
+| 16:00 | Circuit Breaker DJ                                                  |
+| 16:45 | Ghost L4L Jungalist breakcore                                       |
+| 17:23 | How to not to write a play the hard way                             |
+| 18:00 | Spunk on the Vicar Band who says shit like it is                    |
+| 18:15 | Doghouse Techno Punk                                                |
+| 19:00 | Mono Region Techno DJ                                               |
+| 20:00 | Bell End competition and custard pie fight                          |
+| 20:30 | The Great Laronzo Comedy                                            |
+| 21:00 | The Morphics Punk Band                                              |
+| 22:00 | Bullshit DJs                                                        |
+| 22:30 | Th-Th-Th-Th-That’s all folks!!. Go and see Zion Train at Rebel Love |
 
 ## SCARECROW CORNER
 
@@ -216,7 +216,7 @@ Please remember to donate! All donations are really appreciated, as they help to
 ## SHADYNASTIES
 
 | Time  | Act                          |
-| ----- | --------------------         |
+| ----- | ---------------------------- |
 | 12:15 | Chris Jolly                  |
 | 13:00 | The High Points              |
 | 14:00 | East Angles Brass            |
@@ -281,4 +281,4 @@ Wild Strawberries: Spoken Word Tent line up
 
 The Cat Basket - a yurt to chill out in. More of an evening things to relax in a warm and cosy space
 
-<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1654437973/Maps/Strawberry_Fair_Stages_Map_V2-01_vzbvxx.jpg" alt="alt" class="html-embedded-image-medium"></figure>
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1654544958/Maps/Strawberry_Fair_Stages_Map_V3-01_tbepzu.jpg" alt="alt" class="html-embedded-image-large"></figure>
