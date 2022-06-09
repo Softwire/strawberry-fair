@@ -1,6 +1,6 @@
 ---
 templateKey: about-page
-title: Random Bulls*t Generator
+title: Random Bullsh*t Generator
 strawberryTiles:
   - strawberryTile:
       isPublic: false
