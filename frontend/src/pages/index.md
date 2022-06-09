@@ -104,6 +104,18 @@ contentBlocks:
       * Trialling of compostable rubbish bags for bins and litter picking.
 
 
+      ## Residents' Hotline
+
+
+      A local resident and want to comment during the Fair?
+
+
+      Call us on:
+
+
+      **07759-277117**
+
+
       ## Shake Ya Bucket!!
 
 
