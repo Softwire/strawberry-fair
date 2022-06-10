@@ -7,6 +7,10 @@ heroData:
         https://res.cloudinary.com/strawberryfair/image/upload/v1580908539/Banner/Hidef_sf_banner_2_p0u2oz.jpg
   isActive: true
 ---
+## Local Residents
+
+If you are a local resident and need to get in touch with us on the days around and on Fair day - we have a RESIDENTS HOTLINE, which is manned from Monday  Friday 6th to Monday 13th June. The number is **07759 277117**
+
 ## Traders
 
 If you are interested in trading at Strawberry Fair, check out the Traders tab above.
