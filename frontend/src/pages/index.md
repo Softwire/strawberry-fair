@@ -14,8 +14,8 @@ heroData:
   isActive: true
 contentBlocks:
   - _markdown_contentBody: >-
-      Yes, it's confirmed, Strawberry Fair will be back on **11th June 2022**
-      after the longest break in its history with the theme Love the Planet.
+      Yes, it's confirmed, Strawberry Fair will be back on **3rd June 2023**
+      with the theme Revolution!
 
 
       We're looking forward to catching up with old friends and making new ones,
@@ -23,7 +23,7 @@ contentBlocks:
 
 
       <figure><img
-      src="https://res.cloudinary.com/strawberryfair/image/upload/v1653608616/Strawberry_Fair_Poster_New_qdcco3.jpg"
+      src="https://res.cloudinary.com/strawberryfair/image/upload/v1664715785/SF_Revolutions_Poster_gr2c8n.jpg"
       alt="alt" class="html-embedded-image-medium"></figure>
 
 
@@ -36,11 +36,6 @@ contentBlocks:
 
 
       Put simply, we need your help.....
-
-
-      If everyone who attends donates just £1, we'd completely cover our
-      additional expenses for 2022 and be able to look forward to more of the
-      same or better in the future.
 
 
       **Get PayPaling:**
@@ -70,7 +65,7 @@ contentBlocks:
       alt="alt" class="html-embedded-image-medium"></figure>
 
 
-      ## Love Our Planet
+      ## Green Strawberry
 
 
       <figure><img
@@ -78,8 +73,8 @@ contentBlocks:
       alt="alt" class="html-embedded-image-small"></figure>
 
 
-      This year we're paying even more attention than normal to taking care of
-      the environment.
+      This year we're paying ever more attention to taking care of the
+      environment.
 
 
       We're re-doubling our recycling efforts:
@@ -92,7 +87,7 @@ contentBlocks:
 
       * Emphasising local acts on our stages to minimise vehicle use.
 
-      * No paper Programme for 2022,  instead our Programme will be on-line as a
+      * No paper Programme for 2023,  instead our Programme will be on-line as a
       free app.
 
       * The ever popular Scarecrow Corner is a generator free zone and will be
@@ -178,8 +173,8 @@ contentBlocks:
     strawberryTile:
       isPublic: true
       text: ' We''re looking forward to welcoming everyone back to Midsummer Common this year. '
-    subtitle: Strawberry Fair will take place on 11th June 2022
-    title: We're Back in 2022!
+    subtitle: Strawberry Fair will take place on 3rd June 2023
+    title: We're Back in 2023!
   - _markdown_contentBody: >-
       From humble beginnings, Strawberry Fair has grown to be the most popular
       free, entirely volunteer run, one day music & arts event in Cambridge (and
