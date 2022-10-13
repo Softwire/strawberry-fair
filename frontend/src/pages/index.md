@@ -27,118 +27,13 @@ contentBlocks:
       alt="alt" class="html-embedded-image-medium"></figure>
 
 
-      ## Donations - Help!!
+      ## 
 
 
-      Like everyone else we've had a tough couple of years and we're not out of
-      the woods yet. Our income is down and our expenses have increased
-      massively.
+      ## 
 
 
-      Put simply, we need your help.....
-
-
-      **Get PayPaling:**
-
-
-      <form target="_top" action="https://www.paypal.com/cgi-bin/webscr"
-      method="post"><input type="hidden" name="cmd" value="_s-xclick" /> <input
-      type="hidden" name="hosted_button_id" value="TX2E4BTL9HENG" /> <input
-      type="image" alt="PayPal &ndash; The safer, easier way to pay online."
-      border="0" name="submit"
-      src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" /> <img
-      width="1" alt="" height="1" border="0"
-      src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" /></form>
-
-
-      **Pay by Card:**
-
-
-      <https://pay.sumup.io/b2c/Q6SY3650>
-
-
-      **Do the QR thing:**
-
-
-      <figure><img
-      src="https://res.cloudinary.com/strawberryfair/image/upload/v1654450756/SF_sumup_QR_code_1_qumzvj.png"
-      alt="alt" class="html-embedded-image-medium"></figure>
-
-
-      ## Green Strawberry
-
-
-      <figure><img
-      src="https://res.cloudinary.com/strawberryfair/image/upload/v1653003074/Hug_Globe_umyhbi.jpg"
-      alt="alt" class="html-embedded-image-small"></figure>
-
-
-      This year we're paying ever more attention to taking care of the
-      environment.
-
-
-      We're re-doubling our recycling efforts:
-
-
-      * Introducing a deposit scheme for glasses from the bars and discouraging
-      the sale of water in plastic water bottles.
-
-      * Increased use of only recycled/re-used/upcycled materials for our decor.
-
-      * Emphasising local acts on our stages to minimise vehicle use.
-
-      * No paper Programme for 2023,  instead our Programme will be on-line as a
-      free app.
-
-      * The ever popular Scarecrow Corner is a generator free zone and will be
-      featuring a solar powered stage and a solar coffee bus.
-
-      * Increased recycling of cardboard and plastic (along with our usual
-      comprehensive recycling of drinks cans).
-
-      * Trialling of compostable rubbish bags for bins and litter picking.
-
-
-      ## Residents' Hotline
-
-
-      A local resident and want to comment during the Fair?
-
-
-      Call us on:
-
-
-      **07759-277117**
-
-
-      ## Shake Ya Bucket!!
-
-
-      **Fancy raising some money for a charity of YOUR choice?** 
-
-
-      25% of the collection is donated to the chosen charity & the 75% goes to
-      Strawberry Fair.
-
-
-      If you can spare some time between 11.30am and 10.30pm, please get in
-      touch by emailing anaterriente8@gmail.com
-
-
-      [**Here are our current Bucket Collection Partners for
-      2022**](https://strawberry-fair.org.uk/about/bucket-collection-partners/)\*\*\*\*
-
-
-      ## Cambridge Band Competition
-
-
-      Throughout all of everything, we still managed to hold the popular
-      [**Cambridge Band
-      Competition**](https://strawberry-fair.org.uk/about/cambridge-band-competition/).
-
-
-      Check out the [**Band Comp**](/about/cambridge-band-competition) pages for
-      more information on the UK's longest running band competition.
+      ##
     scrapbookImages:
       - alt: Happy crowd
         src: >-
@@ -216,35 +111,6 @@ contentBlocks:
       isPublic: false
     subtitle: 'Starting the summer season in Cambridge for over 40 years '
     title: About Strawberry Fair
-  - _markdown_contentBody: >-
-      Help keep Strawberry Fair free and not dependent on sponsorship.
-
-
-      [**Click HERE to go to our Donation
-      page.**](https://strawberry-fair.org.uk/about/donate/)****
-    scrapbookImages:
-      - alt: Image 1
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/wide-parade_yev0ai.jpg
-      - alt: Image 2
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/love-a-fair_c8vlpx.jpg
-      - alt: Image 3
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/banner-carrying_m0ufmy.jpg
-      - alt: Image 4
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/love-a-fair_c8vlpx.jpg
-      - alt: Image 5
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398411/Image%20Scrapbook/drums_pgyyyt.jpg
-      - alt: Image 6
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1579684138/Image%20Scrapbook/Gareth_Nunns_286_DSC_7789_yyj4zc.jpg
-    strawberryTile:
-      isPublic: false
-    subtitle: 'It is big, it is clever, but it ''aint cheap.....'
-    title: Donate
 calendarBlock:
   subtitle: 'Committee meetings, benefit gigs and events'
   title: Upcoming meetings and events
@@ -255,6 +121,98 @@ twitterBlock:
   subtitle: Stay in the loop
   title: Join the conversation
 notes: >-
+  ## Donations - Help!!
+
+
+  Like everyone else we've had a tough couple of years and we're not out of the
+  woods yet. Our income is down and our expenses have increased massively.
+
+
+  Put simply, we need your help.....
+
+
+  **Get PayPaling:**
+
+
+  <form target="_top" action="https://www.paypal.com/cgi-bin/webscr"
+  method="post"><input type="hidden" name="cmd" value="_s-xclick" /> <input
+  type="hidden" name="hosted_button_id" value="TX2E4BTL9HENG" /> <input
+  type="image" alt="PayPal &ndash; The safer, easier way to pay online."
+  border="0" name="submit"
+  src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" /> <img
+  width="1" alt="" height="1" border="0"
+  src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" /></form>
+
+
+  **Pay by Card:**
+
+
+  <https://pay.sumup.io/b2c/Q6SY3650>
+
+
+  **Do the QR thing:**
+
+
+  <figure><img
+  src="https://res.cloudinary.com/strawberryfair/image/upload/v1654450756/SF_sumup_QR_code_1_qumzvj.png"
+  alt="alt" class="html-embedded-image-medium"></figure>
+
+
+  ## 
+
+
+
+
+
+
+  ## Green Strawberry
+
+
+  <figure><img
+  src="https://res.cloudinary.com/strawberryfair/image/upload/v1653003074/Hug_Globe_umyhbi.jpg"
+  alt="alt" class="html-embedded-image-small"></figure>
+
+
+  This year we're paying ever more attention to taking care of the environment.
+
+
+  We're re-doubling our recycling efforts:
+
+
+  * Introducing a deposit scheme for glasses from the bars and discouraging the
+  sale of water in plastic water bottles.
+
+  * Increased use of only recycled/re-used/upcycled materials for our decor.
+
+  * Emphasising local acts on our stages to minimise vehicle use.
+
+  * No paper Programme for 2023,  instead our Programme will be on-line as a
+  free app.
+
+  * The ever popular Scarecrow Corner is a generator free zone and will be
+  featuring a solar powered stage and a solar coffee bus.
+
+  * Increased recycling of cardboard and plastic (along with our usual
+  comprehensive recycling of drinks cans).
+
+  * Trialling of compostable rubbish bags for bins and litter picking.
+
+
+  ## 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   \[For re-inserting next year]
 
 
