@@ -111,35 +111,6 @@ contentBlocks:
       isPublic: false
     subtitle: 'Starting the summer season in Cambridge for over 40 years '
     title: About Strawberry Fair
-  - _markdown_contentBody: >-
-      Help keep Strawberry Fair free and not dependent on sponsorship.
-
-
-      [**Click HERE to go to our Donation
-      page.**](https://strawberry-fair.org.uk/about/donate/)****
-    scrapbookImages:
-      - alt: Image 1
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/wide-parade_yev0ai.jpg
-      - alt: Image 2
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/love-a-fair_c8vlpx.jpg
-      - alt: Image 3
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/banner-carrying_m0ufmy.jpg
-      - alt: Image 4
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398367/Image%20Scrapbook/love-a-fair_c8vlpx.jpg
-      - alt: Image 5
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1578398411/Image%20Scrapbook/drums_pgyyyt.jpg
-      - alt: Image 6
-        src: >-
-          https://res.cloudinary.com/strawberryfair/image/upload/v1579684138/Image%20Scrapbook/Gareth_Nunns_286_DSC_7789_yyj4zc.jpg
-    strawberryTile:
-      isPublic: false
-    subtitle: 'It is big, it is clever, but it ''aint cheap.....'
-    title: Donate
 calendarBlock:
   subtitle: 'Committee meetings, benefit gigs and events'
   title: Upcoming meetings and events
