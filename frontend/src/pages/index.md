@@ -69,7 +69,7 @@ contentBlocks:
       isPublic: true
       text: ' We''re looking forward to welcoming everyone back to Midsummer Common this year. '
     subtitle: Strawberry Fair will take place on 3rd June 2023
-    title: We're Back in 2023!
+    title: We're Back in 2023!!
   - _markdown_contentBody: >-
       From humble beginnings, Strawberry Fair has grown to be the most popular
       free, entirely volunteer run, one day music & arts event in Cambridge (and
