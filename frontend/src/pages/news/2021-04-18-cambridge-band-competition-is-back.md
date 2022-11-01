@@ -6,7 +6,7 @@ subtitle: Enter the Band Competition now!
 heroData:
   isActive: false
 author: Official
-date: '2022-11-21'
+date: '2022-11-01'
 image:
   alt: Band Comp Poster
   shouldDisplay: true
