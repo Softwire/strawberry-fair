@@ -23,7 +23,7 @@ strawberryTiles:
 
 The Cambridge Band Competition 2023 is now open for entries! Musicians simply need to fill in the online form:
 
-[2023 Entry Form](https://l.facebook.com/l.php?u=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLScUQ7Lbd5l6rnxK3Bpxqp9t5_6aX9yQR6KiCCDsC3ODXk6aPw%2Fviewform%3Fusp%3Dsf_link%26fbclid%3DIwAR2exkunmpqnSPiK6NLetPDLtAMWJysz2UQWHFuwEJrr_KtNiZ_xLWDt4qA&h=AT1LEYQSdy3qIQ5kY61UJdjDw2F8WCCswl8xNgifxASR9QDTVWTssZcfZ_j2iRujhw4qez-Rlkkf_up4yH2-ShyIZp4SLZQyE5tYpOnrEDVKtNteauuAhQRNWXD-DuC_G6P1hg)
+[2023 Entry Form](https://docs.google.com/forms/d/e/1FAIpQLScUQ7Lbd5l6rnxK3Bpxqp9t5_6aX9yQR6KiCCDsC3ODXk6aPw/viewform?usp=sf_link)
 
 All genres of music and all types of performer are welcome to enter as long as they are based within 30 miles of Cambridge or within Cambridgeshire and play original material. **Young performers** are particularly welcome to apply and indeed under 18s performers, like progressive Jazz Rock trio "Influx of Insanity", have won the competition in the past!  
 
