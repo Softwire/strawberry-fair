@@ -19,23 +19,28 @@ strawberryTiles:
       isPublic: false
     tile: Strawberry Tile
 ---
-# Enter the 2022 Band Comp Now!
+# Enter the 2023 Band Comp Now!
 
-The Cambridge Band Competition 2022 is now open for entries! Musicians simply need to fill in the online form:
+The Cambridge Band Competition 2023 is now open for entries! Musicians simply need to fill in the online form:
 
-[2022 Entry Form](/forms/band-comp-2022-entry-form)
+[2023 Entry Form](/forms/band-comp-2022-entry-form)
 
 All genres of music and all types of performer are welcome to enter as long as they are based within 30 miles of Cambridge or within Cambridgeshire and play original material. **Young performers** are particularly welcome to apply and indeed under 18s performers, like progressive Jazz Rock trio "Influx of Insanity", have won the competition in the past!  
 
-The closing date for entries is midnight **18th January 2022**
+The closing date for entries is midnight on **Sunday 8th January 2022**
 
 All entries will go forward to the listening panel of judges which will meet the following week and those acts getting through to the heats will be announced at the beginning of February 2022. 
 
-There will be four Heats held at the **Portland Arms** on Sundays 27th February, 6th March, 13th March and 20th March.
+There will be five Heats held at the **Portland Arms** on...\
+**Saturday 4th March**\
+**Saturday 11th March**\
+**Saturday 18th March**\
+**Saturday 1st April**\
+**Saturday 8th April**
 
-And the **Grand Final** of the Competition will be held at **Cambridge Junction J1** on **Thursday 5th May**
+And the **Grand Final** of the Competition will be held at **Cambridge Junction J1** on **Friday 28th May**
 
-There are a number of cash, performance and artist development prizes up for grabs including the prestigious **Kimberley Rew Songwriting Prize**,and **all finalists** will get to **play at Strawberry Fair 2022** on Saturday June 11th
+There are a number of cash, performance and artist development prizes up for grabs including the prestigious '**Kimberley Rew Songwriting Prize'**, and **all finalists** will get to **play at Strawberry Fair 2023** on Saturday 3rd June!
 
 # History
 
