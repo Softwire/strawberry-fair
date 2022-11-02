@@ -29,7 +29,7 @@ All genres of music and all types of performer are welcome to enter as long as t
 
 The closing date for entries is midnight on **Sunday 8th January 2022**
 
-All entries will go forward to the listening panel of judges which will meet the following week and those acts getting through to the heats will be announced at the beginning of February 2022. 
+All entries will go forward to the listening panel of judges which will meet the following week and those acts getting through to the heats will be announced at the beginning of February. 
 
 There will be five Heats held at the **Portland Arms** on...\
 **Saturday 4th March**\
@@ -38,7 +38,7 @@ There will be five Heats held at the **Portland Arms** on...\
 **Saturday 1st April**\
 **Saturday 8th April**
 
-And the **Grand Final** of the Competition will be held at **Cambridge Junction J1** on **Friday 28th May**
+And the **Grand Final** of the Competition will be held at **Cambridge Junction J1** on **Sunday 28th May!**
 
 There are a number of cash, performance and artist development prizes up for grabs including the prestigious '**Kimberley Rew Songwriting Prize'**, and **all finalists** will get to **play at Strawberry Fair 2023** on Saturday 3rd June!
 
