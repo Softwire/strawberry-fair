@@ -27,7 +27,7 @@ The Cambridge Band Competition 2023 is now open for entries! Musicians simply ne
 
 All genres of music and all types of performer are welcome to enter as long as they are based within 30 miles of Cambridge or within Cambridgeshire and play original material. **Young performers** are particularly welcome to apply and indeed under 18s performers, like progressive Jazz Rock trio "Influx of Insanity", have won the competition in the past!  
 
-The closing date for entries is midnight on **Sunday 8th January 2022**
+The closing date for entries is midnight on **Sunday 8th January 2023.**
 
 All entries will go forward to the listening panel of judges which will meet the following week and those acts getting through to the heats will be announced at the beginning of February. 
 
