@@ -38,7 +38,7 @@ There will be five Heats held at the **Portland Arms** on...\
 **Saturday 1st April**\
 **Saturday 8th April**
 
-And the **Grand Final** of the Competition will be held at **Cambridge Junction J1** on **Sunday 28th May!**
+And the **Grand Final** of the Competition will be held at **Cambridge Junction J1** on **Sunday 28th April!**
 
 There are a number of cash, performance and artist development prizes up for grabs including the prestigious '**Kimberley Rew Songwriting Prize'**, and **all finalists** will get to **play at Strawberry Fair 2023** on Saturday 3rd June!
 
@@ -56,7 +56,8 @@ Previously held at the Guildhall, and then the Corn Exchange (sold out heats and
 
 **CAMBRIDGE BAND COMPETITION WINNERS:**
 
-* 2020/21 Strawberry Lace
+* 2022 - Oli Harris 
+* 2020/21 - Strawberry Lace
 * 2019 - Grassroof
 * 2018 - Influx of Insanity
 * 2017 - Flint Moore
