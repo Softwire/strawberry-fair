@@ -38,7 +38,7 @@ There will be five Heats held at the **Portland Arms** on...\
 **Saturday 1st April**\
 **Saturday 8th April**
 
-And the **Grand Final** of the Competition will be held at **Cambridge Junction J1** on **Sunday 28th May!**
+And the **Grand Final** of the Competition will be held at **Cambridge Junction J1** on **Sunday 28th April!**
 
 There are a number of cash, performance and artist development prizes up for grabs including the prestigious '**Kimberley Rew Songwriting Prize'**, and **all finalists** will get to **play at Strawberry Fair 2023** on Saturday 3rd June!
 
