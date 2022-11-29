@@ -19,7 +19,7 @@ contentBlocks:
 
 
       We're looking forward to catching up with old friends and making new ones,
-      but we can't make it happen without [**YOU**!](/about/get-involved)and
+      but we can't make it happen without [**YOU**!](/about/get-involved) and
       loads of
       money/[**DONATIONS**](https://strawberry-fair.org.uk/about/donate/)!
 
