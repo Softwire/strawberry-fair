@@ -93,7 +93,7 @@ notes: >-
 
 Complete the following form and we will then contact you with a quote for your stall.
 
-[**Non-Food Trader Application Form**](https://forms.gle/ufMeSUucbmjhFYiA6)
+****[**Non-Food Trader Application Form**](https://docs.google.com/forms/d/e/1FAIpQLSeXcPsh1vtYM1h3KYXjw2gH8oSQVq2VG6HsKZNl5EwEBibU_A/viewform?embedded=true)****
 
 ## **Food applications**
 
