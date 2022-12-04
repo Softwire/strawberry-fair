@@ -93,21 +93,21 @@ notes: >-
 
 Complete the following form and we will then contact you with a quote for your stall.
 
-****[**Non-Food Trader Application Form**](https://docs.google.com/forms/d/e/1FAIpQLSeXcPsh1vtYM1h3KYXjw2gH8oSQVq2VG6HsKZNl5EwEBibU_A/viewform?embedded=true)****
+[**Non-Food Trader Application Form**](https://docs.google.com/forms/d/e/1FAIpQLSeXcPsh1vtYM1h3KYXjw2gH8oSQVq2VG6HsKZNl5EwEBibU_A/viewform?embedded=true)****
 
 ## **Food applications**
 
-Complete the following form and we will consider food applications and let you know in the first week of February whether we have been able to allocate you a space for 2022.
+Complete the following form and we will consider food applications and let you know in the third week of February whether we have been able to allocate you a space for 2023.
 
-[**Food Trader Application Form**](https://forms.gle/eiQtXNbs7NDtHY4H9)
+****[**Food Trader Application Form**](https://docs.google.com/forms/d/e/1FAIpQLSf069Lcr8vfia2ZNbfZIDeHP3A_QIzOjHkEB9QDrq0NTF5ghA/viewform?embedded=true)****
 
 If you have any questions, check the [Trader FAQ](https://docs.google.com/document/d/1VK62GAmE1bzmHqwnoVzksYNBo0hmcGAaqFn3pZUGEgY/edit?usp=sharing) section for more information about the fair. If you need more help email us at <mailto:traders@strawberry-fair.org.uk>
 
 # Trading at Strawberry Fair
 
-Strawberry Fair 2022 will be on Saturday 11th June. This is a week later than usual because of the Jubilee celebrations on the first weekend of June. The Faeries are so happy to be back and so looking forward to seeing you again after the terrible past years. Let’s all celebrate by making this the best Strawberry Fair ever!
+Strawberry Fair 2023 will be on Saturday 3rd June. The Faeries are so happy to be back and so looking forward to seeing you again. Let’s all celebrate by making this the best Strawberry Fair ever!
 
-The theme this year will be **LOVE OUR PLANET**. 
+The theme this year will be **REVOLUTION**. 
 
 We are looking for traders and organisations offering as many different flavours and tastes, products and produce, weird and wonderful hobbies and interesting people to amuse and entertain our visitors. Our market is one of the most important features of the Fair - bringing a diverse range of stalls right to the heart of Cambridge.
 
@@ -121,4 +121,4 @@ We are looking for traders and organisations offering as many different flavours
 
 ## Bars / Alcohol
 
-Bar pitches for 2022 have already been allocated. No new applications are being accepted.
+Bar pitches for 2023 have already been allocated. No new applications are being accepted.
