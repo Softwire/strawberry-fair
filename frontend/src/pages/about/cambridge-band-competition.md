@@ -31,7 +31,7 @@ The closing date for entries is midnight on **Sunday 8th January 2023.**
 
 All entries will go forward to the listening panel of judges which will meet the following week and those acts getting through to the heats will be announced at the beginning of February. 
 
-There will be five Heats held at the **Portland Arms** on...\
+There will be five Heats held at the **Portland Arms** in 2023 on...\
 **Saturday 4th March**\
 **Saturday 11th March**\
 **Saturday 18th March**\
