@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
 title: Apply to Trade
-subtitle: Strawberry Fair is back in 2023!
+subtitle: Strawberry Fair is back in 2023
 heroData:
   heroImages: []
   isActive: true
@@ -91,15 +91,15 @@ notes: >-
 ---
 ## **Non-Food applications**
 
-Complete the following form and we will then contact you with a quote for your stall.
+Please complete the following form and we will then contact you with a quote for your stall.
 
-[**Non-Food Trader Application Form**](https://docs.google.com/forms/d/e/1FAIpQLSeXcPsh1vtYM1h3KYXjw2gH8oSQVq2VG6HsKZNl5EwEBibU_A/viewform?embedded=true)\*\*\*\*
+[**Non-Food Trader Application Form**](https://docs.google.com/forms/d/e/1FAIpQLSeXcPsh1vtYM1h3KYXjw2gH8oSQVq2VG6HsKZNl5EwEBibU_A/viewform?embedded=true)
 
 ## **Food applications**
 
 Complete the following form and we will consider food applications and let you know in the third week of February whether we have been able to allocate you a space for 2023.
 
-[**Food Trader Application Form**](https://docs.google.com/forms/d/e/1FAIpQLSf069Lcr8vfia2ZNbfZIDeHP3A_QIzOjHkEB9QDrq0NTF5ghA/viewform?embedded=true)****
+[**Food Trader Application Form**](https://docs.google.com/forms/d/e/1FAIpQLSf069Lcr8vfia2ZNbfZIDeHP3A_QIzOjHkEB9QDrq0NTF5ghA/viewform?embedded=true)
 
 If you have any questions, check the [Trader FAQ](https://docs.google.com/document/d/1VK62GAmE1bzmHqwnoVzksYNBo0hmcGAaqFn3pZUGEgY/edit?usp=sharing) section for more information about the fair. If you need more help email us at <mailto:traders@strawberry-fair.org.uk>
 
