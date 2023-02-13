@@ -87,4 +87,4 @@ If you are also interested in joining the Strawberry Fair committee with the pla
 
 **Performing**
 
-Did you come here looking to perform at the fair? Email the programming team at **Email:** [**iwanttohelp@strawberry-fair.org.uk**](mailto:iwanttohelp@strawberry-fair.org.uk) **or fill out our** [**VOLUNTEER FORM**](https://strawberry-fair.org.uk/forms/volunteer-form/)**.**
+Did you come here looking to perform at the fair? Email the programming team at **Email:** [**iwanttoplay@strawberry-fair.org.uk**](mailto:iwanttohelp@strawberry-fair.org.uk)**.**
