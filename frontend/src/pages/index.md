@@ -1,6 +1,15 @@
 ---
 templateKey: home-page
-title: 'By the people of Cambridge. For the people of Cambridge. '
+title: >-
+  By the people of Cambridge. For the people of Cambridge. <form target="_top"
+  action="https://www.paypal.com/cgi-bin/webscr" method="post"><input
+  type="hidden" name="cmd" value="_s-xclick" /> <input type="hidden"
+  name="hosted_button_id" value="TX2E4BTL9HENG" /> <input type="image"
+  alt="PayPal &ndash; The safer, easier way to pay online." border="0"
+  name="submit"
+  src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" /> <img
+  width="1" alt="" height="1" border="0"
+  src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" /></form>
 heroData:
   heroImages:
     - src: >-
@@ -22,6 +31,16 @@ contentBlocks:
       but we can't make it happen without [**YOU**!](/about/get-involved) and
       loads of
       money/[**DONATIONS**](https://strawberry-fair.org.uk/about/donate/)!
+
+
+      <form target="_top" action="https://www.paypal.com/cgi-bin/webscr"
+      method="post"><input type="hidden" name="cmd" value="_s-xclick" /> <input
+      type="hidden" name="hosted_button_id" value="TX2E4BTL9HENG" /> <input
+      type="image" alt="PayPal &ndash; The safer, easier way to pay online."
+      border="0" name="submit"
+      src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" /> <img
+      width="1" alt="" height="1" border="0"
+      src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" /></form>
 
 
       ## 
