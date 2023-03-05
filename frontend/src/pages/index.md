@@ -133,7 +133,7 @@ contentBlocks:
       alt="alt" class="html-embedded-image-medium"></figure>
 
 
-      Well....
+      ## Well....
 
 
       * We've got a recycling rate that rivals Cambridge City Council, one of
@@ -145,24 +145,34 @@ contentBlocks:
       year, by donating vegetable waste to a local Community Allotment for
       composting.
 
-      * Solar powered stage in Scarecrow Corner.
+      * We're trialling compostable rubbish bags for bins and litter picking.
+
+      * We emphasise local acts on our stages to minimise vehicle use.
+
+      * We introduced a No Paper Programme for 2022,  instead our Programme will
+      be available on-line as a free app.
+
+      * The ever popular Scarecrow Corner is a generator free zone and will be
+      featuring a solar powered stage and a solar coffee bus.
 
       * **NO** glass bottles are allowed on-site. There are glass recycling
       points at the entrances.\
         We used to recycle 3 TONS of glass each year...
       * **NO** sales of Helium filled balloons on-site.
 
-      * **NO** single use plastics are allowed for sale on-site, this includes
-      food serving items and includes water or bottled drinks in single use
-      plastics.\
+      * We discourage the use  of ****single use plastics on-site, including
+      food serving items 
+
+      * We've introduced a deposit return scheme for glasses from the bars and
+      discouraging the sale of water in plastic water bottles.
         Water points are provided on-site.
-      * Deposit return for glasses at bars.
+      * We've ncreased the use of recycled/re-used/upcycled materials for our
+      decor; plus, lots of our decorations, entrances and other art are
+      recycled, reused or repurposed year on year.
 
-      * Lots of our decorations, entrances and other art are recycled, reused or
-      repurposed year on year.
 
-
-      Top 10 things you can do to help.
+      [Top 10 things you can do to
+      help.](https://strawberry-fair.org.uk/about/environment/)
 
 
       And then, there's always the [Ancient and Esteemed Strawberry Fair
