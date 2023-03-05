@@ -127,6 +127,74 @@ contentBlocks:
       isPublic: false
     subtitle: 'Starting the summer season in Cambridge for over 40 years '
     title: About Strawberry Fair
+  - _markdown_contentBody: >-
+      <figure><img
+      src="https://res.cloudinary.com/strawberryfair/image/upload/v1677975520/Strawberry_Fair_Sustainability_psjrgn.jpg"
+      alt="alt" class="html-embedded-image-medium"></figure>
+
+
+      Well....
+
+
+      * We've got a recycling rate that rivals Cambridge City Council, one of
+      the best Councils in the country for recycling.
+
+      * We recycle, cans (up to 10,000 cans a year), plastic and cardboard/wood.
+
+      * We're hoping to start recycling food waste from the Crew kitchen this
+      year, by donating vegetable waste to a local Community Allotment for
+      composting.
+
+      * Solar powered stage in Scarecrow Corner.
+
+      * **NO** glass bottles are allowed on-site. There are glass recycling
+      points at the entrances.\
+        We used to recycle 3 TONS of glass each year...
+      * **NO** sales of Helium filled balloons on-site.
+
+      * **NO** single use plastics are allowed for sale on-site, this includes
+      food serving items and includes water or bottled drinks in single use
+      plastics.\
+        Water points are provided on-site.
+      * Deposit return for glasses at bars.
+
+      * Lots of our decorations, entrances and other art are recycled, reused or
+      repurposed year on year.
+
+
+      Top 10 things you can do to help.
+
+
+      And then, there's always the [Ancient and Esteemed Strawberry Fair
+      Environment Team](https://strawberry-fair.org.uk/about/environment/)...
+
+
+      **Thank you for all you do!** Help us continue to achieve our excellent
+      performance and benefit the planet. Midsummer Common on the day after the
+      Fair looks better and better each year, thanks to your efforts!
+    scrapbookImages:
+      - alt: 1st Image
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1664715785/SF_Revolutions_Poster_gr2c8n.jpg
+      - alt: Image 1
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1634495910/sample.jpg
+      - alt: Image 6
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1652611826/Strawberry_Fair_Green_Team_z40lwz.jpg
+      - alt: Image 3
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1677975520/Strawberry_Fair_Sustainability_psjrgn.jpg
+      - alt: Image 2
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1634495910/sample.jpg
+      - alt: Image 5
+        src: >-
+          https://res.cloudinary.com/strawberryfair/image/upload/v1653003074/Hug_Globe_umyhbi.jpg
+    strawberryTile:
+      isPublic: false
+    subtitle: 'So, how Green is Strawberry Fair....?'
+    title: Sustainable Strawberry
 calendarBlock:
   subtitle: 'Committee meetings, benefit gigs and events'
   title: Upcoming meetings and events
