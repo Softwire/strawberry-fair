@@ -1,7 +1,8 @@
 ---
 title: Areas & Events
 pageTitles:
-  - pageTitle: About/2022 Lineup
+  - pageTitle: About/2023 Lineup
+  - pageTitle: Events/Strawberry Sundae
   - pageTitle: About/Cambridge Band Competition
   - pageTitle: Pages/Upcoming Events
   - pageTitle: About/Shady Nasty Stage
