@@ -12,13 +12,11 @@ strawberryTiles:
       isPublic: false
     tile: Strawberry Tile
 ---
-<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1653980008/Portland_Ballroom_31st_May_n295vr.png" alt="alt" class="html-embedded-image-medium"></figure>
-
-After three long years the **Portland Ballroom** returns to Love our Planet on **Saturday 11th June 2022** at the lovely, free and awesome Strawberry Fair on Midsummer Common, Cambridge.
+The **Portland Ballroom** returns for Revolution on **Saturday 3rd June 2023** at the lovely, free and awesome Strawberry Fair on Midsummer Common, Cambridge.
 
 Thank you to everybody who gives their time and assistance to enable us to put this event on for you. The Fair is **FREE**, Non-sponsored and **Volunteer Run** - anyone interested in helping out please get in touch.
 
-We are raising funds to enable us to bring you the Portland Ballroom@Strawberry Fair 2022 on Saturday 3rd June. If you can do so please donate a pound or two at [**https://gofund.me/6beb50d5**](https://gofund.me/6beb50d5) so we can carry on providing this amazing free event for our community.
+We are raising funds to enable us to bring you the Portland Ballroom@Strawberry Fair 2023 on Saturday 3rd June. If you can do so please donate a pound or two at [**https://gofund.me/6beb50d5**](https://gofund.me/6beb50d5) so we can carry on providing this amazing free event for our community.
 
 The Portland Ballroom is presented by [**GIGS OUT**](https://www.facebook.com/groups/gigsoutineastanglia/?ref=share) in association with the [**East Anglian Festivals Network**](www.eafn.co.uk).
 
