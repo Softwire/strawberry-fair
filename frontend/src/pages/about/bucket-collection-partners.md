@@ -16,59 +16,100 @@ We are proud to collaborate with some outstanding local charities in our fundrai
 
 The charities we are collaborating with this year are:
 
-## Woodgreen
+## Cambridgeshire Search and Rescue (CamSAR)  
 
-## (Victoria Avenue and Mitchums Bridge gates)
+## (Main gate, Victoria Avenue gate, part of Walnut tree and Mitchums Bridge gate)
 
-<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1652738010/Wood_Green_swx6e8.jpg" alt="Woodgreen" class="html-embedded-image-medium"></figure>
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1683236411/CamSAR_Logo_ubwj3s.jpg" alt="CamSAR" class="html-embedded-image-medium"></figure>
 
-Woodgreen is a charity that's here for pets and their people.
 
-We want all pets to live the best possible life, and we do everything we can to make that a reality – every step of the way. Any pet who comes through our doors is given specialist care which meets their individual needs. And when they’re ready, we find them a loving new home – a second chance at happiness.
 
-As well as being a safe haven for homeless and vulnerable pets – including those in need of urgent, life-saving care –
 
-we provide expert pet advice and hands-on support in the community. With almost 100 years of experience in rehabilitating pets, no issue is too big or too small for us.
 
-From shelter and care to practical support, everything we do is about helping pets live happy, fulfilling lives with their humans. 
 
-[**https://woodgreen.org.uk/**](https://woodgreen.org.uk/)****
 
-## Cam Sight
+Cambridgeshire Search and Rescue (CamSAR) is the  Lowland Search and Rescue Team covering our county, often also assisting sister teams in the wider region.
 
-## (Wallnut Tree gate- until 5pm)
 
-<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1652737994/Camsight_Logo_bdnaiw.jpg" alt="Camsight" class="html-embedded-image-medium"></figure>
 
-Cam Sight is a small Cambridgeshire charity that supports local people of all ages living with low vision and blindness to live the lives they choose. We work to enhance independence, improve well-being, and improve inclusion. Our beneficiaries are at the heart of everything we do at Cam Sight. We see individuals as whole people, not defined by one element of their lives. Our work is holistic in approach. All are welcome at Cam Sight. Over 1900 people access our services every year and demand is increasing. Cam Sight’s services are wide ranging, from Peer Support groups, befrienders, emotional support and counselling, sports and leisure, equipment and tech, to awareness training and talks.
+We are a specialist team, called upon by the Police in the search for vulnerable missing people: a child, an elderly person living with dementia or even someone who is considering taking their own life.  In each case, and many others, an emergency response is vital.
 
-**You can find out more info at**[**: www.camsight.org.uk**](< www.camsight.org.uk>)****\
-**Call: 01223 420033**\
-**Or Email:** [**info@camsight.org.uk**](info@camsight.org.uk)****
 
-<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1652737987/Camsight_Picture_h9951t.jpg" alt="Camsight Picture" class="html-embedded-image-medium"></figure>
 
-## Mums4Ukraine
+Our Search Technicians, Team Leaders, Search Planners, Search Operations and Search Managers turn out at all hours of the day and night to respond to the missing person’s emergency.
 
-## (Main gate)
 
-<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1652737969/Mums_4_Ukraine_1_bqn0ya.jpg" alt="Mums4Ukraine 1" class="html-embedded-image-medium"></figure>
 
-Mums4Ukraine is a grassroots volunteer run charity supporting Ukraine. Our mission is to use our connections and our own hard work to create better outcomes for Ukrainian families and to help all people that, directly or indirectly, have been affected by the Russian invasion in Ukraine. 
+**100% professional**
 
-Since we formed as a group in March 2022, we arranged humanitarian aid and help Ukrainian people affected by the war, we set up collection points in Cambridge and with the help of our members and the generosity of the people of Cambridge, we sent lorry-loads of humanitarian aid directly into Ukraine. Our members tirelessly raised funds by organising online silent auctions, children’s events, open garden parties, cake and pant sales and more. We helped Ukrainians find hosts in Cambridgeshire and some of our own members host Ukrainian refugees too. We also raised awareness about visa delays in the UK and got a lot of national and international media attention. 
 
-Our plans for the near future include helping Ukrainian refugees in Cambridge to settle and to make local connections; we do this in collaboration with Ukrainians and support them to set up their own initiatives. We are an open group and welcome every individual and business who want to join in.   
 
-[**www.mums4ukraine.com**](www.mums4ukraine.com)****[****\
-**https://www.facebook.com/Mums4Ukraine**](https://www.facebook.com/Mums4Ukraine)****
 
-<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1652737958/Mums4_Ukraine_Flag_rpsc4k.jpg" alt="Flag" class="html-embedded-image-medium"></figure>
 
-## Cambridge 4 Ukraine
+Working closely with our Lowland Rescue sister teams and other Search and Rescue organisations within the UKSAR Operator Group, every team member is trained to exacting national standards and undergoes yearly recertification through continual training. This ensures seamless interoperability when bringing in external resources to a Cambridgeshire incident or when responding to a mutual aid call elsewhere.
 
-## (Wallnut Tree gate - until 5pm)
 
-<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1652737947/C4U_Logo_f7tbq5.jpg" alt="C4U" class="html-embedded-image-medium"></figure>
 
-C4U is a volunteer group that was established by Ukrainians who live in Cambridge. The aim of C4U is to help Ukrainians - refugees and also those who remains in Ukraine - during the barbaric Russian invasion in Ukraine. We are organising protests, lectures, fundraising events, merchandise, helping refugees arriving to Cambridge and students. All the collected money at Strawberry Fair will be transferred to Hospitaliers ([**www.hospitaliers.life**](www.hospitaliers.life)) – medic volunteer organisation that saves lives of people directly on a frontline.
+**0% pay**
+
+
+
+Available 24/7/365, the team is made up 100% of dedicated fully trained volunteers and receives no government funding, relying entirely upon one-off grants and individual donations – and team members’ own pockets – to continue to provide this service.
+
+
+
+<https://www.camsar.org/>
+
+
+
+## Blue Smile
+
+## (Walnut tree gate)
+
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1683236413/BLUE_SMILE_StrapLogo_CMYK_CHILDRENCHARITY_LOGO.JPG_ub8viw.jpg" alt="Blue Smile" class="html-embedded-image-medium"></figure>
+
+
+
+
+
+
+
+Blue Smile is a children’s mental health charity in Cambridgeshire transforming the life chances of young people aged 3 to 13 through expert arts based therapy and counselling in local schools.
+
+
+
+Since the charity launched in 2010, Blue Smile has supported over 2,200 children in over 50 schools to have brighter futures.
+
+
+
+Find out more at [www.bluesmile.org.uk](www.bluesmile.org.uk) or follow them on social media: @BlueSmileCam.
+
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1683236412/Blue_Smile_Children_Picture_ipun18.png" alt="Blue Smile Picture" class="html-embedded-image-medium"></figure>
+
+## Make a Smile
+
+## (Walnut tree gate)
+
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1683236410/Make_a_Smile_Logo_apqmip.png" alt="Mums4Ukraine 1" class="html-embedded-image-medium"></figure>
+
+
+
+
+
+
+
+"Make a Smile is a volunteering organisation where volunteers dress up as 'characters' and attend a variety of events with children in hardship. Our goal is to help these children to enjoy their childhood. We endeavour to be professional, forward-thinking and well trained but hold at the forefront of our practice that fun is the number one priority for both children and volunteers. "
+
+
+
+<https://makeasmile.org.uk/>
+
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1683236415/Make_a_Smile_picture2_q76bug.jpg" alt="Make a Smile Picture 2" class="html-embedded-image-medium"></figure>
+
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1683236421/Make_a_Smile_picture1_lm0lkb.jpg" alt="Make a Smile Picture" class="html-embedded-image-medium"></figure>
+
+## The Meadows Children & Family Wing
+
+## (Mitchums Bridge gate)
+
+<figure><img src="" alt="" class="html-embedded-image-medium"></figure>
