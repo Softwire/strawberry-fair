@@ -12,7 +12,7 @@ strawberryTiles:
 ---
 ## When and Where is it?
 
-Strawberry Fair will take place on Midsummer Common in Cambridge on Saturday 11th of June. 
+Strawberry Fair will take place on Midsummer Common in Cambridge on Saturday 3rd of June. 
 
 ## How much does it cost?
 
@@ -32,7 +32,7 @@ Absolutely nothing! It is our strong belief that all music and entertainment sho
 
 ## Is there a theme?
 
-Yes! This year the theme is “LOVE THE PLANET”. 
+Yes! This year the theme is “REVOLUTION”. 
 
 ## What is/isn't allowed on site?
 
