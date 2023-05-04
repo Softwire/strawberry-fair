@@ -39,72 +39,74 @@ Watch this space for the 2023 Line Up!
 
 ## CAMBRIDGE 105 RADIO
 
-| Time  | Act                        |
-| ----- | -------------------------- |
-|          |
+| Time | Act |
+| ---- | --- |
+|      |     |
 
 ## CENTRE STAGE
 
-| Time  | Act                        |
-| ----- | -------------------------- |
-|          |
+| Time | Act |
+| ---- | --- |
+|      |     |
 
 ## FLYING PIG STAGE
 
-| Time  | Act                                       |
-| ----- | ----------------------------------------- |
-|                      |
+| Time | Act |
+| ---- | --- |
+|      |     |
 
 ## PLASTIC DEN
 
-| Time  | Act                             |
-| ----- | ------------------------------- |
-|                  |
+| Time | Act |
+| ---- | --- |
+|      |     |
 
 ## KIDS PARK
 
-| Time  | Act                           |
-| ----- | ----------------------------- |
-|              |
+| Time | Act |
+| ---- | --- |
+|      |     |
 
-## PORTLAND BALLROOM/CAMBUSKERS
+## PORTLAND BALLROOM
 
-| Time  | Act                          |
-| ----- | ---------------------------- |
-|   |
+| Time | Act |
+| ---- | --- |
+|      |     |
+
+## CAMBUSKERS SHOWCASE
+
+| Time | Act |
+| ---- | --- |
+|      |     |
 
 ## REBEL LOVE STAGE
 
-| Time  | Act                                   |
-| ----- | ------------------------------------- |
-|    |
+| Time | Act |
+| ---- | --- |
+|      |     |
 
 ## RBG STAGE
 
-| Time  | Act                                                                 |
-| ----- | ------------------------------------------------------------------- |
-| |
+| Time | Act |
+| ---- | --- |
+|      |     |
 
 ## SCARECROW CORNER
 
-| Time  | Act                                        |
-| ----- | ------------------------------------------ |
-|                               |
+| Time | Act |
+| ---- | --- |
+|      |     |
 
 ## SHADYNASTIES
 
-| Time  | Act                          |
-| ----- | ---------------------------- |
-| |
+| Time | Act |
+| ---- | --- |
+|      |     |
 
 ## WIGWAM
 
-| Time  | Act                            |
-| ----- | ------------------------------ |
-|                   |
+| Time | Act |
+| ---- | --- |
+|      |     |
 
 ## ARTS AREA
-
-
-
-
