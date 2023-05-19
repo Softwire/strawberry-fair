@@ -11,7 +11,9 @@ strawberryTiles:
       isPublic: false
     tile: Strawberry Tile
 ---
-## Please remember to donate! All donations are really appreciated, as they help to keep the Fair free! 
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1684528355/Strawberry_Fair_Stages_Map_20023_Inc._line_up-01_q9p4xh.jpg" alt="alt" class="html-embedded-image-medium"></figure>
+
+## Please remember to donate! All donations are really appreciated, as they help to keep the Fair free!
 
 <form target="_top" action="https://www.paypal.com/cgi-bin/webscr" method="post"><input type="hidden" name="cmd" value="_s-xclick" /> <input type="hidden" name="hosted_button_id" value="TX2E4BTL9HENG" /> <input type="image" alt="PayPal &ndash; The safer, easier way to pay online." border="0" name="submit" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" /> <img width="1" alt="" height="1" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" /></form>
 
@@ -63,22 +65,22 @@ strawberryTiles:
 
 ## CENTRE STAGE
 
-| Time        | Act            |
-| ----------- | -------------- |
-| 12:10-12:30 | Alfie Taplin   |
-| 12:40-13:00 | Elgeeuu        |
-| 13:10-13:30 | Isla Mae       |
-| 13:20-14:00 | Anorak         |
-| 14:20-14:50 | The Ditch House|
-| 15:10-15:40 | Radegunds      |
-| 16:00-16:30 | Melody Causton |
-| 16:50-17:20 | Ember Rev      |
-| 17:40-18:10 | Far From Refuge|
-| 18:30-19:00 | Vulgarithm     |
-| 19:20-19:50 | New Addiction  |
-| 20:10-20:40 | Hereward       |
-| 21:00-21:30 | Mansworth      |
-| 22:00-23:00 | The Treatment  |
+| Time        | Act             |
+| ----------- | --------------- |
+| 12:10-12:30 | Alfie Taplin    |
+| 12:40-13:00 | Elgeeuu         |
+| 13:10-13:30 | Isla Mae        |
+| 13:20-14:00 | Anorak          |
+| 14:20-14:50 | The Ditch House |
+| 15:10-15:40 | Radegunds       |
+| 16:00-16:30 | Melody Causton  |
+| 16:50-17:20 | Ember Rev       |
+| 17:40-18:10 | Far From Refuge |
+| 18:30-19:00 | Vulgarithm      |
+| 19:20-19:50 | New Addiction   |
+| 20:10-20:40 | Hereward        |
+| 21:00-21:30 | Mansworth       |
+| 22:00-23:00 | The Treatment   |
 
 ## FLYING PIG STAGE
 
@@ -139,27 +141,27 @@ Local young performers,
 
 ## PORTLAND STAGE
 
-| Time        | Act     | Description |                                                  
-| ----------- | ------- | ---- |
-| 12:00-12:30 | The Scissors |Psych punk quartet from Cambridgeshire                    
-| 12:40-13:00 | Phoebe Austin |Indie folk singer-songwriter with lyrics to blow you away |
-| 13:10-13:30 | Datum Plane |Americana trio                                              
-| 13:40-14:00 | Luke James Williams |    A BBC6 Music Recommends artist of 2019, alt-folk singer-songwriter Luke James Williams paints pictures with words and sings them in his own distinctly British voice.                                                  
-| 14:10-14:30 | DisFunktional | Funk band from Cambridge colleges                         
-| 14:40-15:00 | Elizabeth and Jameson |Acoustic award winning folk-roots duo            
-| 15:10-15:30 | Dagaow Hardnezz |Ghanaian afro-pop, urban and hip-hop artist,           
-| 15:40-16:00 | The Morphics |Sixties influenced space pirates        
-| 16:10-16:30 | Mulholland Jive |Instrumental funk-rock band                             
-| 16:40-17:00 | Jason and the Skagonauts |   Twisted Ska Mayhem               
-| 17:05-17:25 | Colonel Hathi | The return of the legendary 80's Cambridge Ska band!                                                           
-| 17:30-18:00 | Big 10 | Spreading the love and unity that is SKA - The UK's Ultimate Ska & Two Tone Covers band!                                                                  
-| 18:10-18:30 | Ian Jeffs |   Singer-songwriter Ian Jeffs’ distinctive ‘smokey' vocal style blends folk, country and blues                                                              
-| 18:40-19:00 | TonyT |This year's Cambridge Band Comp Winne
-| 19:10-19:30 | The Frida Violeta Band  |   Vibrant all-women band bringing Latin-American folk music to the UK                                               
-| 19:40-20:05 | The Frigidaires |   Cambridge Blues and Rock band                                                       
-| 20:15-20:45 | Tape Runs Out |   Steve Lamacq endorsed Cambridge band combining indie, alternative rock, and dreampop                                                         
-| 20:55-21:30 | Dead Reynolds| Anthemic melodic passion-driven band |                        
-| 21:40-22:30 | Swamptruck |       Original Americana/Country/Bluegrass Band. A stomping, pulsating hoedown to close the day                                                        
+| Time        | Act                      | Description                                                                                                                                                           |
+| ----------- | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 12:00-12:30 | The Scissors             | Psych punk quartet from Cambridgeshire                                                                                                                                |
+| 12:40-13:00 | Phoebe Austin            | Indie folk singer-songwriter with lyrics to blow you away                                                                                                             |
+| 13:10-13:30 | Datum Plane              | Americana trio                                                                                                                                                        |
+| 13:40-14:00 | Luke James Williams      | A BBC6 Music Recommends artist of 2019, alt-folk singer-songwriter Luke James Williams paints pictures with words and sings them in his own distinctly British voice. |
+| 14:10-14:30 | DisFunktional            | Funk band from Cambridge colleges                                                                                                                                     |
+| 14:40-15:00 | Elizabeth and Jameson    | Acoustic award winning folk-roots duo                                                                                                                                 |
+| 15:10-15:30 | Dagaow Hardnezz          | Ghanaian afro-pop, urban and hip-hop artist,                                                                                                                          |
+| 15:40-16:00 | The Morphics             | Sixties influenced space pirates                                                                                                                                      |
+| 16:10-16:30 | Mulholland Jive          | Instrumental funk-rock band                                                                                                                                           |
+| 16:40-17:00 | Jason and the Skagonauts | Twisted Ska Mayhem                                                                                                                                                    |
+| 17:05-17:25 | Colonel Hathi            | The return of the legendary 80's Cambridge Ska band!                                                                                                                  |
+| 17:30-18:00 | Big 10                   | Spreading the love and unity that is SKA - The UK's Ultimate Ska & Two Tone Covers band!                                                                              |
+| 18:10-18:30 | Ian Jeffs                | Singer-songwriter Ian Jeffs’ distinctive ‘smokey' vocal style blends folk, country and blues                                                                          |
+| 18:40-19:00 | TonyT                    | This year's Cambridge Band Comp Winne                                                                                                                                 |
+| 19:10-19:30 | The Frida Violeta Band   | Vibrant all-women band bringing Latin-American folk music to the UK                                                                                                   |
+| 19:40-20:05 | The Frigidaires          | Cambridge Blues and Rock band                                                                                                                                         |
+| 20:15-20:45 | Tape Runs Out            | Steve Lamacq endorsed Cambridge band combining indie, alternative rock, and dreampop                                                                                  |
+| 20:55-21:30 | Dead Reynolds            | Anthemic melodic passion-driven band                                                                                                                                  |
+| 21:40-22:30 | Swamptruck               | Original Americana/Country/Bluegrass Band. A stomping, pulsating hoedown to close the day                                                                             |
 
 ## RBG STAGE
 
