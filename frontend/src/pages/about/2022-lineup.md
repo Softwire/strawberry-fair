@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
 title: 2023 Lineup
-subtitle: Strawberry Fair (Revolution) 2023 Map & Line Up
+subtitle: Strawberry Fair (Revolution) 2023 Line Up
 strawberryTiles:
   - strawberryTile:
       isPublic: false
