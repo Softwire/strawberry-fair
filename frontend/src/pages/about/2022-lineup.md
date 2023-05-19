@@ -39,7 +39,7 @@ Please remember to donate! All donations are really appreciated, as they help to
 
 | Time | Act |
 | ---- | --- |
-|12.00 - 13:00 | TBC |
+|12.00 - 13:00 | tbc |
 |13:10 - 13:35 | Grace Calver |
 |13:55 - 14:20 | Bluefeed |
 |14:40 - 15:05 | Shambertans |
@@ -52,9 +52,37 @@ Please remember to donate! All donations are really appreciated, as they help to
 |20:40 - 21:20 | Staycations |
 |21.40 - 22:25 | The Routine |
 
-## CAMBUSKERS
+## CAMBUSKERS SHOWCASE
 
-Line up to be announced soon!
+
+
+
+| Time | Act | Description |
+| ---- | --- |---          |
+|12:10|	Cambridge Jazz Festival Choir | Small community choir singing cool jazz, soul, gospel – anything with a groove
+|12:40|	Dorothéa |Pop covers and originals|
+|13:00|	Florence|Indie Singer Songwriter
+|13:20|	Thomas Dunleavy | Singer Songwriter
+|13:40|	Elly Tree |Intelligent and irresistable folk songs performed with a driving rhythm- weirdly wonky punk folk
+|14:00|	Marshlander |songwriter/acoustic monoband
+|14:20|	Roger Armstrong |All Own songs..roots folk/ blues..
+|14:40|	James Dylan Thomson |Singer Songwriter
+|15:00|	Cambridge Tuneless Choir |We LOVE to sing like no one is listening!  And encourage the audience to join in and provide lyrics via a QR code or on paper.
+|15:30|	Faiblesse Parfaite |2-piece Acoustic Indie rock / French pop
+|16:00|	David Youngs |Percussive fingerstyle acoustic guitar
+|16:30|	Moonshine Coyote |Americana cigar box band
+|17:00|	OPEN SLOT |
+|17:20|	OPEN SLOT |
+|17:40|	OPEN SLOT |
+|18:00|	OPEN SLOT |
+|18:20|	Rachel Hill |Acoustic singer-songwriter
+|18:00|	Mark Shepherd |Singer songwriter from Shepreth
+|19:00|	Chris Andrews |Cambridge-based singer/ songwriter/ producer influenced by Indie bands and the melodic sounds of the Beatles & Pink Floyd
+|19:30|	Jenem |Pop singer-songwriter playing upbeat feel good tunes!
+|20:00|	Magenta Slippers |Live singing drag performer. Scream Along Classics Maximum Cheese and Dance Floor Fillers
+|20:30|	Viva La Tradicion |11 piece salsa band playing classic salsa, mambo, merengue and cha cha cha
+|21:00|	REDROCK |Rock Band 
+|21:30 | END |
 
 ## CENTRE STAGE
 
@@ -154,39 +182,6 @@ Local young performers,
 |20:15-20:45| Tape Runs Out
 |20:55-21:30| Dead Reynolds Anthemic and melodic passion-driven
 |21:40-22:30| Swamptruck
-
-## CAMBUSKERS SHOWCASE
-
-
-
-
-| Time | Act | Description |
-| ---- | --- |---          |
-|12:10|	Cambridge Jazz Festival Choir | Small community choir singing cool jazz, soul, gospel – anything with a groove
-|12:40|	Dorothéa |Pop covers and originals|
-|13:00|	Florence|Indie Singer Songwriter
-|13:20|	Thomas Dunleavy | Singer Songwriter
-|13:40|	Elly Tree |Intelligent and irresistable folk songs performed with a driving rhythm- weirdly wonky punk folk
-|14:00|	Marshlander |songwriter/acoustic monoband
-|14:20|	Roger Armstrong |All Own songs..roots folk/ blues..
-|14:40|	James Dylan Thomson |Singer Songwriter
-|15:00|	Cambridge Tuneless Choir |We LOVE to sing like no one is listening!  And encourage the audience to join in and provide lyrics via a QR code or on paper.
-|15:30|	Faiblesse Parfaite |2-piece Acoustic Indie rock / French pop
-|16:00|	David Youngs |Percussive fingerstyle acoustic guitar
-|16:30|	Moonshine Coyote |Americana cigar box band
-|17:00|	OPEN SLOT |
-|17:20|	OPEN SLOT |
-|17:40|	OPEN SLOT |
-|18:00|	OPEN SLOT |
-|18:20|	Rachel Hill |Acoustic singer-songwriter
-|18:00|	Mark Shepherd |Singer songwriter from Shepreth
-|19:00|	Chris Andrews |Cambridge-based singer/ songwriter/ producer influenced by Indie bands and the melodic sounds of the Beatles & Pink Floyd
-|19:30|	Jenem |Pop singer-songwriter playing upbeat feel good tunes!
-|20:00|	Magenta Slippers |Live singing drag performer. Scream Along Classics Maximum Cheese and Dance Floor Fillers
-|20:30|	Viva La Tradicion |11 piece salsa band playing classic salsa, mambo, merengue and cha cha cha
-|21:00|	REDROCK |Rock Band 
-|21:30 | END |
-
 
 ## RBG STAGE
 
