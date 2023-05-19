@@ -12,7 +12,7 @@ strawberryTiles:
 ---
 ## When and Where is it?
 
-Strawberry Fair will take place on Midsummer Common in Cambridge on Saturday 11th of June. 
+Strawberry Fair will take place on Midsummer Common in Cambridge on Saturday 3rd of June. 
 
 ## How much does it cost?
 
@@ -32,17 +32,17 @@ Absolutely nothing! It is our strong belief that all music and entertainment sho
 
 ## Is there a theme?
 
-Yes! This year the theme is “LOVE THE PLANET”. 
+Yes! This year the theme is “REVOLUTION”. 
 
 ## What is/isn't allowed on site?
 
 **Alcohol**
 
-Our licensing conditions prevent you bringing excessive quantities of alcohol (more than 4 cans), spirits or glass bottles onto site. Random searches will take place. We follow the Challenge 21 policy and are also part of Cambridge Pub Watch.
+Our licensing conditions prevent you bringing excessive quantities of alcohol (maximum 4 cans of beer, cider, ready to drink cocktails, or 75cl of wine), neat spirits or glass bottles onto site. Random searches will take place. We follow the Challenge 21 policy and are also part of Cambridge Pub Watch.
 
 **BBQ's**
 
-No fires are permitted on site, including BBQ's.
+No fires or fire toys are permitted on site, including BBQ's.
 
 **Dogs**
 
@@ -75,6 +75,8 @@ No parking is available on site. Please visit https://www.cambridge.gov.uk/parki
 ## Public Transport
 
 Cambridge has a good network of bus and rail routes into and around the city. Alternatively, ask your taxi driver for Midsummer Common.
+
+Please note there will be Train Strikes on Friday 2nd and Saturday 3rd June so you will need to find alternative transport if you are intending to come by train.
 
 ## Accommodation/Camping
 
