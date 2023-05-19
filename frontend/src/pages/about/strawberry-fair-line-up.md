@@ -137,29 +137,29 @@ Local young performers,
 | 20:55-21:40 | Amethysts                   |
 | 21:45-22:30 | Filter Dread                |
 
-## PORTLAND BALLROOM
+## THE PORTLAND STAGE 
 
-| Time        | Act                                                                       |
-| ----------- | ------------------------------------------------------------------------- |
-| 12:00-12:30 | The Scissors - Psych punk quartet from Cambridgeshire;                    |
-| 12:40-13:00 | Phoebe Austin - Indie folk singer-songwriter with lyrics to blow you away |
-| 13:10-13:30 | Datum Plane - Americana trio                                              |
-| 13:40-14:00 | Luke James Williams                                                       |
-| 14:10-14:30 | DisFunktional - Funk band from Cambridge colleges                         |
-| 14:40-15:00 | Elizabeth and Jameson  - Acoustic award winning folk-roots duo            |
-| 15:10-15:30 | Dagaow Hardnezz -  Ghanaian afro-pop, urban and hip-hop artist,           |
-| 15:40-16:00 | The Morphics - Sixties influenced space pirates beamed down to            |
-| 16:10-16:30 | Mulholland Jive - Instrumental funk-rock band                             |
-| 16:40-17:00 | Jason and the Skagonauts - Ska’ed up versions of songs                    |
-| 17:05-17:25 | Colonel Hathi                                                             |
-| 17:30-18:00 | Big 10                                                                    |
-| 18:10-18:30 | Ian Jeffs                                                                 |
-| 18:40-19:00 | TonyT - A culmination of a life spent listening to and adoring punk, alt, |
-| 19:10-19:30 | The Frida Violeta Band                                                    |
-| 19:40-20:05 | The Frigidaires                                                           |
-| 20:15-20:45 | Tape Runs Out                                                             |
-| 20:55-21:30 | Dead Reynolds Anthemic and melodic passion-driven                         |
-| 21:40-22:30 | Swamptruck                                                                |
+| Time        | Act | Description                                                                   |
+| ----------- | --- | ----- |
+| 12:00-12:30 | The Scissors| Psych punk quartet from Cambridgeshire;                    
+| 12:40-13:00 | Phoebe Austin |Indie folk singer-songwriter with lyrics to blow you away 
+| 13:10-13:30 | Datum Plane |Americana trio                                              
+| 13:40-14:00 | Luke James Williams |A BBC6 Music Recommends artist of 2019, alt-folk singer-songwriter Luke James Williams paints pictures with words and sings them in his own distinctly British voice.                                                
+| 14:10-14:30 | DisFunktional| Funk band from Cambridge colleges                         
+| 14:40-15:00 | Elizabeth and Jameson| Acoustic award winning folk-roots duo            
+| 15:10-15:30 | Dagaow Hardnezz| Ghanaian afro-pop, urban and hip-hop artist,           
+| 15:40-16:00 | The Morphics | Sixties influenced space pirates    |
+| 16:10-16:30 | Mulholland Jive | Instrumental funk-rock band                             
+| 16:40-17:00 | Jason and the Skagonauts | Twisted Ska Mayhem                  
+| 17:05-17:25 | Colonel Hathi| The return of the legendary 80's Cambridge Ska band!                                                             |
+| 17:30-18:00 | Big 10 |Spreading the love and unity that is SKA - The UK's Ultimate Ska & Two Tone Covers band!                                                                     
+| 18:10-18:30 | Ian Jeffs | Singer-songwriter Ian Jeffs’ distinctive ‘smokey' vocal style blends folk, country and blues                                                                
+| 18:40-19:00 | TonyT |This year's Cambridge Band Comp Winner |
+| 19:10-19:30 | The Frida Violeta Band | Vibrant all-women band bringing Latin-American folk music to the UK                                               |
+| 19:40-20:05 | The Frigidaires | Cambridge Blues and Rock band                                                   
+| 20:15-20:45 | Tape Runs Out |  Steve Lamacq endorsed Cambridge band combining indie, alternative rock, and dreampop                                                          
+| 20:55-21:30 | Dead Reynolds | Anthemic melodic passion-driven Band                      
+| 21:40-22:30 | Swamptruck  | Original Americana/Country/Bluegrass Band. A stomping, pulsating hoedown to close the day                                                              
 
 ## RBG STAGE
 
