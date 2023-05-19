@@ -1,9 +1,9 @@
 ---
 title: Areas & Events
 pageTitles:
-  - pageTitle: About/2023 Lineup
+  - pageTitle: About/Strawberry Fair Line-Up
+  - pageTitle: Pages/Upcoming Events
   - pageTitle: Events/Strawberry Sundae
   - pageTitle: About/Cambridge Band Competition
-  - pageTitle: Pages/Upcoming Events
 ---
 
