@@ -156,7 +156,7 @@ Local young performers,
 | 17:05-17:25 | Colonel Hathi            | The return of the legendary 80's Cambridge Ska band!                                                                                                                  |
 | 17:30-18:00 | Big 10                   | Spreading the love and unity that is SKA - The UK's Ultimate Ska & Two Tone Covers band!                                                                              |
 | 18:10-18:30 | Ian Jeffs                | Singer-songwriter Ian Jeffs’ distinctive ‘smokey' vocal style blends folk, country and blues                                                                          |
-| 18:40-19:00 | TonyT                    | This year's Cambridge Band Comp Winne                                                                                                                                 |
+| 18:40-19:00 | TonyT                    | This year's Cambridge Band Comp Winner                                                                                                                                 |
 | 19:10-19:30 | The Frida Violeta Band   | Vibrant all-women band bringing Latin-American folk music to the UK                                                                                                   |
 | 19:40-20:05 | The Frigidaires          | Cambridge Blues and Rock band                                                                                                                                         |
 | 20:15-20:45 | Tape Runs Out            | Steve Lamacq endorsed Cambridge band combining indie, alternative rock, and dreampop                                                                                  |
