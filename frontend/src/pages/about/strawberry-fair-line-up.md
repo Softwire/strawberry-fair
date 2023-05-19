@@ -71,7 +71,7 @@ strawberryTiles:
 | 12:40-13:00 | Elgeeuu         |
 | 13:10-13:30 | Isla Mae        |
 | 13:20-14:00 | Anorak          |
-| 14:20-14:50 | The Ditch House |
+| 14:20-14:50 | The Dutch House |
 | 15:10-15:40 | Radegunds       |
 | 16:00-16:30 | Melody Causton  |
 | 16:50-17:20 | Ember Rev       |
@@ -79,7 +79,7 @@ strawberryTiles:
 | 18:30-19:00 | Vulgarithm      |
 | 19:20-19:50 | New Addiction   |
 | 20:10-20:40 | Hereward        |
-| 21:00-21:30 | Mansworth       |
+| 21:10-21:40 | Mansworth       |
 | 22:00-23:00 | The Treatment   |
 
 ## FLYING PIG STAGE
@@ -156,7 +156,7 @@ Local young performers,
 | 17:05-17:25 | Colonel Hathi            | The return of the legendary 80's Cambridge Ska band!                                                                                                                  |
 | 17:30-18:00 | Big 10                   | Spreading the love and unity that is SKA - The UK's Ultimate Ska & Two Tone Covers band!                                                                              |
 | 18:10-18:30 | Ian Jeffs                | Singer-songwriter Ian Jeffs’ distinctive ‘smokey' vocal style blends folk, country and blues                                                                          |
-| 18:40-19:00 | TonyT                    | This year's Cambridge Band Comp Winner                                                                                                                                 |
+| 18:40-19:00 | TonyT                    | This year's Cambridge Band Comp Winner                                                                                                                                |
 | 19:10-19:30 | The Frida Violeta Band   | Vibrant all-women band bringing Latin-American folk music to the UK                                                                                                   |
 | 19:40-20:05 | The Frigidaires          | Cambridge Blues and Rock band                                                                                                                                         |
 | 20:15-20:45 | Tape Runs Out            | Steve Lamacq endorsed Cambridge band combining indie, alternative rock, and dreampop                                                                                  |
