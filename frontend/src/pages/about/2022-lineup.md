@@ -39,7 +39,7 @@ Please remember to donate! All donations are really appreciated, as they help to
 
 | Time | Act |
 | ---- | --- |
-|12.00 - 13:00 | tbc |
+|12.00 - 13:00 | TBC |
 |13:10 - 13:35 | Grace Calver |
 |13:55 - 14:20 | Bluefeed |
 |14:40 - 15:05 | Shambertans |
