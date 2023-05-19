@@ -23,6 +23,11 @@ heroData:
   isActive: true
 contentBlocks:
   - _markdown_contentBody: >-
+      <figure><img
+      src="https://res.cloudinary.com/strawberryfair/image/upload/v1684529059/Poster_V4-01_mpf1x4.jpg"
+      alt="alt" class="html-embedded-image-medium"></figure>
+
+
       Yes, it's confirmed, Strawberry Fair will be back on **3rd June 2023**
       with the theme Revolution!!
 
