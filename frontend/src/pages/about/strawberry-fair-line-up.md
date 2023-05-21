@@ -11,7 +11,7 @@ strawberryTiles:
       isPublic: false
     tile: Strawberry Tile
 ---
-<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1684588274/Strawberry_Fair_Stages_Map_20023_Inc._line_up-01_zul1ko.jpg" alt="alt" class="html-embedded-image-medium"></figure>
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1684528355/Strawberry_Fair_Stages_Map_20023_Inc._line_up-01_q9p4xh.jpg" alt="alt" class="html-embedded-image-medium"></figure>
 
 ## Please remember to donate! All donations are really appreciated, as they help to keep the Fair free!
 
@@ -21,7 +21,7 @@ strawberryTiles:
 
 | Time          | Act                          |
 | ------------- | ---------------------------- |
-| 12.00 - 13:00 | tbc                          |
+| 12.00 - 13:00 | Strummers & Dreamers showcase featuring: Sam Lott, Emily Simmons & Elsi                          |
 | 13:10 - 13:35 | Grace Calver                 |
 | 13:55 - 14:20 | Bluefeed                     |
 | 14:40 - 15:05 | Shambertans                  |
@@ -119,26 +119,25 @@ Local young performers,
 | ----------- | --------------------------- |
 | 12:00-12:25 | Hollow Form                 |
 | 12:25-12:50 | Sonic Inducer               |
-| 12:50-13:15 | Morph 
-| 13:15-13:40 | Nociva Project + Amousement |
-| 13:40-14:05 | Manilla Filters             |
-| 14:05-14:30 | Karma Please                |
-| 14:30-14:55 | Delta Family                |
-| 14:55-15:20 | 198                         |
-| 15:20-15:45 | Atlantisphere               |
-| 15:45-16:10 | Redacted                    |
-| 16:25-16:50 | QUR                         |
-| 16:50-17:15 | Yggdrasil                   |
+| 12:50-13:15 | Manilla Filters             |
+| 13:15-13:40 | Delta Family                |
+| 13:40-14:05 | Karma Please                |
+| 14:05-14:30 | Morph                       |
+| 14:30-14:55 | 198                         |
+| 14:55-15:20 | Yggdrasil                   |
+| 15:20-15:45 | Maisín                      |
+| 15:45-16:10 | Elephant Speak              |
+| 16:25-16:50 | Blooms Taxonomy             |
+| 16:50-17:15 | QUR                         |
 | 17:15-17:40 | QBIK                        |
-| 17:40-18:05 | Blooms Taxonomy             |
-| 18:05-18:30 | Maisin                      |
-| 18:30-18:55 | Elephant Speak              |
+| 17:40-18:05 | Atlantisphere               |
+| 18:05-18:30 | Redacted                    |
+| 18:30-18:55 | Nociva Project + Amousement |
 | 18:55-19:20 | Motherchip Connexion        |
 | 19:20-19:45 | Massive Cat Person          |
-| 20:20-20:45 | Rayne Gel                   |
+| 20:00-20:45 | Rayne Gel                   |
 | 20:55-21:40 | Amethysts                   |
 | 21:45-22:30 | Filter Dread                |
-|             |                             |
 
 ## PORTLAND STAGE
 
