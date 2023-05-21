@@ -11,7 +11,7 @@ strawberryTiles:
       isPublic: false
     tile: Strawberry Tile
 ---
-<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1684528355/Strawberry_Fair_Stages_Map_20023_Inc._line_up-01_q9p4xh.jpg" alt="alt" class="html-embedded-image-medium"></figure>
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1684588274/Strawberry_Fair_Stages_Map_20023_Inc._line_up-01_zul1ko.jpg" alt="alt" class="html-embedded-image-large"></figure>
 
 ## Please remember to donate! All donations are really appreciated, as they help to keep the Fair free!
 
@@ -19,20 +19,20 @@ strawberryTiles:
 
 ## CAMBRIDGE 105 RADIO
 
-| Time          | Act                          |
-| ------------- | ---------------------------- |
-| 12.00 - 13:00 | Strummers & Dreamers showcase featuring: Sam Lott, Emily Simmons & Elsi                          |
-| 13:10 - 13:35 | Grace Calver                 |
-| 13:55 - 14:20 | Bluefeed                     |
-| 14:40 - 15:05 | Shambertans                  |
-| 15:25 - 15:50 | Leon O'Leary                 |
-| 16:10 - 16:35 | Matt Peet                    |
-| 16:55 - 17:20 | Oli Harris & The Lonely Hour |
-| 17:40 - 18:25 | The SGs                      |
-| 18:45 - 19:30 | Fred's House                 |
-| 19:50 - 20:20 | Diamond Country Dance Club   |
-| 20:40 - 21:20 | Staycations                  |
-| 21.40 - 22:25 | The Routine                  |
+| Time          | Act                                                                     |
+| ------------- | ----------------------------------------------------------------------- |
+| 12.00 - 13:00 | Strummers & Dreamers showcase featuring: Sam Lott, Emily Simmons & Elsi |
+| 13:10 - 13:35 | Grace Calver                                                            |
+| 13:55 - 14:20 | Bluefeed                                                                |
+| 14:40 - 15:05 | Shambertans                                                             |
+| 15:25 - 15:50 | Leon O'Leary                                                            |
+| 16:10 - 16:35 | Matt Peet                                                               |
+| 16:55 - 17:20 | Oli Harris & The Lonely Hour                                            |
+| 17:40 - 18:25 | The SGs                                                                 |
+| 18:45 - 19:30 | Fred's House                                                            |
+| 19:50 - 20:20 | Diamond Country Dance Club                                              |
+| 20:40 - 21:20 | Staycations                                                             |
+| 21.40 - 22:25 | The Routine                                                             |
 
 ## CAMBUSKERS SHOWCASE
 
