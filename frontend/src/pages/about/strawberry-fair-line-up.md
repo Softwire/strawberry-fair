@@ -165,22 +165,41 @@ Local young performers,
 
 ## RBG STAGE
 
-| Time  | Act                                               |
-| ----- | ------------------------------------------------- |
-| 12:00 | Andy Little                                       |
-| 12:30 | Joe Rice                                          |
-| 13:00 | TBA                                               |
-| 13:30 | Andy Little & magic phil                          |
-| 14:00 | Pete Um                                           |
-| 14:30 | Game                                              |
-| 15:00 | Apex Sounds                                       |
-| 16:00 | Live rehearsal and highlightd os Pigs The musical |
-| 16:30 | Ed Cox                                            |
-| 17:23 | Batis bath time                                   |
-| 18:00 | Keltrix                                           |
-| 19:00 | Joe Rice                                          |
-| 20:00 | Easydread                                         |
-| 21:00 | The Urb                                           |
+Fully mis-represents.. The Up and coming long over due Revolution!!.
+
+
+
+Imagine we won the revolution at 12pm Shaturday the Turd!!.
+
+
+
+The official card holding the anarchist after party is now on…
+
+
+
+ Hope you all got up early for the old revolution like . Bummer it’s an early start but it’s for the many not the \*\*\*\*s
+
+| Time     | Act                                                                         |
+| -------- | --------------------------------------------------------------------------- |
+| 12:02    | Downloading it’ll take about 23 mins                                        |
+| 12:25ish | \*\*\*\*s Joe the Hoe and Camel Toe Lover from Middlesboro DJs and a pint.  |
+| 13:00ish | F\*\*kists Derek Morecambe Twins                                            |
+| 13:30ish | Pete Um                                                                     |
+| 14:00ish | Apex Hi-Fi SoundSystem                                                      |
+| 15:00ish | Rebel culture DJs                                                           |
+| 16:00ish | Keltrix                                                                     |
+| 16:05ish | Tba hip hop                                                                 |
+| 16:30    | Clowning around with Ed Cox                                                 |
+| 17:17    | Rant from Andy Bulls*t                                                      |
+| 17:23    | You and I are Earth by Pope Guy XXIII                                       |
+| 17:57ish | Na Gig Sin with Miss Mercal                                                 |
+| 18:23ish | Pigs the rehearsal live scenes from the upcoming play by Bang Crosby        |
+| 18:50    | Joe and his Cum Bouquet DJ                                            
+| 19:29ish | Easydred |
+| 20:00ish | Trip zoid DJ electro funky disco
+| 21:00ish | The Urb DJ 
+| 22:23 | Last Orders 
+| 22:20 | The end go find a free party some where and come help us clear up Sunday afternoon!!. Every little helps..
 
 ## REVOLTING YOUTH
 
