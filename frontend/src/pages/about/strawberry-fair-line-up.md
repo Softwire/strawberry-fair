@@ -117,22 +117,22 @@ Local young performers,
 
 | Time        | Act                         |
 | ----------- | --------------------------- |
-| 12:00-12:25 | Hollow Form                 |
-| 12:25-12:50 | Sonic Inducer               |
-| 12:50-13:15 | Morph             |
-| 13:15-13:40 | Nociva Project + Amousement               |
-| 13:40-14:05 | Manilla Filters                |
-| 14:05-14:30 | Karma Please                       |
-| 14:30-14:55 | Delta Family                         |
-| 14:55-15:20 | 198                   |
-| 15:20-15:45 | Atlantisphere                     |
-| 15:45-16:10 | Redacted            |
-| 16:25-16:50 | QUR            |
-| 16:50-17:15 | Yggdrasil                         |
-| 17:15-17:40 | QBIK                        |
-| 17:40-18:05 | Blooms Taxonomy              |
-| 18:05-18:30 | Maisin                    |
-| 18:30-18:55 | Elephant Speak |
+| 12:00-12:25 | Luke Knott                  |
+| 12:25-12:50 | Morph                       |
+| 12:50-13:15 | Poet & The Loops            |
+| 13:15-13:40 | Manilla Filters             |
+| 13:40-14:05 | Nociva Project + Amousement |
+| 14:05-14:30 | Karma Please                |
+| 14:30-14:55 | Delta Family                |
+| 14:55-15:20 | 198                         |
+| 15:20-15:45 | Atlantisphere               |
+| 15:45-16:10 | Redacted                    |
+| 16:25-16:50 | Sonic Inducer               |
+| 16:50-17:15 | Blooms Taxonomy             |
+| 17:15-17:40 | QUBIK                       |
+| 17:40-18:05 | Yggdrasil                   |
+| 18:05-18:30 | Maisin                      |
+| 18:30-18:55 | QUR                         |
 | 18:55-19:20 | Motherchip Connexion        |
 | 19:20-19:45 | Massive Cat Person          |
 | 20:00-20:45 | Rayne Gel                   |
