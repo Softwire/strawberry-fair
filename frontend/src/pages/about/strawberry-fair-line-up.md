@@ -39,27 +39,27 @@ strawberryTiles:
 | Time  | Act                           | Description                                                                                                                    |
 | ----- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | 12:10 | Cambridge Jazz Festival Choir | Small community choir singing cool jazz, soul, gospel – anything with a groove                                                 |
-| 12:40 | Dorothéa                      | Pop covers and originals                                                                                                       |
+| 12:40 | Miguel Zambujeira             | Cambridge based folk singer-songwriter                                                                                         |
 | 13:00 | Florence                      | Indie Singer Songwriter                                                                                                        |
-| 13:20 | Thomas Dunleavy               | Singer Songwriter                                                                                                              |
+| 13:20 | OPEN SLOT                     |                                                                                                                                |
 | 13:40 | Elly Tree                     | Intelligent and irresistable folk songs performed with a driving rhythm- weirdly wonky punk folk                               |
-| 14:00 | Marshlander                   | songwriter/acoustic monoband                                                                                                   |
+| 14:00 | Marshlander                   | Songwriter/acoustic monoband                                                                                                   |
 | 14:20 | Roger Armstrong               | All Own songs..roots folk/ blues..                                                                                             |
 | 14:40 | James Dylan Thomson           | Singer Songwriter                                                                                                              |
 | 15:00 | Cambridge Tuneless Choir      | We LOVE to sing like no one is listening!  And encourage the audience to join in and provide lyrics via a QR code or on paper. |
-| 15:30 | Faiblesse Parfaite            | 2-piece Acoustic Indie rock / French pop                                                                                       |
-| 16:00 | David Youngs                  | Percussive fingerstyle acoustic guitar                                                                                         |
-| 16:30 | Moonshine Coyote              | Americana cigar box band                                                                                                       |
-| 17:00 | OPEN SLOT                     |                                                                                                                                |
+| 15:30 | David Youngs                  | Percussive fingerstyle acoustic guitar                                                                                         |
+| 16:00 | Faiblesse Parfaite            | 2-piece Acoustic Indie rock / French pop                                                                                       |
+| 16:30 | Magenta Slippers              | Live singing drag performer. Scream Along Classics Maximum Cheese and Dance Floor Fillers                                      |
+| 17:00 | Mark Shepherd                 | Singer songwriter from Shepreth                                                                                                |
 | 17:20 | OPEN SLOT                     |                                                                                                                                |
 | 17:40 | OPEN SLOT                     |                                                                                                                                |
-| 18:00 | OPEN SLOT                     |                                                                                                                                |
-| 18:20 | Rachel Hill                   | Acoustic singer-songwriter                                                                                                     |
-| 18:00 | Mark Shepherd                 | Singer songwriter from Shepreth                                                                                                |
+| 18:00 | Pete Woodroffe                | Acoustic Guitar                                                                                                                |
+| 18:20 | Thomas Dunleavy               | 17 year old singer/songwriter from Stilton                                                                                     |
+| 18:00 | Rachel Hill                   | Folk-influenced acoustic singer-songwriter creating harmonic magic with her loop pedal’                                        |
 | 19:00 | Chris Andrews                 | Cambridge-based singer/ songwriter/ producer influenced by Indie bands and the melodic sounds of the Beatles & Pink Floyd      |
 | 19:30 | Jenem                         | Pop singer-songwriter playing upbeat feel good tunes!                                                                          |
-| 20:00 | Magenta Slippers              | Live singing drag performer. Scream Along Classics Maximum Cheese and Dance Floor Fillers                                      |
-| 20:30 | Viva La Tradicion             | 11 piece salsa band playing classic salsa, mambo, merengue and cha cha cha                                                     |
+| 20:00 | Ben of the green              | Toy robot financial accounts, fluorescent moon gods ,techno foxes and digeridoo karaoke                                        |
+| 20:30 | OPEN SLOT                     |                                                                                                                                |
 | 21:00 | REDROCK                       | Rock Band                                                                                                                      |
 | 21:30 | END                           |                                                                                                                                |
 
@@ -167,39 +167,33 @@ Local young performers,
 
 Fully mis-represents.. The Up and coming long over due Revolution!!.
 
-
-
 Imagine we won the revolution at 12pm Shaturday the Turd!!.
-
-
 
 The official card holding the anarchist after party is now on…
 
-
-
  Hope you all got up early for the old revolution like . Bummer it’s an early start but it’s for the many not the \*\*\*\*s
 
-| Time     | Act                                                                         |
-| -------- | --------------------------------------------------------------------------- |
-| 12:02    | Downloading it’ll take about 23 mins                                        |
-| 12:25ish | \*\*\*\*s Joe the Hoe and Camel Toe Lover from Middlesboro DJs and a pint.  |
-| 13:00ish | F\*\*kists Derek Morecambe Twins                                            |
-| 13:30ish | Pete Um                                                                     |
-| 14:00ish | Apex Hi-Fi SoundSystem                                                      |
-| 15:00ish | Rebel culture DJs                                                           |
-| 16:00ish | Keltrix                                                                     |
-| 16:05ish | Tba hip hop                                                                 |
-| 16:30    | Clowning around with Ed Cox                                                 |
-| 17:17    | Rant from Andy Bulls*t                                                      |
-| 17:23    | You and I are Earth by Pope Guy XXIII                                       |
-| 17:57ish | Na Gig Sin with Miss Mercal                                                 |
-| 18:23ish | Pigs the rehearsal live scenes from the upcoming play by Bang Crosby        |
-| 18:50    | Joe and his Cum Bouquet DJ                                            
-| 19:29ish | Easydred |
-| 20:00ish | Trip zoid DJ electro funky disco
-| 21:00ish | The Urb DJ 
-| 22:23 | Last Orders 
-| 22:20 | The end go find a free party some where and come help us clear up Sunday afternoon!!. Every little helps..
+| Time     | Act                                                                                                        |
+| -------- | ---------------------------------------------------------------------------------------------------------- |
+| 12:02    | Downloading it’ll take about 23 mins                                                                       |
+| 12:25ish | \*\*\*\*s Joe the Hoe and Camel Toe Lover from Middlesboro DJs and a pint.                                 |
+| 13:00ish | F\*\*kists Derek Morecambe Twins                                                                           |
+| 13:30ish | Pete Um                                                                                                    |
+| 14:00ish | Apex Hi-Fi SoundSystem                                                                                     |
+| 15:00ish | Rebel culture DJs                                                                                          |
+| 16:00ish | Keltrix                                                                                                    |
+| 16:05ish | Tba hip hop                                                                                                |
+| 16:30    | Clowning around with Ed Cox                                                                                |
+| 17:17    | Rant from Andy Bulls*t                                                                                     |
+| 17:23    | You and I are Earth by Pope Guy XXIII                                                                      |
+| 17:57ish | Na Gig Sin with Miss Mercal                                                                                |
+| 18:23ish | Pigs the rehearsal live scenes from the upcoming play by Bang Crosby                                       |
+| 18:50    | Joe and his Cum Bouquet DJ                                                                                 |
+| 19:29ish | Easydred                                                                                                   |
+| 20:00ish | Trip zoid DJ electro funky disco                                                                           |
+| 21:00ish | The Urb DJ                                                                                                 |
+| 22:23    | Last Orders                                                                                                |
+| 22:20    | The end go find a free party some where and come help us clear up Sunday afternoon!!. Every little helps.. |
 
 ## REVOLTING YOUTH
 
