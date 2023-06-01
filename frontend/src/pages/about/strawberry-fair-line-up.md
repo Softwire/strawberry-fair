@@ -17,6 +17,18 @@ strawberryTiles:
 
 <form target="_top" action="https://www.paypal.com/cgi-bin/webscr" method="post"><input type="hidden" name="cmd" value="_s-xclick" /> <input type="hidden" name="hosted_button_id" value="TX2E4BTL9HENG" /> <input type="image" alt="PayPal &ndash; The safer, easier way to pay online." border="0" name="submit" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" /> <img width="1" alt="" height="1" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" /></form>
 
+## ARTS AREA
+
+12:00 to 18:00: Cafe with tea/coffee, soft drinks and homemade vegan cakes.
+
+12:00 to 18:00: Local and national Artists; different Social Groups and Charities -  displaying artwork, creative art live performance and hosting fun workshops. 
+
+12:00 to 18:00: Collaborations of Kids Park and Arts Area passport quest 
+
+13:00 to 18:00: Geodome: Creative workshops, discussions, story time and chill out space
+
+12:00 to 21:00: Wild Strawberries Stage: Spoken Work, Open Mic, a Special Guest ending with strawberry slam and jam
+
 ## CAMBRIDGE 105 RADIO
 
 | Time          | Act                                                                     |
