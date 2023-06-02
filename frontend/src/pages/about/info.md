@@ -32,13 +32,11 @@ strawberryTiles:
 
 ## [ABOUT THE FAIR](https://strawberry-fair.org.uk/about/about-the-fair/)
 
-## Donate 
+## Donate
 
 Strawberry Fair is fully independently and entirely self-funded. With significantly increased costs since Covid, we now have to raise £150k every year and the future of the Fair is less secure than ever so your donations, no matter how big or small are really appreciated.  
 
-**By card:** [https://pay.sumup.io/b2c/Q6SY3650 ](https://pay.sumup.io/b2c/Q6SY3650)
-
-**By pay pal:** <form target="_top" action="https://www.paypal.com/cgi-bin/webscr" method="post"><input type="hidden" name="cmd" value="_s-xclick" /> <input type="hidden" name="hosted_button_id" value="TX2E4BTL9HENG" /> <input type="image" alt="PayPal &ndash; The safer, easier way to pay online." border="0" name="submit" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" /> <img width="1" alt="" height="1" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" /></form>
+**By card:** <https://pay.sumup.io/b2c/Q6SY3650>
 
 **On site:** Donation buckets and card readers are available at the entrance gates. 
 
