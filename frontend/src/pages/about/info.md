@@ -6,33 +6,15 @@ strawberryTiles:
       isPublic: false
     tile: Strawberry Tile
 ---
-## DONATE
+## [DONATE](#Donate)
 
-## 
-
-## 
-
-## 
-
-## GET INVOLVED
-
-## 
-
-## 
-
-## 
+## [GET INVOLVED](#GetInvolved)
 
 ## [LINE UP AND MAP](https://strawberry-fair.org.uk/about/strawberry-fair-line-up/)
 
-## 
-
-## 
-
-## 
-
 ## [ABOUT THE FAIR](https://strawberry-fair.org.uk/about/about-the-fair/)
 
-## Donate
+<h2 id="Donate">Donate</h2>
 
 Strawberry Fair is fully independently and entirely self-funded. With significantly increased costs since Covid, we now have to raise £150k every year and the future of the Fair is less secure than ever so your donations, no matter how big or small are really appreciated.  
 
@@ -48,7 +30,7 @@ But… if you can’t afford it, don’t worry, since 1974 we are proud to keep 
 
 Back to top 
 
-## Get Involved
+<h2 id="GetInvolved">Get Involved</h2>
 
 We’re all volunteers and it’s never too late to help out at Strawberry Fair. Stewarding even for just two hours on the day would be an incredible help, but there are loads of opportunities to help us build, take down and clear the site too. 
 
@@ -58,6 +40,6 @@ It’s a great way to get event experience, we’ll provide you with all the tra
 
 Lastly why not join us as part of the committee to help plan something special for our 50th in 2024. 
 
-Click Here for more information on all the roles. 
+[Click Here](https://strawberry-fair.org.uk/about/get-involved/) for more information on all the roles. 
 
-Back to top.
+[Back to top.](#)
