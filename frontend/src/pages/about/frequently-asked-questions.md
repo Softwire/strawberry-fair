@@ -74,18 +74,38 @@ No parking is available on site. Please visit https://www.cambridge.gov.uk/parki
 
 ## Public Transport
 
-Cambridge has a good network of bus and rail routes into and around the city. Alternatively, ask your taxi driver for Midsummer Common.
 
-Please note there will be Train Strikes on Friday 2nd and Saturday 3rd June so you will need to find alternative transport if you are intending to come by train.
+
+
+
+Cambridge has a good network of bus and rail routes into and around the city. Alternatively, ask your taxi driver for Midsummer Common.  
+
+
+
+If you are driving to the city, we strongly recommend using the Park and Ride system. The best option is to use Milton Park and Ride to the North of the city as buses will be running until 11pm (via the Citi 2 service). Alternatively Trumpington Park and Ride to the West of the city has the most spaces available, though best suited for families as buses are only running until 8:30pm. 
+
+
+
+[Park and Ride timetable ](https://tiscon-maps-stagecoachbus.s3.amazonaws.com/Timetables/East/CAMBRIDGE/EVENTS/Strawberry%20Fair%20booklet.pdf)
+
+
+
+
+
+
+
+
+
+Please note there will be Train Strikes on Friday 2nd and Saturday 3rd June so you will need to find alternative transport if you are intending to come by train. 
 
 ## Accommodation/Camping
 
 No camping is permitted on site or in the immediate vicinity of the fair. The Visit Cambridge website http://www.visitcambridge.org/accommodation has information on local accommodation and hotels.
 
-## Lost property
+## Lost Property
 
 Lost property is held in our Production Office. Please contact a member of our stewarding team for directions. After the event, please use the contact us form and describe what you've lost with as much detail as possible. If we have it, we'll let you know. 
 
-## In an emergency
+## In an Emergency
 
 Please contact a steward in the event assistance is required. Stewards roam the site and are available at each entertainment area. Medical provision is based near the Information Tent at Maid's Causeway Entrance. Our onsite Security team and Medical teams also patrol around the site.
