@@ -22,7 +22,7 @@ Strawberry Fair is fully independently and entirely self-funded. With significan
 
 **By card:** <https://pay.sumup.io/b2c/Q6SY3650>
 
-**Paypal:** Link [HERE](https://www.paypal.com/donate?token=oXJsQ0NVyC0YhFnZpp0czLJnQBhThTxCfN9wxeCUvJA2OrDBqjEUZdBschqGQZ98VIbNWk7_1oj-W2iu)
+**Paypal:** Button below <form target="_top" action="https://www.paypal.com/cgi-bin/webscr" method="post"><input type="hidden" name="cmd" value="_s-xclick" /> <input type="hidden" name="hosted_button_id" value="TX2E4BTL9HENG" /> <input type="image" alt="PayPal &ndash; The safer, easier way to pay online." border="0" name="submit" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" /> <img width="1" alt="" height="1" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" /></form>
 
 **On site:** Donation buckets and card readers are available at the entrance gates. 
 
