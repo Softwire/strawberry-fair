@@ -14,7 +14,9 @@ strawberryTiles:
 
 ## [ABOUT THE FAIR](https://strawberry-fair.org.uk/about/about-the-fair/)
 
-<h2 id="Donate">Donate</h2>
+<div id="Donate" style="height: 70px"></div>
+
+## Donate
 
 Strawberry Fair is fully independently and entirely self-funded. With significantly increased costs since Covid, we now have to raise £150k every year and the future of the Fair is less secure than ever so your donations, no matter how big or small are really appreciated.  
 
@@ -28,9 +30,11 @@ Strawberry Fair is fully independently and entirely self-funded. With significan
 
 But… if you can’t afford it, don’t worry, since 1974 we are proud to keep Strawberry Fair free for everyone to attend, so whilst donations are welcomes, they are not necessary 
 
-Back to top 
+[Back to top](#) 
 
-<h2 id="GetInvolved">Get Involved</h2>
+<div id="GetInvolved" style="height: 70px"></div>
+
+## Get Involved
 
 We’re all volunteers and it’s never too late to help out at Strawberry Fair. Stewarding even for just two hours on the day would be an incredible help, but there are loads of opportunities to help us build, take down and clear the site too. 
 
@@ -42,4 +46,4 @@ Lastly why not join us as part of the committee to help plan something special f
 
 [Click Here](https://strawberry-fair.org.uk/about/get-involved/) for more information on all the roles. 
 
-[Back to top.](#)
+[Back to top](#)
