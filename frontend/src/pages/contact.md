@@ -9,7 +9,7 @@ heroData:
 ---
 ## Local Residents
 
-If you are a local resident and need to get in touch with us on the days around and on Fair day - we have a RESIDENTS HOTLINE, which is manned from Monday  Friday 6th to Monday 13th June. The number is **07759 277117**
+If you are a local resident and need to get in touch with us on the days around and on Fair day - we have a RESIDENTS HOTLINE, which is crewed from Monday 29th May to Monday 5th June. The number is **07759 277117**
 
 ## Traders
 
