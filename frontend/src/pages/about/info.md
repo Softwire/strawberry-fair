@@ -38,6 +38,8 @@ Strawberry Fair is fully independently and entirely self-funded. With significan
 
 **By card:** <https://pay.sumup.io/b2c/Q6SY3650>
 
+**Paypal:** Link [HERE](https://www.paypal.com/donate?token=oXJsQ0NVyC0YhFnZpp0czLJnQBhThTxCfN9wxeCUvJA2OrDBqjEUZdBschqGQZ98VIbNWk7_1oj-W2iu)
+
 **On site:** Donation buckets and card readers are available at the entrance gates. 
 
 **Businesses:** Click [Here](https://strawberry-fair.org.uk/about/businesses/) for more info from the website on how to donate and get involved. 
