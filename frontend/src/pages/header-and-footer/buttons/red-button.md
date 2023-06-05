@@ -1,5 +1,5 @@
 ---
-text: Apply To Trade
-link: /about/apply-to-trade
+text: Donate to the Fair
+link: /about/donate
 ---
 
