@@ -1,5 +1,5 @@
 ---
-text: Donate Now
+text: Donate to the Fair
 link: /about/donate
 ---
 
