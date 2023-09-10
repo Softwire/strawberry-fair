@@ -23,18 +23,22 @@ heroData:
   isActive: true
 contentBlocks:
   - _markdown_contentBody: >-
-      <figure><img
-      src="https://res.cloudinary.com/strawberryfair/image/upload/v1684529059/Poster_V4-01_mpf1x4.jpg"
-      alt="alt" class="html-embedded-image-medium"></figure>
+      <figure><img src="" alt="alt" class="html-embedded-image-medium"></figure>
 
 
-      Yes, it's confirmed, Strawberry Fair will be back on **3rd June 2023**
-      with the theme Revolution!!
+      Yes, it's confirmed, Strawberry Fair will be back on **1st June 2024** for
+      our **50th Anniversary**!! with the theme: **STRAWBERRY FAIR: 50 YEARS**
 
 
-      We're looking forward to catching up with old friends and making new ones,
-      but we can't make it happen without [**YOU**!](/about/get-involved) and
-      loads of
+      And to get things off to a flying start Strawberry Fair has been voted
+      [**Best
+      Festival**](https://www.facebook.com/photo/?fbid=807377038062551&set=pcb.807377564729165&locale=en_GB)
+      at the [**NMG Awards 2023**](https://www.nmgawards.com/)!
+
+
+      As always, we're looking forward to catching up with old friends and
+      making new ones, but we can't make it happen without
+      [**YOU**!](/about/get-involved) and loads of
       money/[**DONATIONS**](https://strawberry-fair.org.uk/about/donate/)!
 
 
@@ -89,8 +93,8 @@ contentBlocks:
     strawberryTile:
       isPublic: true
       text: ' We''re looking forward to welcoming everyone back to Midsummer Common this year. '
-    subtitle: Strawberry Fair will take place on 3rd June 2023
-    title: We're Back in 2023!!
+    subtitle: Strawberry Fair will take place on 1st June 2024
+    title: We're Back in 2024!!
   - _markdown_contentBody: >-
       From humble beginnings, Strawberry Fair has grown to be the most popular
       free, entirely volunteer run, one day music & arts event in Cambridge (and
@@ -150,7 +154,7 @@ contentBlocks:
       year, by donating vegetable waste to a local Community Allotment for
       composting.
 
-      * We're trialling compostable rubbish bags for bins and litter picking.
+      * We're trialing compostable rubbish bags for bins and litter picking.
 
       * We emphasise local acts on our stages to minimise vehicle use.
 
@@ -165,13 +169,13 @@ contentBlocks:
         We used to recycle 3 TONS of glass each year...
       * **NO** sales of Helium filled balloons on-site.
 
-      * We discourage the use  of ****single use plastics on-site, including
-      food serving items 
+      * We discourage the use  of single use plastics on-site, including food
+      serving items 
 
       * We've introduced a deposit return scheme for glasses from the bars and
       discouraging the sale of water in plastic water bottles.
         Water points are provided on-site.
-      * We've ncreased the use of recycled/re-used/upcycled materials for our
+      * We've increased the use of recycled/re-used/upcycled materials for our
       decor; plus, lots of our decorations, entrances and other art are
       recycled, reused or repurposed year on year.
 
