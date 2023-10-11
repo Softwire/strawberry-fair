@@ -9,6 +9,7 @@ pageTitles:
   - pageTitle: About/Environment
   - pageTitle: About/Bucket Collection Partners
   - pageTitle: Forms/Volunteer Form
+  - pageTitle: About/Upcoming Events & Meetings
 notes: >-
   * You can only link to pages that have been published so you might need to
   publish the page, then edit the nav bar. 
