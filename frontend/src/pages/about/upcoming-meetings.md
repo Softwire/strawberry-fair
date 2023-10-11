@@ -1,6 +1,6 @@
 ---
 templateKey: about-page
-title: Upcoming Meetings
+title: Upcoming Meetings & Events
 subtitle: See below our upcoming Committee Meetings...
 strawberryTiles:
   - strawberryTile:
