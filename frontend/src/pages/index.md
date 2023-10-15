@@ -94,7 +94,9 @@ contentBlocks:
           https://res.cloudinary.com/strawberryfair/image/upload/v1580043133/Image%20Scrapbook/Gareth_Nunns_200_DSC_7249_r4y9yu.jpg
     strawberryTile:
       isPublic: true
-      text: ' We''re looking forward to welcoming everyone back to Midsummer Common this year. '
+      text: >-
+        We're looking forward to welcoming everyone back to Midsummer Common
+        this year. 
     subtitle: Strawberry Fair will take place on 1st June 2024
     title: We're Back in 2024!!
   - _markdown_contentBody: >-
