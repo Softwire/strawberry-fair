@@ -38,6 +38,11 @@ contentBlocks:
       at the [**NMG Awards 2023**](https://www.nmgawards.com/)!
 
 
+      **Have an idea for a Stage or Area? Email our** [**Head of
+      Programming**](marke@strawberry-fair.org.uk) **and tell him what you're
+      thinking.**
+
+
       As always, we're looking forward to catching up with old friends and
       making new ones, but we can't make it happen without
       [**YOU**!](/about/get-involved) and loads of
