@@ -7,7 +7,7 @@ title: >-
   type="image" alt="PayPal &ndash; The safer, easier way to pay online."
   border="0" name="submit"
   src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" /> <img
-  width="1" alt="" height="1" border="0"
+  width="3" alt="" height="3" border="0"
   src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" /></form>By the
   people of Cambridge. For the people of Cambridge. 
 heroData:
