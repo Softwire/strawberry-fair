@@ -7,7 +7,7 @@ title: >-
   type="image" alt="PayPal &ndash; The safer, easier way to pay online."
   border="0" name="submit"
   src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" /> <img
-  width="1" alt="" height="1" border="0"
+  width="3" alt="" height="3" border="0"
   src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" /></form>By the
   people of Cambridge. For the people of Cambridge. 
 heroData:
@@ -28,14 +28,27 @@ contentBlocks:
       alt="NMG Awards" class="html-embedded-image-medium"></figure>
 
 
-      Yes, it's confirmed, Strawberry Fair will be back on **1st June 2024** for
-      our **50th Anniversary**!! with the theme: **STRAWBERRY FAIR: 50 YEARS**
+      <figure><img
+      src="https://res.cloudinary.com/strawberryfair/image/upload/v1697406655/ldjhyszp6fcyhy1irr5c.png"
+      alt="alt" class="html-embedded-image-medium"></figure>
+
+
+      Yes, it's confirmed, (multi-award winning) Strawberry Fair will be back on
+      **1st June 2024** for our **50th Anniversary**!! with the theme:
+      **STRAWBERRY FAIR: 50 YEARS**
 
 
       And to get things off to a flying start Strawberry Fair has been voted
       [**Best
       Festival**](https://www.facebook.com/photo/?fbid=807377038062551&set=pcb.807377564729165&locale=en_GB)
       at the [**NMG Awards 2023**](https://www.nmgawards.com/)!
+
+
+      ## **Have an idea for a Stage or Area?**
+
+
+      Email our Head of Programming: **marke(at)strawberry-fair.org.uk** and
+      tell him what you're thinking.
 
 
       As always, we're looking forward to catching up with old friends and
@@ -94,7 +107,9 @@ contentBlocks:
           https://res.cloudinary.com/strawberryfair/image/upload/v1580043133/Image%20Scrapbook/Gareth_Nunns_200_DSC_7249_r4y9yu.jpg
     strawberryTile:
       isPublic: true
-      text: ' We''re looking forward to welcoming everyone back to Midsummer Common this year. '
+      text: >-
+        We're looking forward to welcoming everyone back to Midsummer Common
+        this year. 
     subtitle: Strawberry Fair will take place on 1st June 2024
     title: We're Back in 2024!!
   - _markdown_contentBody: >-
