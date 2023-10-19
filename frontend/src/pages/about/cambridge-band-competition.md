@@ -19,18 +19,20 @@ strawberryTiles:
       isPublic: false
     tile: Strawberry Tile
 ---
-# Entries for 2023 are now closed!
+# Entries opening on 1st November for 2024!
 
-There will be five Heats held at the **Portland Arms** in 2023 on...\
-**Saturday 4th March**\
-**Saturday 11th March**\
-**Saturday 18th March**\
-**Saturday 1st April**\
-**Saturday 8th April**
+You will soon be able to enter for Cambridge Band Competition 2024. Watch this space for how to apply. 
 
-And the **Grand Final** of the Competition will be held at **Cambridge Junction J1** on **Friday 28th April!**
+There will be five Heats held at the **Portland Arms** in 2024 on...\
+**Saturday 2nd March**\
+**Saturday 9th March**\
+**Saturday 16th March**\
+**Saturday 23rd March**\
+**Saturday 30th March**
 
-There are a number of cash, performance and artist development prizes up for grabs including the prestigious '**Kimberley Rew Songwriting Prize'**, and **all finalists** will get to **play at Strawberry Fair 2023** on Saturday 3rd June!
+And the **Grand Final** of the Competition will be held at **Cambridge Junction J1.** 
+
+There are a number of cash, performance and artist development prizes up for grabs including the prestigious '**Kimberley Rew Songwriting Prize'**, and **all finalists** will get to **play at Strawberry Fair 2024** on **Saturday 1st June!**
 
 # History
 
