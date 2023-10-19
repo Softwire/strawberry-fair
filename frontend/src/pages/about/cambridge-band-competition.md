@@ -48,6 +48,7 @@ Previously held at the Guildhall, and then the Corn Exchange (sold out heats and
 
 **CAMBRIDGE BAND COMPETITION WINNERS:**
 
+* 2023 - TONYT
 * 2022 - Oli Harris 
 * 2020/21 - Strawberry Lace
 * 2019 - Grassroof
