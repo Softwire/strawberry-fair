@@ -30,7 +30,7 @@ There will be five Heats held at the **Portland Arms** in 2024 on...\
 **Saturday 23rd March**\
 **Saturday 30th March**
 
-And the **Grand Final** of the Competition will be held at **Cambridge Junction J1.** 
+And the **Grand Final** of the Competition will be held at **Cambridge Junction J1 on Friday 26th April.** 
 
 There are a number of cash, performance and artist development prizes up for grabs including the prestigious '**Kimberley Rew Songwriting Prize'**, and **all finalists** will get to **play at Strawberry Fair 2024** on **Saturday 1st June!**
 
