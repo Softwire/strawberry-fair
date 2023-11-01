@@ -19,9 +19,15 @@ strawberryTiles:
       isPublic: false
     tile: Strawberry Tile
 ---
-# Entries opening on 1st November for 2024!
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1698828320/Poster_uwedao.jpg" alt="alt" class="html-embedded-image-medium"></figure>
 
-You will soon be able to enter for Cambridge Band Competition 2024. Watch this space for how to apply. 
+# Entries NOW OPEN for 2024!
+
+Over 18s Bands please apply [**HERE!**](https://strawberry-fair.org.uk/forms/over-18s-entry-form/)****
+
+Under 18s Bands please apply [**HERE!**](https://strawberry-fair.org.uk/forms/under-18s-entry-form/)****
+
+Deadline for applications is 14th January 2024. 
 
 There will be five Heats held at the **Portland Arms** in 2024 on...\
 **Saturday 2nd March**\
