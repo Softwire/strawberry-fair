@@ -14,7 +14,7 @@ To enter the band competion, please complete this form and submit working on-lin
 
 * All material must be original - covers are not allowed.
 * Please include a current photo of your act with your application form.
-* Entries **OPEN on Friday 1st November at 09:00.** 
+* Entries **OPEN on 1st November at 09:00.** 
 * All entries must reach us before **14th January at 23:59.** 
 * We will contact those acts selected for the heats by **25th January**
 * The band must be based within 30 miles of Cambridge or within the county of Cambridgeshire.
