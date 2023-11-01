@@ -10,7 +10,7 @@ form:
     width="640" height="2472" frameborder="0" marginheight="0"
     marginwidth="0">Loading…</iframe>
 ---
-To enter the band competion, please complete this form and submit working on-line links to two tracks. These will be used by the selection panel to determine whether your act will get through to the heats.
+To enter the band competition, please complete this form and submit working on-line links to two tracks. These will be used by the selection panel to determine whether your act will get through to the heats.
 
 * All material must be original - covers are not allowed.
 * Please include a current photo of your act with your application form.
