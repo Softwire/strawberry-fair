@@ -24,9 +24,23 @@ strawberryTiles:
 
 # Entries NOW OPEN for 2024!
 
-Over 18s Bands please apply [**HERE!**](https://strawberry-fair.org.uk/forms/over-18s-entry-form/)****
+## Are you are in a Band?
 
-Under 18s Bands please apply [**HERE!**](https://strawberry-fair.org.uk/forms/under-18s-entry-form/)****
+## Are you a Solo Singer/ Artist?
+
+**Do you live within 30 Miles of Cambridge and you're ANY Age?**
+
+
+
+If you said Yes to this, the Cambridge Band Competition is looking for you!
+
+Apply **NOW** for the Cambridge Band Competition as closing date is on the 14th January
+
+
+
+Over 18s Bands please apply [**HERE!**](https://strawberry-fair.org.uk/forms/over-18s-entry-form/)\*\*\*\*
+
+Under 18s Bands please apply [**HERE!**](https://strawberry-fair.org.uk/forms/under-18s-entry-form/)\*\*\*\*
 
 Deadline for applications is 14th January 2024. 
 
