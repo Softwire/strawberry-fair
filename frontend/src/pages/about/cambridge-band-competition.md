@@ -7,8 +7,9 @@ heroData:
     - alt: Band on stage
       src: >-
         https://res.cloudinary.com/strawberryfair/image/upload/v1580047824/Banner/old-fair_gybfma.jpg
-    - src: >-
-        https://res.cloudinary.com/strawberryfair/image/upload/v1638486462/Events/Band_Comp_2022_kos8de.jpg
+    - alt: Open For Entries
+      src: >-
+        https://res.cloudinary.com/strawberryfair/image/upload/v1699010364/370777790_1878778475856896_1344412147301251038_n_kiuvf4.jpg
   isActive: true
 strawberryTiles:
   - strawberryTile:
@@ -23,9 +24,23 @@ strawberryTiles:
 
 # Entries NOW OPEN for 2024!
 
-Over 18s Bands please apply [**HERE!**](https://strawberry-fair.org.uk/forms/over-18s-entry-form/)****
+## Are you are in a Band?
 
-Under 18s Bands please apply [**HERE!**](https://strawberry-fair.org.uk/forms/under-18s-entry-form/)****
+## Are you a Solo Singer/ Artist?
+
+**Do you live within 30 Miles of Cambridge and you're ANY Age?**
+
+
+
+If you said Yes to this, the Cambridge Band Competition is looking for you!
+
+Apply **NOW** for the Cambridge Band Competition as closing date is on the 14th January
+
+
+
+Over 18s Bands please apply [**HERE!**](https://strawberry-fair.org.uk/forms/over-18s-entry-form/)\*\*\*\*
+
+Under 18s Bands please apply [**HERE!**](https://strawberry-fair.org.uk/forms/under-18s-entry-form/)\*\*\*\*
 
 Deadline for applications is 14th January 2024. 
 
