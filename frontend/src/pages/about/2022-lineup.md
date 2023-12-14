@@ -2,8 +2,8 @@
 templateKey: about-page
 title: Strawberry Fair Line-Up
 subtitle: >-
-  Welcome to The Strawberry Fair Revolution! We are excited to finally announce
-  the line-up for 2023!
+  Welcome to The Strawberry Fair Revolution! We'll be announcing 2024's line-up
+  soon but, for now, here's what you saw in 2023:
 heroData:
   isActive: true
 strawberryTiles:
