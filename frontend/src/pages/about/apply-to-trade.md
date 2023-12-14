@@ -89,15 +89,31 @@ notes: >-
   FAQ](https://docs.google.com/document/d/1VK62GAmE1bzmHqwnoVzksYNBo0hmcGAaqFn3pZUGEgY/edit?usp=sharing)
   or email <mailto:traders@strawberry-fair.org.uk> if you can't find the answer.
 ---
-## **Non-Food applications**
+Applications are now **OPEN** for both **FOOD & NON-FOOD STALLS** at Strawberry Fair 2024! 
+
+## **Non-Food Applications**
+
+Deadline for **NON-FOOD STALLS** is **TUESDAY 30TH APRIL**
 
 Please complete the following form and we will then contact you with a quote for your stall.
 
 [Non-Food Trader Application Form](https://forms.gle/BAz4cvJbD6fEnfqD6)
 
-## **Food applications**
+## **Food Applications**
 
-Complete the following form and we will consider food applications and let you know in the third week of February whether we have been able to allocate you a space for 2023.
+Deadline for **FOOD STALLS** is **TUESDAY 20TH FEBRUARY!**
+
+Complete the following form and we will consider food applications and let you know in the third week of February whether we have been able to allocate you a space for 2024.
+
+[Food Trader Application Form](https://forms.gle/ANjDthsgbJGzxoeR7)
+
+If you have any questions, check the [Trader FAQ](https://docs.google.com/document/d/1VK62GAmE1bzmHqwnoVzksYNBo0hmcGAaqFn3pZUGEgY/edit?usp=sharing) section for more information about the fair. If you need more help email us at <mailto:traders@strawberry-fair.org.uk>
+
+## Bars
+
+Deadline for **BARS** is **WEDNESDAY 31ST JANUARY!**
+
+Complete the following form and we will consider food applications and let you know early February whether we have been able to allocate you a space for 2024.
 
 [Food Trader Application Form](https://forms.gle/ANjDthsgbJGzxoeR7)
 
