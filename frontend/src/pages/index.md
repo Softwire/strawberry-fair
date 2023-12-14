@@ -34,6 +34,14 @@ contentBlocks:
       at the [**NMG Awards 2023**](https://www.nmgawards.com/)!
 
 
+      To get in the mood, you could try:
+
+
+      <figure><img
+      src="https://res.cloudinary.com/strawberryfair/image/upload/v1702591783/Love_the_Pig_ihkr2u.jpg"
+      alt="Love the pig" class="html-embedded-image-medium"></figure>
+
+
       ## Traders Applications are now OPEN!
 
 
