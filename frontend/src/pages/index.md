@@ -23,16 +23,6 @@ heroData:
   isActive: true
 contentBlocks:
   - _markdown_contentBody: >-
-      <figure><img
-      src="https://res.cloudinary.com/strawberryfair/image/upload/v1694940748/NMG_Awards_jjigou.jpg"
-      alt="NMG Awards" class="html-embedded-image-medium"></figure>
-
-
-      <figure><img
-      src="https://res.cloudinary.com/strawberryfair/image/upload/v1697406655/ldjhyszp6fcyhy1irr5c.png"
-      alt="alt" class="html-embedded-image-medium"></figure>
-
-
       Yes, it's confirmed, (multi-award winning) Strawberry Fair will be back on
       **1st June 2024** for our **50th Anniversary**!! with the theme:
       **STRAWBERRY FAIR: 50 YEARS**
@@ -44,11 +34,19 @@ contentBlocks:
       at the [**NMG Awards 2023**](https://www.nmgawards.com/)!
 
 
-      ## **Have an idea for a Stage or Area?**
+      ## Traders Applications are now OPEN!
 
 
-      Email our Head of Programming: **marke(at)strawberry-fair.org.uk** and
-      tell him what you're thinking.
+      If you are interested in having a stall at Strawberry Fair please see our
+      [Traders Page](https://strawberry-fair.org.uk/about/apply-to-trade/)!
+
+
+      <figure><img
+      src="https://res.cloudinary.com/strawberryfair/image/upload/v1697406655/ldjhyszp6fcyhy1irr5c.png"
+      alt="Traders Badge" class="html-embedded-image-medium"></figure>
+
+
+      ## We need donations!
 
 
       As always, we're looking forward to catching up with old friends and
