@@ -93,7 +93,7 @@ Applications are now **OPEN** for both **FOOD & NON-FOOD STALLS** at Strawberry 
 
 ## **Non-Food Applications**
 
-Deadline for **NON-FOOD STALLS** is **TUESDAY 30TH APRIL**
+There is no deadline for non food trader applications, but spaces do fill up fast so we recommend getting your application in ASAP.
 
 Please complete the following form and we will then contact you with a quote for your stall.
 
