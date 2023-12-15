@@ -109,17 +109,17 @@ Complete the following form and we will consider food applications and let you k
 
 If you have any questions, check the [Trader FAQ](https://docs.google.com/document/d/1VK62GAmE1bzmHqwnoVzksYNBo0hmcGAaqFn3pZUGEgY/edit?usp=sharing) section for more information about the fair. If you need more help email us at <mailto:traders@strawberry-fair.org.uk>
 
-## Bars
+## **Bars**
 
 Deadline for **BARS** is **WEDNESDAY 31ST JANUARY!**
 
-Complete the following form and we will consider food applications and let you know early February whether we have been able to allocate you a space for 2024.
+Complete the following form and we will consider bars applications and let you know early February whether we have been able to allocate you a space for 2024.
 
-[Food Trader Application Form](https://forms.gle/ANjDthsgbJGzxoeR7)
+[Bars Application Form](https://forms.gle/7576xCew2XS4Zgv89)
 
 If you have any questions, check the [Trader FAQ](https://docs.google.com/document/d/1VK62GAmE1bzmHqwnoVzksYNBo0hmcGAaqFn3pZUGEgY/edit?usp=sharing) section for more information about the fair. If you need more help email us at <mailto:traders@strawberry-fair.org.uk>
 
-# Trading at Strawberry Fair
+## **Trading at Strawberry Fair**
 
 Strawberry Fair 2024 will be on Saturday 1st June. The Fairies are so happy to be back and so looking forward to seeing you again. Let’s all celebrate by making this the best Strawberry Fair ever!
 
@@ -127,14 +127,10 @@ The theme this year will be STRAWBERRY FAIR: 50 YEARS!
 
 We are looking for traders and organisations offering as many different flavours and tastes, products and produce, weird and wonderful hobbies and interesting people to amuse and entertain our visitors. Our market is one of the most important features of the Fair - bringing a diverse range of stalls right to the heart of Cambridge.
 
-## Why Trade at Strawberry Fair?
+## **Why Trade at Strawberry Fair?**
 
 * We regularly attract 35,000-40,000 visitors throughout the one day event
 * We are a free event, but many punters tell us they come specifically to buy from our market.
 * We reach an eclectic mix of people of all ages including residents, visitors and tourists.
 * We do our best to limit the number of similar stalls to ensure that our traders are offering different things.
 * We offer a range of pitch fees and types to suit all needs, including food stalls, craft stalls, blanket pitches, mobile sellers and charity stands.
-
-## Bars / Alcohol
-
-If you are interested in applying for a bar at Strawberry Fair 2024, please apply through the FOOD TRADERS application.
