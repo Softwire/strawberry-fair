@@ -89,7 +89,7 @@ notes: >-
   FAQ](https://docs.google.com/document/d/1VK62GAmE1bzmHqwnoVzksYNBo0hmcGAaqFn3pZUGEgY/edit?usp=sharing)
   or email <mailto:traders@strawberry-fair.org.uk> if you can't find the answer.
 ---
-Applications are now **OPEN** for both **FOOD & NON-FOOD STALLS** at Strawberry Fair 2024! 
+Applications are now **OPEN** for both **FOOD, NON-FOOD STALLS, & BARS** at Strawberry Fair 2024! 
 
 ## **Non-Food Applications**
 
