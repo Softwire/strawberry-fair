@@ -50,6 +50,11 @@ contentBlocks:
 
 
       <figure><img
+      src="https://res.cloudinary.com/strawberryfair/image/upload/v1702775309/Traders_Poster_buk3np.jpg"
+      alt="Trader's applications" class="html-embedded-image-medium"></figure>
+
+
+      <figure><img
       src="https://res.cloudinary.com/strawberryfair/image/upload/v1697406655/ldjhyszp6fcyhy1irr5c.png"
       alt="Traders Badge" class="html-embedded-image-medium"></figure>
 
