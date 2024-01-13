@@ -34,12 +34,12 @@ contentBlocks:
       at the [**NMG Awards 2023**](https://www.nmgawards.com/)!
 
 
-      To get in the mood, you could try:
+      To get in the mood, you could support our Record Fair:
 
 
       <figure><img
-      src="https://res.cloudinary.com/strawberryfair/image/upload/v1702591783/Love_the_Pig_ihkr2u.jpg"
-      alt="Love the pig" class="html-embedded-image-medium"></figure>
+      src="https://res.cloudinary.com/strawberryfair/image/upload/v1705148341/Record_Fair_Apr_2024_uh4lx7.jpg"
+      alt="Record Fair" class="html-embedded-image-medium"></figure>
 
 
       ## Traders Applications are now OPEN!
