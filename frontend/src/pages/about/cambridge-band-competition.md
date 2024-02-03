@@ -22,27 +22,11 @@ strawberryTiles:
 ---
 <figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1698828320/Poster_uwedao.jpg" alt="alt" class="html-embedded-image-medium"></figure>
 
-# Entries NOW OPEN for 2024!
+# Entries NOW CLOSED for 2024!
 
-## Are you are in a Band?
+We are very pleased to announce the line up for Cambridge Band Competition 2024. 
 
-## Are you a Solo Singer/ Artist?
-
-**Do you live within 30 Miles of Cambridge and you're ANY Age?**
-
-
-
-If you said Yes to this, the Cambridge Band Competition is looking for you!
-
-Apply **NOW** for the Cambridge Band Competition as closing date is on the 14th January
-
-
-
-Over 18s Bands please apply [**HERE!**](https://strawberry-fair.org.uk/forms/over-18s-entry-form/)\*\*\*\*
-
-Under 18s Bands please apply [**HERE!**](https://strawberry-fair.org.uk/forms/under-18s-entry-form/)\*\*\*\*
-
-Deadline for applications is 14th January 2024. 
+You can see all heat details and line up on our [Facebook Page](https://www.facebook.com/CambridgeBandCompetition/)
 
 There will be five Heats held at the **Portland Arms** in 2024 on...\
 **Saturday 2nd March**\
