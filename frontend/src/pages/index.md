@@ -37,56 +37,14 @@ contentBlocks:
       To get in the mood, you could support our upcoming events:
 
 
-      <figure>
-
-      <table>
-
-      <tr>
-
-      <td>
+      <figure><img
+      src="https://res.cloudinary.com/strawberryfair/image/upload/v1710245697/BandCompScarecrow_kmanru.jpg"
+      alt="alt" class="html-embedded-image-large"></figure>
 
 
       <figure><img
-      src="https://res.cloudinary.com/strawberryfair/image/upload/v1710203581/BandComp_xkrwjx.jpg"
-      alt="alt" class="html-embedded-image-medium"></figure>
-
-
-      </td>
-
-      <td>
-
-
-      <figure><img
-      src="https://res.cloudinary.com/strawberryfair/image/upload/v1710203644/Scarecrowbenefit_ciym3n.jpg"
-      alt="alt" class="html-embedded-image-medium"></figure>
-
-
-      </td>
-
-      </tr>
-
-      <tr>
-
-      <td><img
-      src="https://res.cloudinary.com/strawberryfair/image/upload/v1705148341/Record_Fair_Apr_2024_uh4lx7.jpg"
-      alt="Record Fair" class="html-embedded-image-medium"></td>
-
-
-      <td>
-
-
-      <figure><img
-      src="https://res.cloudinary.com/strawberryfair/image/upload/c_pad,w_1060,h_1500/v1710203623/Portlandbenefit_awgtzq.jpg"
-      alt="Portland Benefit" class="html-embedded-image-large"></figure>
-
-
-      </td>
-
-      </tr>
-
-      </table>
-
-      </figure>
+      src="https://res.cloudinary.com/strawberryfair/image/upload/v1710245722/RecordPortland_absjou.jpg"
+      alt="alt" class="html-embedded-image-large"></figure>
 
 
       ## Traders Applications are now OPEN!
