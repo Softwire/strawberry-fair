@@ -34,12 +34,61 @@ contentBlocks:
       at the [**NMG Awards 2023**](https://www.nmgawards.com/)!
 
 
-      To get in the mood, you could support our Record Fair:
+      To get in the mood, you could support our upcoming events:
+
+
+      <figure>
+
+      <table>
+
+      <tr>
+
+      <td>
 
 
       <figure><img
+      src="https://res.cloudinary.com/strawberryfair/image/upload/v1710203581/BandComp_xkrwjx.jpg"
+      alt="alt" class="html-embedded-image-medium"></figure>
+
+
+      </td>
+
+      <td>
+
+
+      <figure><img
+      src="https://res.cloudinary.com/strawberryfair/image/upload/v1710203644/Scarecrowbenefit_ciym3n.jpg"
+      alt="alt" class="html-embedded-image-medium"></figure>
+
+
+      </td>
+
+      </tr>
+
+      <tr>
+
+      <td><img
       src="https://res.cloudinary.com/strawberryfair/image/upload/v1705148341/Record_Fair_Apr_2024_uh4lx7.jpg"
-      alt="Record Fair" class="html-embedded-image-medium"></figure>
+      alt="Record Fair" class="html-embedded-image-medium"></td>
+
+
+      <td>
+
+
+      <figure><img
+      src="https://res.cloudinary.com/strawberryfair/image/upload/v1710203689/Portlandbenefit_ebrz89.jpg"
+      alt="Portland Benefit" class="html-embedded-image-medium"></figure>
+
+
+      </td>
+
+      <td></td>
+
+      </tr>
+
+      </table>
+
+      </figure>
 
 
       ## Traders Applications are now OPEN!
