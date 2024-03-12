@@ -76,7 +76,7 @@ contentBlocks:
 
 
       <figure><img
-      src="https://res.cloudinary.com/strawberryfair/image/upload/c_fill,w_1060,h_1500/v1710203623/Portlandbenefit_awgtzq.jpg"
+      src="https://res.cloudinary.com/strawberryfair/image/upload/c_pad,w_1060,h_1500/v1710203623/Portlandbenefit_awgtzq.jpg"
       alt="Portland Benefit" class="html-embedded-image-medium"></figure>
 
 
