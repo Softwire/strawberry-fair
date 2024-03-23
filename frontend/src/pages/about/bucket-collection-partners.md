@@ -38,11 +38,9 @@ Available 24/7/365, the team is made up 100% of dedicated fully trained voluntee
 
 <https://www.camsar.org/>
 
-## Blue Smile
+# Blue Smile
 
 ## (Walnut tree gate)
-
-<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1683236413/BLUE_SMILE_StrapLogo_CMYK_CHILDRENCHARITY_LOGO.JPG_ub8viw.jpg" alt="Blue Smile" class="html-embedded-image-medium"></figure>
 
 Blue Smile is a children’s mental health charity in Cambridgeshire transforming the life chances of young people aged 3 to 13 through expert arts based therapy and counselling in local schools.
 
@@ -56,25 +54,31 @@ Find out more at [www.bluesmile.org.uk](www.bluesmile.org.uk) or follow them o
 
 ## (Walnut tree gate and Victoria Bridge gate)
 
+## 
+
 <figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1711190389/TomsTrust_strap_hrv3z3.jpg" alt="alt" class="html-embedded-image-medium"></figure>
 
-“Cambridge-based charity, Tom&#39;s Trust is the UK&#39;s only charity dedicated to providing mental health support to children with brain tumours, and their families.
+## 
 
-A brain tumour diagnosis is devastating for the whole family. Around 1800 children are diagnosed with childhood cancer in the UK every year. Of which, 600 are children diagnosed with a brain tumour. \
-\
+“Cambridge-based charity, Tom's Trust is the UK's only charity dedicated to providing mental health support to children with brain tumours, and their families.
+
+
+
+A brain tumour diagnosis is devastating for the whole family. Around 1800 children are diagnosed with childhood cancer in the UK every year. Of which, 600 are children diagnosed with a brain tumour.
+
 Sadly, 1/3 of these children will die and of those that survive, 62% will be left with life-long disabilities (such as blindness, hearing loss, lost motor-function or learning disabilities).
 
 Tom’s Trust clinical psychologists support hundreds of families, working within hospitals in the East, North-East and North-West, helping children from diagnosis, through their brutal treatment and as they return to life at home. It is our mission to reach children with brain tumours and their families in every area of the UK by 2030.
 
-Supporting one child and their family costs £3,335 per year. This includes one-to-one support, vital cognitive assessments, school liaison reintegration, whole-family support, group work and a detailed plan of how to support each child depending on their needs. Find out more at: https://www.tomstrust.org.uk/ or follow them on social media:https://www.instagram.com/toms_trust/
+Supporting one child and their family costs £3,335 per year. This includes one-to-one support, vital cognitive assessments, school liaison reintegration, whole-family support, group work and a detailed plan of how to support each child depending on their needs.
 
-## 
+Find out more at: https://www.tomstrust.org.uk/ or follow them on social media:https://www.instagram.com/toms_trust/
+
+
 
 # CamCRAG
 
-## Gate tbc
-
-## 
+## (Gate tbc)
 
 <figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1711190577/CAMCrag2_suynlc.jpg" alt="alt" class="html-embedded-image-medium"></figure>
 
@@ -90,4 +94,4 @@ As a small and independent charity we are also able to provide funds quickly whe
 
 All the money we raise goes towards providing aid or supporting our convoys: We have no employees, and are entirely run by volunteers.
 
-**If your organisation would like to help with buckets at Strawberry Fair this year, then please email buckets@strawberry-fair.org.uk**
+**If your organisation would like to help with bucket collections at Strawberry Fair this year, please email buckets@strawberry-fair.org.uk**
