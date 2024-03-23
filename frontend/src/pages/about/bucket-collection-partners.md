@@ -42,6 +42,8 @@ Available 24/7/365, the team is made up 100% of dedicated fully trained voluntee
 
 ## (Walnut tree gate)
 
+<figure><img src="https://res.cloudinary.com/strawberryfair/image/upload/v1711191362/BLUE_SMILE_StrapLogo_CMYK_CHILDRENCHARITY_LOGO.JPG_wacu6v.jpg" alt="alt" class="html-embedded-image-medium"></figure>
+
 Blue Smile is a children’s mental health charity in Cambridgeshire transforming the life chances of young people aged 3 to 13 through expert arts based therapy and counselling in local schools.
 
 Since the charity launched in 2010, Blue Smile has supported over 2,200 children in over 50 schools to have brighter futures.
@@ -60,21 +62,28 @@ Find out more at [www.bluesmile.org.uk](www.bluesmile.org.uk) or follow them o
 
 ## 
 
-“Cambridge-based charity, Tom's Trust is the UK's only charity dedicated to providing mental health support to children with brain tumours, and their families.
+“Cambridge-based charity, Tom's Trust is the UK's only charity dedicated to providing
+ mental health support to children with brain tumours, and their families.
 
+A brain tumour diagnosis is devastating for the whole family. Around 1800 children are
+ diagnosed with childhood cancer in the UK every year. Of which, 600 are children diagnosed
+ with a brain tumour.
 
+Sadly, 1/3 of these children will die and of those that survive, 62% will
+ be left with life-long disabilities (such as blindness, hearing loss, lost motor-function or
+ learning disabilities).
 
-A brain tumour diagnosis is devastating for the whole family. Around 1800 children are diagnosed with childhood cancer in the UK every year. Of which, 600 are children diagnosed with a brain tumour.
+Tom’s Trust clinical psychologists support hundreds of families, working within hospitals in
+ the East, North-East and North-West, helping children from diagnosis, through their brutal
+ treatment and as they return to life at home. It is our mission to reach children with brain
+ tumours and their families in every area of the UK by 2030.
 
-Sadly, 1/3 of these children will die and of those that survive, 62% will be left with life-long disabilities (such as blindness, hearing loss, lost motor-function or learning disabilities).
+Supporting one child and their family costs £3,335 per year. This includes one-to-one
+ support, vital cognitive assessments, school liaison reintegration, whole-family support,
+ group work and a detailed plan of how to support each child depending on their needs.
 
-Tom’s Trust clinical psychologists support hundreds of families, working within hospitals in the East, North-East and North-West, helping children from diagnosis, through their brutal treatment and as they return to life at home. It is our mission to reach children with brain tumours and their families in every area of the UK by 2030.
-
-Supporting one child and their family costs £3,335 per year. This includes one-to-one support, vital cognitive assessments, school liaison reintegration, whole-family support, group work and a detailed plan of how to support each child depending on their needs.
-
-Find out more at: https://www.tomstrust.org.uk/ or follow them on social media:https://www.instagram.com/toms_trust/
-
-
+Find out more at: https://www.tomstrust.org.uk/ or follow them on social
+ media:https://www.instagram.com/toms_trust/
 
 # CamCRAG
 
@@ -84,14 +93,22 @@ Find out more at: https://www.tomstrust.org.uk/ or follow them on social media:
 
 ## 
 
-Cambridge Convoy Refugee Action Group was founded in 2015 by activists in and around Cambridge, with the aim of coordinating the logistics of sending donations and volunteers to help refugees in the Calais area.
+Cambridge Convoy Refugee Action Group was founded in 2015 by activists in and
+ around Cambridge, with the aim of coordinating the logistics of sending donations and
+ volunteers to help refugees in the Calais area.
 
-In November 2016 we became a registered charity (number 1170180), and we continue to organise regular weekend trips of volunteers to Calais, assisting the aid organisations there.
+In November 2016 we became a registered charity (number 1170180), and we continue
+ to organise regular weekend trips of volunteers to Calais, assisting the aid organisations
+ there.
 
-We also hold fundraisers and collect donations, as well as raising awareness of the refugee situation in Europe.
+We also hold fundraisers and collect donations, as well as raising awareness of the refugee
+ situation in Europe.
 
-As a small and independent charity we are also able to provide funds quickly when there is an urgent need, and have supported various projects in Europe – see camcrag.org.uk/grants for examples.
+As a small and independent charity we are also able to provide funds quickly when there is an
+ urgent need, and have supported various projects in Europe – see camcrag.org.uk/grants for
+ examples.
 
-All the money we raise goes towards providing aid or supporting our convoys: We have no employees, and are entirely run by volunteers.
+All the money we raise goes towards providing aid or supporting our convoys: We have no
+ employees, and are entirely run by volunteers.
 
 **If your organisation would like to help with bucket collections at Strawberry Fair this year, please email buckets@strawberry-fair.org.uk**
